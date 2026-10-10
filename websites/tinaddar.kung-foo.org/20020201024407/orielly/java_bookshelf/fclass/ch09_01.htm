@@ -1,0 +1,402 @@
+<!DOCTYPE HTML PUBLIC "-//ORA//DTD CD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>[Chapter 9] Security</TITLE>
+<META NAME="author" CONTENT="Mark Grand and Jonathan Knudsen">
+<META NAME="date" CONTENT="Fri Aug  8 16:18:08 1997">
+<META NAME="form" CONTENT="html">
+<META NAME="metadata" CONTENT="dublincore.0.1">
+<META NAME="objecttype" CONTENT="book part">
+<META NAME="otheragent" CONTENT="gmat dbtohtml">
+<META NAME="publisher" CONTENT="O'Reilly &amp; Associates, Inc.">
+<META NAME="source" CONTENT="SGML">
+<META NAME="subject" CONTENT="Java">
+<META NAME="title" CONTENT="Java Fundamental Classes Reference">
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<DIV CLASS=htmlnav>
+<H1><a href='index.htm'><IMG SRC="gifs/smbanner.gif"
+     ALT="Java Fundamental Classes Reference" border=0></a></H1>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch08_02.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><B><FONT FACE="ARIEL,HELVETICA,HELV,SANSERIF" SIZE="-1">Chapter 9</FONT></B></TD>
+<td width=172 align=right valign=top><A HREF="ch09_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+</table>
+
+&nbsp;
+<hr align=left width=515>
+</DIV>
+<H1 CLASS=chapter><A CLASS="TITLE" NAME="JFC-CH-9">9. Security</A></H1>
+
+<DIV CLASS=htmltoc>
+
+<p>
+<b>Contents:</b><br>
+SecurityManager<br>
+<A HREF="ch09_02.htm">ClassLoader</A><BR>
+
+<p>
+</DIV>
+
+<P CLASS=para>
+Java uses a "sandbox" security model to ensure that applets 
+cannot cause security problems. The idea is that an applet can do whatever 
+it wants within the constraints of its sandbox, but that nothing done 
+inside the sandbox has any consequences outside of the sandbox. <A NAME="CH09.SEC"></A>
+
+<DIV CLASS=sect1>
+<h2 CLASS=sect1><A CLASS="TITLE" NAME="JFC-CH-9-SECT-1">9.1 SecurityManager</A></h2>
+
+<P CLASS=para>
+<A NAME="CH09.SEC2"></A>Java implements the sandbox model using the
+<tt CLASS=literal>java.lang.SecurityManager</tt> class. An instance of
+<tt CLASS=literal>SecurityManager</tt> is passed to the method
+<tt CLASS=literal>System.setSecurityManager()</tt> to establish the
+security policy for an application. Before
+<tt CLASS=literal>setSecurityManager()</tt> is called, a Java program can
+access any resources available on the system.  After
+<tt CLASS=literal>setSecurityManager()</tt> is called, however, the
+<tt CLASS=literal>SecurityManager</tt> object is responsible for providing
+a security policy. Once a security policy has been set by calling
+<tt CLASS=literal>setSecurityManager</tt>, the method cannot be called
+again. Subsequent calls simply throw a
+<tt CLASS=literal>SecurityException</tt>.
+
+<P CLASS=para>
+All methods in the Java API that can access resources outside of the
+Java environment call a <tt CLASS=literal>SecurityManager</tt> method to
+ask permission before doing anything. If the
+<tt CLASS=literal>SecurityManager</tt> method throws a
+<tt CLASS=literal>SecurityException</tt>, the exception is thrown out of
+the calling method, and access to the resource is denied. The
+<tt CLASS=literal>SecurityManager</tt> class defines a number of methods
+for asking for permission to access specific resources. Each of these
+methods has a name that begins with the word "check."
+<A HREF="ch09_01.htm#JFC-CH-9-TAB-1">Table 9.1</A> shows the names of the
+<tt CLASS=literal>check</tt> methods provided by the
+<tt CLASS=literal>SecurityManager</tt> class.
+
+<P>
+<DIV CLASS=table>
+<TABLE BORDER>
+<CAPTION><A CLASS="TITLE" NAME="JFC-CH-9-TAB-1">Table 9.1: The Check Methods of SecurityManager</A></CAPTION>
+<TR CLASS=row>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Method Name</TH>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Permission</TH>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkAccept()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To accept a network connection</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkAccess()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To modify a <tt CLASS=literal>Thread</tt> or <tt CLASS=literal>ThreadGroup</tt></TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkAwtEventQueueAccess()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To access the AWT event queue</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkConnect()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To establish a network connection or send a datagram</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkCreateClassLoader()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To create a <tt CLASS=literal>ClassLoader</tt> object</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkDelete()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To delete a file</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkExec()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To call an external program</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkExit()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To stop the Java virtual machine and exit the Java environment</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkLink()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To dynamically link an external library into the Java environment</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkListen()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To listen for a network connection</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkMemberAccess()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To access the members of a class</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkMulticast()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To use a multicast connection</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkPackageAccess()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To access the classes in a package</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkPackageDefinition()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To define classes in a package</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkPrintJobAccess()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To initiate a print job request</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkPropertiesAccess()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To get or set the <tt CLASS=literal>Properties</tt> 
+object that defines all of the system properties</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkPropertyAccess()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To get or set a system property</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkRead()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To read from a file or input stream</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkSecurityAccess()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To perform a security action</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkSetFactory()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To set a factory class that determines classes to be used for managing 
+network connections and their content</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkSystemClipboardAccess()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To access the system clipboard</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkTopLevelWindow()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To create a top-level window on the screen</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>checkWrite()</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+To write to a file or output stream</TD>
+</TR>
+</TABLE>
+<P>
+</DIV>
+<P CLASS=para>
+The <tt CLASS=literal>SecurityManager</tt> class provides 
+implementations of these methods that always refuse the requested permission. 
+To implement a more permissive security policy, you need to create a subclass 
+of <tt CLASS=literal>SecurityManager</tt> that implements 
+that policy. 
+
+<P CLASS=para>
+In Java 1.0, most browsers consider an applet to be trusted or untrusted. 
+An untrusted applet is one that does not come from the local filesystem. 
+An untrusted applet is treated as follows by most popular browsers: 
+
+<P>
+<UL CLASS=itemizedlist>
+<li CLASS=listitem>It can establish network connections to the network address from which 
+it came. 
+
+<P>
+<li CLASS=listitem>It can create new windows on the screen. However, a notice is displayed 
+on the bottom of the window that the window was created by an untrusted 
+applet. 
+
+<P>
+<li CLASS=listitem>It cannot access any other external resources. In particular, untrusted 
+applets cannot access local files. 
+
+<P>
+</UL>
+<P CLASS=para>
+As of Java 1.1, an applet can have a digital signature attached to it. 
+When an applet has been signed by a trusted entity, a browser may consider 
+the applet to be trusted and relax its security policy. 
+
+</DIV>
+
+
+<DIV CLASS=htmlnav>
+
+<P>
+<HR align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch08_02.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><a href="index.htm"><img src='gifs/txthome.gif' border=0 alt='Home'></a></td>
+<td width=172 align=right valign=top><A HREF="ch09_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+<tr>
+<td width=172 align=left valign=top>URL Objects</td>
+<td width=171 align=center valign=top><a href="index/idx_0.htm"><img src='gifs/index.gif' alt='Book Index' border=0></a></td>
+<td width=172 align=right valign=top>ClassLoader</td>
+</tr>
+</table>
+<hr align=left width=515>
+
+<IMG SRC="gifs/smnavbar.gif" USEMAP="#map" BORDER=0> 
+<MAP NAME="map"> 
+<AREA SHAPE=RECT COORDS="0,0,108,15" HREF="../javanut/index.htm"
+alt="Java in a Nutshell"> 
+<AREA SHAPE=RECT COORDS="109,0,200,15" HREF="../langref/index.htm" 
+alt="Java Language Reference"> 
+<AREA SHAPE=RECT COORDS="203,0,290,15" HREF="../awt/index.htm" 
+alt="Java AWT"> 
+<AREA SHAPE=RECT COORDS="291,0,419,15" HREF="../fclass/index.htm" 
+alt="Java Fundamental Classes"> 
+<AREA SHAPE=RECT COORDS="421,0,514,15" HREF="../exp/index.htm" 
+alt="Exploring Java"> 
+</MAP>
+</DIV>
+
+</BODY>
+</HTML>

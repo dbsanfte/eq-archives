@@ -1,0 +1,963 @@
+<!DOCTYPE HTML PUBLIC "-//ORA//DTD CD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>[Chapter 9] Network Programming</TITLE>
+<META NAME="author" CONTENT="Pat Niemeyer and Josh Peck">
+<META NAME="date" CONTENT="Thu Jul 24 12:08:28 1997">
+<META NAME="form" CONTENT="html">
+<META NAME="metadata" CONTENT="dublincore.0.1">
+<META NAME="objecttype" CONTENT="book part">
+<META NAME="otheragent" CONTENT="gmat dbtohtml">
+<META NAME="publisher" CONTENT="O'Reilly &amp; Associates, Inc.">
+<META NAME="source" CONTENT="SGML">
+<META NAME="subject" CONTENT="Java">
+<META NAME="title" CONTENT="Exploring Java">
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<DIV CLASS=htmlnav>
+<H1><a href='index.htm'><IMG SRC="gifs/smbanner.gif"
+     ALT="Exploring Java" border=0></a></H1>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch08_04.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><B><FONT FACE="ARIEL,HELVETICA,HELV,SANSERIF" SIZE="-1">Chapter 9</FONT></B></TD>
+<td width=172 align=right valign=top><A HREF="ch09_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+</table>
+
+&nbsp;
+<hr align=left width=515>
+</DIV>
+<H1 CLASS=chapter><A CLASS="TITLE" NAME="EXJ-CH-9">9. Network Programming</A></H1>
+
+<DIV CLASS=htmltoc>
+
+<p>
+<b>Contents:</b><br>
+Sockets<br>
+<A HREF="ch09_02.htm">Datagram Sockets</A><BR>
+<A HREF="ch09_03.htm">Working with URLs</A><BR>
+<A HREF="ch09_04.htm">Web Browsers and Handlers</A><BR>
+<A HREF="ch09_05.htm">Writing a Content Handler</A><BR>
+<A HREF="ch09_06.htm">Writing a Protocol Handler</A><BR>
+
+<p>
+</DIV>
+
+<A NAME="CH09.NET1"></A><A NAME="CH09.NET2"></A>
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The network is the soul of Java. Most of what is new and
+exciting about Java centers around the potential for new kinds of
+dynamic, networked applications. This chapter discusses the <tt CLASS=literal>java.net</tt> package, which contains classes for communications
+and working with networked resources. These classes fall into two
+categories: the sockets API and classes for working
+with Uniform Resource Locators (URLs).  <A HREF="ch09_01.htm#EXJ-CH-9-FIG-1">Figure 9.1</A> shows all of the classes in
+<tt CLASS=literal>java.net</tt>.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-9-FIG-1">Figure 9.1: The java.net package</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0901.gif" alt="[Graphic: Figure 9-1]" width=502 height=373 border=0>
+
+</DIV>
+
+<P CLASS=para>
+Java's sockets interface provides access to the standard
+network protocols used for communications between hosts on the
+Internet. Sockets are the mechanism underlying all other kinds of
+portable networked communications. Your processes can use sockets to
+communicate with a server or peer applications on the Net, but you
+have to implement your own application-level protocols for handling
+and interpreting the data. Higher-level functionality, like remote
+procedure calls and distributed objects, are implemented with sockets.
+
+<P CLASS=para>
+The Java URL classes provide an
+API for accessing well-defined networked resources,
+like documents and applications on servers. The classes use an
+extensible set of prefabricated protocol and content handlers to
+perform the necessary communication and data conversion for accessing
+URL resources. With URLs, an
+application can fetch a complete file or database record from a server
+on the network with just a few lines of code. Applications like Web
+browsers, which deal with networked content, use the
+<tt CLASS=literal>URL</tt> class to simplify the task
+of network programming. They also take advantage of the dynamic
+nature of Java, which allows handlers for new types of
+URLs to be added on the fly. As new types of
+servers and new formats for content evolve, additional
+URL handlers can be supplied to retrieve and
+interpret the data without modifying the original application.
+
+<P CLASS=para>
+In this chapter, I'll try to provide some practical and
+realistic examples of Java network programming using both
+APIs. Sadly, the current state of affairs is 
+disappointing. The real release of HotJava isn't
+available, and Netscape Navigator imposes many restrictions on what
+you can do. In addition, a few standards that we need haven't
+been defined. Nevertheless, you can use all of Java's networking
+capabilities to build your own free-standing applications. I'll
+point out the shortcomings with Netscape Navigator and the standards
+scene as I go along.
+
+<DIV CLASS=sect1>
+<h2 CLASS=sect1><A CLASS="TITLE" NAME="EXJ-CH-9-SECT-1">9.1 Sockets</A></h2>
+
+<P CLASS=para>
+<A NAME="CH09.SOCK"></A>Sockets are a low-level programming interface for networked
+communications. They send streams of data between applications that
+may or may not be on the same host. Sockets originated in
+BSD UNIX and are, in other
+languages, hairy and complicated things with lots of small parts that
+can break off and choke little children. The reason for this is that
+most socket APIs can be used with almost any kind
+of underlying network protocol. Since the protocols that transport
+data across the network can have radically different features, the
+socket interface can be quite complex. (For a discussion of sockets in
+general, see <i CLASS=citetitle>UNIX
+Network Programming</i>, by Richard Stevens [Prentice-Hall].)
+
+<P CLASS=para>
+Java supports a simplified object-oriented interface to sockets
+that makes network communications considerably easier. If you have
+done network programming using sockets in C or another structured
+language, you should be pleasantly surprised at how simple things can
+be when objects encapsulate the gory details. If
+this is the first time you've come across sockets, you'll
+find that talking to another application can be as simple as
+reading a file or getting user input. Most forms of I/O in Java,
+including network I/O, use the stream classes described in <A HREF="ch08_01.htm">Chapter 8, <i>Input/Output Facilities</i></A>. Streams provide a unified I/O interface; reading
+or writing across the Internet is similar to reading or writing a file
+on the local system.
+
+<P CLASS=para>
+Java provides different kinds of sockets to support two
+distinct classes of underlying protocols. In this first section,
+we'll look at Java's <tt CLASS=literal>Socket</tt> class,
+which uses a <I CLASS=emphasis>connection-oriented</I> protocol. A
+connection-oriented protocol gives you the equivalent of a telephone
+conversation; after establishing a connection, two applications can
+send data back and forth; the connection stays in place even when no
+one is talking. The protocol ensures that no data is lost and that it
+always arrives in order. In the next section we'll look at the
+<tt CLASS=literal>DatagramSocket</tt> class, which uses a
+<I CLASS=emphasis>connectionless</I> protocol. A connectionless
+protocol is more like the postal service. Applications can send short
+messages to each other, but no attempt is made to keep the connection
+open between messages, to keep the messages in order, or even to
+guarantee that they arrive.
+
+<P CLASS=para>
+In theory, just about any protocol family can be used
+underneath the socket layer: Novell's IPX,
+Apple's AppleTalk, even the old ChaosNet protocols. But this
+isn't a theoretical world. In practice, there's only one
+protocol family people care about on the Internet, and only one
+protocol family Java supports: the Internet protocols,
+IP. The <tt CLASS=literal>Socket</tt> class speaks
+TCP, and the <tt CLASS=literal>DatagramSocket</tt> class
+speaks UDP, both standard Internet protocols.
+These protocols are available on any
+system that is connected to the Internet.
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-9-SECT-1.1">Clients and Servers</A></h3>
+
+<P CLASS=para>
+<A NAME="CH09.CLIENTS1"></A><A NAME="CH09.CLIENTS2"></A>When writing network applications, it's common to talk about
+clients and servers. The distinction is increasingly vague, but the
+side that initiates the conversation is usually the
+<I CLASS=emphasis>client</I>. The side that accepts the request to
+talk is usually the <I CLASS=emphasis>server</I>. In
+the case where there are two peer applications using sockets to talk,
+the distinction is less important, but for simplicity
+we'll use the above definition.
+
+<P CLASS=para>
+For our purposes, the most important difference between a
+client and a server is that a client can create a socket to initiate a
+conversation with a server application at any time, while a server
+must prepare to listen for incoming conversations in advance. The
+<tt CLASS=literal>java.net.Socket</tt> class represents a single side of a
+socket connection on either the client or server. 
+In addition, the
+server uses the <tt CLASS=literal>java.net.ServerSocket</tt> class to wait
+for connections from clients. An application acting as a server
+creates a <tt CLASS=literal>ServerSocket</tt> object and waits, blocked in
+a call to its <tt CLASS=literal>accept()</tt> method, until a connection
+arrives. When it does, the <tt CLASS=literal>accept()</tt> method creates
+a <tt CLASS=literal>Socket</tt> object the server uses to
+communicate with the client. A server carries on multiple
+conversations at once; there is only a single
+<tt CLASS=literal>ServerSocket</tt>, but one active
+<tt CLASS=literal>Socket</tt> object for each client, as shown in <A HREF="ch09_01.htm#EXJ-CH-9-FIG-2">Figure 9.2</A>.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-9-FIG-2">Figure 9.2: Clients and servers, Sockets and ServerSockets</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0902.gif" alt="[Graphic: Figure 9-2]" width=503 height=213 border=0>
+
+</DIV>
+
+<P CLASS=para>
+A client needs two pieces of information to locate and connect
+to another server on the Internet: a hostname (used to find the
+host's network address) and a port number. The port number is an
+identifier that differentiates between multiple clients or servers on
+the same host. A server application listens on a prearranged port
+while waiting for connections. Clients select the port number assigned
+to the service they want to access. If you think of the host computers
+as hotels and the applications as guests, then the ports are like the
+guests' room numbers. For one guest to call another, he or she
+must know the other party's hotel name and room number.
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-9-SECT-1.1.1">Clients</A></h4>
+
+<P CLASS=para>
+A client application opens a connection to a server by constructing a
+<tt CLASS=literal>Socket</tt> that specifies the hostname and port number
+of the desired server:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+try { 
+    Socket sock = new Socket("wupost.wustl.edu", 25); 
+}  
+catch ( UnknownHostException e ) { 
+    System.out.println("Can't find host."); 
+}  
+catch ( IOException e ) { 
+    System.out.println("Error connecting to host."); 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+This code fragment attempts to connect a <tt CLASS=literal>Socket</tt> to
+port 25 (the SMTP mail service) of the host
+wupost.wustl.edu. The client handles the
+possibility that the hostname can't be resolved
+(<tt CLASS=literal>UnknownHostException</tt>) and that it might not be
+able to connect to it (<tt CLASS=literal>IOException</tt>).
+
+<P CLASS=para>
+As an alternative to using a hostname, you can provide a string version 
+of the host's IP address: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+Socket sock = new Socket("128.252.120.1", 25);    // wupost.wustl.edu 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Once a connection is made, input and output streams can be retrieved with 
+the <tt CLASS=literal>Socket</tt> <tt CLASS=literal>getInputStream()</tt> 
+and <tt CLASS=literal>getOutputStream()</tt> methods. The following 
+(rather arbitrary and strange) conversation illustrates sending and receiving 
+some data with the streams. Refer to <A HREF="ch08_01.htm">Chapter 8, <i>Input/Output Facilities</i></A> for a complete 
+discussion of working with streams. 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+try { 
+    Socket server = new Socket("foo.bar.com", 1234); 
+    InputStream in = server.getInputStream(); 
+    OutputStream out = server.getOutputStream(); 
+ 
+    // Write a byte 
+    out.write(42); 
+ 
+    // Say "Hello" (send newline delimited string) 
+    PrintStream pout = new PrintStream( out ); 
+    pout.println("Hello!"); 
+ 
+    // Read a byte 
+    Byte back = in.read(); 
+ 
+    // Read a newline delimited string 
+    DataInputStream din = new DataInputStream( in ); 
+    String response = din.readLine(); 
+ 
+    server.close(); 
+}  
+catch (IOException e ) { } 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+In the exchange above, the client first creates a
+<tt CLASS=literal>Socket</tt> for communicating with the server. The
+<tt CLASS=literal>Socket</tt> constructor specifies the server's
+hostname (foo.bar.com) and a prearranged port
+number (1234). Once the connection is established, the client writes a
+single byte to the server using the
+<tt CLASS=literal>OutputStream</tt>'s <tt CLASS=literal>write()</tt>
+method. It then wraps a <tt CLASS=literal>PrintStream</tt> around the
+<tt CLASS=literal>OutputStream</tt> in order to send text more
+easily. Next, it performs the complementary operations, reading a byte
+from the server using <tt CLASS=literal>InputStream</tt>'s
+<tt CLASS=literal>read()</tt> and then creating a
+<tt CLASS=literal>DataInputStream</tt> from which to get a string of
+text. Finally, it terminates the connection with the
+<tt CLASS=literal>close()</tt> method. All these operations have the
+potential to generate <tt CLASS=literal>IOException</tt>s; the
+<tt CLASS=literal>catch</tt> clause is where our application would deal
+with these.
+
+</DIV>
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-9-SECT-1.1.2">Servers</A></h4>
+
+<P CLASS=para>
+After a connection is established, a server application uses the same
+kind of <tt CLASS=literal>Socket</tt> object for its side of the
+communications. However, to accept a connection from a client, it
+must first create a <tt CLASS=literal>ServerSocket</tt>, bound to the
+correct port. Let's recreate the previous conversation from the
+server's point of view:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+// Meanwhile, on foo.bar.com... 
+try { 
+    ServerSocket listener = new ServerSocket( 1234 ); 
+ 
+    while ( !finished ) { 
+        Socket aClient = listener.accept();    // wait for connection 
+ 
+        InputStream in = aClient.getInputStream(); 
+        OutputStream out = aClient.getOutputStream(); 
+ 
+        // Read a byte 
+        Byte importantByte = in.read(); 
+ 
+        // Read a string 
+        DataInputStream din = new DataInputStream( in ); 
+        String request = din.readLine(); 
+ 
+        // Write a byte 
+        out.write(43); 
+ 
+        // Say "Goodbye" 
+        PrintStream pout = new PrintStream( out ); 
+        pout.println("Goodbye!"); 
+ 
+        aClient.close(); 
+    } 
+ 
+    listener.close(); 
+ 
+} 
+catch (IOException e ) { } 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+First, our server creates a <tt CLASS=literal>ServerSocket</tt> attached
+to port 1234. On some systems there are rules about what ports an
+application can use. Port numbers below 1024 are usually reserved for
+system processes and standard, well-known services, so we pick a port
+number outside of this range. The <tt CLASS=literal>ServerSocket</tt> need
+be created only once. Thereafter we can accept as many connections as
+arrive.
+
+<P CLASS=para>
+Next we enter a loop, waiting for the
+<tt CLASS=literal>accept()</tt> method of the
+<tt CLASS=literal>ServerSocket</tt> to return an active
+<tt CLASS=literal>Socket</tt> connection from a client. When a connection
+has been established, we perform the server side of our dialog, then
+close the connection and return to the top of the loop to wait for
+another connection. Finally, when the server application wants to
+stop listening for connections altogether, it calls the
+<tt CLASS=literal>close()</tt> method of the
+<tt CLASS=literal>ServerSocket</tt>.[1]
+
+<blockquote class=footnote>
+<P CLASS=para>[1] 
+A somewhat obscure security feature in TCP/IP
+specifies that if a server socket actively closes a connection while a
+client is connected, it may not be able to bind (attach itself) to the
+same port on the server host again for a period of time (the maximum
+time to live of a packet on the network). It's possible to turn off
+this feature, and it's likely that your Java implementation will have
+done so.
+</blockquote>
+<P CLASS=para>
+As you can see, this server is single-threaded; it handles
+one connection at a time; it doesn't call
+<tt CLASS=literal>accept()</tt> to listen for a new connection until it's
+finished with the current connection. A more realistic server would
+have a loop that accepts connections concurrently and passes them off
+to their own threads for processing. (Our tiny HTTP
+daemon in a later section will do just this.)
+
+</DIV>
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-9-SECT-1.1.3">Sockets and security</A></h4>
+
+<P CLASS=para>
+The examples above presuppose the client has permission to
+connect to the server, and that the server is allowed to listen on the
+specified socket. This is not always the case. Specifically, applets
+and other applications run under the auspices of a
+<tt CLASS=literal>SecurityManager</tt> that can impose arbitrary
+restrictions on what hosts they may or may not talk to, and whether
+they can listen for connections. The security policy imposed by the
+current version of Netscape Navigator allows applets to open
+socket connections only to the host that served them. That is, they can
+talk back only to the server from which their class files were
+retrieved. Applets are not allowed to open server sockets themselves.
+
+<P CLASS=para>
+Now, this doesn't meant an applet can't cooperate
+with its server to communicate with anyone, anywhere. A server could
+run a proxy that lets the applet communicate indirectly with anyone it
+likes. What the current security policy prevents is malicious applets
+roaming around inside corporate firewalls. It places the burden of
+security on the originating server, and not the client
+machine. Restricting access to the originating server limits the
+usefulness of "trojan" applications that do annoying
+things from the client side. You won't let your proxy mail bomb
+people, because you'll be blamed.
+
+</DIV>
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-9-SECT-1.3">The DateAtHost Client</A></h3>
+
+<P CLASS=para>
+<A NAME="CH09.DATE1"></A><A NAME="CH09.DATE2"></A>Many networked workstations run a time service that dispenses their
+local clock time on a well-known port. This was a precursor of
+NTP, the more general Network Time Protocol. In the
+next example, <tt CLASS=literal>DateAtHost</tt>, we'll make a specialized
+subclass of <tt CLASS=literal>java.util.Date</tt> that fetches the time
+from a remote host instead of initializing itself from the local
+clock. (See <A HREF="ch07_01.htm">Chapter 7, <i>Basic Utility Classes</i></A> for a complete discussion of the
+<tt CLASS=literal>Date</tt> class.)
+
+<P CLASS=para>
+<tt CLASS=literal>DateAtHost</tt> connects to the time service
+(port 37) and reads four bytes representing the time on the remote
+host. These four bytes are interpreted as an integer representing the
+number of seconds since the turn of the
+century. <tt CLASS=literal>DateAtHost</tt> converts this to Java's
+variant of the absolute time (milliseconds since January 1, 1970, a date
+that should be familiar to UNIX users) and then
+uses the remote host's time to initialize itself:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.net.Socket; 
+import java.io.*; 
+  
+public class DateAtHost extends java.util.Date { 
+    static int timePort = 37;            
+    static final long offset = 2208988800L; // Seconds from century to  
+                                            // Jan 1, 1970 00:00 GMT 
+  
+    public DateAtHost( String host ) throws IOException { 
+        this( host, timePort ); 
+    } 
+ 
+    public DateAtHost( String host, int port ) throws IOException { 
+        Socket sock = new Socket( host, port ); 
+        DataInputStream din = 
+            new DataInputStream(sock.getInputStream()); 
+        int time = din.readInt(); 
+        sock.close(); 
+  
+        setTime( (((1L &lt;&lt; 32) + time) - offset) * 1000 ); 
+    } } 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+That's all there is to it. It's not very long, even with a
+few frills. We have supplied two possible constructors for
+<tt CLASS=literal>DateAtHost</tt>. Normally we'll use the first,
+which simply takes the name of the remote host as an argument. The
+second, overloaded constructor specifies the hostname and the
+port number of the remote time service. (If the time service were
+running on a nonstandard port, we would use the second constructor to
+specify the alternate port number.) This second constructor does the
+work of making the connection and setting the time. The first
+constructor simply invokes the second (using the
+<tt CLASS=literal>this()</tt> construct) with the default port as an
+argument. Supplying simplified constructors that invoke their siblings
+with default arguments is a common and useful technique.
+
+<P CLASS=para>
+The second constructor opens a socket to the specified port on the
+remote host. It creates a <tt CLASS=literal>DataInputStream</tt> to wrap
+the input stream and then reads a 4-byte integer using the
+<tt CLASS=literal>readInt()</tt> method. It's no coincidence the bytes are
+in the right order. 
+Java's <tt CLASS=literal>DataInputStream</tt>
+and <tt CLASS=literal>DataOutputStream</tt> classes work with the bytes of
+integer types in <I CLASS=emphasis>network byte order</I> (most
+significant to least significant). The time protocol (and other
+standard network protocols that deal with binary data) also uses the
+network byte order, so we don't need to call any conversion
+routines. (Explicit data conversions would probably be necessary if we
+were using a nonstandard protocol, especially when talking to a
+non-Java client or server.) After reading the data, we're
+finished with the socket, so we close it, terminating the connection
+to the server. Finally, the constructor initializes the rest of the
+object by calling <tt CLASS=literal>Date</tt>'s
+<tt CLASS=literal>setTime()</tt> method with the calculated time
+value.[2]
+
+<blockquote class=footnote>
+<P CLASS=para>[2] 
+The conversion first creates a long value, which is the unsigned 
+equivalent of the integer <tt CLASS=literal>time</tt>. It subtracts 
+an offset to make the time relative to the epoch (January 1, 1970) rather 
+than the century, and multiples by 1000 to convert to milliseconds. 
+</blockquote>
+<P CLASS=para>
+The <tt CLASS=literal>DateAtHost</tt> class can work with a time
+retrieved from a remote host almost as easily as
+<tt CLASS=literal>Date</tt> is used with the time on the local host. The
+only additional overhead is that we have to deal with the possible
+<tt CLASS=literal>IOException</tt> that can be thrown by the
+<tt CLASS=literal>DateAtHost</tt> constructor:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+try { 
+    Date d = new DateAtHost( "sura.net" ); 
+    System.out.println( "The time over there is: " + d ); 
+    int hours = d.getHours(); 
+    int minutes = d.getMinutes(); 
+    ... 
+}  
+catch ( IOException e ) { } 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+This example fetches the time at the host sura.net 
+and prints its value. It then looks at some components of the time using 
+the <tt CLASS=literal>getHours()</tt> and <tt CLASS=literal>getMinutes()</tt> 
+methods of the <tt CLASS=literal>Date</tt> class.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-9-SECT-1.5">The TinyHttpd Server</A></h3>
+
+<P CLASS=para>
+<A NAME="CH09.HTTP"></A>Have you ever wanted your very own Web server? Well, you're in
+luck. In this section, we're going to build
+<tt CLASS=literal>TinyHttpd</tt>, a minimal but functional
+HTTP daemon. <tt CLASS=literal>TinyHttpd</tt> listens
+on a specified port and services simple HTTP
+"get file" requests. They look something like this:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+GET <tt CLASS=replaceable><i>/path/filename</i></tt> <tt CLASS=replaceable><i>[optional stuff]</i></tt> 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Your Web browser sends one or more as lines for each document
+it retrieves. Upon reading the request, the server tries to open
+the specified file and send its contents. If that document contains
+references to images or other items to be displayed inline,
+the browser continues with additional <tt CLASS=literal>GET</tt>
+requests. For best performance (especially in a time-slicing
+environment), <tt CLASS=literal>TinyHttpd</tt> services each request in
+its own thread. 
+Therefore, <tt CLASS=literal>TinyHttpd</tt> can service
+several requests concurrently.
+
+<P CLASS=para>
+Over and above the limitations imposed by its simplicity,
+<tt CLASS=literal>TinyHttpd</tt> suffers from the limitations imposed by
+the fickleness of filesystem access, as discussed in <A HREF="ch08_01.htm">Chapter 8, <i>Input/Output Facilities</i></A>. It's important to remember that file pathnames
+are still architecture dependent--as is the concept of a
+filesystem to begin with. This example should work, as is, on
+UNIX and DOS-like systems, but
+may require some customizations to account for differences on other
+platforms. It's possible to write more elaborate code that uses the
+environmental information provided by Java to tailor itself to the
+local system. (<A HREF="ch08_01.htm">Chapter 8, <i>Input/Output Facilities</i></A> gives some hints about how to
+do this).
+
+<DIV CLASS=warning>
+<P CLASS=warning><BLOCKQUOTE><P><B>WARNING:</B>
+</blockquote><P>
+</DIV>
+
+<P CLASS=para>
+This example will serve files from your host without
+protection. Don't try this at work.
+</blockquote><P>
+</DIV>
+
+<P CLASS=para>
+Now, without further ado, here's <tt CLASS=literal>TinyHttpd</tt>: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.net.*; 
+import java.io.*; 
+import java.util.*; 
+ 
+public class TinyHttpd {  
+    public static void main( String argv[] ) throws IOException { 
+        ServerSocket ss = new ServerSocket(Integer.parseInt(argv[0])); 
+        while ( true ) 
+            new TinyHttpdConnection( ss.accept() ); 
+    } 
+} 
+ 
+class TinyHttpdConnection extends Thread { 
+    Socket sock; 
+    TinyHttpdConnection ( Socket s ) { 
+        sock = s; 
+        setPriority( NORM_PRIORITY - 1 ); 
+        start(); 
+    } 
+ 
+    public void run() { 
+        try { 
+            OutputStream out = sock.getOutputStream(); 
+            String req = 
+                new DataInputStream(sock.getInputStream()).readLine(); 
+            System.out.println( "Request: "+req ); 
+ 
+            StringTokenizer st = new StringTokenizer( req ); 
+            if ( (st.countTokens() &gt;= 2) &amp;&amp; 
+                  st.nextToken().equals("GET") ) { 
+                if ( (req = st.nextToken()).startsWith("/") ) 
+                    req = req.substring( 1 ); 
+                if ( req.endsWith("/") || req.equals("") )
+                    req = req + "index.html";
+ 
+                try {    
+                    FileInputStream fis = new FileInputStream ( req ); 
+                    byte [] data = new byte [ fis.available() ]; 
+                    fis.read( data ); 
+                    out.write( data ); 
+                }  
+                catch ( FileNotFoundException e ) 
+                    new PrintStream( out ).println("404 Not Found"); 
+            } else  
+                new PrintStream( out ).println( "400 Bad Request" ); 
+ 
+            sock.close(); 
+        }  
+        catch ( IOException e ) 
+            System.out.println( "I/O error " + e ); 
+    } 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Compile <tt CLASS=literal>TinyHttpd</tt> and place it in your class 
+path. Go to a directory with some interesting documents and start the daemon, 
+specifying an unused port number as an argument. For example: 
+
+<DIV CLASS=screen>
+<P>
+<PRE>
+% java TinyHttpd 1234
+</PRE>
+</DIV>
+
+<P CLASS=para>
+You should now be able to use your Web browser to
+retrieve files from your host. You'll have to specify the
+nonstandard port number in the URL. For example, if
+your hostname is foo.bar.com, and you started the
+server as above, you could reference a file as in:
+
+<DIV CLASS=screen>
+<P>
+<PRE>
+http://foo.bar.com:1234/welcome.html 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+<tt CLASS=literal>TinyHttpd</tt> looks for files relative to its current
+directory, so the pathnames you provide should be relative to
+that location. Retrieved some files? Al'righty then,
+let's take a closer look.
+
+<P CLASS=para>
+<tt CLASS=literal>TinyHttpd</tt> is comprised of two classes. The
+public <tt CLASS=literal>TinyHttpd</tt> class contains the
+<tt CLASS=literal>main()</tt> method of our standalone application. It
+begins by creating a <tt CLASS=literal>ServerSocket</tt>, attached to the
+specified port. It then loops, waiting for client connections and
+creating instances of the second class, a
+<tt CLASS=literal>TinyHttpdConnection</tt> thread, to service each
+request. The <tt CLASS=literal>while</tt> loop waits for the
+<tt CLASS=literal>ServerSocket</tt> <tt CLASS=literal>accept()</tt> method to
+return a new <tt CLASS=literal>Socket</tt> for each client connection. The
+<tt CLASS=literal>Socket</tt> is passed as an argument to construct the
+<tt CLASS=literal>TinyHttpdConnection</tt> thread that handles it.
+
+<P CLASS=para>
+<tt CLASS=literal>TinyHttpdConnection</tt> is a subclass of
+<tt CLASS=literal>Thread</tt>. It lives long enough to process one client
+connection and then dies.
+<tt CLASS=literal>TinyHttpdConnection</tt>'s constructor does three
+things. After saving the <tt CLASS=literal>Socket</tt> argument for its
+caller, it adjusts its own priority and then invokes
+<tt CLASS=literal>start()</tt> to bring its <tt CLASS=literal>run()</tt>
+method to life. By lowering its priority to
+<tt CLASS=literal>NORM_PRIORITY-1</tt> (just below the default priority),
+we ensure that the threads servicing established connections
+won't block <tt CLASS=literal>TinyHttpd</tt>'s main thread
+from accepting new requests. (On a time-slicing system, this is less
+important.)
+
+<P CLASS=para>
+The body of <tt CLASS=literal>TinyHttpdConnection</tt>'s
+<tt CLASS=literal>run()</tt> method is where all the magic
+happens. First, we fetch an <tt CLASS=literal>OutputStream</tt> for talking
+back to our client. The second line reads the <tt CLASS=literal>GET</tt>
+request from the <tt CLASS=literal>InputStream</tt> into the variable
+<tt CLASS=literal>req</tt>. This request is a single newline-terminated
+<tt CLASS=literal>String</tt> that looks like the <tt CLASS=literal>GET</tt>
+request we described earlier. Since this is the only time we read from
+this socket, it's hard to resist the urge to be terse. Alternatively,
+we could break that statement into three steps: getting the
+<tt CLASS=literal>InputStream</tt>, creating the
+<tt CLASS=literal>DataInputStream</tt> wrapper, and reading the line. The
+three-line version is certainly more readable and should not be
+noticeably slower.
+
+<P CLASS=para>
+We then parse the contents of <tt CLASS=literal>req</tt> to extract
+a filename. The next few lines are a brief exercise in string
+manipulation. We create a <tt CLASS=literal>StringTokenizer</tt> and make
+sure there are at least two tokens. Using
+<tt CLASS=literal>nextToken()</tt>, we take the first token and make sure
+it's the word <tt CLASS=literal>GET</tt>. (If both conditions
+aren't met, we have an error.) Then we take the next token
+(which should be a filename), assign it to <tt CLASS=literal>req</tt>&nbsp;, and
+check whether it begins with "/". If so, we use
+<tt CLASS=literal>substring()</tt> to strip the first character, giving us
+a filename relative to the current directory. If it doesn't
+begin with "/", the filename is already relative to the
+current directory. Finally, we check to see if the requested filename
+looks like a directory name (i.e., ends in slash) or is empty. In
+these cases, we append the familiar default filename
+<i CLASS=filename>index.html</i>.
+
+<P CLASS=para>
+Once we have the filename, we try to open the specified file
+and load its contents into a large byte array. (We did something
+similar in the <tt CLASS=literal>ListIt</tt> example in <A HREF="ch08_01.htm">Chapter 8, <i>Input/Output Facilities</i></A>.) If all goes well, we write the data out to
+client on the <tt CLASS=literal>OutputStream</tt>. If we can't parse the
+request or the file doesn't exist, we wrap our
+<tt CLASS=literal>OutputStream</tt> with a <tt CLASS=literal>PrintStream</tt>
+to make it easier to send a textual message. Then we return an
+appropriate HTTP error message. Finally, we close
+the socket and return from <tt CLASS=literal>run()</tt>, removing our
+<tt CLASS=literal>Thread</tt>.
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-9-SECT-1.5.1">Taming the daemon</A></h4>
+
+<P CLASS=para>
+<A NAME="CH09.SEC"></A><A NAME="CH09.RESTRICT1"></A><A NAME="CH09.RESTRICT2"></A><A NAME="CH09.RESTRICT3"></A>The biggest problem with <tt CLASS=literal>TinyHttpd</tt> is that there
+are no restrictions on the files it can access. With a little
+trickery, the daemon will happily send any file in your filesystem to
+the client. It would be nice if we could restrict
+<tt CLASS=literal>TinyHttpd</tt> to files that are in the current
+directory, or a subdirectory. To make the daemon safer, let's
+add a security manager. I discussed the general framework for security
+managers in <A HREF="ch07_01.htm">Chapter 7, <i>Basic Utility Classes</i></A>. Normally, a security manager is
+used to prevent Java code downloaded over the Net from doing anything
+suspicious. However, a security manager will serve nicely to restrict
+file access in a self-contained application.
+
+<P CLASS=para>
+Here's the code for the security manager class: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.io.*; 
+ 
+class TinyHttpdSecurityManager extends SecurityManager {  
+ 
+    public void checkAccess(Thread g) { }; 
+    public void checkListen(int port) { }; 
+    public void checkLink(String lib) { }; 
+    public void checkPropertyAccess(String key) { }; 
+    public void checkAccept(String host, int port) { }; 
+    public void checkWrite(FileDescriptor fd) { }; 
+    public void checkRead(FileDescriptor fd) { }; 
+ 
+    public void checkRead( String s ) {  
+        if ( new File(s).isAbsolute() || (s.indexOf("..") != -1) ) 
+            throw new 
+               SecurityException("Access to file : "+s+" denied."); 
+    }  
+}  
+</PRE>
+</DIV>
+
+<P CLASS=para>
+ The
+heart of this security manager is the <tt CLASS=literal>checkRead()</tt>
+method. It checks two things: it makes sure that the pathname
+we've been given isn't an absolute path, which could name any
+file in the filesystem; and it makes sure the pathname doesn't
+have a double dot (<tt CLASS=literal>..</tt>) in it, which refers to the
+parent of the current directory. With these two restrictions, we can
+be sure (at least on a UNIX or
+DOS-like filesystem) that we have restricted access
+to only subdirectories of the current directory. If the pathname is
+absolute or contains "<tt CLASS=literal>..</tt>",
+<tt CLASS=literal>checkRead()</tt> throws a
+<tt CLASS=literal>SecurityException</tt>.
+
+<P CLASS=para>
+The other do-nothing method implementations--e.g.,
+<tt CLASS=literal>checkAccess()</tt>--allow the daemon to do its work
+without interference from the security manager. If we don't
+install a security manager, the application runs with no
+restrictions. However, as soon as we install any security manager, we
+inherit implementations of many "check" routines. The
+default implementations won't let you do anything; they just
+throw a security exception as soon as they are called. We have to open
+holes so the daemon can do its own work; it still has to accept
+connections, listen on sockets, create threads, read property lists,
+etc. Therefore, we override the default checks with routines that
+allow these things.
+
+<P CLASS=para>
+Now you're thinking, isn't that overly permissive? Not for 
+this application; after all, <tt CLASS=literal>TinyHttpd</tt> never 
+tries to load foreign classes from the Net. The only code we are executing 
+is our own, and it's assumed we won't do anything dangerous. If 
+we were planning to execute untrusted code, the security manager would 
+have to be more careful about what to permit. 
+
+<P CLASS=para>
+Now that we have a security manager, we must modify
+<tt CLASS=literal>TinyHttpd</tt> to use it. Two changes are necessary: we
+must install the security manager and catch the security exceptions it
+generates. To install the security manager, add the following code at
+the beginning of <tt CLASS=literal>TinyHttpd</tt>'s
+<tt CLASS=literal>main()</tt> method:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+System.setSecurityManager( new TinyHttpdSecurityManager() ); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+To catch the security exception, add the following
+<tt CLASS=literal>catch</tt> clause after
+<tt CLASS=literal>FileNotFoundException</tt>'s <tt CLASS=literal>catch</tt>
+clause:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+catch ( SecurityException e ) 
+    new PrintStream( out ).println( "403 Forbidden" ); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Now the daemon can't access anything that isn't within the
+current directory or a subdirectory. If it tries to, the security
+manager throws an exception and prevents access to the file. The
+daemon then returns a standard HTTP error message
+to the client.
+
+<P CLASS=para>
+<tt CLASS=literal>TinyHttpd</tt> still has room for
+improvement. First, it consumes a lot of memory by allocating a huge
+array to read the entire contents of the file all at once. A more
+realistic implementation would use a buffer and send large amounts of
+data in several passes. <tt CLASS=literal>TinyHttpd</tt> also fails to
+deal with simple things like directories. It wouldn't be hard to
+add a few lines of code (again, refer to the <tt CLASS=literal>ListIt</tt>
+example in <A HREF="ch08_01.htm">Chapter 8, <i>Input/Output Facilities</i></A>) to read a directory and generate
+linked HTML listings like most Web servers do.
+
+</DIV>
+
+</DIV>
+
+</DIV>
+
+
+<DIV CLASS=htmlnav>
+
+<P>
+<HR align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch08_04.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><a href="index.htm"><img src='gifs/txthome.gif' border=0 alt='Home'></a></td>
+<td width=172 align=right valign=top><A HREF="ch09_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+<tr>
+<td width=172 align=left valign=top>Data compression</td>
+<td width=171 align=center valign=top><a href="index/idx_0.htm"><img src='gifs/index.gif' alt='Book Index' border=0></a></td>
+<td width=172 align=right valign=top>Datagram Sockets</td>
+</tr>
+</table>
+<hr align=left width=515>
+
+<IMG SRC="gifs/smnavbar.gif" USEMAP="#map" BORDER=0> 
+<MAP NAME="map"> 
+<AREA SHAPE=RECT COORDS="0,0,108,15" HREF="../javanut/index.htm"
+alt="Java in a Nutshell"> 
+<AREA SHAPE=RECT COORDS="109,0,200,15" HREF="../langref/index.htm" 
+alt="Java Language Reference"> 
+<AREA SHAPE=RECT COORDS="203,0,290,15" HREF="../awt/index.htm" 
+alt="Java AWT"> 
+<AREA SHAPE=RECT COORDS="291,0,419,15" HREF="../fclass/index.htm" 
+alt="Java Fundamental Classes"> 
+<AREA SHAPE=RECT COORDS="421,0,514,15" HREF="../exp/index.htm" 
+alt="Exploring Java"> 
+</MAP>
+</DIV>
+
+</BODY>
+</HTML>

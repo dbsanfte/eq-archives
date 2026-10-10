@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//ORA//DTD CD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>[Chapter 3] Tools of the Trade</TITLE>
+<META NAME="author" CONTENT="Pat Niemeyer and Josh Peck">
+<META NAME="date" CONTENT="Tue Jul 22 18:49:28 1997">
+<META NAME="form" CONTENT="html">
+<META NAME="metadata" CONTENT="dublincore.0.1">
+<META NAME="objecttype" CONTENT="book part">
+<META NAME="otheragent" CONTENT="gmat dbtohtml">
+<META NAME="publisher" CONTENT="O'Reilly &amp; Associates, Inc.">
+<META NAME="source" CONTENT="SGML">
+<META NAME="subject" CONTENT="Java">
+<META NAME="title" CONTENT="Exploring Java">
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<DIV CLASS=htmlnav>
+<H1><a href='index.htm'><IMG SRC="gifs/smbanner.gif"
+     ALT="Exploring Java" border=0></a></H1>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch02_04.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><B><FONT FACE="ARIEL,HELVETICA,HELV,SANSERIF" SIZE="-1">Chapter 3</FONT></B></TD>
+<td width=172 align=right valign=top><A HREF="ch03_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+</table>
+
+&nbsp;
+<hr align=left width=515>
+</DIV>
+<H1 CLASS=chapter><A CLASS="TITLE" NAME="EXJ-CH-3">3. Tools of the Trade</A></H1>
+
+<DIV CLASS=htmltoc>
+
+<p>
+<b>Contents:</b><br>
+The Java Interpreter<br>
+<A HREF="ch03_02.htm">The Class Path</A><BR>
+<A HREF="ch03_03.htm">The Java Compiler</A><BR>
+<A HREF="ch03_04.htm">The Netscape Alternative</A><BR>
+<A HREF="ch03_05.htm">The Applet Tag</A><BR>
+
+<p>
+</DIV>
+
+<P CLASS=para>
+As I described at the end of <A HREF="ch01_01.htm">Chapter 1, <i>Yet Another Language?</i></A>, by now
+you should have a number of options for Java development
+environments. The examples in this book were developed using the
+Solaris version of the Java Development Kit (JDK),
+so I'm going to describe those tools here. When I refer to the
+compiler or interpreter, I'll be referring to the command-line
+versions of these tools, so the book is decidedly biased toward those
+of you who are working in a UNIX or
+DOS-like environment with a shell and filesystem.
+However, the basic features I'll be describing for
+Sun's Java interpreter and compiler should be applicable to
+other Java environments as well.
+
+<P CLASS=para>
+In this chapter, I'll describe the tools you'll need
+to compile and run Java applications. I'll also cover the
+HTML <tt CLASS=literal>&lt;applet&gt;</tt> tag and other
+information you'll need to know to incorporate Java applets
+in your Web pages.
+
+<DIV CLASS=sect1>
+<h2 CLASS=sect1><A CLASS="TITLE" NAME="EXJ-CH-3-SECT-1">3.1 The Java Interpreter</A></h2>
+
+<P CLASS=para>
+<A NAME="CH03.INTERPRET"></A>A Java interpreter is software that implements the Java virtual
+machine and runs Java applications. It can be a separate piece
+of software like the one that comes with the JDK,
+or part of a larger application like the Netscape Navigator Web
+browser. It's likely that the interpreter itself is written in a
+native, compiled language for your particular platform. Other tools,
+like Java compilers and development environments, can (and one could
+argue, should) be written in Java.
+
+<P CLASS=para>
+The Java interpreter performs all of the activities of the Java
+run-time system. It loads Java class files and interprets the compiled
+byte-code. It verifies compiled classes that are loaded from
+untrusted sources by applying the rules discussed in <A HREF="ch01_01.htm">Chapter 1, <i>Yet Another Language?</i></A>. In an implementation that supports dynamic, or
+"just in time," compilation, the interpreter also serves
+as a specialized compiler that turns Java byte-code into native
+machine instructions.
+
+<P CLASS=para>
+Throughout the rest of this book, we'll be building both
+standalone Java programs and applets. Both are kinds of Java
+applications run by a Java interpreter. The difference is that a
+standalone Java application has all of its parts; it's a complete
+program that runs independently. An applet, as I described in <A HREF="ch01_01.htm">Chapter 1, <i>Yet Another Language?</i></A>, is more like an embeddable program module; it
+relies on an applet viewer for support. Although Java applets are, of
+course, compiled Java code, the Java interpreter can't directly run
+them because they are used as part of a larger application. An
+applet-viewer application could be a Web browser like Sun's
+HotJava or Netscape Navigator, or a separate applet viewer application
+like the one that comes with Sun's Java Development Kit. All of
+Sun's tools, including HotJava, are written entirely in
+Java. Both HotJava and the applet viewer are standalone Java
+applications run directly by the Java interpreter; these programs
+implement the additional structure needed to run Java applets.
+
+<P CLASS=para>
+Sun's Java interpreter is called <i CLASS=command>java</i>. 
+To start a standalone application with it, you specify an initial class 
+to be loaded. You can also specify options to the interpreter, as well 
+as any command-line arguments that are needed for the application: 
+
+<DIV CLASS=screen>
+<P>
+<PRE>
+% java [<tt CLASS=replaceable><i>interpreter options</i></tt>] <tt CLASS=replaceable><i>class name</i></tt> [<tt CLASS=replaceable><i>program arguments</i></tt>] 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The class should be specified as a fully qualified class name
+including the class package, if any. Note, however, that you
+don't include the <i CLASS=filename>.class</i> file
+extension. Here are a few examples:
+
+<DIV CLASS=screen>
+<P>
+<PRE>
+% java animals.birds.BigBird
+% java test
+</PRE>
+</DIV>
+
+<P CLASS=para>
+<i CLASS=command>java</i> searches for the class in the current 
+<I CLASS=emphasis>class path</I>, which is a list of locations where 
+packages of classes are stored. I'll discuss the class path in detail 
+in the next section, but for now you should know that you can set the class 
+path with the <tt CLASS=literal>-classpath</tt> option. 
+
+<P CLASS=para>
+There are a few other interpreter options you may find useful. The 
+<tt CLASS=literal>-cs</tt> or <tt CLASS=literal>-checksource</tt> 
+option tells <i CLASS=command>java</i> to check the modification 
+times on the specified class file and its corresponding source file. If 
+the class file is out of date, it's automatically recompiled from the 
+source. The <tt CLASS=literal>-verify</tt>, <tt CLASS=literal>-noverify</tt>, 
+and <tt CLASS=literal>-verifyremote</tt> options control the byte-code 
+verification process. By default, <i CLASS=command>java</i> runs 
+the byte-code verifier only on classes loaded from an untrusted source; 
+this is the <tt CLASS=literal>-verifyremote</tt> option. If you specify 
+<tt CLASS=literal>-verify</tt>, the byte-code verifier is run on all 
+classes; <tt CLASS=literal>-noverify</tt> means that the verifier is 
+never run. 
+
+<P CLASS=para>
+Once the class is loaded, <i CLASS=command>java</i> follows a
+very C-like convention and looks to see if the class contains a method
+called <tt CLASS=literal>main()</tt>. If it finds an appropriate
+<tt CLASS=literal>main()</tt>method, the interpreter starts the
+application by executing that method. From there, the application can
+start additional threads, reference other classes, and create its user
+interface or other structures, as shown in <A HREF="ch03_01.htm#EXJ-CH-3-FIG-1">Figure 3.1</A>.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-3-FIG-1">Figure 3.1: The Java interpreter starting a Java application</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0301.gif" alt="[Graphic: Figure 3-1]" width=503 height=175 border=0>
+
+</DIV>
+
+<P CLASS=para>
+In order to run, <tt CLASS=literal>main()</tt> must have the
+right <I CLASS=emphasis>method signature</I>. A method signature is a
+collection of information about the method, as in a C prototype or a
+forward function declaration in other languages. It includes the
+method's name, type, and visibility, as well as its arguments
+and return type. In this case, <tt CLASS=literal>main()</tt> must be a
+<tt CLASS=literal>public</tt>, <tt CLASS=literal>static</tt> method that takes
+an array of <tt CLASS=literal>String</tt> objects as its argument and does
+not return any value (<tt CLASS=literal>void</tt>):
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+public static void main ( String [] myArgs ) 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Because <tt CLASS=literal>main()</tt> is a <tt CLASS=literal>public</tt> 
+method, it can be accessed directly from any other class using the name 
+of the class that contains it. We'll discuss the implications of 
+visibility modifiers such as <tt CLASS=literal>public</tt> in <A HREF="ch05_01.htm">Chapter 5, <i>Objects in Java</i></A>. 
+
+<P CLASS=para>
+The <tt CLASS=literal>main()</tt> method's single argument,
+the array of <tt CLASS=literal>String</tt> objects, holds the command-line
+arguments passed to <i CLASS=command>java</i>. As in C, the name that
+we give the parameter doesn't matter, only the type is
+important. Unlike C, the content of <tt CLASS=literal>myArgs</tt> is a
+true array. There's no need for an argument count parameter, because
+<tt CLASS=literal>myArgs</tt> knows how many arguments it contains and can
+happily provide that information:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+int argc = myArgs.length; 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Java also differs from C in another respect here:
+<tt CLASS=literal>myArgs[0]</tt>is the first command-line argument, not
+the name of the application. If you're accustomed to parsing C
+command-line arguments, you'll need to be careful not to trip
+over this difference.
+
+<P CLASS=para>
+The Java virtual machine continues to run until the
+<tt CLASS=literal>main()</tt>method of its initial class file has returned,
+and until any threads that it started are complete. Special threads
+designated as "daemon" threads are silently killed when
+the rest of the application has completed.
+
+</DIV>
+
+
+<DIV CLASS=htmlnav>
+
+<P>
+<HR align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch02_04.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><a href="index.htm"><img src='gifs/txthome.gif' border=0 alt='Home'></a></td>
+<td width=172 align=right valign=top><A HREF="ch03_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+<tr>
+<td width=172 align=left valign=top>Hello Web! IV: Netscape's Revenge</td>
+<td width=171 align=center valign=top><a href="index/idx_0.htm"><img src='gifs/index.gif' alt='Book Index' border=0></a></td>
+<td width=172 align=right valign=top>The Class Path</td>
+</tr>
+</table>
+<hr align=left width=515>
+
+<IMG SRC="gifs/smnavbar.gif" USEMAP="#map" BORDER=0> 
+<MAP NAME="map"> 
+<AREA SHAPE=RECT COORDS="0,0,108,15" HREF="../javanut/index.htm"
+alt="Java in a Nutshell"> 
+<AREA SHAPE=RECT COORDS="109,0,200,15" HREF="../langref/index.htm" 
+alt="Java Language Reference"> 
+<AREA SHAPE=RECT COORDS="203,0,290,15" HREF="../awt/index.htm" 
+alt="Java AWT"> 
+<AREA SHAPE=RECT COORDS="291,0,419,15" HREF="../fclass/index.htm" 
+alt="Java Fundamental Classes"> 
+<AREA SHAPE=RECT COORDS="421,0,514,15" HREF="../exp/index.htm" 
+alt="Exploring Java"> 
+</MAP>
+</DIV>
+
+</BODY>
+</HTML>

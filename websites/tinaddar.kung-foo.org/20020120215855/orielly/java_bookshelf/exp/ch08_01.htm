@@ -1,0 +1,1092 @@
+<!DOCTYPE HTML PUBLIC "-//ORA//DTD CD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>[Chapter 8] Input/Output Facilities</TITLE>
+<META NAME="author" CONTENT="Pat Niemeyer and Josh Peck">
+<META NAME="date" CONTENT="Tue Jul 22 18:56:59 1997">
+<META NAME="form" CONTENT="html">
+<META NAME="metadata" CONTENT="dublincore.0.1">
+<META NAME="objecttype" CONTENT="book part">
+<META NAME="otheragent" CONTENT="gmat dbtohtml">
+<META NAME="publisher" CONTENT="O'Reilly &amp; Associates, Inc.">
+<META NAME="source" CONTENT="SGML">
+<META NAME="subject" CONTENT="Java">
+<META NAME="title" CONTENT="Exploring Java">
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<DIV CLASS=htmlnav>
+<H1><a href='index.htm'><IMG SRC="gifs/smbanner.gif"
+     ALT="Exploring Java" border=0></a></H1>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch07_07.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><B><FONT FACE="ARIEL,HELVETICA,HELV,SANSERIF" SIZE="-1">Chapter 8</FONT></B></TD>
+<td width=172 align=right valign=top><A HREF="ch08_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+</table>
+
+&nbsp;
+<hr align=left width=515>
+</DIV>
+<H1 CLASS=chapter><A CLASS="TITLE" NAME="EXJ-CH-8">8. Input/Output Facilities</A></H1>
+
+<DIV CLASS=htmltoc>
+
+<p>
+<b>Contents:</b><br>
+Streams<br>
+<A HREF="ch08_02.htm">Files</A><BR>
+<A HREF="ch08_03.htm">Serialization</A><BR>
+<A HREF="ch08_04.htm">Data compression</A><BR>
+
+<p>
+</DIV>
+
+<P CLASS=para>
+<A NAME="CH08.IO1"></A><A NAME="CH08.IO2"></A><A NAME="CH08.IO3"></A>
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+</PRE>
+</DIV>
+
+<P CLASS=para>
+In this chapter, we'll continue our exploration of the Java
+API by looking at many of the classes in the
+<tt CLASS=literal>java.io</tt> package. These classes support a number of
+forms of input and output; I expect you'll use them often in
+your Java applications. <A HREF="ch08_01.htm#EXJ-CH-8-FIG-1">Figure 8.1</A> shows the
+class hierarchy of the <tt CLASS=literal>java.io</tt> package.
+
+<P CLASS=para>
+We'll start by looking at the stream classes in
+<tt CLASS=literal>java.io</tt>; these classes are all subclasses of the
+basic <tt CLASS=literal>InputStream</tt>, <tt CLASS=literal>OutputStream</tt>, <tt CLASS=literal>Reader</tt>, and
+<tt CLASS=literal>Writer</tt> classes. Then we'll examine the
+<tt CLASS=literal>File</tt> class and discuss how you can interact with
+the filesystem using classes in <tt CLASS=literal>java.io</tt>.  Finally,
+we'll take a quick look at the data compression classes provided in
+<tt CLASS=literal>java.util.zip</tt>.
+
+<DIV CLASS=sect1>
+<h2 CLASS=sect1><A CLASS="TITLE" NAME="EXJ-CH-8-SECT-1">8.1 Streams</A></h2>
+
+<P CLASS=para>
+<A NAME="CH08.STREAMS1"></A><A NAME="CH08.STREAMS2"></A>All fundamental I/O in Java is based on <I CLASS=emphasis>streams</I>.
+A stream represents a flow of data, or a channel of communication
+with (at least conceptually) a writer at one end and a reader at the
+other. When you are working with terminal input and output, reading
+or writing files, or communicating through sockets in Java, you are
+using a stream of one type or another. So you can see the forest
+without being distracted by the trees, I'll start by summarizing
+the different types of streams.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-8-FIG-1">Figure 8.1: The java.io package</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0801.gif" alt="[Graphic: Figure 8-1]" width=502 height=493 border=0>
+
+</DIV>
+
+<P>
+<DL CLASS=variablelist>
+<DT CLASS=varlistentry><tt CLASS=literal>InputStream</tt>/<tt CLASS=literal>OutputStream</tt><br>
+<DD>
+
+<P CLASS=para>
+Abstract classes that define the basic functionality 
+for reading or writing an unstructured sequence of 
+bytes. All other byte streams in Java are built on top of 
+the basic <tt CLASS=literal>InputStream</tt> and <tt CLASS=literal>OutputStream</tt>.
+
+<p>
+<DT CLASS=varlistentry><tt CLASS=literal>Reader</tt>/<tt CLASS=literal>Writer</tt><br>
+<DD>
+
+<P CLASS=para>
+Abstract classes that define the basic functionality 
+for reading or writing an unstructured sequence of 
+characters. All other character streams in Java are built on top of 
+<tt CLASS=literal>Reader</tt> and <tt CLASS=literal>Writer</tt>.
+
+<p>
+<DT CLASS=varlistentry><tt CLASS=literal>InputStreamReader</tt>/<tt CLASS=literal>OutputStreamWriter</tt><br>
+<DD>
+
+<P CLASS=para>
+"Bridge" classes that convert bytes to characters and vice versa.
+
+<p>
+<DT CLASS=varlistentry><tt CLASS=literal>DataInputStream</tt>/<tt CLASS=literal>DataOutputStream</tt><br>
+<DD>
+
+<P CLASS=para>
+Specialized stream filters that add the ability to
+read and write simple data types like numeric primitives and
+<tt CLASS=literal>String</tt> objects.
+
+<p>
+<DT CLASS=varlistentry><tt CLASS=literal>BufferedInputStream</tt>/<tt CLASS=literal>BufferedOutputStream</tt>
+/<tt CLASS=literal>BufferedReader</tt>/<tt CLASS=literal>BufferedWriter</tt><br>
+<DD>
+
+<P CLASS=para>
+Specialized streams that 
+incorporate buffering for additional efficiency. 
+
+<p>
+<DT CLASS=varlistentry><tt CLASS=literal>PrintWriter</tt><br>
+<DD>
+
+<P CLASS=para>
+A specialized character stream that makes it simple to print text.
+
+<p>
+<DT CLASS=varlistentry><tt CLASS=literal>PipedInputStream</tt>/<tt CLASS=literal>PipedOutputStream</tt>
+/<tt CLASS=literal>PipedReader</tt>/<tt CLASS=literal>PipedWriter</tt><br>
+<DD>
+
+<P CLASS=para>
+"Double-ended" streams that always occur in pairs. Data written 
+into a <tt CLASS=literal>PipedOutputStream</tt> or <tt CLASS=literal>PipedWriter</tt>
+is read from its corresponding <tt CLASS=literal>PipedInputStream</tt> or
+<tt CLASS=literal>PipedReader</tt>. 
+
+<p>
+<DT CLASS=varlistentry><tt CLASS=literal>FileInputStream</tt>/<tt CLASS=literal>FileOutputStream</tt>
+/<tt CLASS=literal>FileReader</tt>/<tt CLASS=literal>FileWriter</tt><br>
+<DD>
+
+<P CLASS=para>
+Implementations of <tt CLASS=literal>InputStream</tt>, <tt CLASS=literal>OutputStream</tt>, 
+<tt CLASS=literal>Reader</tt>, and
+<tt CLASS=literal>Writer</tt> that read from and write to files on
+the local filesystem.</DL>
+<P CLASS=para>
+Streams in Java are one-way streets. The
+<tt CLASS=literal>java.io</tt> input and
+output classes represent the ends of
+a simple stream, as shown in <A HREF="ch08_01.htm#EXJ-CH-8-FIG-2">Figure 8.2</A>. For
+bidirectional conversations, we use one of each type of stream.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-8-FIG-2">Figure 8.2: Basic input and output stream functionality</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0802.gif" alt="[Graphic: Figure 8-2]" width=503 height=153 border=0>
+
+</DIV>
+
+<P CLASS=para>
+<tt CLASS=literal>InputStream</tt> and <tt CLASS=literal>OutputStream</tt> are
+<tt CLASS=literal>abstract</tt> classes that define the lowest-level
+interface for all byte streams. They contain methods for reading or writing
+an unstructured flow of byte-level data. Because these classes are
+abstract, you can never create a "pure" input or output stream. Java
+implements subclasses of these for activities like reading and writing
+files, and communicating with sockets. Because all byte streams inherit the
+structure of <tt CLASS=literal>InputStream</tt> or
+<tt CLASS=literal>OutputStream</tt>, the various kinds of byte streams can be
+used interchangeably. For example, a method often takes an
+<tt CLASS=literal>InputStream</tt> as an argument. This means the method
+accepts any subclass of <tt CLASS=literal>InputStream</tt>. Specialized
+types of streams can also be layered to provide higher-level
+functionality, such as buffering or handling larger data types.
+
+<P CLASS=para>
+In Java 1.1, new classes based around <tt CLASS=literal>Reader</tt> and 
+<tt CLASS=literal>Writer</tt> were added
+to the <tt CLASS=literal>java.io</tt> package.  <tt CLASS=literal>Reader</tt> and 
+<tt CLASS=literal>Writer</tt> are very much like <tt CLASS=literal>InputStream</tt> and 
+<tt CLASS=literal>OutputStream</tt>, except that they deal with characters instead
+of bytes.  As true character streams, these classes correctly handle Unicode characters,
+which was not always the case with the byte streams.  However, some sort of
+bridge is needed between these character streams and the byte streams of
+physical devices like
+disks and networks.  <tt CLASS=literal>InputStreamReader</tt> and 
+<tt CLASS=literal>OutputStreamWriter</tt> are special classes that use 
+an <I CLASS=emphasis>encoding scheme</I>
+to translate between character and byte streams.
+
+<P CLASS=para>
+We'll discuss all of the interesting stream types in this
+section, with the exception of <tt CLASS=literal>FileInputStream</tt>, 
+<tt CLASS=literal>FileOutputStream</tt>, <tt CLASS=literal>FileReader</tt>, and
+<tt CLASS=literal>FileWriter</tt>. We'll postpone the
+discussion of file streams until the next section, where we'll
+cover issues involved with accessing the filesystem in
+Java.
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-8-SECT-1.1">Terminal I/O</A></h3>
+
+<P CLASS=para>
+<A NAME="CH08.IO4"></A><A NAME="CH08.IO5"></A><A NAME="CH08.IO6"></A>The prototypical example of an <tt CLASS=literal>InputStream</tt> object
+is the standard input of a Java application. Like
+<tt CLASS=literal>stdin</tt> in C or <tt CLASS=literal>cin</tt> in C++, this
+object reads data from the program's environment, which is
+usually a terminal window or a command pipe. The
+<tt CLASS=literal>java.lang.System</tt> class, a general repository for
+system-related resources, provides a reference to standard input in
+the <tt CLASS=literal>static</tt> variable <tt CLASS=literal>in</tt>.
+<tt CLASS=literal>System</tt> also provides objects for standard output
+and standard error in the <tt CLASS=literal>out</tt> and
+<tt CLASS=literal>err</tt> variables, respectively. The following example
+shows the correspondence:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+InputStream stdin = System.in; 
+OutputStream stdout = System.out; 
+OutputStream stderr = System.err; 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+This example hides the fact that <tt CLASS=literal>System.out</tt>
+and <tt CLASS=literal>System.err</tt> aren't really
+<tt CLASS=literal>OutputStream</tt> objects, but more specialized
+and useful <tt CLASS=literal>PrintStream</tt> objects. I'll explain
+these later, but for now we can reference
+<tt CLASS=literal>out</tt> and <tt CLASS=literal>err</tt> as
+<tt CLASS=literal>OutputStream</tt> objects, since they are a kind of
+<tt CLASS=literal>OutputStream</tt> by inheritance.
+
+<P CLASS=para>
+We can read a single byte at a time from standard input with
+the <tt CLASS=literal>InputStream</tt>'s <tt CLASS=literal>read()</tt>
+method. If you look closely at the API,
+you'll see that the <tt CLASS=literal>read()</tt> method of the base
+<tt CLASS=literal>InputStream</tt> class is actually an
+<tt CLASS=literal>abstract</tt> method. What lies behind
+<tt CLASS=literal>System.in</tt> is an implementation of
+<tt CLASS=literal>InputStream</tt>, so it's valid to call
+<tt CLASS=literal>read()</tt> for this stream:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+try { 
+    int val = System.in.read(); 
+    ... 
+} 
+catch ( IOException e ) { 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+As is the convention in C, <tt CLASS=literal>read()</tt> provides a byte
+of information, but its return type is <tt CLASS=literal>int</tt>. A
+return value of <tt CLASS=literal>-1</tt> indicates a normal end of
+stream has been reached; you'll need to test for this condition
+when using the simple <tt CLASS=literal>read()</tt> method. If an
+error occurs during the read, an <tt CLASS=literal>IOException</tt> is
+thrown. 
+All basic input and output stream commands can throw an
+<tt CLASS=literal>IOException</tt>, so you should arrange to catch
+and handle them as appropriate.
+
+<P CLASS=para>
+To retrieve the value as a byte, perform the cast: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+byte b = (byte) val; 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Of course, you'll need to check for the end-of-stream condition
+before you perform the cast. An overloaded form of
+<tt CLASS=literal>read()</tt> fills a byte array with as much data as
+possible up to the limit of the array size and returns the number of
+bytes read:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+byte [] bity = new byte [1024]; 
+int got = System.in.read( bity ); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+We can also check the number of bytes available for reading on an
+<tt CLASS=literal>InputStream</tt> with the <tt CLASS=literal>available()</tt>
+method. Once we have that information, we can create an array of
+exactly the right size:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+int waiting = System.in.available(); 
+if ( waiting &gt; 0 ) { 
+    byte [] data = new byte [ waiting ]; 
+    System.in.read( data ); 
+    ... 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+<tt CLASS=literal>InputStream</tt> provides the <tt CLASS=literal>skip()</tt>
+method as a way of jumping over a number of bytes. Depending on the
+implementation of the stream and if you aren't interested in the
+intermediate data, skipping bytes may be more efficient than reading
+them. The <tt CLASS=literal>close()</tt> method shuts down the stream and
+frees up any associated system resources. It's a good
+idea to close a stream when you are done using it.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-8-SECT-1.X">Character Streams</A></h3>
+
+<P CLASS=para>
+The <tt CLASS=literal>InputStream</tt> and <tt CLASS=literal>OutputStream</tt> subclasses
+of Java 1.0.2 included methods for reading and writing strings, but most of them
+operated by assuming that a sixteen-bit Unicode character was equivalent to an
+eight-bit byte in the stream.  This only works for Latin-1 (ISO8859-1) characters, so
+the character stream classes <tt CLASS=literal>Reader</tt> and <tt CLASS=literal>Writer</tt>
+were introduced in Java 1.1.  Two special classes, <tt CLASS=literal>InputStreamReader</tt>
+and <tt CLASS=literal>OutputStreamWriter</tt>, bridge the gap between the world of
+character streams and the world of byte streams.  These are character streams that are
+wrapped around an underlying byte stream.  An encoding scheme is used to convert
+between bytes and characters.  An encoding scheme name can be specified in the constructor
+of <tt CLASS=literal>InputStreamReader</tt> or <tt CLASS=literal>OutputStreamWriter</tt>.  Another constructor
+simply accepts the underlying stream and uses the system's default encoding scheme.
+For example, let's parse a human-readable
+string from the standard input into an integer.  We'll assume that the bytes coming from
+<tt CLASS=literal>System.in</tt> use the system's default encoding scheme.
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+try {
+    InputStreamReader converter = new InputStreamReader(System.in);
+    BufferedReader in = new BufferedReader(converter);
+    
+    String text = in.readLine();
+    int i = NumberFormat.getInstance().parse(text).intValue();
+} 
+catch ( IOException e ) { }
+catch ( ParseException pe ) { } 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+First, we wrap an <tt CLASS=literal>InputStreamReader</tt> around <tt CLASS=literal>System.in</tt>.
+This object converts the incoming bytes of <tt CLASS=literal>System.in</tt> to characters
+using the default encoding scheme.  Then, we wrap a <tt CLASS=literal>BufferedReader</tt> around
+the <tt CLASS=literal>InputStreamReader</tt>.  <tt CLASS=literal>BufferedReader</tt> gives us
+the <tt CLASS=literal>readLine()</tt> method, which we can use to retrieve a full
+line of text into a <tt CLASS=literal>String</tt>.  The string is then parsed into an 
+integer using the techniques described in Chapter 7.
+
+<P CLASS=para>
+We could have programmed the previous example using only byte streams, and it
+would have worked for users in the United States, at least.  So why
+go to the extra trouble of using character streams?  Character streams were introduced
+in Java 1.1 to correctly support Unicode strings.  Unicode was designed to support
+almost all of the written languages of the world.  If you want to write a program that
+works in any part of the world, in any language, you definitely want to use
+streams that don't mangle Unicode.
+
+<P CLASS=para>
+So how do you decide when you need a byte stream and when you need a character
+stream?  If you want to read or write character strings, use some variety of <tt CLASS=literal>Reader</tt>
+or <tt CLASS=literal>Writer</tt>.  Otherwise a byte stream should suffice.  Let's say,
+for example, that you want to read strings from a file that was written out by
+a Java 1.0.2 application.  In this case you could simply create a
+<tt CLASS=literal>FileReader</tt>, which will convert the bytes
+in the file to characters using the system's default encoding scheme.  If
+you have a file in a specific encoding scheme, you can create an
+<tt CLASS=literal>InputStreamReader</tt> with that encoding
+scheme and read characters from it.  Another example comes from the
+Internet.  Web servers serve files as byte streams.  If you want to read
+Unicode strings from
+a file with a particular encoding scheme, you'll need an appropriate
+<tt CLASS=literal>InputStreamReader</tt> wrapped around the
+socket's <tt CLASS=literal>InputStream</tt>.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-8-SECT-1.2">Stream Wrappers</A></h3>
+
+<P CLASS=para>
+<A NAME="CH08.WRAP1"></A><A NAME="CH08.WRAP2"></A><A NAME="CH08.WRAP3"></A><A NAME="CH08.WRAP4"></A>What if we want to do more than read and write a mess of bytes or characters? Many of the
+<tt CLASS=literal>InputStream</tt>,
+<tt CLASS=literal>OutputStream</tt>, <tt CLASS=literal>Reader</tt>, and
+<tt CLASS=literal>Writer</tt> classes wrap other streams and add new
+features. A filtered stream takes another stream in its constructor; it delegates calls
+to the underlying stream while doing some additional processing of its
+own.
+
+<P CLASS=para>
+In Java 1.0.2, all wrapper streams were subclasses of <tt CLASS=literal>FilterInputStream</tt> and
+<tt CLASS=literal>FilterOutputStream</tt>.  The character stream classes
+introduced in Java 1.1 break this pattern, but they operate in the same way.  For
+example, <tt CLASS=literal>BufferedInputStream</tt> extends
+<tt CLASS=literal>FilterInputStream</tt> in the byte world, but
+<tt CLASS=literal>BufferedReader</tt> extends <tt CLASS=literal>Reader</tt>
+in the character world.  It doesn't really matter--both classes accept a stream in
+their constructor and perform buffering.  Like the byte stream classes,
+the character stream classes include the abstract
+<tt CLASS=literal>FilterReader</tt> and <tt CLASS=literal>FilterWriter</tt>
+classes, which simply pass all method calls to an underlying stream.
+
+<P CLASS=para>
+The <tt CLASS=literal>FilterInputStream</tt>, <tt CLASS=literal>FilterOutputStream</tt>, 
+<tt CLASS=literal>FilterReader</tt>, and
+<tt CLASS=literal>FilterWriter</tt> classes themselves aren't
+useful; they must be subclassed and specialized to create a new type
+of filtering operation. For example, specialized wrapper streams like
+<tt CLASS=literal>DataInputStream</tt> and
+<tt CLASS=literal>DataOutputStream</tt> provide additional methods
+for reading and writing primitive data types.
+
+<P CLASS=para>
+As we said, when you create an instance of a filtered stream,
+you specify another stream in the constructor. The specialized
+stream wraps an additional layer of functionality around the other
+stream, as shown in <A HREF="ch08_01.htm#EXJ-CH-8-FIG-3">Figure 8.3</A>. Because filtered
+streams themselves are subclasses of the fundamental
+stream
+types, filtered streams can be layered on top of each other to provide
+different combinations of features.  For example, you could wrap a
+<tt CLASS=literal>PushbackReader</tt> around a <tt CLASS=literal>LineNumberReader</tt>
+that was wrapped around a <tt CLASS=literal>FileReader</tt>.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-8-FIG-3">Figure 8.3: Layered streams</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0803.gif" alt="[Graphic: Figure 8-3]" width=503 height=253 border=0>
+
+</DIV>
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-8-SECT-1.2.1">Data streams</A></h4>
+
+<P CLASS=para>
+<A NAME="CH08.DATA1"></A><A NAME="CH08.DATA2"></A><tt CLASS=literal>DataInputStream</tt> and
+<tt CLASS=literal>DataOutputStream</tt> are filtered streams that let you  read or write strings and
+primitive data types that comprise
+more than a single byte. <tt CLASS=literal>DataInputStream</tt> and
+<tt CLASS=literal>DataOutputStream</tt> implement the
+<tt CLASS=literal>DataInput</tt> and
+<tt CLASS=literal>DataOutput</tt> interfaces, respectively. These
+interfaces define the methods required for streams that read and write
+strings and Java primitive types in a machine-independent manner.
+
+<P CLASS=para>
+You can construct a <tt CLASS=literal>DataInputStream</tt> from an
+<tt CLASS=literal>InputStream</tt> and then use a method like
+<tt CLASS=literal>readDouble()</tt> to read a primitive data type:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+DataInputStream dis = new DataInputStream( System.in ); 
+double d = dis.readDouble(); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The above example wraps the standard input stream in a
+<tt CLASS=literal>DataInputStream</tt> and uses it to read a double
+value. <tt CLASS=literal>readDouble()</tt> reads bytes from the stream
+and constructs a <tt CLASS=literal>double</tt> from them.
+All <tt CLASS=literal>DataInputStream</tt> methods 
+that read primitive types also read binary information. 
+
+<P CLASS=para>
+The <tt CLASS=literal>DataOutputStream</tt> class provides write methods 
+that correspond to the read methods in <tt CLASS=literal>DataInputStream</tt>. 
+For example, <tt CLASS=literal>writeInt()</tt> writes an integer in 
+binary format to the underlying output stream.
+
+<P CLASS=para>
+The <tt CLASS=literal>readUTF()</tt> and
+<tt CLASS=literal>writeUTF()</tt> methods of
+<tt CLASS=literal>DataInputStream</tt> and
+<tt CLASS=literal>DataOutputStream</tt> read and write a Java
+<tt CLASS=literal>String</tt> of Unicode characters using the
+UTF-8 "transformation format."
+UTF-8 is an ASCII-compatible
+encoding of Unicode characters commonly used for the
+transmission and storage of Unicode text.[1]
+
+<blockquote class=footnote>
+<P CLASS=para>[1] 
+Check out the URL
+<A HREF="http://www.stonehand.com/unicode/standard/utf8.html">http://www.stonehand.com/unicode/standard/utf8.html</A>
+for more information on UTF-8.  
+</blockquote>
+<P CLASS=para>
+We can use a <tt CLASS=literal>DataInputStream</tt> with any kind
+of input stream, whether it be from a file, a socket, or standard
+input. The same applies to using a
+<tt CLASS=literal>DataOutputStream</tt>, or, for that matter, any other
+specialized streams in <tt CLASS=literal>java.io</tt>.
+
+</DIV>
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-8-SECT-1.2.2">Buffered streams</A></h4>
+
+<P CLASS=para>
+<A NAME="CH08.BUFF1"></A><A NAME="CH08.BUFF2"></A><A NAME="CH08.BUFF3"></A><A NAME="CH08.BUFF4"></A><A NAME="CH08.BUFF5"></A>The <tt CLASS=literal>BufferedInputStream</tt>,
+<tt CLASS=literal>BufferedOutputStream</tt>,
+<tt CLASS=literal>BufferedReader</tt>, and
+<tt CLASS=literal>BufferedWriter</tt> classes add a data
+buffer of a specified size to the stream path. A buffer can increase
+efficiency by reducing the number of physical read or write operations
+that correspond to <tt CLASS=literal>read()</tt> or
+<tt CLASS=literal>write()</tt> method calls. You create a buffered stream
+with an appropriate input or output stream and a buffer
+size. Furthermore, you can wrap another stream around a buffered
+stream so that it benefits from the buffering. Here's a simple
+buffered input stream:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+BufferedInputStream bis = new BufferedInputStream(myInputStream, 4096); 
+...
+bis.read(); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+In this example, we specify a buffer size of 4096 bytes. If we leave
+off the size of the buffer in the constructor, a reasonably sized one
+is chosen for us. On our first call to <tt CLASS=literal>read()</tt>,
+<tt CLASS=literal>bis</tt> tries to fill the entire 4096-byte buffer with
+data. Thereafter, calls to <tt CLASS=literal>read()</tt> retrieve data
+from the buffer until it's empty.
+
+<P CLASS=para>
+A <tt CLASS=literal>BufferedOutputStream</tt> works in a similar
+way. Calls to <tt CLASS=literal>write()</tt> store the data in a buffer;
+data is actually written only when the buffer fills up. You can also
+use the <tt CLASS=literal>flush()</tt> method to wring out the contents of
+a <tt CLASS=literal>BufferedOutputStream</tt> before the buffer is full.
+
+<P CLASS=para>
+Some input streams like <tt CLASS=literal>BufferedInputStream</tt>
+support the ability to mark a location in the data and later reset the
+stream to that position. The <tt CLASS=literal>mark()</tt> method sets the
+return point in the stream. It takes an integer value that specifies
+the number of bytes that can be read before the stream gives up and
+forgets about the mark. The <tt CLASS=literal>reset()</tt> method returns
+the stream to the marked point; any data read after the call
+to <tt CLASS=literal>mark()</tt> is read again.
+
+<P CLASS=para>
+This functionality is especially useful when you are reading
+the stream in a parser. You may occasionally fail to parse a structure
+and so must try something else. In this situation, you can have your
+parser generate an error (a homemade
+<tt CLASS=literal>ParseException</tt>) and then reset the stream to the
+point before it began parsing the structure:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+BufferedInputStream input; 
+... 
+try { 
+    input.mark( MAX_DATA_STRUCTURE_SIZE ); 
+    return( parseDataStructure( input ) ); 
+} 
+catch ( ParseException e ) { 
+    input.reset(); 
+    ... 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The <tt CLASS=literal>BufferedReader</tt> and
+<tt CLASS=literal>BufferedWriter</tt> classes work just
+like their byte-based counterparts, but operate on characters instead of
+bytes.
+
+</DIV>
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-8-SECT-1.2.3">Print streams</A></h4>
+
+<P CLASS=para>
+<A NAME="CH08.PRINT1"></A><A NAME="CH08.PRINT2"></A><A NAME="CH08.PRINT3"></A><A NAME="CH08.PRINT4"></A>Another useful wrapper stream is
+<tt CLASS=literal>java.io.PrintWriter</tt>. This class provides a suite of
+overloaded <tt CLASS=literal>print()</tt> methods that turn their
+arguments into strings and push them out the stream. A complementary
+set of <tt CLASS=literal>println()</tt> methods adds a newline to the end
+of the strings. <tt CLASS=literal>PrintWriter</tt> is the more
+capable big brother of the <tt CLASS=literal>PrintStream</tt>
+byte stream.  <tt CLASS=literal>PrintWriter</tt> is an
+unusual character stream because it can wrap either an <tt CLASS=literal>OutputStream</tt>
+or another <tt CLASS=literal>Writer</tt>. The <tt CLASS=literal>System.out</tt> and
+<tt CLASS=literal>System.err</tt> streams are
+<tt CLASS=literal>PrintStream</tt> objects; you have already seen such
+streams strewn throughout this book:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+System.out.print("Hello world...\n"); 
+System.out.println("Hello world..."); 
+System.out.println( "The answer is: " + 17 ); 
+System.out.println( 3.14 ); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+In Java 1.1, the
+<tt CLASS=literal>PrintStream</tt> class has been enhanced
+to translate characters to bytes using the system's default
+encoding scheme. Although <tt CLASS=literal>PrintStream</tt>
+is not deprecated in Java 1.1, its constructors are.  For all new
+development, use a <tt CLASS=literal>PrintWriter</tt> instead of
+a <tt CLASS=literal>PrintStream</tt>.  Because a
+<tt CLASS=literal>PrintWriter</tt> can wrap an
+<tt CLASS=literal>OutputStream</tt>, the two classes are
+interchangeable.
+
+<P CLASS=para>
+When you create a <tt CLASS=literal>PrintWriter</tt> object, you
+can pass an additional <tt CLASS=literal>boolean</tt> value to the
+constructor. If this value is <tt CLASS=literal>true</tt>, the
+<tt CLASS=literal>PrintWriter</tt> automatically performs a
+<tt CLASS=literal>flush()</tt> on the underlying
+<tt CLASS=literal>OutputStream</tt> or <tt CLASS=literal>Writer</tt>
+each time it sends a newline:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+boolean autoFlush = true; 
+PrintWriter p = new PrintWriter( myOutputStream, autoFlush ); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+When this technique is used with a buffered output stream, it
+corresponds to the behavior of terminals that send data
+line by line.
+
+<P CLASS=para>
+Unlike methods in other stream classes,
+the methods of <tt CLASS=literal>PrintWriter</tt>
+and <tt CLASS=literal>PrintStream</tt>
+do not throw
+<tt CLASS=literal>IOException</tt>s.
+Instead, if we are
+interested, we can check for errors with the
+<tt CLASS=literal>checkError()</tt> method:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+System.out.println( reallyLongString ); 
+if ( System.out.checkError() )                // Uh oh 
+</PRE>
+</DIV>
+
+</DIV>
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-8-SECT-1.3">Pipes</A></h3>
+
+<P CLASS=para>
+<A NAME="CH08.PIPE1"></A><A NAME="CH08.PIPE2"></A>Normally, our applications are directly involved with one side of
+a given stream at a time. <tt CLASS=literal>PipedInputStream</tt>
+and <tt CLASS=literal>PipedOutputStream</tt> (or
+<tt CLASS=literal>PipedReader</tt>
+and <tt CLASS=literal>PipedWriter</tt>), however, let us
+create two sides of a stream and connect them together, as shown in
+<A HREF="ch08_01.htm#EXJ-CH-8-FIG-4">Figure 8.4</A>. This provides a stream
+of communication between threads, for example.
+
+<P CLASS=para>
+To create a pipe, we use both a
+<tt CLASS=literal>PipedInputStream</tt> and a
+<tt CLASS=literal>PipedOutputStream</tt>. We can simply choose a side and
+then construct the other side using the first as an argument:
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-8-FIG-4">Figure 8.4: Piped streams</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0804.gif" alt="[Graphic: Figure 8-4]" width=503 height=163 border=0>
+
+</DIV>
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+PipedInputStream pin = new PipedInputStream(); 
+PipedOutputStream pout = new PipedOutputStream( pin ); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Alternatively&nbsp;: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+PipedOutputStream pout = new PipedOutputStream( ); 
+PipedInputStream pin = new PipedInputStream( pout ); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+In each of these examples, the effect is to produce an input
+stream, <tt CLASS=literal>pin</tt>, and an output stream,
+<tt CLASS=literal>pout</tt>, that are connected. Data written to
+<tt CLASS=literal>pout</tt> can then be read by <tt CLASS=literal>pin</tt>. It
+is also possible to create the <tt CLASS=literal>PipedInputStream</tt> and
+the <tt CLASS=literal>PipedOutputStream</tt> separately, and then connect
+them with the <tt CLASS=literal>connect()</tt> method.
+
+<P CLASS=para>
+We can do exactly the same thing in the character-based world, using
+<tt CLASS=literal>PipedReader</tt> and
+<tt CLASS=literal>PipedWriter</tt> in place of
+<tt CLASS=literal>PipedInputStream</tt> and
+<tt CLASS=literal>PipedOutputStream</tt>.
+
+<P CLASS=para>
+Once the two ends of the pipe are connected, use the two
+streams as you would other input and output
+streams. You can use <tt CLASS=literal>read()</tt> to read data from the
+<tt CLASS=literal>PipedInputStream</tt> (or <tt CLASS=literal>PipedReader</tt>)
+ and <tt CLASS=literal>write()</tt> to
+write data to the <tt CLASS=literal>PipedOutputStream</tt> (or
+<tt CLASS=literal>PipedWriter</tt>). If the
+internal buffer of the pipe fills up, the writer blocks and waits
+until more space is available. Conversely, if the pipe is empty, the
+reader blocks and waits until some data is available. Internally, the
+blocking is implemented with <tt CLASS=literal>wait()</tt> and
+<tt CLASS=literal>notifyAll()</tt>, as described in <A HREF="ch06_01.htm">Chapter 6, <i>Threads</i></A>.
+
+<P CLASS=para>
+One advantage to using piped streams is that they provide
+stream functionality in our code, without compelling us to build new,
+specialized streams. For example, we can use pipes to create a simple
+logging facility for our application. We can send messages to the
+logging facility through an ordinary <tt CLASS=literal>PrintWriter</tt>,
+and then it can do whatever processing or buffering is required before
+sending the messages off 
+to their ultimate location. Because we are dealing with string
+messages, we use the character-based <tt CLASS=literal>PipedReader</tt>
+and <tt CLASS=literal>PipedWriter</tt> classes. The following
+example shows the skeleton of our logging facility:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.io.*; 
+ 
+class LoggerDaemon extends Thread { 
+    PipedReader in = new PipedReader();  
+ 
+    LoggerDaemon() { 
+        setDaemon( true ); 
+        start(); 
+    } 
+ 
+    public void run() { 
+        BufferedReader din = new BufferedReader( in ); 
+        String s; 
+  
+        try { 
+           while ( (s = din.readLine()) != null ) { 
+                // process line of data 
+                // ... 
+            } 
+        }  
+        catch (IOException e ) { } 
+    } 
+ 
+    PrintWriter getWriter() throws IOException { 
+        return new PrintWriter( new PipedWriter( in ) ); 
+    } 
+} 
+ 
+class myApplication { 
+    public static void main ( String [] args ) throws IOException { 
+        PrintWriter out = new LoggerDaemon().getWriter(); 
+ 
+        out.println("Application starting..."); 
+        // ... 
+        out.println("Warning: does not compute!"); 
+        // ... 
+    } 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+<tt CLASS=literal>LoggerDaemon</tt> is a daemon thread, so it will die
+when our application exits. <tt CLASS=literal>LoggerDaemon</tt> reads
+strings from its end of the pipe, the
+<tt CLASS=literal>PipedReader</tt>
+<tt CLASS=literal>in</tt>. <tt CLASS=literal>LoggerDaemon</tt> also
+provides a method, <tt CLASS=literal>getWriter()</tt>, that returns a
+<tt CLASS=literal>PipedWriter</tt> that is connected to its input
+stream. Simply create a new <tt CLASS=literal>LoggerDaemon</tt> and fetch
+the output stream to begin sending messages.
+
+<P CLASS=para>
+In order to read strings with the <tt CLASS=literal>readLine()</tt>
+method, <tt CLASS=literal>LoggerDaemon</tt> wraps a
+<tt CLASS=literal>BufferedReader</tt> around its
+<tt CLASS=literal>PipedReader</tt>. For convenience, it also presents
+its <tt CLASS=literal>PipedWriter</tt> as a
+<tt CLASS=literal>PrintWriter</tt>, rather than a simple
+<tt CLASS=literal>Writer</tt>.
+
+<P CLASS=para>
+One advantage of implementing <tt CLASS=literal>LoggerDaemon</tt>
+with pipes is that we can log messages as easily as we write text to a
+terminal or any other stream. In other words, we can use all our
+normal tools and techniques. Another advantage is that the processing
+happens in another thread, so we can go about our business while the
+processing takes place.
+
+<P CLASS=para>
+There is nothing stopping us from connecting more than two
+piped streams. For example, we could chain multiple pipes together to
+perform a series of filtering operations.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-8-SECT-1.4">Strings to Streams and Back</A></h3>
+
+<P CLASS=para>
+<A NAME="CH08.SBI1"></A><A NAME="CH08.SBI2"></A>The <tt CLASS=literal>StringReader</tt> class is another useful
+stream class. The stream is created from a <tt CLASS=literal>String</tt>;
+<tt CLASS=literal>StringReader</tt> essentially wraps stream
+functionality around a <tt CLASS=literal>String</tt>. Here's how to
+use a <tt CLASS=literal>StringReader</tt>:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+String data = "There once was a man from Nantucket..."; 
+StringReader sr = new StringReader( data ); 
+ 
+char T = (char)sr.read(); 
+char h = (char)sr.read(); 
+char e = (char)sr.read(); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Note that you will still have
+to catch <tt CLASS=literal>IOException</tt>s thrown by
+some of the <tt CLASS=literal>StringReader</tt>'s methods.
+
+<P CLASS=para>
+The <tt CLASS=literal>StringReader</tt> class is useful when
+you want to read data in a <tt CLASS=literal>String</tt> as if it were
+coming from a stream, such as a file, pipe, or socket. For example,
+suppose you create a parser that expects to read tokens from a
+stream. But you want to provide a method that also parses a big
+string. You can easily add one using
+<tt CLASS=literal>StringReader</tt>.
+
+<P CLASS=para>
+Turning things around, the <tt CLASS=literal>StringWriter</tt>
+class lets us write to a character string through an output
+stream. The internal string grows as necessary to accommodate the
+data. In the following example, we create a
+<tt CLASS=literal>StringWriter</tt> and wrap it in a
+<tt CLASS=literal>PrintWriter</tt> for convenience:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+StringWriter buffer = new StringWriter(); 
+PrintWriter out = new PrintWriter( buffer ); 
+ 
+out.println("A moose once bit my sister."); 
+out.println("No, really!"); 
+ 
+String results = buffer.toString(); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+First we print a few lines to the output stream, to give it some data,
+then retrieve the results as a string with the
+<tt CLASS=literal>toString()</tt> method. Alternately, we could get the
+results as a <tt CLASS=literal>StringBuffer</tt> with the <tt CLASS=literal>getBuffer()</tt>
+method.
+
+<P CLASS=para>
+The <tt CLASS=literal>StringWriter</tt> class is useful if
+you want to capture the output of something that normally sends output
+to a stream, such as a file or the console. A
+<tt CLASS=literal>PrintWriter</tt> wrapped around a
+<tt CLASS=literal>StringWriter</tt> competes with
+<tt CLASS=literal>StringBuffer</tt> as the easiest way to construct
+large strings piece by piece. While using a
+<tt CLASS=literal>StringBuffer</tt> is more efficient,
+<tt CLASS=literal>PrintWriter</tt> provides more functionality than the
+normal <tt CLASS=literal>append()</tt> method used by
+<tt CLASS=literal>StringBuffer</tt>.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-8-SECT-1.5">rot13InputStream</A></h3>
+
+<P CLASS=para>
+Before we leave streams, let's try our hand at making one of our
+own. I mentioned earlier that specialized stream wrappers are built on
+top of the <tt CLASS=literal>FilterInputStream</tt> and
+<tt CLASS=literal>FilterOutputStream</tt> classes. It's quite easy
+to create our own subclass of <tt CLASS=literal>FilterInputStream</tt>
+that can be wrapped around other streams to add new functionality.
+
+<P CLASS=para>
+The following example, <tt CLASS=literal>rot13InputStream</tt>,
+performs a <I CLASS=emphasis>rot13</I> operation on the bytes that it
+reads. <I CLASS=emphasis>rot13</I> is a trivial algorithm that shifts
+alphanumeric letters to make them not quite human-readable; it's cute
+because it's symmetric. That is, to "un-rot13" some text,
+simply <I CLASS=emphasis>rot13</I> it again. We'll use the
+<tt CLASS=literal>rot13InputStream</tt> class again in the
+<tt CLASS=literal>crypt</tt> protocol handler example in <A HREF="ch09_01.htm">Chapter 9, <i>Network Programming</i></A>, so we've put the class in the
+<tt CLASS=literal>example.io</tt> package to facilitate
+reuse. Here's our <tt CLASS=literal>rot13InputStream</tt> class:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+package example.io; 
+import java.io.*; 
+ 
+public class rot13InputStream extends FilterInputStream { 
+ 
+    public rot13InputStream ( InputStream i ) { 
+        super( i ); 
+    } 
+ 
+    public int read() throws IOException { 
+        return rot13( in.read() ); 
+    } 
+ 
+    private int rot13 ( int c ) { 
+        if ( (c &gt;= 'A') &amp;&amp; (c &lt;= 'Z') )            c=(((c-'A')+13)%26)+'A';        if ( (c &gt;= 'a') &amp;&amp; (c &lt;= 'z') ) 
+            c=(((c-'a')+13)%26)+'a'; 
+        return c; 
+    } } 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The <tt CLASS=literal>FilterInputStream</tt> needs to be initialized with
+an <tt CLASS=literal>InputStream</tt>; this is the stream to be
+filtered. We provide an appropriate constructor for the
+<tt CLASS=literal>rot13InputStream</tt> class and invoke the parent
+constructor with a call to <tt CLASS=literal>super()</tt>.
+<tt CLASS=literal>FilterInputStream</tt> contains a protected instance
+variable, <tt CLASS=literal>in</tt>, where it stores the stream reference
+and makes it available to the rest of our class.
+
+<P CLASS=para>
+The primary feature of a <tt CLASS=literal>FilterInputStream</tt>
+is that it overrides the normal <tt CLASS=literal>InputStream</tt>
+methods to delegate calls to the <tt CLASS=literal>InputStream</tt> in the
+variable <tt CLASS=literal>in</tt>. So, for instance, a call to
+<tt CLASS=literal>read()</tt> simply turns around and calls
+<tt CLASS=literal>read()</tt> on <tt CLASS=literal>in</tt> to fetch a byte. An
+instance of <tt CLASS=literal>FilterInputStream</tt> itself could be
+instantiated from an <tt CLASS=literal>InputStream</tt>; it would
+pass its method calls on to that stream and serve as a
+pass-through filter. To make things interesting, we can override
+methods of the <tt CLASS=literal>FilterInputStream</tt> class and do
+extra work on the data as it passes through.
+
+<P CLASS=para>
+In our example, we have overridden the
+<tt CLASS=literal>read()</tt> method to fetch bytes from the underlying
+<tt CLASS=literal>InputStream</tt>, <tt CLASS=literal>in</tt>, and then
+perform the <I CLASS=emphasis>rot13</I> shift on the data before
+returning it. Note that the <tt CLASS=literal>rot13()</tt> method shifts
+alphabetic characters, while simply passing all other values,
+including the end of stream value (<tt CLASS=literal>-1</tt>). Our
+subclass now acts like a <I CLASS=emphasis>rot13</I> filter. All
+other normal functionality of an <tt CLASS=literal>InputStream</tt>, like
+<tt CLASS=literal>skip()</tt> and <tt CLASS=literal>available()</tt> is
+unmodified, so calls to these methods are answered by the underlying
+<tt CLASS=literal>InputStream</tt>.
+
+<P CLASS=para>
+Strictly speaking, <tt CLASS=literal>rot13InputStream</tt> only works
+on an ASCII byte stream, since the underlying algorithm is based
+on the Roman alphabet.  A more generalized character scrambling
+algorithm would have to be based on <tt CLASS=literal>FilterReader</tt>
+to handle Unicode correctly.
+
+</DIV>
+
+</DIV>
+
+
+<DIV CLASS=htmlnav>
+
+<P>
+<HR align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch07_07.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><a href="index.htm"><img src='gifs/txthome.gif' border=0 alt='Home'></a></td>
+<td width=172 align=right valign=top><A HREF="ch08_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+<tr>
+<td width=172 align=left valign=top>Internationalization</td>
+<td width=171 align=center valign=top><a href="index/idx_0.htm"><img src='gifs/index.gif' alt='Book Index' border=0></a></td>
+<td width=172 align=right valign=top>Files</td>
+</tr>
+</table>
+<hr align=left width=515>
+
+<IMG SRC="gifs/smnavbar.gif" USEMAP="#map" BORDER=0> 
+<MAP NAME="map"> 
+<AREA SHAPE=RECT COORDS="0,0,108,15" HREF="../javanut/index.htm"
+alt="Java in a Nutshell"> 
+<AREA SHAPE=RECT COORDS="109,0,200,15" HREF="../langref/index.htm" 
+alt="Java Language Reference"> 
+<AREA SHAPE=RECT COORDS="203,0,290,15" HREF="../awt/index.htm" 
+alt="Java AWT"> 
+<AREA SHAPE=RECT COORDS="291,0,419,15" HREF="../fclass/index.htm" 
+alt="Java Fundamental Classes"> 
+<AREA SHAPE=RECT COORDS="421,0,514,15" HREF="../exp/index.htm" 
+alt="Exploring Java"> 
+</MAP>
+</DIV>
+
+</BODY>
+</HTML>

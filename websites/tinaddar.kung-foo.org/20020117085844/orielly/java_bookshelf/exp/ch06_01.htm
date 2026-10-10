@@ -1,0 +1,575 @@
+<!DOCTYPE HTML PUBLIC "-//ORA//DTD CD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>[Chapter 6] Threads</TITLE>
+<META NAME="author" CONTENT="Pat Niemeyer and Josh Peck">
+<META NAME="date" CONTENT="Tue Jul 22 18:53:52 1997">
+<META NAME="form" CONTENT="html">
+<META NAME="metadata" CONTENT="dublincore.0.1">
+<META NAME="objecttype" CONTENT="book part">
+<META NAME="otheragent" CONTENT="gmat dbtohtml">
+<META NAME="publisher" CONTENT="O'Reilly &amp; Associates, Inc.">
+<META NAME="source" CONTENT="SGML">
+<META NAME="subject" CONTENT="Java">
+<META NAME="title" CONTENT="Exploring Java">
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<DIV CLASS=htmlnav>
+<H1><a href='index.htm'><IMG SRC="gifs/smbanner.gif"
+     ALT="Exploring Java" border=0></a></H1>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch05_11.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><B><FONT FACE="ARIEL,HELVETICA,HELV,SANSERIF" SIZE="-1">Chapter 6</FONT></B></TD>
+<td width=172 align=right valign=top><A HREF="ch06_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+</table>
+
+&nbsp;
+<hr align=left width=515>
+</DIV>
+<H1 CLASS=chapter><A CLASS="TITLE" NAME="EXJ-CH-6">6. Threads</A></H1>
+
+<DIV CLASS=htmltoc>
+
+<p>
+<b>Contents:</b><br>
+Introducing Threads<br>
+<A HREF="ch06_02.htm">Threading Applets</A><BR>
+<A HREF="ch06_03.htm">Synchronization</A><BR>
+<A HREF="ch06_04.htm">Scheduling and Priority</A><BR>
+
+<p>
+</DIV>
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+</PRE>
+</DIV>
+
+<P CLASS=para>
+<A NAME="CH06.THREADS"></A>Threads have been around for some time, but few programmers have
+actually worked with them. There is even some debate over whether or
+not the average programmer can use threads effectively. In Java,
+working with threads can be easy and productive. In fact, threads
+provide the only way to effectively handle a number of tasks. So
+it's important that you become familiar with threads early in
+your exploration of Java.
+
+<P CLASS=para>
+Threads are integral to the way Java works. We've already seen
+that an applet's <tt CLASS=literal>paint()</tt> method isn't
+called by the applet itself, but by another thread within the
+interpreter. At any given time, there may be many such background
+threads, performing activities in parallel with your application. In
+fact, it's easy to get a half dozen or more threads running in
+an applet without even trying, simply by requesting images, updating
+the screen, playing audio, and so on. But these things happen behind
+the scenes; you don't normally have to worry about them. In this
+chapter, we'll talk about writing applications that create and
+use their own threads explicitly.
+
+<DIV CLASS=sect1>
+<h2 CLASS=sect1><A CLASS="TITLE" NAME="EXJ-CH-6-SECT-1">6.1 Introducing Threads</A></h2>
+
+<P CLASS=para>
+Conceptually, a thread is a flow of control within a program. A thread
+is similar to the more familiar notion of a process, except that
+multiple threads within the same application share much of the same
+state--in particular, they run in the same address
+space. It's not unlike a golf course, which can be used by many
+players at the same time. Sharing the same address space means that
+threads share instance variables, but not local variables, just like
+players share the golf course, but not personal things like clubs and
+balls.
+
+<P CLASS=para>
+Multiple threads in an application have the same problems as the
+players sharing a golf course: in a word, synchronization. Just as you
+can't have two sets of players blindly playing the same green at
+the same time, you can't have several threads trying to access
+the same variables without some kind of coordination. Someone is
+bound to get hurt. A thread can reserve the right to use an object
+until it's finished with its task, just as a golf party gets
+exclusive rights to the green until it's done. And a thread that
+is more important can raise its priority, asserting its right to play
+through.
+
+<P CLASS=para>
+The devil is in the details, or course, and those details have
+historically made threads difficult to use. Java makes creating,
+controlling, and coordinating threads simple. When creating a new
+thread is the best way to accomplish some task, it should be as easy
+as adding a new component to your application.
+
+<P CLASS=para>
+It is common to stumble over threads when you first look at them,
+because creating a thread exercises many of your new Java skills all
+at once. You can avoid confusion by remembering there are always
+two players involved in running a thread: a Java language object that
+represents the thread itself and an arbitrary target object that
+contains the method the thread is to execute. Later, you will see that
+it is possible to play some sleight of hand and combine these two
+roles, but that special case just changes the packaging, not the
+relationship.
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-6-SECT-1.1">The Thread Class and the Runnable Interface</A></h3>
+
+<P CLASS=para>
+<A NAME="CH06.RUNNABLE1"></A><A NAME="CH06.RUNNABLE2"></A>A new thread is born when we create an instance of the
+<tt CLASS=literal>java.lang.Thread</tt> class. The
+<tt CLASS=literal>Thread</tt> object represents a real thread in the Java
+interpreter and serves as a handle for controlling and synchronizing
+its execution. With it, we can start the thread, stop the thread, or
+suspend it temporarily. The constructor for the
+<tt CLASS=literal>Thread</tt> class accepts information about where the
+thread should begin its execution. Conceptually, we would like to
+simply tell it what method to run, but since there are no pointers to
+methods in Java, we can't specify one directly. Instead, we have
+to take a short detour and use the <tt CLASS=literal>Runnable</tt>
+interface to create an object that contains a "runnable"
+method.
+
+<P CLASS=para>
+An object that wants to serve as the target of a
+<tt CLASS=literal>Thread</tt> can declare that it has an appropriate
+executable method by implementing the
+<tt CLASS=literal>java.lang.Runnable</tt>
+interface. <tt CLASS=literal>Runnable</tt> defines a single,
+general-purpose method:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+public interface Runnable { 
+  abstract public void run(); 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Every thread begins its life by executing a <tt CLASS=literal>run()</tt>
+method in a particular object. <tt CLASS=literal>run()</tt> is a rather
+mundane method that can hold an arbitrary body of code. It is
+<tt CLASS=literal>public</tt>, takes no arguments, has no return value,
+and is not allowed to throw any exceptions.
+
+<P CLASS=para>
+Any class can contain an appropriate <tt CLASS=literal>run()</tt> method,
+simply by declaring that it implements the <tt CLASS=literal>Runnable</tt>
+interface. An instance of this class is then a runnable object that
+can serve as the target of a new <tt CLASS=literal>Thread</tt>. In this
+way, we can effectively run a method in any object we want.
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-6-SECT-1.1.1">Creating and starting threads</A></h4>
+
+<P CLASS=para>
+A newly born <tt CLASS=literal>Thread</tt> remains idle until we give it a
+figurative slap on the bottom by calling its
+<tt CLASS=literal>start()</tt> method. The thread then wakes up and
+proceeds to execute the <tt CLASS=literal>run()</tt> method of its target
+object. <tt CLASS=literal>start()</tt> can be called only once in the
+lifetime of a <tt CLASS=literal>Thread</tt>. Once a thread starts, it
+continues running until the target object's
+<tt CLASS=literal>run()</tt> method completes, or we call the
+thread's <tt CLASS=literal>stop()</tt> method to kill the thread
+permanently. A little later, we will look at some other methods
+you can use to control the thread's progress while it is running.
+
+<P CLASS=para>
+Now let's look at an example. The following class,
+<tt CLASS=literal>Animation</tt>, implements a <tt CLASS=literal>run()</tt>
+method to drive its drawing loop:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Animation implements Runnable { 
+   ... 
+   public void run() { 
+ 
+       while ( true ) { 
+           // Draw Frames 
+           ... 
+           repaint(); 
+       } 
+   } 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+To use it, we create a <tt CLASS=literal>Thread</tt> object with an
+instance of <tt CLASS=literal>Animation</tt> as its target object, and
+invoke its <tt CLASS=literal>start()</tt> method. We can perform these
+steps explicitly, as in the following:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+Animation happy = new Animation("Mr. Happy"); 
+Thread myThread = new Thread( happy ); 
+myThread.start(); 
+... 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Here we have created an instance of our <tt CLASS=literal>Animation</tt>
+class and passed it as the argument to the constructor for
+<tt CLASS=literal>myThread</tt>. When we call the
+<tt CLASS=literal>start()</tt> method, <tt CLASS=literal>myThread</tt> begins
+to execute <tt CLASS=literal>Animation</tt>'s
+<tt CLASS=literal>run()</tt> method. Let the show begin!
+
+<P CLASS=para>
+The above situation is not terribly object oriented. More often, we
+want an object to handle its own thread, as shown in <A HREF="ch06_01.htm#EXJ-CH-6-FIG-1">Figure 6.1</A>.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-6-FIG-1">Figure 6.1: Interaction between Animation and its Thread</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0601.gif" alt="[Graphic: Figure 6-1]" width=503 height=166 border=0>
+
+</DIV>
+
+<P CLASS=para>
+<A HREF="ch06_01.htm#EXJ-CH-6-FIG-1">Figure 6.1</A> depicts a <tt CLASS=literal>Runnable</tt>
+object that creates and starts its own <tt CLASS=literal>Thread</tt>. We
+can have our <tt CLASS=literal>Animation</tt> class perform these actions
+in its constructor:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Animation implements Runnable { 
+ 
+    Thread myThread; 
+ 
+    Animation (String name) { 
+        myThread = new Thread( this ); 
+        myThread.start(); 
+    }  
+    ... 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+In this case, the argument we pass to the <tt CLASS=literal>Thread</tt>
+constructor is <tt CLASS=literal>this</tt>, the current object
+instance. We keep the <tt CLASS=literal>Thread</tt> reference in the
+instance variable <tt CLASS=literal>myThread</tt>, in case we want to stop
+the show, or exercise some other kind of control.
+
+</DIV>
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-6-SECT-1.1.2">A natural born thread</A></h4>
+
+<P CLASS=para>
+The <tt CLASS=literal>Runnable</tt> interface lets us make an arbitrary
+object the target of a thread, as we did above.  This is the most
+important, general usage of the <tt CLASS=literal>Thread</tt> class. In
+most situations where you need to use threads, you'll create a
+class that implements the <tt CLASS=literal>Runnable</tt>
+interface. I'd be remiss, however, if I didn't show you
+the other technique for creating a thread. Another design option is to
+make our target class a subclass of a type that is already
+runnable. The <tt CLASS=literal>Thread</tt> class itself implements the
+<tt CLASS=literal>Runnable</tt> interface; it has its own
+<tt CLASS=literal>run()</tt> method we can override to make it do
+something useful:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Animation extends Thread { 
+    ... 
+         
+    public void run() { 
+        while (true ) { 
+            // Draw Frames 
+            ... 
+            repaint(); 
+        } 
+    } 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The skeleton of our <tt CLASS=literal>Animation</tt> class above looks
+much the same as before, except that our class is now a kind of
+<tt CLASS=literal>Thread</tt>. To go along with this scheme, the default
+(empty) constructor of the <tt CLASS=literal>Thread</tt> class makes
+itself the default target. That is, by default, the
+<tt CLASS=literal>Thread</tt> executes its own <tt CLASS=literal>run()</tt>
+method when we call the <tt CLASS=literal>start()</tt> method, as shown in
+<A HREF="ch06_01.htm#EXJ-CH-6-FIG-2">Figure 6.2</A>. Note that our subclass must override
+the <tt CLASS=literal>run()</tt> method in the <tt CLASS=literal>Thread</tt>
+class because <tt CLASS=literal>Thread</tt> simply defines an empty
+<tt CLASS=literal>run()</tt> method.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-6-FIG-2">Figure 6.2: Animation as a subclass of Thread</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0602.gif" alt="[Graphic: Figure 6-2]" width=503 height=173 border=0>
+
+</DIV>
+
+<P CLASS=para>
+Now we create an instance of <tt CLASS=literal>Animation</tt> 
+and call its <tt CLASS=literal>start()</tt> method:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+Animation bouncy = new Animation("Bouncy"); 
+bouncy.start(); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Alternatively, we can have the <tt CLASS=literal>Animation</tt> 
+object start itself when it is created, as before:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Animation extends Thread { 
+ 
+    Animation (String name) { 
+        start(); 
+    } 
+    ... 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Here our <tt CLASS=literal>Animation</tt> object just calls its own
+<tt CLASS=literal>start()</tt> method when it is created.
+
+<P CLASS=para>
+Subclassing <tt CLASS=literal>Thread</tt> probably seems like a convenient
+way to bundle a <tt CLASS=literal>Thread</tt> and its target
+<tt CLASS=literal>run()</tt> method. However, as always, you should let
+good object-oriented design dictate how you structure your classes. In
+most cases, a specific <tt CLASS=literal>run()</tt> method is probably
+closely related to the functionality of a particular class in your
+application, so you should implement <tt CLASS=literal>run()</tt> in that
+class. This technique has the added advantage of allowing
+<tt CLASS=literal>run()</tt> to access any <tt CLASS=literal>private</tt>
+variables and methods it might need in the class.
+
+<P CLASS=para>
+If you subclass <tt CLASS=literal>Thread</tt> to implement a thread, you
+are saying you need a new type of object that is a kind of
+<tt CLASS=literal>Thread</tt>. While there is something unnaturally
+satisfying about making an object primarily concerned with
+performing a single task (like animation), the actual situations where
+you'll want to create a subclass of <tt CLASS=literal>Thread</tt>
+should be rather rare. If you find you're subclassing
+<tt CLASS=literal>Thread</tt> left and right, you may want to examine
+whether you are falling into the design trap of making objects that
+are simply glorified functions.
+
+</DIV>
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-6-SECT-1.2">Controlling Threads</A></h3>
+
+<P CLASS=para>
+We have seen the <tt CLASS=literal>start()</tt> method used to bring a
+newly created <tt CLASS=literal>Thread</tt> to life. Three other methods
+let us control a <tt CLASS=literal>Thread</tt>'s execution:
+<tt CLASS=literal>stop()</tt>, <tt CLASS=literal>suspend()</tt>, and
+<tt CLASS=literal>resume()</tt>. None of these methods take any arguments;
+they all operate on the current thread object. The
+<tt CLASS=literal>stop()</tt> method complements
+<tt CLASS=literal>start()</tt>; it destroys the
+thread. <tt CLASS=literal>start()</tt> and <tt CLASS=literal>stop()</tt> can
+be called only once in the life of a <tt CLASS=literal>Thread</tt>. By
+contrast, the <tt CLASS=literal>suspend()</tt> and
+<tt CLASS=literal>resume()</tt> methods can be used to arbitrarily pause
+and then restart the execution of a <tt CLASS=literal>Thread</tt>.
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+Somewhere mention stop(Throwable)
+There is a form of Thread.stop that takes a Throwable as an argument
+and throws that exception:
+        workingThread.stop(new CancelWhatYourDoingException());
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Often, for simple tasks, it is easy enough to throw away a thread when
+we want to stop it and simply create a new one when want to proceed
+again. <tt CLASS=literal>suspend()</tt> and <tt CLASS=literal>resume()</tt>
+can be used in situations where the <tt CLASS=literal>Thread</tt>'s
+setup is very expensive. For example, if creating the thread involves
+opening a socket and setting up some elaborate communication, it
+probably makes more sense to use <tt CLASS=literal>suspend()</tt> and
+<tt CLASS=literal>resume()</tt> with this thread.
+
+<P CLASS=para>
+Another common need is to put a thread to sleep for some period of
+time. <tt CLASS=literal>Thread.sleep()</tt> is a static method of the
+<tt CLASS=literal>Thread</tt> class that causes the currently executing
+thread to delay for a specified number of milliseconds:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+try { 
+    Thread.sleep ( 1000 ); 
+}  
+catch ( InterruptedException e ) { 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+<tt CLASS=literal>Thread.sleep()</tt> throws an
+<tt CLASS=literal>InterruptedException</tt> if it is interrupted by
+another <tt CLASS=literal>Thread</tt>.[1] 
+When a thread is asleep, or otherwise blocked on input of some kind,
+it doesn't consume 
+CPU time or compete with other
+threads for processing. We'll talk more about thread priority
+and scheduling later.
+
+<blockquote class=footnote>
+<P CLASS=para>[1] 
+The <tt CLASS=literal>Thread</tt> class contains an
+<tt CLASS=literal>interrupt()</tt> method to allow one thread to
+interrupt another thread, but this functionality is not implemented in
+Java 1.0.
+</blockquote>
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-6-SECT-1.3">A Thread's Life</A></h3>
+
+<P CLASS=para>
+A <tt CLASS=literal>Thread</tt> continues to execute until one of the
+following things happens:
+
+<P>
+<UL CLASS=itemizedlist>
+<li CLASS=listitem>It returns from its target <tt CLASS=literal>run()</tt> method
+
+<P>
+<li CLASS=listitem>It's interrupted by an uncaught exception
+
+<P>
+<li CLASS=listitem>Its <tt CLASS=literal>stop()</tt> method is called
+
+<P>
+</UL>
+<P CLASS=para>
+So what happens if the <tt CLASS=literal>run()</tt> method for a thread
+never terminates, and the application that started the thread never
+calls its <tt CLASS=literal>stop()</tt> method? The answer is that the
+thread lives on, even after the application that created it has
+finished. This means we have to be aware of how our threads eventually
+terminate, or an application can end up leaving orphaned threads that
+unnecessarily consume resources.
+
+<P CLASS=para>
+In many cases, what we really want is to create background threads
+that do simple, periodic tasks in an application. The
+<tt CLASS=literal>setDaemon()</tt> method can be used to mark a
+<tt CLASS=literal>Thread</tt> as a daemon thread that should be killed and
+discarded when no other application threads remain. Normally, the Java
+interpreter continues to run until all threads have completed.  But
+when daemon threads are the only threads still alive, the interpreter
+will exit.
+
+<P CLASS=para>
+Here's a devilish example of using daemon 
+threads:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Devil extends Thread { 
+ 
+    Devil() { 
+        setDaemon( true ); 
+        start(); 
+    } 
+         
+    public void run() { 
+        // Perform evil tasks 
+        ... 
+    } 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+In the above example, the <tt CLASS=literal>Devil</tt> 
+thread sets its daemon status when it is created. If any <tt CLASS=literal>Devil</tt> 
+threads remain when our application is otherwise complete, Java kills them 
+for us. We don't have to worry about cleaning them up.
+
+<P CLASS=para>
+Daemon threads are primarily useful in standalone Java applications
+and in the implementation of the Java system itself, but not in
+applets. Since an applet runs inside of another Java application, any
+daemon threads it creates will continue to live until the controlling
+application exits--probably not the desired effect.
+
+</DIV>
+
+</DIV>
+
+
+<DIV CLASS=htmlnav>
+
+<P>
+<HR align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch05_11.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><a href="index.htm"><img src='gifs/txthome.gif' border=0 alt='Home'></a></td>
+<td width=172 align=right valign=top><A HREF="ch06_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+<tr>
+<td width=172 align=left valign=top>Reflection</td>
+<td width=171 align=center valign=top><a href="index/idx_0.htm"><img src='gifs/index.gif' alt='Book Index' border=0></a></td>
+<td width=172 align=right valign=top>Threading Applets</td>
+</tr>
+</table>
+<hr align=left width=515>
+
+<IMG SRC="gifs/smnavbar.gif" USEMAP="#map" BORDER=0> 
+<MAP NAME="map"> 
+<AREA SHAPE=RECT COORDS="0,0,108,15" HREF="../javanut/index.htm"
+alt="Java in a Nutshell"> 
+<AREA SHAPE=RECT COORDS="109,0,200,15" HREF="../langref/index.htm" 
+alt="Java Language Reference"> 
+<AREA SHAPE=RECT COORDS="203,0,290,15" HREF="../awt/index.htm" 
+alt="Java AWT"> 
+<AREA SHAPE=RECT COORDS="291,0,419,15" HREF="../fclass/index.htm" 
+alt="Java Fundamental Classes"> 
+<AREA SHAPE=RECT COORDS="421,0,514,15" HREF="../exp/index.htm" 
+alt="Exploring Java"> 
+</MAP>
+</DIV>
+
+</BODY>
+</HTML>

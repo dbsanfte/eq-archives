@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//ORA//DTD CD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>[Appendix B] The UTF-8 Encoding</TITLE>
+<META NAME="author" CONTENT="Mark Grand and Jonathan Knudsen">
+<META NAME="date" CONTENT="Fri Aug  8 16:04:07 1997">
+<META NAME="form" CONTENT="html">
+<META NAME="metadata" CONTENT="dublincore.0.1">
+<META NAME="objecttype" CONTENT="book part">
+<META NAME="otheragent" CONTENT="gmat dbtohtml">
+<META NAME="publisher" CONTENT="O'Reilly &amp; Associates, Inc.">
+<META NAME="source" CONTENT="SGML">
+<META NAME="subject" CONTENT="Java">
+<META NAME="title" CONTENT="Java Fundamental Classes Reference">
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<DIV CLASS=htmlnav>
+<H1><a href='index.htm'><IMG SRC="gifs/smbanner.gif"
+     ALT="Java Fundamental Classes Reference" border=0></a></H1>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="appa_01.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><B><FONT FACE="ARIEL,HELVETICA,HELV,SANSERIF" SIZE="-1">Appendix B</FONT></B></TD>
+<td width=172 align=right valign=top>&nbsp;</td>
+</tr>
+</table>
+
+&nbsp;
+<hr align=left width=515>
+</DIV>
+<H1 CLASS=appendix><A CLASS="TITLE" NAME="JFC-APP-B">B. The UTF-8 Encoding</A></H1>
+
+<P CLASS=para>
+Internally, Java always represents Unicode characters with 16
+bits. However, this is an inefficient use of bits when most of the
+characters being used only need eight bits or less to be represented,
+which is the case for text written in English and a number of other
+languages. The UTF-8 encoding provides a more compact way of
+representing sequences of Unicode when most of the characters are
+7-bit ASCII characters. Therefore, UTF-8 is often a more efficient
+way of storing or transmitting text than using 16 bits for every
+character.<A NAME="APPB.ENCODE1"></A><A NAME="APPB.ENCODE2"></A><A NAME="APPB.ENCODE3"></A>
+
+<P CLASS=para>
+The UTF-8 encoding is a variable-width encoding of Unicode characters.
+Seven-bit ASCII characters
+(<tt CLASS=literal>\u0000</tt>-<tt CLASS=literal>\u007F</tt>) are
+represented in one byte, so they remain untouched by the encoding
+(i.e., a string of ASCII characters is a legal UTF-8
+string). Characters in the range
+<tt CLASS=literal>\u0080</tt>-<tt CLASS=literal>\u07FF</tt> are
+represented in two bytes, and characters in the range
+<tt CLASS=literal>\u0800</tt>-<tt CLASS=literal>\uFFFF</tt> are
+represented in three bytes. Java actually uses a slightly modified
+version of UTF-8, since it encodes <tt CLASS=literal>\u0000</tt>
+using two bytes. The advantage of this approach is that a UTF-8
+encoded string never contains a null character.
+
+<P CLASS=para>
+Java provides support for reading characters in the UTF-8 encoding
+with the <tt CLASS=literal>readUTF()</tt> methods in
+<tt CLASS=literal>RandomAccessFile</tt>,
+<tt CLASS=literal>DataInputStream</tt>, and
+<tt CLASS=literal>ObjectInputStream</tt> . The
+<tt CLASS=literal>writeUTF()</tt> methods in
+<tt CLASS=literal>RandomAccessFile</tt>,
+<tt CLASS=literal>DataOutputStream</tt>, and
+<tt CLASS=literal>ObjectOutputStream</tt> handle writing characters in the
+UTF-8 encoding.
+
+<P CLASS=para>
+The UTF-8 encoding begins with an unsigned 16-bit quantity that
+indicates the number of bytes of data that follow. This length value
+is in the format read by the <tt CLASS=literal>readUnsignedShort()</tt>
+methods the above input classes and written by the
+<tt CLASS=literal>writeUnsignedShort()</tt> methods in the above output
+classes.
+
+<P CLASS=para>
+The rest of the bytes are variable-length characters. A 1-byte
+character always has its high-order bit set to 0. A 2-byte character
+always begins with the high-order bits <tt CLASS=literal>110</tt>, while a
+3-byte character starts with the high-order bits
+<tt CLASS=literal>1110</tt>. The second and third bytes of 2- and 3-byte
+characters always have their high-order bits set to
+<tt CLASS=literal>10</tt>, which makes them easy to distinguish from
+1-byte characters and the initial bytes of 2- and 3-byte
+characters. This encoding scheme leaves room for seven bits of data in
+1-byte characters, 11 bits of data in 2-byte characters, and 16 bits
+of data in 3-byte characters.
+
+<P CLASS=para>
+The table below summarizes the UTF-8 encoding:
+
+<DIV CLASS=informaltable>
+<P>
+<TABLE CLASS=INFORMALTABLE>
+<TR CLASS=row>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Bytes in</TH>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Minimum</TH>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Maximum</TH>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+# of</TH>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Binary Byte Sequence</TH>
+</TR>
+<TR CLASS=row>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Character</TH>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Character</TH>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Character</TH>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Data Bits</TH>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+(<tt CLASS=literal>x</tt> = data bit)</TH>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+1</TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>\u0000</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>\u007F</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+7</TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>0xxxxxxx</tt></TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+2</TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>\u0080</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>\u07FF</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+11</TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>110xxxxx 10xxxxxx</tt></TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+3</TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>\u0800</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>\uFFFF</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+16</TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>1110xxxx 10xxxxxx 10xxxxxx</tt></TD>
+</TR>
+</TABLE>
+<P>
+</DIV>
+
+
+<DIV CLASS=htmlnav>
+
+<P>
+<HR align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="appa_01.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><a href="index.htm"><img src='gifs/txthome.gif' border=0 alt='Home'></a></td>
+<td width=172 align=right valign=top>&nbsp;</td>
+</tr>
+<tr>
+<td width=172 align=left valign=top>The Unicode 2.0 Character Set</td>
+<td width=171 align=center valign=top><a href="index/idx_0.htm"><img src='gifs/index.gif' alt='Book Index' border=0></a></td>
+<td width=172 align=right valign=top>&nbsp;</td>
+</tr>
+</table>
+<hr align=left width=515>
+
+<IMG SRC="gifs/smnavbar.gif" USEMAP="#map" BORDER=0> 
+<MAP NAME="map"> 
+<AREA SHAPE=RECT COORDS="0,0,108,15" HREF="../javanut/index.htm"
+alt="Java in a Nutshell"> 
+<AREA SHAPE=RECT COORDS="109,0,200,15" HREF="../langref/index.htm" 
+alt="Java Language Reference"> 
+<AREA SHAPE=RECT COORDS="203,0,290,15" HREF="../awt/index.htm" 
+alt="Java AWT"> 
+<AREA SHAPE=RECT COORDS="291,0,419,15" HREF="../fclass/index.htm" 
+alt="Java Fundamental Classes"> 
+<AREA SHAPE=RECT COORDS="421,0,514,15" HREF="../exp/index.htm" 
+alt="Exploring Java"> 
+</MAP>
+</DIV>
+
+</body>
+</html>

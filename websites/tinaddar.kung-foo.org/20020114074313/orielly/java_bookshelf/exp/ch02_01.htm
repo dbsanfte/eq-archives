@@ -1,0 +1,714 @@
+<!DOCTYPE HTML PUBLIC "-//ORA//DTD CD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>[Chapter 2] A First Applet</TITLE>
+<META NAME="author" CONTENT="Pat Niemeyer and Josh Peck">
+<META NAME="date" CONTENT="Tue Jul 22 18:48:25 1997">
+<META NAME="form" CONTENT="html">
+<META NAME="metadata" CONTENT="dublincore.0.1">
+<META NAME="objecttype" CONTENT="book part">
+<META NAME="otheragent" CONTENT="gmat dbtohtml">
+<META NAME="publisher" CONTENT="O'Reilly &amp; Associates, Inc.">
+<META NAME="source" CONTENT="SGML">
+<META NAME="subject" CONTENT="Java">
+<META NAME="title" CONTENT="Exploring Java">
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<DIV CLASS=htmlnav>
+<H1><a href='index.htm'><IMG SRC="gifs/smbanner.gif"
+     ALT="Exploring Java" border=0></a></H1>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch01_10.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><B><FONT FACE="ARIEL,HELVETICA,HELV,SANSERIF" SIZE="-1">Chapter 2</FONT></B></TD>
+<td width=172 align=right valign=top><A HREF="ch02_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+</table>
+
+&nbsp;
+<hr align=left width=515>
+</DIV>
+<H1 CLASS=chapter><A CLASS="TITLE" NAME="EXJ-CH-2">2. A First Applet</A></H1>
+
+<DIV CLASS=htmltoc>
+
+<p>
+<b>Contents:</b><br>
+Hello Web!<br>
+<A HREF="ch02_02.htm">Hello Web! II: The Sequel</A><BR>
+<A HREF="ch02_03.htm">Hello Web! III: The Button Strikes!</A><BR>
+<A HREF="ch02_04.htm">Hello Web! IV: Netscape's Revenge</A><BR>
+
+<p>
+</DIV>
+
+<P CLASS=para>
+<A NAME="CH02.APPLETSEX"></A>Before we turn our attention to the details of the
+language, let's take a crash course and jump right into some
+Java code. In this chapter, we'll build a contrived but
+friendly little applet that illustrates a number of techniques we
+use throughout the book. I'll take this opportunity to
+introduce general features of the Java language and of Java
+applets. However, many details won't be fleshed out here, but in
+subsequent chapters.
+
+<P CLASS=para>
+This chapter also serves as a brief introduction to the object-oriented and multithreaded features of Java. If these concepts are
+new to you, you can take comfort in the knowledge that encountering
+them for the first time in Java should be a straightforward and
+pleasant experience. If you have worked with another object-oriented
+or multithreaded programming environment, clear your mind; you will
+especially appreciate Java's simplicity and elegance.
+
+<P CLASS=para>
+I can't stress enough the importance of experimentation as you
+learn new concepts. If you follow along with the online examples, be
+sure to take some time and compile them locally. Play with them;
+change their behavior, break them, fix them, and, as Java developer
+Arthur van Hoff would say: "Have fun!"
+
+<DIV CLASS=sect1>
+<h2 CLASS=sect1><A CLASS="TITLE" NAME="EXJ-CH-2-SECT-1">2.1 Hello Web!</A></h2>
+
+<P CLASS=para>
+In the tradition of all good introductory programming texts, we begin
+with Java's equivalent of the archetypal "Hello
+World" application. In the spirit of our new world, we'll
+call it "Hello Web!"
+
+<P CLASS=para>
+I'll take four passes at this example, adding features and
+introducing new concepts along the way. Here's a
+minimalist version:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+public class HelloWeb extends java.applet.Applet { 
+    public void paint( java.awt.Graphics gc ) { 
+        gc.drawString("Hello Web!", 125, 95 ); 
+    } 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Place this text in a file called <i CLASS=filename>HelloWeb.java</i>.
+Now compile this source:
+
+<DIV CLASS=screen>
+<P>
+<PRE>
+% javac HelloWeb.java 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+This produces the Java byte-code binary class file
+<i CLASS=filename>HelloWeb.class</i>.
+
+<P CLASS=para>
+We need an HTML document that contains the
+appropriate <tt CLASS=literal>&lt;applet&gt;</tt> tag to display our example.
+Place the following text in a file called
+<i CLASS=filename>HelloWeb.html</i> in the same directory as the binary
+class file:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+&lt;html&gt; 
+&lt;head&gt; 
+&lt;/head&gt; 
+&lt;body&gt; 
+    &lt;applet code=HelloWeb width=300 height=200&gt;&lt;/applet&gt; 
+&lt;/body&gt; 
+&lt;/html&gt; 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Finally, you can point your Java-enabled Web browser at this document with 
+a URL such as: 
+
+<DIV CLASS=screen>
+<P>
+<PRE>
+http://yourServer/wherever/HelloWeb.html
+</PRE>
+</DIV>
+
+<P CLASS=para>
+or
+
+<DIV CLASS=screen>
+<P>
+<PRE>
+file:/wherever/HelloWeb.html
+</PRE>
+</DIV>
+
+<P CLASS=para>
+You should see the proclamation shown in <A HREF="ch02_01.htm#EXJ-CH-2-FIG-1">Figure 2.1</A>. Now congratulate yourself: you have
+written your first applet! Take a moment to bask in the glow of your
+monitor.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-2-FIG-1">Figure 2.1: Hello Web! applet</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0201.gif" alt="[Graphic: Figure 2-1]" width=503 height=263 border=0>
+
+</DIV>
+
+<P CLASS=para>
+<tt CLASS=literal>HelloWeb</tt> may be a small program, but there is
+actually quite a bit going on behind the scenes. Those five lines
+represent the tip of an iceberg. What lies under the surface are
+layers of functionality provided by the Java language and its
+foundation class libraries. In this chapter, I'll cover a lot
+of ground quickly in an effort to show you the big picture.
+I'll try to offer enough detail for a complete understanding of
+what is happening in each example without exhaustive
+explanations until the appropriate chapters. This holds for both
+elements of the Java language and the object-oriented concepts that
+apply to them. Later chapters will provide more detailed cataloging
+of Java's syntax, components, and object-oriented features.
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-2-SECT-1.1">Classes</A></h3>
+
+<P CLASS=para>
+<A NAME="CH02.CLASSES"></A>The previous example defines a <I CLASS=emphasis>class</I> named
+<tt CLASS=literal>HelloWeb</tt>. Classes are the fundamental building
+blocks of most object-oriented languages. A class in Java is akin to
+the C++ concept of a class. Specifically, it's a group of data items
+(&agrave; la a C struct), with associated functions that perform
+operations on this data. The data items in a class are called
+<I CLASS=emphasis>fields</I> or <I CLASS=emphasis>variables</I>&nbsp;;
+the functions are called <I CLASS=emphasis>methods</I>. A class might
+represent something concrete, like a button on a screen or the
+information in a spreadsheet, or it could be something more abstract,
+such as a sorting algorithm or possibly the sense of ennui in your
+MUD character. A hypothetical spreadsheet class
+might, for example, have variables that represent the values of its
+individual cells and methods that perform operations on those cells,
+such as "clear a row" or "compute values."
+
+<P CLASS=para>
+Our <tt CLASS=literal>HelloWeb</tt> class is the container for our Java
+applet. It holds two general types of variables and methods: those we
+need for our specific applet's tasks and some special
+predesignated ones we provide to interact with the outside world. The
+Java run-time environment, in this case a Java-enabled Web browser,
+periodically calls methods in <tt CLASS=literal>HelloWeb</tt> to pass us
+information and prod us to perform actions, as depicted in <A HREF="ch02_01.htm#EXJ-CH-2-FIG-2">Figure 2.2</A>. Our simple <tt CLASS=literal>HelloWeb</tt>
+class defines a single method called <tt CLASS=literal>paint()</tt>. The
+<tt CLASS=literal>paint()</tt> method is called by Java when it's time
+for our application to draw itself on the screen.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-2-FIG-2">Figure 2.2: Method invocation in the Java environment</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0202.gif" alt="[Graphic: Figure 2-2]" width=503 height=163 border=0>
+
+</DIV>
+
+<P CLASS=para>
+You will see that the <tt CLASS=literal>HelloWeb</tt> class derives some
+of its structure from another class called <tt CLASS=literal>Applet</tt>.
+This is why we refer to <tt CLASS=literal>HelloWeb</tt> as an applet.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-2-SECT-1.2">Class Instances and Objects</A></h3>
+
+<P CLASS=para>
+A class represents a particular thing; it contains methods and
+variables that assist in that representation. Many individual working
+copies of a given class can exist while an application is
+active. These individual incarnations are called
+<I CLASS=emphasis>instances</I> of the class. Two instances of a given
+class may contain different states, but they always have the same
+methods.
+
+<P CLASS=para>
+As an example, consider a <tt CLASS=literal>Button</tt> class. There is
+only one <tt CLASS=literal>Button</tt> class, but many actual working
+instances of buttons can be in an application. Furthermore, two
+<tt CLASS=literal>Button</tt> instances might contain different data,
+perhaps giving each a different appearance or specifying a different
+message for each to send when pushed. In this sense, a class can
+be considered a mold for making the object it represents:
+something like a cookie cutter stamping out working instances of
+itself in the memory of the computer. As you'll see later,
+there's a bit more to it than that--a class can in fact
+share information among its instances--but this
+explanation suffices for now.
+
+<P CLASS=para>
+The term <I CLASS=emphasis>object</I> is very general and in some other
+contexts is used almost interchangeably with class. Objects are the
+abstract entities all object-oriented languages refer to in one
+form or another. I will use object as a generic term for an instance
+of a class. I might, therefore, refer to an instance of the
+<tt CLASS=literal>Button</tt> class as a <tt CLASS=literal>Button</tt>, a
+<tt CLASS=literal>Button</tt> object, or, indiscriminately, as an object.
+
+<P CLASS=para>
+A Java-enabled Web browser creates an instance of our
+<tt CLASS=literal>HelloWeb</tt> class when we first use our applet. If we
+had included the <tt CLASS=literal>HelloWeb</tt> applet tag in our
+HTML document twice (causing it to appear twice on
+the screen), the browser would create and manage two separate
+HelloWeb objects (two separate instances of the
+<tt CLASS=literal>HelloWeb</tt> class).
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-2-SECT-1.3">Variables</A></h3>
+
+<P CLASS=para>
+<A NAME="CH02.VARIABLES"></A>In Java, every class defines a new <I CLASS=emphasis>type</I>. A
+variable can be of this type and then hold
+instances of that class. A variable could, for example, be of type
+<tt CLASS=literal>Button</tt> and hold an instance of the
+<tt CLASS=literal>Button</tt> class, or of type
+<tt CLASS=literal>SpreadSheetCell</tt> and hold a
+<tt CLASS=literal>SpreadSheetCell</tt> object, just as it could be any of the more familiar types such as <tt CLASS=literal>integer</tt> or
+<tt CLASS=literal>float</tt>. In this way, by having variables containing
+complex objects, a class may use other classes as tools within itself.
+Using classes in this way is called <I CLASS=emphasis>composition</I>.
+ Our examples in
+this chapter are somewhat unrealistic in that we are building only a
+single class of our own. However, we will be using many classes as
+tools within our applet.
+
+<P CLASS=para>
+You have seen only one variable so far in our simple
+<tt CLASS=literal>HelloWeb</tt> example. It's found in the declaration
+of our lonely <tt CLASS=literal>paint()</tt> method:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+public void paint( java.awt.Graphics gc ) {...} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Just like functions in C (and many other languages), a method in Java
+declares a list of variables that hold its arguments, and it
+specifies the types of those arguments. Our
+<tt CLASS=literal>paint()</tt> method takes one argument named (somewhat
+tersely) <tt CLASS=literal>gc</tt>, which is of type
+<tt CLASS=literal>Graphics</tt>. When the
+<tt CLASS=literal>paint()</tt> method is invoked, a
+<tt CLASS=literal>Graphics</tt> object is assigned to
+<tt CLASS=literal>gc</tt>, which we use in the body of the method. I'll
+say more about <tt CLASS=literal>paint()</tt> and the
+<tt CLASS=literal>Graphics</tt> class in a moment.
+
+<P CLASS=para>
+But first, a few words about variables. I have loosely
+referred to variables as holding objects. In reality, variables that
+have complex types (class types) don't so much contain objects as
+point to them. Class-type variables are
+<I CLASS=emphasis>references</I> to objects. A reference is a pointer
+to, or another name for, an object.
+
+<P CLASS=para>
+ 
+Simply declaring a variable doesn't imply that any storage is
+allocated for that variable or that an instance of its type even
+exists anywhere. When a reference-type variable is first declared, if
+it's not assigned to an instance of a class, it doesn't point to
+anything. It's assigned the default value of 
+<tt CLASS=literal>null</tt>, meaning
+"no value." If you try to use a variable with a
+<tt CLASS=literal>null</tt> value as if it were pointing to a real object,
+a run-time error (NullPointerException) occurs.
+
+<P CLASS=para>
+This discussion begs the question as to where to get an instance of a
+class to assign to a variable in the first place. The answer, as you
+will see later, is through the use of the <tt CLASS=literal>new</tt>
+operator.
+In our first two passes at this example, we are dealing
+only with objects handed to us prefabricated from somewhere
+outside of our class. We examine object creation later in the
+chapter.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-2-SECT-1.4">Inheritance</A></h3>
+
+<P CLASS=para>
+Java classes are arranged in a parent-child hierarchy, in which the
+parent and child are known as the <I CLASS=emphasis>superclass</I> and
+<I CLASS=emphasis>subclass</I>, respectively. In Java, every class has
+exactly one superclass (a single parent), but possibly many
+subclasses. Of course, a class's superclass probably has its own
+superclass.
+
+<P CLASS=para>
+The declaration of our class in the previous example uses the keyword
+<tt CLASS=literal>extends</tt> to specify that <tt CLASS=literal>HelloWeb</tt>
+is a subclass of the <tt CLASS=literal>Applet</tt> class:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+public class HelloWeb extends java.applet.Applet {...}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+A subclass may be allowed to inherit some or all of the variables and
+methods of its superclass. Through <I CLASS=emphasis>inheritance</I>,
+the subclass can use those members as if it has declared them itself.
+A subclass can add variables and methods of its own, and it can also
+override the meaning of inherited variables and methods. When we use
+a subclass, overridden variables and methods are hidden
+(replaced) by the subclass's own versions of them. In this way,
+inheritance provides a powerful mechanism whereby a subclass can
+refine or extend its superclass.
+
+<P CLASS=para>
+For example, the hypothetical spreadsheet class might be subclassed to
+produce a new scientific spreadsheet class with extra mathematical
+functions and special built-in constants. In this case, the source
+code for the scientific spreadsheet might declare methods for the
+added mathematical functions and variables for the special constants,
+but the new class automatically has all the variables and methods that
+constitute the normal functionality of a spreadsheet; they are
+inherited from the parent spreadsheet class. This means the scientific
+spreadsheet maintains its identity as a spreadsheet, and we can use it
+anywhere the simpler spreadsheet is used.
+
+<P CLASS=para>
+Our <tt CLASS=literal>HelloWeb</tt> class is a subclass of the
+<tt CLASS=literal>Applet</tt> class and inherits many variables and
+methods not explicitly declared in our source code.
+These members function in the same way as the ones we add
+or override.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-2-SECT-1.5">Applet</A></h3>
+
+<P CLASS=para>
+The <tt CLASS=literal>Applet</tt> class provides the framework for
+building applets. It contains methods that support the basic
+functionality for a Java application that is displayed and
+controlled by a Java-enabled Web browser or other Java-enabled
+software.
+
+<P CLASS=para>
+We override methods in the <tt CLASS=literal>Applet</tt> class in a
+subclass to implement the behavior of our particular applet. This may
+sound restrictive, as if we are limited to some predefined set of
+routines, but that is not the case at all. Keep in mind that the
+methods we are talking about are means of getting information from the
+outside world. A realistic application might involve hundreds or even
+thousands of classes, with legions of methods and variables and
+multiple threads of execution. The vast majority of these are related
+to the particulars of our job. The inherited methods of the
+<tt CLASS=literal>Applet</tt> class, and of other special components,
+serve as a framework on which to hang code that handles
+certain types of events and performs special tasks.
+
+<P CLASS=para>
+The <tt CLASS=literal>paint()</tt> method is an important method of the
+<tt CLASS=literal>Applet</tt> class; we override it to implement the way
+in which our particular applet displays itself on the screen. We
+don't override any of the other inherited members of
+<tt CLASS=literal>Applet</tt> because they provide basic functionality and
+reasonable defaults for this (trivial) example. As
+<tt CLASS=literal>HelloWeb</tt> grows, we'll delve deeper into the
+inherited members and override additional methods. Inherited members
+will allow us to get information from the user and give us more
+control over what our applet does. We will also add some
+arbitrary, application-specific methods and variables for the needs
+of <tt CLASS=literal>HelloWeb</tt>.
+
+<P CLASS=para>
+If you want to verify for yourself what functionality the
+<tt CLASS=literal>Applet</tt> class is providing our example, you can try
+out the world's least interesting applet: the
+<tt CLASS=literal>Applet</tt> base class itself. Just use the class name
+<tt CLASS=literal>java.applet.Applet</tt> in your HTML
+code, instead of <tt CLASS=literal>HelloWeb</tt>:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+&lt;applet code=java.applet.Applet width=300 height=200&gt;&lt;/applet&gt; 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+You should get a blank area of screen. I told you it's not very
+interesting.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-2-SECT-1.6">Relationships and Finger Pointing</A></h3>
+
+<P CLASS=para>
+We can correctly refer to <tt CLASS=literal>HelloWeb</tt> as an
+<tt CLASS=literal>Applet</tt> because subclassing can be thought of as
+creating an "is a" relationship, in which the subclass is
+a kind of its superclass. <tt CLASS=literal>HelloWeb</tt> is therefore a
+kind of <tt CLASS=literal>Applet</tt>. When we refer to a kind of object,
+we mean any instance of that object's class or any of its
+subclasses.
+Later, we will look more closely at the Java class hierarchy and see
+that <tt CLASS=literal>Applet</tt> is itself a subclass of the
+<tt CLASS=literal>Panel</tt> class, which is further derived from a class
+called <tt CLASS=literal>Container</tt>, and so on, as shown in <A HREF="ch02_01.htm#EXJ-CH-2-FIG-3">Figure 2.3</A>.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-2-FIG-3">Figure 2.3: Part of the Java class hierarchy</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0203.gif" alt="[Graphic: Figure 2-3]" width=503 height=263 border=0>
+
+</DIV>
+
+<P CLASS=para>
+In this sense, an <tt CLASS=literal>Applet</tt> is a kind of
+<tt CLASS=literal>Panel</tt>, which is, itself, a kind of
+<tt CLASS=literal>Container</tt> and each of these can ultimately be
+considered to be a kind of <tt CLASS=literal>Component</tt>. You'll
+see later that it's from these classes that <tt CLASS=literal>Applet</tt>
+inherits its basic graphical user interface functionality and the
+ability to have other graphical components embedded within it.
+
+<P CLASS=para>
+<tt CLASS=literal>Component</tt> is a subclass of
+<tt CLASS=literal>Object</tt>, so all of these classes are a kind of
+<tt CLASS=literal>Object</tt>. As you'll see later, the
+<tt CLASS=literal>Object</tt> class is at the top of the Java class
+hierarchy; <tt CLASS=literal>Object</tt> doesn't have a superclass.
+Every other class in the Java API inherits behavior from
+<tt CLASS=literal>Object</tt>, which defines a few basic methods, as
+you'll see in <A HREF="ch05_01.htm">Chapter 5, <i>Objects in Java</i></A>. The terminology here
+can become a bit muddled. I'll continue to use the word "object"
+(lowercase o) in a generic way to refer to an instance of any class;
+I'll use <tt CLASS=literal>Object</tt> to refer specifically to that
+class.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-2-SECT-1.7">Packages</A></h3>
+
+<P CLASS=para>
+In our previous example, the <tt CLASS=literal>Applet</tt> class
+is referenced by its fully qualified name
+<tt CLASS=literal>java.applet.Applet</tt>:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+public class HelloWeb extends java.applet.Applet {...} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The prefix on the class name identifies it as belonging to the
+<tt CLASS=literal>java.applet</tt> package. Packages provide a means for
+organizing Java classes. A <I CLASS=emphasis>package</I> is a group of
+Java classes that are related by purpose or by application. Classes
+in the same package have special access privileges with respect to
+one another and may be designed to work together. Package names are
+hierarchical and are used somewhat like Internet domain
+and host names, to distinguish groups of classes by organization and
+application. Classes may be dynamically loaded over networks from
+arbitrary locations; within this context, packages provide a crude
+namespace of Java classes.[1]
+
+<blockquote class=footnote>
+<P CLASS=para>[1] 
+ 
+ 
+There are many efforts under way to find a
+general solution to the problem of locating resources in a globally
+distributed computing environment. The Uniform Resource Identifier
+Working Group of the IETF has proposed Uniform
+Resource Names (URNs). A URN
+would be a more abstract and persistent identifier that would be
+resolved to a URL through the use of a name
+service. We can imagine a day when there will exist a global
+namespace of trillions of persistent objects forming the
+infrastructure for all computing resources. Java provides an
+important evolutionary step in this direction.
+</blockquote>
+<P CLASS=para>
+<tt CLASS=literal>java.applet</tt> identifies a particular package that
+contains classes related to
+applets. <tt CLASS=literal>java.applet.Applet</tt> identifies a specific
+class, the <tt CLASS=literal>Applet</tt> class, within that package. The
+<tt CLASS=literal>java.</tt> hierarchy is special. Any package that
+begins with <tt CLASS=literal>java.</tt> is part of the core Java API and
+is available on any platform that supports Java. 
+<A HREF="ch02_01.htm#EXJ-CH-2-FIG-4">Figure 2.4</A>
+illustrates the core Java packages, showing a representative class or
+two from each package.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-2-FIG-4">Figure 2.4: The core Java packages</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0204.gif" alt="[Graphic: Figure 2-4]" width=503 height=288 border=0>
+
+</DIV>
+
+<P CLASS=para>
+Some notable core packages include: <tt CLASS=literal>java.lang</tt>,
+which contains fundamental classes needed by the Java language itself;
+<tt CLASS=literal>java.awt</tt>, which contains classes of the Java
+Abstract Windowing Toolkit; and <tt CLASS=literal>java.net</tt>, which
+contains the networking classes.
+
+<P CLASS=para>
+A few classes contain methods that are not written in Java, but are
+instead part of the native Java implementation on
+a particular platform. Approximately 22 such classes are in the
+<tt CLASS=literal>java</tt> package hierarchy; these are the only
+classes that have to be ported to a new platform. They form the
+basis for all interaction with the operating system. All other
+classes are built on or around these and are completely platform
+independent.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-2-SECT-1.8">The paint(&nbsp;) Method</A></h3>
+
+<P CLASS=para>
+The source for our <tt CLASS=literal>HelloWeb</tt> class defines just one
+method, <tt CLASS=literal>paint()</tt>, which overrides the
+<tt CLASS=literal>paint()</tt> method from the <tt CLASS=literal>Applet</tt>
+class:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+public void paint( java.awt.Graphics gc ) { 
+    gc.drawString("Hello Web!", 125, 95 ); 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The <tt CLASS=literal>paint()</tt> method is called by Java when it's
+time for our applet to draw itself on the screen. It takes a single
+argument, a <tt CLASS=literal>Graphics</tt> object, and doesn't return
+any type of value (<tt CLASS=literal>void</tt>) to its caller.
+
+<P CLASS=para>
+<I CLASS=emphasis>Modifiers</I> are keywords placed before classes,
+variables, and methods to alter their accessibility, behavior, or
+semantics. <tt CLASS=literal>paint()</tt> is declared as
+<tt CLASS=literal>public</tt>, which means it can be invoked (called)
+by methods in classes other than <tt CLASS=literal>HelloWeb</tt>. In this
+case, it's the Java windowing environment that is calling our
+<tt CLASS=literal>paint()</tt> method. A method or variable declared as
+<tt CLASS=literal>private</tt> is inaccessible from outside of its class.
+
+<P CLASS=para>
+ 
+The <tt CLASS=literal>Graphics</tt> object, an instance of the
+<tt CLASS=literal>Graphics</tt> class, represents a particular graphical
+drawing area and is also called a graphics context. It contains
+methods the applet calls to draw in this area, and variables that
+represent characteristics such as clipping or drawing modes. The
+particular <tt CLASS=literal>Graphics</tt> object we are passed in the
+<tt CLASS=literal>paint()</tt> method corresponds to our applet's
+area of the screen.
+
+<P CLASS=para>
+ 
+The <tt CLASS=literal>Graphics</tt> class provides methods for rendering
+primitive shapes, images, and text. In <tt CLASS=literal>HelloWeb</tt>, we
+invoke the <tt CLASS=literal>drawString()</tt> method of our
+<tt CLASS=literal>Graphics</tt> object to scrawl our message at the
+specified coordinates. (For a description of the methods available in
+the <tt CLASS=literal>Graphics</tt> class, see <A HREF="ch13_01.htm">Chapter 13, <i>Drawing With the AWT</i></A>.)
+
+<P CLASS=para>
+As in C++, a method or variable of an object is accessed in a
+hierarchical way by appending its name with a "." (dot) to
+the object that holds it. We invoked the
+<tt CLASS=literal>drawString()</tt> method of the
+<tt CLASS=literal>Graphics</tt> object (referenced by our
+<tt CLASS=literal>gc</tt> variable) in this way:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+gc.drawString( "Hello Web!", 125, 95 ); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+You may need to get used to the idea that our application is drawn by a
+method that is called by an outside agent at arbitrary times. How can
+we do anything useful with this?  How do we control what gets done and
+when?  These answers will be forthcoming. For now, just think about
+how you would structure applications that draw themselves on command.
+
+</DIV>
+
+</DIV>
+
+
+<DIV CLASS=htmlnav>
+
+<P>
+<HR align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch01_10.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><a href="index.htm"><img src='gifs/txthome.gif' border=0 alt='Home'></a></td>
+<td width=172 align=right valign=top><A HREF="ch02_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+<tr>
+<td width=172 align=left valign=top>Availability</td>
+<td width=171 align=center valign=top><a href="index/idx_0.htm"><img src='gifs/index.gif' alt='Book Index' border=0></a></td>
+<td width=172 align=right valign=top>Hello Web! II: The Sequel</td>
+</tr>
+</table>
+<hr align=left width=515>
+
+<IMG SRC="gifs/smnavbar.gif" USEMAP="#map" BORDER=0> 
+<MAP NAME="map"> 
+<AREA SHAPE=RECT COORDS="0,0,108,15" HREF="../javanut/index.htm"
+alt="Java in a Nutshell"> 
+<AREA SHAPE=RECT COORDS="109,0,200,15" HREF="../langref/index.htm" 
+alt="Java Language Reference"> 
+<AREA SHAPE=RECT COORDS="203,0,290,15" HREF="../awt/index.htm" 
+alt="Java AWT"> 
+<AREA SHAPE=RECT COORDS="291,0,419,15" HREF="../fclass/index.htm" 
+alt="Java Fundamental Classes"> 
+<AREA SHAPE=RECT COORDS="421,0,514,15" HREF="../exp/index.htm" 
+alt="Exploring Java"> 
+</MAP>
+</DIV>
+
+</BODY>
+</HTML>

@@ -1,0 +1,745 @@
+<!DOCTYPE HTML PUBLIC "-//ORA//DTD CD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>[Chapter 8] Networking</TITLE>
+<META NAME="author" CONTENT="Mark Grand and Jonathan Knudsen">
+<META NAME="date" CONTENT="Fri Aug  8 16:16:48 1997">
+<META NAME="form" CONTENT="html">
+<META NAME="metadata" CONTENT="dublincore.0.1">
+<META NAME="objecttype" CONTENT="book part">
+<META NAME="otheragent" CONTENT="gmat dbtohtml">
+<META NAME="publisher" CONTENT="O'Reilly &amp; Associates, Inc.">
+<META NAME="source" CONTENT="SGML">
+<META NAME="subject" CONTENT="Java">
+<META NAME="title" CONTENT="Java Fundamental Classes Reference">
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<DIV CLASS=htmlnav>
+<H1><a href='index.htm'><IMG SRC="gifs/smbanner.gif"
+     ALT="Java Fundamental Classes Reference" border=0></a></H1>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch07_03.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><B><FONT FACE="ARIEL,HELVETICA,HELV,SANSERIF" SIZE="-1">Chapter 8</FONT></B></TD>
+<td width=172 align=right valign=top><A HREF="ch08_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+</table>
+
+&nbsp;
+<hr align=left width=515>
+</DIV>
+<H1 CLASS=chapter><A CLASS="TITLE" NAME="JFC-CH-8">8. Networking</A></H1>
+
+<DIV CLASS=htmltoc>
+
+<p>
+<b>Contents:</b><br>
+Sockets<br>
+<A HREF="ch08_02.htm">URL Objects</A><BR>
+
+<p>
+</DIV>
+
+<P CLASS=para>
+The <tt CLASS=literal>java.net</tt> package provides two basic mechanisms
+for accessing data and other resources over a network.  The
+fundamental mechanism is called a socket. A socket allows programs to
+exchange groups of bytes called packets. There are a number of classes
+in <tt CLASS=literal>java.net</tt> that support sockets, including
+<tt CLASS=literal>Socket</tt>, <tt CLASS=literal>ServerSocket</tt>,
+<tt CLASS=literal>DatagramSocket</tt>, <tt CLASS=literal>DatagramPacket</tt>,
+and <tt CLASS=literal>MulticastSocket</tt>. The
+<tt CLASS=literal>java.net</tt> package also includes a
+<tt CLASS=literal>URL</tt> class that provides a higher-level mechanism
+for accessing and processing data over a network.
+
+<DIV CLASS=sect1>
+<h2 CLASS=sect1><A CLASS="TITLE" NAME="JFC-CH-8-SECT-1">8.1 Sockets</A></h2>
+
+<P CLASS=para>
+<A NAME="CH08.NET1"></A><A NAME="CH08.NET1A"></A>A socket is a mechanism that allows programs to send packets of bytes
+to each other. The programs do not need to be running on the same
+machine, but if they are running on different machines, they do need
+to be connected to a network that allows the machines to exchange
+data. Java's socket implementation is based on the socket
+library that was originally part of BSD UNIX. Programmers who are
+familiar with UNIX sockets or the Microsoft WinSock library should be
+able to see the similarities in the Java implementation.
+
+<P CLASS=para>
+When a program creates a socket, an identifying number called a port
+number is associated with the socket. Depending on how the socket is
+used, the port number is either specified by the program or assigned
+by the operating system. When a socket sends a packet, the packet is
+accompanied by two pieces of information that specify the destination
+of the packet:
+
+<P>
+<UL CLASS=itemizedlist>
+<li CLASS=listitem>A network address that specifies the system that should receive the 
+packet. 
+
+<P>
+<li CLASS=listitem>A port number that tells the receiving system to which socket to deliver 
+the data. 
+
+<P>
+</UL>
+<P CLASS=para>
+Sockets typically work in pairs, where one socket acts as a client and 
+the other functions as a server. A server socket specifies the port number 
+for the network communication and then listens for data that is sent to 
+it by client sockets. The port numbers for server sockets are well-known 
+numbers that are known to client programs. For example, an FTP server uses 
+a socket that listens at port 21. If a client program wants to communicate 
+with an FTP server, it knows to contact a socket that listens at port 21. 
+
+<P CLASS=para>
+The operating system normally specifies port numbers for client sockets 
+because the choice of a port number is not usually important. When a client 
+socket sends a packet to a server socket, the packet is accompanied by 
+the port number of the client socket and the client's network address. 
+The server is then able to use that information to respond to the client. 
+
+<P CLASS=para>
+When using sockets, you have to decide which type of protocol that you 
+want it to use to transport packets over the network: a connection-oriented 
+protocol or a connectionless protocol. With a connection-oriented protocol, 
+a client socket establishes a connection to a server socket when it is 
+created. Once the connection has been established, a connection-oriented 
+protocol ensures that data is delivered reliably, which means: 
+
+<P>
+<UL CLASS=itemizedlist>
+<li CLASS=listitem>For every packet that is sent, the packet is delivered. Every time 
+a socket sends a packet, it expects to receive an acknowledgement that 
+the packet has been received successfully. If the socket does not receive 
+that acknowledgement within the time it expects to receive it, the socket 
+sends the packet again. The socket keeps trying until transmission is successful, 
+or it decides that delivery has become impossible. 
+
+<P>
+<li CLASS=listitem>Packets are read from the receiving socket in the same order that 
+they were sent. Because of the way that networks work, packets may arrive 
+at the receiving socket in a different order than they were sent. A reliable, 
+connection-oriented protocol allows the receiving socket to reorder the 
+packets it receives, so that they can be read by the receiving program 
+in the same order that they were sent. 
+
+<P>
+</UL>
+<P CLASS=para>
+A connectionless protocol allows a best-effort delivery of packets. It 
+does not guarantee that packets are delivered or that packets are read 
+by the receiving program in the same order they were sent. A connectionless 
+protocol trades these deficiencies for performance advantages over connection-oriented 
+protocols. Here are two types of situations in which connectionless protocols 
+are frequently preferred over connection-oriented protocols: 
+
+<P>
+<UL CLASS=itemizedlist>
+<li CLASS=listitem>When only a single packet needs to be sent and guaranteed delivery 
+is not crucial, a connectionless protocol eliminates the overhead involved 
+in creating and destroying a connection. For comparison purposes, the connection-oriented 
+TCP/IP protocol uses seven packets to send a single packet, while 
+the connectionless UDP/IP protocol uses only one. A protocol for 
+getting the current time typically uses a connectionless protocol to request 
+the current time from the server and to return the time to the requester. 
+
+<P>
+<li CLASS=listitem>For extremely time-sensitive applications, such as sending audio in 
+real time, the guarantee of reliable transmission is not an advantage and 
+may be a disadvantage. Pausing until a missing piece of data is received 
+can cause noticeable clicks or pauses in the audio. Techniques for sending 
+audio over a network that use a connectionless protocol have been developed 
+and they work noticeably better. For example, RealAudio uses a protocol 
+that runs on top of a connectionless protocol to transmit sound over a 
+network. 
+
+<P>
+</UL>
+<P CLASS=para>
+<A HREF="ch08_01.htm#JFC-CH-8-TAB-1">Table 8.1</A> shows the roles of the various socket classes 
+in the <tt CLASS=literal>java.net</tt> package. 
+
+<P>
+<DIV CLASS=table>
+<TABLE BORDER>
+<CAPTION><A CLASS="TITLE" NAME="JFC-CH-8-TAB-1">Table 8.1: Socket Classes in java.net</A></CAPTION>
+<TR CLASS=row>
+<TH ALIGN="LEFT">&nbsp;</TH>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Client</TH>
+<TH ALIGN="LEFT">
+
+<P CLASS=para>
+Server</TH>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<b>Connection-oriented Protocol</b></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>Socket</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>ServerSocket</tt></TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<b>Connectionless Protocol</b></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>DatagramSocket</tt></TD>
+<TD ALIGN="LEFT">
+
+<P CLASS=para>
+<tt CLASS=literal>DatagramSocket</tt></TD>
+</TR>
+</TABLE>
+<P>
+</DIV>
+<P CLASS=para>
+As of Java 1.1, the <tt CLASS=literal>java.net</tt> package 
+also contains a <tt CLASS=literal>MulticastSocket</tt> 
+class that supports connectionless, multicast data communication. 
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="JFC-CH-8-SECT-1.1">Sockets for Connection-Oriented Protocols</A></h3>
+
+<P CLASS=para>
+<A NAME="CH08.CONN1"></A><A NAME="CH08.CONN3"></A><A NAME="CH08.CONN2"></A>When you are writing code that implements the server side of a connection-oriented 
+protocol, your code typically follows this pattern: 
+
+<P>
+<UL CLASS=itemizedlist>
+<li CLASS=listitem>Create a <tt CLASS=literal>ServerSocket</tt> 
+object to accept connections. 
+
+<P>
+<li CLASS=listitem>When the <tt CLASS=literal>ServerSocket</tt> 
+accepts a connection, it creates a <tt CLASS=literal>Socket</tt> 
+object that encapsulates the connection. 
+
+<P>
+<li CLASS=listitem>The <tt CLASS=literal>Socket</tt> is asked to 
+create <tt CLASS=literal>InputStream</tt> and <tt CLASS=literal>OutputStream</tt> 
+objects that read and write bytes to and from the connection. 
+
+<P>
+<li CLASS=listitem>The <tt CLASS=literal>ServerSocket</tt> can optionally 
+create a new thread for each connection, so that the server can listen 
+for new connections while it is communicating with clients. 
+
+<P>
+</UL>
+<P CLASS=para>
+The code that implements the client side of a connection-oriented
+protocol is quite simple. It creates a <tt CLASS=literal>Socket</tt>
+object that opens a connection with a server, and then it uses that
+<tt CLASS=literal>Socket</tt> object to communicate with the server.
+
+<P CLASS=para>
+Now let's look at an example. The example consists of a pair of
+programs that allows a client to get the contents of a file from a
+server. The client requests the contents of a file by opening a
+connection to the server and sending it the name of a file
+followed by a newline character. If the server is able to read the
+named file, it responds by sending the string
+<tt CLASS=literal>"Good:\n"</tt> followed by the contents of the
+file. If the server is not able to read the named file, it responds by
+sending the string <tt CLASS=literal>"Bad:"</tt> followed by the name of
+the file and a newline character. After the server has sent its
+response, it closes the connection.
+
+<P CLASS=para>
+Here's the program that implements the server side of this file transfer: 
+
+<DIV CLASS=screen>
+<P>
+<PRE>
+public class FileServer extends Thread {
+    public static void main(String[] argv) {
+        ServerSocket s;
+        try {
+            s = new ServerSocket(1234, 10);
+        }catch (IOException e) {
+            System.err.println("Unable to create socket");
+            e.printStackTrace();
+            return;
+        }
+        try {
+            while (true) {
+                new FileServer(s.accept());
+            }
+        }catch (IOException e) {
+        }
+    }
+    private Socket socket; 
+    FileServer(Socket s) {
+        socket = s;
+        start();
+    }
+    public void run() {
+        InputStream in;
+        String fileName = "";
+        PrintStream out = null;
+        FileInputStream f;
+        try {
+            in = socket.getInputStream();
+            out = new PrintStream(socket.getOutputStream());
+            fileName = new DataInputStream(in).readLine();
+            f = new FileInputStream(fileName);
+        }catch (IOException e) {
+            if (out != null)
+              out.print("Bad:"+fileName+"\n");
+            out.close();
+            try {
+                socket.close();
+            }catch (IOException ie) {
+            }
+            return;
+        }
+        out.print("Good:\n");
+        // send contents of file to client.
+        byte[] buffer = new byte[4096];
+        try {
+            int len;
+            while ((len = f.read(buffer)) &gt; 0) {
+                out.write(buffer, 0, len);
+            }// while
+        }catch (IOException e) {
+        }finally {
+            try {
+                in.close();
+                out.close();
+                socket.close();
+            }catch (IOException e) {
+            }
+        }
+    }
+}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The <tt CLASS=literal>FileServer</tt> class implements the server side of
+the file transfer; it is a subclass of <tt CLASS=literal>Thread</tt> to
+make it easier to write code that can handle multiple connections at
+the same time. The <tt CLASS=literal>main()</tt> method provides the
+top-level logic for the program. The first thing that
+<tt CLASS=literal>main()</tt> does is to create a
+<tt CLASS=literal>ServerSocket</tt> object to listen for connections. The
+constructor for <tt CLASS=literal>ServerSocket</tt> takes two parameters:
+the port number for the socket and a value that specifies the maximum
+length of the pending connections queue. The operating system can
+accept connections on behalf of the socket when the server program is
+busy doing something other than accepting connections. If the second
+parameter is greater than zero, the operating system can accept up to
+that many connections on behalf of the socket and store them in a
+queue. If the second parameter is zero, however, the operating system
+does not accept any connections on behalf of the server program. The
+remainder of the <tt CLASS=literal>main()</tt> method accepts a
+connection, creates a new instance of the
+<tt CLASS=literal>FileServer</tt> class to process the connection, and
+then waits for the next connection.
+
+<P CLASS=para>
+Each <tt CLASS=literal>FileServer</tt> object is responsible for handling
+a connection accepted by its <tt CLASS=literal>main()</tt> method. A
+<tt CLASS=literal>FileServer</tt> object uses a <tt CLASS=literal>private</tt>
+variable, <tt CLASS=literal>socket</tt>, to refer to the
+<tt CLASS=literal>Socket</tt> object that allows it to communicate with
+the client program on the other end of the connection. The constructor
+for <tt CLASS=literal>FileServer</tt> sets its <tt CLASS=literal>socket</tt>
+variable to refer to the <tt CLASS=literal>Socket</tt> object that is
+passed to it by the <tt CLASS=literal>main()</tt> method and then calls
+its <tt CLASS=literal>start()</tt> method. The
+<tt CLASS=literal>FileServer</tt> class inherits the
+<tt CLASS=literal>start()</tt> method from the <tt CLASS=literal>Thread</tt>
+class; the <tt CLASS=literal>start()</tt> method starts a new thread that
+calls the <tt CLASS=literal>run()</tt> method. Because the rest of the
+connection processing is done asynchronously in a separate thread, the
+constructor can return immediately. This allows the
+<tt CLASS=literal>main()</tt> method to accept another connection right
+away, instead of having to wait for this connection to be fully
+processed before accepting another.
+
+<P CLASS=para>
+The <tt CLASS=literal>run()</tt> method uses the <tt CLASS=literal>in</tt> and
+<tt CLASS=literal>out</tt> variables to refer to
+<tt CLASS=literal>InputStream</tt> and <tt CLASS=literal>PrintStream</tt>
+objects that read from and write to the connection associated with the
+<tt CLASS=literal>Socket</tt> object, respectively.  These streams are
+created by calling the <tt CLASS=literal>getInputStream()</tt> and
+<tt CLASS=literal>getOutputStream()</tt> methods of the
+<tt CLASS=literal>Socket</tt> object. The <tt CLASS=literal>run()</tt> method
+then reads the name of the file that the client program wants to
+receive and creates a <tt CLASS=literal>FileInputStream</tt> to read that
+file. If any of the methods called up to this point have detected a
+problem, they throw some kind of <tt CLASS=literal>IOException</tt>.  In
+this case, the server sends a response to the client that consists of
+the string <tt CLASS=literal>"Bad:"</tt> followed by the filename and then
+closes the socket and returns, which kills the thread.
+
+<P CLASS=para>
+If everything up to this point has been fine, the server sends the
+string <tt CLASS=literal>"Good:"</tt> and then copies the
+contents of the file to the socket. The copying is done by repeatedly
+filling a buffer with bytes from the file and writing the buffer to
+the socket. When the contents of the file are exhausted, the streams
+and the socket are closed, the <tt CLASS=literal>run()</tt> method returns,
+and the thread dies.
+
+<P CLASS=para>
+Now let's take a look at the client part of this program: 
+
+<DIV CLASS=screen>
+<P>
+<PRE>
+public class FileClient {
+    private static boolean usageOk(String[] argv) {
+        if (argv.length != 2) {
+            String msg = "usage is: " + "FileClient server-name file-name";
+            System.out.println(msg);
+            return false;
+        }
+        return true;
+    }
+    public static void main(String[] argv) {
+        int exitCode = 0;
+        if (!usageOk(argv))
+          return;
+        Socket s = null;
+        try {
+            s = new Socket(argv[0], 1234);
+        }catch (IOException e) {
+            String msg = "Unable to connect to server";
+            System.err.println(msg);
+            e.printStackTrace();
+            System.exit(1);
+        }
+        InputStream in = null;
+        try {
+            OutputStream out = s.getOutputStream();
+            new PrintStream(out).print(argv[1]+"\n");
+            in = s.getInputStream();
+            DataInputStream din = new DataInputStream(in);
+            String serverStatus = din.readLine();
+            if (serverStatus.startsWith("Bad")) {
+                exitCode = 1;
+            int ch;
+            while((ch = in.read()) &gt;= 0) {
+                System.out.write((char)ch);
+            }// while
+        }catch (IOException e) {
+        }finally {
+            try {
+                s.close();
+            }catch (IOException e) {
+            }
+        }
+    }
+}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The <tt CLASS=literal>usageOk()</tt> method is simply a utility method
+that verifies that the correct number of arguments have been passed to
+the client application. It outputs a help message if the number of
+arguments is not what is expected. It is generally a good idea to
+include a method like this in a Java application that uses
+command-line parameters.
+
+<P CLASS=para>
+The <tt CLASS=literal>main()</tt> method does the real work of
+<tt CLASS=literal>FileClient</tt>. After it verifies that it has the
+correct number of parameters, it attempts to create a socket connected
+to the server program running on the specified host and listening for
+connections on port number 1234. The socket that it creates is
+encapsulated by a <tt CLASS=literal>Socket</tt> object. The constructor
+for the <tt CLASS=literal>Socket</tt> object takes two arguments: the name
+of the machine the server program is running on and the port
+number. After the socket is successfully opened, the client sends the
+specified filename, followed by a new line character, to the
+server. The client then gets an <tt CLASS=literal>InputStream</tt> from
+the socket to read what the server is sending and reads the
+success/failure code that the server sends back. If the request is a
+success, the client reads the contents of the requested file.
+
+<P CLASS=para>
+Note that the <tt CLASS=literal>finally</tt> clause 
+at the end closes the socket. If the program did not explicitly close the 
+socket, it would be closed automatically when the program terminates. However, 
+it is a good programming practice to explicitly close a socket when you 
+are done with it. 
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="JFC-CH-8-SECT-1.2">Sockets for Connectionless Protocols</A></h3>
+
+<P CLASS=para>
+<A NAME="CH08.CONN4"></A><A NAME="CH08.CONN5"></A><A NAME="CH08.CONN6"></A>Communicating with a connectionless protocol is simpler than using a connection-oriented 
+protocol, as both the client and the server use <tt CLASS=literal>DatagramSocket</tt> objects. 
+The code for the server-side program has the following pattern: 
+
+<P>
+<UL CLASS=itemizedlist>
+<li CLASS=listitem>Create a <tt CLASS=literal>DatagramSocket</tt> 
+object associated with a specified port number. 
+
+<P>
+<li CLASS=listitem>Create a <tt CLASS=literal>DatagramPacket</tt> 
+object and ask the <tt CLASS=literal>DatagramSocket</tt> 
+to put the next piece of data it receives in the <tt CLASS=literal>DatagramPacket</tt>. 
+
+<P>
+</UL>
+<P CLASS=para>
+On the client-side, the order is simply reversed: 
+
+<P>
+<UL CLASS=itemizedlist>
+<li CLASS=listitem>Create a <tt CLASS=literal>DatagramPacket</tt> 
+object associated with a piece of data, a destination network address, 
+and a port number. 
+
+<P>
+<li CLASS=listitem>Ask a <tt CLASS=literal>DatagramSocket</tt> object 
+to send the data associated with the <tt CLASS=literal>DatagramPacket</tt> 
+to the destination associated with the <tt CLASS=literal>DatagramSocket</tt>. 
+
+<P>
+</UL>
+<P CLASS=para>
+Let's look at an example that shows how this pattern can be coded 
+into a server that provides the current time and a client that requests 
+the current time. Here's the code for the server class: 
+
+<DIV CLASS=screen>
+<P>
+<PRE>
+public class TimeServer {
+    static DatagramSocket socket;
+    public static void main(String[] argv) {
+        try {
+            socket = new DatagramSocket(7654);
+        }catch (SocketException e) {
+            System.err.println("Unable to create socket");
+            e.printStackTrace();
+            System.exit(1);
+        }
+        DatagramPacket datagram;
+        datagram = new DatagramPacket(new byte[1], 1);
+        while (true) {
+            try {
+                socket.receive(datagram);
+                respond(datagram);
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    static void respond(DatagramPacket request) {
+        ByteArrayOutputStream bs;
+        bs = new ByteArrayOutputStream();
+        DataOutputStream ds = new DataOutputStream(bs);
+        try {
+            ds.writeLong(System.currentTimeMillis());
+        }catch (IOException e) {
+        }
+        DatagramPacket response;
+        byte[] data = bs.toByteArray();
+        response = new DatagramPacket(data, data.length,
+                       request.getAddress(), request.getPort());
+        try {
+            socket.send(response);
+        }catch (IOException e) {
+            // Give up, we've done our best.
+        }
+    }
+}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The <tt CLASS=literal>main()</tt> method of the
+<tt CLASS=literal>TimeServer</tt> class begins by creating a
+<tt CLASS=literal>DatagramSocket</tt> object that uses port number
+7654. The <tt CLASS=literal>socket</tt> variable refers to this
+<tt CLASS=literal>DatagramSocket</tt>, which is used to communicate with
+clients. Then the <tt CLASS=literal>main()</tt> method creates a
+<tt CLASS=literal>DatagramPacket</tt> object to contain data received by
+the <tt CLASS=literal>DatagramSocket</tt>.  The two-argument constructor
+for <tt CLASS=literal>DatagramPacket</tt> creates objects that
+receive data. The first argument is an array of bytes to contain the
+data, while the second argument specifies the number of bytes to
+read. When a <tt CLASS=literal>DatagramSocket</tt> is asked to receive a
+packet into a <tt CLASS=literal>DatagramPacket</tt>, only the specified
+number of bytes are read. Even though the client is not really sending
+any information to the server, we still create a
+<tt CLASS=literal>DatagramPacket</tt> with a 1-byte buffer. In theory,
+all that the server needs is an empty packet that specifies the
+client's network address and port number, but attempting to
+receive a zero-byte packet does not work. When the
+<tt CLASS=literal>receive()</tt> method of a
+<tt CLASS=literal>DatagramSocket</tt> is called to receive a zero-byte
+packet, it returns immediately, rather than waiting for a packet to
+arrive. Finally, the server enters an infinite loop that receives
+requests from clients using the <tt CLASS=literal>receive()</tt> method of
+the <tt CLASS=literal>DatagramSocket</tt>, and sends responses.
+
+<P CLASS=para>
+The <tt CLASS=literal>respond()</tt> method handles sending responses. It
+starts by writing the current time as a <tt CLASS=literal>long</tt> value
+to an array of bytes. Next, the <tt CLASS=literal>respond()</tt> method
+prepares to send the array of bytes by creating a
+<tt CLASS=literal>DatagramPacket</tt> object that encapsulates the array
+and the address and port number of the client that requested the
+time. Notice that the constructor used to create a
+<tt CLASS=literal>DatagramPacket</tt> object for sending a packet takes
+four arguments: an array of bytes, the number of bytes to send, the
+client's network address, and the client's port
+number. The address and port are retrieved from the request
+<tt CLASS=literal>DatagramPacket</tt> with the
+<tt CLASS=literal>getAddress()</tt> and <tt CLASS=literal>getPort()</tt>
+methods. The <tt CLASS=literal>respond()</tt> method finishes its work by
+actually sending the <tt CLASS=literal>DatagramPacket</tt> using the
+<tt CLASS=literal>send()</tt> method of the
+<tt CLASS=literal>DatagramSocket</tt>.
+
+<P CLASS=para>
+Now here's the code for the corresponding client program: 
+
+<DIV CLASS=screen>
+<P>
+<PRE>
+public class TimeClient {
+    private static boolean usageOk(String[] argv) {
+        if (argv.length != 1) {
+            String msg = "usage is: " + "TimeClient server-name";
+            System.out.println(msg);
+            return false;
+        }
+        return true;
+    }
+    public static void main(String[] argv) {
+        if (!usageOk(argv))
+            System.exit(1);
+        DatagramSocket socket;
+        try {
+            socket = new DatagramSocket();
+        }catch (SocketException e) {
+            System.err.println("Unable to create socket");
+            e.printStackTrace();
+            System.exit(1);
+            return;
+        }
+        long time;
+        try {
+            byte[] buf = new byte[1];
+            socket.send(new DatagramPacket(buf, 1, 
+                            InetAddress.getByName(argv[0]), 7654));
+            DatagramPacket response = new DatagramPacket(new byte[8],8);
+            socket.receive(response);
+            ByteArrayInputStream bs;
+            bs = new ByteArrayInputStream(response.getData());
+            DataInputStream ds = new DataInputStream(bs);
+            time = ds.readLong();
+        }catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+            return;
+        }
+        System.out.println(new Date(time));
+        socket.close();
+    }
+}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The <tt CLASS=literal>main()</tt> method does the real work of
+<tt CLASS=literal>TimeClient</tt>. After it verifies that it has the
+correct number of parameters with <tt CLASS=literal>usageOk()</tt>, it
+creates a <tt CLASS=literal>DatagramSocket</tt> object for communicating
+with the server. Note that the constructor for this
+<tt CLASS=literal>DatagramSocket</tt> does not specify any parameters; a
+client <tt CLASS=literal>DatagramSocket</tt> is not explicitly connected
+to a specific port. Then the <tt CLASS=literal>main()</tt> method creates
+a <tt CLASS=literal>DatagramPacket</tt> object to contain the request to
+be sent to the server. Since this <tt CLASS=literal>DatagramPacket</tt> is
+being used to send a packet, the code uses the four-argument
+constructor that specifies an array of bytes, the number of bytes to
+send, the specified network address for a time server, and the
+server's port number.  The <tt CLASS=literal>DatagramPacket</tt> is
+then sent to the server with the <tt CLASS=literal>send()</tt> method of
+the <tt CLASS=literal>DatagramSocket</tt>.
+
+<P CLASS=para>
+Now the <tt CLASS=literal>main()</tt> method creates another
+<tt CLASS=literal>DatagramPacket</tt> to receive the response from the
+server. The two-argument constructor is used this time because the
+object is being created to receive data. After calling the
+<tt CLASS=literal>receive()</tt> method of the
+<tt CLASS=literal>DatagramSocket</tt> to get the response from the server,
+the <tt CLASS=literal>main()</tt> method gets the data from the response
+<tt CLASS=literal>DatagramPacket</tt> by calling
+<tt CLASS=literal>getData()</tt>. The data is wrapped in a
+<tt CLASS=literal>DataInputStream</tt> so that the data can be read as a
+<tt CLASS=literal>long</tt> value. If everything has gone smoothly, the
+client finishes by printing the current time and closing the socket.
+
+</DIV>
+
+</DIV>
+
+
+<DIV CLASS=htmlnav>
+
+<P>
+<HR align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch07_03.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><a href="index.htm"><img src='gifs/txthome.gif' border=0 alt='Home'></a></td>
+<td width=172 align=right valign=top><A HREF="ch08_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+<tr>
+<td width=172 align=left valign=top>Versioning of Classes</td>
+<td width=171 align=center valign=top><a href="index/idx_0.htm"><img src='gifs/index.gif' alt='Book Index' border=0></a></td>
+<td width=172 align=right valign=top>URL Objects</td>
+</tr>
+</table>
+<hr align=left width=515>
+
+<IMG SRC="gifs/smnavbar.gif" USEMAP="#map" BORDER=0> 
+<MAP NAME="map"> 
+<AREA SHAPE=RECT COORDS="0,0,108,15" HREF="../javanut/index.htm"
+alt="Java in a Nutshell"> 
+<AREA SHAPE=RECT COORDS="109,0,200,15" HREF="../langref/index.htm" 
+alt="Java Language Reference"> 
+<AREA SHAPE=RECT COORDS="203,0,290,15" HREF="../awt/index.htm" 
+alt="Java AWT"> 
+<AREA SHAPE=RECT COORDS="291,0,419,15" HREF="../fclass/index.htm" 
+alt="Java Fundamental Classes"> 
+<AREA SHAPE=RECT COORDS="421,0,514,15" HREF="../exp/index.htm" 
+alt="Exploring Java"> 
+</MAP>
+</DIV>
+
+</BODY>
+</HTML>

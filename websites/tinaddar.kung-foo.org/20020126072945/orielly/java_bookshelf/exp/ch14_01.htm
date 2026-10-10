@@ -1,0 +1,1588 @@
+<!DOCTYPE HTML PUBLIC "-//ORA//DTD CD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>[Chapter 14] Working With Images</TITLE>
+<META NAME="author" CONTENT="Pat Niemeyer and Josh Peck">
+<META NAME="date" CONTENT="Tue Jul 22 19:03:52 1997">
+<META NAME="form" CONTENT="html">
+<META NAME="metadata" CONTENT="dublincore.0.1">
+<META NAME="objecttype" CONTENT="book part">
+<META NAME="otheragent" CONTENT="gmat dbtohtml">
+<META NAME="publisher" CONTENT="O'Reilly &amp; Associates, Inc.">
+<META NAME="source" CONTENT="SGML">
+<META NAME="subject" CONTENT="Java">
+<META NAME="title" CONTENT="Exploring Java">
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<DIV CLASS=htmlnav>
+<H1><a href='index.htm'><IMG SRC="gifs/smbanner.gif"
+     ALT="Exploring Java" border=0></a></H1>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch13_05.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><B><FONT FACE="ARIEL,HELVETICA,HELV,SANSERIF" SIZE="-1">Chapter 14</FONT></B></TD>
+<td width=172 align=right valign=top><A HREF="ch14_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+</table>
+
+&nbsp;
+<hr align=left width=515>
+</DIV>
+<H1 CLASS=chapter><A CLASS="TITLE" NAME="EXJ-CH-14">14. Working With Images</A></H1>
+
+<DIV CLASS=htmltoc>
+
+<p>
+<b>Contents:</b><br>
+Image Processing<br>
+<A HREF="ch14_02.htm">Working with Audio</A><BR>
+
+<p>
+</DIV>
+
+<DIV CLASS=sect1>
+<h2 CLASS=sect1><A CLASS="TITLE" NAME="EXJ-CH-14-SECT-1">14.1 Image Processing</A></h2>
+
+<P CLASS=para>
+<A NAME="CH11.PROCESS"></A>Up to this point, we've confined ourselves to working with the
+high-level drawing commands of the <tt CLASS=literal>Graphics</tt> class
+and using images in a hands-off mode. In this section, we'll
+clear up some of the mystery surrounding images and see how they are
+produced and used. The classes in the
+<tt CLASS=literal>java.awt.image</tt> package handle image processing;
+<A HREF="ch14_01.htm#EXJ-CH-14-FIG-1">Figure 14.1</A> shows the classes in this package.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-14-FIG-1">Figure 14.1: The java.awt.image package</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je1401.gif" alt="[Graphic: Figure 14-1]" width=502 height=373 border=0>
+
+</DIV>
+
+<P CLASS=para>
+First, we'll return to our discussion about image
+observers and see how we can get more control over image data as it's
+processed asynchronously by AWT components. Then we'll 
+open the hood and have a look at image production. If you're interested in 
+creating sophisticated graphics, such as rendered images or video streams, 
+this will teach you about the foundations of image construction in 
+Java.[1]
+
+<blockquote class=footnote>
+<P CLASS=para>[1] 
+You will also want to pay attention to the forthcoming Java Media API.
+Java Media will support plug-n-play streaming media.
+</blockquote>
+<P CLASS=para>
+Objects that work with image data fall into one of three
+categories: image-data producers, image-data consumers, and
+image-status observers. Image producers implement the
+<tt CLASS=literal>ImageProducer</tt> interface. They create pixel data and
+distribute it to one or more consumers. Image consumers implement a
+corresponding <tt CLASS=literal>ImageConsumer</tt> interface. They eat the
+pixel data and do something useful with it, such as display it on
+screen or analyze its contents. Image observers, as I mentioned
+earlier, implement the <tt CLASS=literal>ImageObserver</tt>
+interface. They are effectively nosy neighbors of image consumers that
+watch as the image data arrives.
+
+<P CLASS=para>
+Image producers generate the information that defines each
+pixel of an image. A pixel has both a color and a transparency; the
+transparency specifies how pixels underneath the image show
+through. Image producers maintain a list of registered consumers for
+the image and send them this pixel data in one or more passes, as the
+pixels are generated. Image producers give the consumers other kinds
+of information as well, such as the image's dimensions. The
+producer also notifies the consumer when it has reached a boundary of
+the image. For a static image, such as GIF or
+JPEG data, the producer signals when the entire
+image is complete, and production is finished. For a video source or
+animation, the image producer could generate a continuous stream of
+pixel data and mark the end of each frame.
+
+<P CLASS=para>
+An image producer delivers pixel data and other image-attribute
+information by invoking methods in its consumers, as shown in 
+<A HREF="ch14_01.htm#EXJ-CH-14-FIG-2">Figure 14.2</A>. This diagram illustrates an image producer
+sending pixel data to three consumers by invoking their
+<tt CLASS=literal>setPixels()</tt> methods.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-14-FIG-2">Figure 14.2: Image observers, producers, and consumers</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je1402.gif" alt="[Graphic: Figure 14-2]" width=503 height=193 border=0>
+
+</DIV>
+
+<P CLASS=para>
+Each consumer represents a view of the image. A given consumer
+might prepare the image for display on a particular medium, or it
+might simply serve as a filter and pass the image data to another
+consumer down the line.
+
+<P CLASS=para>
+<A HREF="ch14_01.htm#EXJ-CH-14-FIG-2">Figure 14.2</A> also shows an image observer,
+watching the status of one of the consumers. The observer is
+notified as new portions of the image and new attributes are
+ready. Its job is to track this information and let another part of
+the application know its status. As I discussed earlier, the image
+observer is essentially a callback that is notified asynchronously as
+the image is built. The default <tt CLASS=literal>Component</tt> class
+image observer that we used in our previous examples called
+<tt CLASS=literal>repaint()</tt> for us each time a new section of the
+image was available, so that the screen was updated more or less
+continuously as the data arrived. A different kind of image observer
+might wait for the entire image before telling the application to
+display it; yet another observer might update a loading meter showing
+how far the image loading had progressed.
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-14-SECT-5.1">Implementing an ImageObserver</A></h3>
+
+<P CLASS=para>
+<A NAME="CH11.OBS2"></A><A NAME="CH11.OBS3"></A>To be an image observer, you have to implement the single method,
+<tt CLASS=literal>imageUpdate()</tt>, defined by the
+<tt CLASS=literal>java.awt.image.ImageObserver</tt> interface:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+public boolean imageUpdate(Image image, int flags, int x, int y, 
+                           int width, int height)
+</PRE>
+</DIV>
+
+<P CLASS=para>
+<tt CLASS=literal>imageUpdate()</tt> is called by the consumer, as needed,
+to pass the observer information about the construction of its view of
+the image. Essentially, any time the image changes, the consumer tells
+the observer so that the observer can perform any necessary actions,
+like repainting. <tt CLASS=literal>image</tt> holds a reference to the
+<tt CLASS=literal>Image</tt> object the consumer is
+processing. <tt CLASS=literal>flags</tt> is an integer whose bits specify
+what information about the image is now available. The values of the
+flags are defined as <tt CLASS=literal>static</tt> identifiers in the
+<tt CLASS=literal>ImageObserver</tt> interface, as shown in 
+<A HREF="ch14_01.htm#EXJ-CH-14-TAB-1">Table 14.1</A>.
+
+<P>
+<DIV CLASS=table>
+<TABLE BORDER>
+<CAPTION><A CLASS="TITLE" NAME="EXJ-CH-14-TAB-1">Table 14.1: ImageObserver Information Flags</A></CAPTION>
+<TR CLASS=row>
+<TH ALIGN="left">Flag</TH>
+<TH ALIGN="left">Description</TH>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>HEIGHT</tt></TD>
+<TD ALIGN="left">
+
+<P CLASS=para>
+The height of the image is ready</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>WIDTH</tt></TD>
+<TD ALIGN="left">
+
+<P CLASS=para>
+The width of the image is ready</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>FRAMEBITS</tt></TD>
+<TD ALIGN="left">
+
+<P CLASS=para>
+A frame is complete</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>SOMEBITS</tt></TD>
+<TD ALIGN="left">
+
+<P CLASS=para>
+An arbitrary number of pixels have arrived</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>ALLBITS</tt></TD>
+<TD ALIGN="left">
+
+<P CLASS=para>
+The image is complete</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>ABORT</tt></TD>
+<TD ALIGN="left">
+
+<P CLASS=para>
+The image loading has been aborted</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>ERROR</tt></TD>
+<TD ALIGN="left">
+
+<P CLASS=para>
+An error occurred during image processing; 
+attempts to display the image will fail</TD>
+</TR>
+</TABLE>
+<P>
+</DIV>
+<P CLASS=para>
+The flags determine which of the other parameters,
+<tt CLASS=literal>x</tt>, <tt CLASS=literal>y</tt>, <tt CLASS=literal>width</tt>,
+and <tt CLASS=literal>height</tt>, hold valid data and what they mean. To
+test whether a particular flag in the <tt CLASS=literal>flags</tt> integer
+is set, we have to resort to some binary shenanigans. The following
+class, <tt CLASS=literal>MyObserver</tt>, implements the
+<tt CLASS=literal>ImageObserver</tt> interface and prints its information
+as it's called:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.awt.*; 
+import java.awt.image.*; 
+ 
+class MyObserver implements ImageObserver { 
+ 
+    public boolean imageUpdate( Image image, int flags, int x, int y, 
+                                int width, int height) { 
+ 
+        if ( (flags &amp; HEIGHT) !=0 ) 
+            System.out.println("Image height = " + height ); 
+ 
+        if ( (flags &amp; WIDTH ) !=0 ) 
+            System.out.println("Image width = " + width ); 
+         
+        if ( (flags &amp; FRAMEBITS) != 0 ) 
+            System.out.println("Another frame finished."); 
+ 
+        if ( (flags &amp; SOMEBITS) != 0 ) 
+            System.out.println("Image section :" 
+                         + new Rectangle( x, y, width, height ) ); 
+ 
+        if ( (flags &amp; ALLBITS) != 0 ) { 
+            System.out.println("Image finished!"); 
+            return false;  
+        } 
+ 
+        if ( (flags &amp; ABORT) != 0 )  { 
+            System.out.println("Image load aborted..."); 
+            return false;  
+        } 
+ 
+        return true;  
+    } 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The <tt CLASS=literal>imageUpdate()</tt> method of
+<tt CLASS=literal>MyObserver</tt> is called by the consumer periodically,
+and prints simple status messages about the construction of the
+image. Notice that <tt CLASS=literal>width</tt> and
+<tt CLASS=literal>height</tt> play a dual role. If
+<tt CLASS=literal>SOMEBITS</tt> is set, they represent the size of the
+chunk of the image that has just been delivered. If
+<tt CLASS=literal>HEIGHT</tt> or <tt CLASS=literal>WIDTH</tt> is set, however,
+they represent the overall image dimensions. Just for amusement, we
+have used the <tt CLASS=literal>java.awt.Rectangle</tt> class to help us
+print the bounds of rectangular region.
+
+<P CLASS=para>
+<tt CLASS=literal>imageUpdate()</tt> returns a
+<tt CLASS=literal>boolean</tt> value indicating whether or not it's
+interested in future updates. If the image is finished or aborted,
+<tt CLASS=literal>imageUpdate()</tt> returns <tt CLASS=literal>false</tt> to
+indicate it isn't interested in further updates. Otherwise,
+it returns <tt CLASS=literal>true</tt>.
+
+<P CLASS=para>
+The following example uses <tt CLASS=literal>MyObserver</tt> to print 
+information about an image as AWT loads it: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.awt.*; 
+ 
+public class ObserveImage extends java.applet.Applet {  
+    Image img; 
+    public void init() { 
+        img = getImage( getClass().getResource(getParameter("img")) ); 
+        MyObserver mo = new MyObserver(); 
+        img.getWidth( mo ); 
+        img.getHeight( mo ); 
+        prepareImage( img, mo ); 
+    } 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+After requesting the <tt CLASS=literal>Image</tt> object with
+<tt CLASS=literal>getImage()</tt>, we perform three operations on it to
+kick-start the loading process. <tt CLASS=literal>getWidth()</tt> and
+<tt CLASS=literal>getHeight()</tt> ask for the image's width and
+height. If the image hasn't been loaded yet, or its size
+can't be determined until loading is finished, our observer will
+be called when the data is ready. <tt CLASS=literal>prepareImage()</tt>
+asks that the image be readied for display on the component. It's a
+general mechanism for getting AWT started loading,
+converting, and possibly scaling the image. If the image hasn't
+been otherwise prepared or displayed, this happens asynchronously, and
+our image observer will be notified as the data is constructed.
+
+<P CLASS=para>
+You may be wondering where the image consumer is, since we
+never see a call to <tt CLASS=literal>imageUpdate()</tt>. That's a
+good question, but for now I'd like you to take it on faith that
+the consumer exists. As you'll see later, image consumers are
+rather mysterious objects that tend to hide beneath the surface of
+image-processing applications. In this case, the consumer is hiding
+deep inside the implementation of <tt CLASS=literal>Applet</tt>.
+
+<P CLASS=para>
+You should be able to see how we could implement all sorts of
+sophisticated image loading and tracking schemes. The two most obvious
+strategies, however, are to draw an image progressively, as it's
+constructed, or to wait until it's complete and draw it in its
+entirety. We have already seen that the <tt CLASS=literal>Component</tt>
+class implements the first scheme. Another class,
+<tt CLASS=literal>java.awt.MediaTracker</tt>, is a general utility that
+tracks the loading of a number of images or other media types for
+us. We'll look at it next.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-14-SECT-5.2">Using a MediaTracker</A></h3>
+
+<P CLASS=para>
+<A NAME="CH11.MED1"></A><A NAME="CH11.MED2"></A><tt CLASS=literal>java.awt.MediaTracker</tt> is a utility class that
+simplifies life if we have to wait for one or more images to be loaded
+before they're displayed. A <tt CLASS=literal>MediaTracker</tt>
+monitors the preparation of an image or a group of images and lets us
+check on them periodically, or wait until they are
+completed. <tt CLASS=literal>MediaTracker</tt> uses the
+<tt CLASS=literal>ImageObserver</tt> interface internally to receive image
+updates.
+
+<P CLASS=para>
+The following applet, <tt CLASS=literal>LoadMe</tt>, uses a
+<tt CLASS=literal>MediaTracker</tt> to wait while an image is prepared. It
+shows a "Loading..." message while it's waiting. (If you
+are retrieving the image from a local disk or very fast network, this
+might go by quickly, so pay attention.)
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.awt.*;
+public class TrackImage extends java.applet.Applet implements Runnable { 
+    Image img;
+    final int MAIN_IMAGE = 0;
+    MediaTracker tracker;
+    boolean show = false;
+    Thread runme;
+    String message = "Loading...";
+    public void init() {
+        img = getImage( getClass().getResource(getParameter("img")) );
+        tracker = new MediaTracker(this);
+        tracker.addImage( img, MAIN_IMAGE );
+    }
+    public void start() {
+        if ( !tracker.checkID( MAIN_IMAGE ) ) {
+            runme = new Thread( this );
+            runme.start();
+        }
+    }
+    public void stop() {
+        runme.stop();
+        runme = null;
+    }
+    public void run() {
+        repaint();
+        try {
+            tracker.waitForID( MAIN_IMAGE );
+        } catch( InterruptedException e) { }
+        if ( tracker.isErrorID( MAIN_IMAGE ) )
+            message= "Error";
+        else
+            show = true;
+        repaint();
+    }
+    public void paint( Graphics g ) {
+        if ( show )
+            g.drawImage( img, 0, 0, this );
+        else {
+            g.drawRect( 0, 0, getSize().width-1, getSize().height-1);
+            g.drawString( message, 20, 20 );
+        }
+    }
+}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+From its <tt CLASS=literal>init()</tt> method, <tt CLASS=literal>LoadMe</tt>
+requests its image and creates a <tt CLASS=literal>MediaTracker</tt> to
+manage it. Later, after the applet is started,
+<tt CLASS=literal>LoadMe</tt> fires up a thread to wait while the image is
+loaded. Note that we don't do this in <tt CLASS=literal>init()</tt>
+because it would be rude to do anything time-consuming there; it would
+take up time in an AWT thread that we don't
+own. In this case, waiting in <tt CLASS=literal>init()</tt> would be
+especially bad because <tt CLASS=literal>paint()</tt> would never get
+called and our "loading" message wouldn't be
+displayed; the applet would just hang until the image loaded. It's
+often better to create a new thread for initialization and display a
+startup message in the interim.
+
+<P CLASS=para>
+When we construct a <tt CLASS=literal>MediaTracker</tt>, we give it
+a reference to our component (<tt CLASS=literal>this</tt>). After creating
+a <tt CLASS=literal>MediaTracker</tt>, we assign it images to manage.
+Each image is associated with an integer identifier we'll
+use later for checking on its status. Multiple images can be
+associated with the same identifier, letting us manage them as a
+group. The value of the identifier is also used to prioritize loading
+when waiting on multiple sets of images; lower IDs have higher
+priority. In this case, we want to manage only a single image, so we
+created one identifier called <tt CLASS=literal>MAIN_IMAGE</tt> and passed
+it as the ID for our image in the call to
+<tt CLASS=literal>addImage()</tt>.
+
+<P CLASS=para>
+In our applet's <tt CLASS=literal>start()</tt> method, we
+call the <tt CLASS=literal>MediaTracker</tt>'s
+<tt CLASS=literal>checkID()</tt> routine with the ID of the image to see
+if it's already been loaded. If it hasn't, the applet fires
+up a new thread to fetch it. The thread executes the
+<tt CLASS=literal>run()</tt> method, which simply calls the
+<tt CLASS=literal>MediaTracker</tt> <tt CLASS=literal>waitforID()</tt> routine
+and blocks on the image, waiting for it to finish loading. The
+<tt CLASS=literal>show</tt> flag tells <tt CLASS=literal>paint()</tt> whether
+to display our status message or the actual image. We do a
+<tt CLASS=literal>repaint()</tt> immediately upon entering
+<tt CLASS=literal>run()</tt> to display the "Loading..."
+status, and again upon exiting to change the display. We test for
+errors during image preparation with <tt CLASS=literal>isErrorID()</tt>
+and change the status message if we find one.
+
+<P CLASS=para>
+This may seem like a lot of work to go through, just to put up
+a status message while loading a single
+image. <tt CLASS=literal>MediaTracker</tt> is more valuable when we are
+working with many images that have to be available before we can begin
+parts of our application. It saves us from implementing a custom
+<tt CLASS=literal>ImageObserver</tt> for every application. In the
+future, <tt CLASS=literal>MediaTracker</tt> should also be able to track
+the status of audio clips and other kinds of media (as its name
+suggests).
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-14-SECT-5.3">Producing Image Data</A></h3>
+
+<P CLASS=para>
+<A NAME="CH11.PROD1"></A><A NAME="CH11.PROD2"></A>What if we want to make our own image data? To be an image producer,
+we have to implement the five methods defined in the
+<tt CLASS=literal>ImageProducer</tt> interface:
+<P>
+<UL CLASS=itemizedlist>
+<li CLASS=listitem><tt CLASS=literal>addConsumer()</tt> 
+
+<P>
+<li CLASS=listitem><tt CLASS=literal>startProduction()</tt>
+
+<P>
+<li CLASS=listitem><tt CLASS=literal>isConsumer()</tt>
+
+<P>
+<li CLASS=listitem><tt CLASS=literal>removeConsumer()</tt>
+
+<P>
+<li CLASS=listitem><tt CLASS=literal>requestTopDownLeftRightResend()</tt>
+
+<P>
+</UL>
+
+ 
+ 
+Four methods of <tt CLASS=literal>ImageProducer</tt> simply deal with the
+process of registering consumers. <tt CLASS=literal>addConsumer()</tt>
+takes an <tt CLASS=literal>ImageConsumer</tt> as an argument and adds it
+to the list of consumers. Our producer can then start sending image
+data to the consumer whenever it's ready.
+<tt CLASS=literal>startProduction()</tt> is identical to
+<tt CLASS=literal>addConsumer()</tt>, except that it asks the producer to
+start sending data as soon as possible. The difference might be that a
+given producer would send the current frame of data or initiate
+construction of a frame immediately, rather than waiting until its
+next cycle.
+<tt CLASS=literal>isConsumer()</tt> tests whether a particular
+consumer is already registered, and <tt CLASS=literal>removeConsumer()</tt>
+removes a consumer from the list. We'll see shortly that we can
+perform these kinds of operations easily with a
+<tt CLASS=literal>Vector</tt>; see <A HREF="ch07_01.htm">Chapter 7, <i>Basic Utility Classes</i></A> for a
+complete discussion of <tt CLASS=literal>Vector</tt> objects.
+
+<P CLASS=para>
+An <tt CLASS=literal>ImageProducer</tt> also needs to know how to
+use the <tt CLASS=literal>ImageConsumer</tt> interface of its clients. The
+final method of the <tt CLASS=literal>ImageProducer</tt> interface,
+<tt CLASS=literal>requestTopDownLeftRightResend()</tt>, asks that the
+image data be resent to the consumer, in order, from beginning to end.
+In general, a producer can generate pixel data and send it to the
+consumer in any order that it likes. 
+The <tt CLASS=literal>setPixels()</tt> method of the
+<tt CLASS=literal>ImageConsumer</tt> interface takes parameters telling
+the consumer what part of the image is being delivered on each call. A
+call to <tt CLASS=literal>requestTopDownLeftRightResend()</tt> asks the
+producer to send the pixel data again, in order. A consumer might do
+this so that it can use a higher quality conversion algorithm that
+relies on receiving the pixel data in sequence. It's important to
+note that the producer is allowed to ignore this request; it
+doesn't have to be able to send the data in sequence.
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-14-SECT-5.3.1">Color models</A></h4>
+
+<P CLASS=para>
+<A NAME="CH11.COLOR1"></A><A NAME="CH11.COLOR2"></A><A NAME="CH11.COLOR3"></A>Everybody wants to work with color in their application, but using color
+raises problems. The most important problem is simply how to
+represent a color. There are many different ways to encode color
+information: red, green, blue (RGB) values; hue,
+saturation, value (HSV); hue, lightness, saturation
+(HLS); and more. In addition, you can provide full
+color information for each pixel, or you can just specify an index into
+a color table (palette) for each pixel. The way you represent a color
+is called a <I CLASS=emphasis>color model</I>. AWT
+provides tools for two broad groups of color models:
+<I CLASS=emphasis>direct</I> and <I CLASS=emphasis>indexed</I>.
+
+<P CLASS=para>
+As you might expect, you need to specify a color model in order
+to generate pixel data; the <tt CLASS=literal>abstract</tt> class
+<tt CLASS=literal>java.awt.image.ColorModel</tt> represents a color
+model. A <tt CLASS=literal>ColorModel</tt> is one of the arguments to the
+<tt CLASS=literal>setPixels()</tt> method an image producer calls to
+deliver pixels to a consumer. What you probably wouldn't expect
+is that you can use a different color model every time you call
+<tt CLASS=literal>setPixels()</tt>. Exactly why you'd do this is
+another matter. Most of the time, you'll want to work with a
+single color model; that model will probably be the default direct
+color model. But the additional flexibility is there if you need it.
+
+<P CLASS=para>
+By default, the core AWT components use a direct
+color model called ARGB. The A stands for
+"alpha,", which is the historical name for
+transparency. RGB refers to the red, green, and
+blue color components that are combined to produce a single, composite
+color. In the default ARGB model, each pixel is
+represented by a 32-bit integer that is interpreted as four 8-bit
+fields; in order, the fields represent the transparency (A), red,
+green, and blue components of the color, as shown in 
+<A HREF="ch14_01.htm#EXJ-CH-14-FIG-3">Figure 14.3</A>.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-14-FIG-3">Figure 14.3: ARGB color encoding</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je1403.gif" alt="[Graphic: Figure 14-3]" width=503 height=128 border=0>
+
+</DIV>
+
+<P CLASS=para>
+To create an instance of the default ARGB
+model, call the <tt CLASS=literal>static</tt>
+<tt CLASS=literal>getRGBdefault()</tt> method in
+<tt CLASS=literal>ColorModel</tt>. This method returns a
+<tt CLASS=literal>DirectColorModel</tt> object;
+<tt CLASS=literal>DirectColorModel</tt> is a subclass of
+<tt CLASS=literal>ColorModel</tt>. You can also create other direct color
+models by calling a <tt CLASS=literal>DirectColorModel</tt> constructor,
+but you shouldn't need to unless you have a fairly exotic
+application.
+
+<P CLASS=para>
+In an indexed color model, each pixel is represented by a
+smaller amount of information: an index into a table of real color
+values. For some applications, generating data with an indexed model
+may be more convenient. If you have an 8-bit display or smaller, using
+an indexed model may be more efficient, since your hardware is
+internally using an indexed color model of some form.
+
+<P CLASS=para>
+While AWT provides
+<tt CLASS=literal>IndexedColorModel</tt> objects, we won't cover
+them in this book. It's sufficient to work with the
+<tt CLASS=literal>DirectColorModel</tt>. Even if you have an 8-bit
+display, the Java implementation on your platform should accommodate
+the hardware you have and, if necessary, dither colors to fit your
+display. Java also produces transparency on systems that don't
+natively support it by dithering colors.
+
+</DIV>
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-14-SECT-5.3.2">Creating an image</A></h4>
+
+<P CLASS=para>
+Let's take a look at producing some image data. A picture may be
+worth a thousand words, but fortunately, we can generate a picture in
+significantly fewer than a thousand words of Java. If we're
+interested in producing a static image with just one frame, we can use
+a utility class that acts as an <tt CLASS=literal>ImageProducer</tt> for
+us.
+
+<P CLASS=para>
+<tt CLASS=literal>java.awt.image.MemoryImageSource</tt> is a simple
+utility class that implements the <tt CLASS=literal>ImageProducer</tt>
+interface; we give it pixel data in an array and it sends that data to
+an image consumer. A <tt CLASS=literal>MemoryImageSource</tt> can be
+constructed for a given color model, with various options to specify
+the type and positioning of its data. We'll use the simplest
+form, which assumes an ARGB color model.
+
+<P CLASS=para>
+The following applet, <tt CLASS=literal>ColorPan</tt>, creates an image 
+from an array of integers holding ARGB pixel values: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+</PRE>
+</DIV>
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.awt.*;
+import java.awt.image.*;
+public class ColorPan extends java.applet.Applet { 
+    Image img;
+    int width, height;
+    int [] pixData;
+    public void init() {
+        width = getSize().width;
+        height = getSize().height;
+        pixData = new int [width * height];
+        int i=0;
+        for (int y = 0; y &lt; height; y++) {
+            int red = (y * 255) / (height - 1);
+            for (int x = 0; x &lt; width; x++) {
+                int green = (x * 255) / (width - 1);
+                int blue = 128;
+                int alpha = 255;
+                pixData[i++] = (alpha &lt;&lt; 24) | (red &lt;&lt; 16) | 
+                               (green &lt;&lt; 8 ) | blue;
+            }
+        }
+    }
+    public void paint( Graphics g ) {
+        if ( img == null )
+            img = createImage( new MemoryImageSource(width, height, 
+                                          pixData, 0, width));
+        g.drawImage( img, 0, 0, this );
+    }
+}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Give it a try. The size of the image is determined by the size of the
+applet when it starts up. What you should get is a very colorful box
+that pans from deep blue at the upper left-hand corner to bright
+yellow at the bottom right with green and red at the other
+extremes. (You'll have to imagine something more colorful than the
+black and white image above.)
+
+<P CLASS=para>
+We create the pixel data for our image in the
+<tt CLASS=literal>init()</tt>method, and then use
+<tt CLASS=literal>MemoryImageSource</tt> to create and display the image
+in <tt CLASS=literal>paint()</tt>. The variable <tt CLASS=literal>pixData</tt>
+is a one-dimensional array of integers that holds 32-bit
+ARGB pixel values. In <tt CLASS=literal>init()</tt> we
+loop over every pixel in the image and assign it an
+ARGB value. The alpha (transparency) component is
+always 255, which means the image is opaque. The blue component
+is always 128, half its maximum intensity. The red component varies
+from 0 to 255 along the y axis; likewise, the green component varies
+from 0 to 255 along the x axis. The line below combines these
+components into an ARGB value:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+pixData[i++] = (alpha &lt;&lt; 24) | (red &lt;&lt; 16) | (green &lt;&lt; 8 ) | blue; 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The bitwise left-shift operator (<tt CLASS=literal>&lt;&lt;</tt>) should
+be familiar to C programmers. It simply shoves the bits over by the
+specified number of positions. The alpha value takes the top byte of
+the integer, followed by the red, green, and blue values.
+
+<P CLASS=para>
+When we construct the <tt CLASS=literal>MemoryImageSource</tt> as a
+producer for this data, we give it five parameters: the width and
+height of the image to construct (in pixels), the
+<tt CLASS=literal>pixData</tt> array, an offset into that array, and the
+width of each scan line (in pixels). We'll start with the first
+element (offset 0) of <tt CLASS=literal>pixData</tt>; the width of each
+scan line and the width of the image are the same. The array
+<tt CLASS=literal>pixData</tt> has <tt CLASS=literal>width * height</tt>
+elements, which means it has one element for each pixel.
+
+<P CLASS=para>
+We create the actual image once, in <tt CLASS=literal>paint()</tt>,
+using the <tt CLASS=literal>createImage()</tt> method that our applet
+inherits from <tt CLASS=literal>Component</tt>. In the double-buffering
+and off-screen drawing examples, we used
+<tt CLASS=literal>createImage()</tt> to give us an empty off-screen image
+buffer. Here we use <tt CLASS=literal>createImage()</tt> to generate an
+image from a specified <tt CLASS=literal>ImageProducer</tt>.
+<tt CLASS=literal>createImage()</tt> creates the <tt CLASS=literal>Image</tt>
+object and receives pixel data from the producer to construct the
+image. Note that there's nothing particularly special about
+<tt CLASS=literal>MemoryImageSource</tt>; we could use any object that
+implements the image-producer interface inside of
+<tt CLASS=literal>createImage()</tt>, including one we wrote
+ourselves. Once we have the image, we can draw it on the display with
+the familiar <tt CLASS=literal>drawImage()</tt> method. 
+
+<P CLASS=para>
+You can use <tt CLASS=literal>MemoryImageSource</tt> to produce
+complex, pixel-by-pixel graphics or render images from arbitrary
+sources. It produces static images, though; when it reaches the
+end of its pixel data, its job is done. To generate a stream of image
+data or update pixel values, we need a more persistent image producer.
+
+</DIV>
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="ch14-SECT3-AUTOID.1">Updating a MemoryImageSource</A></h4>
+
+<P CLASS=para>
+<tt CLASS=literal>MemoryImageSource</tt> can also be used to
+generate a sequence of images, or to update an image dynamically. In
+Java 1.1, this is probably the easiest way to build your own low-level
+animation software. This example simulates the static on a television
+screen. It generates successive frames of random black and white
+pixels and displays each frame when it is complete. The figure below
+shows one frame of random static, followed by the code:
+
+
+<p>
+<img align=middle src="./figs/je1404.gif" alt="[Graphic: Figure from the text]" width=200 height=272 border=0>
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.awt.*;
+import java.awt.image.*;
+public class StaticGenerator 
+        extends java.applet.Applet 
+        implements Runnable {
+    int arrayLength, pixels[];
+    MemoryImageSource source;
+    Image image;
+    int width, height;
+    public void init() {
+        width = getSize().width; height = getSize().height;
+        arrayLength = width * height;
+        pixels = new int [arrayLength];
+        source = new MemoryImageSource(width, height, pixels, 0, width);
+        source.setAnimated(true);
+        image = createImage(source);
+        new Thread(this).start();
+    }
+    public void run() {
+        while (true) {
+            try {
+                Thread.sleep(1000/24);
+            } catch( InterruptedException e ) { /* die */ }
+            for (int x = 0; x &lt; width; x++) 
+                for (int y = 0; y &lt; height; y++)  {
+                    boolean rand = Math.random() &gt; 0.5;
+                    pixels[y*width+x] = 
+                        rand ? Color.black.getRGB() : Color.white.getRGB();
+                }
+            // Push out the new data
+            source.newPixels(0, 0, width, height);
+        }
+    }
+    public void paint( Graphics g ) {
+        g.drawImage(image, 0, 0, this);
+    }
+}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The <tt CLASS=literal>init()</tt> method sets up the
+<tt CLASS=literal>MemoryImageSource</tt> that produces the
+sequence of images. It first computes the size of the array needed to
+hold the image data. It then creates a
+<tt CLASS=literal>MemoryImageSource</tt> object that produces
+images the width and height of the display, using the default color
+model (the constructor we use assumes that we want the default). We
+start taking pixels from the beginning of the pixel array, and scan
+lines in the array have the same width as the image. Once we have
+created the <tt CLASS=literal>MemoryImageSource</tt>, we call its
+<tt CLASS=literal>setAnimated()</tt> method to tell it that we
+will be generating an image sequence. Then we use the source to create
+an <tt CLASS=literal>Image</tt> that will display our sequence. 
+
+<P CLASS=para>
+We next start a thread that generates the pixel data. For every
+element in the array, we get a random number, and set the pixel to
+black if the random number is greater than 0.5. Because
+<tt CLASS=literal>pixels</tt> is an
+<tt CLASS=literal>int</tt> array, we can't assign
+<tt CLASS=literal>Color</tt> objects to it directly; we use
+<tt CLASS=literal>getRGB()</tt> to extract the color components
+from the black and white <tt CLASS=literal>Color</tt> constants.
+When we have filled the entire array with data, we call the
+<tt CLASS=literal>newPixels()</tt> method, which delivers the new
+data to the image. 
+
+<P CLASS=para>
+That's about all there is. We provide a very uninteresting
+<tt CLASS=literal>paint()</tt> method, that just calls
+<tt CLASS=literal>drawImage()</tt> to put the current state of
+the image on the screen. Whenever <tt CLASS=literal>paint()</tt>
+is called, we see the latest collection of static. The image observer,
+which is the <tt CLASS=literal>Applet</tt> itself, schedules a
+call to <tt CLASS=literal>paint()</tt> whenever anything
+interesting has happened to the image. It's worth noting
+how simple it is to create this animation. Once we have the
+<tt CLASS=literal>MemoryImageSource</tt>, we use it to create an
+image that we treat like any other image. The code that generates the
+image sequence can be arbitrarily complex--certainly in any reasonable
+example, it would be more complex than our (admittedly cheesy) static.
+But that complexity never infects the simple task of getting the image
+on the screen and updating it.
+
+</DIV>
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-14-SECT-5.4">Image Producers and Consumers</A></h3>
+
+<P CLASS=para>
+<A NAME="CH11.UP1"></A>In this section we'll create an image producer that generates a
+stream of image frames rather than just a static image. Unfortunately,
+it would take too many lines of code to generate anything really
+interesting, so we'll stick with a simple modification of our
+<tt CLASS=literal>ColorPan</tt> example. After all, figuring out what to
+display is your job; I'm primarily concerned with giving you the
+necessary tools. After this, you should have the needed tools to
+implement more interesting applications.
+
+<P CLASS=para>
+A word of advice: if you find yourself writing image producers, you're
+probably making your life excessively difficult. Most situations can
+be handled by the dynamic
+<tt CLASS=literal>MemoryImageSource</tt> technique that we just
+demonstrated. Before going to the trouble of writing an image
+producer, convince yourself that there isn't a simpler solution. Even
+if you never write an image producer yourself, it's good (like
+Motherhood and Apple Pie) to understand how Java's image rendering
+tools work. 
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-14-SECT-5.4.1">Image consumers</A></h4>
+
+<P CLASS=para>
+<A NAME="CH11.CONS1"></A>First, we have to know a little more about the image consumers
+we'll be feeding. An image consumer implements the seven methods
+that are defined in the <tt CLASS=literal>ImageConsumer</tt>
+interface. Two of these methods are overloaded versions of the
+<tt CLASS=literal>setPixels()</tt> method that accept the actual pixel
+data for a region of the image. They are identical except that one
+takes the pixel data as an array of integers, and the other uses an
+array of bytes. (An array of bytes is natural when you're using
+an indexed color model because each pixel is specified by an index
+into a color array.) A call to <tt CLASS=literal>setPixels()</tt> looks
+something like the following:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+setPixels(x, y, width, height, colorModel, pixels, offset, scanLength); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+<tt CLASS=literal>pixels</tt> is the one-dimensional array of bytes or
+integers that holds the pixel data. Often, you deliver only part of
+the image with each call to <tt CLASS=literal>setPixels()</tt>. The
+<tt CLASS=literal>x</tt>, <tt CLASS=literal>y</tt>, <tt CLASS=literal>width</tt>,
+and <tt CLASS=literal>height</tt> values define the rectangle of the image
+for which pixels are being delivered. <tt CLASS=literal>x</tt> and
+<tt CLASS=literal>y</tt> specify the upper left-hand corner of the chunk
+you're delivering, relative to the upper left-hand corner of the
+image as a whole. <tt CLASS=literal>width</tt> specifies the width in
+pixels of the chunk; <tt CLASS=literal>height</tt> specifies the number of
+scan lines in the chunk. <tt CLASS=literal>offset</tt> specifies the point
+in <tt CLASS=literal>pixels</tt> at which the data being delivered in this
+call to <tt CLASS=literal>setPixels()</tt> starts. Finally,
+<tt CLASS=literal>scanLength</tt> indicates the width of the entire image,
+which is not necessarily the same as
+<tt CLASS=literal>width</tt>. The <tt CLASS=literal>pixels</tt>
+array must be large enough to accommodate
+<tt CLASS=literal>width*length+offset</tt> elements; if it's larger, any
+leftover data is ignored.
+
+<P CLASS=para>
+We haven't said anything yet about the
+<tt CLASS=literal>colorModel</tt> argument to
+<tt CLASS=literal>setPixels()</tt>. In our previous example, we drew our
+image using the default ARGB color model for pixel
+values; the version of the <tt CLASS=literal>MemoryImageSource</tt>
+constructor that we used supplied the default color model for us. In
+this example, we also stick with the default model, but this time we
+have to specify it explicitly. The remaining five methods of the
+<tt CLASS=literal>ImageConsumer</tt> interface accept general attributes
+and framing information about the image:
+
+<P>
+<UL CLASS=itemizedlist>
+<li CLASS=listitem><tt CLASS=literal>setHints()</tt>
+
+<P>
+<li CLASS=listitem><tt CLASS=literal>setDimensions()</tt>
+
+<P>
+<li CLASS=listitem><tt CLASS=literal>setProperties()</tt>
+
+<P>
+<li CLASS=listitem><tt CLASS=literal>setColorModel()</tt>
+
+<P>
+<li CLASS=listitem><tt CLASS=literal>imageComplete()</tt>
+
+<P>
+</UL>
+<P CLASS=para>
+ 
+Before delivering any data to a consumer, the producer should call the
+consumer's <tt CLASS=literal>setHints()</tt> method to pass it
+information about how pixels will be delivered. Hints are
+specified in the form of flags defined in the
+<tt CLASS=literal>ImageConsumer</tt> interface. The flags are described in
+<A HREF="ch14_01.htm#EXJ-CH-14-TAB-2">Table 14.2</A>. The consumer uses these hints to
+optimize the way it builds the image; it's also free to ignore them.
+
+<P>
+<DIV CLASS=table>
+<TABLE BORDER>
+<CAPTION><A CLASS="TITLE" NAME="EXJ-CH-14-TAB-2">Table 14.2: ImageConsumer setHints() Flags</A></CAPTION>
+<TR CLASS=row>
+<TH ALIGN="left">Flag</TH>
+<TH ALIGN="left">Description</TH>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>RANDOMPIXELORDER</tt></TD>
+<TD ALIGN="left">The pixels are delivered in random order</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>TOPDOWNLEFTRIGHT</tt></TD>
+<TD ALIGN="left">The pixels are delivered from top to bottom, left to right</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>COMPLETESCANLINES</tt></TD>
+<TD ALIGN="left">
+
+<P CLASS=para>
+Each call to <tt CLASS=literal>setPixels()</tt> delivers one or more complete scan lines</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>SINGLEPASS</tt></TD>
+<TD ALIGN="left">Each pixel is delivered only once</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>SINGLEFRAME</tt></TD>
+<TD ALIGN="left">The pixels define a single, static image</TD>
+</TR>
+</TABLE>
+<P>
+</DIV>
+<P CLASS=para>
+<tt CLASS=literal>setDimensions()</tt> is called to pass the width
+and height of the image when they are known.
+
+<P CLASS=para>
+<tt CLASS=literal>setProperties()</tt> is used to pass a hashtable
+of image properties, stored by name. This method isn't
+particularly useful without some prior agreement between the producer
+and consumer about what properties are meaningful. For example, image
+formats such as GIF and TIFF can
+include additional information about the image. These image attributes
+could be delivered to the consumer in the hashtable.
+
+<P CLASS=para>
+<tt CLASS=literal>setColorModel()</tt> is called to tell the
+consumer which color model will be used to process most of the pixel
+data. However, remember that each call to
+<tt CLASS=literal>setPixels()</tt> also specifies a
+<tt CLASS=literal>ColorModel</tt> for its group of pixels. The color model
+specified in <tt CLASS=literal>setColorModel()</tt> is really only a hint
+that the consumer can use for optimization. You're not required
+to use this color model to deliver all (or for that matter, any) of
+the pixels in the image.
+
+<P CLASS=para>
+The producer calls the consumer's
+<tt CLASS=literal>imageComplete()</tt> method when it has completely
+delivered the image or a frame of an image sequence. If the consumer
+doesn't wish to receive further frames of the image, it should
+unregister itself from the producer at this point. The producer
+passes a status flag formed from the flags shown in 
+<A HREF="ch14_01.htm#EXJ-CH-14-TAB-3">Table 14.3</A>.
+
+<P>
+<DIV CLASS=table>
+<TABLE BORDER>
+<CAPTION><A CLASS="TITLE" NAME="EXJ-CH-14-TAB-3">Table 14.3: ImageConsumer imageComplete() Flags</A></CAPTION>
+<TR CLASS=row>
+<TH ALIGN="left">Flag</TH>
+<TH ALIGN="left">Description</TH>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>STATICIMAGEDONE</tt></TD>
+<TD ALIGN="left">
+
+<P CLASS=para>
+A single static image is complete</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>SINGLEFRAMEDONE</tt></TD>
+<TD ALIGN="left">
+
+<P CLASS=para>
+One frame of an image sequence is complete</TD>
+</TR>
+<TR CLASS=row>
+<TD ALIGN="left"><tt CLASS=literal>IMAGEERROR</tt></TD>
+<TD ALIGN="left">
+
+<P CLASS=para>
+An error occurred while generating the image</TD>
+</TR>
+</TABLE>
+<P>
+</DIV>
+<P CLASS=para>
+As you can see, the <tt CLASS=literal>ImageProducer</tt> and
+<tt CLASS=literal>ImageConsumer</tt> interfaces provide a very flexible
+mechanism for distributing image data. Now let's look at a
+simple producer.
+
+</DIV>
+
+<DIV CLASS=sect3>
+<h4 CLASS=sect3><A CLASS="TITLE" NAME="EXJ-CH-14-SECT-5.4.2">A sequence of images</A></h4>
+
+<P CLASS=para>
+<A NAME="CH11.SEQ"></A>The following class, <tt CLASS=literal>ImageSequence</tt>, shows how to
+implement an <tt CLASS=literal>ImageProducer</tt> that generates a
+sequence of images. The images are a lot like the
+<tt CLASS=literal>ColorPan</tt> image we generated a few pages back,
+except that the blue component of each pixel changes with every
+frame. This image producer doesn't do anything you couldn't do with a
+<tt CLASS=literal>MemoryImageSource</tt>.  It reads
+ARGB data from an array, and consults the object
+that creates the array to give it an opportunity to update the data
+between each frame.
+
+<P CLASS=para>
+This is a complex example, so before diving into the code,
+let's take a broad look at the pieces. The
+<tt CLASS=literal>ImageSequence</tt> class is an image producer; it
+generates data and sends it to image consumers to be displayed. To
+make our design more modular, we define an interface called
+<tt CLASS=literal>FrameARGBData</tt> that describes how our rendering code
+provides each frame of ARGB pixel data to our
+producer. To do the computation and provide the raw bits, we create a
+class called <tt CLASS=literal>ColorPanCycle</tt> that implements
+<tt CLASS=literal>FrameARGBData</tt>. This means that
+<tt CLASS=literal>ImageSequence</tt> doesn't care specifically where
+the data comes from; if we wanted to draw different images, we could
+just drop in another class, provided that the new class implements
+<tt CLASS=literal>FrameARGBData</tt>. Finally, we create an applet called
+<tt CLASS=literal>UpdatingImage</tt> that includes two image consumers to
+display the data.
+
+<P CLASS=para>
+Here's the <tt CLASS=literal>ImageSequence</tt> class: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+
+import java.awt.image.*;
+import java.util.*;
+public class ImageSequence extends Thread implements ImageProducer {
+    int width, height, delay;
+    ColorModel model = ColorModel.getRGBdefault();
+    FrameARGBData frameData;
+    private Vector consumers = new Vector();
+    public void run() {
+        while ( frameData != null ) {
+            frameData.nextFrame();
+            sendFrame();
+            try {
+                sleep( delay );
+            } catch ( InterruptedException e ) {}
+        }
+    }
+    public ImageSequence(FrameARGBData src, int maxFPS ) {
+        frameData = src;
+        width = frameData.size().width;
+        height = frameData.size().height;
+        delay = 1000/maxFPS;
+        setPriority( MIN_PRIORITY + 1 );
+    }
+    public synchronized void addConsumer(ImageConsumer c) {
+        if ( isConsumer( c ) ) 
+            return;
+        consumers.addElement( c );
+        c.setHints(ImageConsumer.TOPDOWNLEFTRIGHT |
+                 ImageConsumer.SINGLEPASS );
+        c.setDimensions( width, height );
+        c.setProperties( new Hashtable() );
+        c.setColorModel( model );
+    }
+    public synchronized boolean isConsumer(ImageConsumer c) {
+        return ( consumers.contains( c ) );
+    }
+    public synchronized void removeConsumer(ImageConsumer c) {
+        consumers.removeElement( c );
+    }
+    public void startProduction(ImageConsumer ic) {
+        addConsumer(ic);
+    }
+    public void requestTopDownLeftRightResend(ImageConsumer ic) { }
+    private void sendFrame() {
+        for ( Enumeration e = consumers.elements(); e.hasMoreElements();  ) {
+            ImageConsumer c = (ImageConsumer)e.nextElement();
+            c.setPixels(0, 0, width, height, model, frameData.getPixels(), 0, width);
+            c.imageComplete(ImageConsumer.SINGLEFRAMEDONE);
+        }
+    }
+}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The bulk of the code in <tt CLASS=literal>ImageSequence</tt> creates the
+skeleton we need for implementing the <tt CLASS=literal>ImageProducer</tt>
+interface. <tt CLASS=literal>ImageSequence</tt> is actually a simple
+subclass of <tt CLASS=literal>Thread</tt> whose <tt CLASS=literal>run()</tt>
+method loops, generating and sending a frame of data on each
+iteration. The <tt CLASS=literal>ImageSequence</tt> constructor takes two
+items: a <tt CLASS=literal>FrameARGBData</tt> object that updates the
+array of pixel data for each frame, and an integer that specifies the
+maximum number of frames per second to generate. We give the thread a
+low priority (<tt CLASS=literal>MIN_PRIORITY+1</tt>) so that it
+can't run away with all of our CPU time.
+
+<P CLASS=para>
+Our <tt CLASS=literal>FrameARGBData</tt> object implements the following 
+interface: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+interface FrameARGBData { 
+    java.awt.Dimension size(); 
+    int [] getPixels(); 
+    void nextFrame(); 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+In <tt CLASS=literal>ImageSequence</tt>'s <tt CLASS=literal>run()</tt>
+method, we call <tt CLASS=literal>nextFrame()</tt> to compute the array of
+pixels for each frame. After computing the pixels, we call our own
+<tt CLASS=literal>sendFrame()</tt> method to deliver the data to the
+consumers. <tt CLASS=literal>sendFrame()</tt> calls
+<tt CLASS=literal>getPixels()</tt> to retrieve the updated array of pixel
+data from the <tt CLASS=literal>FrameARGBData</tt> object.
+<tt CLASS=literal>sendFrame()</tt> then sends the new data to all of the
+consumers by invoking each of their <tt CLASS=literal>setPixels()</tt>
+methods and signaling the end of the frame with
+<tt CLASS=literal>imageComplete()</tt>. Note that
+<tt CLASS=literal>sendFrame()</tt> can handle multiple consumers; it
+iterates through a <tt CLASS=literal>Vector</tt> of image consumers. In a
+more realistic implementation, we would also check for errors and
+notify the consumers if any occurred.
+
+<P CLASS=para>
+The business of managing the <tt CLASS=literal>Vector</tt> of
+consumers is handled by <tt CLASS=literal>addConsumer()</tt> and the other
+methods in the <tt CLASS=literal>ImageProducer</tt>
+interface. <tt CLASS=literal>addConsumer()</tt> adds an item to
+<tt CLASS=literal>consumers</tt>. A <tt CLASS=literal>Vector</tt> is a
+perfect tool for this task, since it's an automatically extendable
+array, with methods for finding out how many elements it has, whether
+or not a given element is already a member, and so on.
+
+<P CLASS=para>
+<tt CLASS=literal>addConsumer()</tt> also gives the consumer hints
+about how the data will be delivered by calling
+<tt CLASS=literal>setHints()</tt>. This image provider always works from
+top to bottom and left to right, and makes only one pass through the
+data. <tt CLASS=literal>addConsumer()</tt> next gives the consumer an
+empty hashtable of image properties. Finally, it reports that most of
+the pixels will use the default ARGB color model
+(we initialized the variable <tt CLASS=literal>model</tt> to
+<tt CLASS=literal>ColorModel.getRGBDefault()</tt>). In this example, we
+always start sending image data on the next frame, so
+<tt CLASS=literal>startProduction()</tt> simply calls
+<tt CLASS=literal>addConsumer()</tt>.
+
+<P CLASS=para>
+We've discussed the mechanism for communications
+between the consumer and producer, but I haven't yet told you
+where the data comes from. We have a <tt CLASS=literal>FrameARGBData</tt>
+interface that defines how to retrieve the data, but we don't
+yet have an object that implements the interface. The following class,
+<tt CLASS=literal>ColorPanCycle</tt>, implements
+<tt CLASS=literal>FrameARGBData</tt>; we'll use it to generate our
+pixels:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.awt.*;
+class ColorPanCycle implements FrameARGBData {
+    int frame = 0, width, height;
+    private int [] pixels;
+    ColorPanCycle ( int w, int h ) {
+        width = w;
+        height = h;
+        pixels = new int [ width * height ];
+        nextFrame();
+    }
+    public synchronized int [] getPixels() {
+        return pixels;
+    }
+    public synchronized void nextFrame() {
+        int index = 0;
+        for (int y = 0; y &lt; height; y++) {
+            for (int x = 0; x &lt; width; x++) {
+                int red = (y * 255) / (height - 1);
+                int green = (x * 255) / (width - 1);
+                int blue = (frame * 10) &amp; 0xff;
+                pixels[index++] = 
+                    (255 &lt;&lt; 24) | (red &lt;&lt; 16) | (green &lt;&lt; 8) | blue;
+            }
+        }
+        frame++;
+    }
+    public Dimension size() {
+        return new Dimension ( width, height );
+    }
+}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+<tt CLASS=literal>ColorPanCycle</tt> is like our previous
+<tt CLASS=literal>ColorPan</tt> example, except that it adjusts each
+pixel's blue component each time <tt CLASS=literal>nextFrame()</tt> is
+called. This should produce a color cycling effect; as time goes
+on, the image becomes more blue.
+
+<P CLASS=para>
+Now let's put the pieces together by writing an applet
+that displays a sequence of changing images:
+<tt CLASS=literal>UpdatingImage</tt>. In fact, we'll do better than
+displaying one sequence. To prove that
+<tt CLASS=literal>ImageSequence</tt> really can deal with multiple
+consumers, <tt CLASS=literal>UpdatingImage</tt> creates two components that
+display different views of the image. Once the mechanism has been set
+up, it's surprising how little code you need to add additional
+displays.
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.awt.*;
+import java.awt.image.*;
+public class UpdatingImage extends java.applet.Applet { 
+    ImageSequence seq;
+    public void init() {
+        seq = new ImageSequence( new ColorPanCycle(100, 100), 10);
+        setLayout( null );
+        add( new ImageCanvas( seq, 50, 50 ) );
+        add( new ImageCanvas( seq, 100, 100 ) );
+        seq.start();
+    }
+    public void stop() {
+        if ( seq != null ) {
+            seq.stop();
+            seq = null;
+        }
+    }
+}
+class ImageCanvas extends Canvas { 
+    Image img;
+    ImageProducer source;
+    ImageCanvas ( ImageProducer p, int w, int h ) {
+        source = p;
+        setSize( w, h );
+    }
+    public void update( Graphics g ) {
+        paint(g);
+    }
+    public void paint( Graphics g ) {
+        if ( img == null )
+            img = createImage( source );
+        g.drawImage( img, 0, 0, getSize().width, getSize().height, this );
+    }
+}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+<tt CLASS=literal>UpdatingImage</tt> constructs a new
+<tt CLASS=literal>ImageSequence</tt> producer with an instance of our
+<tt CLASS=literal>ColorPanCycle</tt> object as its frame source. It then
+creates two <tt CLASS=literal>ImageCanvas</tt> components that create and
+display the two views of our animation. <tt CLASS=literal>ImageCanvas</tt>
+is a subclass of <tt CLASS=literal>Canvas</tt>; it takes an
+<tt CLASS=literal>ImageProducer</tt> and a width and height in its
+constructor and creates and displays an appropriately scaled version
+of the image in its <tt CLASS=literal>paint()</tt> method.
+<tt CLASS=literal>UpdatingImage</tt> places the smaller view on top of the
+larger one for a sort of "picture in picture" effect.
+
+<P CLASS=para>
+If you've followed the example to this point,
+you're probably wondering where in the heck is the image consumer. 
+After all, we spent a lot of time writing methods in
+<tt CLASS=literal>ImageSequence</tt> for the consumer to call. If you look
+back at the code, you'll see that an
+<tt CLASS=literal>ImageSequence</tt> object gets passed to the
+<tt CLASS=literal>ImageCanvas</tt> constructor, and that this object is
+used as an argument to <tt CLASS=literal>createImage()</tt>. But nobody
+appears to call <tt CLASS=literal>addConsumer()</tt>. And the image
+producer calls <tt CLASS=literal>setPixels()</tt> and other consumer
+methods; but it always digs a consumer out of its
+<tt CLASS=literal>Vector</tt> of registered consumers, so we never see
+where these consumers come from.
+
+<P CLASS=para>
+In <tt CLASS=literal>UpdatingImage</tt>, the image consumer is
+behind the scenes, hidden deep inside the
+<tt CLASS=literal>Canvas</tt>--in fact, inside the
+<tt CLASS=literal>Canvas</tt>' peer. The call to
+<tt CLASS=literal>createImage()</tt> tells its component (i.e., our
+canvas) to become an image consumer. Something deep inside the
+component is calling <tt CLASS=literal>addConsumer()</tt> behind our backs
+and registering a mysterious consumer, and that consumer is the one
+the producer uses in calls to <tt CLASS=literal>setPixels()</tt> and other
+methods. We haven't implemented any
+<tt CLASS=literal>ImageConsumer</tt> objects in this book because, as you
+might imagine, most image consumers are implemented in native code,
+since they need to display things on the screen. There are others
+though; the <tt CLASS=literal>java.awt.image.PixelGrabber</tt> class is a
+consumer that returns the pixel data as a byte array. You might use it
+to save an image. You can make your own consumer do anything you like
+with pixel data from a producer. But in reality, you rarely need to
+write an image consumer yourself. Let them stay hidden; take it on
+faith that they exist.
+
+<P CLASS=para>
+Now for the next question: How does the screen get updated?
+Even though we are updating the consumer with new data, the new image
+will not appear on the display unless the applet repaints it
+periodically. By now, this part of the machinery should be familiar:
+what we need is an image observer. Remember that all components are
+image observers (i.e., the class <tt CLASS=literal>Component</tt>
+implements <tt CLASS=literal>ImageObserver</tt>). The call to
+<tt CLASS=literal>drawImage()</tt> specifies our
+<tt CLASS=literal>ImageCanvas</tt> as its image observer. The default
+<tt CLASS=literal>Component</tt> class-image-observer functionality then
+repaints our image whenever new pixel data arrives.
+
+<P CLASS=para>
+In this example, we haven't bothered to stop and start
+our applet properly; it continues running and wasting
+CPU time even when it's invisible. There are two
+strategies for stopping and restarting our thread. We can destroy the
+thread and create a new one, which would require recreating our
+<tt CLASS=literal>ImageCanvas</tt> objects, or we could suspend and resume
+the active thread. As discussed in <A HREF="ch06_01.htm">Chapter 6, <i>Threads</i></A>, neither
+option is particularly difficult.
+
+</DIV>
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-14-SECT-5.5">Filtering Image Data</A></h3>
+
+<P CLASS=para>
+<A NAME="CH11.FILT1"></A><A NAME="CH11.FILT2"></A><A NAME="CH11.FILT3"></A>As I said above, you rarely need to write an image consumer. However,
+there is one kind of image consumer that's worth knowing
+about. In this final section on images, we'll build a simple
+image filter. An image filter is simply a class that performs some
+work on image data before passing the data to another consumer.
+
+<P CLASS=para>
+The <tt CLASS=literal>ColorSep</tt> applet acquires an image; uses
+an image filter to separate the image into red, green, and blue
+components; and displays the three resulting images. With this applet
+and a few million dollars, you could build your own color separation
+plant.
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+import java.awt.*;
+import java.awt.image.*;
+public class ColorSep extends java.applet.Applet { 
+    Image img, redImg, greenImg, blueImg;
+    public void init() {
+        img = getImage( getClass().getResource( getParameter("img")) );
+        redImg = createImage(new FilteredImageSource(img.getSource(), 
+                                        new ColorMaskFilter( Color.red )));
+        greenImg = createImage(new FilteredImageSource(img.getSource(), 
+                                        new ColorMaskFilter( Color.green )));
+        blueImg = createImage(new FilteredImageSource(img.getSource(), 
+                                        new ColorMaskFilter( Color.blue )));
+    }
+    public void paint( Graphics g ) {
+        int width = getSize().width, height = getSize().height;
+        g.drawImage( redImg, 0, 0, width/3, height, this );
+        g.drawImage( greenImg, width/3, 0, width/3, height, this );
+        g.drawImage( blueImg, 2*width/3, 0, width/3, height, this );
+    }
+}
+class ColorMaskFilter extends RGBImageFilter {
+    Color color;
+    ColorMaskFilter( Color mask ) {
+        color = mask;
+        canFilterIndexColorModel = true;
+    }
+    public int filterRGB(int x, int y, int pixel ) {
+        return 
+            255 &lt;&lt; 24 |
+            (((pixel &amp; 0xff0000) &gt;&gt; 16) * color.getRed()/255) &lt;&lt; 16 |
+            (((pixel &amp; 0xff00) &gt;&gt; 8) * color.getGreen()/255) &lt;&lt; 8 |
+            (pixel &amp; 0xff) * color.getBlue()/255 ;
+    }
+}
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The <tt CLASS=literal>FilteredImageSource</tt> and
+<tt CLASS=literal>RGBImageFilter</tt> classes form the basis for building
+and using image filters. A <tt CLASS=literal>FilteredImageSource</tt> is
+an image producer (like <tt CLASS=literal>MemoryImageSource</tt>) that is
+constructed from an image and an <tt CLASS=literal>ImageFilter</tt>
+object. It fetches pixel data from the image and feeds it through the
+image filter before passing the data along. Because
+<tt CLASS=literal>FilteredImageSource</tt> is an image producer, we can
+use it in our calls to <tt CLASS=literal>createImage()</tt>.
+
+<P CLASS=para>
+But where's the consumer?
+<tt CLASS=literal>FilteredImageSource</tt> obviously consumes image data
+as well as producing it. The image consumer is still mostly hidden,
+but is peeking out from under its rock. Our class
+<tt CLASS=literal>ColorMaskFilter</tt> extends
+<tt CLASS=literal>RGBImageFilter</tt>, which in turn extends
+<tt CLASS=literal>ImageFilter</tt>. And <tt CLASS=literal>ImageFilter</tt> is
+(finally!) an image consumer. Of course, we still don't see the
+calls to <tt CLASS=literal>addConsumer()</tt>, and we don't see an
+implementation of <tt CLASS=literal>setPixels()</tt>; they're hidden
+in the <tt CLASS=literal>ImageFilter</tt> sources and inherited by
+<tt CLASS=literal>ColorMaskFilter</tt>.
+
+<P CLASS=para>
+So what does <tt CLASS=literal>ColorMaskFilter</tt> actually do?
+Not much. <tt CLASS=literal>ColorMaskFilter</tt> is a simple subclass of
+<tt CLASS=literal>RGBImageFilter</tt> that implements one method,
+<tt CLASS=literal>filterRGB()</tt>, through which all of the pixel data
+are fed. Its constructor saves a mask value we use for
+filtering. The <tt CLASS=literal>filterRGB()</tt> method accepts a
+<tt CLASS=literal>pixel</tt> value, along with its <tt CLASS=literal>x</tt>
+and <tt CLASS=literal>y</tt> coordinates, and returns the filtered version
+of the pixel. In <tt CLASS=literal>ColorMaskFilter</tt>, we simply
+multiply the color components by the mask color to get the proper
+effect. A more complex filter, however, might use the coordinates to
+change its behavior based on the pixel's position.
+
+<P CLASS=para>
+One final detail: the constructor for
+<tt CLASS=literal>ColorMaskFilter</tt> sets the flag
+<tt CLASS=literal>canFilterIndexColorModel</tt>. This flag is inherited
+from <tt CLASS=literal>RGBImageFilter</tt>. It means our filter
+doesn't depend on the pixel's position. In turn, this
+means it can filter the colors in a color table. If
+we were using an indexed color model, filtering the color table would
+be much faster than filtering the individual pixels.
+
+</DIV>
+
+</DIV>
+
+
+<DIV CLASS=htmlnav>
+
+<P>
+<HR align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch13_05.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><a href="index.htm"><img src='gifs/txthome.gif' border=0 alt='Home'></a></td>
+<td width=172 align=right valign=top><A HREF="ch14_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+<tr>
+<td width=172 align=left valign=top>Drawing Techniques</td>
+<td width=171 align=center valign=top><a href="index/idx_0.htm"><img src='gifs/index.gif' alt='Book Index' border=0></a></td>
+<td width=172 align=right valign=top>Working with Audio</td>
+</tr>
+</table>
+<hr align=left width=515>
+
+<IMG SRC="gifs/smnavbar.gif" USEMAP="#map" BORDER=0> 
+<MAP NAME="map"> 
+<AREA SHAPE=RECT COORDS="0,0,108,15" HREF="../javanut/index.htm"
+alt="Java in a Nutshell"> 
+<AREA SHAPE=RECT COORDS="109,0,200,15" HREF="../langref/index.htm" 
+alt="Java Language Reference"> 
+<AREA SHAPE=RECT COORDS="203,0,290,15" HREF="../awt/index.htm" 
+alt="Java AWT"> 
+<AREA SHAPE=RECT COORDS="291,0,419,15" HREF="../fclass/index.htm" 
+alt="Java Fundamental Classes"> 
+<AREA SHAPE=RECT COORDS="421,0,514,15" HREF="../exp/index.htm" 
+alt="Exploring Java"> 
+</MAP>
+</DIV>
+
+</BODY>
+</HTML>

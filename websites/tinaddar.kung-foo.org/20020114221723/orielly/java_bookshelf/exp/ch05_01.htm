@@ -1,0 +1,539 @@
+<!DOCTYPE HTML PUBLIC "-//ORA//DTD CD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>[Chapter 5] Objects in Java</TITLE>
+<META NAME="author" CONTENT="Pat Niemeyer and Josh Peck">
+<META NAME="date" CONTENT="Tue Jul 22 18:52:34 1997">
+<META NAME="form" CONTENT="html">
+<META NAME="metadata" CONTENT="dublincore.0.1">
+<META NAME="objecttype" CONTENT="book part">
+<META NAME="otheragent" CONTENT="gmat dbtohtml">
+<META NAME="publisher" CONTENT="O'Reilly &amp; Associates, Inc.">
+<META NAME="source" CONTENT="SGML">
+<META NAME="subject" CONTENT="Java">
+<META NAME="title" CONTENT="Exploring Java">
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<DIV CLASS=htmlnav>
+<H1><a href='index.htm'><IMG SRC="gifs/smbanner.gif"
+     ALT="Exploring Java" border=0></a></H1>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch04_06.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><B><FONT FACE="ARIEL,HELVETICA,HELV,SANSERIF" SIZE="-1">Chapter 5</FONT></B></TD>
+<td width=172 align=right valign=top><A HREF="ch05_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+</table>
+
+&nbsp;
+<hr align=left width=515>
+</DIV>
+<H1 CLASS=chapter><A CLASS="TITLE" NAME="EXJ-CH-5">5. Objects in Java</A></H1>
+
+<DIV CLASS=htmltoc>
+
+<p>
+<b>Contents:</b><br>
+Classes<br>
+<A HREF="ch05_02.htm">Methods</A><BR>
+<A HREF="ch05_03.htm">Object Creation</A><BR>
+<A HREF="ch05_04.htm">Object Destruction</A><BR>
+<A HREF="ch05_05.htm">Subclassing and Inheritance</A><BR>
+<A HREF="ch05_06.htm">Packages and Compilation Units</A><BR>
+<A HREF="ch05_07.htm">Variable and Method Visibility</A><BR>
+<A HREF="ch05_08.htm">Interfaces</A><BR>
+<A HREF="ch05_09.htm">Inner Classes</A><BR>
+<A HREF="ch05_10.htm">The Object and Class Classes</A><BR>
+<A HREF="ch05_11.htm">Reflection</A><BR>
+
+<p>
+</DIV>
+
+<P CLASS=para>
+<A NAME="CH05.OBJ"></A>In this chapter, we'll get to the heart of Java and
+explore the object-oriented aspects of the language. Object-oriented
+design is the art of decomposing an application into some number of
+objects--self-contained application components that work
+together. The goal is to break the problem down into a number of
+smaller problems that are simpler and easier to understand. Ideally,
+the components can be implemented directly as objects in the Java
+language. And if things are truly ideal, the components correspond to
+well-known objects that already exist, so they don't have to be
+created at all.
+
+<P CLASS=para>
+An object design methodology is a system or a set of
+rules created by someone to help you identify objects in your
+application domain and pick the real ones from the noise. In other
+words, such a methodology helps you factor your application into a
+good set of reusable objects. The problem is that though it wants to
+be a science, good object-oriented design is still pretty much an art
+form. While you can learn from the various off-the-shelf design
+methodologies, none of them will help you in all situations. The truth
+is that experience pays.
+
+<P CLASS=para>
+I won't try to push you into a particular methodology
+here; there are shelves full of books to do that.[1]
+Instead, I'll provide a few hints to get you started. Here are some
+general design guidelines, which should be taken with a liberal amount
+of salt and common sense:
+
+<blockquote class=footnote>
+<P CLASS=para>[1] 
+Once you have some experience with basic object-oriented concepts, you
+might want to take a look at <i CLASS=citetitle>Design Patterns: Elements of
+Reusable Object Oriented Software</i> by
+Gamma/Helm/Johnson/Vlissides (Addison-Wesley). This book catalogs useful
+object-oriented designs that have been refined over the years by
+experience. Many appear in the design of the Java
+APIs.
+</blockquote>
+<P>
+<UL CLASS=itemizedlist>
+<li CLASS=listitem>Think of an object in terms of its interface, not its
+implementation. It's perfectly fine for an object's internals to
+be unfathomably complex, as long as its "public face" is easy to
+understand.
+
+<P>
+<li CLASS=listitem>Hide and abstract as much of your implementation as possible. Avoid
+public variables in your objects, with the possible exception of
+constants.  Instead define "accessor" methods to set and return values 
+(even if they are simple types). Later, when you need to, you'll be able to 
+modify and extend the behavior of your objects without breaking other classes 
+that rely on them.  
+
+<P>
+<li CLASS=listitem>Specialize objects only when you have to. When you use an object in
+its existing form, as a piece of a new object, you are composing
+objects. When you change or refine the behavior of an object, you are
+using inheritance. You should try to reuse objects by composition
+rather than inheritance whenever possible because when you compose
+objects you are taking full advantage of existing tools. Inheritance
+involves breaking down the barrier of an object and should be
+done only when there's a real advantage. Ask yourself if you really need to
+inherit the whole public interface of an object (do you want to be a "kind"
+of that object), or if you can just delegate certain jobs to the object and 
+use it by composition.
+
+<P>
+<li CLASS=listitem>Minimize relationships between objects and try to organize related objects in
+packages. To enhance your code's reusability, write it as if there
+<I CLASS=emphasis>is</I> a tomorrow. Find what one object needs to know
+about another to get its job done and try to minimize the coupling
+between them.
+
+<P>
+</UL>
+<DIV CLASS=sect1>
+<h2 CLASS=sect1><A CLASS="TITLE" NAME="EXJ-CH-5-SECT-1">5.1 Classes</A></h2>
+
+<P CLASS=para>
+<A NAME="CH05.CLASS"></A>Classes are the building blocks of a Java application. A
+<I CLASS=emphasis>class</I> can contain methods, variables,
+initialization code, and, as we'll discuss later on, even other
+classes.  It serves as a blueprint for making class
+<I CLASS=emphasis>instances</I>, which are run-time objects that
+implement the class structure. You declare a class with the
+<tt CLASS=literal>class</tt> keyword. Methods and variables of the class
+appear inside the braces of the class declaration:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Pendulum { 
+    float mass;  
+    float length = 1.0; 
+    int cycles; 
+ 
+    float position ( float time ) { 
+        ... 
+    } 
+    ... 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+The above class, <tt CLASS=literal>Pendulum</tt>, contains three
+variables: <tt CLASS=literal>mass</tt>, <tt CLASS=literal>length</tt>, and
+<tt CLASS=literal>cycles</tt>. It also defines a method called
+<tt CLASS=literal>position()</tt> that takes a <tt CLASS=literal>float</tt>
+value as an argument and returns a <tt CLASS=literal>float</tt>
+value. Variables and method declarations can appear in any order, but
+variable initializers can't use forward references to uninitialized
+variables.
+
+<P CLASS=para>
+Once we've defined the <tt CLASS=literal>Pendulum</tt>
+class, we can create a <tt CLASS=literal>Pendulum</tt> object 
+(an instance of that class) as follows:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+Pendulum p; 
+p = new Pendulum(); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Recall that our declaration of the variable <tt CLASS=literal>p</tt> does
+not create a <tt CLASS=literal>Pendulum</tt> object; it simply creates a
+variable that refers to an object of type <tt CLASS=literal>Pendulum</tt>.
+We still have to create the object dynamically, using the
+<tt CLASS=literal>new</tt> keyword. Now that we've created a
+<tt CLASS=literal>Pendulum</tt> object, we can access its variables and
+methods, as we've already seen many times:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+p.mass = 5.0; 
+float pos = p.position( 1.0 ); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Variables defined in a class are called <I CLASS=emphasis>instance
+variables</I>. Every object has its own set of instance
+variables; the values of these variables in one object can differ from
+the values in another object, as shown in <A HREF="ch05_01.htm#EXJ-CH-5-FIG-1">Figure 5.1</A>. 
+If you don't initialize an instance
+variable when you declare it, it's given a default value appropriate
+for its type.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-5-FIG-1">Figure 5.1: Instances of the Pendulum class</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0501.gif" alt="[Graphic: Figure 5-1]" width=503 height=293 border=0>
+
+</DIV>
+
+<P CLASS=para>
+In <A HREF="ch05_01.htm#EXJ-CH-5-FIG-1">Figure 5.1</A>, we have a hypothetical
+<tt CLASS=literal>TextBook</tt> application that uses two instances of
+<tt CLASS=literal>Pendulum</tt> through the reference type variables
+<tt CLASS=literal>bigPendulum</tt> and
+<tt CLASS=literal>smallPendulum</tt>. Each of these
+<tt CLASS=literal>Pendulum</tt> objects has its own copy of
+<tt CLASS=literal>mass</tt>, <tt CLASS=literal>length</tt>, and
+<tt CLASS=literal>cycles</tt>.
+
+<P CLASS=para>
+As with variables, methods defined in a class are <I CLASS=emphasis>instance
+methods</I>. An instance method is associated with an instance
+of the class, but each instance doesn't really have its own copy of
+the method. Instead, there's just one copy of the method, but it
+operates on the values of the instance variables of a particular
+object. As you'll see later when we talk about subclassing, there's
+more to learn about method selection.
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-5-SECT-1.1">Accessing Members</A></h3>
+
+<P CLASS=para>
+<A NAME="CH05.ACCESS"></A>Inside of a class, we can access instance variables and call instance methods 
+of the class directly by name. Here's an example that expands upon 
+our <tt CLASS=literal>Pendulum</tt>: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Pendulum { 
+    ... 
+    void resetEverything() { 
+        cycles = 0; 
+        mass = 1.0; 
+        ... 
+        float startingPosition = position( 0.0 ); 
+    } 
+    ... 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Other classes generally access members of an object through a reference, 
+using the C-style dot notation: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class TextBook { 
+    ... 
+    void showPendulum() { 
+        Pendulum bob = new Pendulum(); 
+        ... 
+        int i = bob.cycles; 
+        bob.resetEverything(); 
+        bob.mass = 1.01; 
+        ... 
+    } 
+    ... 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Here we have created a second class, <tt CLASS=literal>TextBook</tt>, that
+uses a <tt CLASS=literal>Pendulum</tt> object. It creates an instance in
+<tt CLASS=literal>showPendulum()</tt> and then invokes methods and
+accesses variables of the object through the reference
+<tt CLASS=literal>bob</tt>.
+
+<P CLASS=para>
+Several factors affect whether class members can be accessed
+from outside the class. You can use the visibility modifiers,
+<tt CLASS=literal>public</tt>, <tt CLASS=literal>private</tt>, and
+<tt CLASS=literal>protected</tt> to restrict access; classes
+can also be placed into packages that affect their scope. The
+<tt CLASS=literal>private</tt> modifier, for example, designates a variable
+or method for use only by other members inside the class itself. In
+the previous example, we could change the declaration of our variable
+<tt CLASS=literal>cycles</tt> to <tt CLASS=literal>private</tt>:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Pendulum { 
+    ... 
+    private int cycles; 
+    ... 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Now we can't access <tt CLASS=literal>cycles</tt> from
+<tt CLASS=literal>TextBook</tt>:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class TextBook { 
+    ... 
+    void showPendulum() { 
+        ... 
+        int i = bob.cycles;         // Compile time error 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+If we need to access cycles, we might add a 
+<tt CLASS=literal>getCycles()</tt> method to the <tt CLASS=literal>Pendulum</tt>
+class. We'll look at access modifiers and how they affect the
+scope of variables and methods in detail later.
+
+</DIV>
+
+<DIV CLASS=sect2>
+<h3 CLASS=sect2><A CLASS="TITLE" NAME="EXJ-CH-5-SECT-1.2">Static Members</A></h3>
+
+<P CLASS=para>
+<A NAME="CH05.STAT1"></A><A NAME="CH05.STAT2"></A><A NAME="CH05.STAT3"></A><A NAME="CH05.STAT4"></A><A NAME="CH05.STAT5"></A>Instance variables and methods are associated with and accessed
+through a particular object. In contrast, members that are declared
+with the <tt CLASS=literal>static</tt> modifier live in the class and are
+shared by all instances of the class. Variables declared with the
+<tt CLASS=literal>static</tt> modifier are called <I CLASS=emphasis>static
+variables</I> or <I CLASS=emphasis>class variables</I>&nbsp;;
+similarly, these kinds of methods are called <I CLASS=emphasis>static
+methods</I> or <I CLASS=emphasis>class methods</I>.
+
+<P CLASS=para>
+We can add a static variable to our <tt CLASS=literal>Pendulum</tt> example: 
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Pendulum { 
+    ... 
+    static float gravAccel = 9.80; 
+    ... 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+We have declared the new <tt CLASS=literal>float</tt> variable
+<tt CLASS=literal>gravAccel</tt> as <tt CLASS=literal>static</tt>. That means
+if we change its value in any instance of a
+<tt CLASS=literal>Pendulum</tt>, the value changes for all
+<tt CLASS=literal>Pendulum</tt> objects, as shown in <A HREF="ch05_01.htm#EXJ-CH-5-FIG-2">Figure 5.2</A>.
+
+<DIV CLASS=figure>
+<h4 CLASS=figure><A CLASS="TITLE" NAME="EXJ-CH-5-FIG-2">Figure 5.2: A static variable</A></h4>
+
+
+<p>
+<img align=middle src="./figs/je0502.gif" alt="[Graphic: Figure 5-2]" width=503 height=332 border=0>
+
+</DIV>
+
+<P CLASS=para>
+Static members can be accessed like instance members. Inside
+our <tt CLASS=literal>Pendulum</tt> class, we can refer to
+<tt CLASS=literal>gravAccel</tt> by name, like an instance variable:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Pendulum { 
+    ... 
+    float getWeight () { 
+        return mass * gravAccel; 
+    } 
+    ... 
+} 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+However, since static members exist in the class itself, independent
+of any instance, we can also access them directly through the
+class. We don't need a <tt CLASS=literal>Pendulum</tt> object to set
+the variable <tt CLASS=literal>gravAccel</tt>; instead we can use the
+class name as a reference:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+Pendulum.gravAccel = 8.76; 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+This changes the value of <tt CLASS=literal>gravAccel</tt> for any current
+or future instances. Why, you may be wondering, would we want to
+change the value of <tt CLASS=literal>gravAccel</tt>? Well, perhaps we
+want to explore how pendulums would work on different planets. Static
+variables are also very useful for other kinds of data shared among classes
+at run-time.  For instance you can create methods to register your objects
+so that they can communicate or you can count references to them.
+
+<P CLASS=para>
+We can use static variables to define constant values. In this
+case, we use the <tt CLASS=literal>static</tt> modifier along with the
+<tt CLASS=literal>final</tt> modifier. So, if we cared only about
+pendulums under the influence of the Earth's gravitational pull,
+we could change <tt CLASS=literal>Pendulum</tt> as follows:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Pendulum { 
+    ... 
+    static final float EARTH_G = 9.80; 
+    ... 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+We have followed a common convention and named our constant with
+capital letters; C programmers should recognize the capitalization
+convention, which resembles C <tt CLASS=literal>#define</tt>
+statements. Now the value of <tt CLASS=literal>EARTH_G</tt> is a
+constant; it can be accessed by any instance of
+<tt CLASS=literal>Pendulum</tt> (or anywhere, for that matter), but its
+value can't be changed at run-time. 
+
+<P CLASS=para>
+It's important to use the combination of static and final only for things
+that are really constant.  That's because, unlike other kinds of variable
+references, the compiler is allowed to "inline" those values within classes
+that reference them.  This is probably OK for things like PI, which aren't
+likely to change for a while, but may not be ideal for other kinds of 
+identifiers, such as we'll discuss below.
+
+<P CLASS=para>
+<P CLASS=para>
+Static members are useful as flags and identifiers, which can be
+accessed from anywhere. These are especially useful for values needed in the
+construction of an instance itself. In our example, we might declare a
+number of static values to represent various kinds of
+<tt CLASS=literal>Pendulum</tt> objects:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Pendulum { 
+    ... 
+    static int SIMPLE = 0, ONE_SPRING = 1, TWO_SPRING = 2; 
+    ... 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+We might then use these flags in a method that sets the type of a
+<tt CLASS=literal>Pendulum</tt> or, more likely, in a special constructor,
+as we'll discuss shortly:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+Pendulum pendy = new Pendulum(); 
+pendy.setType( Pendulum.ONE_SPRING ); 
+</PRE>
+</DIV>
+
+<P CLASS=para>
+Remember, inside the <tt CLASS=literal>Pendulum</tt> class, we can use
+static members directly by name as well:
+
+<DIV CLASS=programlisting>
+<P>
+<PRE>
+class Pendulum { 
+    ... 
+    void resetEverything() { 
+        setType ( SIMPLE ); 
+        ... 
+    } 
+    ... 
+} 
+</PRE>
+</DIV>
+
+</DIV>
+
+</DIV>
+
+
+<DIV CLASS=htmlnav>
+
+<P>
+<HR align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top><A HREF="ch04_06.htm"><IMG SRC="gifs/txtpreva.gif" ALT="Previous" border=0></A></td>
+<td width=171 align=center valign=top><a href="index.htm"><img src='gifs/txthome.gif' border=0 alt='Home'></a></td>
+<td width=172 align=right valign=top><A HREF="ch05_02.htm"><IMG SRC="gifs/txtnexta.gif" ALT="Next" border=0></A></td>
+</tr>
+<tr>
+<td width=172 align=left valign=top>Arrays</td>
+<td width=171 align=center valign=top><a href="index/idx_0.htm"><img src='gifs/index.gif' alt='Book Index' border=0></a></td>
+<td width=172 align=right valign=top>Methods</td>
+</tr>
+</table>
+<hr align=left width=515>
+
+<IMG SRC="gifs/smnavbar.gif" USEMAP="#map" BORDER=0> 
+<MAP NAME="map"> 
+<AREA SHAPE=RECT COORDS="0,0,108,15" HREF="../javanut/index.htm"
+alt="Java in a Nutshell"> 
+<AREA SHAPE=RECT COORDS="109,0,200,15" HREF="../langref/index.htm" 
+alt="Java Language Reference"> 
+<AREA SHAPE=RECT COORDS="203,0,290,15" HREF="../awt/index.htm" 
+alt="Java AWT"> 
+<AREA SHAPE=RECT COORDS="291,0,419,15" HREF="../fclass/index.htm" 
+alt="Java Fundamental Classes"> 
+<AREA SHAPE=RECT COORDS="421,0,514,15" HREF="../exp/index.htm" 
+alt="Exploring Java"> 
+</MAP>
+</DIV>
+
+</BODY>
+</HTML>
