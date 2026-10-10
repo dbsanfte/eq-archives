@@ -1,0 +1,125 @@
+<html>
+<body bgcolor=#eeeeff text="#000000" link="#0000aa">
+
+<pre>
+#ifndef LNIRCLIB_H
+#define LNIRCLIB_H
+
+#include "LnList.h" // a dynamic templated array
+#include <OS.h>
+#include <Looper.h>
+
+enum 
+{ // BMessage.what == LNIRCMSG with a Pointer("LnIRC_Message") is what I use
+  // to send messages
+	LNIRCMSG = 'LnIM'
+};
+
+enum LNIRC_CONNECTION_STATUS 
+{
+	LNIRC_DISCONNECTED,
+	LNIRC_CONNECTING, // not used at the moment, to be added later
+	LNIRC_CONNECTED
+};
+
+enum {
+	LNIRC_TYPE_PRIVMSG       = 0x00000001, // PRIVMSG
+	LNIRC_TYPE_NOTICE        = 0x00000002, // NOTICE
+	LNIRC_TYPE_JOIN          = 0x00000004, // JOIN
+	LNIRC_TYPE_PART          = 0x00000008, // PART
+	LNIRC_TYPE_QUIT          = 0x00000010, // QUIT
+	LNIRC_TYPE_NICK          = 0x00000020, // NICK
+	LNIRC_TYPE_KICK          = 0x00000040, // KICK
+	LNIRC_TYPE_MODE          = 0x00000080, // MODE
+	LNIRC_TYPE_TOPIC         = 0x00000100, // TOPIC
+	LNIRC_TYPE_TOPICREPLY    = 0x00000200, // TOPIC
+	LNIRC_TYPE_PING          = 0x00000400, // PING
+	LNIRC_TYPE_CTCP          = 0x00000800, // CTCP
+	LNIRC_TYPE_ACTION        = 0x00001000, // CTCP ACTION
+	LNIRC_TYPE_USERLIST      = 0x00002000, // list of active users
+	LNIRC_TYPE_ENDOFUSERLIST = 0x00004000, // end of userlist
+	LNIRC_TYPE_CHANMSG       = 0x00008000, // channel PRIVMSG
+	LNIRC_TYPE_NICKINUSE     = 0x00010000, // NICK already in use
+	// more to come..
+		
+	// internal types
+	LNIRC_TYPE_NOT_KNOWN    = 0x80000000, // unknown message type
+	LNIRC_TYPE_ALL_TYPES    = 0xffffffff // unknown message type
+};
+enum { LNIRC_NUM_TYPES = 15 }; // number of external types
+
+/*
+  All these string sizes are larger than needed, I know.
+*/
+class LnIRC_Message
+{
+	public:
+		LnIRC_Message();
+		LnIRC_Message(LnIRC_Message&);
+		void InitFromString(char*);
+		void WriteToSocket(int);
+		
+		uint32 type;
+		uint32 time;
+		char raw[1024];
+		char message[512];
+		char receiver[64];
+		char sender[64];
+};
+
+/* To receive messages from the IRC-looper, you must first create a 
+   LnIRC_Subscriber that defines which messages you are interested in.
+   for example, to receive all privmsgs set type to LNIRC_TYPE_PRIVMSG.
+   if you want, you can also define a specific sender or receiver, for
+   a channel you will want to receive all LNIRC_TYPE_CHANMSG with a
+   receiver value of <channel name>.
+*/
+class LnIRC_Subscriber
+{
+	public:
+		LnIRC_Subscriber();
+		
+		uint32 type;
+		char receiver[128];
+		char sender[128];
+		char message[528];
+		BLooper * looper;
+		
+		bool IsMatch(LnIRC_Message*);
+};
+
+class LnIRC_Lib
+{
+	protected:
+		thread_id thread;
+		sem_id lock;
+		int sock;
+		List<LnIRC_Message*> sendlist;
+		List<LnIRC_Subscriber*> subscriberlist;
+		static int32 run_thread(void*);
+		int32 thread_func(void*);
+		
+	public:
+		LnIRC_Lib();
+		~LnIRC_Lib();
+		
+		void SetSocket(int);
+
+		void Run();
+		void Stop(); // NOT implemented! =)
+
+		// are we connected to the server?
+		LNIRC_CONNECTION_STATUS ConnectionStatus();
+		
+		bool Send(LnIRC_Message*); // LnIRC_Lib assumes resp. for the object
+
+		void AddSubscriber(LnIRC_Subscriber*); // LnIRC_Lib assumes resp.
+		void RemoveSubscriber(LnIRC_Subscriber*);
+		void RemoveSubscriber(BLooper*); // remove all subs targeted at BLooper*
+};
+
+#endif
+</pre>
+
+</body>
+</html>
