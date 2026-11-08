@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>The Conclave of the Damned</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=">
+<META NAME="AUTHOR" CONTENT="The Conclave of the Damned">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) 2001 by The Conclave of the Damned">
+<META NAME="KEYWORDS" CONTENT="News, news, New, New, Technology, technology, Headlines, headlines, Nuke, nuke, PHP-Nuke, phpnuke, php-nuke, Geek, geek, Geeks, geeks, Hacker, hacker, Hackers, hackers, Linux, linux, Windows, windows, Software, software, Download, download, Downloads, downloads, Free, FREE, free, Community, community, MP3, mp3, Forum, forum, Forums, forums, Bulletin, bulletin, Board, board, Boards, boards, PHP, php, Survey, survey, Kernel, kernel, Comment, comment, Comments, comments, Portal, portal, ODP, odp, Open, open, Open Source, OpenSource, Opensource, opensource, open source, Free Software, FreeSoftware, Freesoftware, free software, GNU, gnu, GPL, gpl, License, license, Unix, UNIX, *nix, unix, MySQL, mysql, SQL, sql, Database, DataBase, database, Mandrake, mandrake, Red Hat, RedHat, red hat, Slackware, slackware, SUSE, SuSE, suse, Debian, debian, Gnome, GNOME, gnome, Kde, KDE, kde, Enlightenment, enlightenment, Intercative, interactive, Programming, programming, Extreme, extreme, Game, game, Games, games, Web Site, web site, Weblog, WebLog, weblog, Guru, GURU, guru">
+<META NAME="DESCRIPTION" CONTENT="Welcome to The Conclave of the Damned!!  (Please note that this site if far from done)">
+<META NAME="GENERATOR" CONTENT="PHP-Nuke 4.4 - http://phpnuke.org">
+
+
+<style type="text/css">
+<!--
+.textbox { background: transparent; background-color: White; color: #000000; font-family: Verdana,Arial,Helvetica; font-size: x-small; text-align: left; scrollbar-face-color: #CCCCCC; scrollbar-shadow-color: #FFFFFF; scrollbar-highlight-color: #FFFFFF; scrollbar-3dlight-color: #FFFFFF; scrollbar-darkshadow-color: #FFFFFF; scrollbar-track-color: #FFFFFF; scrollbar-arrow-color: #000000 }
+TD {font-family: Verdana,Arial,Helvetica}
+DIV {font-family: Verdana,Arial,Helvetica}
+BODY {font-size: 10pt; font-family: Verdana,Arial,Helvetica}
+-->
+</style>
+<SCRIPT type="text/javascript">
+<!--
+
+function showimage() {
+if (!document.images)
+return
+document.images.avatar.src=
+'/images/forum/avatar/' + document.Register.user_avatar.options[document.Register.user_avatar.selectedIndex].value
+}
+
+//-->
+</SCRIPT>
+<SCRIPT type="text/javascript">
+<!--
+
+function openwindow(){
+	window.open ("","Help","toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=600,height=400");
+}
+
+//-->
+</SCRIPT>
+<SCRIPT type="text/javascript">
+
+function init() {
+
+}
+</SCRIPT>
+</head>
+
+<body onload=init() topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" bgcolor="#3C3C3C" background="themes/COTD/rust.jpg" text="#000000" link="#363636" vlink="#363636" alink="#d5ae83">
+<br><br>
+
+
+<TABLE cellpadding=0 cellspacing=0 width="95%" border="0" align="center">
+<tr>
+<td>
+<img src=themes/COTD/cotdlogo.jpg align=left></td>
+<td><IMG src="themes/NukeNews/pixel.gif" width=1 height=1 alt="" border=0 hspace=0></td>
+<td align=middle><CENTER><img src="themes/COTD/cotdbanner.gif"></CENTER></TD>
+</tr></table>
+
+<TABLE cellpadding=0 cellspacing=0 width="95%" border="0" align="center" bgcolor="#fefefe">
+<TR>
+<TD bgcolor="#000000" colspan=4><IMG src="themes/NukeNews/pixel.gif" width=1 height=1 alt="" border=0 hspace=0></TD>
+        </TR>
+        <TR valign="center" bgcolor="#dedebb">
+<TD width="15%" nowrap><font size="2" color="#363636"><b>&nbsp;&nbsp;<b><font color=#363636><a href="user.php">Create</a></font> an account</b>
+</b></font></TD>
+<TD align="middle" height="20" width=70%><FONT size="2"><B>
+<A href="/">Home</A>
+&nbsp;&middot;&nbsp;
+<A href="submit.php">Submit</A>
+&nbsp;&middot;&nbsp;
+<A href="reviews.php">Reviews</A>
+&nbsp;&middot;&nbsp;
+<A href="user.php">Your Account</A>
+&nbsp;&middot;&nbsp;
+<A href="forum.php">Forums</A>
+&nbsp;&middot;&nbsp;
+<A href="opendir.php">Open Directory</A>
+</B></FONT>
+</TD>
+<TD align="right" width="15%"><FONT size="2"><b>
+<script language=JavaScript>
+      <!--   // Array ofmonth Names
+      var monthNames = new Array( "January","February","March","April","May","June","July","August","September","October","November","December");
+      var now = new Date();
+      thisYear = now.getYear();
+      if(thisYear < 1900) {thisYear += 1900}; // corrections if Y2K display problem
+      document.write(monthNames[now.getMonth()] + " " + now.getDate() + ", " + thisYear);
+      // --> 
+</script></b></FONT></TD>
+<td>&nbsp;</td>
+</tr>
+        <TR>
+                <TD bgcolor="#000000" colspan=4><IMG src="themes/NukeNews/pixel.gif" width=1 height=1 alt="" border=0 hspace=0></TD>
+        </TR>
+        </TABLE>
+
+
+<!-- FIN DEL TITULO -->
+
+<table width="95%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" align="center"><tr valign=top>
+<td bgcolor=ffffff><img src=themes/NukeNews/pixel.gif width=1 height=20 border=0></td></tr></table>
+
+<table width="95%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" align="center"><tr valign=top>
+<td bgcolor=ffffff><img src=themes/NukeNews/pixel.gif width=10 height=1 border=0></td>
+<td bgcolor=ffffff width=150 valign=top>
+
+
+	<table border=0 cellpadding=1 cellspacing=0 bgcolor=000000 width=150><tr><td>
+
+	<table border=0 cellpadding=3 cellspacing=0 bgcolor=dedebb width=100%><tr><td align=left>
+
+	<font size=2 color="#363636"><b>Main Menu</b></font>
+
+	</td></tr></table></td></tr></table>
+
+	<table border=0 cellpadding=0 cellspacing=0 bgcolor=ffffff width=150>
+
+	<tr valign=top><td bgcolor=ffffff>
+
+	<font size=2><li><a href=index.php>Home</a><br />
+<li><a href=topics.php>Topics</a><br />
+<li><a href=forum.php>Forums</a><br />
+<li><a href=sections.php>Sections</a><br />
+<li><a href=reviews.php>Reviews</a><br />
+<li><a href=links.php>Web Links</a><br />
+<li><a href=download.php>Downloads</a><br />
+<li><a href=friend.php>Recommend Us</a><br />
+<li><a href=memberslist.php>Members List</a><br />
+<li><a href=user.php>Your Account</a><br />
+<li><a href=submit.php>Submit News</a><br />
+<li><a href=stats.php>Stats</a><br />
+<li><a href=top.php>Top 10</a><br />
+<li><a href=faq.php>FAQ</a></font>
+
+	</td></tr></table>
+
+	<br>
+
+
+
+	<table border=0 cellpadding=1 cellspacing=0 bgcolor=000000 width=150><tr><td>
+
+	<table border=0 cellpadding=3 cellspacing=0 bgcolor=dedebb width=100%><tr><td align=left>
+
+	<font size=2 color="#363636"><b>Who's Online</b></font>
+
+	</td></tr></table></td></tr></table>
+
+	<table border=0 cellpadding=0 cellspacing=0 bgcolor=ffffff width=150>
+
+	<tr valign=top><td bgcolor=ffffff>
+
+	<font size=2><CENTER>There are currently, 1 guest(s) and 0 member(s) that are online.<br><br>You are Anonymous user. You can register for free by clicking <a href="user.php">here</a>.</center></font>
+
+	</td></tr></table>
+
+	<br>
+
+
+</td><td><img src=themes/NukeNews/pixel.gif width=15 height=1 border=0></td><td width=100%>
+
+<script>
+<!--
+
+NS4 = (document.layers) ? 1 : 0;
+IE4 = (document.all) ? 1 : 0;
+
+function show ( name ) {
+  x = currentX;
+  y = currentY + 20;
+  if (NS4) {
+
+    document.layers[name].xpos = parseInt ( x );
+    document.layers[name].left = parseInt ( x );
+    document.layers[name].ypos = parseInt ( y );
+    document.layers[name].top = parseInt ( y );
+    document.layers[name].visibility = "show";
+  } else {
+    document.all[name].style.left = parseInt ( x );
+    document.all[name].style.top = parseInt ( y );
+    document.all[name].style.visibility = "visible";
+  }
+}
+function hide ( name ) {
+  if (NS4) {
+    document.layers[name].visibility = "hide";
+  } else {
+    document.all[name].style.visibility = "hidden";
+  }
+}
+
+currentX = currentY = 0;
+
+function grabEl(e) {
+  if ( NS4 ) {
+    currentX = e.pageX;
+    currentY = e.pageY;
+  } else {
+    currentX = event.x;
+    currentY = event.y;
+  }
+}
+
+if ( NS4 ) {
+  document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE);
+}
+document.onmousemove = grabEl;
+
+
+//-->
+</script>
+<table width="100%" border=0 cellspacing=1 cellpadding=0 bgcolor="#cfcfbb"><tr><td>
+<table width="100%" border=0 cellspacing=1 cellpadding=8 bgcolor="#efefef"><tr><td>
+<center><b><font size=2>The Conclave of the Damned Download Section</font></b></center></td></tr></table></td></tr></table>
+<br><center><table width="100%" border=0 cellspacing=1 cellpadding=0 bgcolor="#cfcfbb"><tr><td>
+<table width="100%" border=0 cellspacing=1 cellpadding=8 bgcolor="#efefef"><tr><td>
+<center><font size=2><b>Select Category Folder</b></font><br><br>
+<img src="images/download/folder_open.gif" title="All Files (0)" alt="All Files (0)" border="0"> <b>All (0)</b>
+<br><br><br>Display filtered with <i>All</i> sorted <i>Ascending</i> by <i>Name</i></td></tr></table></td></tr></table>
+<br><center><table width="100%" border=0 cellspacing=1 cellpadding=0 bgcolor="#cfcfbb"><tr><td>
+<table width="100%" border=0 cellspacing=1 cellpadding=8 bgcolor="#efefef"><tr><td>
+<table border=0 width=100%><tr><td bgcolor=#cfcfbb><font size=2 color=#000000>
+          <center><b>Info</b></center>
+          </font></td><td bgcolor=#cfcfbb><font size=2 color=#000000><b><center><A HREF="/download.php?dcategory=&sortby=dfilename"><img src="images/download/up.gif" alt="Sort Ascending" title="Sort Ascending" border="0" height="9" width="15"></a> <font size="2">Name</font><A HREF="/download.php?dcategory=&sortby=dfilename&sortorder=DESC"><img src="images/download/down.gif" title="Sort Descending" alt="Sort Descending" border="0" height="9" width="15"></a></center></b></font></td><td bgcolor=#cfcfbb><font size=2 color=#000000><b><center><A HREF="/download.php?dcategory=&sortby=dfilesize"><img src="images/download/up.gif" alt="Sort Ascending" title="Sort Ascending" border="0" height="9" width="15"></a> <A HREF="/download.php?dcategory=&sortby=dfilesize">Size</a><A HREF="/download.php?dcategory=&sortby=dfilesize&sortorder=DESC"><img src="images/download/down.gif" title="Sort Descending" alt="Sort Descending" border="0" height="9" width="15"></a></center></b></font></td><td bgcolor=#cfcfbb><font size=2 color=#000000><b><center><A HREF="/download.php?dcategory=&sortby=dcategory"><img src="images/download/up.gif" alt="Sort Ascending" title="Sort Ascending" border="0" height="9" width="15"></a> <A HREF="/download.php?dcategory=&sortby=dcategory">Category</a><A HREF="/download.php?dcategory=&sortby=dcategory&sortorder=DESC"><img src="images/download/down.gif" title="Sort Descending" alt="Sort Descending" border="0" height="9" width="15"></a></center></b></font></td><td bgcolor=#cfcfbb><font size=2 color=#000000><b><center><A HREF="/download.php?dcategory=&sortby=ddate"><img src="images/download/up.gif" alt="Sort Ascending" title="Sort Ascending" border="0" height="9" width="15"></a> <A HREF="/download.php?dcategory=&sortby=ddate">Date</a><A HREF="/download.php?dcategory=&sortby=ddate&sortorder=DESC"><img src="images/download/down.gif" title="Sort Descending" alt="Sort Descending" border="0" height="9" width="15"></a></center></b></font></td><td bgcolor=#cfcfbb><font size=2 color=#000000><b><center><A HREF="/download.php?dcategory=&sortby=dver"><img src="images/download/up.gif" alt="Sort Ascending" title="Sort Ascending" border="0" height="9" width="15"></a> <A HREF="/download.php?dcategory=&sortby=dver">Version</a><A HREF="/download.php?dcategory=&sortby=dver&sortorder=DESC"><img src="images/download/down.gif" title="Sort Descending" alt="Sort Descending" border="0" height="9" width="15"></a></center></b></font></td><td bgcolor=#cfcfbb><font size=2 color=#000000><b><center><A HREF="/download.php?dcategory=&sortby=dcounter"><img src="images/download/up.gif" alt="Sort Ascending" title="Sort Ascending" border="0" height="9" width="15"></a> <A HREF="/download.php?dcategory=&sortby=dcounter">Counter</a><A HREF="/download.php?dcategory=&sortby=dcounter&sortorder=DESC"><img src="images/download/down.gif" title="Sort Descending" alt="Sort Descending" border="0" height="9" width="15"></a></center></b></font></td></tr></td></tr></table></td></tr></table></td></tr></table>
+</td><td bgcolor=ffffff><img src=themes/NukeNews/pixel.gif width=10 height=1 border=0></td></tr></table>
+
+<table width="95%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" align="center"><tr valign=top>
+<TD align="middle" height=17>
+<IMG height=17 alt="" hspace=0 src="themes/NukeNews/corner-bottom-left.gif" width=17 align=left>
+<IMG height=17 alt="" hspace=0 src="themes/NukeNews/corner-bottom-right.gif" width=17 align=right>
+</TD>
+      </TR>
+    </TABLE>
+<br>
+
+<table width="95%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" align="center"><tr valign=top>
+<TD><IMG height=17 alt="" hspace=0 src="themes/NukeNews/corner-top-left.gif" width=17 align=left></td>
+<td width=100%>&nbsp;</td>
+<td><IMG height=17 alt="" hspace=0 src="themes/NukeNews/corner-top-right.gif" width=17 align=right></td>
+
+</tr><tr align=middle>
+<td width=100% colspan=3>
+
+    <center><font size=1>
+
+    <a href=http://phpnuke.org target=blank><img src=images/powered/nuke.gif border=0 Alt=Web site powered by PHP-Nuke hspace=10></a> <a href=http://www.phpnuke.web.id target=blank><img src=images/powered/phpbbint.gif border=0 Alt=Web site using PHPBB Integration hspace=10></a><a href=http://www.apache.org target=blank><img src=images/powered/apache.gif Alt=Apache Web Server border=0 hspace=10></a><a href=http://www.php.net target=blank><img src=images/powered/php2.gif Alt=PHP Scripting Language border=0 hspace=10></a><br><br>
+
+    All logos and trademarks in this site are property of their respective owner. The comments are property of their posters, all the rest © 2001 by The COTD.<br>
+
+    This web site was made with <a href=http://phpnuke.org>PHP-Nuke</a>, a web portal system written in PHP. PHP-Nuke is Free Software released under the <a href=http://www.gnu.org>GNU/GPL license</a>.<br>
+
+    You can syndicate our news using the file <a href=backend.php>backend.php</a> or <a href=ultramode.txt>ultramode.txt</a><br>
+
+    </font></center>
+
+    </td>
+</tr><tr align=top>
+
+<TD><IMG height=17 alt="" hspace=0 src="themes/NukeNews/corner-bottom-left.gif" width=17 align=left></td>
+<td width=100%>&nbsp;</td>
+<td><IMG height=17 alt="" hspace=0 src="themes/NukeNews/corner-bottom-right.gif" width=17 align=right></TD>
+</TR></TABLE>
+<br><br>
+    </body>
+
+    </html>
