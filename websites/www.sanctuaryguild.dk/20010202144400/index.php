@@ -1,0 +1,403 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+        <title>Sanctuary - An Everquest Guild</title><SCRIPT>
+if (!top.iqbar) {
+    var str = document.location;
+    var encstr = escape(str);
+    document.write('<html><head></head>',
+		   '<frameset rows=\"32,*\" border=\"0\" frameborder=\"no\">',
+		   '<frame src=\"http://iqbar.infopaq.dk/iqbar.asp?site=www6.infopaq.dk\" name=\"iqbar\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" noresize>',
+		   '<frame src=\"/.getpage.pl?url=',encstr,'\">',
+		   '</frameset>',
+		   '<noframes>',
+		   'src=\"/getpage.pl?url=',encstr,'\"',
+		   '</noframes>',
+		   '</html>'
+		   );
+}
+</SCRIPT>
+    
+
+        <meta name="keywords" content="Everquest, EQ, Kunark, Ruins of Kunark, Guild, Everquest Guild, EQ Guild, Sanctuary, 7th Hammer, Seventh Hammer, RPG, Role Playing Game, MMORPG, Online Gaming">
+
+        <link rel="stylesheet" type="text/css" href="http://www.sanctuaryguild.dk/sanct_style.css" title="sanct_style">
+
+</head>
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" bottommargin="0" rightmargin="0" link="#ffffff" alink="#ffffff" vlink="#ffffff" bgcolor="#ffffff">
+
+<table  width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+
+        <tr>
+
+        <td align="left" valign="top" bgcolor="#000000" colspan="2">
+            <a href="http://www.sanctuaryguild.dk"><img src="http://www.sanctuaryguild.dk/Images/top01.jpg" height="110" width="600" border="no"></a>
+        </td>
+
+        <td align="left" valign="top" bgcolor="#000000">
+            &nbsp;
+        </td>
+
+        </tr>
+
+        <tr>
+
+        <td align="left" valign="top" bgcolor="#8b3232" width="15%">
+            <img src="http://www.sanctuaryguild.dk/Images/bg01.jpg" height="30" width="10" border="no">
+        </td>
+
+        <td align="center" valign="center" bgcolor="#8b3232" class="menutext">
+            <font color="#ffffff" face="arial, sans-serif, helvetica" size="2">
+            <a href="http://www.sanctuaryguild.dk/uploadss.html" class="menulink">Submit a Screenshot</a> |
+            <a href="mailto:jmkeller@west.com?subject=News" class="menulink">Submit News</a> |
+            <a href="mailto:jmkeller@west.com" class="menulink">Contact Webmaster</a> |
+            <a href="mailto:shaner0021@yahoo.com" class="menulink">Contact Guildleader</a> |
+            </font>
+        </td>
+
+        <td align="left" valign="top" bgcolor="#000000">
+            &nbsp;
+        </td>
+
+        </tr>
+
+        <tr>
+        <td align="center" valign="top" bgcolor="#8b3232" width="15%">
+            &nbsp;
+        </td>
+
+        <td valign="top" align="left">
+            <img src="http://www.sanctuaryguild.dk/Images/corner01.jpg" width="30" height="30" border="0">
+        </td>
+
+        <td  align="right" valign="top" bgcolor="#000000" width=200>
+             &nbsp;
+        </td>
+
+        </tr>
+
+        <tr>
+
+        <!-- Start Menu Links -->
+        <td  align="left" valign="top" class="menutext" bgcolor="#8b3232" width="15%">
+             <font color="#ffffff" face="arial, sans-serif, helvetica" size="2">
+             <b>Content</b><br>
+             <a href="http://www.sanctuaryguild.dk/index.php" class="menulink">News</a><br>
+             <a href="#" class="menulink">Members</a><br>
+             <a href="#" class="menulink">Charter</a><br>
+             <a href="http://www.sanctuaryguild.dk/screens.php" class="menulink">Screenshots</a><br>
+             <a href="http://www.sanctuaryguild.dk/dkp.php" class="menulink">DKP Standings</a><br>
+             <a href="http://pub30.ezboard.com/bsanctuaryguild" class="menulink">Forum</a><br>
+             <a href="#" class="menulink">Join Us</a><br>
+             <a href="#" class="menulink">Links</a><br>
+             </font>
+        </td>
+        <!-- End Menu Links --><SCRIPT>
+if (!top.iqbar) {
+    var str = document.location;
+    var encstr = escape(str);
+    document.write('<html><head></head>',
+		   '<frameset rows=\"32,*\" border=\"0\" frameborder=\"no\">',
+		   '<frame src=\"http://iqbar.infopaq.dk/iqbar.asp?site=www6.infopaq.dk\" name=\"iqbar\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" noresize>',
+		   '<frame src=\"/.getpage.pl?url=',encstr,'\">',
+		   '</frameset>',
+		   '<noframes>',
+		   'src=\"/getpage.pl?url=',encstr,'\"',
+		   '</noframes>',
+		   '</html>'
+		   );
+}
+</SCRIPT>
+    
+	<td align="center" valign="top">
+	<!-- Start News Table -->
+		<table  border="0" cellspacing="0" cellpadding="0" width="80%">
+		<tr bgcolor="#8b3232" class="newsheader">
+		<!-- Start News Header -->
+		<td  align="right" valign="top">
+			<font color="#ffffff" face="arial, sans-serif, helvetica" size="2">
+			<b>Trakanon Falls, #2</b></font>
+		</td>
+		<!-- End News Header -->
+		</tr>
+		<tr>
+		<!-- Start Poster Header -->
+		<td  align="right" valign="top" class="newssubmit" link="#000000" vlink="#000000">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="1">
+			Submitted by <a href="mailto:SidneyR@bigfoot.com" class="news">Juzam</a> | 2000-12-10 13:46:50 </font>
+		</td>
+		<!-- End Poster Header -->
+		</tr>
+		<!-- Start News Content -->
+		<tr>
+		<td  align="left" valign="top" class="news">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="2">
+			Last night the big green leezard Trakanon died once again by the hand of Sanctuary and friends. Fight went very smoothly, with only 4 deaths. Drops were: <ul><li>Singing Steel Breastplate - Awarded to Grimjacck</li><li>Cobalt Breastplate - Awarded to Zglaana</li>
+<li>4 Teeth - Aquemini, Scorpanion, Saintlaw and someone else :)</li>
+</ul>
+<br>
+Here's some snaps for your viewing pleasure:<br><center><a href="http://www.sanctuaryguild.dk/Images/trak_fight.jpg"><img src="http://www.sanctuaryguild.dk/Images/trak_fight_tn.jpg" border="0"></a><a href="http://www.sanctuaryguild.dk/Images/trak_corpse.jpg"><img src="http://www.sanctuaryguild.dk/Images/trak_corpse_tn.jpg" border="0"></a></center><br><center><a href="http://www.sanctuaryguild.dk/Images/grimjacck_minty.jpg"><img src="http://www.sanctuaryguild.dk/Images/grimjacck_minty_tn.jpg" border="0"></a><a href="http://www.sanctuaryguild.dk/Images/zglaana_cobalt.jpg"><img src="http://www.sanctuaryguild.dk/Images/zglaana_cobalt_tn.jpg" border="0"></a></center><br>
+Congrats Grimjacck and Zglaana!
+			</font>
+		</td>
+		</tr>
+		<tr>
+		<td bgcolor="#ffffff">
+			&nbsp;
+		</td>
+		</tr>
+		<tr bgcolor="#8b3232" class="newsheader">
+		<!-- Start News Header -->
+		<td  align="right" valign="top">
+			<font color="#ffffff" face="arial, sans-serif, helvetica" size="2">
+			<b>An Epic Update!</b></font>
+		</td>
+		<!-- End News Header -->
+		</tr>
+		<tr>
+		<!-- Start Poster Header -->
+		<td  align="right" valign="top" class="newssubmit" link="#000000" vlink="#000000">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="1">
+			Submitted by <a href="mailto:SidneyR@bigfoot.com" class="news">Juzam</a> | 2000-12-09 16:02:03 </font>
+		</td>
+		<!-- End Poster Header -->
+		</tr>
+		<!-- Start News Content -->
+		<tr>
+		<td  align="left" valign="top" class="news">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="2">
+			I'm pleased to announce that Sanctuary is making a lot of progress in the epic weapon department.
+Congratulations to:
+<ul>
+<li>Beour on his Sprinkler</li>
+<li>Aquemini and Bruke on obtaining their ragebringers</li>
+<li>Reoen and Meliay on their Celestial Fists</li>
+<li>Lappen on her Spear of Fate</li>
+<li>Poolnar and Tokar on their sparkling ranger swords</li>
+</ul>
+Here's some snaps:<br>
+<table border="0" cellspacing="5" cellpadding="0">
+<tr>
+<td align="center" valign="center">
+<a href="http://www.sanctuaryguild.dk/Images/aque_epic.jpg">
+<img src="http://www.sanctuaryguild.dk/Images/aque_epic_tn.jpg" border="0">
+</a>
+</td>
+<td align="center" valign="center">
+<a href="http://www.sanctuaryguild.dk/Images/tokar_epic.jpg">
+<img src="http://www.sanctuaryguild.dk/Images/tokar_epic_tn.jpg" border="0">
+</a>
+</td>
+<td align="center" valign="center">
+<a href="http://www.sanctuaryguild.dk/Images/poolnar_epic.jpg">
+<img src="http://www.sanctuaryguild.dk/Images/poolnar_epic_tn.jpg" border="0">
+</a>
+</td>
+<tr>
+<td align="center" valign="center" class="newstext">
+Aquemini!
+</td>
+<td align="center" valign="center" class="newstext">
+Tokar!
+</td>
+<td align="center" valign="center" class="newstext"> 
+Poolnar!
+</td>
+</tr>
+</table>
+Many more to come, I hope!<br><br>
+In other news, Venril Sathir was slain once again last wednesday. Dropped some crap staves and epic
+quest item.<br>
+<center>
+<a href="http://www.sanctuaryguild.dk/Images/venril_dead.jpg">
+<img src="http://www.sanctuaryguild.dk/Images/venril_dead_tn.jpg" border="0">
+</a>
+</center>
+
+        
+			</font>
+		</td>
+		</tr>
+		<tr>
+		<td bgcolor="#ffffff">
+			&nbsp;
+		</td>
+		</tr>
+		<tr bgcolor="#8b3232" class="newsheader">
+		<!-- Start News Header -->
+		<td  align="right" valign="top">
+			<font color="#ffffff" face="arial, sans-serif, helvetica" size="2">
+			<b>Trakanon slain!</b></font>
+		</td>
+		<!-- End News Header -->
+		</tr>
+		<tr>
+		<!-- Start Poster Header -->
+		<td  align="right" valign="top" class="newssubmit" link="#000000" vlink="#000000">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="1">
+			Submitted by <a href="mailto:SidneyR@bigfoot.com" class="news">Juzam</a> | 2000-12-05 14:23:33 </font>
+		</td>
+		<!-- End Poster Header -->
+		</tr>
+		<!-- Start News Content -->
+		<tr>
+		<td  align="left" valign="top" class="news">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="2">
+			Long overdue, but no less glorious! I'm pleased to anounce that Trakanon has been slain for the first time on the 7th Hammer by Sanctuary and friends. An awesome night for sure! Drops were:
+<ul>
+<li>Deepwater Breastplate - Awarded to Saintlaw</li>
+<li>Cloak of Piety - Awarded to Tokar</li>
+<li>4 Teeth - can't remember</li>
+</ul>
+<br>
+<center>
+<a href="http://www.sanctuaryguild.dk/Images/Trak1.jpg">  <img src="http://www.sanctuaryguild.dk/Images/trak1_tn.jpg" width="133" height="100" border="0"></a>
+<a href="http://www.sanctuaryguild.dk/Images/Trak3.jpg">  <img src="http://www.sanctuaryguild.dk/Images/trak3_tn.jpg" width="133" height="80" border="0"></a></center>
+<br>
+Congratulations to everyone that was there!    
+			</font>
+		</td>
+		</tr>
+		<tr>
+		<td bgcolor="#ffffff">
+			&nbsp;
+		</td>
+		</tr>
+		<tr bgcolor="#8b3232" class="newsheader">
+		<!-- Start News Header -->
+		<td  align="right" valign="top">
+			<font color="#ffffff" face="arial, sans-serif, helvetica" size="2">
+			<b>Congratulations Marakeen!</b></font>
+		</td>
+		<!-- End News Header -->
+		</tr>
+		<tr>
+		<!-- Start Poster Header -->
+		<td  align="right" valign="top" class="newssubmit" link="#000000" vlink="#000000">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="1">
+			Submitted by <a href="mailto:SidneyR@bigfoot.com" class="news">Juzam</a> | 2000-11-15 13:56:28 </font>
+		</td>
+		<!-- End Poster Header -->
+		</tr>
+		<!-- Start News Content -->
+		<tr>
+		<td  align="left" valign="top" class="news">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="2">
+			...on winning the wizard Best of the Best tourney on 7th Hammer!
+			</font>
+		</td>
+		</tr>
+		<tr>
+		<td bgcolor="#ffffff">
+			&nbsp;
+		</td>
+		</tr>
+		<tr bgcolor="#8b3232" class="newsheader">
+		<!-- Start News Header -->
+		<td  align="right" valign="top">
+			<font color="#ffffff" face="arial, sans-serif, helvetica" size="2">
+			<b>News update script added</b></font>
+		</td>
+		<!-- End News Header -->
+		</tr>
+		<tr>
+		<!-- Start Poster Header -->
+		<td  align="right" valign="top" class="newssubmit" link="#000000" vlink="#000000">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="1">
+			Submitted by <a href="mailto:SidneyR@bigfoot.com" class="news">Juzam</a> | 2000-11-11 18:30:45 </font>
+		</td>
+		<!-- End Poster Header -->
+		</tr>
+		<!-- Start News Content -->
+		<tr>
+		<td  align="left" valign="top" class="news">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="2">
+			News update script added. Hopefully this'll make it a lot easier for the officers to update the site on a regular basis. More enchancements INC (soon I hope)!
+			</font>
+		</td>
+		</tr>
+		<tr>
+		<td bgcolor="#ffffff">
+			&nbsp;
+		</td>
+		</tr>
+		<!-- End News Content -->
+		</table>
+		</td>
+		<!-- End News Table -->
+         <td  align="center" valign="top" bgcolor="#000000" class="raid" width="25%">
+              &nbsp;
+         </td>
+
+         </tr>
+
+         <tr>
+         <td  align="left" valign="top" bgcolor="#8b3232" width="15%">
+              <!-- Tracker thingie start -->
+              <center>
+              <font size=1 color=white>
+              <a target="_top" href="http://u.extreme-dm.com/?login=sanct"><img name=im src="http://u1.extreme-dm.com/i.gif"         height="38" border="0" width="41" alt=""></a>
+              <script language="javascript">
+              <!--
+              an=navigator.appName;
+              d=document;
+              function pr()
+              {
+              d.write("<img src=\"http://u0.extreme-dm.com",
+              "/0.gif?tag=sanct&j=y&srw="+srw+"&srb="+srb+"&",
+              "rs="+r+"&l="+escape(parent.document.referrer)+"\" height=1 ",
+              "width=1>");
+              }srb="na";
+              srw="na";//-->
+              </script>
+              <script language="javascript1.2">
+              <!--
+              s=screen;srw=s.width;
+              an!="Netscape"?srb=s.colorDepth:srb=s.pixelDepth;//-->
+              </script>
+              <script language="javascript">
+              <!--
+              r=41;d.images?r=d.im.width:z=0;
+              pr();//-->
+              </script>
+              <noscript>
+              <img height=1 width=1 alt="" src="http://u0.extreme-dm.com/0.gif?tag=sanct&j=n">
+              </noscript>
+              </font>
+              </center>
+              <!-- Tracker thingie end -->
+
+         </td>
+
+         <td  align="center" valign="top">
+              &nbsp;
+         </td>
+
+         <td  align="left" valign="top" bgcolor="#000000">
+              &nbsp;
+         </td>
+
+         </tr>
+
+         <tr>
+         <td  align="left" valign="top" bgcolor="#8b3232" width=150>
+              &nbsp;
+         </td>
+
+         <td  align="left" valign="top">
+              &nbsp;
+         </td>
+
+         <td  align="left" valign="top" bgcolor="#000000">
+              &nbsp;
+         </td>
+
+         </tr>
+</table>
+
+</body>
+
+</html>

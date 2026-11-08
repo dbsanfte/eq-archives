@@ -1,0 +1,223 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+        <title>Sanctuary - An Everquest Guild</title><SCRIPT>
+if (!top.iqbar) {
+    var str = document.location;
+    var encstr = escape(str);
+    document.write('<html><head></head>',
+		   '<frameset rows=\"32,*\" border=\"0\" frameborder=\"no\">',
+		   '<frame src=\"http://iqbar.infopaq.dk/iqbar.asp?site=www6.infopaq.dk\" name=\"iqbar\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" noresize>',
+		   '<frame src=\"/.getpage.pl?url=',encstr,'\">',
+		   '</frameset>',
+		   '<noframes>',
+		   'src=\"/getpage.pl?url=',encstr,'\"',
+		   '</noframes>',
+		   '</html>'
+		   );
+}
+</SCRIPT>
+    
+
+        <meta name="keywords" content="Everquest, EQ, Kunark, Ruins of Kunark, Guild, Everquest Guild, EQ Guild, Sanctuary, 7th Hammer, Seventh Hammer, RPG, Role Playing Game, MMORPG, Online Gaming">
+
+        <link rel="stylesheet" type="text/css" href="http://www.sanctuaryguild.dk/sanct_style.css" title="sanct_style">
+
+</head>
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" bottommargin="0" rightmargin="0" link="#ffffff" alink="#ffffff" vlink="#ffffff" bgcolor="#ffffff">
+
+<table  width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+
+        <tr>
+
+        <td align="left" valign="top" bgcolor="#000000" colspan="2">
+            <a href="http://www.sanctuaryguild.dk"><img src="http://www.sanctuaryguild.dk/Images/top01.jpg" height="110" width="600" border="no"></a>
+        </td>
+
+        <td align="left" valign="top" bgcolor="#000000">
+            &nbsp;
+        </td>
+
+        </tr>
+
+        <tr>
+
+        <td align="left" valign="top" bgcolor="#8b3232" width="15%">
+            <img src="http://www.sanctuaryguild.dk/Images/bg01.jpg" height="30" width="10" border="no">
+        </td>
+
+        <td align="center" valign="center" bgcolor="#8b3232" class="menutext">
+            <font color="#ffffff" face="arial, sans-serif, helvetica" size="2">
+            <a href="http://www.sanctuaryguild.dk/uploadss.html" class="menulink">Submit a Screenshot</a> |
+            <a href="mailto:jmkeller@west.com?subject=News" class="menulink">Submit News</a> |
+            <a href="mailto:jmkeller@west.com" class="menulink">Contact Webmaster</a> |
+            <a href="mailto:shaner0021@yahoo.com" class="menulink">Contact Guildleader</a> |
+            </font>
+        </td>
+
+        <td align="left" valign="top" bgcolor="#000000">
+            &nbsp;
+        </td>
+
+        </tr>
+
+        <tr>
+        <td align="center" valign="top" bgcolor="#8b3232" width="15%">
+            &nbsp;
+        </td>
+
+        <td valign="top" align="left">
+            <img src="http://www.sanctuaryguild.dk/Images/corner01.jpg" width="30" height="30" border="0">
+        </td>
+
+        <td  align="right" valign="top" bgcolor="#000000" width=200>
+             &nbsp;
+        </td>
+
+        </tr>
+
+        <tr>
+
+        <!-- Start Menu Links -->
+        <td  align="left" valign="top" class="menutext" bgcolor="#8b3232" width="15%">
+             <font color="#ffffff" face="arial, sans-serif, helvetica" size="2">
+             <b>Content</b><br>
+             <a href="http://www.sanctuaryguild.dk/index.php" class="menulink">News</a><br>
+             <a href="#" class="menulink">Members</a><br>
+             <a href="#" class="menulink">Charter</a><br>
+             <a href="http://www.sanctuaryguild.dk/screens.php" class="menulink">Screenshots</a><br>
+             <a href="http://www.sanctuaryguild.dk/dkp.php" class="menulink">DKP Standings</a><br>
+             <a href="http://pub30.ezboard.com/bsanctuaryguild" class="menulink">Forum</a><br>
+             <a href="#" class="menulink">Join Us</a><br>
+             <a href="#" class="menulink">Links</a><br>
+             </font>
+        </td>
+        <!-- End Menu Links --><SCRIPT>
+if (!top.iqbar) {
+    var str = document.location;
+    var encstr = escape(str);
+    document.write('<html><head></head>',
+		   '<frameset rows=\"32,*\" border=\"0\" frameborder=\"no\">',
+		   '<frame src=\"http://iqbar.infopaq.dk/iqbar.asp?site=www6.infopaq.dk\" name=\"iqbar\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" noresize>',
+		   '<frame src=\"/.getpage.pl?url=',encstr,'\">',
+		   '</frameset>',
+		   '<noframes>',
+		   'src=\"/getpage.pl?url=',encstr,'\"',
+		   '</noframes>',
+		   '</html>'
+		   );
+}
+</SCRIPT>
+    
+	<td align="center" valign="top">
+	<!-- Start News Table -->
+		<table  border="0" cellspacing="0" cellpadding="0" width="80%">
+		<tr bgcolor="#8b3232" class="newsheader">
+		<!-- Start News Header -->
+		<td  align="right" valign="top">
+			<font color="#ffffff" face="arial, sans-serif, helvetica" size="2">
+			<b>We moved!</b></font>
+		</td>
+		<!-- End News Header -->
+		</tr>
+		<tr>
+		<!-- Start Poster Header -->
+		<td  align="right" valign="top" class="newssubmit" link="#000000" vlink="#000000">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="1">
+			Submitted by <a href="mailto:jmkeller@west.com" class="news">Jordan</a> | 2001-02-02 22:44:17 </font>
+		</td>
+		<!-- End Poster Header -->
+		</tr>
+		<!-- Start News Content -->
+		<tr>
+		<td  align="left" valign="top" class="news">
+			<font color="#000000" face="arial, sans-serif, helvetica" size="2">
+			We have moved to http://sanctuary.wxs.org
+			</font>
+		</td>
+		</tr>
+		<tr>
+		<td bgcolor="#ffffff">
+			&nbsp;
+		</td>
+		</tr>
+		<!-- End News Content -->
+		</table>
+		</td>
+		<!-- End News Table -->
+         <td  align="center" valign="top" bgcolor="#000000" class="raid" width="25%">
+              &nbsp;
+         </td>
+
+         </tr>
+
+         <tr>
+         <td  align="left" valign="top" bgcolor="#8b3232" width="15%">
+              <!-- Tracker thingie start -->
+              <center>
+              <font size=1 color=white>
+              <a target="_top" href="http://u.extreme-dm.com/?login=sanct"><img name=im src="http://u1.extreme-dm.com/i.gif"         height="38" border="0" width="41" alt=""></a>
+              <script language="javascript">
+              <!--
+              an=navigator.appName;
+              d=document;
+              function pr()
+              {
+              d.write("<img src=\"http://u0.extreme-dm.com",
+              "/0.gif?tag=sanct&j=y&srw="+srw+"&srb="+srb+"&",
+              "rs="+r+"&l="+escape(parent.document.referrer)+"\" height=1 ",
+              "width=1>");
+              }srb="na";
+              srw="na";//-->
+              </script>
+              <script language="javascript1.2">
+              <!--
+              s=screen;srw=s.width;
+              an!="Netscape"?srb=s.colorDepth:srb=s.pixelDepth;//-->
+              </script>
+              <script language="javascript">
+              <!--
+              r=41;d.images?r=d.im.width:z=0;
+              pr();//-->
+              </script>
+              <noscript>
+              <img height=1 width=1 alt="" src="http://u0.extreme-dm.com/0.gif?tag=sanct&j=n">
+              </noscript>
+              </font>
+              </center>
+              <!-- Tracker thingie end -->
+
+         </td>
+
+         <td  align="center" valign="top">
+              &nbsp;
+         </td>
+
+         <td  align="left" valign="top" bgcolor="#000000">
+              &nbsp;
+         </td>
+
+         </tr>
+
+         <tr>
+         <td  align="left" valign="top" bgcolor="#8b3232" width=150>
+              &nbsp;
+         </td>
+
+         <td  align="left" valign="top">
+              &nbsp;
+         </td>
+
+         <td  align="left" valign="top" bgcolor="#000000">
+              &nbsp;
+         </td>
+
+         </tr>
+</table>
+
+</body>
+
+</html>
