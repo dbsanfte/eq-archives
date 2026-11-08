@@ -1,0 +1,285 @@
+
+
+<html>
+<head>
+		
+<script language="javascript">
+
+document.write ("<STYLE>")
+<!--
+document.write ("#divmenu{position:absolute; top:110 }")
+document.write ("#topads{position:absolute; width:"+screen.availWidth+"; left:"+(screen.availWidth/100*10)+"; height:90; overflow:hidden; color:darkred}") 
+document.write ("#divContent{position:absolute; width:"+(screen.availWidth/100*30)+"; left:"+(screen.availWidth/100*33)+"; top:110; overflow:Hidden; color:darkred}")
+document.write ("#advleft{position:absolute; border:1px solid maroon ;  width:"+screen.availWidth/100*20+"; top:110; left:"+(screen.availWidth/100*10)+"; overflow:hidden; color:darkred}")
+document.write ("#advright{position:absolute; border: 1px solid maroon; width:"+screen.availWidth/100*20+"; top:110; left:"+(screen.availWidth/100*65)+";overflow:hidden; color:darkred}")
+document.write ("//--></STYLE>")
+
+function Start(page) {
+OpenWin = this.open(page, "CtrlWindow", "toolbar=no,menubar=no,location=no,scrollbars=no,resizable=no, with=400, height=400");
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+
+
+</HEAD>
+<BODY class=myBodyTag >
+
+<div align="center"><img src="bloodhorde.jpg" /></div>
+<div id="advleft">
+
+Links<hr color=maroon><a href="rules.asp">Bloodhorde Guild Rules</a><BR><a href="struct.asp?s=0">Guild Structure</a><BR><a href="history.asp">Bloodhorde History</a><BR><a href="guild_roster2.asp?r=0">Local guild roster</a><BR><A HREF="http://eq.guildmagic.com/guild_characters.cfm?ID=4758&sortby=character_name&showroles=1" target="top">Bloodhorde Guild Roster</A><br><a href="diary/diary.asp">Event Calendar</a><br><a href="pics/raidpics/2piclist.asp">Gallery</a><br><a href="http://messages.bloodhorde.com/">New Forums</a><BR><a href='login_user.asp'>Log in</a><br />
+</div>
+</div>
+
+<div id="advright"> 
+Bloodhorde<BR>You will know us by the Trail of the DEAD...<BR><hr color=maroon><div align=center><BR><a href="join.asp" target="_window"><img src="jointhehorde.jpg" border=0></ img></a></div><BR>
+</div>
+</div>
+
+
+<!-- begin absolutely positioned scrollable area object-->
+ 
+  <div id="divContent"  class="myText">
+
+
+
+<style type="text/css">
+<!--
+.text {font-family: Times New Roman, Times, serif; font-size: 14px; color: red}
+.bold {font-family: Times New Roman, Times, serif; font-size: 14px; color: red; font-weight: bold;}
+a {font-family: Times New Roman, Times, serif; font-size: 14px; color: white}
+a:hover {font-family: Times New Roman, Times, serif; font-size: 14px; color: #FF0000}
+a:visited {font-family: Times New Roman, Times, serif; font-size: 14px; color: lightgrey}
+a:visited:hover {font-family: Times New Roman, Times, serif; font-size: 14px; color: #FF0000}
+-->
+</style>
+
+            
+
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+ <tr>
+  <td align="center" class="text">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="maroon">
+    <tr> 
+     <td> 
+      <table width="100%" border="0" cellspacing="1" cellpadding="3">    
+       <tr> 
+        <td bgcolor="black" class="text">Grats to Drakang</td>
+       </tr>
+        <tr> 
+         <td bgcolor="black" class="text">
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	 <tr>
+           <td class="text">Grats Drakang on being our first epic SK. <br> <div align="center"><img src="http://bloodhorde.com/pics/generalpics/drak.jpg" width=218></div>
+           </td>
+          </tr>
+	  </table>
+	  </table>
+	<table width="100%" border="0" cellspacing="1" cellpadding="3">    
+       <tr> 
+        <td bgcolor="black" class="text">Posted by Araxis on 5/11/2003 11:36:26 AM
+	</td>
+       </tr>
+        <tr> 
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  </td>
+	   </tr> 
+	  </table>       
+         </td>
+        </tr>
+       </table>
+      </td>
+     </tr>
+    </table>
+  </td>
+ </tr>
+</table>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+ <tr>
+  <td align="center" class="text">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="maroon">
+    <tr> 
+     <td> 
+      <table width="100%" border="0" cellspacing="1" cellpadding="3">    
+       <tr> 
+        <td bgcolor="black" class="text">My dreams, my torment</td>
+       </tr>
+        <tr> 
+         <td bgcolor="black" class="text">
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	 <tr>
+           <td class="text"><font color="ORANGE">Again the dreams that reveal to me my past are haunting me once again.
+
+You can read for yourself what Innoruuk has chosen to curse me with nightly <a href=http://pop3.vegaspropertyshop.com/Bloodhorde/index.php?a=topic&t=90>here</a>.</font>
+           </td>
+          </tr>
+	  </table>
+	  </table>
+	<table width="100%" border="0" cellspacing="1" cellpadding="3">    
+       <tr> 
+        <td bgcolor="black" class="text">Posted by Inertia on 4/8/2003 9:16:42 AM
+	</td>
+       </tr>
+        <tr> 
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  </td>
+	   </tr> 
+	  </table>       
+         </td>
+        </tr>
+       </table>
+      </td>
+     </tr>
+    </table>
+  </td>
+ </tr>
+</table>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+ <tr>
+  <td align="center" class="text">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="maroon">
+    <tr> 
+     <td> 
+      <table width="100%" border="0" cellspacing="1" cellpadding="3">    
+       <tr> 
+        <td bgcolor="black" class="text">New Messageboards LIVE</td>
+       </tr>
+        <tr> 
+         <td bgcolor="black" class="text">
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	 <tr>
+           <td class="text"><b>The revamped Message boards / forums are now LIVE - Please go to <b><a href=http://messages.bloodhorde.com/>http://messages.bloodhorde.com</a></B> to register yourself & request access.</b>
+           </td>
+          </tr>
+	  </table>
+	  </table>
+	<table width="100%" border="0" cellspacing="1" cellpadding="3">    
+       <tr> 
+        <td bgcolor="black" class="text">Posted by Drachon on 4/6/2003 11:07:43 AM
+	</td>
+       </tr>
+        <tr> 
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  </td>
+	   </tr> 
+	  </table>       
+         </td>
+        </tr>
+       </table>
+      </td>
+     </tr>
+    </table>
+  </td>
+ </tr>
+</table>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+ <tr>
+  <td align="center" class="text">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="maroon">
+    <tr> 
+     <td> 
+      <table width="100%" border="0" cellspacing="1" cellpadding="3">    
+       <tr> 
+        <td bgcolor="black" class="text">Greeting, Warlord!</td>
+       </tr>
+        <tr> 
+         <td bgcolor="black" class="text">
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	 <tr>
+           <td class="text"><center>Please welcome to the Horde a WARLORD<br><br><img src=http://users.adelphia.net/~inertia/images/Boilybut.jpg width=280 height=215><br><br></center>His face was obscured in the shot, but that may be a good thing.
+           </td>
+          </tr>
+	  </table>
+	  </table>
+	<table width="100%" border="0" cellspacing="1" cellpadding="3">    
+       <tr> 
+        <td bgcolor="black" class="text">Posted by Inertia on 3/22/2003 10:23:37 AM
+	</td>
+       </tr>
+        <tr> 
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  </td>
+	   </tr> 
+	  </table>       
+         </td>
+        </tr>
+       </table>
+      </td>
+     </tr>
+    </table>
+  </td>
+ </tr>
+</table>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+ <tr>
+  <td align="center" class="text">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="maroon">
+    <tr> 
+     <td> 
+      <table width="100%" border="0" cellspacing="1" cellpadding="3">    
+       <tr> 
+        <td bgcolor="black" class="text">Maps to download</td>
+       </tr>
+        <tr> 
+         <td bgcolor="black" class="text">
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	 <tr>
+           <td class="text"><font color = MAGENTA>This is an amazing resource that I found today.  Downloadable maps for the new LoY map utility.  Simply right click the text file links and select "Save Target As" and point it to the "Maps" folder in your EQ installation folder.  Overwrite the file if it asks.  No more dinking around with the map utility, someone else already did it!<br><br><br>Click this link to load the page.  You MAY need to create an account at EQToolbox.com....not sure, but its free if you do.<br><br><br><b><a href=http://maps.eq-toolbox.com/>EQ Toolbox Maps</a></B><br><br><br>RRRRAAARRRR!!!</font>
+           </td>
+          </tr>
+	  </table>
+	  </table>
+	<table width="100%" border="0" cellspacing="1" cellpadding="3">    
+       <tr> 
+        <td bgcolor="black" class="text">Posted by Inertia on 3/8/2003 10:30:36 AM
+	</td>
+       </tr>
+        <tr> 
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  </td>
+	   </tr> 
+	  </table>       
+         </td>
+        </tr>
+       </table>
+      </td>
+     </tr>
+    </table>
+  </td>
+ </tr>
+</table>
+
+
+<div align="center">
+<br>
+
+<hr color=maroon>
+<span style="font-size:11px;" >
+Problems? Please contact <A HREF="mailto:%77%65%62%6D%61%73%74%65%72%40%62%6C%6F%6F%64%68%6F%72%64%65%2E%63%6F%6D">Webmaster</a><br />
+All original art and materials copywrite 1999-2002 Sicarii Software Design.
+</span>
+
+
+</div>
+<!-- begin counter code -->
+
+
+
+
+<!-- end counter code -->
+</div>
+
+<!-- end absolutely positioned scrollable area object -->
+
+
+</BODY>
+</HTML>
