@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>MoD - Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style type="text/css">
+<!--
+/* General layout */
+A:link        { font-weight: normal; text-decoration: none; color: #FFE4B5; }
+A:visited     { text-decoration: none; color: #FFe4B5; font-weight: normal; }
+A:hover       { text-decoration: none; color: #FABB38; }
+BODY          { scrollbar-face-color: #ffffff; scrollbar-shadow-color: #000000; scrollbar-highlight-color: #DEE7EF;
+                scrollbar-3dlight-color: #FFFFFF; scrollbar-darkshadow-color: #AFC6DB;
+                scrollbar-track-color: #F5F5F5; scrollbar-arrow-color: ##DEE7EF; font-family: Verdana, Helvetica, Arial; 
+                font-size:12px; margin-top: 0; margin-left: 0; margin-right: 0; padding-top: 0; padding-left: 0; 
+                padding-right: 0; }
+TD            { font-family: Verdana, Helvetica, Arial; color: #FFFFFF; font-size:11px}
+input         { background-color: #000000; font-family: Verdana, Helvetica, Arial; font-size: 9pt; color: #FFFFFF; }
+textarea      { background-color: #000000; font-family: Verdana, Helvetica, Arial; font-size: 9pt; color: #FFFFFF; }
+select        { background-color: #000000; font-family: Verdana, Helvetica, Arial; font-size: 7pt; color: #FFFFFF; }
+
+/* YaBB navigation links */
+.nav          { font-size: 10px; text-decoration: none; color: #ffffff; }
+.nav:link     { font-size: 10px; text-decoration: none; color: #ffffff; }
+.nav:visited  { font-size: 10px; text-decoration: none; color: #ffffff; }
+.nav:hover    { font-size: 10px; text-decoration: none; color: #ffffff; font-weight: bold; text-decoration: underline; }
+
+/* YaBB alternating bgcolors */
+.windowbg     { background-color: #404040; font-size: 11px; font-family: Verdana; color: #ffffff; }
+.windowbg2    { background-color: #202020; font-size: 11px; font-family: Verdana; color: #ffffff; }
+.windowbg3    { background-color: #000000; font-size: 11px; font-family: Verdana; color: #ffffff; }
+
+/* Misc./title/category colors */
+.hr           { color: #000000;}
+.titlebg      { background-color: #360A52; color: #FABB38; }
+.text1        { font-style: normal; font-weight: bold; font-size: 12px; color: #FFFFFF; }
+.catbg        { background-color: #404040; color: #FABB38; font-weight: bold; font-size: 13px; }
+.bordercolor  { background-color: #FFe4B5; }
+
+/* Image fonts */
+.imgbg        { font-style: normal; font-size: 10px; color: #ffffff; }
+.imgcatbg     { font-style: normal; font-size: 10px; color: #ffffff; font-weight: bold; }
+.imgtitlebg   { font-style: normal; font-size: 10px; color: #FFFFFF;  font-weight: bold; }
+.imgwindowbg  { font-style: normal; font-size: 9px; color: #ffffff; }
+.imgmenu      { font-style: normal; font-size: 11px; color: #ffffff; font-weight: bold; letter-spacing: 0.1em; }
+
+/* Post quote/code colors */
+.quote        { font-size: 10px; font-family: Verdana, Helvetica, Arial; color: #ffffff; background-color: #000000; }
+.code         { font-size: 10px; font-family: Courier New; color: #ffffff; background-color: #000000; }
+-->
+</style>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+  if ((navigator.appVersion.substring(0,1) == "5" &&
+navigator.userAgent.indexOf('Gecko') != -1) ||
+navigator.userAgent.search(/Opera/) != -1) {
+   document.write('<META HTTP-EQUIV="pragma" CONTENT="no-cache">');
+  }
+// -->
+</script>
+</head>
+<body text="#FABB38" bgcolor="#000000" link="#0033FF">
+<br>
+<table width="92%" cellspacing="1" cellpadding="0" border="0" align="CENTER" bgcolor="#000000">
+  <tr> 
+    <td bgcolor="#6394BD" width="100%"> 
+      <table bgcolor="#FFFFFF" width="100%" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+              <tr> 
+                <td bgcolor="#000000" height="50"><img src="http://www.blushn.com/mod/pageimages/gname.jpg" alt="Mists of Dawn"></td>
+                <td bgcolor="#000000"> 
+                <p><font size="2" color="#FFFFFF">
+                Welcome, Guest. Please <a href="./YaBB.cgi?board=;action=login">Login</a> or <a href="./YaBB.cgi?board=;action=register">Register</a>. <BR>
+                Apr 11<sup>th</sup>, 2002, 12:04am
+                </font><BR></p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr><tr> 
+    <td bgcolor="#000000" align="center"> 
+      <table bgcolor="#000000" width="100%" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="100%" align="center"> 
+            <table border="1" width="100%" cellpadding="3" cellspacing="0" bgcolor="#000000" align="center">
+              <tr> 
+                <td valign="middle" bgcolor="#000000" align="center"><font size="1"><a href="./YaBB.cgi"><img src="http://www.blushn.com/YaBBImages/home.gif" alt="Home" border="0"> <font size="1" class="imgmenu">Home</font></a> <a href="http://www.blushn.com/YaBBHelp/index.html" target="_blank" style="cursor:help;"><img src="http://www.blushn.com/YaBBImages/help.gif" alt="Help" border="0"> <font size="1" class="imgmenu">Help</font></a> <a href="./YaBB.cgi?board=;action=search"><img src="http://www.blushn.com/YaBBImages/search.gif" alt="Search" border="0"> <font size="1" class="imgmenu">Search</font></a> <a href="./YaBB.cgi?action=mlall"><img src="http://www.blushn.com/YaBBImages/guest.gif" alt="Members" border="0"> <font size="1" class="imgmenu">Members</font></a> <a href="./YaBB.cgi?board=;action=login"><img src="http://www.blushn.com/YaBBImages/login.gif" alt="Login" border="0"> <font size="1" class="imgmenu">Login</font></a> <a href="./YaBB.cgi?board=;action=register"><img src="http://www.blushn.com/YaBBImages/register.gif" alt="Register" border="0"> <font size="1" class="imgmenu">Register</font></a></font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr><tr> 
+    <td bgcolor="#000000" align="center"> 
+      <table bgcolor="#000000" width="100%" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="100%" align="center"> 
+            <table border="0" width="100%" cellpadding="5" cellspacing="0" bgcolor="#000000" align="center">
+              <tr> 
+                <td valign="middle" bgcolor="#000000" align="center">
+                <font size="2" color="#FFE4B5"><B>MoD</B>  « Login »</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<BR>
+<table width="92%" cellspacing="1" cellpadding="0" border="0" align="CENTER" bgcolor="#000000">
+  <tr> 
+    <td bgcolor="#000000" width="100%"> 
+      <table bgcolor="#000000" width="100%" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <table width="90%" cellspacing="0" cellpadding="3" align="center" bgcolor="#000000">
+              <tr> 
+                <td valign="TOP" width="93%">
+                  <BR><table border="0" cellspacing="1" bgcolor="#FABB38" class="bordercolor" align="center"><tr><td class="catbg" bgcolor="#000000" colspan="2"><font size="2" class="catbg"><b>Warning!</b></font></td></tr><tr><td colspan="2" class="windowbg" bgcolor="#000000" align="left" cellpadding=3><font size=2><BR>Only registered members are allowed to access this forum.<BR>Please login below or click <a href="./YaBB.cgi?board=;action=register">-here-</a> to register an account with MoD.<BR><BR></font></td></tr><tr>
+        <td class="windowbg" bgcolor="#000000" width="20" valign=middle align=center><img src="http://www.blushn.com/YaBBImages/login.gif" border="0" alt=""></td>
+        <td class="windowbg2" bgcolor="#404040" valign="middle"><BR>
+        <form action="./YaBB.cgi?board=;action=login2" method="POST">
+        <table border="0" cellpadding="2" cellspacing="0" valign="middle" align="center" width="90%">
+          <tr>
+            <td valign="middle" align="left"><font size=2><b>Username:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=text name="username" size="15" tabindex="1"></font></td>
+            <td valign="middle" align="left"><font size=2><b>Minutes to stay logged in:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=text name="cookielength" size="7" maxlength="4" value="360" tabindex="3"> </font></td>
+          </tr><tr>
+            <td valign="middle" align="left"><font size=2><b>Password:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=password name="passwrd" size="15" tabindex="2"></font></td>
+            <td valign="middle" align="left"><font size=2><b>Always stay logged in:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=checkbox name="cookieneverexp" tabindex="4" checked>&nbsp;&nbsp;</font> <input type=submit value="Login" tabindex="5" accesskey="l"></font></td>
+          </tr>
+        </table>
+        </form>
+       </td>
+      </tr></table> <BR>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      </td>
+  </tr>
+</table>
+<BR>
+<table width="92%" cellspacing="1" cellpadding="0" border="0" align="CENTER" bgcolor="#000000">
+  <tr> 
+    <td bgcolor="#000000" width="100%"> 
+      <table bgcolor="#000000" width="100%" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <table width="90%" cellspacing="0" cellpadding="3" align="center" bgcolor="#000000">
+              <tr> 
+                <td align="center" width="90%"><font size="1" color="#ffffff"><a href="./YaBB.cgi"><font size="1">MoD</font></a> &#187; <font size="1">Powered by</font> <a href="http://yabb.xnull.com"><font size="1">YaBB 1 Gold - SP1</font></a><font size="1">!<BR>
+YaBB © 2000-2001, </font><a href="http://www.xnull.com"><font size="1">Xnull</font></a><font size="1">. All Rights Reserved.</font></font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
