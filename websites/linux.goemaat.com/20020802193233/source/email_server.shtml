@@ -1,0 +1,229 @@
+<html><head><title>Email Server Source Code</title></head>
+
+	<style type="text/css">
+		A:link		{ color:#004040; }
+		A:visited	{ color:#004040; }
+		A:hover		{ color:#401000; }
+		h1			{ color:#802080; }
+		h2			{ color:#802080; }
+		h3			{ color:#802080; }
+		h4			{ color:#802080; }
+	</style>
+
+<body>
+
+<center>
+<table cellpadding=3 border=3 width=800>
+	<tr valign=top>
+		<td width=120 background=/image/background-001.gif><!--#include virtual="/site_index.html"-->
+
+			<font face=Tahoma size=2 color=black>
+				Jason Goemaat
+			</font>
+			<br>
+			<br>
+
+			<small>
+			&nbsp; Personal<br>
+
+<!--			&nbsp; &nbsp; <a href="/news">News</A> <br>
+-->
+
+			&nbsp; &nbsp; <a href="/links.shtml">Links</A> <br>
+
+<!--			&nbsp; &nbsp; <a href="/contact.shtml">Contact</A> <br> 
+-->
+
+			<br>&nbsp; Photos<br>
+			&nbsp; &nbsp; <a href="/photo/apple_river">Apple River</A> <br>
+			&nbsp; &nbsp; <a href="/photo/DadChristmas/page_01.htm">Christmas at Dad's</A> <br>
+			&nbsp; &nbsp; <a href="/photo/ChristmasPresents">Christmas Presents</A> <br>
+			&nbsp; &nbsp; <a href="/photo/AnnFamilyChristmas/page_01.htm">Ann's Family</A> <br>
+			&nbsp; &nbsp; <a href="/photo/Frogs/page_01.htm">Frogs</A> <br>
+			&nbsp; &nbsp; <a href="/photo/Misc/page_01.htm">Miscellaneous</A> <br>
+			<br>&nbsp; <a href="/source">Source Code</a> <br>
+			&nbsp; &nbsp; <a href="/source/email_server.shtml">Email Server</A> <br>
+			&nbsp; &nbsp; <a href="/source/proxy_server.shtml">Java Proxy</A> <br>
+			&nbsp; &nbsp; <a href="/source/picture_grabber.shtml">Picture Grabber</A> <br>
+			&nbsp; &nbsp; <a href="/source/email_viewer.shtml">Email Viewer</A> <br>
+			<br>&nbsp; Utility<br>
+			&nbsp; &nbsp; <a href="/servlets/EmailViewer">Email Viewer</A> <br>
+			&nbsp; &nbsp; <a href="/webcam">Web Cam</A> <br>
+			<br>&nbsp; Games<br>
+			&nbsp; &nbsp; <a href="/everquest">Everquest</A> <br>
+			&nbsp; &nbsp; <a href="/jezzball">Jezzball</A> <br>
+			</small>
+			</font>
+
+		<td background=/image/jlg_beige005.jpg>
+
+
+<center><h1>Email Server</h1>
+<a href=#Description>Description</a> |
+<a href=#QuickStart>Quick Start</a> |
+<a href=#Properties>Properties</a> |
+<a href=#FileStorage>FileStorage</a> |
+<a href=#SourceCode>Source Code</a>
+</center>
+
+
+<!---------------------------------------------------------------------------- -->
+<hr>
+<a name="Description">
+<h2>Description</h2>
+
+<p>
+
+I was unable to find a free, easy to use SMTP and POP3 server to meet my needs
+when I purchased the <b>goemaat.com</b> domain, so I created my own.  The SMTP 
+server only accepts email for domains which the POP3 server serves email for, it
+won't forward to other domains.  In the future I hope to add support for forwarding
+messages to the SMTP server, as well as the ability to "plug-in" external classes 
+to handle certain email addresses.  This will enable the easy creation of mailing
+lists, automated processing (for passwords, etc.), or about anything else you can
+think of.
+
+
+
+<p>
+<!---------------------------------------------------------------------------- -->
+<hr>
+<a name="QuickStart">
+<h2>Quick Start</h2>
+
+<p>
+
+You must have JDK 1.1 at least installed on your computer, and the current
+directory must be in your classpath (".").
+
+</p><p>
+
+Download <a href="EmailServer.jar"><b>EmailServer.jar</b></a>.  Create 
+a directory <b>"c:\email"</b> and un-jar the file into it (or use WinZip).
+Then execute <b>"run.bat"</b>.  Hit Ctrl-C to shutdown the server.  
+
+</p><p>
+
+You can now use your favorite email program to send and receive email to 
+<b>"DemoUser@company.com"</b>.  Just set your POP and SMTP servers to
+the computer name or IP address the email server is running on.  The SMTP
+server will not forward email, it only accepts email addresses ending with
+<b>"@company.com"</b>, and <b>"DemoUser"</b> is the only user currently 
+setup.  The password for DemoUser is <b>"demo".</b>
+
+</p><p>
+
+Run.bat runs the program with the following command:
+<br> &nbsp; &nbsp; <b>java com.goemaat.email.Server</b> <br>
+
+</p>
+
+
+
+<!---------------------------------------------------------------------------- -->
+<hr>
+<a name="Properties">
+<h2>Properties File</h2>
+
+<p>
+The classes in the JAR file must be in the classpath, and the properties 
+file  must either be <b>"email.properties"</b> in the directory the program 
+is run from, or specified on the command line as the property <b>"email.properties"</b>
+<br> &nbsp; &nbsp; <b>java -Demail.properties=&lt;filename&gt; 
+com.goemaat.email.Server</b> <br>
+
+</p><p>
+
+<pre>
+# Properties for my email server program
+smtp.port=25
+pop.port=110
+server.address=company.com
+storage.class=com.goemaat.email.store.FileStorage
+storage.directory=c:\\email\\data
+</pre>
+
+</p><p>
+
+Comment lines start with a '#', other lines are in the format <b>property=value</b>
+
+</p><p>
+
+<b>smtp.port</b> is the port for the SMTP server to listen for.  The standard port
+for this is 25.
+
+</p><p>
+
+<b>pop.port</b> is the port for the POP server to listen for.  The standard port
+for this is 110.
+
+</p><p>
+
+<b>server.address</b> is the address that will appear in messages (such as the initial
+connect message) from the servers.
+
+</p><p>
+
+<b>storage.class</b> is the name of the class that will handle storing emails for both
+the POP3 and SMTP servers.  You can make this whatever class you want that implements
+the <b>com.goemaat.email.store.EmailStorage</b> interface.  So far I've only created
+the <b>com.goemaat.email.store.FileStorage</b> class that stores emails as files and 
+domains as directories, along with special files for a domain list and user lists
+with their passwords.  If you want to store information in a database instead, you 
+just have to create a class that implements EmailStorage and pass it as this parameter.
+
+</p><p>
+
+<b>storage.directory</b> is used only by the <b>com.goemaat.email.store.FileStorage</b>
+class to specify the directory the data files are stored in. <br><b>NOTE:</b> if you 
+are using backslashes ('\') as path separators (Windows machine), you must use
+the Java character escape, which means each backslash needs to be represented as two as you
+can see above.
+
+<p>
+<!---------------------------------------------------------------------------- -->
+<hr>
+<a name="FileStorage">
+<h2>FileStorage Layout</h2>
+
+<ul>
+	<li><b>Domains.txt</b> - file with one domain name per line.  Each domain in this file
+				should have a subdirectory of the same name.  All should be in lower case.
+	<li><b>company.com</b> - the directory with all files for the domain <b>company.com</b>
+	<ul>
+		<li><b>Users.txt</b> - file in each domain directory that has a list of users and 
+				their passwords in the format <b>user=password</b>, one per line.
+		<li><b>DemoUser</b> - directory that will hold all of DemoUser's messages.
+		<ul>
+			<li><b>20000404-205744-324-0@company.com</b> - message file - straight text with headers and all.
+		</ul>
+	</ul>
+</ul>
+
+This has the side-effect that you can put any file in the user's directory and it 
+will show up as a message when they check their mail.
+		
+<p>
+<!---------------------------------------------------------------------------- -->
+<hr>
+<a name="SourceCode">
+<h2>Source Code Organization</h2>
+
+<p><b>com.goemaat.email.Server</b> - Class that is run.  It loads properties and starts the POP3 and SMTP server threads, as well as setting up the storage.
+<p><b>com.goemaat.email.Domain</b> - Just holds the domain name
+<p><b>com.goemaat.email.Message</b> - Holds message data as well as the delete flag, size, ID, and User it belongs to.
+<p><b>com.goemaat.email.User</b> - Holds user name and domain they belong to.
+<p><b>com.goemaat.email.store.EmailStorage</b> - Interface that must be implemented to create a class that can store Domains, Users, and Messages.
+<p><b>com.goemaat.email.store.FileStorage</b> - Class implementing EmailStorage that stores the domains, users, and emails in the directories mentioned above.
+<p><b>com.goemaat.email.pop.POPServer</b> - This is the thread that listens for POP3 connections and creates POPConnection threads to handle them.
+<p><b>com.goemaat.email.pop.POPServer</b> - This is a thread that is created for each POP3 connection and handles commands sent to it, such as logging in, listing messges, reading messages, and deleting them.
+<p><b>com.goemaat.email.smtp.SMTPServer</b> - This is the thread that listends for SMTP connections and creates SMTPConnection threads to handle them.
+<p><b>com.goemaat.email.smtp.SMTPConnection</b> - This is a thread that is created for each SMTP connection and handles commands sent to it, creating new emails and reporting errors to the SMTP client.
+
+<p>
+
+	</tr>
+</table>
+
+</body>
+

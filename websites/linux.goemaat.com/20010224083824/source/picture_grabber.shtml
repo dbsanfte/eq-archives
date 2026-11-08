@@ -1,0 +1,168 @@
+<html><head><title>Picture Grabber Source Code</title></head>
+
+	<style type="text/css">
+		A:link		{ color:#004040; }
+		A:visited	{ color:#004040; }
+		A:hover		{ color:#401000; }
+		h1			{ color:#802080; }
+		h2			{ color:#802080; }
+		h3			{ color:#802080; }
+		h4			{ color:#802080; }
+	</style>
+
+<body>
+
+<center>
+<table cellpadding=3 border=3 width=800>
+	<tr valign=top>
+		<td width=120 background=/image/background-001.gif><!--#include virtual="/site_index.html"-->
+
+			<font face=Tahoma size=2 color=black>
+				Jason Goemaat
+			</font>
+			<br>
+			<br>
+
+			<small>
+			&nbsp; Personal<br>
+
+<!--			&nbsp; &nbsp; <a href="/news">News</A> <br>
+-->
+
+			&nbsp; &nbsp; <a href="/links.shtml">Links</A> <br>
+
+<!--			&nbsp; &nbsp; <a href="/contact.shtml">Contact</A> <br> 
+-->
+
+			<br>&nbsp; Photos<br>
+			&nbsp; &nbsp; <a href="/photo/apple_river">Apple River</A> <br>
+			<br>&nbsp; <a href="/source">Source Code</a> <br>
+			&nbsp; &nbsp; <a href="/source/email_server.shtml">Email Server</A> <br>
+			&nbsp; &nbsp; <a href="/source/proxy_server.shtml">Java Proxy</A> <br>
+			&nbsp; &nbsp; <a href="/source/picture_grabber.shtml">Picture Grabber</A> <br>
+			&nbsp; &nbsp; <a href="/source/email_viewer.shtml">Email Viewer</A> <br>
+			<br>&nbsp; Utility<br>
+			&nbsp; &nbsp; <a href="/servlets/EmailViewer">Email Viewer</A> <br>
+			&nbsp; &nbsp; <a href="/webcam">Web Cam</A> <br>
+			<br>&nbsp; Games<br>
+			&nbsp; &nbsp; <a href="/everquest">Everquest</A> <br>
+			&nbsp; &nbsp; <a href="/jezzball">Jezzball</A> <br>
+			</small>
+			</font>
+
+		<td background=/image/jlg_beige005.jpg>
+
+
+<center><h1>Picture Grabber</h1>
+<a href=#Description>Description</a> |
+<a href=#QuickStart>Quick Start</a> |
+<a href=#SourceCode>Source Code</a> |
+</center>
+
+
+<p>
+
+<!---------------------------------------------------------------------------- -->
+<hr>
+<a name="Description">
+<h2>Description</h2>
+
+<p>
+
+	If you see a nice picture page on the internet with thumbs and would like 
+	to download all of the pictures on it, this program can make it a whole
+	lot simpler.  Instead of right-clicking on each link, selecting "Save
+	Target As", waiting for the window to pop up, selecting the directory,
+	and clicking save, you just enter the directory and the URL of the page
+	with the links and all of the pictures are downloaded in the background
+	while you surf.  This is really useful for sites that let you download
+	free web images for backgrounds, borders, and bullets.
+
+<p>
+
+<!---------------------------------------------------------------------------- -->
+<hr>
+<a name="QuickStart">
+<h2>Quick Start</h2>
+
+<p>
+
+	You need to have at least JDK 1.2, or the Swing 1.1 classes installed for this to work.
+
+<p>
+	<A HREF="PictureGrabber.jar"><B>Download</B></A> the file now (27,212 bytes).  
+	If you have JDK 1.2 installed, you can double-click on the JAR file to run it, 
+	or type "java -jar PictureGrabber.jar".
+	If not, add the jar file to your ClassPath and type <b>"java com.goemaat.grab.GrabPictureFrame"</b>.
+
+<p>
+	The program starts out with the download directory set to <b>"d:\pic"</b>.  
+	This is the directory the picture files will be put into.  If you wish to change
+	the directory, enter it into the second text box and hit the "Set Directory" 
+	button.  The window title should change to indicate the new directory.  Enter the
+	URL where the pictures are into the top box and hit the "Store" button to begin 
+	retrieving them.  This URL must be a file, it can't be a path.  For instance, if
+	the web server has pictures in <b>"http://www.goemaat.com/photo/jordan"</b>, you must type
+	the actual file that is retrieved, in this case 
+	<b>"http://www.goemaat.com/photo/jordan/index.shtml"</b>
+	Good file names to try are <b>"index.html"</b> and <b>"index.shtml"</b>.
+	This is due to the way Java constructs relative URLs from a base and
+	will be fixed in a future release.  Also note that the "http://" is mandatory.
+
+<p>
+
+	This is about the first application I wrote in Java and I haven't done much with it 
+	in a while.  I hope to get the functionality working soon to save the files in a 
+	path under the specified directory if the check box is checked, as well as getting
+	the "Store Index" and "Store Many" buttons to work.  The Store Index button will
+	take the address of a page that has references to picture indexes instead of pictures
+	themself.  "Store Many" is a special feature to store groups of numbered index pages
+	for one site I've found.
+
+<!---------------------------------------------------------------------------- -->
+<hr>
+<a name="SourceCode">
+<h2>Source Code</h2>
+
+<p>
+
+	GrabPictureFrame is the main class for this program.  It creates a 
+	PictureList object to store the file names, URLs, and directories of the 
+	pictures linked	to from the page you specify.  It then creates 
+	GrabThread objects and starts them.  They query the PictureList object 
+	every 1/2 second until they get a picture from it.  When they get a 
+	picture, they call a method of the Picture object that opens an 
+	HttpURLConnection to the picture and saves the bytes to a file, then they
+	try to grab another picture and go on to waiting another 1/2 second if there 
+	is none.
+
+<p>
+
+	When you click on the Store button, GrabPictureFrame opens an 
+	HttpURLConnection to retrieve the page you specify into a StringBuffer.
+	The StringBuffer is then scanned for &lt;A HREF="xxx.xxx/xxx.jpg"&gt; tags
+	with a file name ending in JPG, jpg, JPEG, jpeg, GIF, or gif.  If the 
+	tag matches those criteria, a Picture object is created with the current 
+	directory name and the URL and is added to the PictureList to be retrieved 
+	by one of the five GrabThread objects.
+
+<p>All classes are in the package <b>"com.goemaat.grab"</b>
+
+<p><b>GrabPictureFrame</b> - Main class and frame that is displayed.  Handles
+	parsing the pages and creating Picture objects that will be retrieved, as 
+	well as the GrabThread objects that will retrieve them.
+<p><b>Picture</b> - Holds the directory that was in effect when the Store button was clicked,
+	the file name, the URL, and a flag from the checkbox.  It also has the download()
+	method which pulls the picture to a file.
+<p><b>PictureList</b> - This is basically a wrapper for the Vector class that is
+	thread-safe (I wasn't sure if Vector was or not)
+<p><b>GrabThread</b> - Thread that loops continuously, checking it's
+	PictureList member for new pictures to download every 1/2 second, or immediately
+	after the last download.  If it finds a picture, it removes it from the list
+	and calls it's download() method.
+
+	</tr>
+</table>
+
+</body>
+

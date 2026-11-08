@@ -1,0 +1,173 @@
+<html><head><title>Proxy Server Source Code</title></head>
+
+	<style type="text/css">
+		A:link		{ color:#004040; }
+		A:visited	{ color:#004040; }
+		A:hover		{ color:#401000; }
+		h1			{ color:#802080; }
+		h2			{ color:#802080; }
+		h3			{ color:#802080; }
+		h4			{ color:#802080; }
+	</style>
+
+<body>
+
+<center>
+<table cellpadding=3 border=3 width=800>
+	<tr valign=top>
+		<td width=120 background=/image/background-001.gif><!--#include virtual="/site_index.html"-->
+
+			<font face=Tahoma size=2 color=black>
+				Jason Goemaat
+			</font>
+			<br>
+			<br>
+
+			<small>
+			&nbsp; Personal<br>
+
+<!--			&nbsp; &nbsp; <a href="/news">News</A> <br>
+-->
+
+			&nbsp; &nbsp; <a href="/links.shtml">Links</A> <br>
+
+<!--			&nbsp; &nbsp; <a href="/contact.shtml">Contact</A> <br> 
+-->
+
+			<br>&nbsp; Photos<br>
+			&nbsp; &nbsp; <a href="/photo/apple_river">Apple River</A> <br>
+			<br>&nbsp; <a href="/source">Source Code</a> <br>
+			&nbsp; &nbsp; <a href="/source/email_server.shtml">Email Server</A> <br>
+			&nbsp; &nbsp; <a href="/source/proxy_server.shtml">Java Proxy</A> <br>
+			&nbsp; &nbsp; <a href="/source/picture_grabber.shtml">Picture Grabber</A> <br>
+			&nbsp; &nbsp; <a href="/source/email_viewer.shtml">Email Viewer</A> <br>
+			<br>&nbsp; Utility<br>
+			&nbsp; &nbsp; <a href="/servlets/EmailViewer">Email Viewer</A> <br>
+			&nbsp; &nbsp; <a href="/webcam">Web Cam</A> <br>
+			<br>&nbsp; Games<br>
+			&nbsp; &nbsp; <a href="/everquest">Everquest</A> <br>
+			&nbsp; &nbsp; <a href="/jezzball">Jezzball</A> <br>
+			</small>
+			</font>
+
+		<td background=/image/jlg_beige005.jpg>
+
+
+<center><h1>Proxy Server</h1>
+<a href=#Description>Description</a> |
+<a href=#QuickStart>Quick Start</a> |
+<a href=#SourceCode>Source Code</a>
+</center>
+
+<p>
+
+<!---------------------------------------------------------------------------- -->
+<hr>
+<a name="Description">
+<h2>Description</h2>
+
+<p>
+
+The Proxy Server I wrote in Java allows you to provide TCP connections through
+a firewall.  It offers simple encryption as well to prevent unwanted eyes from
+intercepting your communications.  It is based on the fact that you have a server
+on the outside of the firewall and start the client on the inside.  The client
+listens on whatever ports you wich and forwards each through a connection to the
+server on the outside to some host and port you specify.
+
+<p>
+
+I really wrote it to learn several things in the Java language: Threads, Sockets, 
+Swing (JTable), and extending input and output streams.
+
+<p>
+
+<!---------------------------------------------------------------------------- -->
+<hr>
+<a name="QuickStart">
+<h2>Quick Start</h2>
+
+<p>
+
+	You need to have at least JDK 1.2, or the Swing 1.1 classes installed for this to work.
+
+<p>
+	<A HREF="ProxyServer.jar"><B>Download</B></A> the file now.
+
+	<p>Run the server with the following command:
+	<br> &nbsp; &nbsp; <b>java -classpath %CLASSPATH%;ProxyServer.jar com.goemaat.proxy.ProxyServerApp</b>
+	<br>You can change the port the server listens on from 110 by passing "-port &lt;port&gt;" 
+	on the command line, or select "Change Port" in the running program.
+
+	<p>Run the client with the following command:
+	<br> &nbsp; &nbsp; <b>java -classpath %CLASSPATH%;ProxyServer.jar com.goemaat.proxy.ProxyClientApp</b>
+	<br>To set the server, use the argument <b>"-server &lt;server:port&gt;"</b> or select <b>"Change
+	Server"</b> from the program.  Proxy sockets can be specified in the form 
+	<b>"&lt;type&gt;:&lt;listen port&gt;:&lt;server&gt;:&lt;server port&gt;"</b>.
+	The only currently supported type is "TCP", but UDP will possibly be supported in the future.
+
+	<p>For instance, if you start the server on the computer </b>"computer1.company.com"</b> with the
+	command:
+	<br> &nbsp; &nbsp; <b>>java com.goemaat.proxy.ProxyServerApp -port 30000</b>
+	<br>And the client with:
+	<br> &nbsp; &nbsp; <b>java com.goemaat.proxy.ProxyServerApp -server computer1.company.com TCP:23:computer2.company.com:23</b>
+	<br>You can then telnet from the computer the client is running on to localhost (itself)
+	and you will be forwarded to computer2.company.com as if you telneted there directly.
+
+	<p>If you pass the parameters <b>"-encrypt &lt;string&gt;"</b> to both client and server,
+	they will use that string as a key to encrypt their communications.  This will prevent
+	any computers between the client and server from seeing the data your sending if they
+	are sniffing it.  This is a weak encryption algorithm, but not that easy to break either,
+	especially if the person sniffing doesn't know this is the program you are using or doesn't
+	have access to the source code.
+
+<p>
+
+<!---------------------------------------------------------------------------- -->
+<hr>
+<a name="SourceCode">
+<h2>Source Code</h2>
+
+<p>
+
+<h3>Classes in the package "com.goemaat.encrypt"</h3>
+
+<p><b>RandomGenerator</b> - Class that produces very good random numbers (it has a period of 2^144).
+<p><b>Encrypter</b> - Uses passwords combined with the RandomGenerator to encrypt an individual byte.
+<p><b>EncryptedOutputStream</b> - OutputStream that encrypts bytes with the supplied passwords using an Encrypter object.
+<p><b>EncryptedInputStream</b> - InputStream that decrypts bytes with the supplied passwords using an Encrypter object.
+<p>Create an EncryptedOutputStream at one end of a socket and an EncryptedInputStream at the other end
+with the same passwords and you have a pretty secure connection.  Can also be used to wrap streams to/from files.
+
+<h3>Classes in the package "com.goemaat.Proxy"</h3>
+
+<p><b>ProxyClientApp</b> - Client Application that retrieves command line arguments and
+	handles managing the threads.
+<p><b>ProxyClientFrame</b> - Frame that displays the working and listening connections and allows you
+	to change the server, remove worker connections, add listening connections, and remove listening conenctions.
+<p><b>ClientListenThread</b> - Thread that listens on a port for incoming connections 
+	and creates new ClientWorkThread objects for each incoming connection, which are 
+	added by calling ProxyClientApp.addWorkerThread().
+<p><b>ClientWorkThread</b> - Thread that connects to the proxy server and handles
+	forwarding the data both ways for the life of the connection.
+
+<br>
+
+<p><b>ProxyServerApp</b> - Server Application that retrieves command line arguments and
+	handles managing the threads.
+<p><b>ProxyServerFrame</b> - Frame that displays the working and listening connections and allows you
+	to change the port the server is listening on.
+<p><b>ServerListenThread</b> - Thread that listens on a port for incoming connections 
+	and creates new ClientWorkThread objects for each incoming connection, which are 
+	added by calling ProxyClientApp.addWorkerThread().
+<p><b>ClientWorkThread</b> - Thread that connects to the proxy server and handles
+	forwarding the data both ways for the life of the connection.
+
+<p>
+
+
+	</tr>
+</table>
+
+</body>
+
