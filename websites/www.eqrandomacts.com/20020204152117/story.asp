@@ -1,0 +1,1997 @@
+
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE>Random Acts : Our Members</TITLE>
+<LINK rel="stylesheet" type="text/css" href="ra1.css">
+</HEAD>
+
+<body>
+<div align=center>
+<table width="700" cellpadding="0" border=0 cellspacing=0>
+	<tr>
+		<td colspan="2">
+		<a HREF="/default.asp"><img src="/images/Pagetop.jpg" BORDER="0" ALT="Random Acts Home" WIDTH="800" HEIGHT="199"></a></td>
+	</tr>
+	<tr><td colspan=2><hr></td></tr>
+	<tr>
+		<td width="150" valign="top">
+			<table>
+				<tr><td class="toc"><a class="small" HREF="/default.asp" title="Random Acts Home">Home</a></td></tr>
+                                <tr><td class="toc"><a class="small" HREF="/mission.asp" title="What We Do">Mission Statement</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/candc.asp" title="How We Got Started">Call &amp; Charter</a></td></tr>
+                        <tr><td class="toc"><a class="small" HREF="/ethics.asp" title="How We Act">Ethical Guidelines</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/join.asp" title="How To Become One Of Us">How To Join</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/fquest.asp" title="Fledgling Quest">Fledgling Quest</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/calendar.asp" title="What We're Going To Do">Calendar</a></td></tr>
+				<tr><td class="toc"><a class="small" target="_blank" HREF="http://pub76.ezboard.com/brandomacts" title="What We're Saying">Message Boards</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/rollcall1.asp" title="Who We Are">Roll Call</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/album.asp" title="What We Did">Photo Album</a></td></tr>
+                        <tr><td class="toc"><a class="small" HREF="/story.asp" title="What We Write">Stories</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/skills.asp" title="How We Do It">Trade Skills</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/links.asp" title="What We Like To Look At">Links</a></td></tr>
+				
+	
+			</table>
+		</td>
+		<td width=550 class="toc"><div class="bodytext"><BR><BR>
+
+
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes"> </span><span style="mso-spacerun: yes">           </span><span
+style="mso-spacerun: yes">    </span><span style="mso-spacerun: yes"> </span><span
+style="mso-spacerun: yes"> </span><span style="mso-spacerun: yes">  </span><span
+style="mso-spacerun: yes"> </span><span style="mso-spacerun: yes"> </span></span><b><span
+style='mso-bidi-font-size:10.0pt;font-family:"Courier New"'>The Valley of Heros<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">                    </span>(originally Neao's Tribute)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1>Chapter One by Uriel Trueshot</h1>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">             </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">          </span>* A lonely trumpet sounds in the distance*<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">             </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">    </span>Uriel glances down a the fresh grave of his good bud Neao, a
+most unfortunate victem of a drive by arrowing.It had taken exactly 123 orcs to
+finish off the little Halfling...if onlyhe had been a little wiser!!<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">    </span>Uriel reached into his pack and pulled out a very strong
+dwarvish ale. Popping the top, he took a big swig..ahhhh a little tody for the
+body!! The then proceeded to look up at the sky and say, &quot;One for me&quot;
+then he began to pour some on the grave of his partna, &quot;and one for my
+Homie.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">    </span>The woodelf left the grave without a tear...cause you know
+gangstas don't cry!!<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1>Chapter Two by Grimmbaldis Stormwolfe</h1>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">    </span>Grimmbaldis passes the grave site, bottle in hand. Pulling the
+cork, he pours the libation for his lost friend. Shoulders slumped in the rain,
+he remembers the many adventures and misadventures they had shared.
+&lt;sigh&gt; No more would the happy halfling try to be a tank. His refusal to
+flee from combat having finally caught up with him. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">    </span>&quot;I told ya, you little anklebiter, that you were a DRUID,
+not a Warrior. But did you ever listen? No. You were too brave for your own
+good.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Reaching into the bag next to him, Grimmbaldis poured out a
+mound of bleeding, freshly severed orc heads. &quot;Tis but a start, my Friend.
+But a start. I will pile your gravesite high with the remains of our enemies.
+None shall forget the brave little Druid who liked to Tank!!&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Finishing the bottle, Grimmbaldis walked away in the pouring
+rain in search of more heads to add to the grisly monument dedicated to his
+friend, Neao.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Three by Neaoh
+Anklebiter</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>It's only been a day since his brother died but Neaoh is
+strangley pulled back to the place were the 123 Orcs slew him. As he makes his
+way through the forrest he see's through the mist what looks like a large mound
+were the grave should be.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Neaoh's blood starts to boil thinking that vile insects or
+worse, Orcs have violated the grave of his brave brother but as he gets closer
+he see's hundreds of orc heads and 2 bottles of Dawreven Ale arranged at the
+head of his grave in sort of a macabre alter. Neaoh knows that some of his
+brothers friends have been at work to avenge his death and have started this
+gruesome monument as a warning to the legions of Orc's of there impending doom.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>As the sun starts to set the reality sets in that his brother
+is gone forever and Neaoh sets off into the night to carry on the work that his
+brothers friends have started.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Four by Gwion
+Llewellyn</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Gwion smiled as she entered Misty Thicket. She was always glad
+to get away from that lamentable polka band in the Rivervale public square. Ah,
+how nice to be back in the forest! She took a deep breath -- then coughed,
+dropping her shopping bag (Leldara's of Norrath -- Freeport, Felwithe, and
+Kelethin).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Tunare's Teeth!&quot; she cried, &quot;What is that
+HORRIBLE smell?&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>From behind her came a muffled, squishy thump. Oh. A huge
+pile of orc heads.Lovely. Hm, what was that sticking out of it? Holding her
+nose, she edged toward the pile. A headstone? What unfortunate had met his end
+here?<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>&quot;Here lies...&quot; she read. The rest was buried in
+moldy orc. Gingerly, Gwion poked a couple heads aside with her Runed Totem
+Staff.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>&quot;Neao Spellwielder! Oh!&quot; Revulsion forgotten, Gwion
+wiped the headstone with her hand, remembering how Neao had taken her to Lake
+Rathe and helped her through her twenty-third season. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>She concentrated for a moment, then a green aura surrounded
+her as she turned into a wolf. Raising her head to the heavens, she howled for
+her lost comrade. Then she trotted off to find some more orcs.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Five by Grimmbaldis
+Stormwolfe</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Grimmbaldis, handkerchief soaked in alcohol securely tied
+around his face, surveyed the growing pile of Orc skulls. Hmmm, a rotting
+stench is not a proper memorial to Neao. Perhaps a Necromancer will have a
+spell or procedure that will take care of this. And I must consult with
+Leldara. I think a Forest Giant skull would make a nice<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>raised vault. Maybe Bandit
+skulls for torch holders and Goblin skulls for incense burners. We will build a
+mighty monument to our fallen friend with a majestic altar to offer up
+sacrifices for his well being in the afterlife.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Six by Gwion
+Llewellyn</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Thank you so much, Mr. Fizzlor,&quot; Gwion said,
+handing the white-robed drow a bag of platinum pieces. &quot;It smells much
+better around here now. And I'm sure you can use those bone chips for something
+-- excuse me! You there!&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Gwion waved at the bear she'd enlisted to rototill the
+gravesite. &quot;I think that's deep enough! Yes, very good work, Mr -- Mr.
+Kodiak, wasn't it. Thank you very much!&quot;The bear looked puzzled for a
+moment, then shook himself and lumbered off.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>From a distance came the sound of stomping halfling feet,
+mixed with giggling and singing. Gwion turned. &quot;At last, here they come!
+Over here!&quot; She waved at the vanguard of the little group as they came
+toward her, each carrying one live forest plant.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>&quot;Yes, all right, yes,&quot; Gwion said, waving her arms
+at the excited halflings. &quot;Listen, my lad, this isn't the time for
+cartwheels, please -- everyone put your plants there in the dug-up area!&quot;
+Amid much hilarity and singing, each halfling planted his flower, or mushroom,
+or -- what was that? Well, it looked sort of like a plant -- around the<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>gravesite. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Gwion then handed around patchwork tunics, pieces of gold,
+and mugs of Blackburrow Stout, having to stop only one small argument when a
+brother tried to appropriate his sister's drink. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">    </span><span style="mso-spacerun: yes">  </span>When they'd all drank
+up and gone, Gwion surveyed their handiwork. Rows of living things bloomed and
+grew everywhere, and in the middle, the polished headstone shone reverently.
+She breathed deeply. &quot;Ah,&quot; she said. &quot;Dear old Neao. No skulls,
+but I think he would have liked it.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1>Chapter Seven by Grimmbaldis Stormwolfe</h1>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Grimmbaldis approached Neao's gravesite, a Dark Elf
+Necromancer and an Iksar Chef in tow. The shady glen his friend's corpse
+reposed in was a wonderful dedication to Nature. Gone were the rotting piles of
+heads, replaced by growing plants and a clean running stream. Grimmbaldis knew
+that some passing druid would do this sooner or later, but he had hoped for
+later.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Heaving a sigh, Grimmbaldis and his strange party moved to
+the small valley beneath Neao's grave. &quot;Alright Boyos, we are gonna start
+a new monument to my buddy, Neao. Both of you are more greedy than evil, so our
+deal still stands. You, Chef, will clean all the skulls we bring in. And you,
+Necro, will preserve the meat from the skulls for shipping. Whatever you two
+make from selling your 'delicacies'<span style="mso-spacerun:
+yes">                       </span>to the Iksar, Trolls, and Ogres you get to
+keep. I want nothing but clean shiny skulls and bones to use for this
+monument.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>With happy nods, the two businesscreatures got to work.
+Grimmbaldis supervised the Dwarven crew setting up Neao's Giant skull tomb.
+When they were done, an Ivory mound was all that could be seen emerging from
+the green grass. With a sad look on his face, Grimmbaldis broached a keg of
+Dwarven Ale and consecrated the new tomb.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Can't get too wasted, the construction crews show up
+tomorrow.&quot; mumbled Grimmbaldis to himself. &quot;Gonna build some nice
+little outbuildings here and get the altar site leveled. I know a nice young cleric
+from Rivervale who is more than happy to oversee the project. A Halfling, just
+like Neao. Brother Grimmfaith will make a good caretaker and be able to handle
+the day to day medical needs of the workers.&quot; &lt;sigh&gt; &quot;Well,
+sitting around under a tree getting drunk ain't piling<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>up more skulls. Time to get
+back to killing.&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Eight by Neaoh
+Anklebiter</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Neaoh is glad to almost be home as he hurry's to make
+Rivervale before the Undead spawn in Kith. Ahh the entrance to home at last
+&quot;I could use a few glasses of ale&quot; he thinks to himself but he has
+more important things to do first.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>The town square grows silent as Neaoh enters bloody and
+battered with his backpacks bulgeing with trophys to place on the grave of his
+brother. The citizens of Rivervale have seen other's with the same look as
+Neaoh come thru in the last few days and know were he is headed.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>As Neaoh heads up the valley to the site were his brother
+died he notices there is something missing &quot;Hmmmm were is the smell of rotting
+Orc?&quot; he thinks, It should be overpowering by now. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>As he nears the gravesite he see's the strangest site he has
+ever seen. A Dark Elf and a Iskar are busy working on a large pile of Orc
+heads! and next to them there is a growing pile of Ivory Skulls, now he knows
+why there is no stench, some one has cleaned up the grissly alter and is
+getting ready to build another.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Neaho throws his backpacks down and starts for Neaos grave
+the Necro starts to say something but Neaoh glares at him and there is
+something in his eyes that stops him short, it's the look of death.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Neaoh's heart lifts as he comes to the grave, gone are the
+rotting orc heads and in there place plants and flowers are growing.&quot;You
+have some very good friends my brother&quot; Neaho whispers.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Makeing his way back down the hill Neaoh asks the Necro
+&quot; Who has done this? Who has cleaned this up and who has you 2 cleaning
+these skulls?&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;A Great warrior has brought us here to do this work with
+the promise of phat loot for selling the orc meat we get from the head's, his
+name is Grimm?? something. I do not know who has planted the flowers but I hear
+it was a very beautiful Wood Elf. The Warrior has told us to have anyone asking
+questions of these things to seek out Grimmfaith he will answer them all&quot;
+the Necro replys.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Grimmfaith!! Neaoh knows this Cleric!!! they had shared a camp
+not to long ago!!<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Neaoh tosses a Plat to the Necro and turns to head back to
+Rivervale and thinks &quot;Now I'll go visit the DeepPockets at the Fools Gold
+for those Ale's.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Nine by Grimmfaith</span></b><span
+style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Grimmfaith bustled about his small home, gathering all his
+worldly possessions. &quot;Hmmph, not much of a pile. Ah well, I am a cleric,
+not a merchant.&quot; Grabbing his pack, Grimmfaith closed the door to his home
+for the last time. He was off to oversee the construction of a monument to the
+great Neao. Grimmfaith had adventured several times with Neao's brother, Neaoh.
+When is adopted uncle, Grimmbaldis had asked him to be the caretaker of the
+gravesite, he had been<span style="mso-spacerun: yes">                       
+</span>honored. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Arriving at the site, Grimmfaith surveyed the busily working
+Dwarves. They had leveled off a large portion of the right side of the valley.
+Obviously the size of an altar was quit immense to a dwarf! There was room for
+a whole temple complete with gardens there! &quot;Hey, a temple with gardens.
+Now there is a thought. If I know Uncle Grimmbaldis and his friends, they will
+pile this place high with bones. I bet we could set up a very nice little temple
+and maybe an orphanage or something.&quot; thought Grimmfall. He knew his Uncle
+Grimmbaldis had a soft spot for orphans, being one himself. He also knew that
+the adventuring guild they both were a part of was very generous when helping
+others.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;We could build some dormitories over there and put in a
+nice garden next to the stream. With all these druids stopping by, I am sure
+they wouldn't mind donating some of their time to help with that. We could
+house a few orphans to start and some retired adventurers to teach them a
+trade. This will be a fitting and<span style="mso-spacerun: yes"> 
+</span>everlasting tribute to Neao!&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Leaving his pack where it lay, Grimmfaith hurried down to talk
+to the Dwarven foreman. Many plans had to be made to create the wonderful place
+envisioned by the young Halfling cleric.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Ten by Meriel
+Silvertree</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>The Wood Elf crumples up the wrapping from the sandwich she
+just finished eating and tosses it in her backpack dusting off the seat of her
+pants as she gets up from her place under the tree. Stretching out the kinks
+from sitting so long, she surveys the valley spread out below noticing the
+Dwarves have finished the temple to her friend Neao and that the flowers that
+had been planted are growing very nicely. She sees that the vegetables are just
+starting to pop up from the well tended rows, and wonders what delicacies Hama,
+Gwion and<span style="mso-spacerun: yes">  </span>Aganitte had been able to
+forage and if any of them will take root here. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>As she slowly makes her way down to the temple she notices for
+the first time the six mounded buildings surrounding the temple on three sides.
+Smoke is lazily twirling from an oven beside one of the mounds and as she heads
+in that direction she sees Grimmfaith closing the door with a large wooden
+ladle filled with heavenly scented elven bread.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>As she approaches, Grimmfaith swings around with a big grin
+telling her that he's just finished the baking and seven little ones are on
+their way to take up residence along with a half-elf teacher and a halfling
+husband and wife who will help him oversee everything. &quot;Come see the
+sleeping quarters&quot; he leers wiggling his eyebrows, but wise to his ways
+she laughs and says &quot;I'll just sit on the bench here in the sunshine
+waiting until the little ones arrive.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;A lot of care has gone into erecting the temple for our
+brother Neao and I never thought I'd see so many orc heads gleaming in the
+light&quot; she said as she shaded her eyes with a hand over her brow.
+&quot;How proud he would be to see all of this and know his brothers and
+sisters will carry on helping others and bringing peace to at least a small
+portion of Norrath in his honor&quot;.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Grimmfaith nods and asks if she's brought the oak seedlings.
+&quot;Oh yes&quot;, she said pulling plantings from her backpack, &quot;we'll
+get the bigger children to help in planting them down by the stream and around
+behind the mounded living quarters. Leldara has drawn me a plan designed to be
+pleasing to the eye and to bring the most shade in the hot summer days and
+allow the sun to shine warmly on cold wintry afternoons. I was fortunate to run
+into Dolumar who donated all<span style="mso-spacerun: yes">  </span>the
+foraged plants he's been collecting, which include some very nice Norrathian
+ivy that Leldara said would work wonders planted down by the temple to weave<span
+style="mso-spacerun: yes">  </span>in and out of all those skulls.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>Before she has to take off and meet Varigon at the Lake of
+Ill Omen along with their friends Maitlin and Gorte, Meriel rests her head back
+against the mound enjoying the feel of the warm sunshine. The breeze floating
+through the valley softly cools her cheeks with the scent of freshly baked
+bread and she faintly hears the songs and giggling laughter of children wending
+their way through the woods to their new home, safe here in the valley of Neao.
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Eleven by Finrael
+Briteside</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Sitting by an out-of-the-way stream, Finrael strips off the
+last of his armour. He is weary from fighting, but there are things to be done
+before he can rest. He washes his armour carefully in a small pool, which
+quickly runs red with the evidence of many battles. Next he gingerly cleans his
+mighty claymore, his only companion of late.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>When Finrael heard of his friend Neao's death at the hands of
+orcs, and the grisly tomb Grimmbaldis was building, he knew exactly what to do.
+Long had the fearless Paladin battled the hordes of Clan Crushbone. How fitting
+that the bodies of his slain enemies could now be put to a creative use.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>His armor and weapons clean, Finrael surveys his handiwork
+from this glorious day. The pile of orc heads gives off a foul stench. If the
+smell alone isn't enough to ward off any of Crush's minions, the fact that the
+heads of Lord Dharish, Ambassador D'Vinn, and even Emperor Crush himself top
+the pile should keep them away.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>As he settles into a fitful slumber, Finrael's last coherent
+thought is, &quot;I'm gonna need more bags.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1>Chapter Twelve by Azariel Baalzebub</h1>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Uriel had whispered of Neao's dark death with remorse and
+respect near Kithicor Woods. &quot;He was one of my traveling companions..he
+was my friend&quot;. Azariel heard Uriel's voice waver in emotion. Not prone to
+such emotions himself, being a bone caster, Az was not used to such things.
+But, yet he grieved for his half-brother.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Now, standing on a small hill over looking the vast plains of
+the Overthere, Azariel witnessed something amazing. Neao's identical twin
+brother, Neaoh kiting a Sarnkak Constrict...a devilish creature who looked to
+be quite a gamble for the young druid. He watched as Neaoh raced in and with
+twitching fingers cast Snare on the mob. As the Sarnak slowly ran toward Neaoh,
+he was engulfed in a swarm. Nuke after nuke, Neaoh tore into the Constrict
+until it decided it was best to turn the other direction and run. The last
+spell did the trick and the Sarnak collapsed to the ground.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Impressive Azariel thought. He had heard infamous stories of
+the older twin Neao. A druid by trade, but a fighter at heart..often getting
+himself into marvelous trouble. Azariel's mouth touched on the hint of a smile.
+&quot;Probably what got the bugger killed&quot;, he thought to himself.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">   </span><span style="mso-spacerun: yes">  </span>But this twin was
+different. Already at 20 seasons, he appeared to have quite the handle on his
+methods of attack. He had barely even raised his Screaming Mace for attack. The
+necro new the answer...this brother was different, better and much wiser. It would
+not be his destiny to have the same fate as the late Neao Spellwielder.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;I will keep an eye out for this one&quot;, Azariel
+thought to himself, &quot;who knows...there have been stranger things than
+Necromancers grouping with druids&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Azariel chuckled to himself as he ordered his pet to follow.
+&quot;One day Neaoh the druid, we will meet and group and conquer a great many
+things!&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Thoughts of Giants entered his mind as Azariel walked into a
+Kunark sunset prepared to raise the dead.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Thirteen by Leldara</span></b><span
+style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Neao is dead.&quot; She whispered the words over and
+over again, hoping against hope it wasn't true, a rumor started by some
+vengeful warlord or jealous warrior perhaps. The wind howled and it's icy bitterness
+cut through her. A single tear traced it's lonely journey along her cheek
+flushed red from the cold. &quot;I must leave here now, &quot; she thought ,
+&quot;there is much to be done.&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>The boat from Iceclad chugged along, floes of ice
+disintegrating in its path, engines churning,thick ,black smoke spewing from
+the stacks as it cut its path to the desert in Northern Ro. A welcome change
+from the harsh winter cold, the sun warmed her face and she felt a slight tinge
+of relief when the sandy shore emerged from the distance. Leldara has just
+finished the sketches for the garden when the raft arrived to take her to the
+small pier where Meriel waited to greet her. She knew when she looked into
+Meriel's eyes that it was true, Neao was dead. The two women hugged and , happy
+to see each other again. &quot;You go ahead M'Lady &quot;, she said ,handing
+Meriel the parchments , &quot; Alti is waiting , I will catch up with you later
+.&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">    </span>&quot; Where are we going, Leldara? I thought you said we were
+going shopping ?&quot; the young girl implored. &quot;Alti, there will be time
+for that later. We are going to pay tribute to a great Druid , Neao.&quot; she
+replied. &quot;Who was Neao and why is he so important? You promised !&quot;
+said the young Cleric clearly displeased. &quot; Neao was brave and courageous
+-he laughed in the face of danger and slew many of our enemies.&quot; she
+gently replied, &quot; He was also kind and generous and always knew how to
+dress for a fight.&quot; &quot;Leldara is that all you ever think about -
+clothes?&quot; chided Alti. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Leldara's thoughts drifted back to the day she met Neao at the
+orc temple in Butcherblock. True, she had first been attracted to the sight of
+the small warrior dressed in his emerald green tunic , his face hidden by a
+matching Froglok mask, but she soon realized, when he sacrificed himself to
+save her from an oracle, that this was no ordinary Druid. She would have many
+adventures with the dashing<span style="mso-spacerun:
+yes">                        </span>fighter after that fateful eve and in time
+had secretly grown quite fond of him. Some might even say that Neao was Leldara's
+first true love, though the lofty Mage would never admit that to herself.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Alti marveled at the Seafuries on a distant island. &quot;
+When I grow up I'm gonna kill you all just like Neao!&quot;, she yelled.
+&quot;Sshh.. hush little one, you don't want to anger them now, cautioned Leldara,
+&quot;Look, up ahead, there's the dock, gather your belongings.&quot; Leldara
+took Alti's hand and led her down the long wooden pier, &quot; Come , Meriel
+said it was this way.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>The smell of fresh bread guided them the last part of their
+journey, the path winding through lofty green trees and bringing them to a
+small village. They marveled at the sight of children laughing and playing in
+the noonday sun seemingly unaware of the dangers that lurked in the forest that
+surrounded them. Grimmfaith ran to greet them alerted to their presence by the
+squeals of delight from the children as Leldara entertained them, summoning
+wonderous things from thin air. &quot;Welcome Lady Leldara. And you must be
+Alti !&quot; he said, bowing to the young Cleric. &quot; Where is he Grimm? I
+need to know.&quot; Leldara spoke<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>haltingly, holding back
+tears. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>The heads of the slain glistened in the sunlight , an
+occasional sprig of green poking from an eye socket, a fitting tribute to the
+young Druid who had triumphed over so many in his past. &quot;You have done well
+, Grimmfaith , it is beautiful&quot;, Leldara said marveling at the temple
+surrounded by the bleached white skulls and the blanket of red, purple and
+yellow flowers. She reached into her bag and removed 3 small cups and a bottle
+of ale. &quot;His favorite drink&quot;, she said the tears welling in her eyes.
+&quot;A toast , Grimmfaith! A toast to the bravest Druid who ever walked these
+lands!&quot; she cried, &quot; Neao is dead ! Long live Neaoh!&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Fourteen by
+Grimmbaldis Stormwolfe</span></b><span style='font-size:10.0pt;font-family:
+"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Grimmbaldis huffed up the path to Neao's College. His time in
+Velius had weathered him. Gray now sprinkled his light brown hair and more
+wrinkles were visible around his eyes. His battles had left a permanent mark
+upon him, the scars on his face telling stories of those who were good...just
+not quite good enough.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>As he stepped into the valley, he saw all that had been done
+in his abscence. Neao's tomb still stood in a place of honor overlooking the
+busy college below. Children sat in the grass listening to instructors. The
+neat, well groomed landscape with its new buildings was breathtaking. It was as
+close to a home as he had ever envisioned. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>When Grimmbaldis neared Neao's tomb, he saw an addition had
+been made. A fresh grave was next to Neao's. With heavy steps, Grimmbaldis
+approached the grave, almost unwilling to know who of his comrades had fallen.
+Grimmfaith met Grimmbaldis at the gravesite. The short, chubby halfling
+cleric's smile faded as he watched Grimmbaldis approach.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Tis Beretta's&quot; he said. &quot;Her stone has not yet
+been placed. Tunare has called her home far too soon for our liking. But such
+is the will of the Gods.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Grimmbaldis knelt in the still damp earth, a tear coursing
+down his cheek from his one eye. His thoughts replaying the many adventures he
+had shared with the bright young druidess. She had been like a kid sister to
+him. Always venturing a little further than was safe. Always eager to explore a
+little further.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>As his tears fell to the rich soil, a tendril pushed its way
+up. Before his eyes a rose bush grew. It blossomed full of small pink wild
+roses. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>&quot;She is well.&quot; a voice whispered in his ear.
+&quot;She is in a good place and well-loved. Mourn her not for as long as you
+remember her, she is with you.&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>Grimmbaldis knew that the voice was that of Tunare. He had
+never worshipped the Mother of All, preferring instead to worship and find
+strength in the raging storms of Karana. Yet he never doubted the Goddess had
+spoken to him.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>With a weary sigh, Grimmbaldis heaved himself to his feet.
+&quot;We will need someone to watch over the plants here. Perhaps a young druid
+from the school would accept the job.&quot; was all the middle-aged warrior
+said. His armor rattling, he hefted the pack full of gifts for the children and
+started his way down the hill. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Fifthteen by Meriel
+Silvertree</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>The young Druidess stops by the stream to rinse the dirt
+from her face and take a long cool drink, for the journey here to Neao's
+college has been a long one. As she stands and shifts her backpack's once again
+she hears the voice of Grimmbaldis shouting, &quot;Use that sword in both hands
+young warrior me lad. The Forest Giants will surely step on yer head if ya
+swing like a sissy orc pawn. Kick him in the, errrrrr, knee if he gets in yer
+face.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span><span style="mso-spacerun: yes"> </span>She laughs as she
+turns to the valley, watching Grimmbaldis surrounded by young ones all jumping
+around him trying to grab the gifts from his hands, as he hollers out
+instructions to the young warriors practicing their skills on the orc quintains
+standing thoughout the practice field.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>As he sees her coming through the valley, he hands the
+backpack to Grimmfaith to continue handing out the treats and he joins her on
+the final steps to Neao's<span style="mso-spacerun: yes">  </span>tomb.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>&quot;Oh my sister Beretta&quot; she cries. &quot;How I remember
+the day I first met this beautiful druidess and how very kind she was to
+me.&quot; Meriel kneels beside the fresh earth, she looks up at Grimmbaldis and
+tells him with a catch in her voice, &quot;Why she gave me such advice in my
+early days. She led me to my first ever bandit camp just outside of Kelethin
+and watched over me as I tried to learn how to use my new spells and kill the
+villainous things which were destroying our forest home.&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Contemplating those early days, Meriel said, &quot;Beretta
+introduced me to our family and way of helping others throughout the lands.
+Whenever she saw I was out and about, she would speak with me and ask how I was
+doing. A time I died at the feet of three filthy orc centurions, she called
+upon her friend Talidas to guard and help me find my poor corpse. That was the
+very first time I had ever seen a<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Druid in wolfform and my
+knees shook so, I wasn't familiar with our capability of changing form.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Beretta would often check on me and gave me two
+cutthroat insignia rings. I was so surprised. No one had ever given me such
+riches before.&quot; she told Grimm. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;The day she asked Talidas to invite me to join our
+family, she along with Angelion, a wizard we had just met, taught me how to
+have fun with the spell levitate, and we drank and laughed and they taught me
+how to jump from the platforms of Kelethin and float to the ground.&quot;
+Meriel said chuckling at the memory.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>&quot;I was never alone again after that day.&quot; Meriel
+wipes the tears from her eyes and prays that the blessings that had been
+bestowed upon her by the Great Mother Tunare would hold Beretta near and dear.
+&quot;I vow to return to the fort of the Forest Giants with my friends and wipe
+them from the face of Norrath.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>Grimmbaldis holds out his hand to help Meriel to her feet
+and tells her &quot;Let's gather the young ones and tell them some tales of
+this brave young Druidess&quot;. As they walk towards the college Grimmfaith
+brings out a tray full of berry juice for the children and three cold glasses
+of Ol'Tajim's Fierce Brew to drink a toast to the spirit of their fallen
+comrade who shall never be forgotten. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Sixteen by Varigon
+Colvere</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>Varigon approaches the grave sites, having been careful not
+to be seen. He looks around feeling a little out of place here knowing he did
+not know either Neao or Beretta that well, but having talked with them, and
+considering them both friends and family, he felt a need to visit this
+Monument. He remembers the day he met Neao. Not really that far from where he
+was sitting. The memories of Neao laughing as they ran to Kithicor to avoid the
+Giant that was rapidly approaching their location. Knowing the advice that Neao
+had given had given him had served him well and kept him alive. He says a
+prayer over the grave, wishing that Marr will protect this Monument to a true
+light bringer. &quot;Brother, the Orcs will continue to pay for what they have
+done to you.&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>He turns to the grave of Beretta, and feels a shutter of
+pain. &quot;I will miss you sister, you have been a good friend.&quot; Remembering
+the time that she went with him, Meriel, Maitlin, Gorte, and Aldrec to see
+these Giants that reportedly lived in Warsilk. Feeling a deep since of guilt,
+and remorse that cracked his stoic expression, he turns away.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Fighting the tears that are
+welling up inside him, he vows to return to those giants, and orcs and seek
+retribution for the crimes they have committed against his family. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>He pulls an Orc belt from his pack and places it on the grave
+to Neao, then pulls a evergreen ivy ringband and, fighting the urge to keep it
+that he always has, places it on the grave of Beretta.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>He looks around trying to see if anyone was watching. Seeing
+no one there, he slowly leaves the Monument. Hearing the laughing of children,
+he hopes they know and understand what has been lost for them and their
+families. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>A small boy runs up to Varigon and says &quot;Don't be sad,
+our teacher says that they are happier now in the other world. She says that
+they died doing what most only dream of, and that that died for us.&quot; He
+looks at the boy and tells him &quot;Your teacher is very wise. I hope one day
+you will be able to see what they have seen and do what they have done.&quot;
+Rubbing the boy hair, Varigon leaves the thicket. Feeling that maybe this did
+serve a purpose, and though he still felt<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>the pain of loss, he knew
+the world was in good hands.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Seventeen by Neaoh
+Anklebiter</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>It has been 10 seasons since Neaho had been to the valley
+were his brother had fallen and now what he saw awed him.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>At the head of the valley the once gleaming white tomb now
+was covered with Ivy and flowering vines and below in the clearing was almost a
+city with the round halfling huts in neat rows around larger buildings that
+looked like schools and libarys. Children were playing in the courtyard of the
+largest building and others it looked like were training in the ways of the
+warrior while others were practiceing spells.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Neaho held down a belly laugh as one boy cast snare on his
+friend that ran past taunting him, then went up and whacked him with a play
+scimmy only to run away laughing at the snared and frustrated boy.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Neaohs thoughts returned to the reason he had ventured here
+again, to this valley that held so much pain for him.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>A chance meeting with Meriel sent him back here when she had
+told him of the death of Beretta in the Warslick Woods and how the body of
+there good friend had been carried back to this place to be put to rest.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>As Neaoh worked his way thru the thicket towards the tomb his
+mind wandered back to 2 seasons past when he had grouped with the druidess in
+the same place she had met her end and remembered her and her friend Montyca
+laughing at him as the new spells he had just learned fizzled and they had to
+slay the Giant that was beating on him.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Standing now at the graves of his brother and Beretta, Neaoh
+prayed that this would be the last time he would have to make a trip here to
+say good bye to a friend but in his heart he knew that more would pass on and
+he would be here again saying good bye.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Eighteen by
+Grimmbaldis Stormwolfe</span></b><span style='font-size:10.0pt;font-family:
+"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Grimmbaldis had spent several months at the Tribute School,
+teaching and thawing out from Velious. The school was progressing well with
+many children from all over Norrath attending. Grimmfaith had informed him
+earlier that he was getting inquiries from parents as well. It seemed that word
+of the school had spread. Perhaps some of the orphans could be adopted into the
+local familes. It would be something to check into later.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">  </span><span style="mso-spacerun: yes">    </span>Drinking his ale,
+Grimmbaldis looked around the main hall where he sat. Hanging from the rafters
+and on the walls were momentos of past battles and adventures. Tattered banners
+hung next to broken weapons, each with it's own tale to tell. The main hall had
+turned into a sort of museum for the Guild. Any usable gear was given to the
+younglings, but here the unrepairable had found a home. Rather than being a
+dark and dusty place, the hall had more of an air of comfortable clutter. It
+was a favorite spot of the older Guild members as well as the<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>younglings. An ale or three
+could usually get 'Aunty' Leldara to telling tales, some of which were even
+true.<span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>All in all, Grimmbaldis was impressed with the way things had
+turned out. The bloody memorial to his fallen friend had turned into center of
+peace and education. Nowhere else could the offspring of Dark Elves be seen
+playing with Humans and Dwarves. Here, racial prejudice was not allowed. Those
+who could not overcome their hatred of another were found sponsors amongst
+their own race. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Grimmbaldis had already seen several truly mighty combat
+teams beginning to form at the school. The students mixed and matched Race and
+Class in amazing ways, their young minds unfettered by the prejudices of their
+elders. Grimmbaldis would never have thought of combining an Ogre Warrior with
+an Erudite Enchanter, a Wood Elf Druid, and two Dark Elf Necromancers. The
+Gnome Wizard who had joined them had made an almost unstoppable combat team.
+They were capable of taking on monsters much more powerful than themselves. It
+would be interesting to see what other surprises sprang from the school...after
+his trip to<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Velious.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>Hamadryad had stepped down from her position as Guild Leader
+and found Grimmbaldis dozing in the sun outside Qeynos. The two old friends had
+decided to journey to the frozen land of Velious, picking up friends along the
+way. They had stopped at the school so Hamadryad could clear her mind of the
+stresses of leadership and oversee the transition of power to the Council. They
+were almost ready to begin their journey, as soon as some more of their party
+managed to arrive at the school. But until then, Grimmbaldis planned on
+relaxing and gathering more items from the nearby dungeons to help finance a
+new project. One designed to teach Trade Skills to the younglings. Adventuring
+was not always profitable, and everyone needed a skill to fall back on in the
+lean times.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Nineteen by
+Grimmfaith</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Grimmfaith wiped sweat from his brow and stepped back to
+survey his handiwork. Dwarves from Kaladim had heard of the valley and sent a
+huge polished marble block to the school. What they expected to be done with it
+was a mystery but Grimmfaith had decided to put it to good use. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span><span style="mso-spacerun: yes"> </span>The stout little
+cleric new first hand how fleeting paper was as a medium so he had commissioned
+a set of stone working tools and gone to work. The gleaming block now sat in
+the middle of the courtyard leading to the temple. Incsribed onto all 4 sides
+were the words of Hamadryad, their founder. They were carved deep into the
+marble in every written language spoken in Norrath.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">        </span>&quot;WE BELIEVE THAT EVERYTHING WE DO HAS AN IMPACT ON<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">         </span>EVERYONE ELSE.WHEN WE HAVE LOVE IN OUR HEARTS WE HEAL <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">         </span>THE WORLD. WE DON'T EVEN HAVE TO STEP OUTSIDE OUR DOORS<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">         </span>TO DO IT. BECAUSE LOVE IS REAL. AND KINDNESS IS LOVE.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">                         </span>- HAMADRYAD LONG&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Grimmfaith took a long swig from the chilled bota next to his
+toolbox and surveyed his finsihed product. His mind began to wander back all
+the members of Random Acts he had known growing up as Grimmbaldis' adopted
+nephew. A more eclectic bunch he had never seen. Human, Elven, Gnome, Troll,
+Dark Elf...all banded together under the banner inspired by the words of
+Hamadryad. Each striving to do their best to live up to the conduct expected of
+them, not by society but<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>by their peers and
+themselves. For some it was no great task, for<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>others a near insurmountable
+obstacle. Yet each tried. Some succeeded. Some failed. A few original members
+were still active in the guild while others had wandered down different paths.
+Each had contributed a part of themselves to Random Acts and the guild was
+stronger for it.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Grimmfaith gazed about the bustling courtyard. Everywhere
+were children and instructors. Lush gardens bloomed in the springtime weather
+and the buildings shown with fresh paint. He wondered if the original few ever
+contemplated their dreams would materialize like this. He himself had often
+marveled at the tenacity shown by the members of Random Acts. Once, while
+desperately trying to heal<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>the broken and bleeding body
+of his uncle Grimmbaldis, Grimmfaith had seen a tattoo over the middle aged
+Warrior's heart. It was faded by time and disfigured by scars, but he could
+still make out the RA symbol and the words &quot;Where Ever I Go&quot;. Later,
+while the grizzled Warrior was recovering the young Cleric had asked<span
+style="mso-spacerun: yes">  </span>his uncle what the tattoo meant. Uncle Grimm
+had only smiled and told him that one day the meaning would come to him. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>Grimmfaith had been confused at first, but as time passed
+the meaning began to dawn on him. Other guilds wore gaudy tunics and trumpeted
+their prowess to the heavens. Random Acts quietly went about it's business and
+watched many other guilds fall to internal strife and bickering. Through all
+the seasons, Random Acts stood firm. And everywhere a member went, they carried
+the words of Hamadryad in their hearts.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>&quot;I think I am beginning to understand, Uncle Grimm&quot;
+mused Grimmfaith. The young Cleric gathered his tools and gave the marble block
+a fond pat. &quot;I think, maybe, I am starting to get it.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Twenty by
+Grimmbaldis Stormwolfe</span></b><span style='font-size:10.0pt;font-family:
+"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Grimmbaldis stopped in mid stride. Something was not right in
+Neao's Valley. Snatching up his sword, the scarred warrior expertly buckled on
+his armor as he ran up the hill towards Neao's Tomb. If someone had dared to
+disturb the resting place of his friend, then blood would flow in rivers!<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Cresting the hill, Grimmbaldis saw the small form of a gnome
+kneeling in front to the tomb. The gnome's peaceful attitude was all the kept
+his neck attached to his shoulders. Coming closer, Grimmbaldis recognized one
+of his oldest friends, Jellybean.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>The small gnome did not say a word. He smiled and bowed to
+Grimmbaldis. Yet, when Grimmbaldis went to sweep his friend up an a hug of
+greeting, his arms passed right through him. Then he knew that his friend no
+longer walked the land of the living. The realization that Jelly no longer
+lived struck his heart like a mallet. Tears coursed down his leathery cheek as
+Grimmbaldis sank to the ground in front of the apparition.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Jelly's ghost took on an concerned expression.
+&quot;Nooo&quot; whispered the spectre. &quot;Weep not, old friend. I am in a
+good and safe place. It is a brand new adventure I embark on. Weep not for
+meee.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Before Grimmbaldis' startled eyes, the ghost of Jelly began
+to shine brightly. A rift appeared next to the tomb of Neao and from it a small
+statue materialized. &quot;Here. I have provided my own monument.&quot; said
+Jellybean. &quot;I will always look down on the valley and watch over it. My
+shade shall visit from time to time. Be at peace, Warrior. We will be rejoined
+some day.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>With the glowing good cheer that earned him the name
+Goodheart, Jellybean smiled at Grimmbaldis. &quot;Adventure calls. I will scout
+ahead and see what lies beyond.&quot; With a final wave, Jellybean's ghost
+faded away, leaving only the sound of the wind in the spring leaves and the
+tears of a man seeing yet one more friend pass from this world falling to the
+ground.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Below him, Grimmbaldis could see the torches of his friends
+weaving through the valley. Obviously he was not the only one to feel the
+passing of one of the founders of their guild. Something was gone from them all
+that night. The passing of a Great One always left the remaining ones feeling a
+little bit empty inside. A little saddened that the world of Norrath would
+never again know the kindness,<span style="mso-spacerun:
+yes">                        </span>generousity and caring of Jellybean Goodheart.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Twenty-One by Gwion
+Llewellyn</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Standing at the druid ring, Gwion saw a bright flash of
+light. Quickly, she turned herself into a wolf and ran toward the graveyard.
+When she got there, she found only Grimmbaldis, kneeling near a tiny statue.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Old friend,&quot; she said, &quot;Was it --&quot; she
+said, but stopped when she saw a lone tear trickling from the warrior's
+remaining eye. She looked at the little stone gnome, and nodded. Jellybean Goodheart
+and his sister Ravenmyst Peaceheart had left Norrath for the unknown world
+beyond.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Gwion had finished her tears on the way to Misty Thicket.
+Hours before, her heart had told her that her friends were gone. Changing back
+into a wood elf, she brought a long, curving mammoth tusk from her pack.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">   </span><span style="mso-spacerun: yes">  </span>&quot;That's for you,
+Jelly,&quot; she said, laying it on the ground near the statue. &quot;Dear wee
+Jelly. It's much bigger than you are! But I know how much you loved them. And
+this&quot; -- she produced a garland of ivy -- &quot;Is for your sister.&quot;
+She draped the ivy around the statue's neck. &quot;It's enchanted, you know, so
+it will live always.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Ye've seen.&quot; Gwion hadn't heard Grimmfaith coming. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Yes.&quot; Gwion turned to face the little cleric. She
+pointed to Grimmbaldis. &quot;Will he be all right?&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Seems he's seen the shade.&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Oh, that was the light I saw.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Grimmfaith nodded, then began to sweep up some stray dirt.
+&quot;A bit upsetting for a warrior. Just leave him sit. Go on into the main
+hall now, I'll bring him later if he doesn't come himself.&quot; He looked
+toward the steadily approaching line of torches, much closer now. &quot;The
+others will be here soon and I want this to look nice when they come.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Shouldering her pack, Gwion tried to picture the place
+Jellybean and Ravenmyst were now. A nice forest, she thought, like this one. In
+her mind the brother and sister walked together, approaching a cozy home full
+of firelight that beckoned through the mist. She heard the singing, then the
+welcoming laughter of new friends as she saw them open the door.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">    </span><span style="mso-spacerun: yes"> </span>Smiling through her own
+sadness, Gwion turned toward the main hall. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Twenty-two by Uriel
+Trueshot</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Uriel saw the wolf streak past him, heading in the same
+direction he was going...Neao's grave. He visited on a regular basis, seeing
+the improvements, smiling of practical jokes. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Gwion had not seen Uriel as she ran to the shrine of friends.
+He hid in the shadows, always visiting the grave alone. He saw Gwion and
+Grimfaith, the nephew of Grimmbaldis he had never met, speaking quietly. With
+his elven sight he could swear he saw tears in both of their eyes. Why, he
+wondered? <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Eventually they two wandered off, speaking in hushed tones,
+lost in saddness. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>From out of the shadows Uriel appeared and wandered up to a
+fresh grave. He saw the ivy and the tusk, then understood.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Ohh, my little friend&quot; he whispered, &quot;where
+have you gone now?&quot; Only the wind answered. Uriel had met Jellybean on
+several occasions and held many conversations with him. Sharp as a tack and
+even so more kind and cheerful. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>&quot;This land will miss you, as will your friends. I hope
+you can make it back to us one day&quot;...his voice trailed off trembling.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Reaching over his shoulder, Uriel unstraped his Trueshot Bow.
+Placing a bone arrow he aimed for the sky.&quot;This arrow is you, ever
+soaring, never falling.&quot; He released the arrow and it rocketed to the blue
+sky.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>In seasons to come rumors would travel of an arrow shot in
+Jellybean's name that never returned to Norrath. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Twenty-three by
+Neaoh Anklebiter</span></b><span style='font-size:10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Neaoh had sensed that something was not right all day as he
+had hunted the Giants in the Frontier Mountians but he just couldn't put his
+finger on it.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Now sitting bolt upright from being awakend from a sound
+sleep by the sharp pain that struck him in his heart he knew what was wrong and
+a tear trickled down his cheek.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;Not another&quot; he whispered. Neaoh new that another
+Brother or Sister had crossed over and now it was time to head to Neao's Valley
+to see who it was.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">   </span><span style="mso-spacerun: yes">   </span>Trying not to disturb
+the camp that had let him spread his bedroll for the night Neaoh packed his
+things.&quot;Were are you going so early?&quot; the Mage on gaurd asked.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;There has been a death in my family and must
+leave,please tell the others why I go&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;I have heard storys of your family and that when one
+passes on the others can feel it. I never thought it was true until now.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Neaoh nods to the Mage as he steps into the portal he has
+just opened to the home of the Druids &quot;Yes my friend it's true we can feel
+it&quot;.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Winding his way up Neaos valley from the ring of the Druids
+was a trip that Neaoh had taken to many times before and one that he knew he
+would have to take again as the seasons passed.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>Nearing the Tomb Neaoh can see a small statue of a Gnome with
+a Mammoth Tusk and Ivy Garland laid at it's base and now knew that it was
+Jellybean and his Sister that had called him back to the valley.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>From down below Neaoh could here Shouts and Laughter coming
+from the Great<span style="mso-spacerun: yes">  </span>hall.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">   </span><span style="mso-spacerun: yes">  </span>&quot;Well the Wake has
+started Jelly my friend and I must go tell some story's and drink some Ale. I
+know your in a better place but I will miss you and hope you know you have
+touched us all&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>Wiping away the tears Neaoh starts down the hill to the Great
+Hall to help the rest of the family remember the life and times of Jellybean
+Goodheart and his sister Ravenmyst Peaceheart. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>Chapter Twenty-four by
+Grimmbaldis Stormwolfe</span></b><span style='font-size:10.0pt;font-family:
+"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>The wake quieted as Grimmbaldis walked into the hall. His
+face haggard, the Warrior placed the large bundle in his arms on the floor.
+Without a word, he unrolled the waxed cloth and started to remove a strange
+assortment of items.Last to come out was a bundle of daggers. With blows so
+forceful that even the Ogres in the room flinched, Grimmbaldis drove the
+daggers into the wall. From each he hung an item that once belonged to the
+fallen members of the guild he loved so dearly.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">     </span>&quot;This is our Wall of Fame.&quot; declared Grimmbaldis.
+&quot;I have kept a momento of each of my friends that have passed to the next
+world. I feel shamed that I have kept them to myself for so long. As more
+fall...and they will in time...I will continue to add to this wall so that
+future generations of Random Acts will know of those who gave all to secure their
+legacy. I believe that without our history, we will<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>have no future. Thus endeth
+my mourning for Jellybean Goodheart.&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>With that, the scarred Warrior filled his horn and looked
+about the suddenly silent hall. A slow smile spread across his face and his one
+eye took on a merry twinkle. &quot;Now, let me tell ye about the time me and
+Jelly decided he needed a new robe and took on Ol' Najena herself! A glorious
+battle it was...&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">      </span>His audience smiled and others who had taken part in the raid
+began to fill in the gaps in Grimmbaldis' tale. Laughter rang out as the
+stories grew more and more outlandish long into the night.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+
+	
+			</div>
+		</td>
+	</tr>
+	<tr><td colspan=2><hr></td></tr>
+	<tr><td colspan=2 align=center class="footer">Suggestions, comments, questions? Send them <A class="smallbodytext" HREF="mailto:eqraweb@hotmail.com">here</A>.</td></tr>
+</table>
+<BR><BR>
+</div>
+</body>	
+
+</HTML>

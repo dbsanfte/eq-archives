@@ -1,0 +1,337 @@
+
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<LINK rel="stylesheet" type="text/css" href="ra1.css">
+<TITLE>Random Acts : The Call & Our Charter</TITLE>
+</HEAD>
+
+<body>
+<div align=center>
+<table width="700" cellpadding="0" border=0 cellspacing=0>
+	<tr>
+		<td colspan="2">
+		<a HREF="/default.asp"><img src="/images/Pagetop.jpg" BORDER="0" ALT="Random Acts Home" WIDTH="800" HEIGHT="199"></a></td>
+	</tr>
+	<tr><td colspan=2><hr></td></tr>
+	<tr>
+		<td width="150" valign="top">
+			<table>
+				<tr><td class="toc"><a class="small" HREF="/default.asp" title="Random Acts Home">Home</a></td></tr>
+                                <tr><td class="toc"><a class="small" HREF="/mission.asp" title="What We Do">Mission Statement</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/candc.asp" title="How We Got Started">Call &amp; Charter</a></td></tr>
+                        <tr><td class="toc"><a class="small" HREF="/ethics.asp" title="How We Act">Ethical Guidelines</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/join.asp" title="How To Become One Of Us">How To Join</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/fquest.asp" title="Fledgling Quest">Fledgling Quest</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/calendar.asp" title="What We're Going To Do">Calendar</a></td></tr>
+				<tr><td class="toc"><a class="small" target="_blank" HREF="http://pub76.ezboard.com/brandomacts" title="What We're Saying">Message Boards</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/rollcall1.asp" title="Who We Are">Roll Call</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/album.asp" title="What We Did">Photo Album</a></td></tr>
+                        <tr><td class="toc"><a class="small" HREF="/story.asp" title="What We Write">Stories</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/skills.asp" title="How We Do It">Trade Skills</a></td></tr>
+				<tr><td class="toc"><a class="small" HREF="/links.asp" title="What We Like To Look At">Links</a></td></tr>
+				
+	
+			</table>
+		</td>
+		<td width=550 class="toc"><div class="bodytext"><BR><BR>
+	
+<p>Below you will find the 
+  two Random Acts documents known as "The Call" and "The Charter." In order to 
+  make the reading easier for you, we have summarized them as follows:</p>
+<h1> The Call:</h1>
+<p> Being kind to others as 
+  a way of having fun in EQ. The Random Acts of Kindness and Senseless Beauty 
+  idea. We are people who like to feel the joy of giving, and we play EQ. All 
+  members are equal: No elite members with extra privileges. Invite other guilds 
+  to join our Special Events. &nbsp; </p>
+<h1>The Charter: </h1>
+<p>The foundation is to practice 
+  kindness: it's what is in your heart that counts. The House of Random Acts is 
+  built on the foundation of practicing kindness while playing EQ. </p>
+<h1>Our Practice and Policies come from these 
+  ideas: </h1>
+<p><b>One:</b> Practicing kindness 
+  begins at home. The Sponsor and Sponsoree are have a special friendship within 
+  the guild. </p>
+<p><b>Two:</b> Kindness is 
+  infectious. When practicing kindness it is not what you do, but how and why 
+  you do it. </p>
+<ul>
+  <li><b>First choice:</b> 
+    through our actions and words. </li>
+  <li><b>Second choice:</b> 
+    through giving something. </li>
+</ul>
+<p><b>Three:</b> The individual 
+  is important. Every member is important. We are all equals in RA. When a person 
+  first joins RA, they are a Fledgling Member. Regular Members all have equal 
+  rights.</p>
+<p><b>Four:</b> We all work 
+  together. Even while we are all equal, different jobs must be done to keep a 
+  guild running. Council Members administrate the guild and give the most time 
+  and energy. Officers administrate the membership and give some time and energy. 
+  Volunteers assist in any aspect with a little time and energy. &nbsp; </p>
+<p>&nbsp;</p>
+<h2 align="center">The Call to EverQuest Friends 
+  </h2>
+<p> If you could have a dreamguild, 
+  what would you have? (You don't have to think of everything, just what are the 
+  first things that come to mind?)</p>
+<p> I have been looking over 
+  guilds for months now, reading their message boards and their charters, looking 
+  for clues about their character. There are some very nice guilds out there but... 
+  </p>
+<p>...but? </p>
+<p>Yes, I hate to say it but 
+  none of them is my dreamguild. </p>
+<p>There are things I would 
+  like to find in a guild, and it seems that no one is focused that way. Things 
+  like being kind to others as a way of having fun in EQ (and I guess, in life). 
+  </p>
+<p>Most of the guilds stress 
+  the stuff they kill together, or get together, and yes, these are ways of helping 
+  other people. But... </p>
+<p>... but I just spent a half 
+  an hour giving out firebeetle eyes to young druids in Kelethin, and it was miraculous! 
+  Because I felt so happy doing it, and it was so happily received! I said ooc, 
+  "Attn young druids, giving away a fire beetle eye to any druid who hugs me outside 
+  the bank." One level 5 druid was incredulous that I would give them away! He 
+  practically swore an oath of fealty to me! </p>
+<p>I don't want an oath of 
+  fealty to me. I would rather see people give an oath of fealty to an idea. </p>
+<p>For quite a while now, while 
+  I have been making notes about my "dreamguild", I came up with the Random Acts 
+  of Kindness and Senseless Beauty idea. </p>
+<p>The concept, as many of 
+  you know, is based on doing good deeds for others without expectation of reward. 
+  Not a new idea, is it? And I have seen many EverQuesters practicing this idea 
+  on their own and being an inspiration to me, as well as to others. </p>
+<p>I would love it if that 
+  were the reason for a guild. Not so we can get a big group to hunt in dungeons. 
+  Not so we can get all our class-specific armor. But so we can give away our 
+  hearts without reserve for the pure joy of it! </p>
+<p>I know there are other like-minded 
+  people who play EQ who would like to belong to something that Worthy. Many of 
+  these "spiritual" people don't think of themselves that way--they just know 
+  they like to help other people. So I guess it just comes down to people to want 
+  to feel the joy of giving. </p>
+<p>I think when practicing 
+  random acts of kindness, it's better not to give away big expensive items. Giving 
+  something to a person that is in their level range is probably the easiest and 
+  often the best choice…</p>
+<p> …firebeetle eyes to Druids 
+  for their level one spell, </p>
+<p>…spiderling silk to Bards 
+  for their first drum, </p>
+<p>…a cracked staff to a caster,</p>
+<p> …a tarnished two-handed 
+  sword to a young melee-er,</p>
+<p> …fifteen minutes every 
+  day or two buffing people,</p>
+<p> …A regular event teaching 
+  fighting and techniques for specific classes, game playing skills for beginners, 
+  language festivals, newbie contests, Drunken Naked Races! (Now where did that 
+  one come from, LOL!)</p>
+<p> Will it be hard to get 
+  a big guild group to go to dungeon? Yes, it might be, but so what? </p>
+<p>Whenever I wanted to find 
+  a hunting group in Norrath, I did. There are always people ready to fight. And 
+  I enjoy that part of it too. But it wouldn't be any fun if I couldn't help other 
+  people on the way. I would be so bored. With the game. With others and myself. 
+  With my life. In or out of EverQuest.</p>
+<p> Another thing to think 
+  about here is the choice of server. For those of us who have been on EQ for 
+  awhile and are on servers where you regularly hear class-specific quested armor 
+  being auctioned, where when you auction to give away newbie items you get back 
+  questions about its "stats", I think its time to move to a new young server 
+  and start over. </p>
+<p>That is why I chose Morell-Thule. 
+  It's young and there are both seasoned veterans there as well as newbies. It's 
+  still young enough for anyone interested in joining this guild to start a new 
+  character for that purpose. </p>
+<p>I have been practicing Random 
+  Acts of Kindness and Senseless Beauty alone in EQ or with another friend for 
+  quite awhile now. It has been what has kept EQ interesting to me, long after 
+  the game is has lost it's newness.</p>
+<p> And if you are reading 
+  this, then you probably have too. But I think with a few other people like us, 
+  we could start a guild with a new kind of focus. One without Demi-God Leaders 
+  and elite members that make the regular members feel unimportant. </p>
+<p>All members would be equal. 
+  (That way you and I wouldn't have to keep on doing all the work once it's in 
+  place. LOL!)</p>
+<p> Finally, I would like this 
+  guild to be in contact actively with the other guilds on our server, inviting 
+  them to participate in Newbie Helping Events, and to practice Random Acts of 
+  Kindness and Senseless Beauty themselves. </p>
+<p>Well Friends, what do you 
+  think?</p>
+<p> Let me know. I will be 
+  waiting for your advice. </p>
+<p>Hamadryad, Druid of Morell-Thule 
+  &nbsp; &nbsp; </p>
+<p>&nbsp;</p>
+<h2 align="center">The Charter of Random Acts 
+  </h2>
+<p> The guild known as Random 
+  Acts (RA) takes its concept from the phrase "Practice random acts of kindness 
+  and senseless beauty": the foundation of that is to practice kindness. </p>
+<p>Now we as a fellowship are 
+  taking it to a new level in an online game like EverQuest (EQ) because in order 
+  to progress in the game you have to kill a lot of monsters. Some people think 
+  that killing monsters and practicing kindness go together like a charbroiled 
+  steak topped with a scoop of peppermint ice cream. (Personally, I love ice cream 
+  on my steak. LOL ) </p>
+<p>But if you have gotten this 
+  far, I don't really think you care too much what most people think. </p>
+<p>Let us build the house of 
+  Random Acts on the foundation of practicing kindness. As the primary guild creator, 
+  I have a good idea of what I think will work in the world of Norrath based on 
+  my experience in leading groups in the real world and in being a former member 
+  of an EQ guild, but I'm not in this alone. I welcome all comments and suggestions. 
+  Please post them on the message board "Guild Roundtable" or send me an e-mail 
+  at eqrandomacts@hotmail.com. If you want to keep your comments private, please 
+  note that in your letter. </p>
+<h1>Our Practice and Policies come from these 
+  ideas: </h1>
+<p> <b> One: Practicing kindness 
+  begins at home: </b> </p>
+<p>Sponsorship assures that 
+  everyone in the guild is contacted whenever online. There is nothing lonelier 
+  than belonging to a guild and having no one say "hello". </p>
+<p>Everyone (except the guildleader) 
+  will have at least one Sponsor: the person(s) who recommended them or someone 
+  else in the guild. All regular members are encouraged to sponsor fledglings. 
+  </p>
+<p>The guild recommends a relationship 
+  between Sponsor and Sponsoree: From that time on, the Sponsor and Sponsoree 
+  have a special friendship within the guild. When they come online into EQ, they 
+  would have someone to greet and to see how the other is doing. </p>
+<p>The guild recommends that 
+  each sponsor would have ten or fewer sponsorees. Ten people are a lot to keep 
+  track of. </p>
+<p><b>Two: Kindness is Infectious</b></p>
+<p> Helping other players is 
+  what keeps most of us from losing interest in the game of life and of EverQuest. 
+  When you help one person, you help the entire world. </p>
+<p>Practicing kindness comes 
+  in many forms. Often it is not what you do, but how and why you do it. Trying 
+  to do what is best for you and the other person is the best policy. </p>
+<p>Members may not be playing 
+  a PVP character. They may play it with another character of theirs, but not 
+  with a guild character. Also, the guild will not sponsor any PVP activities.</p>
+<p> Our recommendation on practicing 
+  kindness is to: </p>
+<ol>
+  <li> First Choice: through 
+    our actions and words. Examples are greeting people, asking them if they need 
+    help or answering calls for help, buffing and healing them, helping them find 
+    a person, place, or thing.</li>
+  <li> Second Choice: through 
+    giving something: our guild recommendation is that the best choice of things 
+    given are items that are kept within the receiver's level. This is not a hard 
+    and fast rule. There are exceptions to this rule. But problems will arise 
+    if players start to think that they don't have to earn an item, they can just 
+    come to our guild and beg for it.</li>
+</ol>
+<p> * A note on beggars: Beggars 
+  are probably children in real life. Encourage them to learn the game and try 
+  not to hold their begging against them. If you have time, maybe you can help 
+  them learn to hunt or find someone else to help. If they sincerely want help, 
+  they will be glad for assistance. If they only want things for free, they will 
+  leave you and look for another player to beg from. </p>
+<p><b>Three: The individual 
+  is important: </b> </p>
+<p>Every member is important. 
+  We are all equals in RA. The board member and officer positions are rotating 
+  positions: every person who wants the responsibility of being an officer or 
+  board member will have that opportunity.</p>
+<p> Recommending Membership: 
+  When you recommend a person for membership, please advise them that we are a 
+  guild of givers not takers. Coming into the guild means you want to help others, 
+  not that you want to get free stuff from the guild and then move on.</p>
+<p> <u>Fledgling Members</u>: 
+  When a person first joins RA, they are a Fledgling Member. Before they can become 
+  a Fledgling Member, they must be a Fledgling member for a minimum of two weeks, 
+  read The Call, The Charter and the Fledglings link and see our Message Board. 
+  When they apply, they should post on the Message Board within the Fledglings 
+  and Prospective Members thread their e-mail address, character name, race/class 
+  and level, and sponsors name if they already have one. </p>
+<p>The Fledgling Member is 
+  required to attend guild events and group with guild members, when possible. 
+  The Fledgling Member will complete the Adopt-a-Newbie/Lowbie Quest or Serving-the-Guild 
+  Quest, and be sponsored by a Regular Member of the guild. The Fledgling Member 
+  is encouraged to post messages on the Message Board. </p>
+<p>A Fledgling Member thus 
+  becomes a Regular Member through demonstrating the willingness to practice random 
+  acts to kindness while playing EverQuest. </p>
+<p>Regular Members: Regular 
+  Members may vote if and when an issue arises. They may become sponsors, officers, 
+  volunteers, and council members. These are positions of responsibility for those 
+  people who have the time and energy to contribute to their fellow guildmates 
+  through doing service. They do not donate an elite position in which one has 
+  more rights than others. Regular Members may assist with the planning and accomplishment 
+  of events, the message board, the web page, the sponsorship program, and are 
+  encouraged to practice random acts of kindness and senseless beauty whenever 
+  possible. Every regular member has a voice and is encouraged to bring issues 
+  and comments to our web page forums. A Regular Member who wants to introduce 
+  a guild issue may do so at any time on the Guild Roundtable message board. </p>
+<p>Repealing or Refusing Membership: 
+  It would not be kindness to accept someone into the guild when that person would 
+  be a disrupting force within the guild. Also, when an existing member has shown 
+  that they are a disrupting force, it is the job of the Council to decide to 
+  remove the member from the guild: the guildleader must actually remove them 
+  according to EverQuest Rules. </p>
+<p><b>Four: We All Work Together</b></p>
+<p> Even while we are all equal, 
+  different jobs must be done to keep a guild running. </p>
+<p>All positions in Random 
+  Acts are volunteer positions. The person may resign their position without resigning 
+  the guild. Anyone who demonstrates responsibility within the guild will be allowed 
+  to hold a volunteer position. </p>
+<p><i>The Council</i>: A regular 
+  member may become a Council Member if he/she has displayed exceptional dedication 
+  to Random Acts through their actions. It takes someone who is willing to work 
+  behind the scenes on the administrative work, the web page, the message board, 
+  the sponsorship program, the membership roster, the guild group hunting events 
+  and acts of kindness events, contact outside guilds, and decide policy. The 
+  reward is knowing you are creating and maintaining something very valuable to 
+  many people: the guild of Random Acts. </p>
+<p>The guildleader is an equal 
+  member of the Council and has one Council vote on issues, and is the Chairperson 
+  of the Council. The Council will decide if an issue warrants discussion and 
+  voting. Discussion and voting will be handled by e-mail. The Council will vote 
+  to decide if something should be brought to the Regular members as an issue 
+  to vote on. Once brought to the Regular Members, all Regular Members have one 
+  vote on the issue, and majority wins. </p>
+<p>The Council may bestow an 
+  award of honor on any member who has been an exemplary guild member through 
+  a voting process. These awards will appear as medals next to the person's name 
+  on a web page and will be announced on the message board.</p>
+<p> A Council member is automatically 
+  an officer. </p>
+<p><i>Volunteers</i>: Volunteers 
+  are those who have a little time to give to running the guild. They may assist 
+  the Council on any aspect of running the guild they would enjoy with the approval 
+  of a Council Member. </p>
+<p><i>Officers:</i> Officers 
+  will help find sponsors for the fledgling members when needed. Officers, along 
+  with the Council, will approve new members and settle disputes between members. 
+  </p>
+<p>Being a Council member, 
+  Assistant or Officer is a volunteer position and may be resigned at any time 
+  without resigning the guild. The Council may remove a person from being a sponsor, 
+  officer or a volunteer if they feel that person is not doing their job, or if 
+  they have become missing or On-Sabbatical. &nbsp; </p>
+			</div>
+		</td>
+	</tr>
+	<tr><td colspan=2><hr></td></tr>
+	<tr><td colspan=2 align=center class="footer">Suggestions, comments, questions? Send them <A class="smallbodytext" HREF="mailto:eqraweb@hotmail.com">here</A>.</td></tr>
+</table>
+<BR><BR>
+</div>
+</body>	
+
+</HTML>
