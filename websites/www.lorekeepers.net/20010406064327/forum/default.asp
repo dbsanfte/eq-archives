@@ -1,0 +1,648 @@
+<html>
+
+<head>
+<title>Lore Keepers of E'Ci</title>
+<meta name="copyright" content="This code is Copyright (C) 2000  Michael Anderson and Pierre Gorissen">
+
+<script language="JavaScript">
+<!-- hide from JavaScript-challenged browsers
+function openWindow(url) {
+  popupWin = window.open(url,'new_page','width=400,height=400')
+}
+function openWindow2(url) {
+  popupWin = window.open(url,'new_page','width=400,height=450')
+}
+function openWindow3(url) {
+  popupWin = window.open(url,'new_page','width=400,height=450,scrollbars=yes')
+}
+function openWindow4(url) {
+  popupWin = window.open(url,'new_page','width=400,height=525')
+}
+// done hiding -->
+</script>
+<style type=text/css>
+<!--
+a:link    {color:darkblue;text-decoration:underline}
+a:visited {color:blue;text-decoration:underline}
+a:hover   {color:red;text-decoration:underline}
+input.radio {background: #c7b19c; color:#000000}
+-->
+</style>
+</head>
+
+<body background="/images/allparch5.jpg" bgColor="#E4E0D0" text="#0000" link="darkblue" aLink="red" vLink="red">
+
+<a name="top"></a>
+
+<font face="Verdana, Arial, Helvetica">
+<table align="center" border="0" cellPadding="0" cellSpacing="0" width="100%">
+  <tr>
+    <td valign="top" width="50%"><a href="default.asp"><img alt="Lore Keepers of E'Ci" border="0" src="lklogo.gif"></a>
+    <!-- BEGIN Winvite.com BANNER CODE -->
+    <!--<br><a href="http://www.winvite.com/index.cfm?ref=reinhold@bigfoot.com"><img src="http://www.winvite.com/images/revision/ads/mb_button_1b.gif" width=234 height=30 alt="Answer 3 Survey Questions and Win $4,500!" border="0"></a>-->
+    <!-- END Winvite.com BANNER CODE -->
+    </td>
+    <td align="center" valign="top" width="50%">
+    <table border="0" cellPadding="2" cellSpacing="0">
+      <tr>
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="2"><b>Lore Keepers of E'Ci</b></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="1">
+        <a href="http://www.lorekeepers.net/"><acronym title="Homepage">Home</acronym></a>
+        |
+
+        <a href="pop_profile.asp?mode=Edit"><acronym title="Edit your personal profile...">Profile</acronym></a>
+        |
+	<a href="policy.asp"><acronym title="Register to post to our forum...">Register</acronym></a>
+
+        |
+        <a href="active.asp"><acronym title="See what topics have been active since your last visit...">Active Topics</acronym></a>
+        |
+        <a href="members.asp"><acronym title="Current members of these forums...">Members</acronym></a>
+        |
+        <a href="search.asp"><acronym title="Perform a search by keyword, date, and/or name...">Search</acronym></a>
+        |
+        <a href="faq.asp"><acronym title="Answers to Frequently Asked Questions...">FAQ</acronym></a>
+        </font></td>
+      </tr>
+
+      <form action="/forum/default.asp" method="post" id=form1 name=form1>
+      <INPUT type="hidden" name="Method_Type" value="login">
+      <tr>
+        <td align="center">
+        <table>
+          <tr>
+
+            <td><font face="Verdana, Arial, Helvetica" size="1"><b>Username:</b></font><br>
+            <INPUT type="text" name="Name" size="10" value=""></td>
+            <td><font face="Verdana, Arial, Helvetica" size="1"><b>Password:</b></font><br>
+            <INPUT type="password" name="Password" size="10" value=""></td>
+            <td valign="bottom">
+
+            <INPUT src=button_login.gif type="image" value="Login" id=submit1 name=submit1 border=0 hspace=4>
+
+            </td>
+	<tr>
+	<td colspan="3" align="left"><font face="Verdana, Arial, Helvetica" size="1">
+	<INPUT type="checkbox" name="SavePassWord" value="true" CHECKED><b> Save Password</b></font>
+	</td>
+
+          </tr>
+
+          <tr>
+            <td colspan="3" align="left"><font face="Verdana, Arial, Helvetica" size="1">
+            <a href="JavaScript:openWindow('pop_pword.asp')">Forgot your Password?</a>
+
+           </font></td>
+         </tr>
+
+       </table>
+       </td>
+     </tr>
+     </form>
+
+   </table>
+   </td>
+ </tr>
+</table>
+
+
+<table border=0 width="95%" cellspacing=0 cellpadding=0 align=center>
+  <tr>
+    <td>
+&nbsp;&nbsp;
+    </td>  
+  </tr>
+  <tr>
+    <td bgcolor="#000000">
+    <table border=0 width="100%" cellspacing=1 cellpadding=4>
+      <tr>
+        <td align=center bgcolor="#800000" nowrap valign="top"><b>&nbsp;</td>
+        <td align=center bgcolor="#800000" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="#e4e0d0">Forum</font></b></td>
+        <td align=center bgcolor="#800000" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="#e4e0d0">Topics</font></b></td>
+        <td align=center bgcolor="#800000" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="#e4e0d0">Posts</font></b></td>
+        <td align=center bgcolor="#800000" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="#e4e0d0">Last&nbsp;Post</font></b></td>
+
+        <td align=center bgcolor="#800000" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="#e4e0d0">Moderator(s)</font></b></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#9c6300" colspan="6" valign=top><font face="Verdana, Arial, Helvetica" size="2" color="#e4e0d0"><b>News</b></font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=3&CAT_ID=1&Forum_Title=Event+Announcements"><img src="icon_folder_locked.gif" height=15 width=15 border=0 hspace=0 alt="Forum Locked"></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=3&CAT_ID=1&Forum_Title=Event+Announcements">Event Announcements</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        In this Forum Guild Events are announced. Please use The Round Table forum for suggestions and discussions.
+*** This Forum is Read only!! ***
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">2</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">2</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>09 Aug 2000</b><br>
+         08:36:27<br>by: <a href="pop_profile.asp?mode=display&id=15">Whacha</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Browso
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=2&CAT_ID=1&Forum_Title=Guild+News"><img src="icon_folder_locked.gif" height=15 width=15 border=0 hspace=0 alt="Forum Locked"></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=2&CAT_ID=1&Forum_Title=Guild+News">Guild News</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        News and Announcements concerning the Guild
+*** This Forum is Read only!! ***
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">9</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">9</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>03 Jan 2001</b><br>
+         19:33:13<br>by: <a href="pop_profile.asp?mode=display&id=10">Browso</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Cumarion, Browso
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=1&CAT_ID=1&Forum_Title=Site+News"><img src="icon_folder_locked.gif" height=15 width=15 border=0 hspace=0 alt="Forum Locked"></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=1&CAT_ID=1&Forum_Title=Site+News">Site News</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        News and Announcements about changes on the Lorekeepers Website
+*** This Forum is Read only!! ***
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">16</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">20</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>26 Mar 2001</b><br>
+         00:58:47<br>by: <a href="pop_profile.asp?mode=display&id=2">Cumarion</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Cumarion, Silverbeard
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=17&CAT_ID=1&Forum_Title=The+Blackboard"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=17&CAT_ID=1&Forum_Title=The+Blackboard">The Blackboard</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        This large Blackboard is hanging in the hallway and lists all kind of events and raids organized by individual Guild members!
+<b>*** MODERATED!! *** Please read the rules for this board</b>
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">74</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">754</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>05 Apr 2001</b><br>
+         23:43:24<br>by: <a href="pop_profile.asp?mode=display&id=100">Kalene</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Cumarion
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=4&CAT_ID=1&Forum_Title=The+Round+Table"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=4&CAT_ID=1&Forum_Title=The+Round+Table">The Round Table</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        This forum is for discussion of the news posted in this section!
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">438</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">3327</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>06 Apr 2001</b><br>
+         02:38:00<br>by: <a href="pop_profile.asp?mode=display&id=128">Kevralyn</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Cumarion
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#9c6300" colspan="6" valign=top><font face="Verdana, Arial, Helvetica" size="2" color="#e4e0d0"><b>The Guildhall</b></font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=5&CAT_ID=2&Forum_Title=Infront+of+the+Fireplace"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=5&CAT_ID=2&Forum_Title=Infront+of+the+Fireplace">Infront of the Fireplace</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        Hail traveller! Pull up a chair and sit here at the fireplace. Here we share stories about our adventures and deeds. (Roleplaying encouraged!!!)
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">43</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">209</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>03 Apr 2001</b><br>
+         16:15:33<br>by: <a href="pop_profile.asp?mode=display&id=129">Gereth</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Yenian Attriides
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=6&CAT_ID=2&Forum_Title=The+Armory"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=6&CAT_ID=2&Forum_Title=The+Armory">The Armory</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        The clashing of swords is heard quite clearly over the Warriors discussion of tactics and deeds ....
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">18</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">84</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>05 Apr 2001</b><br>
+         19:48:43<br>by: <a href="pop_profile.asp?mode=display&id=19">Nitrischa</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Lling Satori
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=8&CAT_ID=2&Forum_Title=The+Chapel"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=8&CAT_ID=2&Forum_Title=The+Chapel">The Chapel</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        Clerics and Paladins meet for contemplation here in the Chapel. In a dark Corner of the Chaple even the followers of Innrouk have a place for their grisly rituals
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">24</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">76</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>20 Feb 2001</b><br>
+         08:20:34<br>by: <a href="pop_profile.asp?mode=display&id=47">Teggo Toessostubby</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+&nbsp;
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=7&CAT_ID=2&Forum_Title=The+Grove"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=7&CAT_ID=2&Forum_Title=The+Grove">The Grove</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        Druids, Rangers, and Shamans meet within this sacred grove.
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">35</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">191</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>29 Mar 2001</b><br>
+         12:39:11<br>by: <a href="pop_profile.asp?mode=display&id=10">Browso</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Kenton
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=9&CAT_ID=2&Forum_Title=The+High+Tower"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=9&CAT_ID=2&Forum_Title=The+High+Tower">The High Tower</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        Strange sounds and lights emanate from the windows of this towers as the casters of the Guild discus their mysterious discoveries.
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">40</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">253</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>30 Mar 2001</b><br>
+         12:19:30<br>by: <a href="pop_profile.asp?mode=display&id=10">Browso</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Ndyar
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=18&CAT_ID=2&Forum_Title=The+Library"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=18&CAT_ID=2&Forum_Title=The+Library">The Library</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        A cloud of cobwebs and dust accumulated over ages powder the visitor of the Library. The mouldy tomes contain knowledge collected by the members of the guild.
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">2</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">3</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>10 Nov 2000</b><br>
+         09:46:17<br>by: <a href="pop_profile.asp?mode=display&id=62">Gartrin</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Cumarion
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=12&CAT_ID=2&Forum_Title=The+Marketplace"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=12&CAT_ID=2&Forum_Title=The+Marketplace">The Marketplace</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        Looking for something? Or having difficulties walking because of all the loot? The buzz of busy haggling is emerging from this busy locale.
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">40</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">187</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>05 Apr 2001</b><br>
+         23:03:20<br>by: <a href="pop_profile.asp?mode=display&id=37">Merilla</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+&nbsp;
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=11&CAT_ID=2&Forum_Title=The+Rainbow+Parrot"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=11&CAT_ID=2&Forum_Title=The+Rainbow+Parrot">The Rainbow Parrot</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        All kinds of discussions are going on at the bar of The Rainbow Parrot. Travellers from all over the world are enjoying the pubs famous ales. (Forum for general discussion)
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">43</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">226</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>13 Mar 2001</b><br>
+         13:42:31<br>by: <a href="pop_profile.asp?mode=display&id=3">Senina</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Pogmo
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=10&CAT_ID=2&Forum_Title=The+Shadow+Corner"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=10&CAT_ID=2&Forum_Title=The+Shadow+Corner">The Shadow Corner</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        This old inn has long been the meeting point for all kind of shady business. It is known though for the great bardic performances.
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">39</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">225</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>03 Apr 2001</b><br>
+         17:58:31<br>by: <a href="pop_profile.asp?mode=display&id=5">Semvarin</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Semvarin
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#9c6300" colspan="6" valign=top><font face="Verdana, Arial, Helvetica" size="2" color="#e4e0d0"><b>The Inner Chambers</b></font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=14&CAT_ID=3&Forum_Title=The+High+Council"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=14&CAT_ID=3&Forum_Title=The+High+Council">The High Council</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        Behind this door the mumble (occasional louder discussion) of the Council of Officers is heard. It is rumored that new tables and chairs are needed quite often ....
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">84</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">637</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>28 Mar 2001</b><br>
+         15:40:22<br>by: <a href="pop_profile.asp?mode=display&id=18">Strade</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Browso
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=13&CAT_ID=3&Forum_Title=The+Meeting+Hall"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=13&CAT_ID=3&Forum_Title=The+Meeting+Hall">The Meeting Hall</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        The door to the Guild Meeting Hall is guarded by a grizzly ogre! I wonder how he knows who is a member (and thus allowed to pass) and who is not. The pile of bones beside the door indicates the fate of those who tried to enter without permission ....
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">4</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">16</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>03 Apr 2001</b><br>
+         12:44:30<br>by: <a href="pop_profile.asp?mode=display&id=10">Browso</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Browso
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=16&CAT_ID=3&Forum_Title=The+Scriptorium"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+
+        <td bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=16&CAT_ID=3&Forum_Title=The+Scriptorium">The Scriptorium</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        The scratching of many a quill on parchment can be heard from behind the door of this room. Only Scribes of the Guild have access here!! (WebTeam-Forum)
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">17</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">49</font></td>
+
+        <td bgcolor="#c7b19c" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="#000000" size="1"><b>07 Feb 2001</b><br>
+         14:24:21<br>by: <a href="pop_profile.asp?mode=display&id=26">Silverbeard</a></font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Cumarion
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#9c6300" colspan="6" valign=top><font face="Verdana, Arial, Helvetica" size="2" color="#e4e0d0"><b>The long Hallway</b></font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+<a href="http://www.lorekeepers.net/index.asp" target="_blank"><img src="icon_url.gif" height=16 width=16 border=0 hspace=0></a>        </td>
+
+        <td colspan=4 bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="http://www.lorekeepers.net/index.asp" target="_blank">Encyclopedia Norathica</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        Among the many doors in the hallway this small door is nearly hidden behind the statue of a slain dragon. Inside shelves and cupboards seem to be ready to burst for all the parchments stuffed inside.....
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+Silverbeard
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+<a href="http://www.lorekeepers.net/oldforum" target="_blank"><img src="icon_url.gif" height=16 width=16 border=0 hspace=0></a>        </td>
+
+        <td colspan=4 bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="http://www.lorekeepers.net/oldforum" target="_blank">The Archive</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        A dusty tunnel leads away from this door to the old Message Board!
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+&nbsp;
+        </font></td>
+
+      </tr>
+      <tr>
+        <td bgcolor="#c7b19c" align=center valign=top>
+<a href="http://pub22.ezboard.com/blorekeepersofeci" target="_blank"><img src="icon_url.gif" height=16 width=16 border=0 hspace=0></a>        </td>
+
+        <td colspan=4 bgcolor="#c7b19c" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="http://pub22.ezboard.com/blorekeepersofeci" target="_blank">The Registry</a><br>
+        <font color="#000000" face="Verdana, Arial, Helvetica" size="1">
+        Until we get our Webdatabase online this board was setup to serve as Registry.
+        </font></td>
+
+        <td bgcolor="#c7b19c" align=left valign=top><font face="Verdana, Arial, Helvetica" color="#000000" size="2">
+&nbsp;
+        </font></td>
+
+      </tr>
+
+      <tr>
+        <td bgcolor="#9c6300" colspan="7"><font face="Verdana, Arial, Helvetica" size="2" color="#e4e0d0" size="+1"><b>Statistics</b></font></td>
+      </tr>
+      <tr>
+        <td rowspan="4" bgcolor="#c7b19c">&nbsp;</td>
+
+        <td bgcolor="#c7b19c" colspan="6">
+        <font face="Verdana, Arial, Helvetica" size="1">119 Members have  made 6268 posts in 17 forums, with the last post on <a href="topic.asp?TOPIC_ID=966&FORUM_ID=4&CAT_ID=1&Topic_Title=A+Simple+Thank+You&Forum_Title=The+Round+Table">06 Apr 2001 02:38:00</a> by: <a href="pop_profile.asp?mode=display&id=128">Kevralyn</a>.
+		  </font>
+          </td>
+        </tr>
+        <tr>
+      
+        <td bgcolor="#c7b19c" colspan="6">
+        <font face="Verdana, Arial, Helvetica" size="1">There are  currently 928 topics and 41 <a href="active.asp">active topics</a> since you last visited.</font>
+        </td>
+      </tr>
+
+      <tr>          
+        <td bgcolor="#c7b19c" colspan="6">
+        <font face="Verdana, Arial, Helvetica" size="1">Please welcome our newest member:
+        <a href="pop_profile.asp?mode=display&id=140">Iinaru</a>.</font>
+
+          </td>
+        </tr>
+
+    </table>           
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <table width="100%">
+      <tr>
+        <td>
+        <font face="Verdana, Arial, Helvetica" size="1">
+        <img alt="New Posts" src="icon_folder_new.gif" width=8 height=9> Contains new posts since last visit.<br>
+        <img alt="Old Posts" src="icon_folder.gif" width=8 height=9> No new posts since the last visit.<br>
+        </font>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+
+    </div> 
+    <td>
+    <table width=100% border=0 bgcolor="#E4E0D0" cellpadding="0" cellspacing = "4"> 
+      <tr bgcolor="#E4E0D0">
+        <td bgcolor="#E4E0D0">
+        <table border=0 width="95%" align="center" cellpadding="4" cellspacing="0">
+          <tr>
+            <td bgcolor="#c7b19c" align=left valign=top nowrap><font face="Verdana, Arial, Helvetica" size="1">
+            <p align=left>Lore Keepers of E'Ci</p>
+            </font></td>
+            <td bgcolor="#c7b19c" align=right valign=top nowrap><font face="Verdana, Arial, Helvetica" size="1">
+            <p align=right>© 2000 SilverDay Systems</p>
+            </font></td>
+			<td bgcolor="#c7b19c" width=10 nowrap><a href="#top"><img src="icon_go_up.gif" height=15 width=15 border="0" align="right" alt="Go To Top Of Page"></a></font></td>    
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+	<td>
+	  <table border=0 width="95%" align="center" cellpadding="4" cellspacing="0">
+	  <tr>
+        <td align="right"><font face="Verdana, Arial, Helvetica" size="1">
+        <a href="http://forum.snitz.com"><acronym title="Powered By: Snitz Forums 2000 Version 3.1 SR3 Final"><img src="logo_powered_by.gif" border=0></acronym></a>
+        </font></td>
+      </tr>
+	</table>
+	</td>
+  </tr>
+</table>
+</font>
+
+</body>
+</html>
