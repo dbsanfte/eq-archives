@@ -1,0 +1,421 @@
+<html>
+
+<head>
+<title>Home Page</title>
+<meta name="Microsoft Theme" content="none">
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script></head>
+
+<body background="images/main_back.jpg" link="#000000" vlink="#C0C0C0" alink="#FF0000"
+onload="dynAnimation()">
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="0" width="640" height="409">
+  <tr>
+    <td width="453" height="115" bgcolor="#800000" align="right" valign="bottom"><p
+    align="left"><img src="images/fist%20and%20angel.jpg" width="648" height="150"
+    alt="fist and angel.jpg (74006 bytes)"></td>
+  </tr>
+  <tr>
+    <td valign="top" align="center" width="551" height="400"><div align="left"><table
+    border="0" cellpadding="0" width="124" height="345" cellspacing="0">
+      <tr>
+        <td width="125" bgcolor="#800000" valign="top"><p align="center"><img
+        src="images/wing.jpg" width="125" height="50" alt="wing.jpg (3459 bytes)"><a
+        href="http://www.eqhq.com" alt="EQHQ"><img
+        src="http://www.eqhq.com/images/eqhq_button.gif" align="middle" border="0" width="88"
+        height="31"></a> </p>
+        <p align="left"><strong><font face="Arial" color="#FFFFFF">&nbsp;&nbsp;&nbsp;Content</font></strong></p>
+        <p dynamicanimation="flyRight"
+        style="position: relative !important; left: 10000 !important">
+        <applet code="fphover.class" codebase="_fpclass" width="120" height="24">
+          <param name="text" value="Home">
+          <param name="color" value="#800000">
+          <param name="hovercolor" value="#FF0000">
+          <param name="textcolor" value="#C0C0C0">
+          <param name="effect" value="glow">
+          <param name="url" value="index.shtml" valuetype="ref">
+          <param name="font" value="Helvetica">
+          <param name="fontstyle" value="regular">
+          <param name="fontsize" value="14">
+        </applet>
+        <applet code="fphover.class" codebase="_fpclass/" width="119" height="24">
+          <param name="text" value="Biography">
+          <param name="color" value="#800000">
+          <param name="hovercolor" value="#FF0000">
+          <param name="textcolor" value="#C0C0C0">
+          <param name="effect" value="glow">
+          <param name="url" value="biography.shtml" valuetype="ref">
+          <param name="font" value="Helvetica">
+          <param name="fontstyle" value="regular">
+          <param name="fontsize" value="14">
+        </applet>
+        <applet code="fphover.class" codebase="_fpclass/" width="120" height="24">
+          <param name="text" value="Adventures">
+          <param name="color" value="#800000">
+          <param name="hovercolor" value="#FF0000">
+          <param name="textcolor" value="#C0C0C0">
+          <param name="effect" value="glow">
+          <param name="url" value="adventures.shtml" valuetype="ref">
+          <param name="font" value="Helvetica">
+          <param name="fontstyle" value="regular">
+          <param name="fontsize" value="14">
+        </applet>
+        <applet code="fphover.class" codebase="_fpclass/" width="120" height="24">
+          <param name="text" value="Screenshots">
+          <param name="color" value="#800000">
+          <param name="hovercolor" value="#FF0000">
+          <param name="textcolor" value="#C0C0C0">
+          <param name="effect" value="glow">
+          <param name="url" value="screenshots.shtml" valuetype="ref">
+          <param name="font" value="Helvetica">
+          <param name="fontstyle" value="regular">
+          <param name="fontsize" value="14">
+        </applet>
+        </p>
+        <p><strong><font face="Arial" color="#FFFFFF">&nbsp;&nbsp;&nbsp;Links</font></strong></p>
+        <p dynamicanimation="flyLeft"
+        style="position: relative !important; left: 10000 !important">
+        <applet code="fphover.class" codebase="_fpclass/" width="120" height="24">
+          <param name="text" value="EQ Monks">
+          <param name="color" value="#800000">
+          <param name="hovercolor" value="#FF0000">
+          <param name="textcolor" value="#C0C0C0">
+          <param name="effect" value="glow">
+          <param name="url" value="EQLinks.shtml" valuetype="ref">
+          <param name="font" value="Helvetica">
+          <param name="fontstyle" value="regular">
+          <param name="fontsize" value="14">
+        </applet>
+        <applet code="fphover.class" codebase="_fpclass/" width="120" height="24">
+          <param name="text" value="The Tao of EQ">
+          <param name="color" value="#800000">
+          <param name="hovercolor" value="#FF0000">
+          <param name="textcolor" value="#C0C0C0">
+          <param name="effect" value="glow">
+          <param name="url" value="OtherLinks.shtml" valuetype="ref">
+          <param name="font" value="Helvetica">
+          <param name="fontstyle" value="regular">
+          <param name="fontsize" value="14">
+        </applet>
+        </td>
+        <td width="515" valign="top" align="center"><div align="left"><table border="0"
+        cellspacing="0" width="514">
+          <tr>
+            <td width="514" bgcolor="#FFFFFF" valign="top" align="center"
+            background="images/candle.jpg"><p align="center"><!-- AdSpace cat=games cat2=games page=111 site=telefragged size=468x60 --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=games&page=111&site=telefragged&size=468x60"><script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=games&page=111&site=telefragged&size=468x60"></script><noscript><a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60"><img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60" border=0></a></noscript></iframe><!-- /AdSpace -->
+ <br>
+            <font face="Arial"><strong>RECENT UPDATES</strong></font></p>
+            <p align="left">&nbsp;</p>
+            <p align="left"><font face="Arial"><strong>&nbsp;&nbsp;&nbsp;August 31,1999</strong></font></p>
+            <blockquote>
+              <p align="left"><font face="Arial">NEW STORY:&nbsp; In the next installment of the
+              Adventures, Kogiri becomes a member of the Fist of the Five Winds!!</font></p>
+            </blockquote>
+            <p align="left"><font face="Arial"><strong>&nbsp;&nbsp;&nbsp;August 13,1999</strong></font></p>
+            <blockquote>
+              <p align="left"><font face="Arial">Back up with new a design. I hope you all like it.
+              &nbsp; Please send Kogiri some email with comments about the site, stories, grouping
+              opportunities, complaints, etc. at <a href="mailto:Kogiri@eqhq.com">Kogiri@eqhq.com</a> </font></p>
+              <p align="left"><font face="Arial">Kogiri has joined a guild!!&nbsp; As of last Saturday,
+              Kogiri is a member of The Fist of the Five Winds.&nbsp; Expect to learn more about how
+              this came to pass in the next installment of the Adventures of Kogiri coming soon.</font></p>
+            </blockquote>
+            <p align="left"><font face="Arial"><strong>&nbsp;&nbsp;&nbsp;August 11, 1999</strong></font></p>
+            <blockquote>
+              <p align="left"><font face="Arial">Temporarily out of Service. Be back soon, thanks!!</font></p>
+            </blockquote>
+            <p align="left"><font face="Arial"><strong>&nbsp;&nbsp;&nbsp;August 2, 1999</strong></font></p>
+            <blockquote>
+              <p align="left"><font face="Arial">Added Part II of The Barbarian and the Halfling. </font></p>
+              <p align="left"><font face="Arial">Added more links to Monk related resources.</font></p>
+            </blockquote>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p>&nbsp;</td>
+          </tr>
+        </table>
+        </div></td>
+      </tr>
+    </table>
+    </div><div align="left"><table border="0" cellpadding="0" cellspacing="0" width="647">
+      <tr>
+        <td width="647" bgcolor="#800000"><p align="left"><font face="Arial" color="#FFFFFF"><em><small>Email
+        Kogiri at <a href="mailto:Kogiri@EQHQ.com">Kogiri@EQHQ.com</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Last Updated: <!--webbot bot="Timestamp" startspan S-Type="EDITED" S-Format="%B %d, %Y" -->August 25, 1999<!--webbot
+        bot="Timestamp" i-checksum="22692" endspan --></small></em></font></td>
+      </tr>
+    </table>
+    </div></td>
+  </tr>
+</table>
+</center></div>
+</body>
+</html>
+
