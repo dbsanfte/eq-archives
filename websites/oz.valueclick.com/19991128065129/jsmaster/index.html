@@ -1,0 +1,73 @@
+// Copyright 1999 ValueClick Inc. All rights reserved.
+
+ValueLoaded = true;
+ValueFullVersion = ValueVersion + ".5.2";
+
+function ValueShowAd () {
+  if (self.ValuePage) ValueID = ValuePage; // backwards compatibility with the beta testers 
+  
+  ValueOptionsStr = '';
+  
+  if (self.ValueCategory)   ValueOptionsStr += '&c='          + self.ValueCategory;
+  if (self.ValueBgColor)    ValueOptionsStr += '&bgcolor='    + escape(self.ValueBgColor);
+  if (self.ValueLinkColor)  ValueOptionsStr += '&linkcolor='  + escape(self.ValueLinkColor);
+  if (self.ValueAlinkColor) ValueOptionsStr += '&alinkcolor=' + escape(self.ValueAlinkColor);
+  if (self.ValueVlinkColor) ValueOptionsStr += '&vlinkcolor=' + escape(self.ValueVlinkColor);
+  if (self.ValueBorder)     ValueOptionsStr += '&border=1';
+  if (! self.ValueNoText)   ValueOptionsStr += '&text=1';
+  if (self.ValueTargetCurrent) ValueOptionsStr += '&target=self';
+
+  ValueServer   = "http://oz.valueclick.com/";
+  ValueRandom   = Math.round(Math.random()*1000) + 1;
+  ValueHostInfo = "host=" + ValueHost + "&b=" + ValueID + "." + ValueRandom + ValueOptionsStr; 
+  ValueBanner   = ValueServer + 'cycle?' + ValueHostInfo + '&v=' + ValueFullVersion;
+  ValueRedirect = ValueServer + 'redirect?' + ValueHostInfo;
+
+  if (navigator.userAgent.indexOf("MSIE") >= 0) {
+    if (navigator.appVersion.indexOf('MSIE 3') >= 0) {
+      // MSIE version 3 needs extra height in the IFRAME 
+      if (ValueVersion > 0.8) {
+	    document.write('<IFRAME NAME="vcad" WIDTH="468" HEIGHT="80" ');
+        document.write('SCROLLING="no" FRAMEBORDER="0" FRAMESPACING="0" MARGINHEIGHT="0" ');
+        document.write('MARGINWIDTH="0" BORDER="0" HSPACE="0" VSPACE="0" ');
+        document.write('ALIGN="top" SRC="' + ValueBanner + '&t=html">');
+        document.write('</IFRAME>');
+      }
+    } else if (navigator.userAgent.indexOf("Mac") >= 0) {
+      // IE on the Mac appears to behave properly
+      document.write('<SCRIPT SRC="' + ValueBanner + '&t=js"');   
+      document.write(' LANGUAGE="JavaScript">');
+      document.write('</SCR' + 'IPT>');
+    } else {
+      // this would be MSIE, not Mac, greater than v3 
+      if (self.ValueNoText) {
+	    if (self.ValueBorder) {
+		  IframeWidth  = 472;
+		  IframeHeight = 64;
+		} else {
+		  IframeWidth  = 468; 
+		  IframeHeight = 60;
+		}
+      } else {
+		if (self.ValueBorder) {
+		  IframeWidth  = 472;
+	      IframeHeight = 84;
+		} else {
+		  IframeWidth  = 468;
+		  IframeHeight = 84;
+		}
+      }
+      //document.write('<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="0"><TR><TD ALIGN="center">');
+      document.write('<IFRAME ID="VC" NAME="VC" WIDTH="' + IframeWidth + '" HEIGHT="' + IframeHeight + '" '); 
+      document.write('SCROLLING="no" FRAMEBORDER="0" FRAMESPACING="0" MARGINHEIGHT="0" ');
+      document.write('MARGINWIDTH="0" BORDER="0" HSPACE="0" VSPACE="0" ');
+      document.write('ALIGN="center" SRC="' + ValueBanner + '&t=html">');
+      document.write('</IFRAME>');
+      //document.write('</TD></TR></TABLE>');
+    }      
+  } else {
+     // should be all Netscapes that are reading this file 
+      document.write('<SCRIPT SRC="' + ValueBanner + '&t=js"');
+      document.write(' LANGUAGE="JavaScript"></SCR' + 'IPT>');
+  }
+}
