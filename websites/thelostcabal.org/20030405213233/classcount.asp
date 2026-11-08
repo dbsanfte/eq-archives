@@ -1,0 +1,235 @@
+<html>
+<head><title>The Lost Cabal List of Members</title>
+<LINK REL=StyleSheet HREF="stylesheet.css" TYPE="text/css">
+</head>
+<body>
+<center><a href="memberlist.asp">Member List</a> ||| <a href="membercount.asp">Member Count by Level</a></center><br>
+<center><h2>Member Count by Class</h2></center>
+<h4>Bard members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Krahx Heads</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>60</TD></TR><TR><TD><font size=-1>Kimagure Swordsinger</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>55</TD></TR><TR><TD><font size=-1>Teleea Thunderblade</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>53</TD></TR><TR><TD><font size=-1>Excelerator <NULL></TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>1</TD></TR><TR><TD><font size=-1>Eldworf <NULL></TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>1</TD></TR><TR><TD><font size=-1>Paprys <NULL></TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>1</TD></TR><TR><TD><font size=-1>Sileria <NULL></TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>1</TD></TR><TR><TD><font size=-1>Davia <NULL></TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>1</TD></TR><TR><TD><font size=-1>Sylis <NULL></TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>0</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Aevan Spleenslasher (Aevad)</TD><TD><font size=-1>Half Elf                                          </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>31</TD></TR><TR><TD><font size=-1>Chordus  (Brussek)</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>9</TD></TR><TR><TD><font size=-1>Rezexts  (Cloudlegend)</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>11</TD></TR><TR><TD><font size=-1>purrsinger  (danini)</TD><TD><font size=-1>Troll                                             </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>11</TD></TR><TR><TD><font size=-1>Dontressa  (Dontress)</TD><TD><font size=-1>Vah Sir                                           </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>14</TD></TR><TR><TD><font size=-1>Geomon  (Ghostwalker)</TD><TD><font size=-1>Half Elf                                          </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>35</TD></TR><TR><TD><font size=-1>Soelo  (Trillaan)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Bard                                              </TD><TD><font size=-1>10</TD></TR>
+	</table>
+	<BR>Total: 
+	16<BR>
+<BR><HR>
+<h4>Beastlord members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Kamirra Second</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Beastlord                                         </TD><TD><font size=-1>35</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Krias  (Brussek)</TD><TD><font size=-1>Vah Sir                                           </TD><TD><font size=-1>Beastlord                                         </TD><TD><font size=-1>9</TD></TR><TR><TD><font size=-1>katteyeza  (danini)</TD><TD><font size=-1>Vah Sir                                           </TD><TD><font size=-1>Beastlord                                         </TD><TD><font size=-1>10</TD></TR><TR><TD><font size=-1>Gabriellaa  (Lakrista)</TD><TD><font size=-1>Vah Sir                                           </TD><TD><font size=-1>Beastlord                                         </TD><TD><font size=-1>27</TD></TR><TR><TD><font size=-1>Keelorra  (Teleea)</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Beastlord                                         </TD><TD><font size=-1>16</TD></TR><TR><TD><font size=-1>Samorri  (Trillaan)</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Beastlord                                         </TD><TD><font size=-1>11</TD></TR>
+	</table>
+	<BR>Total: 
+	6<BR>
+<BR><HR>
+<h4>Cleric members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Phoenicia Anagennisi</TD><TD><font size=-1>Erudite                                           </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>54</TD></TR><TR><TD><font size=-1>Aenjel OfMercy</TD><TD><font size=-1>Dwarf                                             </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>40</TD></TR><TR><TD><font size=-1>Balgars Bloodaxes</TD><TD><font size=-1>Dwarf                                             </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>34</TD></TR><TR><TD><font size=-1>Pnutfay <NULL></TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>1</TD></TR><TR><TD><font size=-1>danini <NULL></TD><TD><font size=-1>Dwarf                                             </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>1</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Hodr  (Aerich)</TD><TD><font size=-1>Dwarf                                             </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>17</TD></TR><TR><TD><font size=-1>Elerra  (danini)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>11</TD></TR><TR><TD><font size=-1>Quinlen  (Davione)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>17</TD></TR><TR><TD><font size=-1>Weepingwillow  (Dontress)</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>10</TD></TR><TR><TD><font size=-1>krystalee  (Kaylonie)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>51</TD></TR><TR><TD><font size=-1>Zoogan Starfield (msis)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>25</TD></TR><TR><TD><font size=-1>Mayve  (Sylvera)</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>16</TD></TR><TR><TD><font size=-1>Kaegaal Spiritcaller (Teleea)</TD><TD><font size=-1>Dwarf                                             </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>51</TD></TR><TR><TD><font size=-1>Rezzar Forhire (Trillaan)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>22</TD></TR><TR><TD><font size=-1>Yinlaar Lammasu (Zuffa)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Cleric                                            </TD><TD><font size=-1>54</TD></TR>
+	</table>
+	<BR>Total: 
+	15<BR>
+<BR><HR>
+<h4>Druid members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Kaylonie <NULL></TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>58</TD></TR><TR><TD><font size=-1>Cathba <NULL></TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>56</TD></TR><TR><TD><font size=-1>Zuffa Yondalla</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>54</TD></TR><TR><TD><font size=-1>Dontress Yondalla</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>53</TD></TR><TR><TD><font size=-1>Amberlee Skye</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>51</TD></TR><TR><TD><font size=-1>Shakabra Phyrestyxx</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>51</TD></TR><TR><TD><font size=-1>Rlyan Bengalstorm</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>51</TD></TR><TR><TD><font size=-1>Moea Berre</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>40</TD></TR><TR><TD><font size=-1>Braukhart Blackthorne</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>30</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Maddas  (Ababba)</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>5</TD></TR><TR><TD><font size=-1>Dudrop  (Aenjel)</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>14</TD></TR><TR><TD><font size=-1>Kathba  (Cathba)</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>18</TD></TR><TR><TD><font size=-1>Kahlir  (Cunedar)</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>14</TD></TR><TR><TD><font size=-1>sianee Windmaker (danini)</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>29</TD></TR><TR><TD><font size=-1>Hyacynthia  (Kimagure)</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>51</TD></TR><TR><TD><font size=-1>Jenphona Vaprak  (Lakrista)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>40</TD></TR><TR><TD><font size=-1>Cianee Windmaker (msis)</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>27</TD></TR><TR><TD><font size=-1>Belzhorash - Kael Drakkal Server (Tecladore)</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>22</TD></TR><TR><TD><font size=-1>Tecladoree - Kael Drakkal Server (Tecladore)</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>16</TD></TR><TR><TD><font size=-1>Vareena Mistcaller (Teleea)</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>45</TD></TR><TR><TD><font size=-1>Vareedan VineReaper (Trillaan)</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>40</TD></TR><TR><TD><font size=-1>Vasil  (Trillaan)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>15</TD></TR><TR><TD><font size=-1>Emitai  (Trillaan)</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>10</TD></TR><TR><TD><font size=-1>Zofar Zogood (Zuffa)</TD><TD><font size=-1>Half Elf                                          </TD><TD><font size=-1>Druid                                             </TD><TD><font size=-1>23</TD></TR>
+	</table>
+	<BR>Total: 
+	24<BR>
+<BR><HR>
+<h4>Enchanter members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Aquiox Brainboiler</TD><TD><font size=-1>Erudite                                           </TD><TD><font size=-1>Enchanter                                         </TD><TD><font size=-1>51</TD></TR><TR><TD><font size=-1>Sylvera Delphae</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Enchanter                                         </TD><TD><font size=-1>44</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Sinfiotli T`Leigh (Aerich)</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Enchanter                                         </TD><TD><font size=-1>21</TD></TR><TR><TD><font size=-1>Fingor  (Brussek)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Enchanter                                         </TD><TD><font size=-1>12</TD></TR><TR><TD><font size=-1>Belatani  (Cathba)</TD><TD><font size=-1>Erudite                                           </TD><TD><font size=-1>Enchanter                                         </TD><TD><font size=-1>9</TD></TR><TR><TD><font size=-1>noctwynde  (danini)</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Enchanter                                         </TD><TD><font size=-1>10</TD></TR><TR><TD><font size=-1>lilyput  (Dontress)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Enchanter                                         </TD><TD><font size=-1>20</TD></TR><TR><TD><font size=-1>Venti  (Gilmesh)</TD><TD><font size=-1>Half Elf                                          </TD><TD><font size=-1>Enchanter                                         </TD><TD><font size=-1>21</TD></TR><TR><TD><font size=-1>Keohane  (Rlyan)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Enchanter                                         </TD><TD><font size=-1>14</TD></TR><TR><TD><font size=-1>Shazzelle Mezzerall (Teleea)</TD><TD><font size=-1>Erudite                                           </TD><TD><font size=-1>Enchanter                                         </TD><TD><font size=-1>23</TD></TR>
+	</table>
+	<BR>Total: 
+	10<BR>
+<BR><HR>
+<h4>Magician members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Saeeldar Vonwulf</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Magician                                          </TD><TD><font size=-1>54</TD></TR><TR><TD><font size=-1>Maxjam Naebon</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Magician                                          </TD><TD><font size=-1>52</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Colliostro Wuggums (Aerich)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Magician                                          </TD><TD><font size=-1>52</TD></TR><TR><TD><font size=-1>maej  (danini)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Magician                                          </TD><TD><font size=-1>10</TD></TR><TR><TD><font size=-1>Ellos  (Rlyan)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Magician                                          </TD><TD><font size=-1>12</TD></TR><TR><TD><font size=-1>Magianna Majiika (Teleea)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Magician                                          </TD><TD><font size=-1>40</TD></TR><TR><TD><font size=-1>Bitzarik  (Trillaan)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Magician                                          </TD><TD><font size=-1>13</TD></TR><TR><TD><font size=-1>Khalor  (Zalu)</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Magician                                          </TD><TD><font size=-1>3</TD></TR>
+	</table>
+	<BR>Total: 
+	8<BR>
+<BR><HR>
+<h4>Monk members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Kawasaky Wassabi</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>54</TD></TR><TR><TD><font size=-1>Gaki Gaikotsu</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>52</TD></TR><TR><TD><font size=-1>msis msus</TD><TD><font size=-1>Iksar                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>32</TD></TR><TR><TD><font size=-1>Brussek Verantbane</TD><TD><font size=-1>Iksar                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>31</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Banichi Nadiin (Aerich)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>41</TD></TR><TR><TD><font size=-1>Kawasaky Wassabi (Dakmor)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>54</TD></TR><TR><TD><font size=-1>Salutations  (Dontress)</TD><TD><font size=-1>Iksar                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>18</TD></TR><TR><TD><font size=-1>elddoof  (Saeeldar)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>21</TD></TR><TR><TD><font size=-1>Chraich - Kael Drakkal Server (Tecladore)</TD><TD><font size=-1>Iksar                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>24</TD></TR><TR><TD><font size=-1>Coreena Tsangsu (Teleea)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>26</TD></TR><TR><TD><font size=-1>Coreedan  (Trillaan)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>13</TD></TR><TR><TD><font size=-1>Althus  (Zalu)</TD><TD><font size=-1>Iksar                                             </TD><TD><font size=-1>Monk                                              </TD><TD><font size=-1>39</TD></TR>
+	</table>
+	<BR>Total: 
+	12<BR>
+<BR><HR>
+<h4>Necromancer members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Tecladore - Kael Drakkal Server</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>47</TD></TR><TR><TD><font size=-1>Cariz Matics</TD><TD><font size=-1>Iksar                                             </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>26</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Viksin Tormentress (Aenjel)</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>27</TD></TR><TR><TD><font size=-1>Hymlick Manuever (Aquiox)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>25</TD></TR><TR><TD><font size=-1>Dameet  (Cunedar)</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>18</TD></TR><TR><TD><font size=-1>Krisbin Kridder (Davione)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>36</TD></TR><TR><TD><font size=-1>Amoxia Cillian (Dontress)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>20</TD></TR><TR><TD><font size=-1>Ghosse  (Ghostwalker)</TD><TD><font size=-1>Iksar                                             </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>29</TD></TR><TR><TD><font size=-1>Latarus  (Ruklaol)</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>5</TD></TR><TR><TD><font size=-1>Neceera Devyle (Teleea)</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>21</TD></TR><TR><TD><font size=-1>Ssalissh  (Trillaan)</TD><TD><font size=-1>Iksar                                             </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>10</TD></TR><TR><TD><font size=-1>Brigantine Keelhauler (Zuffa)</TD><TD><font size=-1>Iksar                                             </TD><TD><font size=-1>Necromancer                                       </TD><TD><font size=-1>21</TD></TR>
+	</table>
+	<BR>Total: 
+	12<BR>
+<BR><HR>
+<h4>Paladin members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Aevad Spleenslasher</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>51</TD></TR><TR><TD><font size=-1>Cloudlegend <NULL></TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>43</TD></TR><TR><TD><font size=-1>Lakrista Nobleblade</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>39</TD></TR><TR><TD><font size=-1>Elaarya Hebe</TD><TD><font size=-1>Erudite                                           </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>34</TD></TR><TR><TD><font size=-1>Akilja <NULL></TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>12</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Asphodel Crimsonblade (Amberlee)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>24</TD></TR><TR><TD><font size=-1>Aquioxx Mortifero (Aquiox)</TD><TD><font size=-1>Erudite                                           </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>54</TD></TR><TR><TD><font size=-1>Faltar Firefox (Balgars)</TD><TD><font size=-1>Dwarf                                             </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>30</TD></TR><TR><TD><font size=-1>Drinian  (Gilmesh)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>20</TD></TR><TR><TD><font size=-1>Fealtye  (Kimagure)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>31</TD></TR><TR><TD><font size=-1>Bengal  (Rlyan)</TD><TD><font size=-1>Half Elf                                          </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>24</TD></TR><TR><TD><font size=-1>Nidalapa  (Ruklaol)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>10</TD></TR><TR><TD><font size=-1>Darrianna  (Teleea)</TD><TD><font size=-1>Half Elf                                          </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>14</TD></TR><TR><TD><font size=-1>Renthar  (Zuffa)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Paladin                                           </TD><TD><font size=-1>12</TD></TR>
+	</table>
+	<BR>Total: 
+	14<BR>
+<BR><HR>
+<h4>Ranger members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Ironhydde <NULL></TD><TD><font size=-1>Half Elf                                          </TD><TD><font size=-1>Ranger                                            </TD><TD><font size=-1>56</TD></TR><TR><TD><font size=-1>Aerich Leib`Olmai</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Ranger                                            </TD><TD><font size=-1>55</TD></TR><TR><TD><font size=-1>Trillaan Thunderblade</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Ranger                                            </TD><TD><font size=-1>51</TD></TR><TR><TD><font size=-1>Ghostwalker </TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Ranger                                            </TD><TD><font size=-1>51</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Burch  (Ababba)</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Ranger                                            </TD><TD><font size=-1>5</TD></TR>
+	</table>
+	<BR>Total: 
+	5<BR>
+<BR><HR>
+<h4>Rogue members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Davione Dragynbait</TD><TD><font size=-1>Half Elf                                          </TD><TD><font size=-1>Rogue                                             </TD><TD><font size=-1>58</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Dunaask Aydunneaux (Aerich)</TD><TD><font size=-1>Half Elf                                          </TD><TD><font size=-1>Rogue                                             </TD><TD><font size=-1>38</TD></TR><TR><TD><font size=-1>Brumblefoot  (Gilmesh)</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Rogue                                             </TD><TD><font size=-1>14</TD></TR><TR><TD><font size=-1>Darriaan  (Trillaan)</TD><TD><font size=-1>Half Elf                                          </TD><TD><font size=-1>Rogue                                             </TD><TD><font size=-1>13</TD></TR><TR><TD><font size=-1>Derdyn  (Windfar)</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Rogue                                             </TD><TD><font size=-1>14</TD></TR><TR><TD><font size=-1>Zooffah  (Zuffa)</TD><TD><font size=-1>Vah Sir                                           </TD><TD><font size=-1>Rogue                                             </TD><TD><font size=-1>15</TD></TR>
+	</table>
+	<BR>Total: 
+	6<BR>
+<BR><HR>
+<h4>Shadow Knight members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Ababba Berre</TD><TD><font size=-1>Iksar                                             </TD><TD><font size=-1>Shadow Knight                                     </TD><TD><font size=-1>53</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Uggella  (Aenjel)</TD><TD><font size=-1>Ogre                                              </TD><TD><font size=-1>Shadow Knight                                     </TD><TD><font size=-1>11</TD></TR><TR><TD><font size=-1>Noxio Swampgas (Cunedar)</TD><TD><font size=-1>Troll                                             </TD><TD><font size=-1>Shadow Knight                                     </TD><TD><font size=-1>25</TD></TR><TR><TD><font size=-1>Ulath  (Zalu)</TD><TD><font size=-1>Ogre                                              </TD><TD><font size=-1>Shadow Knight                                     </TD><TD><font size=-1>15</TD></TR><TR><TD><font size=-1>Bilzabob  (Zuffa)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Shadow Knight                                     </TD><TD><font size=-1>5</TD></TR>
+	</table>
+	<BR>Total: 
+	5<BR>
+<BR><HR>
+<h4>Shaman members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Dakmor Phystophyre</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Shaman                                            </TD><TD><font size=-1>56</TD></TR><TR><TD><font size=-1>Zalu Delphae</TD><TD><font size=-1>Troll                                             </TD><TD><font size=-1>Shaman                                            </TD><TD><font size=-1>55</TD></TR><TR><TD><font size=-1>Malisse Maegwin</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Shaman                                            </TD><TD><font size=-1>50</TD></TR><TR><TD><font size=-1>Mekyle Fineclaw</TD><TD><font size=-1>Iksar                                             </TD><TD><font size=-1>Shaman                                            </TD><TD><font size=-1>26</TD></TR><TR><TD><font size=-1>Ruklaol <NULL></TD><TD><font size=-1>Ogre                                              </TD><TD><font size=-1>Shaman                                            </TD><TD><font size=-1>9</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Puthar  (Ghostwalker)</TD><TD><font size=-1>Vah Sir                                           </TD><TD><font size=-1>Shaman                                            </TD><TD><font size=-1>28</TD></TR><TR><TD><font size=-1>Alleey Tiggre (msis)</TD><TD><font size=-1>Vah Sir                                           </TD><TD><font size=-1>Shaman                                            </TD><TD><font size=-1>20</TD></TR><TR><TD><font size=-1>Razu Delphae (Sylvera)</TD><TD><font size=-1>Troll                                             </TD><TD><font size=-1>Shaman                                            </TD><TD><font size=-1>41</TD></TR><TR><TD><font size=-1>Anpahah - Kael Drakkal Server (Tecladore)</TD><TD><font size=-1>Vah Sir                                           </TD><TD><font size=-1>Shaman                                            </TD><TD><font size=-1>12</TD></TR><TR><TD><font size=-1>Tecladore - The Rathe (Tecladore)</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Shaman                                            </TD><TD><font size=-1>3</TD></TR><TR><TD><font size=-1>Samorra  (Teleea)</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Shaman                                            </TD><TD><font size=-1>16</TD></TR>
+	</table>
+	<BR>Total: 
+	11<BR>
+<BR><HR>
+<h4>Warrior members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Rhox Thunderblade</TD><TD><font size=-1>Ogre                                              </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>57</TD></TR><TR><TD><font size=-1>Gilmesh Nobleblade</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>51</TD></TR><TR><TD><font size=-1>Lalie L`Vee</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>45</TD></TR><TR><TD><font size=-1>Stinkor Funkypants</TD><TD><font size=-1>Ogre                                              </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>29</TD></TR><TR><TD><font size=-1>Tangor <NULL></TD><TD><font size=-1>Dwarf                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>16</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Kutiepie Uglymugg (Ababba)</TD><TD><font size=-1>Ogre                                              </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>29</TD></TR><TR><TD><font size=-1>Tostig Skallagrimson (Aerich)</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>21</TD></TR><TR><TD><font size=-1>Kneehacken  (Aquiox)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>18</TD></TR><TR><TD><font size=-1>Darnok  (Braukhart)</TD><TD><font size=-1>Halfling                                          </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>19</TD></TR><TR><TD><font size=-1>Ranari  (Cathba)</TD><TD><font size=-1>Vah Sir                                           </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>31</TD></TR><TR><TD><font size=-1>Castonot McFearsum (Cunedar)</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>52</TD></TR><TR><TD><font size=-1>veolet  (danini)</TD><TD><font size=-1>Ogre                                              </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>9</TD></TR><TR><TD><font size=-1>Ironskin  (Ironhydde)</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>30</TD></TR><TR><TD><font size=-1>Nektina  (Kimagure)</TD><TD><font size=-1>Wood Elf                                          </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>39</TD></TR><TR><TD><font size=-1>smalle Frey (msis)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>40</TD></TR><TR><TD><font size=-1>alho renegate (msis)</TD><TD><font size=-1>Barbarian                                         </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>22</TD></TR><TR><TD><font size=-1>Fpexchanger  (Phoenicia)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>1</TD></TR><TR><TD><font size=-1>Exchanger  (Phoenicia)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>1</TD></TR><TR><TD><font size=-1>Shastymc Nasty (Saeeldar)</TD><TD><font size=-1>Ogre                                              </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>59</TD></TR><TR><TD><font size=-1>Aalammer Ikaika (Shakabra)</TD><TD><font size=-1>Dwarf                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>37</TD></TR><TR><TD><font size=-1>Aphrael Delphael (Sylvera)</TD><TD><font size=-1>Dark Elf                                          </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>22</TD></TR><TR><TD><font size=-1>Teclador - Kael Drakkal Server (Tecladore)</TD><TD><font size=-1>Troll                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>22</TD></TR><TR><TD><font size=-1>Liltinker  (Teleea)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>30</TD></TR><TR><TD><font size=-1>Kaegaar Kromcrusher (Trillaan)</TD><TD><font size=-1>Dwarf                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>24</TD></TR><TR><TD><font size=-1>Trilline  (Trillaan)</TD><TD><font size=-1>Vah Sir                                           </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>9</TD></TR><TR><TD><font size=-1>Tankfar  (Windfar)</TD><TD><font size=-1>Dwarf                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>12</TD></TR><TR><TD><font size=-1>Allanor  (Zalu)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>20</TD></TR><TR><TD><font size=-1>Osquip ibn`Akhran (Zuffa)</TD><TD><font size=-1>Half Elf                                          </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>54</TD></TR><TR><TD><font size=-1>Sameiel Waterdancer (Zuffa)</TD><TD><font size=-1>Human                                             </TD><TD><font size=-1>Warrior                                           </TD><TD><font size=-1>23</TD></TR>
+	</table>
+	<BR>Total: 
+	29<BR>
+<BR><HR>
+<h4>Wizard members:</h4><br>
+	<table border=0 width=100%>
+	<tr>
+		<TD width=25%><B>Name</B></TD>
+		<TD width=25%><B>Race</B></TD>
+		<TD width=25%><B>Class</B></TD>
+		<TD width=25%><B>Level</B></TD>
+	</tr>
+	<TR><TD><font size=-1>Windfar </TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Wizard                                            </TD><TD><font size=-1>16</TD></TR>
+	<tr><td colspan="4"><center><font size=-1><b><i>Alternate Characters (main character)</i></b></font></center></td></tr>
+	<TR><TD><font size=-1>Guhome Taikanap (Aerich)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Wizard                                            </TD><TD><font size=-1>30</TD></TR><TR><TD><font size=-1>Emaarya Hebe (Elaarya)</TD><TD><font size=-1>High Elf                                          </TD><TD><font size=-1>Wizard                                            </TD><TD><font size=-1>21</TD></TR><TR><TD><font size=-1>Sprokette  (Teleea)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Wizard                                            </TD><TD><font size=-1>12</TD></TR><TR><TD><font size=-1>Shazham  (Trillaan)</TD><TD><font size=-1>Erudite                                           </TD><TD><font size=-1>Wizard                                            </TD><TD><font size=-1>11</TD></TR><TR><TD><font size=-1>Malliren  (Zuffa)</TD><TD><font size=-1>Gnome                                             </TD><TD><font size=-1>Wizard                                            </TD><TD><font size=-1>15</TD></TR>
+	</table>
+	<BR>Total: 
+	6<BR>
+<BR><HR>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>www.TheLostCabal.org</title>
+<style TYPE="text/css">
+		A 		{ text-decoration: none; color: white}
+		HR		{ color: white; }
+		A:Hover	{ text-decoration: underline; color: #C0C0C0; }
+</style>
+<meta name="Microsoft Theme" content="tlc 010, default">
+</head>
+
+<body topmargin="0" leftmargin="0" bgcolor="#000000" text="#FFFFFF" link="#00FFFF" vlink="#FF0000" alink="#FFFFFF"><!--mstheme--><font face="Arial, Arial, Helvetica">
+
+<div align="center">
+  <center>
+  <!--mstheme--></font><table border="1" width="900" bordercolordark="#C0C0C0" bordercolorlight="#C0C0C0">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><!--mstheme--></font><table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">&nbsp;<font color="#000000">Main</font><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="Arial, Arial, Helvetica"><!--mstheme--></font><table border="0" width="100%" bgcolor="#808080" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><!--mstheme--><font face="Arial, Arial, Helvetica"><font face="Arial" size="1">&nbsp; <a href="default.asp">Main</a>&nbsp; |&nbsp; About&nbsp; |&nbsp;
+      <a href="screenshot_1.htm">Screenshots</a>&nbsp; |&nbsp; Guild Members
+      Only</font><!--mstheme--></font></td>
+    <td width="50%"><!--mstheme--><font face="Arial, Arial, Helvetica">
+      <p align="right"><font size="2"><a href="http://www.thelostcabal.org">www.thelostcabal.org</a></font><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="Arial, Arial, Helvetica"><!--mstheme--></font><table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="27%" valign="bottom" align="left"><!--mstheme--><font face="Arial, Arial, Helvetica">
+      <p align="center"><img border="0" src="compass_pt1.gif" align="left"><!--mstheme--></font></td>
+    <td width="48%"><!--mstheme--><font face="Arial, Arial, Helvetica"><img border="0" src="cabalmain.jpg"><!--mstheme--></font></td>
+    <td width="25%"><!--mstheme--><font face="Arial, Arial, Helvetica"><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="Arial, Arial, Helvetica"><!--mstheme--></font><table border="0" width="891" bgcolor="#808080" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="229" height="0" valign="bottom"><!--mstheme--><font face="Arial, Arial, Helvetica">
+      <p align="center"><img border="0" src="compass_pt2.gif" align="left"></p>
+    <!--mstheme--></font></td>
+    <td width="658"><!--mstheme--><font face="Arial, Arial, Helvetica"><font size="2" face="Arial">A legendary guild...</font><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="Arial, Arial, Helvetica"><!--mstheme--></font><table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="29%" valign="top" align="left"><!--mstheme--><font face="Arial, Arial, Helvetica"><img border="0" src="compass_pt3.gif" align="left"><!--mstheme--></font></td>
+    <td width="47%" valign="top"><!--mstheme--><font face="Arial, Arial, Helvetica">
+      <p style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0" align="center">&nbsp;
+      <p style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0" align="center">&nbsp;
+  </center>
+
+<table border=0 width=80% align=left><tr><td align=left><blockquote>I don't CARE what the stats are, if it does not LOOK good, I WILL NOT wear it!</blockquote></td></tr><tr><td align=right>--Teleea Thunderblade</td></tr></table>
+
+      
+  <center>
+      
+    </center>
+      
+    <td width="25%" valign="top" align="right"><!--mstheme--><font face="Arial, Arial, Helvetica"><font size="2">ver 1.0</font><img border="0" src="terrorantula.gif" align="left" width="200" height="91"><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="Arial, Arial, Helvetica"><!--mstheme--></font><table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><!--mstheme--></font><table border="0" width="100%" cellspacing="0" cellpadding="10">
+        <tr>
+          <td width="18%" valign="top"><!--mstheme--><font face="Arial, Arial, Helvetica">
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0" align="left"><b><font size="2" color="#C0C0C0" face="Arial">[Site
+            Navigation]</font></b></p>
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0" align="left"><font color="#FFFFFF" size="2" face="Arial">
+            &nbsp;
+            <a href="default.asp">
+            Main</a></font></p>
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0" align="left"><font color="#FFFFFF" size="2" face="Arial">
+            &nbsp; <a href="about.htm" target="_child">About</a></font></p>
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0" align="left"><font color="#FFFFFF" size="2" face="Arial">
+            &nbsp; <a href="gallery/frameset.htm" target="_child">Screenshots</a></font></p>
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0" align="left"><font color="#FFFFFF" size="2" face="Arial">
+            &nbsp; <a href="newsarchive.htm">News Archives</a></font></p>
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0" align="left"><font color="#FFFFFF" size="2" face="Arial">
+            &nbsp; <a href="bardcorner/bard-corner.htm" target="_child">Bard's Corner</a></font></p>
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0" align="left"><font color="#FFFFFF" size="2" face="Arial">
+            &nbsp;</font>
+            <a href="memberlist.htm" target="_child"><font size="2">Member List</font></a></p>
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0" align="left"><font size="2">&nbsp;
+            <a href="http://www.thelostcabal.org/bboard/" target="_blank">Discussion Board</a></font></p>
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0" align="left"><font size="2">&nbsp;
+            <a href="join.htm" target="_child">Becoming A Member</a></font></p>
+          <!--mstheme--></font></td>
+          <td width="4%" valign="top"><!--mstheme--><font face="Arial, Arial, Helvetica">
+            <p align="center"><img border="0" src="column_line.gif" width="3" height="600" align="top"><!--mstheme--></font></td>
+          <td width="48%" valign="top"><!--mstheme--><font face="Arial, Arial, Helvetica">
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+       		<table border=0 width=100% align=center>
+<tr><td align=left>
+	<font color="#800000" size="+1"><B>Congratulations Kimagure!<B> - 1/20/2001</font>
+</td></tr>
+<tr><td>
+	<blockquote>
+	Having a hard time keeping up with the memberlist updates heheh, but working on a solution so that we can all keep our own levels up to date. Until then, please try to keep me informed when you make new levels, drop me a line <a href="mailto:aerich@thelostcabal.org?subject=Memberlist Update">here</a>. Congratulations to Kimagure, The Lost Cabal's first level 51.
+	</blockquote>
+</td></tr>
+<tr><td align=right>
+	<font color="80000" size="-1">Submitted by <a href="mailto:aerich@thelostcabal.org">Aerich</a>
+</td></tr>
+</table>
+<br><br>
+<table border=0 width=100% align=center>
+<tr><td align=left>
+	<font color="#800000" size="+1"><B>Mistmoore Raided... again!<B> - 1/20/2001</font>
+</td></tr>
+<tr><td>
+	<blockquote>
+	Made a lot of updates to the memberlist today. Pleaes check it again and make sure I have everything up to date. Also, please keep me informed of any levels gained so I can keep it current.
+	</blockquote>
+</td></tr>
+<tr><td align=right>
+	<font color="80000" size="-1">Submitted by <a href="mailto:aerich@thelostcabal.org">Aerich</a>
+</td></tr>
+</table>
+<br><br>
+<!--mstheme--></font></td>
+          <td width="5%" valign="top"><!--mstheme--><font face="Arial, Arial, Helvetica">
+            <p align="center"><img border="0" src="column_line.gif" width="3" height="600" align="top"><!--mstheme--></font></td>
+          <td width="26%" valign="top"><!--mstheme--><font face="Arial, Arial, Helvetica">
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><b><font size="2" color="#C0C0C0" face="Arial">[Web
+            Links]</font></b>
+            <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;<p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            <a href="http://everquest.allakhazam.com/"><font face="Arial" size="2">Allakhazam.com</font></a><p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><a href="http://eq.castersrealm.com/"><font face="Arial" size="2">Castersrealm.com</font></a><p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            <a href="http://www.eqatlas.com"><font face="Arial" size="2">
+            Eqatlas.com</font></a><p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            <font face="Arial" size="2"><a href="http://www.eq-lizer.com">Eq-lizer.com</a></font><p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            <a href="http://www.everlore.com"><font face="Arial" size="2">
+            Everlore.com</font></a><p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            <a href="http://www.everquest.com"><font face="Arial" size="2">
+            Everquest.com</font></a><p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            <a href="http://www.maximumeq.com"><font face="Arial" size="2">
+            Maximumeq.com</font></a><p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            <a href="http://www.thesafehouse.org"><font face="Arial" size="2">Thesafehouse.org</a><p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            &nbsp;<p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            &nbsp;<p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            <a href="http://www.nvidia.com"><img border="0" src="nvidiabanner.jpg"></a><p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            &nbsp;<p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            &nbsp;<p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">
+            <a href="http://www.3dfx.com"><img border="0" src="3dfxbanner.jpg"></a></font><!--mstheme--></font></td>
+        </tr>
+      </table><!--mstheme--><font face="Arial, Arial, Helvetica"><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="Arial, Arial, Helvetica">
+
+        <p>&nbsp;<!--mstheme--></font></td>
+    </tr>
+  </table><!--mstheme--><font face="Arial, Arial, Helvetica">
+</div>
+
+<p align="center"><em><font face="Times New Roman" color="#ffffff" size="2">All
+trademarks used are properties of their respective owners.<br>
+All rights reserved.&nbsp; All pages Copyright © 1997, 1998, 1999, 2000 by <a href="mailto:wicked@voodooextreme.com">The
+Lost Cabal.</a></font></em></p>
+
+<!--mstheme--></font></body>
+
+</html>
