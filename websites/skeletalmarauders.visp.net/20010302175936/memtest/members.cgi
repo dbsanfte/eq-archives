@@ -1,0 +1,73 @@
+<html>
+<head><title>Skeletal Marauders - Viewing All Members</title>
+
+<link rel=stylesheet href="/css/sm.css" type="text/css">
+<script language="JavaScript" src="/menu/navcond.js"></script>
+<script language="JavaScript" src="/menu/menu.js"></script>   
+
+</head>
+<body bgcolor="#000000" onload="init()">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<table align="center" width="754" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan=10><img src="/images/logo.jpg" alt="Logo" width="754" height="100"></td>
+  </tr>
+  <tr><td><img name="placeholder" src="/images/logo.jpg" width="1" height="1"></td></tr>
+  <tr bgcolor="#272727" height=25>
+  </tr>
+  <tr bgcolor="#000000">
+  </tr>
+</table>
+ 
+<table bgcolor="#272727" align=center width=754 border=0 cellpadding=3 cellspacing=0>
+  <tr height=15 valign=top bgcolor="#272727">
+    <td width=50% align=left>
+      <font face="verdana,arial,helvetica" size=1 color="#999999">&nbsp;
+      People on Xegony: <br>&nbsp;
+      Total Members: 
+      </font></td>
+    <td width=50% align=right>
+      <font face="verdana,arial,helvetica" size=1 color="#999999">
+      <SCRIPT language="Javascript">
+      <!--
+          var now = new Date();
+      var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+      var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+      var date = ((now.getDate()<10) ? "0" : "")+ now.getDate();
+      function y2k(number){return (number < 1000) ? number + 1900 : number;}
+      mod = "<font face=\"Verdana,Arial\" size=\"1\">"
+      mod +=  days[now.getDay()] + ", " + months[now.getMonth()] + " "
+      mod += date  +  ", " + (y2k(now.getYear()))
+      document.write(mod)
+      document.write("</font>")
+          //-->
+          </script>&nbsp;<br>
+      <a class=navbarlink href="/contact.html">Contact</a> |
+      <a class=navbarlink href="/sitemap.html">Site map</a> |
+      <a class=navbarlink href="/about.html">About&nbsp;</a>
+      </font>
+    </td>
+  </tr>  
+</table>
+ <table width=754 align=center border=0 cellspacing=0 cellpadding=0>
+  <tr>
+    <td rowspan=2 width=2 bgcolor="#272727"><img src="images/border.gif" alt="" width=2></td>
+    <td colspan=2>
+      <table border=0 bgcolor=#000000 cellpadding=10 width=100%>
+        <tr>
+          <td>
+<font size=4><b><center>Current Members</center></b></font><br><table width=690 align=center border=0 cellspacing=0 cellpadding=0><tr><td width=175><basefont size=2><a class=bodylink href="members.cgi?action=showmember&user=Saelilya">Saelilya Soulstealer</a></td><td width=40><basefont size=2>41</td><td width=80><basefont size=2>Dark Elf</td><td width=110><basefont size=2>Necromancer</td><td width=80><basefont size=2>Webmaster</td><td width=30><basefont size=2><a class=mailto href="mailto:barrky@isdn.net">Email</a></td></tr><tr><td width=175><basefont size=2><a class=bodylink href="members.cgi?action=showmember&user=Vorel">Vorel Planewalker</a></td><td width=40><basefont size=2>31</td><td width=80><basefont size=2>Dark Elf</td><td width=110><basefont size=2>Necromancer</td><td width=80><basefont size=2>Webmaster</td><td width=30><basefont size=2><a class=mailto href="mailto:vorel@skeletalmarauders.visp.net">Email</a></td></tr></table><br><br><center><font size="1" color="#999999">Guild Manager 2.0</font></center>
+          </td>
+        </tr>  
+      </table> 
+    </td>
+    <td rowspan=2 align=right width=2 bgcolor="#272727"><img src="images/border.gif" alt="" width=2></td>
+  </tr>
+  <tr><td colspan=2 width=100% height=2 bgcolor="#272727"><img src="images/border.gif" width=1 height=1></td></tr>
+  <tr><td colspan=3 height=15 valign=bottom align=right><font face="verdana,arial,helvetica" size=1  color="#999999">Copyright &copy 2000-2001 Skeletal Marauders.  All Rights Reserved.</font></td></tr>
+</table>
+
+</body>
+
