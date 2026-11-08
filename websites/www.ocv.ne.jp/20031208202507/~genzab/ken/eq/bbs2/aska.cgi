@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<STYLE TYPE="text/css">
+<!--
+body,tr,td,th { font-size:10pt }
+small { font-size:9pt }
+-->
+</STYLE>
+<title>BBS</title></head>
+<body background="../kabe_a01.gif" bgcolor="#D2B360" text="#69501B" link="#DF9879" vlink="#E8D1A2" alink="#E8D1A2">
+<center>
+<font color="#69501B" face="Times New Roman" size=5><b style="font-size:18pt">BBS</b></font>
+<hr width="90%">
+[<a href="../index.html" target="_top">トップに戻る</a>]
+[<a href="./aska.cgi?mode=howto">使いかた</a>]
+[<a href="./aska.cgi?mode=find">ワード検索</a>]
+[<a href="./aska.cgi?mode=admin">管理用</a>]
+<hr width="90%">
+</center>
+<blockquote>
+<form action="./aska.cgi" method="POST">
+<input type=hidden name=mode value="regist">
+<table cellpadding=1 cellspacing=1>
+<tr>
+  <td><b>おなまえ</b></td>
+  <td><input type=text name=name size="20" value=""></td>
+</tr>
+<tr>
+  <td><b>Ｅメール</b></td>
+  <td><input type=text name=email size="20" value=""></td>
+</tr>
+<tr>
+  <td><b>題　　名</b></td>
+  <td>
+    <input type=text name=sub size="25" value="">
+    <input type=submit value="送信する"><input type=reset value="リセット">
+  </td>
+</tr>
+<tr>
+  <td colspan=2>
+    <b>メッセージ</b><br>
+    <textarea name=comment cols="55" rows="7" wrap=soft></textarea>
+  </td>
+</tr>
+<tr>
+  <td><b>ＵＲＬ</b></td>
+  <td><input type=text name=url size="45" value="http://"></td>
+</tr>
+<tr>
+  <td><b>削除キー</b></td>
+  <td>
+    <input type=password name=pwd size=8 maxlength=8 value="">
+    <small>(記事削除用。英数字で8文字以内)</small>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <input type=checkbox name=cook value="on" checked>
+    <small>クッキー情報を保存</small>
+  </td>
+</tr>
+</table>
+</form>
+</blockquote>
+<hr>
+[<b>289</b>] <font color="#404040"><b>（ToT</b></font> 投稿者：<b>OC</b> <small>投稿日：2003/12/05(Fri) 17:40</small> [<a href="./aska.cgi?mode=resmsg&no=289">返信</a>]<br>
+<blockquote>昨日、ふと下を見ると上着の下の辺に<br>1週間以上経過し固まってくっ付いている<br>命拾いをした米粒を見つけた<br>「なんだぁ～ん、てめぇなぁにくっついてんだ(｀□´)コラッ!」<br>とばかりに引っぺがし奥歯で噛み潰して引っぺがしてやった<br><br><br><br>今日、ふと下見たら<br><br><br><br>またいやがった・・・・<P></blockquote><hr>
+[<b>288</b>] <font color="#404040"><b>最近さ</b></font> 投稿者：<b>Bigmax＠OverLord</b> <small>投稿日：2003/12/02(Tue) 23:06</small> [<a href="./aska.cgi?mode=resmsg&no=288">返信</a>]<br>
+<blockquote>たまにAnpanを見かける今日この頃<br>また、まったりQuestな日々過ごすのも乙なもの<P><a href="http://everquest.allakhazam.com/db/quest.html?quest=2634" target='_blank'>http://everquest.allakhazam.com/db/quest.html?quest=2634</a></blockquote><hr>
+[<b>287</b>] <font color="#404040"><b>おかしい・・</b></font> 投稿者：<b>Ishin</b> <small>投稿日：2003/11/29(Sat) 03:39</small> [<a href="./aska.cgi?mode=resmsg&no=287">返信</a>]<br>
+<blockquote>探偵死んだって言われたのに・・・<br><br>生き返った！<br><br>た・わ・ば！<P></blockquote><hr>
+[<b>286</b>] <font color="#404040"><b>oisinbo</b></font> 投稿者：<b>Ishin</b> <small>投稿日：2003/11/29(Sat) 03:36</small> [<a href="./aska.cgi?mode=resmsg&no=286">返信</a>]<br>
+<blockquote>山岡「今日は『最強のメニュー』を食べさせてやるよ」 <br>栗田「ここは吉野家ね。わぁ、すごい人。全然座れそうにないわ」 <br>客A「よーしパパ、特盛頼んじゃうぞー！」 <br>客B「ワシは大盛つゆだくで」 <br>山岡「まったく、情けない連中だ。150円引き如きで普段来てない吉野家とは」 <br>客B「何だと！？ 失敬な！」 <br>山岡「150円やるから、その席空けてくれないか」 <br>栗田「山岡さん！」 <br>客B「ワシは大盛つゆだくを頼んだんだぞ」 <br>山岡「アンタはそれを本当に食べたいのかい？」 <br>客B「うっ・・・」 <br>山岡「単につゆだくって言いたいだけじゃないのか」 <br>客B「な、ならお前は何を注文するつもりだ」 <br>山岡「まぁ見ててください。親父、大盛りねぎだくギョクだ」 <br>栗田「えぇ！？」 <br>山岡「ねぎだくというのは、ねぎが多めに入ってる。そのかわり肉が少なめなんだ」 <br>客A「バカな・・・そんなものがうまいハズがない！」 <br>客B「牛丼の主役はあくまで牛肉、ねぎは脇役に過ぎないということを知らんとは」 <br>栗田（お客さんたちの言う通りだわ。それも大盛りギョクだなんて。。。山岡さん、どうしてしまったの？） <br>山岡「ご高説は十分です。まずは食べてもらいましょう。」 <br>客B「まったくバカバカしい。。。（もぐもぐ）。。。こ、これは！！」 <br>栗田「山岡さん、おいしいわ！ これが最強の牛丼なのね！」 <br>客A「おどろいた。。。これが同じ牛丼なのか？！」 <br>山岡「最強だが、これを頼むと店員にマークされる危険も伴う諸刃の剣だ。まぁ素人にはお薦め出来ないね」 <br>雄山「これが最強の牛丼だと？ 士郎、お前はどこまで情けないやつなんだ」 <br>山岡＆栗田「海原雄山！！」 <br><P></blockquote><hr>
+[<b>285</b>] <font color="#404040"><b>ちゃら～ん</b></font> 投稿者：<b>あんぱん</b> <small>投稿日：2003/10/21(Tue) 20:40</small> [<a href="./aska.cgi?mode=resmsg&no=285">返信</a>]<br>
+<blockquote>かの有名なナイチンゲールはこういいました。<br><br><br>     「御大事に」<br><br><br><br>いやホント。<P></blockquote><hr>
+[<b>284</b>] <font color="#404040"><b>恙と羊羹て似てるね</b></font> 投稿者：<b>Ishin</b> <small>投稿日：2003/10/18(Sat) 23:35</small> [<a href="./aska.cgi?mode=resmsg&no=284">返信</a>]<br>
+<blockquote>一度でいいから見てみたい　ちゃら～ん<br><br>楽太郎です<P></blockquote><hr>
+[<b>283</b>] <font color="#404040"><b>ナニなアレ</b></font> 投稿者：<b>あんぱん</b> <small>投稿日：2003/10/13(Mon) 04:54</small> [<a href="./aska.cgi?mode=resmsg&no=283">返信</a>]<br>
+<blockquote>拝啓 BIGMAX様<br><br>　天高く馬肥ゆる秋、ますますご繁盛のほどお喜び(略)<br>最近のナニの件について、早急に対処したい所ではございまするが、<br>なに分こちらもソレがコレなわけで、そちらの時間帯における早朝<br>あたりしかアレなわけで。とりあえず同じ時間帯に出現なさる<br><br>Mokoさんとアレやコレやして恙無く過ごしておりますが、偶々そち<br>らの夜にアレすることがありましたら、その時は何卒お手柔らかに<br>アレして頂きたく存知奉る次第にござ候、ニンニン。<P></blockquote><hr>
+[<b>282</b>] <font color="#404040"><b>残暑も厳しい折</b></font> 投稿者：<b>Bigmax＠OverLord</b> <small>投稿日：2003/10/11(Sat) 21:13</small> [<a href="./aska.cgi?mode=resmsg&no=282">返信</a>]<br>
+<blockquote>いかがお過ごしでしょ～か<br>日々アレでソレな日々を過ごしてEQってナニ？オイシイ？<br>って感じですがソレはアッチでナニしてアレで・・・<br>そ～ゆ～訳で最近ナニなんでアレして待ってます<P></blockquote><hr>
+[<b>281</b>] <font color="#404040"><b>忙しいねん！</b></font> 投稿者：<b>あんぱん</b> <small>投稿日：2003/09/19(Fri) 12:33</small> [<a href="./aska.cgi?mode=resmsg&no=281">返信</a>]<br>
+<blockquote>　今年の夏は相変わらず残暑もきびしゅうございますが、<br>貴方を見ないと、既に冬が到来したかのように寂しゅうございます。<br>せめて輝かしいお姿だけでも見せてくださいませ。<br><br>そう・・ノ(;(´Д｀）ヽ<br>な感じでどこか毛の抜けた頭の貴方が素敵です(huh?<br><br><br>韻を踏むって難しいね…。でもそろそろ落ち着いてきたから、そっちの朝方にはPOPできるかも、できないかも。知り合いがいるといいなぁ…(笑)<P></blockquote><hr>
+[<b>280</b>] <font color="#404040"><b>最近いないやん！</b></font> 投稿者：<b>Amu</b> <small>投稿日：2003/09/16(Tue) 20:34</small> [<a href="./aska.cgi?mode=resmsg&no=280">返信</a>]<br>
+<blockquote>今年の夏は久々に猛暑でしたが<br>貴方がいなくて、熱さに欠けます。<br>せめて美しいお顔だけでも見せてくださいませ<br><br>そう・・<br>ヽ（゜▽ ゜）ノ<br>な感じにどこか間が抜けた顔の貴方が素敵です（違<P></blockquote><hr>
+<table align=left><tr>
+<td><form action="./aska.cgi" method="POST">
+<input type=hidden name=page value="10">
+<input type=submit value="次の10件">
+</td></form>
+</tr></table>
+<table align=right><tr>
+<td nowrap align=center><form action="./aska.cgi" method="POST">
+<input type=hidden name=mode value="usrdel">
+記事No<input type=text name=no size=3>
+削除キー<input type=password name=pwd size=4 maxlength=8>
+<input type=submit value="記事削除"></td></form>
+</tr></table><br clear=all>
+<center><!-- 下部 --><P><small><!-- ASKA v2.2 -->
+- <a href='http://www.kent-web.com/' target='_top'>Aska BBS</a> -
+</small></center>
+</body>
+</html>
