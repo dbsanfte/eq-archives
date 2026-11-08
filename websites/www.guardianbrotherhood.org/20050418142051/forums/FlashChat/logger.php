@@ -1,0 +1,4 @@
+<html>
+	<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" scroll="no" onLoad="showLogger()">
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" WIDTH="100%" HEIGHT="100%"  id="logger" ALIGN=""><PARAM NAME="FlashVars" VALUE=""><PARAM NAME="movie" VALUE="logger.swf"><PARAM NAME="quality" VALUE="high"><PARAM NAME="menu" VALUE="true"><PARAM NAME="scale" VALUE="noscale"><PARAM NAME="salign" VALUE="LT"><PARAM NAME="BASE" VALUE=""><EMBED src="logger.swf" FlashVars="" menu="false" quality="high" scale="noscale" salign="LT" WIDTH="100%" HEIGHT="100%" NAME="logger" ALIGN="" TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer" BASE=""></EMBED></OBJECT>	</body>
+</html>
