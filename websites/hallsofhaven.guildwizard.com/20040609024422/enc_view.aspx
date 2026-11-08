@@ -1,0 +1,204 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<title>A Listing of Raids that this guild participates in</title>
+		<meta content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<meta content="C#" name="CODE_LANGUAGE">
+		<meta name="keywords" content="everquest online game hosting gaming guild clan management manage dkp tracking points eq">
+		<meta content="JavaScript" name="vs_defaultClientScript">
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		<link id="css" type="text/css" rel="stylesheet" href="/styles/784/custom.css">
+		</link>
+	</HEAD>
+	<body id="bod" topMargin="10">
+		<table width="100%" align="center" style="MARGIN-BOTTOM: 0px" cellSpacing="0">
+			<tr align="center">
+				<td align="center" vAlign="top">
+					
+				</td>
+			</tr>
+		</table>
+		<form name="enc_view" method="post" action="enc_view.aspx" id="enc_view">
+<input type="hidden" name="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" value="dDwtMjAzNzgzOTczNzt0PDtsPGk8MT47aTwzPjs+O2w8dDxwPGw8aHJlZjs+O2w8L3N0eWxlcy83ODQvY3VzdG9tLmNzczs+Pjs7Pjt0PDtsPGk8Mz47PjtsPHQ8O2w8aTwzPjtpPDU+O2k8Nz47PjtsPHQ8cDxwPGw8Q3NzQ2xhc3M7XyFTQjs+O2w8bWFpbl90YWJsZTtpPDI+Oz4+O3A8bDxzdHlsZTs+O2w8dmVydGljYWwtYWxpZ246dG9wXDs7Pj4+O2w8aTwwPjs+O2w8dDw7bDxpPDE+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDxwPGw8Qm9yZGVyV2lkdGg7Qm9yZGVyU3R5bGU7XyFTQjs+O2w8MTwwcHg+O1N5c3RlbS5XZWIuVUkuV2ViQ29udHJvbHMuQm9yZGVyU3R5bGUsIFN5c3RlbS5XZWIsIFZlcnNpb249MS4wLjUwMDAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhPE5vbmU+O2k8OTY+Oz4+Oz47Oz47Pj47Pj47Pj47dDxwPHA8bDxDc3NDbGFzcztfIVNCOz47bDxtYWluX3RhYmxlO2k8Mj47Pj47PjtsPGk8MT47aTw1Pjs+O2w8dDxwPHA8bDxWaXNpYmxlOz47bDxvPGY+Oz4+Oz47Oz47dDxAMDxwPHA8bDxfIUl0ZW1Db3VudDtQYWdlQ291bnQ7XyFEYXRhU291cmNlSXRlbUNvdW50O0RhdGFLZXlzOz47bDxpPDIwPjtpPDI+O2k8MzI+O2w8U3lzdGVtLkRlY2ltYWwsIG1zY29ybGliLCBWZXJzaW9uPTEuMC41MDAwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OTwzNjI5Pjs1MTwyNjgwPjs1MTwyMDQ1Pjs1MTwyMzczPjs1MTwyMDQ4Pjs1MTwyMDMyPjs1MTwzNDgyPjs1MTwxOTkzPjs1MTwyMzA2Pjs1MTwyMTM2Pjs1MTwxOTk0Pjs1MTwyMjk2Pjs1MTwyNjczPjs1MTwyMTY3Pjs1MTwyMTM1Pjs1MTwyNjU5Pjs1MTwyNzUwPjs1MTwyMDAxPjs1MTwyMTc4Pjs1MTwyNDE3Pjs+Oz4+Oz47QDA8QDA8cDxsPFZpc2libGU7PjtsPG88Zj47Pj47Ozs7Pjs7O0AwPHA8bDxWaXNpYmxlOz47bDxvPGY+Oz4+Ozs7Oz47Pjs7Ozs7Ozs7Oz47bDxpPDA+Oz47bDx0PDtsPGk8Mj47aTwzPjtpPDQ+O2k8NT47aTw2PjtpPDc+O2k8OD47aTw5PjtpPDEwPjtpPDExPjtpPDEyPjtpPDEzPjtpPDE0PjtpPDE1PjtpPDE2PjtpPDE3PjtpPDE4PjtpPDE5PjtpPDIwPjtpPDIxPjs+O2w8dDw7bDxpPDA+O2k8MT47aTwyPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxqYXZhc2NyaXB0OnJldHVybiBjb25maXJtKCdBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gZGVsZXRlIHRoaXMgRW5jb3VudGVyPyBJZiB5b3UgZG8sIGl0IGNhbm5vdCBiZSByZXN0b3JlZC4gRGVsZXRlPycpOz4+Pjs7Pjs+Pjt0PHA8cDxsPFRleHQ7PjtsPEFraGV2YSBSdWluczs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDs+O2w8NC4wMDA7Pj47Pjs7Pjs+Pjt0PDtsPGk8MD47aTwxPjtpPDI+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDw7cDxsPG9uY2xpY2s7PjtsPGphdmFzY3JpcHQ6cmV0dXJuIGNvbmZpcm0oJ0FyZSB5b3Ugc3VyZSB5b3Ugd2FudCB0byBkZWxldGUgdGhpcyBFbmNvdW50ZXI/IElmIHlvdSBkbywgaXQgY2Fubm90IGJlIHJlc3RvcmVkLiBEZWxldGU/Jyk7Pj4+Ozs+Oz4+O3Q8cDxwPGw8VGV4dDs+O2w8Q2FuY2VsbGVkIFJhaWQ7Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPDEuMDAwOz4+Oz47Oz47Pj47dDw7bDxpPDA+O2k8MT47aTwyPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxqYXZhc2NyaXB0OnJldHVybiBjb25maXJtKCdBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gZGVsZXRlIHRoaXMgRW5jb3VudGVyPyBJZiB5b3UgZG8sIGl0IGNhbm5vdCBiZSByZXN0b3JlZC4gRGVsZXRlPycpOz4+Pjs7Pjs+Pjt0PHA8cDxsPFRleHQ7PjtsPENoYXJkQjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDs+O2w8NC4wMDA7Pj47Pjs7Pjs+Pjt0PDtsPGk8MD47aTwxPjtpPDI+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDw7cDxsPG9uY2xpY2s7PjtsPGphdmFzY3JpcHQ6cmV0dXJuIGNvbmZpcm0oJ0FyZSB5b3Ugc3VyZSB5b3Ugd2FudCB0byBkZWxldGUgdGhpcyBFbmNvdW50ZXI/IElmIHlvdSBkbywgaXQgY2Fubm90IGJlIHJlc3RvcmVkLiBEZWxldGU/Jyk7Pj4+Ozs+Oz4+O3Q8cDxwPGw8VGV4dDs+O2w8Q29NOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwyLjAwMDs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjtpPDE+O2k8Mj47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPDtwPGw8b25jbGljazs+O2w8amF2YXNjcmlwdDpyZXR1cm4gY29uZmlybSgnQXJlIHlvdSBzdXJlIHlvdSB3YW50IHRvIGRlbGV0ZSB0aGlzIEVuY291bnRlcj8gSWYgeW91IGRvLCBpdCBjYW5ub3QgYmUgcmVzdG9yZWQuIERlbGV0ZT8nKTs+Pj47Oz47Pj47dDxwPHA8bDxUZXh0Oz47bDxDVCBraWxsOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwxLjAwMDs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjtpPDE+O2k8Mj47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPDtwPGw8b25jbGljazs+O2w8amF2YXNjcmlwdDpyZXR1cm4gY29uZmlybSgnQXJlIHlvdSBzdXJlIHlvdSB3YW50IHRvIGRlbGV0ZSB0aGlzIEVuY291bnRlcj8gSWYgeW91IGRvLCBpdCBjYW5ub3QgYmUgcmVzdG9yZWQuIERlbGV0ZT8nKTs+Pj47Oz47Pj47dDxwPHA8bDxUZXh0Oz47bDxEcmFnb25vcG9saXM7Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPDQuMDAwOz4+Oz47Oz47Pj47dDw7bDxpPDA+O2k8MT47aTwyPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxqYXZhc2NyaXB0OnJldHVybiBjb25maXJtKCdBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gZGVsZXRlIHRoaXMgRW5jb3VudGVyPyBJZiB5b3UgZG8sIGl0IGNhbm5vdCBiZSByZXN0b3JlZC4gRGVsZXRlPycpOz4+Pjs7Pjs+Pjt0PHA8cDxsPFRleHQ7PjtsPERyb2dhOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwyLjAwMDs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjtpPDE+O2k8Mj47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPDtwPGw8b25jbGljazs+O2w8amF2YXNjcmlwdDpyZXR1cm4gY29uZmlybSgnQXJlIHlvdSBzdXJlIHlvdSB3YW50IHRvIGRlbGV0ZSB0aGlzIEVuY291bnRlcj8gSWYgeW91IGRvLCBpdCBjYW5ub3QgYmUgcmVzdG9yZWQuIERlbGV0ZT8nKTs+Pj47Oz47Pj47dDxwPHA8bDxUZXh0Oz47bDxGZWFyOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDw0LjAwMDs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjtpPDE+O2k8Mj47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPDtwPGw8b25jbGljazs+O2w8amF2YXNjcmlwdDpyZXR1cm4gY29uZmlybSgnQXJlIHlvdSBzdXJlIHlvdSB3YW50IHRvIGRlbGV0ZSB0aGlzIEVuY291bnRlcj8gSWYgeW91IGRvLCBpdCBjYW5ub3QgYmUgcmVzdG9yZWQuIERlbGV0ZT8nKTs+Pj47Oz47Pj47dDxwPHA8bDxUZXh0Oz47bDxGdW5ndXMgR3JvdmU7Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPDQuMDAwOz4+Oz47Oz47Pj47dDw7bDxpPDA+O2k8MT47aTwyPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxqYXZhc2NyaXB0OnJldHVybiBjb25maXJtKCdBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gZGVsZXRlIHRoaXMgRW5jb3VudGVyPyBJZiB5b3UgZG8sIGl0IGNhbm5vdCBiZSByZXN0b3JlZC4gRGVsZXRlPycpOz4+Pjs7Pjs+Pjt0PHA8cDxsPFRleHQ7PjtsPEd1aWxkbWFnaWM7Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPDEuMDAwOz4+Oz47Oz47Pj47dDw7bDxpPDA+O2k8MT47aTwyPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxqYXZhc2NyaXB0OnJldHVybiBjb25maXJtKCdBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gZGVsZXRlIHRoaXMgRW5jb3VudGVyPyBJZiB5b3UgZG8sIGl0IGNhbm5vdCBiZSByZXN0b3JlZC4gRGVsZXRlPycpOz4+Pjs7Pjs+Pjt0PHA8cDxsPFRleHQ7PjtsPEhhdGU7Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPDQuMDAwOz4+Oz47Oz47Pj47dDw7bDxpPDA+O2k8MT47aTwyPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxqYXZhc2NyaXB0OnJldHVybiBjb25maXJtKCdBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gZGVsZXRlIHRoaXMgRW5jb3VudGVyPyBJZiB5b3UgZG8sIGl0IGNhbm5vdCBiZSByZXN0b3JlZC4gRGVsZXRlPycpOz4+Pjs7Pjs+Pjt0PHA8cDxsPFRleHQ7PjtsPEhvVDs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDs+O2w8NC4wMDA7Pj47Pjs7Pjs+Pjt0PDtsPGk8MD47aTwxPjtpPDI+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDw7cDxsPG9uY2xpY2s7PjtsPGphdmFzY3JpcHQ6cmV0dXJuIGNvbmZpcm0oJ0FyZSB5b3Ugc3VyZSB5b3Ugd2FudCB0byBkZWxldGUgdGhpcyBFbmNvdW50ZXI/IElmIHlvdSBkbywgaXQgY2Fubm90IGJlIHJlc3RvcmVkLiBEZWxldGU/Jyk7Pj4+Ozs+Oz4+O3Q8cDxwPGw8VGV4dDs+O2w8SUMgOHRoIHNoYXdsOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwyLjAwMDs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjtpPDE+O2k8Mj47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPDtwPGw8b25jbGljazs+O2w8amF2YXNjcmlwdDpyZXR1cm4gY29uZmlybSgnQXJlIHlvdSBzdXJlIHlvdSB3YW50IHRvIGRlbGV0ZSB0aGlzIEVuY291bnRlcj8gSWYgeW91IGRvLCBpdCBjYW5ub3QgYmUgcmVzdG9yZWQuIERlbGV0ZT8nKTs+Pj47Oz47Pj47dDxwPHA8bDxUZXh0Oz47bDxLYWVsOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwzLjAwMDs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjtpPDE+O2k8Mj47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPDtwPGw8b25jbGljazs+O2w8amF2YXNjcmlwdDpyZXR1cm4gY29uZmlybSgnQXJlIHlvdSBzdXJlIHlvdSB3YW50IHRvIGRlbGV0ZSB0aGlzIEVuY291bnRlcj8gSWYgeW91IGRvLCBpdCBjYW5ub3QgYmUgcmVzdG9yZWQuIERlbGV0ZT8nKTs+Pj47Oz47Pj47dDxwPHA8bDxUZXh0Oz47bDxNYWdlbG87Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPDEuMDAwOz4+Oz47Oz47Pj47dDw7bDxpPDA+O2k8MT47aTwyPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxqYXZhc2NyaXB0OnJldHVybiBjb25maXJtKCdBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gZGVsZXRlIHRoaXMgRW5jb3VudGVyPyBJZiB5b3UgZG8sIGl0IGNhbm5vdCBiZSByZXN0b3JlZC4gRGVsZXRlPycpOz4+Pjs7Pjs+Pjt0PHA8cDxsPFRleHQ7PjtsPFBvSiBUcmlhbHM7Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPDQuMDAwOz4+Oz47Oz47Pj47dDw7bDxpPDA+O2k8MT47aTwyPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxqYXZhc2NyaXB0OnJldHVybiBjb25maXJtKCdBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gZGVsZXRlIHRoaXMgRW5jb3VudGVyPyBJZiB5b3UgZG8sIGl0IGNhbm5vdCBiZSByZXN0b3JlZC4gRGVsZXRlPycpOz4+Pjs7Pjs+Pjt0PHA8cDxsPFRleHQ7PjtsPFBvTTs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDs+O2w8NC4wMDA7Pj47Pjs7Pjs+Pjt0PDtsPGk8MD47aTwxPjtpPDI+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDw7cDxsPG9uY2xpY2s7PjtsPGphdmFzY3JpcHQ6cmV0dXJuIGNvbmZpcm0oJ0FyZSB5b3Ugc3VyZSB5b3Ugd2FudCB0byBkZWxldGUgdGhpcyBFbmNvdW50ZXI/IElmIHlvdSBkbywgaXQgY2Fubm90IGJlIHJlc3RvcmVkLiBEZWxldGU/Jyk7Pj4+Ozs+Oz4+O3Q8cDxwPGw8VGV4dDs+O2w8UG9OOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwzLjAwMDs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjtpPDE+O2k8Mj47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPDtwPGw8b25jbGljazs+O2w8amF2YXNjcmlwdDpyZXR1cm4gY29uZmlybSgnQXJlIHlvdSBzdXJlIHlvdSB3YW50IHRvIGRlbGV0ZSB0aGlzIEVuY291bnRlcj8gSWYgeW91IGRvLCBpdCBjYW5ub3QgYmUgcmVzdG9yZWQuIERlbGV0ZT8nKTs+Pj47Oz47Pj47dDxwPHA8bDxUZXh0Oz47bDxQb05NYXplOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwzLjAwMDs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjtpPDE+O2k8Mj47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPDtwPGw8b25jbGljazs+O2w8amF2YXNjcmlwdDpyZXR1cm4gY29uZmlybSgnQXJlIHlvdSBzdXJlIHlvdSB3YW50IHRvIGRlbGV0ZSB0aGlzIEVuY291bnRlcj8gSWYgeW91IGRvLCBpdCBjYW5ub3QgYmUgcmVzdG9yZWQuIERlbGV0ZT8nKTs+Pj47Oz47Pj47dDxwPHA8bDxUZXh0Oz47bDxQb1M7Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPDMuMDAwOz4+Oz47Oz47Pj47Pj47Pj47Pj47dDxwPHA8bDxDc3NDbGFzcztfIVNCOz47bDxtYWluX3RhYmxlO2k8Mj47Pj47PjtsPGk8MD47PjtsPHQ8O2w8aTwwPjs+O2w8dDw7bDxpPDA+Oz47bDx0PEAwPHA8cDxsPFBhZ2VDb3VudDtfIUl0ZW1Db3VudDtfIURhdGFTb3VyY2VJdGVtQ291bnQ7PjtsPGk8Mj47aTwxMD47aTwxND47Pj47Pjs7Ozs7Ozs7O0AwPEAwPHA8bDxIZWFkZXJUZXh0O0RhdGFGaWVsZDtTb3J0RXhwcmVzc2lvbjtSZWFkT25seTs+O2w8UXVpY2sgTGlua3MhO1F1aWNrIExpbmtzITtRdWljayBMaW5rcyE7bzxmPjs+Pjs7Ozs+Oz47PjtsPGk8MD47PjtsPHQ8O2w8aTwyPjtpPDM+O2k8ND47aTw1PjtpPDY+O2k8Nz47aTw4PjtpPDk+O2k8MTA+O2k8MTE+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8XDxhIGhyZWY9aHR0cDovL2hhbGxzb2ZoYXZlbi5ndWlsZHdpemFyZC5jb20vY3VzdG9tLmFzcHg/cGlkPTMyMyB0YXJnZXQ9X2JsYW5rXD5UaXBzIGFuZCBIaW50c1w8L2FcPjs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxcPGEgaHJlZj1odHRwOi8vaGFsbHNvZmhhdmVuLmd1aWxkd2l6YXJkLmNvbS9jdXN0b20uYXNweD9waWQ9MzIyIHRhcmdldD1fYmxhbmtcPkxpbmtzIHRvIGV2ZXJ5dGhpbmdcPC9hXD47Pj47Pjs7Pjs+Pjt0PDtsPGk8MD47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8XDxhIGhyZWY9aHR0cDovL3d3dy5rcmFrLm5ldC9+YmFjb24vbnl0cm91cy9pbmRleC5odG1sIHRhcmdldD1fYmxhbmtcPkxEb04gTWFwc1w8L2FcPjs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxcPGEgaHJlZj1odHRwOi8vZXFsaXZlLnN0YXRpb24uc29ueS5jb20vc3VwcG9ydC9zY2hlZHVsZWRfZG93bnRpbWUuanNwIHRhcmdldD1fYmxhbmtcPlBhdGNoIFNjaGVkdWxlXDwvYVw+Oz4+Oz47Oz47Pj47dDw7bDxpPDA+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFw8YSBocmVmPWh0dHA6Ly9oYWxsc29maGF2ZW4uZ3VpbGR3aXphcmQuY29tL2N1c3RvbS5hc3B4P3BpZD0zMjEgdGFyZ2V0PV9ibGFua1w+T2ZmaWNlcyBhbmQgT2ZmaWNlcnNcPC9hXD47Pj47Pjs7Pjs+Pjt0PDtsPGk8MD47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8XDxhIGhyZWY9aHR0cDovL2hhbGxzb2ZoYXZlbi5ndWlsZHdpemFyZC5jb20vY3VzdG9tLmFzcHg/cGlkPTMyOCB0YXJnZXQ9X2JsYW5rXD5Mb290aW5nIFJ1bGUgYW5kIFBvaW50IEd1aWRlXDwvYVw+Oz4+Oz47Oz47Pj47dDw7bDxpPDA+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFw8YSBocmVmPWh0dHA6Ly9oYWxsc29maGF2ZW4uZ3VpbGR3aXphcmQuY29tL2N1c3RvbS5hc3B4P3BpZD0zMzAgdGFyZ2V0PV9ibGFua1w+UG9QIEZsYWdzXDwvYVw+Oz4+Oz47Oz47Pj47dDw7bDxpPDA+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFw8YSBocmVmPWh0dHA6Ly9lcWxpdmUuc3RhdGlvbi5zb255LmNvbS9zdXBwb3J0L3NlcnZlcl9zdGF0dXMuanNwIHRhcmdldD1fYmxhbmtcPlNlcnZlciBTdGF0dXNcPC9hXD47Pj47Pjs7Pjs+Pjt0PDtsPGk8MD47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8XDxhIGhyZWY9aHR0cDovL3d3dy5jYWxzbmV0LmNvbS9tdGJvYXJkcyB0YXJnZXQ9X2JsYW5rXD5NVCBDYWxlbmRhclw8L2FcPjs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxcPGEgaHJlZj1odHRwOi8vbHVjeS5mbm9yZC5uZXQvaW5kZXguaHRtbD9zZXRjb29raWU9MSB0YXJnZXQ9X2JsYW5rXD5MdWN5XDwvYVw+Oz4+Oz47Oz47Pj47Pj47Pj47Pj47Pj47Pj47Pj47Pj47Pj47PrETMDSGwiORZ/eok3OAH1F1IJbV" />
+
+<script language="javascript">
+<!--
+	function __doPostBack(eventTarget, eventArgument) {
+		var theform;
+		if (window.navigator.appName.toLowerCase().indexOf("netscape") > -1) {
+			theform = document.forms["enc_view"];
+		}
+		else {
+			theform = document.enc_view;
+		}
+		theform.__EVENTTARGET.value = eventTarget.split("$").join(":");
+		theform.__EVENTARGUMENT.value = eventArgument;
+		theform.submit();
+	}
+// -->
+</script>
+<script language=javascript>function navchange(tst,txt){event.srcElement.style.backgroundColor=tst;event.srcElement.style.color=txt;}function navout(tsta,txtold){event.srcElement.style.backgroundColor=tsta;event.srcElement.style.color=txtold;}</script>
+
+
+			<div align="center">
+				<TABLE class="main_table" height="100%" width="100%" border="0" style="HEIGHT:100%" cellpadding="0"
+					cellspacing="0">
+					<tr>
+						<td colspan="3" align="center">
+							<table id="Panel1" cellpadding="0" cellspacing="0" border="0" height="100%" width="100%"><tr><td>
+	
+								<img id="9s9" src="/images/784/hohlogoflame2.gif" border="0" />
+							
+</td></tr></table>
+						</td>
+					</tr>
+					<tr>
+						<td vAlign="top">
+							<table id="pnlNav" class="main_table" cellpadding="0" cellspacing="0" border="0" height="100%" width="120" style="vertical-align:top;"><tr><td>
+	<table cellpadding="0" cellspacing="0" width="100%" border="0"><tr><td>
+		<table align="Center" cellpadding="0" cellspacing="0" border="0" width="150"><tr><td align="Center">
+			<span class="grid_header"><P><b>Unique Visits:</b><BR>7465</P></span>
+		</td></tr></table><table cellpadding="0" cellspacing="0" width="100%" border="0"><tr><td>
+			<table id="ksiiw" align="Center" cellpadding="0" cellspacing="0" width="100%" border="0"><tr><td align="Center">
+				<a id="nonadmine90b9928-e280-420b-8cbf-2a8b25855506" class="buttons" href="/index.aspx" style="display:block;">Home Page</a><a id="nonadmin06e5e6bc-2c34-4f07-bebe-d6af6242e6d4" class="buttons" href="/player_list.aspx" style="display:block;">Player Roster</a><a id="nonadmin35b87053-8ef0-430b-a323-8e66447caa42" class="buttons" href="/raid_view.aspx" style="display:block;">Recent Raids</a><a id="nonadmin7c5613fc-3656-4afd-ac02-39d626b0a7d5" class="buttons" href="/purchase_view.aspx" style="display:block;">Recent Loot</a><a id="nonadminef45f1a7-360a-4e57-b7f6-b0686a789bc1" class="buttons" href="/item_view.aspx" style="display:block;">View Item List</a><a id="nonadmindfa2c831-fec9-4313-b7ef-ce94b5a3e5df" class="buttons" href="/enc_view.aspx" style="display:block;">View Encounters</a><a id="nonadminbec27853-1edf-486d-b4e3-c78d4e563256" class="buttons" href="/login.aspx" style="display:block;">Login</a><a id="nonadmin3ada8164-f525-47de-b028-38fc58768665" class="buttons" href="/calendar.aspx" style="display:block;">Calendar</a><a id="nonadmin49a44f79-2b26-4da6-a0ed-29ed6e77f07a" class="buttons" href="/gallery.aspx" style="display:block;">Image Gallery</a><a id="nonadmind464474a-d541-4440-8a22-0c00db942151" class="buttons" href="http://forums.guildwizard.com/?c=193" style="display:block;">Message Board</a><a id="nonadmin83e72bc7-b2fc-41d2-9f42-d351951150b6" class="buttons" href="http://spinpcycle.serverpro2.com/index.html" style="display:block;">Official Site</a><a id="nonadmin315d89b0-25d1-432d-96c2-b957d7ca182b" class="buttons" href="http://pub84.ezboard.com/bhallsofhaven" style="display:block;">Old Message Board</a><a id="nonadmin148799be-5880-464c-8660-8365095fa6e3" class="buttons" href="http://forums.guildwizard.com/?f=1014" style="display:block;">Applicants</a>
+			</td></tr></table><span> </span>
+		</td></tr></table>
+	</td></tr></table>
+</td></tr></table>
+						</td>
+						<td vAlign="top" width="100%" height="100%" style="HEIGHT: 100%">
+							<table id="pnlMain" class="main_table" align="Center" cellpadding="0" cellspacing="0" border="0" height="100%" width="100%"><tr><td align="Center">
+	
+								<P align="right">
+									</P>
+								<P align="right">
+									<span id="lblErr"><font face="Verdana" size="1"></font></span></P>
+								<P>
+									<table class="grid_col1" cellspacing="0" rules="rows" border="2" id="dg" width="100%">
+		<tr class="grid_header" align="Center">
+			<td><b>Encounter Name</b></td><td><b>Encounter Value</b></td>
+		</tr><tr align="Center">
+			<td>Akheva Ruins</td><td>4.000</td>
+		</tr><tr class="grid_col2" align="Center">
+			<td>Cancelled Raid</td><td>1.000</td>
+		</tr><tr align="Center">
+			<td>ChardB</td><td>4.000</td>
+		</tr><tr class="grid_col2" align="Center">
+			<td>CoM</td><td>2.000</td>
+		</tr><tr align="Center">
+			<td>CT kill</td><td>1.000</td>
+		</tr><tr class="grid_col2" align="Center">
+			<td>Dragonopolis</td><td>4.000</td>
+		</tr><tr align="Center">
+			<td>Droga</td><td>2.000</td>
+		</tr><tr class="grid_col2" align="Center">
+			<td>Fear</td><td>4.000</td>
+		</tr><tr align="Center">
+			<td>Fungus Grove</td><td>4.000</td>
+		</tr><tr class="grid_col2" align="Center">
+			<td>Guildmagic</td><td>1.000</td>
+		</tr><tr align="Center">
+			<td>Hate</td><td>4.000</td>
+		</tr><tr class="grid_col2" align="Center">
+			<td>HoT</td><td>4.000</td>
+		</tr><tr align="Center">
+			<td>IC 8th shawl</td><td>2.000</td>
+		</tr><tr class="grid_col2" align="Center">
+			<td>Kael</td><td>3.000</td>
+		</tr><tr align="Center">
+			<td>Magelo</td><td>1.000</td>
+		</tr><tr class="grid_col2" align="Center">
+			<td>PoJ Trials</td><td>4.000</td>
+		</tr><tr align="Center">
+			<td>PoM</td><td>4.000</td>
+		</tr><tr class="grid_col2" align="Center">
+			<td>PoN</td><td>3.000</td>
+		</tr><tr align="Center">
+			<td>PoNMaze</td><td>3.000</td>
+		</tr><tr class="grid_col2" align="Center">
+			<td>PoS</td><td>3.000</td>
+		</tr><tr>
+			<td colspan="4"><span>1</span>&nbsp;<a href="javascript:__doPostBack('dg$_ctl24$_ctl1','')">2</a></td>
+		</tr>
+	</table></P>
+								<P>
+									<span id="Label1"><font color="Red" size="1"></font></span></P>
+								<P>&nbsp;</P>
+							
+</td></tr></table>
+						</td>
+						<td vAlign="top"><table id="pnlRightTop" class="main_table" cellpadding="0" cellspacing="0" border="0" height="100%" width="144"><tr><td>
+	<table cellpadding="0" cellspacing="0" width="100%" border="0"><tr><td>
+		<table cellpadding="0" cellspacing="0" width="100%" border="0"><tr><td>
+			<table cellspacing="0" rules="all" border="1" id="dynlnx" width="150">
+				<tr align="Center">
+					<td><font face="Veranda" size="2"><b>Quick Links!</b></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href=http://hallsofhaven.guildwizard.com/custom.aspx?pid=323 target=_blank>Tips and Hints</a></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href=http://hallsofhaven.guildwizard.com/custom.aspx?pid=322 target=_blank>Links to everything</a></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href=http://www.krak.net/~bacon/nytrous/index.html target=_blank>LDoN Maps</a></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href=http://eqlive.station.sony.com/support/scheduled_downtime.jsp target=_blank>Patch Schedule</a></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href=http://hallsofhaven.guildwizard.com/custom.aspx?pid=321 target=_blank>Offices and Officers</a></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href=http://hallsofhaven.guildwizard.com/custom.aspx?pid=328 target=_blank>Looting Rule and Point Guide</a></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href=http://hallsofhaven.guildwizard.com/custom.aspx?pid=330 target=_blank>PoP Flags</a></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href=http://eqlive.station.sony.com/support/server_status.jsp target=_blank>Server Status</a></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href=http://www.calsnet.com/mtboards target=_blank>MT Calendar</a></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href=http://lucy.fnord.net/index.html?setcookie=1 target=_blank>Lucy</a></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1">&nbsp;</font></td>
+				</tr><tr align="Center">
+					<td colspan="1"><font face="Veranda" size="1"><span>&lt;</span>&nbsp;<a href="javascript:__doPostBack('dynlnx$_ctl14$_ctl1','')">&gt;</a></font></td>
+				</tr>
+			</table><span> </span>
+		</td></tr></table><table cellpadding="0" cellspacing="0" width="100%" border="0"><tr><td>
+			<span class="grid_header"><b><font face="Veranda" size="4">Top 10 Raiders</font></b></span><table cellspacing="0" rules="all" border="1" id="TopTen" width="150">
+				<tr align="Center">
+					<td><font face="Veranda" size="3"><b>Name</b></font></td><td><font face="Veranda" size="3"><b>Raids</b></font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href="/player.aspx?pid=17580">Aquaella</a></font></td><td><font face="Veranda" size="1">41</font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href="/player.aspx?pid=17645">Truelight</a></font></td><td><font face="Veranda" size="1">32</font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href="/player.aspx?pid=17631">Whorl</a></font></td><td><font face="Veranda" size="1">29</font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href="/player.aspx?pid=17581">Arcs</a></font></td><td><font face="Veranda" size="1">26</font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href="/player.aspx?pid=17578">Akashau</a></font></td><td><font face="Veranda" size="1">25</font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href="/player.aspx?pid=17596">Deveau</a></font></td><td><font face="Veranda" size="1">21</font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href="/player.aspx?pid=17599">Dysep</a></font></td><td><font face="Veranda" size="1">20</font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href="/player.aspx?pid=17589">Curzon</a></font></td><td><font face="Veranda" size="1">20</font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href="/player.aspx?pid=17606">Junaper</a></font></td><td><font face="Veranda" size="1">20</font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1"><a href="/player.aspx?pid=17617">Sarsippius</a></font></td><td><font face="Veranda" size="1">20</font></td>
+				</tr><tr align="Center">
+					<td><font face="Veranda" size="1">&nbsp;</font></td><td><font face="Veranda" size="1">&nbsp;</font></td>
+				</tr>
+			</table><span> </span>
+		</td></tr></table>
+	</td></tr></table>
+</td></tr></table>
+						</td>
+						<td width="1"></td>
+					</tr>
+				</TABLE>
+			</div>
+			<DIV align="center"></DIV>
+		</form>
+	</body>
+</HTML>
