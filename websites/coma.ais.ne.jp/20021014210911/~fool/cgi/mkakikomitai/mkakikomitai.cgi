@@ -1,0 +1,1341 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=x-sjis">
+<title>+-- もっと書き込み隊 --+</title>
+<style type="text/css">
+<!--
+a:link    {font-size: 10pt; text-decoration:none; color:#cc6600 }
+a:visited {font-size: 10pt; text-decoration:none; color:#666666 }
+a:active  {font-size: 10pt; text-decoration:none; color:#ff3300 }
+a:hover   {font-size: 10pt; text-decoration:underline; color:#ff0000; }
+body,tr,td { font-size: 10pt;}
+-->
+</style>
+</head>
+<body bgcolor="#ffffff" text=#000000 link=#cc6600 vlink=#666666 alink=#ff3300>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><form><td width=5%><INPUT TYPE=button VALUE="HOME" onClick="parent.location.href = 'http://coma.ais.ne.jp/~fool'" ></td></form>
+<form>
+<td width=5>&nbsp;</td><td width=10%><INPUT TYPE=button VALUE="昇進資格説明" onClick="parent.location.href = './mkakikomitai.cgi?action=info'" ></td></form>
+<form>
+<td width=5>&nbsp;</td><td width=10%><INPUT TYPE=button VALUE="昇進状態" onClick="parent.location.href = './mkakikomitai.cgi?action=rankdisp'" ></td></form>
+<form>
+<td width=5>&nbsp;</td><td width=10%><INPUT TYPE=button VALUE="RES-Mode OFF→ON" onClick="parent.location.href = './mkakikomitai.cgi?kflg=1'" ></td></form>
+<td width=10 nowrap>&nbsp;</td><td align="right"><img src=num6_0.gif width=25 height=30><img src=num6_0.gif width=25 height=30><img src=num6_2.gif width=25 height=30><img src=num6_5.gif width=25 height=30><img src=num6_1.gif width=25 height=30></td></tr></table>
+<center><br>
+<font size="5"><b>（　´_ゝ`）<font size="4" color="#0000ff">ヶッ　ヵィィ</font></b></font><br>
+</center>
+<center>
+<form action=./mkakikomitai.cgi name=inputform method=POST>
+<input type=hidden name="action" value="regist">
+<input type=hidden name="disppage" value=>
+<input type=hidden name="kflg" value="">
+<table border=0 cellspacing=0 cellpadding=0>
+<tr><td  align=left>
+Name</td>
+<td ><input type=text name="name" size=36 value="" ></td></tr>
+<tr><td  align=left>
+Email</td>
+<td ><input type=text name="email" size=36 value="" ></td></tr>
+<tr><td  align=left>
+Homepage&nbsp;&nbsp;</td>
+<td ><input type=text name="hp" size=36 value="http://" >
+&nbsp;&nbsp;&nbsp;<input type=submit value=Submit >&nbsp;&nbsp;
+&nbsp;<input type=reset value=Clear >
+</td>
+</tr>
+<tr><td  align=left>
+Message</td>
+<td  align=left><textarea name="comment" cols="52" rows="4" wrap=soft ></textarea></td></tr>
+<tr><td >Backcolor</td>
+<td >
+<input type=radio name=color value="0" checked>
+<font color=#666666>■</font>
+<input type=radio name=color value="1" >
+<font color=#003399>■</font>
+<input type=radio name=color value="2" >
+<font color=#990000>■</font>
+<input type=radio name=color value="3" >
+<font color=#669900>■</font>
+<input type=radio name=color value="4" >
+<font color=#cc3399>■</font>
+<input type=radio name=color value="5" >
+<font color=#ff6633>■</font>
+<input type=radio name=color value="6" >
+<font color=#cccc00>■</font>
+</td></tr>
+<tr><td >Forecolor</td>
+<td >
+<input type=radio name=color_f value="0" checked>
+<font color=#666666>■</font>
+<input type=radio name=color_f value="1" >
+<font color=#003399>■</font>
+<input type=radio name=color_f value="2" >
+<font color=#990000>■</font>
+<input type=radio name=color_f value="3" >
+<font color=#669900>■</font>
+<input type=radio name=color_f value="4" >
+<font color=#cc3399>■</font>
+<input type=radio name=color_f value="5" >
+<font color=#ff6633>■</font>
+<input type=radio name=color_f value="6" >
+<font color=#cccc00>■</font>
+<input type=radio name=color_f value="7" >
+<font color=#000000>■</font>
+</td></tr>
+<tr>
+<td align=left >
+Icon</td>
+<td nowrap ><select name="icon" >
+<option value=0 selected>ボール
+<option value=1 >コーギー
+<option value=2 >うし
+<option value=3 >電池
+<option value=4 >ドラ焼き
+<option value=5 >あひる
+<option value=6 >バンビ
+<option value=7 >くま
+<option value=8 >かえる
+<option value=9 >モモ
+<option value=10 >さる１号
+<option value=11 >カレー
+</select>
+&nbsp;&nbsp;<a href="./mkakikomitai.cgi?action=icondisp">ICON list</a>
+&nbsp;&nbsp;&nbsp;&nbsp;Password&nbsp;&nbsp;
+<input type=password name="pass" size=8 value="" >&nbsp;&nbsp;修正・削除に使用</td>
+</tr></table></form></center>
+<center><hr width=70% size=1 noshade color=#000000>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="60"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#990000"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000">
+<font color="#000000">++ Syu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…21回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">ut2k3d yattemita<br>yattadake<br><br>yotta</font></div>
+<div align=right><font color="#ff6633" size=-1>.. 9/18(Wed) 19:52[60]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…26回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">慣れるまでやる！</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 9/19(Thu) 06:35[61]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…22回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">怖くなったので謝って帰ってきた。<br><br>JunkiがOrokaを見たらしい</font><br>
+<div align=right><font color="#990000" size=-1>.. 9/20(Fri) 03:08[62]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…27回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">俺は見てない。<br>てか名前違うのかな。<br>RtCWでも見たことないんだけど。<br>Orokaが宜しく言ってたと伝えてください。<br>伝えなくてもいいですけど。</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 9/20(Fri) 05:21[63]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…23回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">Name tigau ne ， Sankaku datta kana<br>Rtcw ha ，，， seihin kattanokana??<br>nde， </font><br>
+<div align=right><font color="#990000" size=-1>.. 9/20(Fri) 08:41[64]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…28回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">demoなのか・</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 9/20(Fri) 14:05[65]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#990000"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="47"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#990000"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000">
+<font color="#000000">++ Syu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…15回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">Genki?</font></div>
+<div align=right><font color="#ff6633" size=-1>.. 9/ 6(Fri) 07:52[47]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…19回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">まぁ、なんとか</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 9/ 6(Fri) 10:56[48]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…20回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">なんかボヤキが始まってますね。</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 9/ 8(Sun) 13:26[49]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…16回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">boyakarete masu ha--i<br></font><br>
+<div align=right><font color="#ff6633" size=-1>.. 9/10(Tue) 11:43[50]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…21回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">実はあっしもぼやきだしてみたり<br>何処かは秘密</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 9/10(Tue) 15:04[51]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…17回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">ひみついやん</font><br>
+<div align=right><font color="#ff6633" size=-1>.. 9/11(Wed) 12:34[52]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…22回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">がんばって探してください（　´_ゝ`）<br><br>見つからなかったら教える<br>かもしれない</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 9/12(Thu) 07:45[53]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…18回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">sagaseba mitukaru?<br>chobits hinto kudasaiyo aniki-</font><br>
+<div align=right><font color="#ff6633" size=-1>.. 9/13(Fri) 20:48[54]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…23回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">ヒントは<br>俺が今やってるゲーム関係<br>だべや<br><br>み、みつかるっ</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 9/14(Sat) 05:42[55]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…19回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">そっちのほうのHPなんて知るわけも無くて<br>探すあてなんて◎で皆無</font><br>
+<div align=right><font color="#ff6633" size=-1>.. 9/14(Sat) 22:00[56]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…24回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">gameのタイトルで検索かけて<br>そこから地道に・・・<br><br>ヒントはTER</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 9/15(Sun) 11:21[57]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…20回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">訳一日<br><br>約？</font><br>
+<div align=right><font color="#990000" size=-1>.. 9/16(Mon) 05:16[58]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#990000">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#990000" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校高学年)…25回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">直しました・・</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 9/16(Mon) 07:34[59]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#990000"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="44"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#ff6633"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633">
+<font color="#000000">++ Syu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…13回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">ついつい バスクリんの昔のCM。<br>あひるちゃぁ～～ん<br>を、思い出した。<br>バスクリんだっけ？</font></div>
+<div align=right><font color="#990000" size=-1>.. 8/ 1(Thu) 04:53[44]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#ff6633">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#ff6633" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…18回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">ついついタリスマンとタフマンを読み違えたり。<br><br>なんでもない<br><br>そんなＣＭもあったなぁ。<br>バスクリンだっけ？</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 8/ 1(Thu) 19:19[45]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#ff6633">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#ff6633" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…14回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">タフマンかぁ<br>私はオロナミンＣでいいや。<br>無ければリアルゴールドで、<br>現実黄金</font><br>
+<div align=right><font color="#990000" size=-1>.. 8/ 2(Fri) 06:00[46]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#ff6633"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="37"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#003399"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#003399" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#003399">
+<font color="#000000">++ Misoppu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…14回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#003399">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./denchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#666666">あー豚カツ喰いてぇ</font></div>
+<div align=right><font color="#666666" size=-1>.. 7/22(Mon) 01:18[37]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#003399">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#003399" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…10回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">えびふりゃー<br>かにころすけ<br></font><br>
+<div align=right><font color="#990000" size=-1>.. 7/23(Tue) 14:22[38]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#003399">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#003399" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…15回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./denchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#666666">最近どうもカニアレルギーなんですよ<br>カニコロくらいなら喰えそうだけど<br>カニの身は食べるのに抵抗あり<br><br>豚カツ喰いてぇ</font><br>
+<div align=right><font color="#666666" size=-1>.. 7/23(Tue) 22:52[39]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#003399">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#003399" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…11回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">兄弟そろってですか<br>うまひのに。<br>でも私猫だめ</font><br>
+<div align=right><font color="#990000" size=-1>.. 7/24(Wed) 14:41[40]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#003399">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#003399" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…16回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#666666">母上も駄目です。<br>昔は美味い美味い言って喰ってたんだけどなぁ。<br>まぁ、そういう体質になっちまったからしょうがない。<br><br>貴様猫喰うのか！<br><br>？</font><br>
+<div align=right><font color="#666666" size=-1>.. 7/24(Wed) 17:30[41]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#003399">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#003399" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…12回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">猫カツ？<br></font><br>
+<div align=right><font color="#990000" size=-1>.. 7/28(Sun) 08:31[42]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#003399">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#003399" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…17回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#666666">キャー！</font><br>
+<div align=right><font color="#666666" size=-1>.. 7/30(Tue) 02:55[43]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#003399"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#003399" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="35"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#ff6633"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633">
+<font color="#000000">++ Syu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…9回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">ketukurai kakeyo</font></div>
+<div align=right><font color="#990000" size=-1>.. 7/21(Sun) 08:51[35]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#ff6633">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#ff6633" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…13回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./curry.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">ぶり返しがきつい</font><br>
+<div align=right><font color="#ff6633" size=-1>.. 7/21(Sun) 17:12[36]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#ff6633"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="34"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#990000"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000">
+<font color="#000000">++ Misoppu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…12回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./curry.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">QQQ 3903</font></div>
+<div align=right><font color="#ff6633" size=-1>.. 7/19(Fri) 21:26[34]</font></td></tr></table></div><hr size=1 noshade color=#ffffff></td>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#990000"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="32"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#669900"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#669900" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#669900">
+<font color="#000000">++ Misoppu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…11回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#669900">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./frog.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#003399">コロンビアヘンタイＧＫイギータ<br><a href="http://isweb35.infoseek.co.jp/sports/copper0/mpeg/scorpion.mpg">こちら</a></font></div>
+<div align=right><font color="#003399" size=-1>.. 7/15(Mon) 23:36[32]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#669900">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#669900" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…8回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">hentai nanoka-<br>hentai da-</font><br>
+<div align=right><font color="#990000" size=-1>.. 7/16(Tue) 19:01[33]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#669900"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#669900" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="25"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#ff6633"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633">
+<font color="#000000">++ Syu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…5回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./ball.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">久しぶりに聞いた。<br>元素記号は Oh ィエェ～イチ～</font></div>
+<div align=right><font color="#990000" size=-1>.. 7/12(Fri) 13:40[25]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#ff6633">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#ff6633" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…7回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./bear.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">微妙に違う気がしないこともないが<br><br>O yeahhhh<br><br>ぉぅぃぇ<br><br>It's a 懐メロ</font><br>
+<div align=right><font color="#ff6633" size=-1>.. 7/12(Fri) 18:47[26]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#ff6633">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#ff6633" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…6回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./ball.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">だね、音量上げて聞いたら違っていたよ。<br><br>言い訳！！<br><br>夜中に音量上げて聞けるもんじゃないんです！！</font><br>
+<div align=right><font color="#990000" size=-1>.. 7/13(Sat) 05:40[27]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#ff6633">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#ff6633" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…9回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./qoo.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">通勤中に聴きましょう。<br>イヤフォンならよく聞けます。<br>でも笑い声は出すと危ないよ　:b<br>うひょひょひょひょひょ<br><br>仕事がんばれ</font><br>
+<div align=right><font color="#ff6633" size=-1>.. 7/13(Sat) 18:27[30]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#ff6633">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#ff6633" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校中学年)…10回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./qoo.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">IconモモにしたらQooが出てきたよ<br>吃驚した<br><br>まぁいいか</font><br>
+<div align=right><font color="#ff6633" size=-1>.. 7/13(Sat) 18:28[31]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#ff6633"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="18"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#666666"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666">
+<font color="#000000">++ Misoppu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…3回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./curry.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">kahn <a href="http://www.geocities.co.jp/Hollywood-Screen/2230/kahn/kahn.html">こちら</a></font></div>
+<div align=right><font color="#cc3399" size=-1>.. 6/30(Sun) 23:41[18]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#666666">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#666666" colspan=2>
+<font color="#000000">++ m</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…2回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./duck.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#666666"><a href="http://mypage.naver.co.jp/kahn/image/kahn-t.jpg">こちら</a></font><br>
+<div align=right><font color="#666666" size=-1>.. 7/ 1(Mon) 14:18[19]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#666666">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#666666" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…3回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./ball.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">壁紙にしてみました。<br>かーんかーんかーーーーん！！<br>BaNaNa!!BaNaNa!!</font><br>
+<div align=right><font color="#990000" size=-1>.. 7/10(Wed) 18:11[21]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#666666">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#666666" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…5回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./curry.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">Oh! You love Kahn too!?<br>He has a lot of German Power!!<br>That's great!!<br><br>韓国は嫌いです。</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 7/12(Fri) 01:31[22]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#666666">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#666666" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…6回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./saru.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">カーンの応援歌ほしけりゃどうぞ<br><a href="http://www.coma.ais.ne.jp/~fool/olli/">こちら</a><br><br>足首太もも男の世界！<br>ぉぅぃぇ</font><br>
+<div align=right><font color="#ff6633" size=-1>.. 7/12(Fri) 04:00[23]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#666666">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#666666" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…4回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./ball.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">Hage C</font><br>
+<div align=right><font color="#990000" size=-1>.. 7/12(Fri) 13:23[24]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#666666">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#666666" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…7回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./ball.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">CD-Rに焼いて通勤中聴いてました。<br>そしたらメディアが傷付き捲ってて（RW）<br>ファイルシステム逝かれてたんですよ。<br><br>書き込みミスってやつですね。<br>同じ名前のフォルダがいっぱいできていて<br>リピートかけていないのに<br>おり～～～～か～～～ん♪<br>おり～～～～か～～～ん♪<br>おり～～～～か～～～ん♪<br><br>でした :-j</font><br>
+<div align=right><font color="#990000" size=-1>.. 7/13(Sat) 05:44[28]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#666666">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#666666" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…8回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./bear.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">GJ :b</font><br>
+<div align=right><font color="#ff6633" size=-1>.. 7/13(Sat) 18:20[29]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#666666"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="20"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#990000"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000">
+<font color="#000000">++ Misoppu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…4回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./curry.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">6QPJ3WZ9</font></div>
+<div align=right><font color="#ff6633" size=-1>.. 7/ 9(Tue) 03:14[20]</font></td></tr></table></div><hr size=1 noshade color=#ffffff></td>
+<td width=8 bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#990000"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#990000"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#990000" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="17"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#666666"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666">
+<font color="#000000">++ Misoppu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…2回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./curry.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">ASDL <a href="http://www.geocities.co.jp/SiliconValley-SanJose/7682/editmtu/index.html">こちら</a></font></div>
+<div align=right><font color="#cc3399" size=-1>.. 6/26(Wed) 11:55[17]</font></td></tr></table></div><hr size=1 noshade color=#ffffff></td>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#666666"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="14"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#ff6633"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633">
+<font color="#000000">++ Syu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…1回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./ball.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">nandesuka kokoha<br>haa haa sichauZO!!</font></div>
+<div align=right><font color="#ff6633" size=-1>.. 6/20(Thu) 17:10[14]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#ff6633">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#ff6633" colspan=2>
+<font color="#000000">++ Misoppu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…1回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./curry.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399">マジカ・・・<br><br>ここメモ帳<br>俺しか使ってないのにっ！<br>キーッ！</font><br>
+<div align=right><font color="#cc3399" size=-1>.. 6/21(Fri) 01:02[15]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#ff6633">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#ff6633" colspan=2>
+<font color="#000000">++ Syu</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…2回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./ball.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">メモ帳かぁ～<br>ナルホドネ！</font><br>
+<div align=right><font color="#990000" size=-1>.. 6/22(Sat) 16:09[16]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#ff6633"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="13"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#666666"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666">
+<font color="#000000">++ m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…1回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./cow.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#666666"><a href="http://www.vector.co.jp/soft/win95/writing/se083554.html">こちら</a></font></div>
+<div align=right><font color="#666666" size=-1>.. 6/17(Mon) 14:08[13]</font></td></tr></table></div><hr size=1 noshade color=#ffffff></td>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#666666"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="12"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#cccc00"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#cccc00"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#cccc00" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#cccc00"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#cccc00">
+<font color="#000000">++ ミソップ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…1回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#cccc00"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#cccc00"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#cccc00">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./bear.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#669900">\37000 WinFast A250 TD (AGP 128MB)<br>\12000 GA-7VTXE <br>\15000 Athlon XP 1800+ SocketA BOX<br>\11000 WesternDigital WD400BB(40GB)<br>\6500  PC2100 256MB<br><br>                                    \81500</font></div>
+<div align=right><font color="#669900" size=-1>.. 5/20(Mon) 14:22[12]</font></td></tr></table></div><hr size=1 noshade color=#ffffff></td>
+<td width=8 bgcolor="#cccc00"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#cccc00"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#cccc00"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#cccc00" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="9"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#003399"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#003399" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#003399">
+<font color="#000000">++ 味噌っぷ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…4回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#003399">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./denchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#669900"><a href="http://www.hrhm.jp/">こちら</a></font></div>
+<div align=right><font color="#669900" size=-1>.. 5/13(Mon) 23:55[9]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#003399">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#003399" colspan=2>
+<font color="#000000">++ 味噌っぷ</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…6回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./cow.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#669900"><a href="http://www.virginmegastore.co.jp/">こちら</a><br><br>う゛ぁああ</font><br>
+<div align=right><font color="#669900" size=-1>.. 5/16(Thu) 02:10[11]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#003399"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#003399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#003399" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="10"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#cc3399"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#cc3399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#cc3399" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#cc3399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#cc3399">
+<font color="#000000">++ 味噌っぷ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(小学校低学年)…5回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#cc3399"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#cc3399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#cc3399">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./dorayaki.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">ヒデブぅ<br><br>9603-0122-B100</font></div>
+<div align=right><font color="#ff6633" size=-1>.. 5/14(Tue) 22:01[10]</font></td></tr></table></div><hr size=1 noshade color=#ffffff></td>
+<td width=8 bgcolor="#cc3399"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#cc3399"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#cc3399"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#cc3399" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="6"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#666666"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666">
+<font color="#000000">++ a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…2回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./ball.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#666666">払払</font></div>
+<div align=right><font color="#666666" size=-1>.. 5/10(Fri) 14:49[6]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#666666">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#666666" colspan=2>
+<font color="#000000">++ a</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…3回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./ball.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#666666">盈洌ﾝ</font><br>
+<div align=right><font color="#666666" size=-1>.. 5/10(Fri) 14:49[7]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+<div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#666666">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#666666" colspan=2>
+<font color="#000000">++ a</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…4回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./curry.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#000000">論椅</font><br>
+<div align=right><font color="#000000" size=-1>.. 5/10(Fri) 14:49[8]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#666666"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="4"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#ff6633"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633">
+<font color="#000000">++ 味噌っぷ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…3回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#cc3399"><a href="http://translation.lycos.com/">こちら</a></font></div>
+<div align=right><font color="#cc3399" size=-1>.. 5/10(Fri) 02:25[4]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#ff6633">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#ff6633" colspan=2>
+<font color="#000000">++ a</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…1回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./ball.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#666666"><a href="http://home.interlink.or.jp/~kamitani/perl_lng/cgiperl.html">こちら</a></font><br>
+<div align=right><font color="#666666" size=-1>.. 5/10(Fri) 14:48[5]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#ff6633"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#ff6633"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#ff6633" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="3"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#666666"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666">
+<font color="#000000">++ misoppu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…1回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./ball.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#666666"><a href="http://job2.do-johodai.ac.jp/">こちら</a><br><a href="http://job2.do-johodai.ac.jp/job2/access_login.asp">こちら</a></font></div>
+<div align=right><font color="#666666" size=-1>.. 5/ 9(Thu) 14:29[3]</font></td></tr></table></div><hr size=1 noshade color=#ffffff></td>
+<td width=8 bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#666666"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#666666"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#666666" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST><input type=hidden name="action" value="res"><input type=hidden name="no" value="1"><input type=hidden name="disppage" value=1>
+<table border=0 cellspacing=0 cellpadding=0 width="460">
+<tr>
+<td bgcolor="#669900"><img src=top_l_h.gif width=8 height=8></td>
+<td bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#669900" align="right" valign="top"><img src=top_r_h.gif width=8 height=8></td>
+</tr>
+<tr>
+<td width=8 bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#669900">
+<font color="#000000">++ 味噌っぷ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…1回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1>&nbsp;&nbsp;&nbsp;---&nbsp;<input type=image name=send src="./res.gif" border=0 alt="返信だよ">
+</font>
+</td>
+<td width=8 bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+</tr><tr>
+<td width=8 bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#669900">
+<hr size=1 noshade color=#ffffff><div align=center><table border=0 cellspacing=0 cellpadding=5 width=100%>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#ff6633">払払</font></div>
+<div align=right><font color="#ff6633" size=-1>.. 5/ 9(Thu) 00:44[1]</font></td></tr></table></div><hr size=1 noshade color=#ffffff><div align=right><table border=0 cellspacing=0 cellpadding=0 width=85%>
+<tr><td bgcolor="#669900">
+<table cellpadding=3 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor="#669900" colspan=2>
+<font color="#000000">++ 味噌っぷ</font>
+&nbsp;&nbsp;<font color="#000000" size=-1>(幼稚園生)…2回</font>&nbsp;&nbsp;&nbsp;
+<font color="#000000" size=-1></td></tr>
+<tr><td bgcolor="#ffffff">
+<img src="./unchi.gif" width="32" height="32" border=0></td><td bgcolor="#ffffff" width="95%">
+<font color="#990000">so fuckin what!</font><br>
+<div align=right><font color="#990000" size=-1>.. 5/ 9(Thu) 00:44[2]</font></div>
+</td></tr></table>
+</td></tr></table></div>
+</td>
+<td width=8 bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+</tr>
+<tr>
+<td bgcolor="#669900"><img src=bottom_l_h.gif width=8 height=8></td>
+<td bgcolor="#669900"><img src="./spacer.gif" width=1 height=1></td>
+<td bgcolor="#669900" align="right" valign="bottom"><img src=bottom_r_h.gif width=8 height=8></td>
+</tr>
+</table></form>
+<form action=./mkakikomitai.cgi method=POST>
+<input type=hidden name="disppage" value=1>
+<input type=hidden name="action" value=>
+<input type=hidden name="oldlogno" value=>
+<input type=hidden name="kflg" value="">
+</form>
+<hr size=1 noshade color=#000000 width=70%>
+<form action="./mkakikomitai.cgi" method="POST">
+<input type=hidden name="action" value="download">
+<input type=hidden name="oldlogno" value=>
+<input type=submit value="ログをダウンロード" >
+<br>拡張子はhtmに変更して下さい。</form>
+<hr width=70% size=1 noshade color=#000000></center>
+<div align="right"><font  color="#000000"><form action="./mkakikomitai.cgi" method="POST">
+No.<input type=text name="no" size=3 >
+Pass<input type=password name="pass" size=10 >
+</font>
+<select name="proc" >
+<option value="edit">edit
+<option value="delete">delete
+</select>
+<input type=hidden name="action" value="maintenance">
+<input type=hidden name="oldlogno" value=>
+<input type=submit value="update" >
+</form></div>
+<div align=right>
+<a href=http://tackysroom.com target=_top>mkakikomitai Ver0.871 Created by Tacky</a>
+</div>
+</body></html>
