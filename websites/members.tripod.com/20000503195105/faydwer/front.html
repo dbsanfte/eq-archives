@@ -1,0 +1,403 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>The Faydwerian Fellowship</title>
+<meta http-equiv="Page-Exit" content="blendTrans(Duration=5.0)">
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script></head>
+
+<BODY bgcolor="#808000" text="#000000" link="#008080" alink="#800080"
+background="stuff/parchtile.gif" onload="dynAnimation()" leftmargin="35">
+
+<blockquote>
+  <h4 align="center" dynamicanimation="dropWord"
+  style="position: relative !important; left: 10000 !important"><font face="Beaulieux"
+  color="#004080"><big><big><big><big>The Faydwerian Fellowship</Big></Big></Big></Big></font></h4>
+  <p align="center" dynamicanimation="dropWord"
+  style="position: relative !important; left: 10000 !important"><font face="Beaulieux"
+  color="#004080"><big><big>Of Fennin Ro</Big></Big></font></p>
+</Blockquote>
+<div align="center"><center>
+
+<table border="1" width="576" height="1">
+  <tr>
+    <td width="300" height="1" valign="top"><blockquote>
+      <h6 align="center" dynamicanimation="flyTop"
+      style="position: relative !important; left: 10000 !important; margin-left: -20; margin-right: -20"><font
+      color="#400040" face="Beaulieux"><big><big><big>The Three Goals of the <big>Faydwerian
+      Fellowship</Big></Big></Big></Big></font></h6>
+    </Blockquote>
+    </td>
+    <td width="276" height="1" rowspan="2" dynamicanimation="flyRight"
+    style="position: relative !important; left: 10000 !important"><font color="#0000FF"><img
+    src="stuff/faydwer.gif" alt="map_faydwer_hi.gif (50763 bytes)" width="374" height="235"></font></td>
+  </tr>
+  <tr>
+    <td width="300" height="51"><p align="left" dynamicanimation="flyLeft"
+    style="position: relative !important; left: 10000 !important"><small><font color="#004080">To
+    spread peace in Norrath where ever possible.</font></small></p>
+    <p align="left" dynamicanimation="flyLeft"
+    style="position: relative !important; left: 10000 !important"><small><font color="#0000A0">To
+    bring destruction on those who oppose peace.</font></small></p>
+    <p align="left" dynamicanimation="flyLeft"
+    style="position: relative !important; left: 10000 !important"><font color="#0000FF"><small>Above
+    all else, to protect the safety of Faydwer.</small></font></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center">This page is designed for MS Internet Explorer.&nbsp; Some things may
+not show up correctly with Netscape.&nbsp; To find out why this choice was made, click <a
+href="whyie.html">here</a>.</p>
+
+<p>&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+<div align="left">
+
+<table border="1" width="138" height="4">
+  <tr>
+    <td width="138" height="4" bgcolor="#400040"><font face="Beaulieux" color="#008080"><big>June
+    28th</Big></font></td>
+  </tr>
+</table>
+</div>
+
+<p>&nbsp;&nbsp;&nbsp; We have made a new alliance.&nbsp; The Dragon Knights of Freeport
+have joined our cause, alongside the Brethren of Wolves.&nbsp; We've tested it out (at the
+high cost of Danar's life, the guildmaster of DKF), and there is no noticeable exp loss at
+lev 18, and there is no looting in a guild war.&nbsp; We are well on our way to face the
+vile DeVir's and their kin.&nbsp; To celebrate, I've &quot;modernized&quot; the Alliance
+page.&nbsp; Keep the preparations for battle!</p>
+
+<p>&nbsp;&nbsp;&nbsp; Another idea I've been thinking about, before the battle, it might
+be fun to go with an earlier idea we had, to invade Permafrost Keep, a usually 100% empty
+dungeon which holds medium sized bronze (I bet Okame would like that:) as well as untold
+treasures.&nbsp; We might want to vote on this at an upcoming meeting.</p>
+
+<p>Your Founder,</p>
+
+<p>Lexaien</p>
+
+<p align="center">&nbsp;</p>
+<div align="left">
+
+<table border="1" width="138" height="4">
+  <tr>
+    <td width="138" height="4" bgcolor="#400040"><font face="Beaulieux" color="#008080"><big>June
+    26th</Big></font></td>
+  </tr>
+</table>
+</div>
+
+<p>&nbsp;&nbsp;&nbsp; Your leader has been reborn.&nbsp; Along with a new body, comes a
+new outlook.&nbsp; With the abolishion of the dues system and lessening of the guild
+admissions, we have well become a bustling powerful guild, with my potential.&nbsp; Modal
+is back (even if busy with other matters), and we've voted for a guild battle against the
+infamous DeVir, a very well roleplayed guild of dark elves and other scum.&nbsp; Although
+no date has been set for this, as I haven't managed to reach the leader, Dinin, who
+apparently is overworking, according to his RL friend.&nbsp; The important thing is that
+we will have a battle, and for that we must plan for it.&nbsp; The problem is... when?</p>
+
+<p>&nbsp;&nbsp;&nbsp; The meeting was originally set for tomorrow, but something has come
+up in the real world, so I will be unable to attend.&nbsp; If someone would like to
+organize this meeting further, please post so on the msg board.&nbsp; Otherwise, we'll try
+to organize something during the week, next weekend at the latest.&nbsp; The good thing
+about organizing the meeting we had earlier this week to get everyone to know each other,
+is that now that we have a good idea of who each of us are, we can handle the rest of the
+meetings over guildsay.</p>
+
+<p>&nbsp;&nbsp;&nbsp; I'll be updating the guildmembers list, along with the new Alias
+subject, for those of us with two &quot;bodies&quot;, such as myself.&nbsp; That's it for
+now, I suppose.&nbsp; Quest on, noble Faydwerians, and never lose hope.</p>
+
+<p>Your Founder,</p>
+
+<p>Lexaien</p>
+
+<h4 align="center"><a href="archive.html"><font face="Beaulieux" color="#0000A0"><big><big><big><big>News
+Archive</Big></Big></Big></Big></font></a></h4>
+
+<p>&nbsp;</p>
+<!-- Begin Rename.Net html code -->
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="center" width="230" height="33"><a href="http://rename.net"
+    target="_top"><img width="230" height="33" border="0" alt="rename.net"
+    src="http://ad.rename.net/inline2"></a> </td>
+  </tr>
+  <tr>
+    <td align="center" valign="center"><a href="http://rename.net" alt="Rename.Net"><font
+    size="1" face="Humnst777 BT,Frutiger, Univers,Helvetica,Arial">Free URL provided by
+    Rename.Net </font></a></td>
+  </tr>
+</table>
+<!-- End Rename.Net html code -->
+
+<p><small>If you're a little shy and don't enjoy using a message board, you can reach me
+at <a href="mailto:Lexinater@yahoo.com">Lexinater@yahoo.com</a></small></p>
+</BODY>
+</html>
+
