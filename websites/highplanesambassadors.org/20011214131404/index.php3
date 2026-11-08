@@ -1,0 +1,184 @@
+
+<HTML>
+<HEAD>
+<TITLE>High Planes Ambassadors - Main Page</TITLE>
+
+<STYLE TYPE="text/css">
+<!--
+A { color:#003366; text-decoration:none }
+A:Visited { color:#003366; text-decoration:none }
+A:Active { color:#003366; text-decoration:none }
+A:Hover { color:#006699; text-decoration:underline }
+A.bravo { color:#663300; text-decoration:none }
+A.bravo:Visited { color:#663300; text-decoration:none }
+A.bravo:Active { color:#663300; text-decoration:none }
+A.bravo:Hover { color:#996600; text-decoration:underline }
+-->
+</STYLE>
+
+
+
+<HEAD>
+
+<BODY BACKGROUND="/img/background.jpg" BGCOLOR="#000066">
+
+<CENTER>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="760">
+	<TR><TD ALIGN="center"><IMG SRC="/img/logo_main.jpg" WIDTH="760" HEIGHT="139"></TD></TR>
+	<TR><TD COLSPAN="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD></TR>
+</TABLE>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="760">
+	<TR>
+		<TD BACKGROUND="/img/ul.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD BACKGROUND="/img/tb.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD BACKGROUND="/img/ur.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD BACKGROUND="/img/ul.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD BACKGROUND="/img/tb.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD BACKGROUND="/img/ur.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+	</TR>
+	<TR>
+		<TD BACKGROUND="/img/lb.gif" WIDTH="3"><IMG SRC="/img/pix.gif" WIDTH="3" HEIGHT="1"></TD>
+		<TD BACKGROUND="/img/back.gif" WIDTH="127" VALIGN="top">
+			<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0">
+				
+				<TR><TD COLSPAN="2"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="10"></TD></TR>
+
+				<TR><TD COLSPAN="2">&nbsp;<FONT FACE="Arial, Helvetica" SIZE="+0">Guild Info</FONT></TD></TR>
+				<TR><TD WIDTH="10"></TD><TD><FONT FACE="Arial, Helvetica" SIZE="-1"><A HREF="index.php3">News</A></FONT></TD></TR>
+				<TR><TD></TD><TD><FONT FACE="Arial, Helvetica" SIZE="-1"><A HREF="roster.php3">Roster</A></FONT></TD></TR>
+				<TR><TD></TD><TD><FONT FACE="Arial, Helvetica" SIZE="-1"><A HREF="hierarchy.php3">Hierarchy</A></FONT></TD></TR>
+				<TR><TD></TD><TD><FONT FACE="Arial, Helvetica" SIZE="-1"><A HREF="guildcode.php3">Guild Code</A></FONT></TD></TR>
+				<TR><TD></TD><TD><FONT FACE="Arial, Helvetica" SIZE="-1"><A HREF="application.php3">Application</A></FONT></TD></TR>
+
+				<TR><TD COLSPAN="2"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="10"></TD></TR>
+
+				<TR><TD COLSPAN="2">&nbsp;<FONT FACE="Arial, Helvetica" SIZE="+0">Resources</FONT></TD></TR>
+				<TR><TD></TD><TD><FONT FACE="Arial, Helvetica" SIZE="-1"><A HREF="http://pub50.ezboard.com/bhighplanesambassadors5850">Message Boards</A></FONT></TD></TR>
+				<TR><TD></TD><TD><FONT FACE="Arial, Helvetica" SIZE="-1"><A HREF="http://www.calendars.net/cals/hpa">Calendar</A></FONT></TD></TR>
+				<TR><TD></TD><TD><FONT FACE="Arial, Helvetica" SIZE="-1"><A HREF="comingsoon.php3">Items Wanted/<BR>For Sale</A></FONT></TD></TR>
+				<TR><TD></TD><TD><FONT FACE="Arial, Helvetica" SIZE="-1"><A HREF="comingsoon.php3">Screenshots</A></FONT></TD></TR>
+				<TR><TD></TD><TD><FONT FACE="Arial, Helvetica" SIZE="-1"><A HREF="comingsoon.php3">Links</A></FONT></TD></TR>
+				
+				<TR><TD COLSPAN="2"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="10"></TD></TR>
+
+				<TR><TD COLSPAN="2">&nbsp;<FONT FACE="Arial, Helvetica" SIZE="+0">Members Only</A></FONT></TD></TR>
+				<TR><TD></TD><TD><FONT FACE="Arial, Helvetica" SIZE="-1"><A HREF="login.php3">Members Area</A></FONT></TD></TR>
+				<TR><TD HEIGHT="5"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="5"></TD></TR>
+			</TABLE>
+		</TD>
+		<TD BACKGROUND="/img/rb.gif" WIDTH="3"><IMG SRC="/img/pix.gif" WIDTH="3" HEIGHT="1"></TD>
+		<TD VALIGN="top" WIDTH="3"><IMG SRC="/img/pix.gif" WIDTH="3" HEIGHT="3"></TD>
+		<TD BACKGROUND="/img/lb.gif" WIDTH="3"><IMG SRC="/img/pix.gif" WIDTH="3" HEIGHT="1"></TD>
+		<TD BACKGROUND="/img/back.gif" VALIGN="top" ALIGN="center" WIDTH="510">
+			<!-- Main content cell. -->
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="650">
+	<TR>
+		<TD><IMG SRC="/img/pix.gif" HEIGHT="10"></TD>
+	</TR>
+	<TR>
+		<TD>
+			<FONT FACE="Arial, Helvetica"><FONT SIZE="+1"><B>1st Annual HPA Holiday Picnic Reiminder</B></FONT><BR>
+			<FONT SIZE="-2"><A HREF="mailto:drizden@highplanesambassadors.org">drizden</A> - 2001-12-11 06:37:32</FONT><BR><BR>
+			<FONT SIZE="-1">Check it out <A HREF="http://pub50.ezboard.com/fhighplanesambassadors5850frm1.showMessage?topicID=393.topic">here</A>.<BR>
+<BR>
+Driz...</FONT></FONT><BR><BR>
+			<HR WIDTH="90%">
+		</TD>
+	</TR>
+	<TR>
+		<TD><IMG SRC="/img/pix.gif" HEIGHT="10"></TD>
+	</TR>
+	<TR>
+		<TD>
+			<FONT FACE="Arial, Helvetica"><FONT SIZE="+1"><B>Link to UG Boards</B></FONT><BR>
+			<FONT SIZE="-2"><A HREF="mailto:gamec@bellsouth.net">Gamec-HPA</A> - 2001-09-23 23:00:37</FONT><BR><BR>
+			<FONT SIZE="-1"><a
+href="http://nameless.freehomepage.com/">United Guilds
+This will direct you to the United Guilds boards. Yes our proud little guild tag is in there.</FONT></FONT><BR><BR>
+			<HR WIDTH="90%">
+		</TD>
+	</TR>
+	<TR>
+		<TD><IMG SRC="/img/pix.gif" HEIGHT="10"></TD>
+	</TR>
+	<TR>
+		<TD>
+			<FONT FACE="Arial, Helvetica"><FONT SIZE="+1"><B>LOOT RULES FOR GUILD RAIDS</B></FONT><BR>
+			<FONT SIZE="-2"><A HREF="mailto:drizden@highplanesambassadors.org">drizden</A> - 2001-05-22 07:34:38</FONT><BR><BR>
+			<FONT SIZE="-1">As people dont seem to read the forum messages or read them properly, here is the basic breakdown of how Guild Raid Loot is ALLOCATED.<BR>
+<BR>
+Each guild raid for each specific target will be slightly different, but the basic loot rules will always be used as a basis for allocation.<BR>
+<BR>
+<B>RULE NUMBER ONE: NEED BEFORE GREED!</B><BR>
+Above all else,  this rule will always prevail.  This has been the rule applied since before I joined the guild and will hopefully still be here should I ever leave the guild.  It simply means - if there is someone who needs a particular item and will use said item, they will ALWAYS have priority over someone who either has one or cant use it (as all they want it for is to sell to make some money or trade it for something else).<BR>
+<BR>
+<B>RULE NUMBER TWO: PREVIOUS ATTENDANCE IS ALWAYS CONSIDERED</B><BR>
+This means if you have attended a particular raid before and missed out on loot, you will be higher on the allocation list than someone who is attending for the first time, regardless of the level seniority requirement in RULE NUMBER THREE below.<BR>
+<BR>
+<B>RULE NUMBER THREE: LOOT LIST IS DONE BY LEVEL SENIORITY IN DESCENDING ORDER</B><BR>
+Notwithstanding RULE NUMBER TWO, all prospective recipients will be listed by attendance time at the raid, then by level, in descending order.  Late arrivals will be added to the bottom of the list at the time they arrive.<BR>
+<BR>
+<B>RULE NUMBER FOUR: LOOT LIST'S FOR SPECIFIC RAIDS/CAMPS ROLL OVER TO THE NEXT RAID</B><BR>
+This is really a reiteration of RULE NUMBER TWO. If you were on the list from a previous raid on the same place, you will hold that position in a subsequent raid on the same place.  The only exception to this being application of RULE TWO where someone who did not attend the last raid, but who has attended more raids on said target will be inserted into the list based on number of attendances he/she has made.<BR>
+<BR>
+<B>RULE NUMBER FIVE: ONCE YOU HAVE RECEIVED AN ITEM, YOU WILL BE PLACED AT THE BOTTOM OF THE LIST</B><BR>
+The Rule says it all: You get an item; you go to the bottom of the list.  This is mainly for the likes of Planes Loot, but will also be used on any guild raid if applicable.<BR>
+<BR>
+<B>RULE NUMBER SIX: YOU HAVE TO BE THE REQUIRED LEVEL TO ATTEND A RAID BEFORE YOU CAN ACTUALLY RECEIVE AN ITEM</B><BR>
+HPA DO NOT TWINK YOUR CHARACTERS IN GUILD RAIDS UNLESS ALL MEMBERS OF THE REQUIRED LEVEL HAVE ALREADY OBTAINED SAID ITEM, whether they are present at the raid or not.  You have all been advised this in your initial Guild Membership Interview, so this isnt news to you.  There may be times where spare loot is acquired and could be passed onto lower levels members, but this WILL be done at the discression on the Loot Controller, who will normally pass this decision up to the HPA Leadership or High Council for ratification.<BR>
+This does not mean you cannot attend a particular raid with a lower level character, but as this is a dangerous thing, a level cap will normally be placed on the raid for safety both of you  and all other attendees.<BR>
+<BR>
+<B>RULE NUMBER SEVEN: THE CHARACTER WHO REQUIRES THE ITEM MUST ATTEND THE RAID</B><BR>
+If you want the item, that character MUST attend the raid.  THE ONLY EXCEPTION TO THIS is if you are required to bring on another character to fulfil class requirements for the raid, then your loot receiving character will be placed on the list as per the preceeding rules and if possible (ie. non-NO DROP items), the attending character will be awarded the item in the loot cycle as appropriate.<BR>
+<BR>
+<BR>
+From time to time, non-HPA people are invited to join our raids.  For all intents and purposes, members of Allied Guilds are classed as HPA Members.  Non-HPA or -Allied Guild Members are classed as GUEST's and will be accorded the same respect as if they were HPA Members.<BR>
+<BR>
+Non-guild members are usually invited to fill in slots for classes we may be short of on a particular raid. It is only fair these people have the possibility of acquiring loot for their endeavours as they are taking risks like all others in attendance. This means, just because it is an HPA Raid, ALL attendees are permitted equal status to receive loot in accordance with the rules above <STRONG><B>WITH THE EXCEPTION OF EPIC LOOT WHICH WILL ALWAYS BE OFFERED TO HPA MEMBERS FIRST, UNLESS A PRE-RAID ARRANGEMENT IS BROKERED, IN WHICH CASE THE ARRANGMENT WILL TAKE PRECEDENCE</B></STRONG>. In most situations, without these non-guild raid members, there will be no raid.<BR>
+<BR>
+All loot on guild raids will be allocated by the designated Loot Controller.  Their decision will be based on the above rules and will be final.  Some loot may need to be rolled for and will be done as and when required at the discretion of the Loot Controller.<BR>
+<BR>
+Normally, the loot rules will be reiterated in the forums prior to the raid and where possible, an actual loot list will be promulgated.  For SWAT Guild Raids, the Loot Controller will still be in control and will use the basic ruleset defined above. Loot rules and lists will be reiterated and advised as time permits.<BR>
+<BR>
+All prospective recipients need to ensure their name is registered to be added to the list.  This will allow a loot list to be promulgated and make it easier for the Loot Controller to allocate accordingly. Remember YOU are responsible to ensure your name is on the list. If you miss out and have not registered your interest, then you have noone to blame but yourself.  The Loot Controller, who is normally also the Raid Leader, has enough to worry about without having to chase up everyone else with regards to loot requirements. He/She doesnt know you need an item unless you tell him/her.<BR>
+<BR>
+Drizden...
+</FONT></FONT><BR><BR>
+			<HR WIDTH="90%">
+		</TD>
+	</TR>
+	<TR>
+		<TD><IMG SRC="/img/pix.gif" HEIGHT="10"></TD>
+	</TR>
+</TABLE>
+		</TD>
+		<TD BACKGROUND="/img/rb.gif" WIDTH="3"><IMG SRC="/img/pix.gif" WIDTH="3" HEIGHT="1"></TD>
+	</TR>
+	<TR>
+		<TD BACKGROUND="/img/ll.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD BACKGROUND="/img/bb.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD BACKGROUND="/img/lr.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD BACKGROUND="/img/ll.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD BACKGROUND="/img/bb.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+		<TD BACKGROUND="/img/lr.gif" HEIGHT="3"><IMG SRC="/img/pix.gif" WIDTH="1" HEIGHT="3"></TD>
+	</TR>
+</TABLE>
+
+<CENTER><BR>
+<FONT FACE="Arial" SIZE="-2" COLOR="#ffffff">This site designed and maintained by High Planes Ambassadors.<BR>
+Copyright &copy; 2000-2001. All Rights Reserved.<BR>
+Server Colocation and bandwidth graciously provided by:<BR>
+<A HREF="http://www.atlascomputers.com"><IMG BORDER="0" SRC="/img/mini_atlas.gif" ALIGN="absmiddle" WIDTH="100" HEIGHT="53"></A>&nbsp;
+<A HREF="http://www.nsource.com"><IMG BORDER="0" SRC="/img/mini_nsource.gif" ALIGN="absmiddle" WIDTH="120" HEIGHT="41"></A>&nbsp;
+<A HREF="http://www.mfi.net"><IMG BORDER="0" SRC="/img/mini_mfi.gif" ALIGN="absmiddle" WIDTH="100" HEIGHT="62"></A><BR>
+<A HREF="mailto:webmaster@highplanesambassadors.org"><FONT COLOR="#dad834">Contact the webmaster</FONT></A> with any questions, suggestions, comments, flames, or bribes.<BR>Large and small logos by <A HREF="member.php3?ROID=84"><FONT COLOR="#dad834">Xelene Solyric</FONT></A> of HPA.</FONT><BR>
+</FONT>
+</CENTER>
+
+</BODY>
+</HTML>
+
