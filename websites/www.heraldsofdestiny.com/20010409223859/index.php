@@ -1,0 +1,798 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Heralds of Destiny</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=">
+<META NAME="AUTHOR" CONTENT="Heralds of Destiny">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) 2001 by Heralds of Destiny">
+<META NAME="KEYWORDS" CONTENT="News, news, New, New, Technology, technology, Headlines, headlines, Nuke, nuke, PHP-Nuke, phpnuke, php-nuke, Geek, geek, Geeks, geeks, Hacker, hacker, Hackers, hackers, Linux, linux, Windows, windows, Software, software, Download, download, Downloads, downloads, Free, FREE, free, Community, community, MP3, mp3, Forum, forum, Forums, forums, Bulletin, bulletin, Board, board, Boards, boards, PHP, php, Survey, survey, Kernel, kernel, Comment, comment, Comments, comments, Portal, portal, ODP, odp, Open, open, Open Source, OpenSource, Opensource, opensource, open source, Free Software, FreeSoftware, Freesoftware, free software, GNU, gnu, GPL, gpl, License, license, Unix, UNIX, *nix, unix, MySQL, mysql, SQL, sql, Database, DataBase, database, Mandrake, mandrake, Red Hat, RedHat, red hat, Slackware, slackware, SUSE, SuSE, suse, Debian, debian, Gnome, GNOME, gnome, Kde, KDE, kde, Enlightenment, enlightenment, Intercative, interactive, Programming, programming, Extreme, extreme, Game, game, Games, games, Web Site, web site, Weblog, WebLog, weblog, Guru, GURU, guru">
+<META NAME="DESCRIPTION" CONTENT="An Everquest Guild">
+<META NAME="GENERATOR" CONTENT="PHP-Nuke  - http://phpnuke.org">
+
+
+<style type="text/css">
+<!--
+.textbox { background: transparent; background-color: White; color: #000000; font-family: Tahoma,Verdana,Arial,Helvetica; font-size: x-small; text-align: left; scrollbar-face-color: #CCCCCC; scrollbar-shadow-color: #FFFFFF; scrollbar-highlight-color: #FFFFFF; scrollbar-3dlight-color: #FFFFFF; scrollbar-darkshadow-color: #FFFFFF; scrollbar-track-color: #FFFFFF; scrollbar-arrow-color: #000000 }
+TD {font-family: Tahoma,Verdana,Arial,Helvetica}
+DIV {font-family: Tahoma,Verdana,Arial,Helvetica}
+BODY {font-size: 10pt; font-family: Tahoma,Verdana,Arial,Helvetica}
+-->
+</style>
+<SCRIPT type="text/javascript">
+<!--
+
+function showimage() {
+if (!document.images)
+return
+document.images.avatar.src=
+'/images/forum/avatar/' + document.Register.user_avatar.options[document.Register.user_avatar.selectedIndex].value
+}
+
+//-->
+</SCRIPT>
+<SCRIPT type="text/javascript">
+<!--
+
+function openwindow(){
+	window.open ("","Help","toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=600,height=400");
+}
+
+//-->
+</SCRIPT>
+<SCRIPT type="text/javascript">
+
+function init() {
+
+}
+</SCRIPT>
+</head>
+
+
+  <body onload=init() text=222222 link=101070 vlink=222222 background=themes/HOD/images/background1.jpg>
+<br><br>
+  <center>
+  <table cellpadding=0 cellspacing=0 border=0 width=99% align=center><tr><td align=left>
+  <a href=http://www.heraldsofdestiny.com><img align=left src=themes/HOD/images/conan-logo.jpg border=0></a></td><td align=left><font color=000000 size=1><b>People online:</b><br> 2 guest(s) and 0 member(s)<BR>You are an Anonymous user</font>
+</td><td><img align=right src=themes/HOD/images/conan-image2.jpg></td><td align=left></td>
+</td></tr></table><br>
+  <table cellpadding=0 cellspacing=1 border=0 width=99% bgcolor=101070>
+    <tr>
+	  <td>
+        <table cellpadding=5 cellspacing=1 border=0 width=100% bgcolor=ffffff background=themes/HOD/images/background3.jpg>
+		  <tr>
+		    <td><font size=2 color=000000><b>An Everquest Guild</b></td>
+	      </tr>
+		</table>
+	  </td>
+	</tr>
+  </table>
+  <P>
+<table width=99% align=center cellpadding=0 cellspacing=0 border=0><tr><td valign=top rowspan=5>    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr><!--msnavigation-->
+        <td valign="top">
+          <div align="center">
+
+          <table border="0" cellpadding="0" cellspacing="0" background="themes/HOD/images/background2.jpg" height="100%" width="150">
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"> <img src=themes/HOD/images/pix.gif></td>
+            <td height=1 background="themes/HOD/images/pix.gif" align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+            <td>
+              <table border="0" cellpadding="6" cellspacing="6" width="100%">
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><b>Main Menu</b></td>
+                </tr>
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><font face="Arial" size=2><li><a href=index.php>Home</a><br>
+<li><a href=topics.php>Topics</a><br>
+<li><a href=forum.php>Forums</a><br>
+<li><a href=reviews.php>Reviews</a><br>
+<li><a href=links.php>Web Links</a><br>
+<li><a href=download.php>Downloads</a><br>
+<li><a href=memberslist.php>Members List</a><br>
+<li><a href=user.php>Your Account</a><br>
+<li><a href=submit.php>Submit News</a><br>
+<li><a href=top.php>Top 10</a><br>
+<li><a href=faq.php>FAQ</a></font></td>
+                </tr>
+              </table>
+            </td>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td background="themes/HOD/images/pix.gif" height=1 align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+        </table>
+          </div>
+        </td>
+      </tr>
+	  <!--msnavigation-->
+    </table>
+  <br>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr><!--msnavigation-->
+        <td valign="top">
+          <div align="center">
+
+          <table border="0" cellpadding="0" cellspacing="0" background="themes/HOD/images/background2.jpg" height="100%" width="150">
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"> <img src=themes/HOD/images/pix.gif></td>
+            <td height=1 background="themes/HOD/images/pix.gif" align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+            <td>
+              <table border="0" cellpadding="6" cellspacing="6" width="100%">
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><b>Who's Online</b></td>
+                </tr>
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><font face="Arial" size=2><CENTER>There are currently, 2 guest(s) and 0 member(s) that are online.<br><br>You are Anonymous user. You can register for free by clicking <a href="user.php">here</a>.</center></font></td>
+                </tr>
+              </table>
+            </td>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td background="themes/HOD/images/pix.gif" height=1 align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+        </table>
+          </div>
+        </td>
+      </tr>
+	  <!--msnavigation-->
+    </table>
+  <br>
+</td><td>&nbsp;</td><td valign=top width=100%>	<!-- Regular Story HTML posted by ADMIN-->
+    <table border=0 cellpadding=0 cellspacing=0 width=100% background="themes/HOD/images/background2.jpg">
+      <tr>
+        <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+        <td background="themes/HOD/images/pix.gif"><img src=themes/HOD/images/pix.gif></td>
+        <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+      </tr>
+      <tr>
+        <td background="themes/HOD/images/pix.gif" align="left"></td>
+        <td  align="left" valign="top" background="themes/HOD/images/background2.jpg">
+
+          <!-- The content -->
+		  <table cellpadding="5" cellspacing="5" width="100%" align="center">
+		    <tr>
+			  <td style='border-style: groove' valign=top height=11 align=left>
+  		        <font size=3><B><!--blabla-->Problems resolved (I hope)</B></font><p>
+		        <font size=1>Posted by <b><a href="http://www.heraldsofdestiny.com">Mikania</a></b> on Wednesday, April 04 @ 21:17:38 EDT  (1 reads)</font><br></td>
+              </td>
+		    </tr>
+		  </table>
+          <!-- end of content -->
+
+		  <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td background="themes/HOD/images/pix.gif" align="left"></td>
+	      <td valign="top" background="themes/HOD/images/background2.jpg">
+
+            <!-- The content -->
+		    <table cellpadding="5" cellspacing="5" width="100%" align="center">
+			  <tr>
+			    <td style='border-style: groove' valign=top height=11 align=left>
+                  <font size=2>
+                  <a href="search.php?query=&topic=34&author="><img src=images/topics/snews.gif border=1 Alt="Site News" align=right hspace=10 vspace=10></a>
+                  <font size=<? echo 2; ?>Hello Heralds =)<br><br>
+
+I think I have resolved the database problem of the site. As usual, if there is anything that isn't working, please let me know ASAP my clicking on my name at the end of this news...<br><br>
+
+Thanks!
+<br>
+-<a href="mailto:mikania@heraldsofdestiny.com">Mikania</a><br><br></font>
+                </td>
+		      </tr>
+		    </table>
+            <!-- end of content -->
+
+          </td>
+          <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td background="themes/HOD/images/pix.gif"></td>
+          <td width="100%" align="left" background="themes/HOD/images/background2.jpg">
+
+            <!-- The content -->
+		    <table cellpadding="5" cellspacing="5" width="99%" align="center">
+			  <tr>
+			    <td style='border-style: groove' valign=top height=11 align=left>
+                  <font size=1><b>( <a href="article.php?sid=17&mode=thread&order=0&thold=0">comments?</a> | <a href="print.php?sid=17"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width=15 height=11></a>&nbsp; <a href="friend.php?op=FriendSend&sid=17"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width=15 height=11></a> )</b></font>
+			    </td>
+			  </tr>
+			</table>
+            <!-- end of content -->
+
+		  </td>
+          <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          <td align="center" valign="top" background="themes/HOD/images/pix.gif"><img src=themes/HOD/images/pix.gif></td>
+          <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+        </tr>
+      </table>
+	  <br>
+	<!-- Regular Story HTML posted by ADMIN-->
+    <table border=0 cellpadding=0 cellspacing=0 width=100% background="themes/HOD/images/background2.jpg">
+      <tr>
+        <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+        <td background="themes/HOD/images/pix.gif"><img src=themes/HOD/images/pix.gif></td>
+        <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+      </tr>
+      <tr>
+        <td background="themes/HOD/images/pix.gif" align="left"></td>
+        <td  align="left" valign="top" background="themes/HOD/images/background2.jpg">
+
+          <!-- The content -->
+		  <table cellpadding="5" cellspacing="5" width="100%" align="center">
+		    <tr>
+			  <td style='border-style: groove' valign=top height=11 align=left>
+  		        <font size=3><B><!--blabla-->Site is transfered!</B></font><p>
+		        <font size=1>Posted by <b><a href="http://www.heraldsofdestiny.com">Mikania</a></b> on Tuesday, March 27 @ 01:21:15 EST  (6 reads)</font><br></td>
+              </td>
+		    </tr>
+		  </table>
+          <!-- end of content -->
+
+		  <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td background="themes/HOD/images/pix.gif" align="left"></td>
+	      <td valign="top" background="themes/HOD/images/background2.jpg">
+
+            <!-- The content -->
+		    <table cellpadding="5" cellspacing="5" width="100%" align="center">
+			  <tr>
+			    <td style='border-style: groove' valign=top height=11 align=left>
+                  <font size=2>
+                  <a href="search.php?query=&topic=34&author="><img src=images/topics/snews.gif border=1 Alt="Site News" align=right hspace=10 vspace=10></a>
+                  <font size=<? echo 2; ?>Hey everyone =)<br><br>
+
+If you can see this it means you are on the new location of our site. Again, I'm sorry for the downtime but I had little choice. If something doesn't work properly here, please let me know ASAP at <a href="mailto:mikania@heraldsofdestiny.com">mikania@heraldsofdestiny.com</a><br><br>
+
+Thanks!<br>
+-<a href="mailto:mikania@heraldsofdestiny.com">Mikania</a><br></font>
+                </td>
+		      </tr>
+		    </table>
+            <!-- end of content -->
+
+          </td>
+          <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td background="themes/HOD/images/pix.gif"></td>
+          <td width="100%" align="left" background="themes/HOD/images/background2.jpg">
+
+            <!-- The content -->
+		    <table cellpadding="5" cellspacing="5" width="99%" align="center">
+			  <tr>
+			    <td style='border-style: groove' valign=top height=11 align=left>
+                  <font size=1><b>( <a href="article.php?sid=16&mode=thread&order=0&thold=0">comments?</a> | <a href="print.php?sid=16"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width=15 height=11></a>&nbsp; <a href="friend.php?op=FriendSend&sid=16"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width=15 height=11></a> )</b></font>
+			    </td>
+			  </tr>
+			</table>
+            <!-- end of content -->
+
+		  </td>
+          <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          <td align="center" valign="top" background="themes/HOD/images/pix.gif"><img src=themes/HOD/images/pix.gif></td>
+          <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+        </tr>
+      </table>
+	  <br>
+	<!-- Regular Story HTML posted by ADMIN-->
+    <table border=0 cellpadding=0 cellspacing=0 width=100% background="themes/HOD/images/background2.jpg">
+      <tr>
+        <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+        <td background="themes/HOD/images/pix.gif"><img src=themes/HOD/images/pix.gif></td>
+        <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+      </tr>
+      <tr>
+        <td background="themes/HOD/images/pix.gif" align="left"></td>
+        <td  align="left" valign="top" background="themes/HOD/images/background2.jpg">
+
+          <!-- The content -->
+		  <table cellpadding="5" cellspacing="5" width="100%" align="center">
+		    <tr>
+			  <td style='border-style: groove' valign=top height=11 align=left>
+  		        <font size=3><B><!--blabla-->Some Downtime =(</B></font><p>
+		        <font size=1>Posted by <b><a href="http://www.heraldsofdestiny.com">Mikania</a></b> on Monday, March 26 @ 11:12:02 EST  (4 reads)</font><br></td>
+              </td>
+		    </tr>
+		  </table>
+          <!-- end of content -->
+
+		  <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td background="themes/HOD/images/pix.gif" align="left"></td>
+	      <td valign="top" background="themes/HOD/images/background2.jpg">
+
+            <!-- The content -->
+		    <table cellpadding="5" cellspacing="5" width="100%" align="center">
+			  <tr>
+			    <td style='border-style: groove' valign=top height=11 align=left>
+                  <font size=2>
+                  <a href="search.php?query=&topic=34&author="><img src=images/topics/snews.gif border=1 Alt="Site News" align=right hspace=10 vspace=10></a>
+                  <font size=<? echo 2; ?>Hello Heralds!!<br><br>
+
+There will be some downtime on the site either later today or tomorrow sometime.... They are upgrading the server and I think I might just move the site elsewhere... So there will be a period where the site won't be accessible to most of you while the DNS's update everywhere...<br><br>
+
+Sorry for that =(<br>
+-<a href="mailto:mikania@heraldsofdestiny.com">Mikania</a><br></font>
+                </td>
+		      </tr>
+		    </table>
+            <!-- end of content -->
+
+          </td>
+          <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td background="themes/HOD/images/pix.gif"></td>
+          <td width="100%" align="left" background="themes/HOD/images/background2.jpg">
+
+            <!-- The content -->
+		    <table cellpadding="5" cellspacing="5" width="99%" align="center">
+			  <tr>
+			    <td style='border-style: groove' valign=top height=11 align=left>
+                  <font size=1><b>( <a href="article.php?sid=15&mode=thread&order=0&thold=0">comments?</a> | <a href="print.php?sid=15"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width=15 height=11></a>&nbsp; <a href="friend.php?op=FriendSend&sid=15"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width=15 height=11></a> )</b></font>
+			    </td>
+			  </tr>
+			</table>
+            <!-- end of content -->
+
+		  </td>
+          <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          <td align="center" valign="top" background="themes/HOD/images/pix.gif"><img src=themes/HOD/images/pix.gif></td>
+          <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+        </tr>
+      </table>
+	  <br>
+	<!-- Regular Story HTML posted by ADMIN-->
+    <table border=0 cellpadding=0 cellspacing=0 width=100% background="themes/HOD/images/background2.jpg">
+      <tr>
+        <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+        <td background="themes/HOD/images/pix.gif"><img src=themes/HOD/images/pix.gif></td>
+        <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+      </tr>
+      <tr>
+        <td background="themes/HOD/images/pix.gif" align="left"></td>
+        <td  align="left" valign="top" background="themes/HOD/images/background2.jpg">
+
+          <!-- The content -->
+		  <table cellpadding="5" cellspacing="5" width="100%" align="center">
+		    <tr>
+			  <td style='border-style: groove' valign=top height=11 align=left>
+  		        <font size=3><B><!--blabla-->Robbery in the Library!</B></font><p>
+		        <font size=1>Posted by <b><a href="http://www.heraldsofdestiny.com">Lyzandia</a></b> on Sunday, March 25 @ 17:49:22 EST  (19 reads)</font><br></td>
+              </td>
+		    </tr>
+		  </table>
+          <!-- end of content -->
+
+		  <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td background="themes/HOD/images/pix.gif" align="left"></td>
+	      <td valign="top" background="themes/HOD/images/background2.jpg">
+
+            <!-- The content -->
+		    <table cellpadding="5" cellspacing="5" width="100%" align="center">
+			  <tr>
+			    <td style='border-style: groove' valign=top height=11 align=left>
+                  <font size=2>
+                  <a href="search.php?query=&topic=33&author="><img src=images/topics/raids.gif border=1 Alt="Guild Raids" align=right hspace=10 vspace=10></a>
+                  <font size=<? echo 2; ?>Last night a group of young Heralds visited the local TOFS Public Library, and while there we spotted Mrs. Porkowitz, the hated 6th grade math teacher.  So we plotted a little scheme, and while Teshar distracted her by pretending to kill Noyr, Maleth ran up behind her and stole her bag.  He looted the Teacher's Syllabus and returned the bag.  So now we now the exam questions for every upcoming quiz in 6th grade math this semester!  Woot!
+<br>
+<br></font>
+                </td>
+		      </tr>
+		    </table>
+            <!-- end of content -->
+
+          </td>
+          <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td background="themes/HOD/images/pix.gif"></td>
+          <td width="100%" align="left" background="themes/HOD/images/background2.jpg">
+
+            <!-- The content -->
+		    <table cellpadding="5" cellspacing="5" width="99%" align="center">
+			  <tr>
+			    <td style='border-style: groove' valign=top height=11 align=left>
+                  <font size=1><b>( <a href="article.php?sid=14&mode=thread&order=0"><b>Read More...</b></a> | 940 bytes more | <a href="article.php?sid=14&mode=thread&order=0&thold=0">comments?</a> | <a href="print.php?sid=14"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width=15 height=11></a>&nbsp; <a href="friend.php?op=FriendSend&sid=14"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width=15 height=11></a> )</b></font>
+			    </td>
+			  </tr>
+			</table>
+            <!-- end of content -->
+
+		  </td>
+          <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          <td align="center" valign="top" background="themes/HOD/images/pix.gif"><img src=themes/HOD/images/pix.gif></td>
+          <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+        </tr>
+      </table>
+	  <br>
+	<!-- Regular Story HTML posted by ADMIN-->
+    <table border=0 cellpadding=0 cellspacing=0 width=100% background="themes/HOD/images/background2.jpg">
+      <tr>
+        <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+        <td background="themes/HOD/images/pix.gif"><img src=themes/HOD/images/pix.gif></td>
+        <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+      </tr>
+      <tr>
+        <td background="themes/HOD/images/pix.gif" align="left"></td>
+        <td  align="left" valign="top" background="themes/HOD/images/background2.jpg">
+
+          <!-- The content -->
+		  <table cellpadding="5" cellspacing="5" width="100%" align="center">
+		    <tr>
+			  <td style='border-style: groove' valign=top height=11 align=left>
+  		        <font size=3><B><!--blabla-->The Heralds Invade the Plane of Hate!</B></font><p>
+		        <font size=1>Posted by <b><a href="">Crowde</a></b> on Wednesday, March 21 @ 15:52:28 EST  (31 reads)</font><br></td>
+              </td>
+		    </tr>
+		  </table>
+          <!-- end of content -->
+
+		  <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td background="themes/HOD/images/pix.gif" align="left"></td>
+	      <td valign="top" background="themes/HOD/images/background2.jpg">
+
+            <!-- The content -->
+		    <table cellpadding="5" cellspacing="5" width="100%" align="center">
+			  <tr>
+			    <td style='border-style: groove' valign=top height=11 align=left>
+                  <font size=2>
+                  <a href="search.php?query=&topic=33&author="><img src=images/topics/raids.gif border=1 Alt="Guild Raids" align=right hspace=10 vspace=10></a>
+                  <font size=<? echo 2; ?>Our most holy of healers, Underfoot, has made the necessary arrangements to host the Heralds first ever Plane of Hate raid!  Check the Raids/Events Forum for more information, as it becomes available. 
+
+For now, here is the basic information:
+
+Where: Plane of Hate 
+When: Wednesday April 4th 4:30 pacific until we get chased from the zone by inny or our spouses. Sign up in this forum and i will be posting rosters and details as time passes. Heralds and our allies get preference on roster spots.
+-CC
+<br></font>
+                </td>
+		      </tr>
+		    </table>
+            <!-- end of content -->
+
+          </td>
+          <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td background="themes/HOD/images/pix.gif"></td>
+          <td width="100%" align="left" background="themes/HOD/images/background2.jpg">
+
+            <!-- The content -->
+		    <table cellpadding="5" cellspacing="5" width="99%" align="center">
+			  <tr>
+			    <td style='border-style: groove' valign=top height=11 align=left>
+                  <font size=1><b>( <a href="article.php?sid=13&mode=thread&order=0&thold=0">comments?</a> | <a href="print.php?sid=13"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width=15 height=11></a>&nbsp; <a href="friend.php?op=FriendSend&sid=13"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width=15 height=11></a> )</b></font>
+			    </td>
+			  </tr>
+			</table>
+            <!-- end of content -->
+
+		  </td>
+          <td background="themes/HOD/images/pix.gif"></td>
+        </tr>
+        <tr>
+          <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          <td align="center" valign="top" background="themes/HOD/images/pix.gif"><img src=themes/HOD/images/pix.gif></td>
+          <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+        </tr>
+      </table>
+	  <br>
+<td>&nbsp;</td><td valign="top">    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr><!--msnavigation-->
+        <td valign="top">
+          <div align="center">
+
+          <table border="0" cellpadding="0" cellspacing="0" background="themes/HOD/images/background2.jpg" height="100%" width="150">
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"> <img src=themes/HOD/images/pix.gif></td>
+            <td height=1 background="themes/HOD/images/pix.gif" align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+            <td>
+              <table border="0" cellpadding="6" cellspacing="6" width="100%">
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><b>Survey</b></td>
+                </tr>
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><font face="Arial" size=2><form action="pollBooth.php" method="post"><input type="hidden" name="pollID" value="5"><input type="hidden" name="forwarder" value="pollBooth.php?op=results&pollID=5"><font size=2><b>We have a GREAT website! How can we encourage more Heralds to use it?</b></font><br><br>
+<input type="radio" name="voteID" value="1"> Nag them about it every day in guild chat <br>
+<input type="radio" name="voteID" value="2"> Offer incentives for using the website <br>
+<input type="radio" name="voteID" value="3"> Send emails to everyone encouraging use <br>
+<input type="radio" name="voteID" value="4"> Make it a rule: You register or you get booted <br>
+<input type="radio" name="voteID" value="5"> If you don't use it, you have to kill the PoD <br>
+<input type="radio" name="voteID" value="6"> I don't care, I never read the website <br>
+<input type="radio" name="voteID" value="7"> It's OK as it is <br>
+<input type="radio" name="voteID" value="8"> other (send us your ideas) <br>
+<br><center><table cellspacing=0 cellpadding=5 border=0 width=111><tr><td align=center> <input type=image src=images/menu/english/vote.gif border=0></td><td align=center>
+<a href="pollBooth.php?op=results&pollID=5&mode=&order=&thold="><img src=images/menu/english/result.gif border=0></a></td></tr></table></form><font size=1><b><a href="pollBooth.php">Past Surveys</a></b></font><br><br>Votes: <b>24</b> | comments:  <b>0</b>
+</center>
+
+</font></td>
+                </tr>
+              </table>
+            </td>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td background="themes/HOD/images/pix.gif" height=1 align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+        </table>
+          </div>
+        </td>
+      </tr>
+	  <!--msnavigation-->
+    </table>
+  <br>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr><!--msnavigation-->
+        <td valign="top">
+          <div align="center">
+
+          <table border="0" cellpadding="0" cellspacing="0" background="themes/HOD/images/background2.jpg" height="100%" width="150">
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"> <img src=themes/HOD/images/pix.gif></td>
+            <td height=1 background="themes/HOD/images/pix.gif" align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+            <td>
+              <table border="0" cellpadding="6" cellspacing="6" width="100%">
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><b> Login</b></td>
+                </tr>
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><font face="Arial" size=2><form action=user.php method=post><font size=1><center>Nickname<br><input type=text name=uname size=12 maxlength=25><br>Password<br><input type=password name=pass size=12 maxlength=20><br><input type=hidden name=op value=login><input type=submit value=Login></form>Don't have an account yet? You can <a href=user.php>create one</a>. As registered user you have some advantages like theme manager, comments configuration and post comments with your name.</center></font></td>
+                </tr>
+              </table>
+            </td>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td background="themes/HOD/images/pix.gif" height=1 align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+        </table>
+          </div>
+        </td>
+      </tr>
+	  <!--msnavigation-->
+    </table>
+  <br>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr><!--msnavigation-->
+        <td valign="top">
+          <div align="center">
+
+          <table border="0" cellpadding="0" cellspacing="0" background="themes/HOD/images/background2.jpg" height="100%" width="150">
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"> <img src=themes/HOD/images/pix.gif></td>
+            <td height=1 background="themes/HOD/images/pix.gif" align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+            <td>
+              <table border="0" cellpadding="6" cellspacing="6" width="100%">
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><b>Everlore</b></td>
+                </tr>
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><font face="Arial" size=2><table border="0" cellspacing="0" cellpadding="2" width="140"><tr><td background="./themes/HOD/images/background2.jpg" valign="top"><img src="./images/topics/bullet.gif"></td><td background="./themes/HOD/images/background2.jpg"><font face="Tahoma" size="-2">		<A 
+			href="http://www.everlore.com/#1" 
+			name="EverLore Daily News" 
+target=_blank			title="EverLore Daily News">
+		   Seventh Hammer Team WINS the RL Quest at Fan Faire!
+		   </A>
+</font></td></tr><tr><td background="./themes/HOD/images/background2.jpg" valign="top"><img src="./images/topics/bullet.gif"></td><td background="./themes/HOD/images/background2.jpg"><font face="Tahoma" size="-2">		<A 
+			href="http://www.everlore.com/#2" 
+			name="EverLore Daily News" 
+target=_blank			title="EverLore Daily News">
+		   Skahld's EQ Movie Mailing list
+		   </A>
+</font></td></tr><tr><td background="./themes/HOD/images/background2.jpg" valign="top"><img src="./images/topics/bullet.gif"></td><td background="./themes/HOD/images/background2.jpg"><font face="Tahoma" size="-2">		<A 
+			href="http://www.everlore.com/#3" 
+			name="EverLore Daily News" 
+target=_blank			title="EverLore Daily News">
+		   Epic Quest Adventures Nears Completion
+		   </A>
+</font></td></tr><tr><td background="./themes/HOD/images/background2.jpg" valign="top"><img src="./images/topics/bullet.gif"></td><td background="./themes/HOD/images/background2.jpg"><font face="Tahoma" size="-2">		<A 
+			href="http://www.everlore.com/#4" 
+			name="EverLore Daily News" 
+target=_blank			title="EverLore Daily News">
+		   Norrathian News Press
+		   </A>
+</font></td></tr><tr><td background="./themes/HOD/images/background2.jpg" valign="top"><img src="./images/topics/bullet.gif"></td><td background="./themes/HOD/images/background2.jpg"><font face="Tahoma" size="-2">		<A 
+			href="http://www.everlore.com/#5" 
+			name="EverLore Daily News" 
+target=_blank			title="EverLore Daily News">
+		   First Battle of the Epic War on Tallon!!
+		   </A>
+</font></td></tr><tr><td background="./themes/HOD/images/background2.jpg" valign="top"><img src="./images/topics/bullet.gif"></td><td background="./themes/HOD/images/background2.jpg"><font face="Tahoma" size="-2">		<A 
+			href="http://www.everlore.com/#6" 
+			name="EverLore Daily News" 
+target=_blank			title="EverLore Daily News">
+		   Rescedulement for Freeport Mega-Brawl -Druzzil Ro
+		   </A>
+</font></td></tr><tr><td background="./themes/HOD/images/background2.jpg" valign="top"><img src="./images/topics/bullet.gif"></td><td background="./themes/HOD/images/background2.jpg"><font face="Tahoma" size="-2">		<A 
+			href="http://www.everlore.com/#7" 
+			name="EverLore Daily News" 
+target=_blank			title="EverLore Daily News">
+		   Guild Made Event on Xegony
+		   </A>
+</font></td></tr><tr><td background="./themes/HOD/images/background2.jpg" valign="top"><img src="./images/topics/bullet.gif"></td><td background="./themes/HOD/images/background2.jpg"><font face="Tahoma" size="-2">		<A 
+			href="http://www.everlore.com/#8" 
+			name="EverLore Daily News" 
+target=_blank			title="EverLore Daily News">
+		   New EQ Restaurant on E'ci
+		   </A>
+</font></td></tr><tr><td background="./themes/HOD/images/background2.jpg" valign="top"><img src="./images/topics/bullet.gif"></td><td background="./themes/HOD/images/background2.jpg"><font face="Tahoma" size="-2">		<A 
+			href="http://www.everlore.com/#9" 
+			name="EverLore Daily News" 
+target=_blank			title="EverLore Daily News">
+		   EQ Daily News opens its doors!
+		   </A>
+</font></td></tr><tr><td background="./themes/HOD/images/background2.jpg" valign="top"><img src="./images/topics/bullet.gif"></td><td background="./themes/HOD/images/background2.jpg"><font face="Tahoma" size="-2">		<A 
+			href="http://www.everlore.com/#10" 
+			name="EverLore Daily News" 
+target=_blank			title="EverLore Daily News">
+		   Estate of Unrest Raid on Terris-Thule
+		   </A>
+</font></td></tr></table></font></td>
+                </tr>
+              </table>
+            </td>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td background="themes/HOD/images/pix.gif" height=1 align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+        </table>
+          </div>
+        </td>
+      </tr>
+	  <!--msnavigation-->
+    </table>
+  <br>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr><!--msnavigation-->
+        <td valign="top">
+          <div align="center">
+
+          <table border="0" cellpadding="0" cellspacing="0" background="themes/HOD/images/background2.jpg" height="100%" width="150">
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"> <img src=themes/HOD/images/pix.gif></td>
+            <td height=1 background="themes/HOD/images/pix.gif" align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+            <td>
+              <table border="0" cellpadding="6" cellspacing="6" width="100%">
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><b>Past Articles</b></td>
+                </tr>
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><font face="Arial" size=2><b>Monday, March 19</b><br><br><li><a href="article.php?sid=12&mode=thread&order=0&thold=0">Vault Day!</a> (0)
+<br><br><b>Friday, March 16</b><br><br><li><a href="article.php?sid=11&mode=thread&order=0&thold=0">And today from HoD Treasurer Aanas Thetic talk of the Guild Asset and Cash......</a> (0)
+<li><a href="article.php?sid=10&mode=thread&order=0&thold=0">Sorry for the downtime =(</a> (0)
+<br><br><b>Thursday, March 15</b><br><br><li><a href="article.php?sid=9&mode=thread&order=0&thold=0">An Alliance Forged</a> (0)
+<br><br><b>Tuesday, March 13</b><br><br><li><a href="article.php?sid=8&mode=thread&order=0&thold=0">Last Chance for Phinny</a> (1)
+<li><a href="article.php?sid=7&mode=thread&order=0&thold=0">Signatures</a> (0)
+<br><br><b>Monday, March 12</b><br><br><li><a href="article.php?sid=6&mode=thread&order=0&thold=0">Everlore links</a> (0)
+<li><a href="article.php?sid=4&mode=thread&order=0&thold=0">Registration Time!</a> (0)
+<br><br><b>Sunday, March 11</b><br><br><li><a href="article.php?sid=3&mode=thread&order=0&thold=0">Some unexpected problems =(</a> (1)
+<br><br><b>Saturday, March 10</b><br><br><li><a href="article.php?sid=2&mode=thread&order=0&thold=0">New site opens!</a> (0)
+</font></td>
+                </tr>
+              </table>
+            </td>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td background="themes/HOD/images/pix.gif" height=1 align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+        </table>
+          </div>
+        </td>
+      </tr>
+	  <!--msnavigation-->
+    </table>
+  <br>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr><!--msnavigation-->
+        <td valign="top">
+          <div align="center">
+
+          <table border="0" cellpadding="0" cellspacing="0" background="themes/HOD/images/background2.jpg" height="100%" width="150">
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"> <img src=themes/HOD/images/pix.gif></td>
+            <td height=1 background="themes/HOD/images/pix.gif" align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+            <td>
+              <table border="0" cellpadding="6" cellspacing="6" width="100%">
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><b>Today's Big Story</b></td>
+                </tr>
+                <tr>
+                  <td style='border-style: groove' valign=top height=11 align=left><font face="Arial" size=2><center>There isn't a Biggest Story for Today, yet.</center></font></td>
+                </tr>
+              </table>
+            </td>
+            <td width=1 background="themes/HOD/images/pix.gif" align="center" nowrap valign="middle"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+          <tr>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td background="themes/HOD/images/pix.gif" height=1 align="center"><img src=themes/HOD/images/pix.gif></td>
+            <td width=1 height=1 background="themes/HOD/images/pix.gif" nowrap align="center"><img src=themes/HOD/images/pix.gif></td>
+          </tr>
+        </table>
+          </div>
+        </td>
+      </tr>
+	  <!--msnavigation-->
+    </table>
+  <br>
+</td></tr></table></td></tr></table>
+    <center><font size=1>
+
+    <a href=http://phpnuke.org target=blank><img src=images/powered/nuke.gif border=0 Alt="Web site powered by PHP-Nuke" hspace=10></a> <a href=http://www.phpnuke.web.id target=blank><img src=images/powered/phpbbint.gif border=0 Alt="Web site using PHPBB Integration" hspace=10></a><a href=http://www.apache.org target=blank><img src="images/powered/apache.gif" Alt="Apache Web Server" border=0 hspace=10></a><a href=http://www.php.net target=blank><img src="images/powered/php2.gif" Alt="PHP Scripting Language" border=0 hspace=10></a><br><br>
+
+    All logos and trademarks in this site are property of their respective owner. The comments are property of their posters, all the rest © 2000 by the Heralds of Destiny<br>
+
+    This web site was made with <a href=http://phpnuke.org>PHP-Nuke</a>, a web portal system written in PHP. PHP-Nuke is Free Software released under the <a href=http://www.gnu.org>GNU/GPL license</a>.<br>
+
+    <br>
+
+    </font></center>
+
+    
+    </body>
+
+    </html>
