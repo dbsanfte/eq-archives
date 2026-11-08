@@ -1,0 +1,59 @@
+
+
+<html>
+<head>
+<title>Armigers of Mirth</title>
+<script LANGUAGE="javascript">
+if (self == top) {
+  if (parseInt(navigator.appVersion) == 2) // is the browser Navigator 2?
+    location.href = "default.asp?OP=HumorPage.asp" // for Netscape Navigator 2
+  else
+    location.replace("default.asp?OP=HumorPage.asp");
+   } 
+</script>
+<link rel="stylesheet" type="text/css" href="StyleSheets/Armigers2.css">
+</head>
+<body background="images/ltmarble40.jpg" class="BodyA">
+
+
+
+<div style="position:absolute;top:35;left:-4;z-index:-1"><img align="left" border="0" src="images/grn_curve.gif" alt='' WIDTH="40" HEIGHT="40">&nbsp;</div>
+<div class="DivA" style="position:absolute;border:1px;font-size:1pt;top:-4px;left:-4px;height:40px;width:875px;z-index:5"><img alt="" src="images/filler_sm.jpg" height="33" width="1">&nbsp;</div>
+<div class="DivA" style="position:absolute;border:1px;top:0px;left:25px;height:35px;width:600px;z-index:7"><img src="images/arm_small_mug1.gif" alt="Mmmmmm...beer..." height="33" align="top"><font size="5" face=" Verdana, Arial, Times New Roman" style="filter:Shadow(color='#bdb76b');height:32;width:550">&nbsp;Armigers Of Mirth - Humor Page</font></div>
+<p>&nbsp;<br>&nbsp;<br>
+<center>
+<p>
+<table align="center" cellpadding="0" cellspacing="0" border="0">
+<tr>
+	<td><img width="20" height="20" alt='' src="images/grn_TL.gif"></td>
+	<td class="borderA" align="left"><b>Warden <i>and</i> Veterinarian&nbsp;</b></td>
+	<td class="borderA" align="right"><font size="1">Archives: 
+	<a class="Menu" href="humorpage.asp?FP=wilbur"><b>[<u>1</u>]</b></a>
+	<a class="Menu" href="humorpage.asp?FP=fallen">[2]</a>
+	<a class="Menu" href="humorpage.asp?FP=catlove">[3]</a>
+	<a class="Menu" href="humorpage.asp?FP=crabbake">[4]</a>
+	<a class="Menu" href="humorpage.asp?FP=ThrowNScourge">[5]</a>
+	<a class="Menu" href="humorpage.asp?FP=rat">[6]</a>
+	<a class="Menu" href="humorpage.asp?FP=riverdance">[7]</a>
+	<a class="Menu" href="humorpage.asp?FP=pets">[8]</a>
+	<a class="Menu" href="humorpage.asp?FP=badpull">[9]</a>
+	<a class="Menu" href="humorpage.asp?FP=4on1">[10]</a>
+	</font>
+	</td>
+	<td class="TR"><img alt='' width="20" height="20" src="images/grn_TR.gif"></td>
+</tr>
+<tr>
+	<td class="borderA">&nbsp;</td>
+	<td class="borderA" colspan="2" align="center"><img alt='' src="images_humor/wilbur.jpg" border="1" align="middle"></td>
+	<td class="borderA">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BL"><img alt='' width="20" height="20" src="images/grn_BL.gif"></td>
+	<td class="borderA" colspan="2" align="center">&nbsp;</td>
+	<td class="BR"><img alt='' width="20" height="20" src="images/grn_BR.gif"></td>
+</tr>
+</table>
+</center>
+
+</body>
+</html>
