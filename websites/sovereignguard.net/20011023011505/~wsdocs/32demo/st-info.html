@@ -1,0 +1,244 @@
+<HTML>
+<!--mjc;3.0;012201-->
+<HEAD>
+<TITLE>WebSite Pro Self-Test</TITLE>
+</HEAD>
+
+<BODY  BGCOLOR="#FFFFFF">
+<center>
+<img src="/~wsdocs/images/banner.jpg" width=550 height=75 alt="WebSite Professional Server Self Test"><br>
+<H1>Server Self-Test & Demonstration<BR>
+Information Retrieval</H1>
+</center>
+<i>6-December-2000</i>
+<HR>
+This first section tests and demonstrates the WebSite Pro server's
+information retrieval capabilities:
+<UL>
+<LI><A HREF = "#basic">Basic document retrieval</A>
+  (hypertext, plain text, images, audio)
+<LI><A HREF = "#treenav">Directory listing and file retrieval</A>
+  (fancy alternative to FTP site)
+<LI><A HREF = "#imagemap">Clickable image maps</A>
+  (actions based on clicking hotspots in an image)
+<LI><A HREF="#SSI">Server-side includes</A> (merge documents, use
+  page counters, and more)
+<LI><A HREF = "#urlfix">Automatic URL-fixup</A> (esoteric, but vital)
+</UL>
+<HR>
+<H2><A NAME = "basic">Basic Document Retrieval</A></H2>
+
+This is the most basic, yet most often used, function that your server provides.
+When the user clicks a link, the browser sends a request to the server
+and the server returns the requested document.<P>
+
+Here is a <A HREF = "basic.txt">plain text document</A><BR>
+Here is a <A HREF = "basic.html">hypertext document</A><BR>
+Here is a <A HREF = "images/rbd.jpg">JPEG image</A> (Bob Denny on Cotton)<BR>
+Here is an <A HREF = "ring.au">audio clip</A><BR>
+
+You can also use an image
+<A HREF = "basic.html">
+<IMG SRC  = "/~wsdocs/images/question.gif" WIDTH=24 HEIGHT=32></A>
+as a link.
+
+<HR>
+<H2><A NAME = "treenav">Directory Listing and File Retrieval</A></H2>
+
+<h3><a href="demotree/">Look here first</a></h3>
+
+This feature permits the server to display directories
+visible on your computer
+and lets web users browse and retrieve files. 
+In addition, as server administrator, you can create text
+descriptions
+for files to assist your users in identifying and locating files.
+You can look at this feature as a type of FTP. It does <I>not</I>
+use the FTP protocol; it uses the web's own HTTP for
+file transfers, which are limited to downloads (you can upload
+files via <A HREF = "st-api.html#gen">WSAPI</A> and 
+<A HREF = "st-cgi.html#upload">CGI</A>).
+
+<P>This demo includes a small <A HREF = "demotree/">directory
+tree</A> with some useless documents in it. Have a look and you'll get
+the idea. Clicking the Parent Directory entry at the top of the demo
+tree will take you back to this demo document.
+
+
+<H3>Disabling Directory Browsing</H3>
+
+There are two ways that you can disable directory browsing: server-wide
+and path-specific. The Dir Listing page of the server's property sheet has
+a checkbox to disable directory browsing server-wide.
+You can also create an access-control path on the Access Control page of
+the server's property sheet and check Disable directory listings. This
+action prevents directory browsing on that path and its children. 
+
+<P><A HREF="demotree/nobrowse/">Here is a directory</A> that has been protected
+against browsing with access control. 
+
+<HR>
+<H2><A NAME = "imagemap">Clickable Image Maps</A></H2>
+
+The server has the built-in ability to process clicks within an inline
+image and perform actions based on the <I>location</I> of the click.
+This is called image map support. With it, for example, you can create
+a graphical map of a complex set of web pages and let your users
+navigate visually. Obviously, you can do many other clever things with
+image maps.<P>
+
+Here is an inline GIF image. Click in it and see what happens. <b>If
+you get an error message, your server is not running, or you are
+reading this as a file.</b> Try 
+<a href="http://localhost/~wsdocs/32demo/st-info.html#imagemap">
+this link</A> to see if your local server is running.
+
+<center>
+<p><a href="32demo.map">
+<IMG SRC="images/imapdemo.gif" ISMAP WIDTH=300 HEIGHT=100 
+BORDER=2 ALT="TEST"></a>
+<P>
+</center>
+
+<p>In contrast to most other known web servers, this server does not require
+running an external program to handle server-side image map requests. <B>The
+support is built into the server,</B> which makes the server very
+efficient at handling image mapping.<P>
+
+<h3>Image Map Data</h3>
+
+Using an image map editor, 
+you can graphically create the
+hotspots against a background of the image you want to map. This mapping
+information is stored in an image map file, which the server uses to
+determine what to do depending on where you click. The HTML used in the sample
+above is:
+<P>
+<PRE>&lt;A HREF="32demo.map"&gt;
+&lt;IMG SRC="images/imapdemo.gif" ISMAP WIDTH=300 HEIGHT=100&gt;
+&lt;/A&gt;</PRE>
+<P>
+The <code>32demo.map</code> is the name of the map file. When WebSite
+Pro sees a filename ending in <code>.map</code> it assumes that the file
+contains NCSA-format image mapping data. This activates the
+server's special built-in image mapper. WebSite Pro reads the map file and
+uses the data in it to decide what to do. You can open the map
+with an image mapper and see the regions
+as they were defined, along with their target URLs (right-click a
+region). You may have to locate the background image yourself (one time
+only) after installing WebSite Pro. Here is the image mapping data for 
+the example above:
+<P>
+<PRE>default /~wsdocs/32demo/noshape.html
+ellipse /~wsdocs/32demo/circle.html 8,9 90,89
+poly /~wsdocs/32demo/poly.html 250,10 212,90 290,90 250,10
+rect /~wsdocs/32demo/rect.html 130,10 171,91</PRE>
+<P>
+<p>WebSite Pro uses standard NCSA-format image map files.
+You can put your map files in the same directory as the
+documents that use them.
+
+<!-- Anchor used in return links from imagemap targets -->
+<a name="file-imap">
+<p>The following
+example uses an image map file <code>self-test.map</code>.</a> 
+
+<center>
+<p><A HREF="/~wsdocs/32demo/self-test.map">
+<IMG SRC="images/file-imap.gif" ISMAP WIDTH=218 HEIGHT=68></a>
+</center>
+
+<p>Note that the NCSA image map format supports the <code>point</code>
+element, in which a click outside any geometric region resolves to the
+nearest point. The presence of one or more point elements bypasses any
+background (default) element. The ellipse region is unique to WebSite
+Pro.  Most other imagemappers support only circles.
+
+<p>The HTML used in this sample is:
+<P>
+<PRE>&lt;A HREF="/~wsdocs/32demo/self-test.map"&gt;
+&lt;IMG SRC="images/file-imap.gif" ISMAP&gt;
+&lt;/a&gt;</PRE>
+<P>
+and the contents of <code>self-test.map</code> are:
+<P>
+<PRE>ellipse /~wsdocs/32demo/ellipse.html 50,12 170,54
+point /~wsdocs/32demo/ptleft.html 24,34
+point /~wsdocs/32demo/ptright.html 194,34</pre>
+<P>
+
+<h3>The Two Ways to Code Image Maps in HTML</H3>
+
+Actually, there are two ways to code image maps in HTML. The
+traditional way is to use the <code>ISMAP</code> element within an
+image tag, then enclose it with a link to the image mapper. The
+above examples use this method.
+
+<P><A NAME="imagemap2"></A>
+You can also make an image map by using an obscure but useful feature of 
+HTML forms. Create an input field of type <code>IMAGE</code> within
+a form whose execution target is the image mapper. Forms can use
+either the <code>GET</code> or <code>POST</code> method, but
+<i>file-based image maps require using GET</i>. An example, 
+along with the actual HTML used, appears below.
+<P>
+<PRE>&lt;FORM METHOD="<B>GET</B>" ACTION="32demo2.map"&gt;
+&lt;INPUT TYPE=IMAGE SRC="/~wsdocs/32demo/images/imapdemo.gif"&gt;
+&lt;/FORM&gt;</PRE>
+<P>
+<center>
+<FORM METHOD="GET" ACTION="32demo2.map">
+<INPUT TYPE=IMAGE SRC="/~wsdocs/32demo/images/imapdemo.gif" WIDTH=300 HEIGHT=100>
+</FORM> 
+</center>
+<P>
+<b>NOTE:</B>  WebSite Pro also supports client-side image 
+maps in which the coordinates and URLs are stored in an HTML file and 
+processed by the browser.  Not all browsers support client-side image 
+maps.  
+<HR>
+<A NAME="SSI"><H2>Server-side Includes</H2></A>
+
+<A HREF="ssi.html-ssi"><H3>Test Page Here</H3></A>
+
+WebSite Pro supports the powerful Server-Side Include (SSI) feature
+for easily adding dynamic content to HTML documents.
+<P><B>NOTE:</B> WebSite Pro's unique built-in SSI support for page counters
+eliminates the need for CGI-based page counter packages completely. 
+
+<P><A HREF="ssi.html-ssi">This document</a> demonstrates and tests 
+WebSite Pro's SSI facilities. See Chapter 17 of 
+<I> Charting Your Course</I> for details on the
+features and syntax for using SSI.
+ 
+<HR>
+<A NAME="urlfix"><H2>Automatic URL-Fixup</H2></A>
+
+This section checks out a vital feature of your server -- its ability to
+fix up directory URLs that don't have a trailing slash. Don't bother to 
+try to understand why this is needed for now. Look at the URL that is
+displayed at the top of your browser. It ends either with
+<code>st-info.html </code> or with a trailing slash. Click the link below.
+If the top document is successfully redisplayed, the feature is working. If
+you get an error, your hostname is not configured correctly. Use the
+Identities page of the server's property sheet to correct 
+your hostname and then try this test again. Try it now:
+<p>
+<PRE><A HREF="/~wsdocs/32demo">/~wsdocs/32demo</A>  &lt;-- missing trailing slash</PRE>
+<p>
+Now look at the displayed current URL. It should have a trailing 
+slash on it, and it also has the port number after the host name
+if your server is running on a port other than 80 (the HTTP default).
+
+<HR>
+<H2><a href="st-misc.html">Next Test Set: Security Features</a><br>
+<a href="index.html">Back to Top Page</a></h2>
+
+<address>
+<a href="mailto:website-support@ora.com">website-support@ora.com</a>
+</address>
+
+</BODY>
+</HTML>
+
+

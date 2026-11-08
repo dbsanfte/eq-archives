@@ -1,0 +1,1122 @@
+<HTML>
+<HEAD>
+<TITLE>WebSite API - Functions</TITLE>
+</HEAD>
+<!-- This mess was made by Internet Assistant & manually "cleaned up" -->
+<!--kks;2.0;080397-->
+
+<BODY  BGCOLOR="#FFFFFF">
+<center>
+<img src="/~wsdocs/images/WSP2_nil.gif" width=515 height=60 alt="WebSite Professional Server Self Test"><br>
+<H1>WebSite API 1.1 SDK<BR>
+Server Function Descriptions</H1>
+</CENTER>
+
+<h3><A HREF="index.htm">Return to Overview</A></h3>
+<i>15-September-97</i>
+<hr>
+
+<H2>Index</H2>
+
+<TABLE WIDTH=100%>
+<TR VALIGN=TOP>
+<TD>
+<A HREF="func-a-h.htm#bind_wsapi">bind_wsapi</A><br>
+<A HREF="func-a-h.htm#close_form_decoder">close_form_decoder</a><br>
+<A HREF="func-a-h.htm#construct_url">construct_url</A><br>
+<A HREF="func-a-h.htm#decode_next_field">decode_next_field</a><br>
+<A HREF="func-a-h.htm#DbgDump">DbgDump</A><br>
+<A HREF="func-a-h.htm#die">die</A><br>
+<A HREF="func-a-h.htm#do_imagemap">do_imagemap</A><br>
+<A HREF="func-a-h.htm#escape_url">escape_url</A><br>
+<A HREF="func-a-h.htm#evaluate_access">evaluate_access</A><br>
+<A HREF="func-a-h.htm#exec_cgi">exec_cgi</A><br>
+<A HREF="func-a-h.htm#exec_cgi_to_file">exec_cgi_to_file</A><br>
+<A HREF="func-a-h.htm#file_to_url">file_to_url</A><br>
+<A HREF="func-a-h.htm#get_content_type">get_content_type</A><br>
+<A HREF="func-a-h.htm#get_server_variable">get_server_variable</A><br>
+<A HREF="func-a-h.htm#GetRegBin">GetRegBin</A><br>
+<A HREF="func-a-h.htm#GetRegString">GetRegString</A><br>
+<A HREF="func-a-h.htm#get_temp_name">get_temp_name</A><br>
+</TD>
+<TD>
+<A HREF="func-a-h.htm#http_timestr">http_timestr</A><br>
+<A HREF="func-a-h.htm#http_nt_timestr">http_nt_timestr</A><br>
+<A HREF="func-i-p.htm#later_than">later_than</A><br>
+<A HREF="func-i-p.htm#MD5Init">MD5Init</A><br>
+<A HREF="func-i-p.htm#MD5Update">MD5Update</A><br>
+<A HREF="func-i-p.htm#MD5Final">MD5Final</A><br>
+<A HREF="func-i-p.htm#nflush">nflush</A><br>
+<A HREF="func-i-p.htm#ngets">ngets</A><br>
+<A HREF="func-i-p.htm#normalize_url">normalize_url</A><br>
+<A HREF="func-i-p.htm#nputs">nputs</A><br>
+<A HREF="func-i-p.htm#nread">nread</A><br>
+<A HREF="func-i-p.htm#nreadf">nreadf</A><br>
+<A HREF="func-i-p.htm#nwrite">nwrite</A><br>
+<A HREF="func-i-p.htm#nwritef">nwritef</A><br>
+<A HREF="func-i-p.htm#OpenRegKey">OpenRegKey</A><br>
+<A HREF="func-i-p.htm#open_form_decoder">open_form_decoder</a><br>
+<A HREF="func-i-p.htm#plus_to_space">plus_to_space</A><br>
+</TD>
+<TD>
+<A HREF="func-i-p.htm#process_get">process_get</A><br>
+<A HREF="func-q-z.htm#send_http_header">send_http_header</A><br>
+<A HREF="func-q-z.htm#set_content_type">set_content_type</A><br>
+<A HREF="func-q-z.htm#space_to_plus">space_to_plus</A><br>
+<A HREF="func-q-z.htm#TrueRandAddNoise">TrueRandAddNoise</A><br>
+<A HREF="func-q-z.htm#TrueRandEntropy">TrueRandEntropy</A><br>
+<A HREF="func-q-z.htm#TrueRandGetByte">TrueRandGetByte</A><br>
+<A HREF="func-q-z.htm#TrueRandGetBytes">TrueRandGetBytes</A><br>
+<A HREF="func-q-z.htm#unescape_url">unescape_url</A><br>
+<A HREF="func-q-z.htm#url_to_file">url_to_file</A><br>
+<A HREF="func-q-z.htm#wsapi_free">wsapi_free</A><br>
+<A HREF="func-q-z.htm#wsapi_log_event">wsapi_log_event</A><br>
+<A HREF="func-q-z.htm#wsapi_malloc">wsapi_malloc</A><br>
+<A HREF="func-q-z.htm#wsapi_realloc">wsapi_realloc</A><br>
+<A HREF="func-q-z.htm#wsapi_strdup">wsapi_strdup</A><br> 
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom>
+<A NAME="bind_wsapi">bind_wsapi</A>
+</H2>
+
+<H3>Syntax </H3>
+
+<TT>BOOL bind_wsapi(WORD major, WORD minor, BOOL strict);</TT>
+<DL>
+<DT><TT>major</TT>
+<DD>The major version of your DLL, based on the header file which
+was used to compile it.
+<DT><TT>minor</TT>
+<DD>The minor version of your DLL, based on the header file which
+was used to compile it.
+<DT><TT>strict</TT>
+<DD>Version matching criteria. See the description section. 
+</DL>
+
+Returns <TT>TRUE</TT> or <TT>FALSE</TT>
+to indicate that the versions are compatible.
+
+<H3>Description </H3>
+
+This routine performs run-time version locking between the extension
+and the server. The header file used to compile extension contains
+a <TT>#define</TT> that carries
+the major and minor version numbers of the interface for which
+the header file was written. The extension must call this function
+at process-attach time, with its major and minor versions as arguments,
+as shown above. If this function returns TRUE, the interface is
+usable, else it returns FALSE. If the DLL gets a FALSE back from
+this function, it must return FALSE from its <TT>DLLMain</TT>
+function, refusing the load. The logic in the server will report
+the load refusal to the logs and via a one-time <TT>MessageBox</TT>.
+The ground rules are:
+<DL>
+<DT><TT>strict = TRUE</TT>
+<DD>Major and minor versions must match
+<DT><TT>strict = FALSE</TT>
+<DD>Fail if either the major versions do not match, or the minor
+version of the extension is greater than that of the server. 
+</DL>
+
+Major version changes occur when the interface is changed so as
+to be incompatible with previous versions (e.g., the TCTX structure
+changes). Minor version changes occur when bugs are fixed and/or
+new functionality is added in a way that is backward compatible.
+The DLL cannot load if its minor version is greater than that
+of the server because it may depend on such bug fixes or additional
+functionality in the server for its proper operation.
+
+<H3>Example </H3>
+<PRE>#include &quot;wsapi.h&quot;
+...
+
+BOOL WINAPI DllMain(HINSTANCE hInstDLL, DWORD fdwReason, LPVOID lpReserved)
+{
+    switch(fdwReason)
+    {
+        case DLL_PROCESS_ATTACH:
+            return(bind_wsapi(MAJOR_VERSION, MINOR_VERSION, FALSE));
+
+        case DLL_PROCESS_DETACH:            // No process-wise cleanup
+        case DLL_THREAD_ATTACH:             // No thread-wise initialization
+        case DLL_THREAD_DETACH:             // No thread-wise cleanup
+            return(TRUE);
+    }
+}</PRE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="close_form_decoder">close_form_decoder</A>
+</H2>
+
+<H3>Syntax </H3>
+
+<TT>void close_form_decoder(FORM_CTX ctx, TCTX *tp);</TT>
+<DL>
+<DT><TT>ctx</TT>
+<DD>The opaque decoding context handle returned by a previous call to
+<a href="func-i-p.htm#open_form_decoder"><code>open_form_decoder()</code></a>.
+<DT><TT>tp</TT>
+<DD>Transaction context pointer 
+</DL>
+
+<H3>Description</H3>
+
+This function closes down the forms decoder instance created by a
+previous call to 
+<a href="func-i-p.htm#open_form_decoder"><code>open_form_decoder()</code></a>.
+Failing to call this for each successfull call to
+<code>open_forms_decoder()</code> will result in a memory leak.
+Therefore, <i>place the call to 
+</i><code>close_form_decoder()</code><i> in the
+</i><code>__finally</code><i> block of a try/finally statement, with the
+call to </i><code>open_form_decoder()</code><i> in the 
+</i><code>__try</code><i> portion.</i>
+
+<h3>Example</h3>
+See the example in the description of
+<a href="func-i-p.htm#open_form_decoder"><code>open_form_decoder()</code></a> and
+the code in the <code>formdump</code> sample provided with WebSite.
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="construct_url">construct_url</A>
+</H2>
+
+<H3>Syntax </H3>
+
+<TT>void construct_url(char *dest, char
+*src, TCTX *tp)</TT>
+<DL>
+<DT><TT>dest</TT>
+<DD>buffer to receive the constructed &quot;full&quot; URL
+<DT><TT>src</TT>
+<DD>buffer containing the URL path
+<DT><TT>tp</TT>
+<DD>Transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+This function constructs a complete URL (including the scheme,
+hostname, and port), given a URL path. The resultant URL has a
+scheme of <TT>http://</TT> or
+<TT>https://</TT> (if the connection
+is using SSL). The hostname and port number depend on the identity
+and port via which the current request arrived. If the port number
+is 80 (or 443 for an SSL connection), the port component of the
+URL is omitted. 
+<H3>Example </H3>
+<PRE>char dest[MED_STRING_LEN];
+char *src = &quot;/foo/bar.html&quot;;
+...
+construct_url(dest, src, tp);</PRE>
+
+The resulting complete URL might look like
+<TT>http://www.me.com/foo/bar.html</TT>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="decode_next_field">decode_next_field</A></H2>
+
+<H3>Syntax</H3>
+
+<TT><a href="#frmfield">PFIELD</a> decode_next_field(FORM_CTX ctx, TCTX *tp);</TT>
+<DL>
+<DT><TT>ctx</TT>
+<DD>The opaque decoding context handle returned by a previous call to
+<a href="func-i-p.htm#open_form_decoder"><code>open_form_decoder()</code></a>.
+<DT><TT>tp</TT>
+<DD>Transaction context pointer 
+</DL>
+
+<p>Returns a <i>thread-safe pointer</i> to a 
+<a name="frmfield"><tt>FIELD</tt></a> structure:
+<pre>typedef struct {                            // Field descriptor
+	char name[MED_STRING_LEN];          // Field name
+	BYTE *data;                         // -> field data
+	DWORD len;                          // Field data length
+	char ctype[MED_STRING_LEN];         // File content-type
+	char xftype[MED_STRING_LEN];        // File content-transfer-encoding
+	char fname[MED_STRING_LEN];         // Client's file name (file fields)
+}FIELD, *PFIELD;</pre>
+or <tt>NULL</TT> if there are no (more) fields to enumerate.
+
+<H3>Description </H3>
+
+Following a successful call to
+<a href="func-i-p.htm#open_form_decoder"><code>open_form_decoder()</code></a>,
+each call to this function retrieves the name, contents and optional
+attributes of the "next" form field. This information is put into a
+<tt>FIELD</tt> structure as shown above, and the function returns a 
+pointer to the structure. The structure is thread-safe; it remains
+valid until the next call to <tt>decode_next_field()</tt> with the 
+given context handle.
+
+<h3>Example</h3>
+See the example in the description of
+<a href="func-i-p.htm#open_form_decoder"><code>open_form_decoder()</code></a> and
+the code in the <code>formdump</code> sample provided with WebSite.
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="DbgDump">DbgDump</A>
+</H2>
+
+<H3>Syntax </H3>
+
+<TT>void DbgDump (BYTE *buf, WORD len,
+char *label)</TT>
+<DL>
+<DT><TT>buf</TT>
+<DD>Buffer containing bytes to dump
+<DT><TT>len</TT>
+<DD>Number of bytes to dump
+<DT><TT>label</TT>
+<DD>Label for the dump listing 
+</DL>
+
+<H3>Description </H3>
+
+Mainframe style buffer dump. Writes a hex/ascii dump of the buffer
+to the server's log <TT>server.log</TT>.
+<H3>Example </H3>
+<PRE>char buf[1024];
+...
+DbgDump(buf, 64, &quot;Test dump</PRE>
+
+Dumps the first 64 bytes of <TT>buf</TT>.
+The output to <TT>server.log</TT>
+looks something like this:
+<PRE>10:10:46 Test dump [127.0.0.1] (64, 0x40)
+-----|-------------------------------------|----------------
+0000  48545450 2F312E30 20323030 204F4B0D   HTTP/1.0 200 OK.
+0010  0A446174 653A2054 75657364 61792C20   .Date: Tuesday, 
+0020  30352D53 65702D39 35203137 3A31303A   05-Sep-95 17:10:
+0030  34362047 4D540D0A 53657276 65723A20   46 GMT..Server: 
+0040  57656253 69746553 65637572 652F312E   WebSiteSecure/1.</PRE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="die">die</A> </H2>
+
+<H3>Syntax </H3>
+
+<TT>void die(int type, char *string,
+TCTX *tp)</TT>
+<DL>
+<DT><TT>type</TT>
+<DD>HTTP status code (see Description for legal values)
+<DT><TT>string</TT>
+<DD>status-specific string (see Description for usage)
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+This function provides your extension with a &quot;clean exit&quot;,
+returning a properly formatted and worded HTTP status message
+to the client. The function never returns; the thread is terminated
+and cleaned up after returning the HTTP message. Use this <I>only</I>
+in a generator, pre-processor or post-processor.<I> Do not use
+it in any other type of extension.</I>
+<P>
+<TT>Die()</TT> can generate HTTP
+responses for the most common HTTP/1.0 status codes, providing
+the correctly worded reason phrases, and additional information
+provided in the <TT>string</TT>
+parameter. The status codes have corresponding symbolic definitions in
+<tt>wsapi.h</tt>. You should use the symbolic code.
+The following describes each of these status codes,
+and the usage of the <TT>string</TT>
+parameter. The symbolic status value is passed in the <TT>type</TT>
+parameter. For details on the meaning of each of these responses,
+see the 
+<A HREF="http://www.ics.uci.edu/pub/ietf/http/draft-ietf-http-v10-spec-05.txt">HTTP/1.0
+Specification</A>. If you need to return a response not supported by
+<tt>die()</tt> you'll need to construct it yourself. Use 
+<a href="func-q-z#send_http_header">send_http_header()</a> to start the
+response. 
+<DL>
+<DT><TT>204 (No Response)</TT>
+<DD>The body of the response will contain &quot;<TT>&lt;string&gt;,
+and there is nothing to return.</TT>&quot;
+<DT><TT>302 (Moved Temporarily)</TT>
+<DD>string is the target URL. The HTTP header will contain both
+the (older) <TT>Location:</TT>
+and the (preferred) <TT>URI:</TT>
+forms of the redirection lines, each specifying the target URL.
+The body of the message will contain &quot;<TT>This
+document has moved here</TT>&quot;, and the word <TT>here</TT>
+will be a hyperlink to the target URL. Normally, the browser will
+automatically fetch the target document, so the message body will
+not be seen by the browser user. It is included for broken browsers.
+<DT><TT>304 (Not Modified)</TT>
+<DD><TT>string</TT> is not used.
+
+<DT><TT>400 (Bad Request)</TT>
+<DD>The body of the message will contain &quot;<TT>The
+server could not handle your request. Reason: &lt;string&gt;</TT>&quot;.
+<DT><TT>401 (Unauthorized)</TT>
+<DD>This generates an HTTP/1.0 <TT>WWW-Authenticate:</TT>
+header line, with <TT>string</TT>
+as the data for that line. Normally <TT>string</TT>
+should be something like <TT>Basic Realm=&quot;&lt;whatever&gt;&quot;</TT>.
+This causes the browser to display the username/password dialog
+with the realm as part of the prompt string.
+<DT><TT>403 (Forbidden)</TT>
+<DD>The body of the message will contain <TT>&lt;string&gt;</TT>
+<DT><TT>404 (Not Found)</TT>
+<DD>The body of the message will contain <TT>The
+requested URL was not found on this server: &lt;string&gt;</TT>
+<DT><TT>500 (Server Error)</TT>
+<DD>The body of the message will contain <TT>The
+server encountered an internal error or misconfiguration and was
+unable to complete your request. Message: &lt;string&gt;...</TT>
+(additional text follows this).
+<DT><TT>501 (Not Implemented)</TT>
+<DD>The body of the message will contain <TT>We
+are sorry to be unable to perform the method &lt;string&gt; with
+this URL...</TT> (additional text follows this). 
+</DL>
+
+<H3>Example </H3>
+<TT>#include "wsapi.h"<br>
+die(REDIRECT, &quot;http://other.web.site/foo.html&quot;, tp);</TT>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="do_imagemap">do_imagemap</A>
+</H2>
+
+<H3>Syntax </H3>
+
+<TT>void do_imagemap(int method, char
+*map_name, char *coords, TCTX *tp)</TT>
+<DL>
+<DT><TT>method</TT>
+<DD>The HTTP method to use (<I>integer code</I>, see <TT>wsapi.h</TT>)
+<DT><TT>map_name</TT>
+<DD>The name of the imagemap (see description)
+<DT><TT>coords</TT>
+<DD>coordinate string (see description)
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+Handle the current request as an imagemap. Handles traditional
+imagemaps using <TT>GET</TT> and
+an <TT>ISMAP</TT> image, as well
+as alternative use of a form with <TT>&lt;INPUT
+TYPE=IMAGE&gt;</TT>. Note: This supports <I>only</I> &quot;nameless&quot;
+fields here. If there's a name on the <TT>IMAGE</TT>
+field, it means in all likelihood it's part of a &quot;real&quot;
+form that would have to be handled by an extension or CGI form
+handler. Therefore, the form designer <B>must not name imagemap
+fields</B>. With this in mind, the coordinates can be in two forms,
+depending on the method in use:
+<P>
+<TT>GET (ISMAP): <I><B>x,y</B></I></TT>
+(on URL)
+<P>
+<TT>GET/POST (FORM): x=<I><B>x</B></I>&amp;y=<I><B>y</B></I></TT>
+(on URL(GET), read from client(POST))
+<P>
+If the call specifies <TT>GET</TT>,
+the coordinate string is assumed to be in the transaction context
+block's <TT>args</TT> field. If
+the call specifies <TT>post</TT>,
+the function will read the coordinate string from the network
+as &quot;content&quot;. 
+<P>
+The function will return only if the resulting target URL is local
+(part of the local server's URL-space). If not, the function will
+generate a redirect and complete the transaction without returning.
+If the function does return, the server will have completed sending
+the local document, so in general you can simply call the <TT>ABORT</TT>
+macro to complete the transaction. This will log the request (including
+calling the logger extension if any).
+<P>
+<TT>map_name </TT>can be either
+a registry-resident imagemap or a file-based imagemap. The server
+tells the difference by looking at <TT>map_name</TT>
+and if there is no colon character present, it assumes that the
+imagemap is registry-resident. Otherwise, it assumes that <TT>map_name</TT>
+is a complete disk/directory/file pathname for the imagemap, which
+must be an NCSA-format map file.
+<P>
+The easiest way to use <TT>do_imagemap</TT>
+is shown in the example below.
+<H3>Example </H3>
+<TT>do_imagemap(M_GET, &quot;d:\web-aux\maps\us.map&quot;,
+&quot;125,90&quot;, tp);<BR>
+ABORT;</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="escape_url">escape_url</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void escape_url(char *buf)</TT>
+<DL>
+<DT><TT>buf</TT>
+<DD>string that needs escaping according to the HTTP/1.0 rules.
+
+</DL>
+
+<H3>Description </H3>
+
+
+Escapes a string according to the conventions used in HTTP. The
+escape operation is performed in place, therefore the result may
+be longer than the original string.<B> The buffer must be writeable</B>.
+<H3>Example </H3>
+
+<TT>char buf[MED_STRING_LEN];</TT>
+<P>
+<TT>...</TT>
+<P>
+<TT>strcpy(buf, &quot;/Name With Spaces/$$name.html&quot;);
+<BR>
+escape_url(buf);</TT>
+<P>
+Returns with <TT>/Name%20with%20Spaces/%14%14name.html</TT>
+in <TT>buf</TT>. 
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="evaluate_access">evaluate_access</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void evaluate_access(char *url, TCTX
+*tp)</TT>
+<DL>
+<DT><TT>url</TT>
+<DD>string containing URL path of object
+<DT><TT>tp</TT>
+<DD>Transaction context pointer 
+</DL>
+
+
+May not return (see description) 
+<H3>Description </H3>
+
+
+Evaluate access control for the given URL. If access is allowed,
+the <TT>tp-&gt;allow</TT> field
+is set <TT>TRUE</TT> and the <TT>tp-&gt;allow_options</TT>
+field is set with the access options bitmask. The bits in the
+bitmask are defined in <TT>wsapi.h</TT>
+and are: 
+<PRE>
+OPTION SYMBOL           DESCRIPTION
+----------------------- ---------------------------------------------
+SECOPT_SSL_ONLY         Access permitted via SSL only
+SECOPTS_OR_CLASS_USERS  Access granted to user <B>OR</B> host address
+SECOPTS_NO_BROWSE       Disallow directory browsing</PRE>
+
+
+Normally, you won't be concerned about the options. They are used
+by <TT>evaluate_access</TT> itself,
+and internally by the server. They are provided for your information,
+however. 
+<P>
+If access fails for lack of user authentication <B>this function
+does not return</B>. The server sends a <TT>401
+Not Authorized</TT> message to the browser, causing the
+username/password dialog to appear. If the user enters a username
+and password, the browser will reissue the same request again
+with the new username and password. 
+<P>
+If access fails because the client IP address or hostname is disallowed,
+or access requires SSL and the connection is not SSL, or if the
+URL specifies a directory and browsing is locked out, the function
+returns with <TT>tp-&gt;allow</TT>
+set to <TT>FALSE</TT>. In this
+case, you are free to handle the issue any way you wish. 
+<P>
+The function will fail via an exception if access control fails.
+In general, you need to be concerned about this only if you have
+allocated memory that needs to be freed or handles that need to
+be closed. In this case, you should guard the call with a try/finally
+or a try/except block as appropriate to your application. <B>Do
+not dismiss these exceptions under any circumstances.</B> They
+are used for proper completion of the transaction. 
+<H3>Example </H3>
+<TT>    evaluate_access(&quot;/docs/private/sales_3Q.html&quot;, tp);</TT>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="exec_cgi">exec_cgi</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void exec_cgi(char *meth, char *file,
+char *args, int intfc, TCTX *tp)</TT>
+<DL>
+<DT><TT>meth</TT>
+<DD>Method (e.g., <TT>POST, PUT</TT>)
+<DT><TT>file</TT>
+<DD>Full physical pathname of the executable or &quot;associated&quot;
+document
+<DT><TT>args</TT>
+<DD>URL arguments (&quot;query string&quot;), must not be NULL
+<DT><TT>intfc</TT>
+<DD>CGI interface to use (e.g., <TT>SCRIPT_WIN</TT>,
+see <TT>wsapi.h</TT>).
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+
+May not return (see description)
+<H3>Description </H3>
+
+
+High level interface to the server's CGI handler. This function
+will execute a CGI script or program using the selected method
+and CGI interface, and send the results to the browser. The function
+may not return, e.g., if the CGI program returns a <TT>Location:</TT>
+or <TT>URI:</TT> header, or if
+it fails access control. Errors will use the ABORT macro and will
+not return either. If the function <I>does</I> return, the response
+from the CGI program has been sent to the browser and the transaction
+is finished.
+<P>
+WebSite has three CGI interfaces: Windows, DOS and Standard. This
+function can be used to execute a CGI program using any one of
+these interfaces. See <TT>wsapi.h</TT>
+for the symbolic codes used to select the interface. The function
+<A HREF="func-q-z.htm#url_to_file">url_to_file()</A> returns the document
+type, which for a CGI type document, can be used to select the
+CGI interface.
+<P>
+The function will fail via an exception if access control fails,
+if the CGI returns <TT>Location:</TT>
+or <TT>URI:,</TT> or (using the
+<TT>ABORT</TT> macro) on a variety
+of network I/O problems. In general, you need to be concerned
+about these only if you have allocated memory that needs to be
+freed or handles that need to be closed. In this case, you should
+guard the call with a try/finally or a try/except block as appropriate
+to your application. <B>Do not dismiss these exceptions under
+any circumstances.</B> They are used for proper completion of
+the transaction.
+<H3>Example </H3>
+<TT>exec_cgi (&quot;GET&quot;, <BR>
+&quot;C:\\website\\cgi-win\\foo.exe&quot;, <BR>
+&quot;search=abcd&amp;type=starts&quot;,<BR>
+SCRIPT_WIN, tp);</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="exec_cgi_to_file">exec_cgi_to_file</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void exec_cgi_to_file(char *meth,
+char *file, char *args, int intfc, TCTX *tp)</TT>
+<DL>
+<DT><TT>meth</TT>
+<DD>Method (e.g., <TT>POST, PUT</TT>)
+<DT><TT>file</TT>
+<DD>Full physical pathname of the executable or &quot;associated&quot;
+document
+<DT><TT>args</TT>
+<DD>URL arguments (&quot;query string&quot;), must not be NULL
+<DT><TT>intfc</TT>
+<DD>CGI interface to use (e.g., <TT>SCRIPT_WIN</TT>,
+see <TT>wsapi.h</TT>).
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+
+May not return (see description)
+<H3>Description </H3>
+
+
+Identical to the <A HREF="#exec_cgi">exec_cgi()</A> function,
+except that the output of the CGI program is not sent to the client.
+Rather, the function returns with the spooled output of the CGI
+program open on a temporary file. The handle of the open file
+is in <TT>tp-&gt;hOutFile</TT>.
+It will include any HTTP headers generated by the CGI program
+as well as any content. <B>You must close this file when you are
+finished with it, before you let the transaction complete.</B>
+<H3>Example </H3>
+<TT>exec_cgi_to_file (&quot;GET&quot;,
+// Exec to a temp file <BR>
+&quot;C:\\website\\cgi-win\\foo.exe&quot;, <BR>
+&quot;search=abcd&amp;type=starts&quot;,<BR>
+SCRIPT_WIN, tp);<BR>
+ReadFile(tp-&gt;hOutFile,
+...); // Read CGI output</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="file_to_url">file_to_url</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void file_to_url(char *path, TCTX
+*tp)</TT>
+<DL>
+<DT><TT>path</TT>
+<DD>full file pathname (including drive spec)
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+
+File path to URL (&quot;reverse&quot;) mapping. The opposite of
+<A HREF="func-q-z.htm#url_to_file">url_to_file()</A>. Translates a physical
+file pathname to a URL for the file. The conversion is done in
+place, therefore <B>the buffer containing the URL pathname must
+be writeable.</B> This translation depends on a unique relationship
+between the physical pathname and the URL. Redundant mappings
+can result in unpredictable results. 
+<H3>Example </H3>
+<TT>char buf[MAX_STRING_LEN]; <BR>
+...<BR>
+strcpy(buf, &quot;c:\\website\\cgi-win\\test.exe&quot;);<BR>
+file_to_url(buf);</TT>
+<P>
+The result will be something like <TT>/cgi-win/test.exe</TT>.
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="get_content_type">get_content_type</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>char *get_content_type(char *file,
+TCTX *tp)</TT>
+<DL>
+<DT><TT>file</TT>
+<DD>filename of the file for which the content type is desired
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+
+Returns HTTP/MIME content type in <B>allocated</B> string. 
+<H3>Description </H3>
+
+
+Get the HTTP/MIME content type of the given file. This information
+is taken from WebSte's registry-based content type mapping table,
+which uses the file's &quot;extension&quot; as the key. If the
+filename does not contain a period, the &quot;default&quot; content
+type (usually <TT>application/octet-stream</TT>)
+is returned. The function returns a pointer to the content type
+string in <B>allocated</B> memory. Depending on how this is used,
+you may need to free this space to avoid memory leaks.
+<H3>Example </H3>
+<TT>char *cp;<BR>
+...<BR>
+cp = get_content_type(&quot;abc.gif&quot;, tp);</TT>
+<P>
+Completes with allocated string containing (most likely) <TT>image/gif.</TT>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="get_server_variable">get_server_variable</A></H2>
+
+<H3>Syntax </H3>
+
+<TT>BOOL get_server_variable(char *name, char *buf, DWORD size, TCB *tp)</TT>
+<DL>
+<DT><TT>name</TT>
+<DD>the CGI-style name of the variable to get
+<DT><TT>buf</TT>
+<DD>the buffer into which the value of the variable is placed
+<DT><TT>size</TT>
+<DD>The length in bytes of <tt>buf</tt>. Overflow truncates the value string.
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+
+Returns TRUE if the named variable exists (it still may be empty) and 
+FALSE if there is no such named variable.
+
+<H3>Description </H3>
+
+This function is provided for users who are upgrading from Microsoft
+ISAPI or Standard CGI to WSAPI. It simply provides a way to access data
+that is contained in the <a href="tctx.html">transaction context block
+(TCTX)</a> using CGI-style "environment variable" names. This is a
+superset of the variables supported by ISAPI and most CGI interfaces.
+Compatibility names have been provided as well.
+
+<p><tt>get_server_variable()</tt> is less efficient than reading data
+directly from the TCTX, so you should do the latter if at all practical.
+Also note that the names used here are the "NCSA" style names, for maximum
+compatility with ported applications. Name matching is caseless.
+
+<p>The following ISAPI/CGI-style named variables are supported by 
+<tt>get_server_variable()</tt>:
+
+<p><table border>
+	<caption><b>Supported CGI-Style Variables</b></caption>
+	<tr>
+		<th>Variable Name</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><i>Server Information</i></td>
+	</tr>
+	<tr>
+		<td><tt>DEBUG_MODE</tt></td>
+		<td>If WebSite's API/CGI tracing switch is on, this is "YES", otherwise it is "NO"</td>
+	</tr>
+	<tr>
+		<td><tt>DOCUMENT_ROOT</tt></td>
+		<td>The physical directory path corresponding to the URL "/" for the current request. May vary if multi-homing is in use.</td>
+	</tr>
+	<tr>
+		<td><tt>GATEWAY_INTERFACE</tt></td>
+		<td>The name and version of the gateway interface (e.g. "WSAPI/1.1")</td>
+	</tr>
+	<tr>
+		<td><tt>GMT_OFFSET</tt></td>
+		<td>Offset of local time from GMT, seconds, negative west of GMT (PST is -28800, 8 hours west)</td>
+	</tr>
+	<tr>
+		<td><tt>SERVER_ADMIN</tt></td>
+		<td>The email address of the server's administrator</td>
+	</tr>
+	<tr>
+		<td><tt>SERVER_NAME</tt></td>
+		<td>The server's current hostname (will vary if multi-homing is used)</td>
+	</tr>
+	<tr>
+		<td><tt>SERVER_PORT</tt></td>
+		<td>The TCP port on which the server received the current request (different ports are used for SSL and "normal").</td>
+	</tr>
+	<tr>
+		<td><tt>SERVER_PROTOCOL</tt></td>
+		<td>The name and version of the server's protocol ("HTTP/1.0")</td>
+	</tr>
+	<tr>
+		<td><tt>SERVER_SOFTWARE</tt></td>
+		<td>The name and version of the server software (e.g. "WebSitePro/1.2")</td>
+	</tr>
+	<tr>
+		<td><i>Client Info</i></td>
+	</tr>
+	<tr>
+		<td><tt>HTTP_ACCEPT</tt></td>
+		<td>List of media content types (and possibly Q-values) that the client will accept</td>
+	</tr>
+	<tr>
+		<td><tt>HTTP_ACCEPT_LANGUAGE</tt></td>
+		<td>List of languages that the client will accept</td>
+	</tr>
+	<tr>
+		<td><tt>HTTP_FROM</tt></td>
+		<td>Email address of the client user (not currently supported by browsers)</td>
+	</tr>
+	<tr>
+		<td><tt>HTTP_KEEP_ALIVE</tt></td>
+		<td>If the client supports keep-alive, this will be <tt>YES</tt>, otherwise it will be <tt>NO</tt></td>
+	</tr>
+	<tr>
+		<td><tt>HTTP_USER_AGENT</tt></td>
+		<td>The name and version of the client (browser) software</td>
+	</tr>
+	<tr>
+		<td><tt>REMOTE_ADDR</tt></td>
+		<td>The IP address of the remote (client) host or proxy gateway.</td>
+	</tr>
+	<tr>
+		<td><tt>REMOTE_HOST</tt></td>
+		<td>The DNS hostname of the remote (client) host (only if DNS reverse lookup is enabled, else this is identical to <tt>REMOTE_ADDR</tt>)</td>
+	</tr>
+	<tr>
+		<td><tt>REMOTE_USER</tt></td>
+		<td>Identical to <tt>AUTH_USER</tt>. Provided for compatibility.</td>
+	</tr>
+	<tr>
+		<td><i>Client Authentication</i></td>
+		<td><i>(present only if client sends authentication data)</i>
+	</tr>
+	<tr>
+		<td><tt>AUTH_NAME</tt></td>
+		<td>The <i>realm</i> from which user and group names are taken. WebSite supports multiple realms.</td>
+	</tr>
+	<tr>
+		<td><tt>AUTH_PASSWORD</tt></td>
+		<td>The password furnished with the authentication data</td>
+	</tr>
+	<tr>
+		<td><tt>AUTH_TYPE</tt></td>
+		<td>The authentication type. Currently always "BASIC"</td>
+	</tr>
+	<tr>
+		<td><tt>AUTH_USER</tt></td>
+		<td>The username furnished with the authentication data</td>
+	</tr>
+	<tr>
+		<td>Request Info</td>
+	</tr>
+	<tr>
+		<td><tt>CONTENT_LENGTH</tt></td>
+		<td>Length in bytes of data sent with the request (e.g., form data)</td>
+	</tr>
+	<tr>
+		<td><tt>CONTENT_TYPE</tt></td>
+		<td>Media content type of data sent with the request (e.g. <tt>multipart/form-data</tt>) Includes parameters such as boundary strings.</td>
+	</tr>
+	<tr>
+		<td><tt>HTTP_REQUEST_RANGE</tt></td>
+		<td>Range spec(s) sent with request. See current HTTP byte-range spec for details.</td>
+	</tr>
+	<tr>
+		<td><tt>PATH_INFO</tt></td>
+		<td>"Extra" path information from the URL, also known as the "logical path"</td>
+	</tr>
+	<tr>
+		<td><tt>PATH_TRANSLATED</tt></td>
+		<td>The translation of <tt>PATH_INFO</tt> to a physical path, using the current mapping. May vary if multi-homing is in use.</td>
+	</tr>
+	<tr>
+		<td><tt>QUERY_STRING</tt></td>
+		<td>Data from the URL that follows the "?" in its raw original form</td>
+	</tr>
+	<tr>
+		<td><tt>QUERY_STRING_UNESCAPED</tt></td>
+		<td>Translation of <tt>QUERY_STRING</tt> from raw to final form (plus to space and URL unescaping)</td>
+	</tr>
+	<tr>
+		<td><tt>REQUEST_METHOD</tt></td>
+		<td>The HTTP method specified with the request (e.g., "GET", "POST")</td>
+	</tr>
+	<tr>
+		<td><tt>SCRIPT_NAME</tt></td>
+		<td>The URL path of the WSAPI extension, suitable for making self-referencing URLs</td>
+	</tr>
+	<tr>
+		<td><i>HTTP Extra Headers</i></td>
+		<td>Any header not assigned to one of the above variables may be accessed by it's header label, or as part of the <tt>ALL_HTTP</tt> list (provided for ISAPI compatibility)</td>
+	</tr>
+	<tr>
+		<td><tt>&lt;extra-header-name&gt;</tt></td>
+		<td>Returns the value of that header. For example "HTTP-Cookie" will get the cookie string sent with the request. Useful with SHTTP.</td>
+	</tr>
+	<tr>
+		<td><tt>ALL_HTTP</tt></td>
+		<td>All HTTP headers that are not assigned to one of the above variables. These variables are of the form <tt>HTTP_</tt> for compatibility with ISAPI. The headers consist of a linefeed-separated list of &lt;name&gt;=&lt;value&gt; pairs.</td>
+	</tr>
+</table>
+
+<H3>Example </H3>
+<TT>char buf[MAX_STRING_LEN];<BR>
+BOOL bExists;<BR>
+...<BR>
+bExists = get_server_variable("SERVER_SOFTWARE", buf, sizeof(buf)-1, tp);</TT>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="get_temp_name">get_temp_name</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void get_temp_name(char *buf)</TT>
+<DL>
+<DT><TT>buf</TT>
+<DD>buffer to receive the tempfile name (see below) 
+</DL>
+
+<H3>Description </H3>
+
+
+Generate a unique name for temporary files. The form of the returned
+string is <TT>xxxxxxws</TT> where
+the <TT>xxxxxx</TT> is a hexadecimal
+number, up to six digits, without leading zeroes. This name is
+guaranteed to be unique among other such names generated by WebSite,
+but not system-wide. Therefore, it is <I>strongly</I> suggested
+that you create all temporary files in WebSite's CGI temporary
+directory. The path to this directory is contained in <TT>tp-&gt;temp_name</TT>.
+<H3>Example </H3>
+<TT>char buf[16];<BR>
+...<BR>
+get_temp_name(buf);</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="GetRegBin">GetRegBin</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>DWORD GetRegBin(char *name, HKEY
+hKey)</TT>
+<DL>
+<DT><TT>name</TT>
+<DD>name of 4-byte <TT>REG_BIN</TT>
+or <TT>REG_DWORD</TT> value to
+get
+<DT><TT>hKey</TT>
+<DD>handle of key under which the value is located 
+</DL>
+
+<H3>Description </H3>
+
+
+Get a 4-byte binary value from the registry. Works with either
+4-byte <TT>REG_BIN</TT> or <TT>REG_DWORD</TT>
+values. If the named value does not exist, or if it is not one
+of these types, this function generates an exception via the <TT>ABORT</TT>
+macro. You can trap these with a try/except block.
+<H3>Example </H3>
+<TT>DWORD foo;<BR>
+HKEY hKey;<BR>
+...<BR>
+hKey = OpenRegKey(&quot;SOFTWARE\\Denny\\WebServer\\CurrentVersion&quot;);
+<BR>
+foo = GetRegBin(&quot;LowTime&quot;, hKey);
+RegCloseKey(hKey);</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="GetRegString">GetRegString</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>Char *GetRegString(char *name, HKEY
+hKey)</TT>
+<DL>
+<DT><TT>name</TT>
+<DD>name of 4-byte <TT>REG_BIN</TT>
+or <TT>REG_DWORD</TT> value to
+get
+<DT><TT>hKey</TT>
+<DD>handle of key under which the value is located 
+</DL>
+
+
+Returns a pointer to an <B>allocated</B> string
+<H3>Description </H3>
+
+
+Get a string value from the registry. If the named value does
+not exist, or if it is not one of these types, this function generates
+an exception via the <TT>ABORT</TT>
+macro. You can trap these with a try/except block. The string
+is created in <B>allocated</B> space. Depending on how the string
+is going to be used, you may have to free this to avoid memory
+leaks.
+<H3>Example </H3>
+<TT>char *foo;<BR>
+HKEY hKey;<BR>
+...<BR>
+hKey = OpenRegKey(&quot;SOFTWARE\\Denny\\WebServer\\CurrentVersion&quot;);
+<BR>
+foo = GetRegString(&quot;FilePath&quot;, hKey);<BR>
+RegCloseKey(hKey);<BR>
+...<BR>
+free(foo); // Be careful!</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="http_nt_timestr">http_nt_timestr</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>char *http_nt_timestr(LPSYSTEMTIME pst, char *buf, int len)</TT>
+<DL>
+<DT><TT>pst</TT>
+<DD>Address of a SYSTEMTIME structure (GMT)
+<DT><TT>buf</TT>
+<DD>Buffer into which the HTTP/1.0 date-time string is put
+<DT><TT>len</TT>
+<DD>Length in bytes of <TT>buf</TT>
+</DL>
+
+
+Returns <TT>buf</TT>
+<H3>Description </H3>
+
+
+Creates a date/time string, in the format required for HTTP headers,
+from a Win32 <TT>SYSTEMTIME</TT>
+structure. <B>Do not use local time.</B> This function assumes
+that (as usual) the <TT>SYSTEMTIME</TT>
+is in GMT. If the buffer is too small, the string is truncated.
+<H3>Example </H3>
+<TT>char buf[SML_STRING_LEN]; <BR>
+SYSTEMTIME st;<BR>
+...<BR>
+GetSystemTime(&amp;st); // Not GetLocalTime()!!! <BR>
+http_nt_timestr(&amp;st, buf, sizeof(buf)); // Get HTTP-compliant
+&quot;now&quot; </TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="http_timestr">http_timestr</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>#include &lt;time.h&gt;<BR>
+...<BR>
+char *http_timestr(time_t sec, char *buf, int len)</TT>
+<DL>
+<DT><TT>sec</TT>
+<DD>C Runtime time value (e.g. from the <TT>time()</TT>
+function) 
+<DT><TT>buf</TT>
+<DD>Buffer into which the HTTP/1.0 date-time string is put
+<DT><TT>len</TT>
+<DD>Length in bytes of <TT>buf</TT>
+</DL>
+
+
+Returns <TT>buf</TT>
+
+<H3>Description </H3>
+
+Creates a date/time string, in the format required for HTTP headers,
+from Unix/C runtime time. If the buffer is too small, the string is truncated.
+
+<H3>Example </H3>
+<TT>#include &lt;time.h&gt;<BR>
+char buf[SML_STRING_LEN];<BR>
+...<BR>
+http_timestr(time(NULL), buf, sizeof(buf)); // Get HTTP-compliant
+&quot;now&quot;</TT>
+
+<HR>
+<address><A HREF="mailto:support@ora.com">
+O'Reilly Tech Support &lt;support@ora.com&gt;</A></address>
+
+</BODY>
+
+</HTML>
+

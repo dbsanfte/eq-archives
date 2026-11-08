@@ -1,0 +1,651 @@
+<HTML>
+<!--mjc;3.0;120600-->
+<HEAD>
+<TITLE>Windows CGI 1.3a Interface</TITLE>
+</HEAD>
+<BODY  BGCOLOR="#FFFFFF">
+<center>
+<img src="/~wsdocs/images/banner.jpg" width=550 height=75 alt="WebSite Professional Server Self Test"><br>
+<H1>Windows CGI 1.3a Interface</H1>
+</center>
+
+<H2>Status of this Document</H2>
+
+This document is an informal specification. It is intended to be used by
+both CGI programmers and server implementers. It is not intended for
+this specification to enter the Internet standards track, as it is
+platform-specific to Microsoft Windows 95/98/ME, Windows 2000 and Windows NT.
+
+<P>Version 1.3a documents the <CODE>Authenticated Password</CODE> variable,
+which is "current practice", and a new variable <CODE>Document
+Root</CODE> which was recently added. In addition, the description of
+the authentication variables was changed to reflect current practice.
+They are passed through the CGI interface whether or not the server used
+them for authentication. This "pass-through authentication" is used by
+many existing Windows CGI applications. Finally some additional notes
+were added describing current practice for servers that support
+multi-homing with separate logical (URL) path spaces.
+
+<HR>
+<H2>Table of Contents</H2>
+
+<UL>
+<LI><A HREF = "#intro">Overview</A>
+<LI><A HREF = "#spooling">I/O Spooling</A>
+<LI><A HREF = "#form-decode">HTML Form Data Decoding</A>
+<LI><A HREF = "#launching">Launching the CGI program</A>
+<UL>
+<LI><A HREF = "#launch-cmd">Command Line</A>
+<LI><A HREF = "#launch-meth">Launch Method</A>
+<LI><A HREF = "#associations">Document Associations</A>
+</UL>
+<LI><A HREF = "#profile">CGI Data File</A>
+<UL>
+<LI><A HREF = "#data-cgi">[CGI] Section</A>
+<LI><A HREF = "#data-accept">[Accept] Section</A>
+<LI><A HREF = "#data-system">[System] Section</A>
+<LI><A HREF = "#data-extra">[Extra Headers] Section</A>
+<LI><A HREF = "#data-formlit">[Form Literal] Section</A>
+<LI><A HREF = "#data-formext">[Form External] Section</A>
+<LI><A HREF = "#data-formfile">[Form File] Section</A>
+<LI><A HREF = "#data-formhug">[Form Huge] Section</A>
+</UL>
+<LI><A HREF = "#formex">Example of Form Decoding</A>
+<LI><A HREF = "#results">CGI Results Processing</A>
+</UL>
+
+<HR>
+<A NAME = "intro">
+<H2>Overview</H2></A>
+
+A large class of World Wide Web applications are best implemented using
+external programs that are controlled by a web server. Examples include
+front-ends to business applications which are themselves subject to
+frequent changes in business rules. The broad acceptance of
+rapid-application development (RAD) tools such as Visual Basic and
+Delphi have given rise to the need to use these tools to Web-enable many
+kinds of business applications. 
+
+The widely used Common Gateway Interface (CGI) uses techniques well
+suited to the Unix environment. A different sort of interface is needed
+to support common Windows RAD tools for CGI. It is the purpose of this
+specification to define such an interface.
+
+<A NAME = "spooling">
+<H2>I/O Spooling</H2></A>
+
+A key feature of Windows CGI is its <i>spooled</i> exchange of data
+between the server and the CGI program. It is <I>essential</I> that the
+server provide efficient transfer of data between the spool files and
+the network. This means that the server should use memory-mapped
+techniques, and minimize the number of separate network I/O requests
+used. 
+
+<P>The reasons for using spooled I/O are:
+<UL>
+<LI>Most RAD packages do not have native network (socket) I/O
+capabilities.
+<LI>Socket I/O techniques are relatively exotic, and efficient results
+require a thorough knowledge of the Win32 network interface. All input
+and output would require complex buffering to achieve acceptable network
+efficiency. 
+<LI>Sockets cannot be inherited by a 16-bit program.
+<LI>Spooled input (e.g. POST content) can be memory mapped and thus
+processed far more efficiently than is possible using stream-oriented
+techniques.
+<LI>A reference set of spool files may be used for regression testing
+and debugging in the RAD development environment.
+<LI>Spool files may be retained after a CGI program runs, for
+"post-mortem" analysis, also using the RAD environment.
+</UL>
+
+<A NAME = "form-decode">
+<H2>HTML Form Data Decoding</H2></A>
+
+Windows CGI requires that the web server decode HTML form data if
+present in a POST request. It is not required that the server decode form
+data if it appears in the "query string" portion of a request URL. 
+
+<P>There are two ways in which form data may be may be sent by a
+browser to the server:
+
+<DL>
+<DT><B>URL-Encoded</B>
+<DD>This is the most common form data format. The contents
+of form fields are "escaped" according to the rules in the HTML 1.0
+Specification, then concatenated using unescaped ampersand characters.
+This URL-encoded data is sent as a stream to the server, with a content
+type of <code>application/x-www-form-urlencoded</code>.
+
+<P><DT><B>Multipart Form Data</B>
+
+<DD>This format has been introduced to permit efficient file uploading
+with forms. It may be used without explicitly including a file upload
+form field, however. The contents of the form fields are sent as a MIME
+multipart message. Each field is contained within a single part. The
+content type indicated by the browser is
+<code>multipart/form-data</code>.
+</DL>
+
+<B>Compliant servers must decode both form data types.</B>
+
+<A NAME = "launching">
+<H2>Launching the CGI program</H2></A>
+
+The server uses the <code>CreateProcess()</code> service to launch the
+CGI program. The server maintains synchronization with the CGI program
+so it can detect when the CGI program exits. This is done using the
+Win32 <code>WaitForSingleObject()</code> service, waiting for the CGI
+process handle to become signalled, indicating program exit. <B>The
+server must never use a shell to execute the CGI program. This can
+create serious security risks.</b>
+
+<P><B>NOTE:</B> The CGI program's process handle becomes signalled before
+the process rundown is complete. Reliance on rundown to close files,
+inherited handles, etc., can cause obscure synchronization problems.<P>
+
+<A NAME = "launch-cmd"><H3>Command Line</H3></A>
+
+The server must execute a CGI program request by doing a
+<code>CreateProcess()</code> with a command line in the following form:
+
+<PRE>   WinCGI-exe cgi-data-file</PRE>
+
+<DL>
+
+<DT><PRE>WinCGI-exe</PRE>
+
+<DD>The complete path to the CGI program executable. The server does not 
+depend on the "current directory" or the PATH environment variable. Note
+that the "executable" need not be a .EXE file. It may be a document,
+provided an "association" with a corresponding executable has been
+established.
+<P>
+
+<DT><PRE>cgi-data-file</PRE>
+
+<DD>The complete path to the <A HREF = "#profile">CGI data file</A>. <P>
+
+</DL>
+<A NAME = "launch-meth"><H3>Launch Method</H3></A>
+
+The server issues the <code>CreateProcess()</code> such that the process
+being launched has its main window hidden. The launched process itself
+should not cause the appearance of a window nor a change in the Z-order
+of the windows on the desktop.
+The server supports a CGI program/script debugging mode. If that mode
+is enabled, the CGI program is launched such that its window shows and
+is made active. This can assist in debugging CGI applications.
+
+<A NAME = "associations"><H3>Document Associations</H3></A>
+
+The server must honor document associations. If the target of a
+Windows CGI request is a document (not an executable), the server must
+attempt to find the associated application for the document and launch
+the application such that the document is "processed".
+
+<HR SIZE=2 NOSHADE>
+
+<A NAME = "profile"><H2>The CGI Data File</H2></A>
+
+The server passes data to the CGI program via a Windows
+"private profile" file, in key-value format. The CGI program may then use 
+the standard Windows API services for enumerating and retrieving the
+key-value pairs in the data file. <P>
+
+The CGI data file contains the following sections:
+
+<PRE><UL>
+<LI><A HREF = "#data-cgi">[CGI]</A>
+<LI><A HREF = "#data-accept">[Accept]</A>
+<LI><A HREF = "#data-system">[System]</A>
+<LI><A HREF = "#data-extra">[Extra Headers]</A>
+<LI><A HREF = "#data-formlit">[Form Literal]</A>
+<LI><A HREF = "#data-formext">[Form External]</A>
+<LI><A HREF = "#data-formfile">[Form File]</A>
+<LI><A HREF = "#data-formhug">[Form Huge]</A>
+</UL></PRE>
+
+<A NAME = "data-cgi"><H3>The [CGI] Section</H3></A>
+
+This section contains most of the CGI data
+items (accept types, content, and extra headers are defined in
+separate sections). Each item is provided as a string value. If the
+value is an empty string, the keyword is omitted. 
+The keywords are listed below:<P>
+
+<DL>
+<DT><PRE>Request Protocol</PRE>
+<DD>The name and revision of the information protocol this request came
+in with. Format: protocol/revision. Example: "HTTP/1.0".<P>
+
+<DT><PRE>Request Method</PRE>
+<DD>The method with which the request was made. For HTTP, this is "GET",
+"HEAD", "POST", etc.<P>
+
+<DT><PRE>Executable Path</PRE>
+<DD>The logical path to the CGI program executable, <EM>as needed for
+self-referencing URLs.</EM> This may vary if the server
+supports multi-homing with separate logical path spaces. The server must
+provide the physical path equivalent using the logical to physical
+mapping for the identity on which the current request was received.<P>
+
+<DT><PRE>Document Root</PRE>
+<DD>The physical path to the logical root "/". This may vary if the
+server supports multi-homing with separate logical path spaces. The
+server must provide the physical path to the logical root for the
+identity on which the current request was received.
+
+<DT><PRE>Logical Path</PRE>
+<DD>A request may specify a path to a resource needed to complete that
+request. This path may be in a logical pathname space. This item
+contain the pathname exactly as received by the server, without
+logical-to-physical translation.<P>
+
+<DT><PRE>Physical Path</PRE>
+<DD>If the request contained logical path information, the server
+provides the path in physical form, in the native object (e.g., file)
+access syntax of the operating system. This may vary if the server
+supports multi-homing with separate logical path spaces. The server must
+provide the physical path equivalent using the logical to physical
+mapping for the identity on which the current request was received.<P>
+
+<DT><PRE>Query String</PRE>
+<DD>The information which follows the ? in the URL that generated the
+request is the "query" information. The server furnishes this to the
+back end whenever it is present on the request URL, without any decoding
+or translation.<P>
+
+<DT><PRE>Request Range</PRE>
+<DD>Byte-range specification received with request (if any). See the current
+Internet Draft (or RFC) describing the byte-range extension to HTTP for
+more information. The server must support CGI program participation in
+byte-ranging to be compliant with this Specification.<P>
+
+<DT><PRE>Referer</PRE>
+<DD>The URL of the document that contained the link pointing to this CGI
+program. Note that in some browsers the implementation of this
+is broken, and cannot be relied-on.<P>
+
+<DT><PRE>From</PRE>
+<DD>The e-mail address of the browser user. Note that this is in the
+HTTP specification but is not implemented in some browsers due to
+privacy concerns.<P>
+
+<DT><PRE>User Agent</PRE>
+<DD>A string description of the client (browser) software. Not generated by
+all browsers.<P>
+
+<DT><PRE>Content Type</PRE>
+<DD>For requests which have attached data this is the MIME content type 
+of that data. Format: type/subtype.<P>
+
+<DT><PRE>Content Length</PRE>
+<DD>For requests which have attached data, this is the length of the 
+content in bytes.<P>
+
+<DT><PRE>Content File</PRE>
+<DD>For requests which have attached data, the server makes the
+data available to the CGI program by putting it into this file. The value
+of this item is the complete pathname of that file.<P>
+
+<DT><PRE>Server Software</PRE>
+<DD>The name and version of the information server software answering
+the request (and running the CGI program). Format: name/version.<P>
+
+<DT><PRE>Server Name</PRE>
+<DD>The network host name or alias of the server, as needed 
+for self-referencing URLs. This (in combination with the ServerPort)
+could be used to manufacture a full URL to the server, for URL fixups.
+This may vary if the servetr supports multi-homing. The value of this
+item must be the host name on which the current request was received.<P>
+
+<DT><PRE>Server Port</PRE>
+<DD>Tne network port number on which the server is listening. This 
+is also needed for self-referencing URLs.<P>
+
+<DT><PRE>Server Admin</PRE>
+<DD>The e-mail address of the server's administrator. This is used
+in error messages, and might be used to send MAPI mail to the 
+administrator, or to form "mailto:" URLs in generated documents.<P>
+
+<DT><PRE>CGI Version</PRE>
+<DD>The revision of the CGI specification to which this server complies.
+Format: CGI/revision. For this version, "CGI/1.2 (Win)". <P>
+
+<DT><PRE>Remote Host</PRE>
+<DD>The network host name of the client (requestor) system, if
+available. This item is used for logging.<P>
+
+<DT><PRE>Remote Address</PRE>
+<DD>The network (IP) address of the client (requestor) system. This item
+is used for logging if the host name is not available.
+
+<DT><PRE>Authentication Method</PRE>
+<DD>The protocol-specific authentication method specified in the
+request. If present, this is normally <CODE>Basic</CODE>. The 
+server must provide this whether or not it was used by the server
+for authentication.<P>
+
+<DT><PRE>Authentication Realm</PRE>
+<DD>The method-specific authentication realm specified in the request.
+If present in the request, the server must provide this whether or not
+it was used by the server for authentication.<P>
+
+<DT><PRE>Authenticated Username</PRE>
+<DD>The username (in the indicated realm) that the client used to 
+attempt authentication, as specified in the request. If present in the
+request, the server must provide this whether or not it was used by the
+server for authentication.<P>
+
+<DT><PRE>Authenticated Password</PRE>
+<DD>The password that the client used to 
+attempt authentication, as specified in the request. If present in the
+request, the server must provide this whether or not it was used by the
+server for authentication. 
+
+<P><B>NOTE</B> - Current practice on the O'Reilly WebSite servers
+require that the CGI program's name begin with a dollar sign
+(<CODE>$</CODE>) to have the password supplied through the CGI
+interface. This is not required by this specification. It is
+recommended, however, as it forces the CGI programmer to do something
+special to have the password info exported from within the server's
+internal environment.
+</DL>
+
+<A NAME = "data-accept"><H3>The [Accept] Section</H3></A>
+
+This section contains the client's
+acceptable data types found in the request header as 
+
+<PRE>Accept: type/subtype {parameters}</PRE>
+
+If the parameters (e.g., "q=0.100") are present, they are passed as the
+value of the item. If there are no parameters, the value is "Yes".
+<P>
+
+<I>Note: The accept types may easily be enumerated by the CGI program with
+a call to GetPrivateProfileString() with NULL for the key name. This
+returns all of the keys in the section as a null-delimited string with a
+double-null terminator.</I><P>
+
+<A NAME = "data-system"><H3>The [System] Section</H3></A>
+
+This section contains items that are specific to the Windows
+implementation of CGI. The following keys are used: <P>
+
+<DL>
+
+<DT><PRE>GMT Offset</PRE>
+
+<DD>The numper of seconds to be added to GMT time to reach
+local time. For pacific Standard time, this number is -28,800. Useful
+for computing GMT times.
+
+<DT><PRE>Debug Mode</PRE>
+
+<DD>This is <CODE>No</CODE> unless the server's "CGI/script tracing"
+mode is enabled, then it is <CODE>Yes</CODE>. Useful for providing
+conditional tracing within the CGI program.
+
+<DT><PRE>Output File</PRE>
+
+<DD>The full path/name of the file in which the 
+server expects to receive the CGI program's results.
+
+<DT><PRE>Content File</PRE>
+
+<DD>The full path/name of the file that contains the content (if any) that
+came with the request. 
+</DL>
+
+<A NAME = "data-extra"><H3>The [Extra Headers] Section</H3></A>
+
+This section contains the "extra" headers
+that were included with the request, in "key=value" form. The server
+must URL-unescape both the key and the value prior to writing them to
+the CGI data file.
+<P>
+
+<I>Note: The extra headers may easily be enumerated by the CGI program with
+a call to GetPrivateProfileString() with NULL for the key name. This
+returns all of the keys in the section as a null-delimited string with a
+double-null terminator.</I><P>
+
+<A NAME = "data-formlit"><H3>The [Form Literal] Section</H3></A>
+
+If the request is an HTTP POST from an HTTP form (with content type of
+application/x-www-form-urlencoded or 
+multipart/form-data), the server will decode the form
+data and put it into the [Form Literal] section.<P>
+
+For URL-encoded form data, raw form input is of the form 
+"key=value&amp;key=value&amp;...", with the value
+parts in url-encoded format. The server splits the key=value pairs
+at the '&amp;', then splits the key and value at the '=', url-decodes the
+value string, and puts the result into key=(decoded)value form in the
+[Form Literal] section.<P>
+
+For multipart form data, raw form input is in a MIME-style multipart
+format, with each field in a separate part. The server extracts the
+field namd and value from each part and puts the result into key=value
+form in the [Form Literal] section.<p> 
+
+If the form contains any <CODE>SELECT MULTIPLE</CODE> elements, there
+will be multiple occurrences of the same key. In this case, the server
+generates a normal "key=value" pair for the first occurrence, and it
+appends a sequence number to subsequent occurrences. It is up to the
+CGI program to know about this possibility and to properly recognize
+the tagged keys.
+
+<A NAME = "data-formext"><H3>The [Form External] Section</H3></A>
+
+If the decoded value string is more than 254 characters long, or if the
+decoded value string contains any control characters or double-quotes,
+the server puts the decoded value into an external tempfile and lists
+the field into the [Form External] section as:
+
+<PRE>  key=pathname length</PRE>
+
+where <I>pathname</I> is the path and name of the tempfile containing
+the decoded value string, and <I>length</I> is the length in bytes
+of the decoded value string.<P>
+
+<I>Note: Be sure to open this file in binary mode unless you are
+certain that the form data is text!</I><P>
+
+<A NAME = "data-formhug"><H3>The [Form Huge] Section</H3></A>
+
+If the raw value string is more than 65,535 bytes long, the server
+does no decoding, but it does get the keyword and mark the location
+and size of the value in the Content File. 
+The server lists the huge field in the [Form Huge]
+section as:
+<PRE>  key=offset length</PRE>
+
+where <I>offset</I> is the offset from the beginning of the Content File
+at which the raw value string for this key is located, and <I>length</I>
+is the length in bytes of the raw value string. You can use the
+offset to perform a "Seek" to the start of the raw value string,
+and use the length to know when you have read the entire raw string
+into your decoder.
+
+<I>Note: Be sure to open this file in binary mode unless you are
+certain that the form data is text!</I><P>
+
+<A NAME = "data-formfile"><H3>The [Form File] Section</H3></A>
+
+If the request is in the <code>multipart/form-data</code> format, it
+may contain one or more file uploads. In this case, each file upload
+is placed into an external tempfile similar to the form external 
+data. Each such file upload is listed in the [Form File] section as:
+
+<PRE>  key=[pathname] length type xfer [filename]</PRE>
+
+where <code>pathname</code> is the pathname of the external tempfile 
+containing the uploaded file, <code>length</code> is the length in 
+bytes of the uploaded file, <code>type</code> is the MIME content type
+of the uploaded file, <code>xfer</code> is
+the content-transfer encoding of the uploaded file, and 
+<code>filename</code> is the original name of the uploaded file. The
+square brackets must be included. They are used to delimit the file and
+pathnames, which may contain spaces.
+
+<A NAME = "formex"><H3>Example of Form Decoding</H3></A>
+
+In the following sample, the form contained a small field, a SELECT
+MULTIPLE with 2 small selections, a field with 300
+characters in it, one with line breaks (a text area), and a 230KB field.
+
+<PRE>    [Form Literal]
+    smallfield=123 Main St. #122
+    multiple=first selection
+    multiple_1=second selection
+
+    [Form External]
+    field300chars=C:\TEMP\HS19AF6C.000 300
+    fieldwithlinebreaks=C:\TEMP\HS19AF6C.001 43
+
+    [Form Huge]
+    field230K=C:\TEMP\HS19AF6C.002 276920
+</PRE>
+
+<A NAME = "results"><HR SIZE=2 NOSHADE></A>
+<H2>Results Processing</H2>
+
+The CGI program returns its results to the server as a data stream
+representing (directly or indirectly) the goal of the request.
+The server is responsible for "packaging" the data stream according to
+HTTP, and for using HTTP to
+transport the data stream to the requesting client. This means that the
+server normally adds the needed HTTP headers to the CGI program's results.<P>
+
+The data stream consists of two parts: the <I>header</I> and the
+<I>body</I>. The header consists of one or more lines of text, and is
+separated from the body by a blank line. The body contains
+MIME-conforming data whose content type
+must be reflected in the header.<P>
+
+The server does <i>not</i> interpret or modify the body in any way. It
+is essential that the client receive exactly the data that was generated
+by the back end.<P>
+
+<H3>Special Header Lines</H3>
+
+The server recognizes the following header lines in the results data
+stream:<P>
+
+<DL>
+
+<DT><PRE>Content-Type:</PRE>
+
+<DD>Indicates that the body contains data of the specified MIME content
+type. The value must be a MIME content type/subtype.<P>
+
+<DT><PRE>URI: &lt;<i>value</i>&gt; (value enclosed in angle brackets)</PRE>
+
+<DD>The value is either a full URL or a local file reference, either of which
+points to an object to be returned to the client in lieu of the body
+(which the server shall ignore in this type of result). If the value is a 
+local file, the server sends it as the results of the request, as though
+the client issued a <CODE>GET</CODE> for that object.
+If the value is a full URL,
+the server returns a "401 redirect" to the
+client to retrieve the specified object directly.<P> 
+
+<DT>Location:</PRE>
+
+<DD> Same as URI, but this form is now deprecated. The value must
+<i>not</I> be enclosed in angle brackets with this form.
+</DL>
+
+<H3>Other Headers</H3>
+
+Any other headers in the result stream are passed 
+(unmodified) by the server to the client. It is the responsibility of
+the CGI program to avoid including headers that clash with those
+used by HTTP. <P>
+
+<A NAME = "dir-ret"><HR SIZE=2 NOSHADE></A>
+
+<H2>Direct Return</H2>
+
+The server provides for the back end to return its results directly
+to the client, bypassing the server's "packaging" of the data stream for
+its information protocol. In this case, it is the responsibility of the
+CGI program to generate a complete message packaged for HTTP.
+<P>
+
+The server looks at the results in the Output file, and if the first
+line starts with "<CODE>HTTP/1.0</CODE>", it assumes that the results
+contain a complete HTTP response, and sends the results to the client
+without packaging.<P>
+
+<HR SIZE=2 NOSHADE>
+
+<H2>Examples:</H2>
+
+<UL>
+<LI>The following example represents a response made by a CGI program that was
+invoked by an HTTP server, and consists of an HTML-formatted body:
+
+<PRE>--- BEGIN ---
+Content-type: text/html           &lt;== MIME type of body
+                                  &lt;== Header-body separator
+&lt;HTML&gt;                            &lt;== Body starts here 
+&lt;HEAD&gt;
+&lt;TITLE&gt;Sample Document&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;H1&gt;Sample Document&lt;/H1&gt;
+[... etc.]
+&lt;/BODY&gt;
+&lt;HTML&gt;
+---  END  ---
+</PRE>
+
+<LI>This example represents a redirection response, where the server is to direct
+the client to fetch the object indicated by the URL (using FTP):
+
+<PRE>--- BEGIN ---
+Location: ftp://ftp.netcom.com/pub/www/object.dat  &lt;== URL of object
+                                                   &lt;== Blank line
+---  END  ---</PRE>
+
+<LI>This example represents a direct-return response from a CGI program that
+was invoked by an HTTP server, where the results contain a complete
+HTTP response:
+
+<PRE>--- BEGIN ---
+HTTP/1.0 200 OK                   &lt;== Start of HTTP Header
+Date: Tuesday, 31-May-94 19:04:30 GMT
+Server: WebSite 1.0
+Content-type: text/html
+Last-modified: Sunday, 15-May-94 02:12:32 GMT
+Content-length: 4109
+                                  &lt;== Header-body separator
+&lt;HTML&gt; &lt;HEAD&gt;
+&lt;TITLE&gt;A document&lt;/TITLE&gt;
+[... etc.]
+---  END  ---</PRE>
+</UL>
+
+<HR SIZE=2 NOSHADE>
+
+<address>
+<A HREF="mailto:rdenny@dc3.com">
+Robert B. Denny &lt;rdenny@dc3.com&gt;</A>
+</address>
+
+
+
+
+
+
+
+
+
+
+
+
+

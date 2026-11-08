@@ -1,0 +1,716 @@
+<HTML>
+<HEAD>
+<TITLE>WebSite API - Functions</TITLE>
+</HEAD>
+<!--kks;2.0;080397-->
+<HEAD>
+<BODY  BGCOLOR="#FFFFFF">
+<center>
+<img src="/~wsdocs/images/WSP2_nil.gif" width=515 height=60 alt="WebSite Professional Server Self Test"><br>
+<H1>WebSite API 1.1 SDK<BR>
+Server Function Descriptions</H1>
+</CENTER>
+
+<h3><A HREF="index.htm">Return to Overview</A></h3>
+<i>15-September-97</i>
+<hr>
+
+<H2>Index</H2>
+
+<TABLE WIDTH=100%>
+<TR VALIGN=TOP>
+<TD>
+<A HREF="func-a-h.htm#bind_wsapi">bind_wsapi</A><br>
+<A HREF="func-a-h.htm#close_form_decoder">close_form_decoder</a><br>
+<A HREF="func-a-h.htm#construct_url">construct_url</A><br>
+<A HREF="func-a-h.htm#decode_next_field">decode_next_field</a><br>
+<A HREF="func-a-h.htm#DbgDump">DbgDump</A><br>
+<A HREF="func-a-h.htm#die">die</A><br>
+<A HREF="func-a-h.htm#do_imagemap">do_imagemap</A><br>
+<A HREF="func-a-h.htm#escape_url">escape_url</A><br>
+<A HREF="func-a-h.htm#evaluate_access">evaluate_access</A><br>
+<A HREF="func-a-h.htm#exec_cgi">exec_cgi</A><br>
+<A HREF="func-a-h.htm#exec_cgi_to_file">exec_cgi_to_file</A><br>
+<A HREF="func-a-h.htm#file_to_url">file_to_url</A><br>
+<A HREF="func-a-h.htm#get_content_type">get_content_type</A><br>
+<A HREF="func-a-h.htm#get_server_variable">get_server_variable</A><br>
+<A HREF="func-a-h.htm#GetRegBin">GetRegBin</A><br>
+<A HREF="func-a-h.htm#GetRegString">GetRegString</A><br>
+<A HREF="func-a-h.htm#get_temp_name">get_temp_name</A><br>
+</TD>
+<TD>
+<A HREF="func-a-h.htm#http_timestr">http_timestr</A><br>
+<A HREF="func-a-h.htm#http_nt_timestr">http_nt_timestr</A><br>
+<A HREF="func-i-p.htm#later_than">later_than</A><br>
+<A HREF="func-i-p.htm#MD5Init">MD5Init</A><br>
+<A HREF="func-i-p.htm#MD5Update">MD5Update</A><br>
+<A HREF="func-i-p.htm#MD5Final">MD5Final</A><br>
+<A HREF="func-i-p.htm#nflush">nflush</A><br>
+<A HREF="func-i-p.htm#ngets">ngets</A><br>
+<A HREF="func-i-p.htm#normalize_url">normalize_url</A><br>
+<A HREF="func-i-p.htm#nputs">nputs</A><br>
+<A HREF="func-i-p.htm#nread">nread</A><br>
+<A HREF="func-i-p.htm#nreadf">nreadf</A><br>
+<A HREF="func-i-p.htm#nwrite">nwrite</A><br>
+<A HREF="func-i-p.htm#nwritef">nwritef</A><br>
+<A HREF="func-i-p.htm#OpenRegKey">OpenRegKey</A><br>
+<A HREF="func-i-p.htm#open_form_decoder">open_form_decoder</a><br>
+<A HREF="func-i-p.htm#plus_to_space">plus_to_space</A><br>
+</TD>
+<TD>
+<A HREF="func-i-p.htm#process_get">process_get</A><br>
+<A HREF="func-q-z.htm#send_http_header">send_http_header</A><br>
+<A HREF="func-q-z.htm#set_content_type">set_content_type</A><br>
+<A HREF="func-q-z.htm#space_to_plus">space_to_plus</A><br>
+<A HREF="func-q-z.htm#TrueRandAddNoise">TrueRandAddNoise</A><br>
+<A HREF="func-q-z.htm#TrueRandEntropy">TrueRandEntropy</A><br>
+<A HREF="func-q-z.htm#TrueRandGetByte">TrueRandGetByte</A><br>
+<A HREF="func-q-z.htm#TrueRandGetBytes">TrueRandGetBytes</A><br>
+<A HREF="func-q-z.htm#unescape_url">unescape_url</A><br>
+<A HREF="func-q-z.htm#url_to_file">url_to_file</A><br>
+<A HREF="func-q-z.htm#wsapi_free">wsapi_free</A><br>
+<A HREF="func-q-z.htm#wsapi_log_event">wsapi_log_event</A><br>
+<A HREF="func-q-z.htm#wsapi_malloc">wsapi_malloc</A><br>
+<A HREF="func-q-z.htm#wsapi_realloc">wsapi_realloc</A><br>
+<A HREF="func-q-z.htm#wsapi_strdup">wsapi_strdup</A><br> 
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="send_http_header">send_http_header</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void send_http_header(TCTX *tp, BOOL do_xhdr)</TT>
+<DL>
+<DT><TT>tp</TT>
+<DD>transaction context pointer
+<DT><TT>do_xhdr</TT>
+<DD>if <TT>true</TT>, send extra
+headers if any (see description) 
+</DL>
+
+<H3>Description </H3>
+
+
+Send the HTTP header. This function handles all of the work in
+sending a properly formatted HTTP/1.0 header to the client, <I>including
+the blank &quot;separator&quot; line</I>. Normally (see below
+for exceptions), the HTTP status code is <TT>200</TT>
+and the reason phrase is <TT>OK</TT>.
+At a minimum, the following is sent:
+<PRE>HTTP/1.0 200 OK
+Date: Thursday, 07-Sep-1995 23:21:37 GMT
+Server: WebSite/1.1
+Allow-Ranges: bytes</PRE>
+
+You can control the status code and reason phrase as follows (in order of
+priority):
+
+<ol>
+
+<li>If you fill a string (e.g. <tt>"404 Not Found"</tt>)into the 
+<tt>ret_status</tt> string in the TCTX, that status code and
+reason phrase will be sent.
+
+<li>If you put a URL into the <tt>location</tt> field of the TCTX (and
+the <tt>ret_status</tt> field is empty), A <tt>302 Moved
+Temporarily</tt> response (redirect) will result.
+
+<li>If neither (1) or (2) are true, this function sends <tt>200 OK</tt>.
+
+</ol>
+
+<blockquote>
+
+<b>WARNING:</b> Explicitly set <tt>tp-&gt;location[0] = '\0';</tt> before
+calling this function (just to be safe) unless you want to redirect.
+Option 2 is mainly for the server's internal logic. 
+
+<p><b>NOTE:</b> It's easier to send a redirect using the
+<a href="func-a-h.htm#die"><tt>die()</tt></a> function. In addition, 
+some browsers will choke on a "full" 302 response if keep-alive is
+in effect. <tt>die()</tt> automatically chooses a "brief" or "full"
+response format for redirects depending on whether keep-alive is in
+effect.
+
+</blockquote>
+
+<p>In addition, depending on the contents of some fields in the  <a
+href="tctx.htm">transaction context block</a> (TCTX), additional HTTP
+headers may be included. If the fields are not empty strings (or not -1
+in the case of content length), the corresponding header lines are
+included:
+
+<p><table border cellpadding=5>
+<tr>
+  <th>TCTX Field</th>
+  <th>Header Sent</th>
+  <th>Not Sent if</th>
+</tr>
+<tr>
+  <td><tt>tp-&gt;content_type</tt></td>
+  <td><tt>Content-Type:</tt></td>
+  <td>empty string</td>
+</tr>
+<tr>
+  <td><tt>tp-&gt;last_modified</tt></td>
+  <td><tt>Last-Modified:</tt></td>
+  <td>empty string</td>
+</tr>
+<tr>
+  <td><tt>tp-&gt;content_length</tt></td>
+  <td><tt>Content-Length:</tt></td>
+  <td>-1 (minus one)</td>
+</tr>
+<tr>
+  <td><tt>tp-&gt;content_encoding</tt></td>
+  <td><tt>Content-Encoding:</tt></td>
+  <td>empty string</td>
+</tr>
+<tr>
+  <td><tt>tp-&gt;keep_alive</tt></td>
+  <td><tt>Connection: Keep-Alive</tt></tr>
+  <td>not <tt>TRUE</tt> (client's state controls this)</td>
+</table>
+
+<p>Finally, any HTTP 
+<a href="extensions.htm#o-xhdr">extra headers</a> that may have been
+added to the TCTX will be sent if the <tt>do_xhdr</tt> parameter is 
+<tt>TRUE</tt>.
+
+
+<H3>Example </H3>
+
+<PRE>char *fn = &quot;c:\\foo\\bar.html&quot;;
+HANDLE hFile;
+BY_HANDLE_FILE_INFORMATION finfo;
+SYSTEMTIME stLastModGMT;
+...
+hFile = CreateFile(fn, ...);
+set_content_type(fn, tp);
+GetFileInformationByHandle(hFile, &amp;finfo);     // Get file info
+tp-&gt;content_length = finfo.nFileSizeLow;       // File must be &lt; 2GB!
+
+//
+// Set up HTTP Last-Modified. The SYSTEMTIME is assumed to be in GMT!
+//
+FileTimeToSystemTime(&amp;(finfo.ftLastWriteTime), &amp;stLastModGMT);
+http_nt_timestr(&amp;stLastModGMT, tp-&gt;last_modified, sizeof(tp-&gt;last_modified));
+
+//
+// Add an &quot;extra header&quot; field to the HTTP header
+//
+if(tp-&gt;num_rsp_xhdr &lt; MAX_EXT_HEADERS)
+{
+    tp-&gt;rsp_xhdr[tp-&gt;num_rsp_xhdr].key = wsapi_strdup(&quot;X-Special&quot;, tp);
+    tp-&gt;rsp_xhdr[tp-&gt;num_rsp_xhdr++].value = wsapi_strdup(&quot;Some info&quot;, tp);
+//           NOTE! --------------^^
+}
+
+//
+// Send the HTTP header, then the file itself.
+//
+send_http_header(tp, TRUE);
+__try
+{
+    nwritef(hFile, tp);        // This may generate an exception...
+}
+__finally
+{
+    CloseHandle(hFile);        // This prevents file handle leaks
+}</PRE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="set_content_type">set_content_type</A></H2>
+
+<H3>Syntax</H3>
+
+
+<TT>void set_content_type(char *file,
+TCTX *tp)</TT>
+<DL>
+<DT><TT>file</TT>
+<DD>full physical pathname of the file
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+
+Fill in the <TT>tp-&gt;content_type</TT>
+field with the HTTP/MIME content type, given the full file pathname.
+<H3>Example </H3>
+
+See the example in <A HREF="#send_http_header">send_http_header()</A>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="space_to_plus">space_to_plus</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void space_to_plus(char *str)</TT>
+<DL>
+<DT><TT>str</TT>
+<DD>String to convert from spaces to pluses, according to HTTP
+encoding rules 
+</DL>
+
+<H3>Description </H3>
+
+
+Transliterate a string, converting spaces to pluses. The inverse
+of <A HREF="func-i-p.htm#plus_to_space">plus_to_space</A>(). Generally used
+in combination with <A HREF="func-a-h.htm#escape_url">escape_url()</A>. The
+conversion is done in place, therefore <B>the buffer containing
+the string must be writeable.</B>
+<H3>Example </H3>
+<TT>char buf[SML_STRING_LEN]; <BR>
+...<BR>
+strcpy(buf, &quot;This is a test.&quot;);<BR>
+space_to_plus(buf); // Produces &quot;This+is+a+test&quot;</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="TrueRandAddNoise">TrueRandAddNoise</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void TrueRandGetNoise(DWORD data)</TT>
+<DL>
+<DT><TT>data</TT>
+<DD>A 32-bit noise-enhancer (see Description) 
+</DL>
+
+<H3>Description </H3>
+
+
+Add entropy to the server's cryptographically secure random number
+generator. The significant aspect of making this call is its timing,
+not the <TT>data</TT> parameter.
+Call this function <B>only</B> if you know the event that triggers
+the call is truly random in its timing. User's keystroke timing
+is a good example. The 32-bit <TT>data</TT>
+value can be anything that adds to the variation in the event.
+It doesn't add much to the randomness, so if you are in doubt,
+just pass zero for <TT>data.</TT>
+<P>
+The server adds entropy each time it receives a request from the
+net, using the time differences between received requests. This
+is a high quality source of random events.
+<H3>Example </H3>
+<TT>TrueRandAddNoise(0);        // Add entropy to the RNG</TT><BR>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="TrueRandEntropy">TrueRandEntropy</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>DWORD TrueRandEntropy(void)</TT>
+<H3>Description </H3>
+
+
+Get the current estimated entropy in the server's cryptographically
+secure random number generator (RNG). The returned value is an
+estimate of the number of <I>bits</I> of entropy available from
+the RNG. 
+<H3>Example: </H3>
+<PRE>DWORD ent, ent_req;
+...
+    ent_req = 1024;                     // Generating 1024 bit RSA keypair
+    while(TrueRandEntropy() &lt; ent_req)  // Gather entropy as needed
+    {
+        char ch;
+
+        ch = wait_for_keystroke();
+        TrueRandAddNoise((DWORD)ch);
+    }</PRE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="TrueRandGetByte">TrueRandGetByte</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>BYTE TrueRandGetByte(void)</TT>
+<H3>Description </H3>
+
+
+Get a single random byte from the server's cryptographically secure
+random number generator (RNG).. Reduces the entropy in the random
+number pool by 8 bits.
+<H3>Example </H3>
+<PRE>BYTE b;
+...
+    b = TrueRandGetByte();</PRE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="TrueRandGetBytes">TrueRandGetBytes</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void TrueRandGetBytes(BYTE *buf,
+DWORD len)</TT>
+<DL>
+<DT><TT>buf</TT>
+<DD>buffer to receive random bytes
+<DT><TT>len</TT>
+<DD>number of random bytes to get 
+</DL>
+
+<H3>Description </H3>
+
+
+Retrieve multiple bytes from the server's cryptographically secure
+random number generator (RNG). The bytes are copied into the caller's
+buffer. Reduces the entropy by <TT>8*len</TT>
+bits.
+<H3>Example </H3>
+<PRE>BYTE key[KEYSIZE];
+...
+    TrueRandGetBytes(key, KEYSIZE);</PRE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="unescape_url">unescape_url</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void unescape_url(char *url)</TT>
+<DL>
+<DT><TT>url</TT>
+<DD>string containing data that is escaped according to HTTP/1.0
+rules 
+</DL>
+
+<H3>Description </H3>
+
+
+Remove HTTP/1.0 escaping from string. The string is converted
+into a form with the real characters instead of the HTTP/1.0 escape
+sequences. The conversion is done in place, therefore <B>the buffer
+containing the URL pathname must be writeable.</B>
+<H3>Example </H3>
+<TT>char buf[MED_STRING_LEN]; <BR>
+...<BR>
+strcpy(buf, &quot;/Name%20with%20Spaces/%14%14name.html</TT>
+<TT>&quot;); <BR>
+unescape_url(buf);</TT>
+<P>
+Returns with <TT>/Name with Spaces/$$name.html</TT>
+in <TT>buf</TT>.
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="url_to_file">url_to_file</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>int url_to_file(char *pathname, BOOL
+do_index, TCTX *tp)</TT>
+<DL>
+<DT><TT>path</TT>
+<DD>pathname in URL-space
+<DT><TT>do_index</TT>
+<DD>TRUE to add &quot;index&quot; document if directory URL, else
+FALSE
+<DT><TT>tp</TT>
+<DD>transaction context pointer
+<DT>Returns the object type for the mapping that
+was used (e.g., <TT>STD_DOCUMENT</TT>).
+See <TT>wsapi.h</TT>. 
+</DL>
+
+<H3>Description </H3>
+
+
+URL to file path mapping. The opposite of 
+<A HREF="func-a-h.htm#file_to_url">file_to_url()</A>.
+Translates a URL-space pathname to a physical file pathname or
+redirection URL. The conversion is done in place, therefore <B>the
+buffer containing the URL pathname must be writeable.</B> This
+translation depends on a unique relationship between the URL and
+the physical pathname. Redundant mappings can result in unpredictable
+results. 
+<P>
+If <TT>do_index</TT> is TRUE,
+the returned string will include the &quot;index&quot; (or default)
+document if the original URL is a directory URL and an index file
+is present in the directory. Note that the default document specification
+usually used with WebSite is <TT>index.*</TT>,
+so this document is not necessarily <TT>index.html</TT>.
+Check the MIME content type of the returned document before making
+any decisions.
+<P>
+The return value indicates the object type of the URL target.
+If the URL resolved via the document map, the return value will
+be <TT>STD_DOCUMENT</TT> and the
+result will be a physical file pathname. If the URL resolved via
+one of the CGI maps, the return value will be one of the CGI object
+types (e.g., <TT>SCRIPT_WIN</TT>)
+and the result will be a physical file pathname. If the URL resolved
+via the redirection map, the return value will be <TT>REDIRECT_URL</TT>
+and the result will be the new (redirected) URL.
+<H3>Example </H3>
+<TT>char buf[MAX_STRING_LEN]; <BR>
+int type;<BR>
+...<BR>
+strcpy(buf, &quot;/cgi-win/test.exe&quot;);<BR>
+type = url_to_file(buf, tp);</TT>
+<P>
+The result in <TT>buf</TT> will
+be something like <TT>c:\website\cgi-win\test.exe</TT>
+and the return value will be <TT>SCRIPT_WIN</TT>.
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="wsapi_free">wsapi_free</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void *wsapi_free(void *ptr)</TT>
+<DL>
+<DT><TT>ptr</TT>
+<DD>Pointer to memory allocated by
+<a href="#wsapi_malloc"><tt>wsapi_malloc</tt></a>,
+<a href="#wsapi_realloc"><tt>wsapi_realloc</tt></a>, or
+<a href="#wsapi_strdup"><tt>wsapi_strdup</tt></a>.
+</DL>
+
+<H3>Description </H3>
+
+<i>Must be used</i> to free memory allocated by
+<a href="#wsapi_malloc"><tt>wsapi_malloc</tt></a>,
+<a href="#wsapi_realloc"><tt>wsapi_realloc</tt></a>, or
+<a href="#wsapi_strdup"><tt>wsapi_strdup</tt></a>. 
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="wsapi_log_event">wsapi_log_event</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void wsapi_log_event(HANDLE hDll,
+char *msg)</TT>
+<DL>
+<DT><TT>hDll</TT>
+<DD>Handle of your extension DLL, passed as the first parameter
+to the <TT>DLLMain</TT> function.
+<DT><TT>msg</TT>
+<DD>The message you wish to log 
+</DL>
+
+<H3>Description </H3>
+
+
+Log a message to the server's log (<TT>server.log_</TT>,
+and if on Windows NT, to the NT Event Log as well. Call this to
+log a message for the administrator. The <TT>message</TT>
+parameter is used to format a message that looks like this: &quot;<TT>The
+&lt;type&gt; DLL &lt;path&gt; logged &lt;msg&gt;&quot;</TT>,
+where <TT>&lt;type&gt;</TT> is
+the extension type (e.g., pre-processor, generator), <TT>&lt;path&gt;</TT>
+is the DLL's pathname as it appears in the registry, and <TT>&lt;message&gt;</TT>
+is your message parameter. For example:<BR>
+
+<TT>   The post-processor DLL C:\website\wsapi\pagecnt.dll logged: I am happy!</TT>
+
+<H3>Example </H3>
+<PRE>static HINSTANCE _hDll;
+...
+BOOL WINAPI DllMain(HINSTANCE hInstDLL, DWORD fdwReason, LPVOID lpReserved)
+{
+    switch(fdwReason)
+    {
+        case DLL_PROCESS_ATTACH:
+            _hDll = hInstDLL;
+            return(bind_wsapi(MAJOR_VERSION, MINOR_VERSION, FALSE));
+...
+void some_other_function(...
+{
+    ...
+    wsapi_log_event(_hDll, &quot;Hello from my WSAPI extension&quot;);</PRE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="wsapi_malloc">wsapi_malloc</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void *wsapi_malloc(long size, TCTX
+*tp)</TT>
+<DL>
+<DT><TT>size</TT>
+<DD>number of bytes to allocate
+<DT><TT>tp</TT>
+<DD>transaction context pointer
+<DT>Returns a typeless pointer to the allocated memory which <i>must be
+freed using <a href="#wsapi_free"><tt>wsapi_free</tt></a></i>.
+
+</DL>
+
+<H3>Description </H3>
+
+
+Allocate memory <i>in the server's heap zone</i>
+via the C runtime library <TT>malloc()</TT>
+service, with error control. The function will fail via an exception
+(using the <TT>ABORT</TT> macro)
+on allocation failure. In general, you need to be concerned about
+these only if you have allocated other memory that needs to be
+freed or handles that need to be closed. In this case, you should
+guard the call with a try/finally or a try/except block as appropriate
+to your application. <B>Do not dismiss these exceptions under
+any circumstances.</B> They are used for proper completion of
+the transaction.
+<H3>Example </H3>
+<PRE>struct foo *p1;
+struct bar *p2;
+...
+__try
+{
+    p1 = p2 = NULL;                       // Sentinels
+    p1 = wsapi_malloc(sizeof(*p1), tp);
+    p2 = wsapi_malloc(sizeof(*p2), tp);
+}
+__except(EXCEPTION_EXCUTE_HANDLER)
+{
+    if(p1) wsapi_free(p1);                // Safely free any allocations
+    if(p2) wsapi_free(p2);
+    ABORT;              // DO NOT DISMISS THE EXCEPTION!
+}</PRE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="wsapi_realloc">wsapi_realloc</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void *wsapi_realloc(void *ptr, long
+size, TCB *tp)</TT>
+<DL>
+<DT><TT>ptr</TT>
+<DD>Address of a previously allocated memory block
+<DT><TT>size</TT>
+<DD>new size for allocation
+<DT><TT>tp</TT>
+<DD>transaction context pointer
+<DT>Returns a (possibly changed) typeless pointer
+to the re-sized block of memory which <i>must be
+freed using <a href="#wsapi_free"><tt>wsapi_free</tt></a></i>.
+</DL>
+
+<H3>Description </H3>
+
+
+Re-size a memory block via the C runtime library <TT>realloc()</TT>
+service, with error control. The function will fail via an exception
+(using the <TT>ABORT</TT> macro)
+on allocation failure. In general, you need to be concerned about
+these only if you have allocated other memory that needs to be
+freed or handles that need to be closed. In this case, you should
+guard the call with a try/finally or a try/except block as appropriate
+to your application. <B>Do not dismiss these exceptions under
+any circumstances.</B> They are used for proper completion of
+the transaction
+<H3>Example </H3>
+<PRE>struct foo *p1;
+struct bar *p2;
+...
+__try
+{
+    p1 = p2 = NULL;                       // Sentinels
+    p1 = wsapi_malloc(sizeof(*p1), tp);
+    p2 = wsapi_malloc(sizeof(*p2), tp);
+    ...
+    p2 = wsapi_realloc(p2, (sizeof(*p2) + 1024), tp);
+}
+__except(EXCEPTION_EXCUTE_HANDLER)
+{
+    if(p1) wsapi_free(p1);                // Safely free any allocations
+    if(p2) wsapi_free(p2);
+    ABORT;              // DO NOT DISMISS THE EXCEPTION!
+}</PRE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="wsapi_strdup">wsapi_strdup</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>char *wsapi_strdup(char *str, TCTX *tp)</TT>
+<P>
+<TT>str</TT> address of string to duplicate
+<P>
+<TT>tp</TT> transaction context pointer
+<P>
+Returns a pointer to a copy of the string in allocated memory, which <i>must be
+freed using <a href="#wsapi_free"><tt>wsapi_free</tt></a></i>.
+
+<H3>Description </H3>
+
+
+Duplicate a string into allocated memory. The function will fail
+via an exception (using the <TT>ABORT</TT>
+macro) on allocation failure. In general, you need to be concerned
+about these only if you have allocated other memory that needs
+to be freed or handles that need to be closed. In this case, you
+should guard the call with a try/finally or a try/except block
+as appropriate to your application. <B>Do not dismiss these exceptions
+under any circumstances.</B> They are used for proper completion
+of the transaction. <B>You must wsapi_free this space </B>unless it
+is attached to a transaction context field that you know will
+be freed by the server during transaction cleanup. See the documentation
+on the TCTX fields for more information.
+<H3>Example </H3>
+<PRE>char *name = NULL;                // Sentinel
+...
+__try
+{
+    name = wsapi_strdup(&quot;This is a test&quot;, tp);
+    ...
+}
+__finally
+{
+    if(name) wsapi_free(name);    // Safe free
+    ...
+}</PRE>
+
+<HR>
+<address><A HREF="mailto:support@ora.com">
+O'Reilly Tech Support &lt;support@ora.com&gt;</A></address>
+
+</BODY>
+
+</HTML>
+

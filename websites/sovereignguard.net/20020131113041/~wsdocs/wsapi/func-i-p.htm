@@ -1,0 +1,732 @@
+<HTML>
+<HEAD>
+<TITLE>WebSite API - Functions</TITLE>
+</HEAD>
+<!-- This mess was made by Internet Assistant & manually "cleaned up" -->
+<!--kks;2.0;080397-->
+
+<BODY  BGCOLOR="#FFFFFF">
+<center>
+<img src="/~wsdocs/images/WSP2_nil.gif" width=515 height=60 alt="WebSite Professional Server Self Test"><br>
+<H1>WebSite API 1.1 SDK<BR>
+Server Function Descriptions</H1>
+</CENTER>
+
+<h3><A HREF="index.htm">Return to Overview</A></h3>
+<i>15-September-97</i>
+<hr>
+
+<H2>Index</H2>
+
+<TABLE WIDTH=100%>
+<TR VALIGN=TOP>
+<TD>
+<A HREF="func-a-h.htm#bind_wsapi">bind_wsapi</A><br>
+<A HREF="func-a-h.htm#close_form_decoder">close_form_decoder</a><br>
+<A HREF="func-a-h.htm#construct_url">construct_url</A><br>
+<A HREF="func-a-h.htm#decode_next_field">decode_next_field</a><br>
+<A HREF="func-a-h.htm#DbgDump">DbgDump</A><br>
+<A HREF="func-a-h.htm#die">die</A><br>
+<A HREF="func-a-h.htm#do_imagemap">do_imagemap</A><br>
+<A HREF="func-a-h.htm#escape_url">escape_url</A><br>
+<A HREF="func-a-h.htm#evaluate_access">evaluate_access</A><br>
+<A HREF="func-a-h.htm#exec_cgi">exec_cgi</A><br>
+<A HREF="func-a-h.htm#exec_cgi_to_file">exec_cgi_to_file</A><br>
+<A HREF="func-a-h.htm#file_to_url">file_to_url</A><br>
+<A HREF="func-a-h.htm#get_content_type">get_content_type</A><br>
+<A HREF="func-a-h.htm#get_server_variable">get_server_variable</A><br>
+<A HREF="func-a-h.htm#GetRegBin">GetRegBin</A><br>
+<A HREF="func-a-h.htm#GetRegString">GetRegString</A><br>
+<A HREF="func-a-h.htm#get_temp_name">get_temp_name</A><br>
+</TD>
+<TD>
+<A HREF="func-a-h.htm#http_timestr">http_timestr</A><br>
+<A HREF="func-a-h.htm#http_nt_timestr">http_nt_timestr</A><br>
+<A HREF="func-i-p.htm#later_than">later_than</A><br>
+<A HREF="func-i-p.htm#MD5Init">MD5Init</A><br>
+<A HREF="func-i-p.htm#MD5Update">MD5Update</A><br>
+<A HREF="func-i-p.htm#MD5Final">MD5Final</A><br>
+<A HREF="func-i-p.htm#nflush">nflush</A><br>
+<A HREF="func-i-p.htm#ngets">ngets</A><br>
+<A HREF="func-i-p.htm#normalize_url">normalize_url</A><br>
+<A HREF="func-i-p.htm#nputs">nputs</A><br>
+<A HREF="func-i-p.htm#nread">nread</A><br>
+<A HREF="func-i-p.htm#nreadf">nreadf</A><br>
+<A HREF="func-i-p.htm#nwrite">nwrite</A><br>
+<A HREF="func-i-p.htm#nwritef">nwritef</A><br>
+<A HREF="func-i-p.htm#OpenRegKey">OpenRegKey</A><br>
+<A HREF="func-i-p.htm#open_form_decoder">open_form_decoder</a><br>
+<A HREF="func-i-p.htm#plus_to_space">plus_to_space</A><br>
+</TD>
+<TD>
+<A HREF="func-i-p.htm#process_get">process_get</A><br>
+<A HREF="func-q-z.htm#send_http_header">send_http_header</A><br>
+<A HREF="func-q-z.htm#set_content_type">set_content_type</A><br>
+<A HREF="func-q-z.htm#space_to_plus">space_to_plus</A><br>
+<A HREF="func-q-z.htm#TrueRandAddNoise">TrueRandAddNoise</A><br>
+<A HREF="func-q-z.htm#TrueRandEntropy">TrueRandEntropy</A><br>
+<A HREF="func-q-z.htm#TrueRandGetByte">TrueRandGetByte</A><br>
+<A HREF="func-q-z.htm#TrueRandGetBytes">TrueRandGetBytes</A><br>
+<A HREF="func-q-z.htm#unescape_url">unescape_url</A><br>
+<A HREF="func-q-z.htm#url_to_file">url_to_file</A><br>
+<A HREF="func-q-z.htm#wsapi_free">wsapi_free</A><br>
+<A HREF="func-q-z.htm#wsapi_log_event">wsapi_log_event</A><br>
+<A HREF="func-q-z.htm#wsapi_malloc">wsapi_malloc</A><br>
+<A HREF="func-q-z.htm#wsapi_realloc">wsapi_realloc</A><br>
+<A HREF="func-q-z.htm#wsapi_strdup">wsapi_strdup</A><br> 
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="later_than">later_than</A>
+</H2>
+
+<H3>Syntax </H3>
+
+<TT>BOOL later_than(char *t1, char *t2)</TT>
+<DL>
+<DT><TT>t1</TT>
+<DD>HTTP-compliant date/time to test
+<DT><TT>t2</TT>
+<DD>HTTP-compliant date/time to test against 
+</DL>
+
+Returns <TT>TRUE</TT> only if
+<TT>t1</TT> is later than <TT>t2</TT>
+<H3>Description </H3>
+
+Compare times in HTTP-compliant string format. This function is
+exposed so that you can do your own &quot;If Modified Since&quot;
+support. You can use <A HREF="func-a-h.htm#http_timestr">http_timestr()</A>
+or <A HREF="func-a-h.htm#http_nt_timestr">http_nt_timestr()</A> to get properly
+formatted string(s).
+<H3>Example </H3>
+<TT>struct stat fi;<BR>
+char *cp;<BR>
+FILE *myfp;<BR>
+...<BR>
+fstat(fileno(myfp), &amp;fi);<BR>
+strcpy(tp-&gt;last_modified, http_timestr(fi.st_mtime));<BR>
+if(tp-&gt;if_modified_since[0] != '\0' &amp;&amp;<BR>
+!later_than(cp, tp-&gt;if_modified_since))<BR>
+die(USE_LOCAL_COPY, NULL, tp);</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom>
+<A NAME="MD5Init">MD5Init</A></H2>
+
+<H3>Syntax </H3>
+
+<TT>void MD5Init(MD5Context *ctx);</TT>
+<DL>
+<DT><TT>ctx</TT>
+<DD>Address of an MD5 context block
+</DL>
+
+<H3>Description </H3>
+
+Call this function to set up an MD5 digest. The structure definition
+and typedef for <tt>MD5Context</tt> is in wsapi.h. See also
+<a href="#MD5Update"><tt>MD5Update()</tt></a> and 
+<a href="#MD5Final"><tt>MD5Final()</tt></a>. See
+<a href="http://ds.internic.net/rfc/rfc1321.txt">RFC 1321: The MD5
+Message-Digest Algorithm</a> for more information on MD5 itself.
+
+<H3>Example</H3>
+
+See the example in
+<a href="#MD5Update"><tt>MD5Update()</tt></a>.
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom>
+<A NAME="MD5Update">MD5Update</A></H2>
+
+<H3>Syntax</H3>
+
+<TT>void MD5Update(MD5Context *ctx, BYTE *buf, DWORD len);</TT>
+<DL>
+<DT><TT>ctx</TT>
+<DD>Address of an (at least) <i>initialized</i> MD5 context block
+<DT><TT>buf</TT>
+<DD>Buffer containing data to be added to the digest
+<DT><TT>len</TT>
+<DD>Length in bytes of the data in the buffer to be added to the digest
+</DL>
+
+<H3>Description </H3>
+Use this function to add data to the digest. You may call this fucntion
+as many times as you want, with buffers of any size. The
+<tt>MD5Context</tt> structure must be initialized using
+<a href="#MD5Init"><tt>MD5Init()</tt></a> before calling this function
+for the first time.
+
+<P>See Also
+<a href="#MD5Init"><tt>MD5Init()</tt></a> and 
+<a href="#MD5Final"><tt>MD5Final()</tt></a>. See 
+<a href="http://ds.internic.net/rfc/rfc1321.txt">RFC 1321: The MD5
+Message-Digest Algorithm</a> for more information on MD5 itself.
+
+<H3>Example</H3>
+
+<PRE>//
+// Determine the MD5 digest of a string. Returns 16 bytes
+// (digest is a 128 bit number). No regard for byte-ordering
+// here, as Intel is a little-endian machine. You may need
+// the bytes ordered differently!
+//
+void MDString(char *str, BYTE digest[16]) {
+    MD5Context ctx;
+
+    MD5Init(&ctx);
+    MD5Update(&ctx, str, strlen(str));
+	MD5Final(digest, &ctx);
+}</PRE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom>
+<A NAME="MD5Final">MD5Final</A></H2>
+
+<H3>Syntax</H3>
+
+<TT>void MD5Final(BYTE digest[16}, MD5Context *ctx);</TT>
+<DL>
+<DT><TT>digest</TT>
+<DD>A 16-byte array into which the digest is put
+<DT><TT>ctx</TT>
+<DD>Address of the MD5 context block used to accumulate the digest
+</DL>
+
+<H3>Description </H3>
+Once you have accumulated all the data you want into the digest, 
+call this function to complete the digest and fill it into the
+specified 16-byte buffer. Once the digest has been copied, this
+function zeroes the context block to remove any traces of the
+operation.
+
+<P>See Also
+<a href="#MD5Init"><tt>MD5Init()</tt></a> and 
+<a href="#MD5Update"><tt>MD5Update()</tt></a>. See 
+<a href="http://ds.internic.net/rfc/rfc1321.txt">RFC 1321: The MD5
+Message-Digest Algorithm</a> for more information on MD5 itself.
+
+<H3>Example</H3>
+
+See the example in
+<a href="#MD5Update"><tt>MD5Update()</tt></a>.
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="nflush">nflush</A>
+</H2>
+
+<H3>Syntax </H3>
+
+<TT>void nflush(TCTX *tp)</TT>
+<DL>
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+
+Flush the network output buffer. Call this when you want to force
+all remaining data out to the network (and to the client). Useful
+mostly in server-push applications. The function will fail via
+an exception (using the <TT>ABORT</TT>
+macro) on a variety of network I/O problems. In general, you need
+to be concerned about these only if you have allocated memory
+that needs to be freed. In this case, you should guard the call
+with a try/finally or a try/except block as appropriate to your
+application. <B>Do not dismiss these exceptions under any circumstances.</B>
+They are used for proper completion of the transaction.
+<H3>Example </H3>
+<TT>nflush(tp); // Force remaining data
+to browser</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="ngets">ngets</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void ngets(char *buf, int max, TCTX
+*tp)</TT>
+<DL>
+<DT><TT>buf</TT>
+<DD>Address of buffer to receive next line of data from client
+<DT><TT>max</TT>
+<DD>Maximum length of line (safety stop)
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+
+Get the next &quot;line&quot; of data from the browser. A line
+is a string ending in a linefeed character (0x0A). If the line
+length exceeds <TT>max</TT>, the
+function generates an exception via the <TT>ABORT</TT>
+macro and does not return. It also generates exceptions on a variety
+of network I/O problems. In general, you need to be concerned
+about these only if you have allocated memory that needs to be
+freed. In this case, you should guard the call with a try/finally
+or a try/except block as appropriate to your application. <B>Do
+not dismiss these exceptions under any circumstances.</B> They
+are used for proper completion of the transaction. If you call
+this when there is no complete line available for input, the call
+will hang for the Read Timeout (as set in the server's property
+sheet) then fail via an exception. 
+<H3>Example </H3>
+<TT>char buf[MED_STRING_LEN]; <BR>
+...<BR>
+ngets(buf, MED_STRING_LEN, tp);</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="normalize_url">normalize_url</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>BOOL normalize_url(char *path)</TT>
+<DL>
+<DT><TT>path</TT>
+<DD>URL path (only, no scheme/host/port) 
+</DL>
+
+
+Return TRUE if any modifications were made to the URL
+<H3>Description </H3>
+
+
+Remove redundant or unsafe syntax from a URL. Remove multiple
+<TT>/</TT>s, change <TT>./</TT>
+to <TT>/</TT>, remove things like
+<TT>foo/../ </TT>and trailing<TT>
+/.</TT> This function is useful when comparing a URL to
+a reference. If the URL has spurious syntax, the match will fail,
+however the URL may still translate into a usable file path.
+<P>
+The return value, if TRUE, can be used to generate a redirect
+response to the cliet with the cleaned-up path. The server does
+this automatically on simple GET URLs.
+<H3>Example </H3>
+<TT>char buf[MAX_STRING_LEN]; <BR>
+BOOL bMod;<BR>
+...<BR>
+strcpy(buf, &quot;/foo/../bar/././//./xyz.html&quot;);<BR>
+bMod = normalize_url(buf); // Results in /bar/xyz.html,
+returns TRUE</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="nputs">nputs</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void nputs(char *str, TCTX *tp)</TT>
+<DL>
+<DT><TT>str</TT>
+<DD>Address of string to send to the client
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+
+Buffered write of a string to the client. The string may be any
+length. Line terminators are not significant. The data will be
+actually sent to the client only when the internal WebSite net
+buffer is full, or when you call <A HREF="#nflush">nflush()</A>.
+The function will fail via an exception (using the <TT>ABORT</TT>
+macro) on a variety of network I/O problems. In general, you need
+to be concerned about these only if you have allocated memory
+that needs to be freed. In this case, you should guard the call
+with a try/finally or a try/except block as appropriate to your
+application. <B>Do not dismiss these exceptions under any circumstances.</B>
+They are used for proper completion of the transaction.
+<H3>Example </H3>
+<TT>nputs(&quot;X-Special-Header:
+Fun-n-games\015\012&quot;, tp);1
+// HTTP headers CRLF terminated</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="nread">nread</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void nread(char *buf, long nreq,
+TCTX *tp)</TT>
+<DL>
+<DT><TT>buf</TT>
+<DD>address of buffer to receive data
+<DT><TT>nreq</TT>
+<DD>number of bytes to read
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+
+Read specified number of bytes from the client. The function generates
+exceptions on a variety of network I/O problems. In general, you
+need to be concerned about these only if you have allocated memory
+that needs to be freed. In this case, you should guard the call
+with a try/finally or a try/except block as appropriate to your
+application. <B>Do not dismiss these exceptions under any circumstances.</B>
+They are used for proper completion of the transaction. If you
+call this when there fewer than nreq bytes available for input,
+the call will hang for the Read Timeout (as set in the server's
+property sheet) then fail via an exception. 
+<H3>Example </H3>
+<TT>char buf[MAX_STRING_LEN]; <BR>
+...<BR>
+if(tp-&gt;content_length &gt; (MAX_STRING_LEN - 1))<BR>
+die(SERVER_ERROR, &quot;Content exceeded internal buffer size.&quot;,
+tp);<BR>
+nread(buf, tp-&gt;content_length, tp);</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="nreadf">nreadf</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void nreadf(HANDLE hFile, long nreq,
+TCTX *tp)</TT>
+<DL>
+<DT><TT>hFile</TT>
+<DD>Win32 open file handle
+<DT><TT>nreq</TT>
+<DD>number of bytes to read
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+
+Efficient read of specified number of bytes from the client directly
+into an open file. The file must be open for write. The function
+generates exceptions on file and network I/O problems. In general,
+you need to be concerned about these only if you have allocated
+memory that needs to be freed or handle(s) that need to be closed.
+In this case, you should guard the call with a try/finally or
+a try/except block as appropriate to your application. <B>Do not
+dismiss these exceptions under any circumstances.</B> They are
+used for proper completion of the transaction. If you call this
+when there fewer than nreq bytes available for input, the call
+will hang for the Read Timeout (as set in the server's property
+sheet) then fail via an exception. 
+<H3>Example </H3>
+<TT>HANDLE hFile;<BR>
+...<BR>
+hFile = CreateFile(...<BR>
+...<BR>
+__try<BR>
+{<BR>
+nreadf(hFile, tp-&gt;content_length, tp);<BR>
+}<BR>
+__finally<BR>
+{<BR>
+CloseHandle(hFile); // Avoid file handle leaks<BR>
+}</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="nwrite">nwrite</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void nwrite(char *buf, int nreq,
+TCB *tp)</TT>
+<DL>
+<DT><TT>buf</TT>
+<DD>Buffer containing bytes to write to client
+<DT><TT>nreq</TT>
+<DD>Number of bytes to write from buffer
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+
+Buffered write to the client. The buffer may be any length. The
+data will be actually sent to the client only when the internal
+WebSite net buffer is full, or when you call <A HREF="#nflush">nflush()</A>.
+The function will fail via an exception (using the <TT>ABORT</TT>
+macro) on a variety of network I/O problems. In general, you need
+to be concerned about these only if you have allocated memory
+that needs to be freed. In this case, you should guard the call
+with a try/finally or a try/except block as appropriate to your
+application. <B>Do not dismiss these exceptions under any circumstances.</B>
+They are used for proper completion of the transaction.
+<H3>Example </H3>
+<TT>nwrite(buf, 1200, tp);1</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="nwritef">nwritef</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void nwritef(HANDLE hFile, DWORD
+dwStartPos, DWORD dwCount, TCB *tp)</TT>
+<DL>
+<DT><TT>hFile</TT>
+<DD>Win32 open file handle
+<DT><TT>dwStartPos</TT>
+<DD>Starting byte position in file (0-based)
+<DT><TT>dwCount</TT>
+<DD>Number of bytes to send
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+
+Efficient direct (unbuffered) write from open file (from given
+offset to end-of-file) to client. This function first calls <A HREF="#nflush">nflush()</A>
+to empty the WebSite internal network output buffer, then transmits
+the file using memory-mapped I/O. The function will fail via an
+exception (using the <TT>ABORT</TT>
+macro) on a variety of network I/O problems. In general, you need
+to be concerned about these in order to close the file handle
+and/or if you have allocated memory that needs to be freed. In
+this case, you should guard the call with a try/finally or a try/except
+block as appropriate to your application. <B>Do not dismiss these
+exceptions under any circumstances.</B> They are used for proper
+completion of the transaction.
+
+<H3>Example </H3>
+<PRE>char *fn = &quot;c:\\foo\\bar.html&quot;;
+HANDLE hFile;
+BY_HANDLE_FILE_INFORMATION finfo;
+SYSTEMTIME stLastModGMT;
+...
+hFile = CreateFile(fn, ...);
+set_content_type(fn, tp);
+GetFileInformationByHandle(hFile, &amp;finfo);     // Get file info
+tp-&gt;content_length = finfo.nFileSizeLow;       // File must be &lt; 2GB!
+//
+// Set up HTTP Last-Modified. The SYSTEMTIME is assumed to be in GMT!
+//
+FileTimeToSystemTime(&amp;(finfo.ftLastWriteTime), &amp;stLastModGMT);
+http_nt_timestr(&amp;stLastModGMT, tp-&gt;last_modified, sizeof(tp-&gt;last_modified));
+//
+// Add an &quot;extra header&quot; field to the HTTP header
+// 
+if(tp-&gt;num_rsp_xhdr &lt; MAX_EXT_HEADERS)
+{
+    tp-&gt;rsp_xhdr[tp-&gt;num_rsp_xhdr].key = wsapi_strdup(&quot;X-Special&quot;, tp);
+    tp-&gt;rsp_xhdr[tp-&gt;num_rsp_xhdr++].value = wsapi_strdup(&quot;Some info&quot;, tp);
+//           NOTE! --------------^^
+}
+
+//
+// Send the HTTP header, then the file itself.
+//
+send_http_header(tp, TRUE);
+__try
+{
+    nwritef(hFile, tp);        // This may generate an exception...
+}
+__finally
+{
+    CloseHandle(hFile);        // This prevents file handle leaks
+}</PRE>
+
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="open_form_decoder">open_form_decoder</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>FORM_CTX open_form_decoder(BYTE *data, DWORD len, TCTX *tp)</TT>
+
+<DL>
+<DT><TT>data</TT>
+<DD>Pointer to the form data in memory, <i>plus a terminating null
+character</i>. 
+<DT><TT>len</TT>
+<DD>The length in bytes of the form data in memory.
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<p>Returns an opaque context handle (<tt>FORM_CTX</tt> as defined
+in <tt>wsapi.h</tt>), which is used in subsequent calls to 
+<a href="func-a-h.htm#decode_next_field"><tt>decode_next_field()</tt></a>, and
+eventually, <a href="func-a-h.htm#close_form_decoder"><tt>close_form_decoder()</tt></a>.
+
+<h3>Description</h3>
+Initializes the WSAPI form decoder for subsequent enumeration of the fields
+in the form via calls to 
+<a href="func-a-h.htm#decode_next_field"><tt>decode_next_field()</tt></a>. The decoder
+engine is optimized to do in-memory scanning and conversion, rather than
+relying on slower streaming techniques. This means that the whole of the
+posted form data must reside in a read/write memory block. This may
+conveniently be created by allocating <tt>tp-&gt;content-length + 1</tt> bytes
+using <a href="func-q-z.htm#wsapi_malloc"><tt>wsapi_malloc()</tt></a>, then reading
+<tt>tp-&gt;content-length</tt> bytes into the block with a single call to <a
+href="#nread"><tt>nread()</tt></a>.
+
+<p>The WSAPI form decoder transparently handles both form data encoding
+types (<tt>application/x-www-form-urlencoded</tt> and 
+<tt>multipart/form-data</tt>). This means that WSAPI generators that use
+the decoder with forms need not be concerned with the encoding used in a
+form. It also means that the new forms-based file uploading feature of
+some browsers is supported by the decoder.
+
+<h3>Example:</h3>
+<pre>FRM_CTX ctx;
+FIELD *fp;
+BYTE *pdata;
+DWORD dlen;
+...
+dlen = tp->content_length;
+pdata=wsapi_malloc((dlen+ 1), tp); // Allocate space for form data &amp; null
+pdata[dlen] = '\0';                // Terminating null, required!
+//
+// Guard the rest against network errors, etc.
+//
+__try
+{
+    nread(pdata, dlen, tp);        // Read all form data
+    ctx = open_form_decoder(pdata, dlen, tp);  // Initialize the decoder
+    while((fp = decode_next_field(ctx, tp)) != NULL)
+    {
+        ... do what you like with the field data
+        ... accessible via fp-&gt;
+    }
+}
+__finally                         // Assure proper memory cleanup!
+{
+    close_form_decoder(ctx, tp);
+    wsapi_free(pdata);
+}</PRE>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="OpenRegKey">OpenRegKey</A>
+</H2>
+
+<H3>Syntax </H3>
+
+<TT>HKEY OpenRegKey(char *key)</TT>
+
+<DL>
+<DT><TT>key</TT> 
+<DD>String containing
+the key name, relative to <TT>HKEY_LOCAL_MACHINE</TT>
+</DL>
+
+<H3>Description</H3>
+
+
+Open a registry key. If the key does not exist, this function
+generates an exception via the <TT>ABORT</TT>
+macro. You can trap these with a try/except block for cleanup
+purposes.
+
+<H3>Example </H3>
+<TT>HKEY hKey;<BR>
+...<BR>
+hKey = OpenRegKey(&quot;SOFTWARE\\Denny\\WebServer\\CurrentVersion&quot;);</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="plus_to_space">plus_to_space</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void plus_to_space(char *str)</TT>
+<DL>
+<DT><TT>str</TT>
+<DD>String containing plus-separated components 
+</DL>
+
+<H3>Description </H3>
+
+
+Convert plus characters in a string to space characters. The inverse
+of <A HREF="func-q-z.htm#space_to_plus">space_to_plus()</A>. Generally used
+together with <A HREF="func-q-z.htm#unescape_url">unescape_url()</A>. The
+conversion is done in place, therefore <B>the buffer containing
+the string must be writeable.</B> 
+<H3>Example </H3>
+<TT>char buf[SML_STRING_LEN]; <BR>
+...<BR>
+strcpy(buf, &quot;This+is+a+test&quot;);<BR>
+plus_to_space(buf); // Results in &quot;This is a test&quot;</TT>
+<HR>
+
+<H2><IMG SRC="rfinger.gif" width=32 height=19 align=bottom><A NAME="process_get">process_get</A>
+</H2>
+
+<H3>Syntax </H3>
+
+
+<TT>void process_get(char *meth, char
+*url, char *args, TCTX *tp)</TT>
+<DL>
+<DT><TT>meth</TT>
+<DD>method, <TT>GET</TT> or <TT>HEAD</TT>
+(<B>only!</B>)
+<DT><TT>url</TT>
+<DD>URL path <I>only</I> (absolute, must start with <TT>/</TT>)
+<DT><TT>args</TT>
+<DD>URL arguments (query string), must not be NULL
+<DT><TT>tp</TT>
+<DD>transaction context pointer 
+</DL>
+
+<H3>Description </H3>
+
+
+High-level interface to the server's <TT>GET</TT>
+handler. Use this to cause the server to act as though the client
+issued a <TT>GET</TT> for the
+specified URL and arguments. When the function returns, the target
+document will have been sent to the client. 
+<P>
+The function will fail via an exception (using the <TT>ABORT</TT>
+macro) on a variety of network I/O problems. In general, you need
+to be concerned about these only if you have allocated memory
+that needs to be freed or handles that need to be closed. In this
+case, you should guard the call with a try/finally or a try/except
+block as appropriate to your application. <B>Do not dismiss these
+exceptions under any circumstances.</B> They are used for proper
+completion of the transaction
+<H3>Example </H3>
+<TT>process_get(&quot;GET&quot;, &quot;/&quot;,
+&quot;&quot;, tp);1 // Return
+home page</TT>
+
+<HR>
+<address><A HREF="mailto:support@ora.com">
+O'Reilly Tech Support &lt;support@ora.com&gt;</A></address>
+
+</BODY>
+
+</HTML>
+

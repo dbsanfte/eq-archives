@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+<!--kks;2.0;080397-->
+<TITLE>WSAPI Reference</TITLE>
+</HEAD>
+
+<BODY  BGCOLOR="#FFFFFF">
+<center>
+<img src="/~wsdocs/images/WSP2_nil.gif" width=515 height=60 alt="WebSite Professional Server Self Test"><br>
+
+<H1>WebSite API SDK<br>
+Functions Reference</H1>
+</center>
+<i>15-September-97</i>
+<HR>
+<blockquote>
+<img src="/~wsdocs/images/note.gif">Please note: For complete
+WSAPI documentation, see Section IV: The WebSite
+Application Programming Interface, in <i>Creating Dynamic
+Content</i>.</blockquote>
+<hr>
+<H2>Index</H2>
+
+<TABLE WIDTH=100%>
+<TR VALIGN=TOP>
+<TD>
+<A HREF="func-a-h.htm#bind_wsapi">bind_wsapi</A><br>
+<A HREF="func-a-h.htm#close_form_decoder">close_form_decoder</a><br>
+<A HREF="func-a-h.htm#construct_url">construct_url</A><br>
+<A HREF="func-a-h.htm#decode_next_field">decode_next_field</a><br>
+<A HREF="func-a-h.htm#DbgDump">DbgDump</A><br>
+<A HREF="func-a-h.htm#die">die</A><br>
+<A HREF="func-a-h.htm#do_imagemap">do_imagemap</A><br>
+<A HREF="func-a-h.htm#escape_url">escape_url</A><br>
+<A HREF="func-a-h.htm#evaluate_access">evaluate_access</A><br>
+<A HREF="func-a-h.htm#exec_cgi">exec_cgi</A><br>
+<A HREF="func-a-h.htm#exec_cgi_to_file">exec_cgi_to_file</A><br>
+<A HREF="func-a-h.htm#file_to_url">file_to_url</A><br>
+<A HREF="func-a-h.htm#get_content_type">get_content_type</A><br>
+<A HREF="func-a-h.htm#get_server_variable">get_server_variable</A><br>
+<A HREF="func-a-h.htm#GetRegBin">GetRegBin</A><br>
+<A HREF="func-a-h.htm#GetRegString">GetRegString</A><br>
+<A HREF="func-a-h.htm#get_temp_name">get_temp_name</A><br>
+</TD>
+<TD>
+<A HREF="func-a-h.htm#http_timestr">http_timestr</A><br>
+<A HREF="func-a-h.htm#http_nt_timestr">http_nt_timestr</A><br>
+<A HREF="func-i-p.htm#later_than">later_than</A><br>
+<A HREF="func-i-p.htm#MD5Init">MD5Init</A><br>
+<A HREF="func-i-p.htm#MD5Update">MD5Update</A><br>
+<A HREF="func-i-p.htm#MD5Final">MD5Final</A><br>
+<A HREF="func-i-p.htm#nflush">nflush</A><br>
+<A HREF="func-i-p.htm#ngets">ngets</A><br>
+<A HREF="func-i-p.htm#normalize_url">normalize_url</A><br>
+<A HREF="func-i-p.htm#nputs">nputs</A><br>
+<A HREF="func-i-p.htm#nread">nread</A><br>
+<A HREF="func-i-p.htm#nreadf">nreadf</A><br>
+<A HREF="func-i-p.htm#nwrite">nwrite</A><br>
+<A HREF="func-i-p.htm#nwritef">nwritef</A><br>
+<A HREF="func-i-p.htm#OpenRegKey">OpenRegKey</A><br>
+<A HREF="func-i-p.htm#open_form_decoder">open_form_decoder</a><br>
+<A HREF="func-i-p.htm#plus_to_space">plus_to_space</A><br>
+</TD>
+<TD>
+<A HREF="func-i-p.htm#process_get">process_get</A><br>
+<A HREF="func-q-z.htm#send_http_header">send_http_header</A><br>
+<A HREF="func-q-z.htm#set_content_type">set_content_type</A><br>
+<A HREF="func-q-z.htm#space_to_plus">space_to_plus</A><br>
+<A HREF="func-q-z.htm#TrueRandAddNoise">TrueRandAddNoise</A><br>
+<A HREF="func-q-z.htm#TrueRandEntropy">TrueRandEntropy</A><br>
+<A HREF="func-q-z.htm#TrueRandGetByte">TrueRandGetByte</A><br>
+<A HREF="func-q-z.htm#TrueRandGetBytes">TrueRandGetBytes</A><br>
+<A HREF="func-q-z.htm#unescape_url">unescape_url</A><br>
+<A HREF="func-q-z.htm#url_to_file">url_to_file</A><br>
+<A HREF="func-q-z.htm#wsapi_free">wsapi_free</A><br>
+<A HREF="func-q-z.htm#wsapi_log_event">wsapi_log_event</A><br>
+<A HREF="func-q-z.htm#wsapi_malloc">wsapi_malloc</A><br>
+<A HREF="func-q-z.htm#wsapi_realloc">wsapi_realloc</A><br>
+<A HREF="func-q-z.htm#wsapi_strdup">wsapi_strdup</A><br> 
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+<p>This document describes the server-internal functions that are
+exposed by WSAPI. In your DLL's <TT>PROCESS_ATTACH</TT>
+code, you must call the <A HREF="func-a-h.htm#bind_wsapi">bind_wsapi()</A>
+function. This insures that your extension
+is compatible with the version of the server that is currently
+running.
+
+<H2>How to Access the Support Functions</H2>
+
+The support functions are exported by the server for use by any DLL.
+Simply include the supplied import library <tt>httpd32.lib</tt> in your
+DLL's project. The C/C++ prototypes and associated structure definitions
+for the support functions are contained in the supplied header file
+<tt>wsapi.h</tt>. Include this in each of your DLL's source files.
+
+<H2>Using the Support Functions in ISAPI Compatibility Mode</H2>
+
+ISAs running under WebSite Pro's ISAPI compatibility mode can be
+upgraded/simplified to use WSAPI support functions. The <tt>hConn</tt>
+(connection ID) field in the ISAPI extension control block (ECB) passed
+from WebSite contains the address of the WSAPI Transaction Context Block
+associated with the current request. To call a WSAPI support function
+from an ISA extension, simply cast the connection ID to a TCTX pointer
+in any call that requires a TCTX pointer.
+
+<H2>Memory Management</H2>
+
+Most C runtime libraries (including the one with Visual
+C++) maintain separate heaps for allocation in each module (DLL or
+main program). This means that memory allocated in one module's code
+cannot be freed in another module's code. 
+
+<p>Some of the support functions allocate dynamic memory which you may need
+to free later. You <i>must</i> use the 
+<a href="func-q-z.htm#wsapi_free">wsapi_free()</a> function to
+free memory allocated by a support function. This calls back into the
+server so that the memory gets freed from the server's heap instaead of
+the DLL's heap.
+
+<p>The cleanest way to handle dynamic memory is to use the <tt>wsapi_</tt>
+versions of the memory management functions for everything. That way, no
+matter how the memory originally got allocated, you are safe in freeing
+it with <tt>wsapi_free()</tt>.
+<hr>
+<p>
+<address><a href="mailto:website-support@ora.com">website-support@ora.com</a></address>
+<p>
+<em>Copyright &copy; 1994-97 O'Reilly &amp; Associates, Inc.
+<B>All Rights Reserved.</B>
+</em>O'Reilly Software Online, WebSite Central, WebSite, <em>and</em>
+WebSite Professional<em> are trademarks of O'Reilly &amp; Associates, Inc.
+
+All other names are the trademarks of their respective companies.</em>
+<P>
+<P>
+
+</body>
+</html>
