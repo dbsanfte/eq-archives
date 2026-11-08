@@ -1,0 +1,87 @@
+<HTML><BODY><TITLE>Grade Calculator (using class)</TITLE>
+<SCRIPT Language=VBScript>
+
+Option Explicit 
+
+Class GradeCalc
+
+	Private StuGrades
+	Private StuName
+
+	Property Let StudentName(NameValue)
+		StuName = NameValue
+	End Property
+
+	Property Get StudentName()
+		StudentName = StuName
+	End Property
+
+	Property Let Grade(Index, GradeValue)
+		If GradeValue >= 0 And GradeValue <= 100 Then
+			StuGrades(Index) = GradeValue
+		ElseIf GradeValue < 0 Then
+			StuGrades(Index) = 0
+		Else
+			StuGrades(Index) = 100
+		End If
+	End Property
+
+	Property Get GradeAverage()
+		GradeAverage = (StuGrades(0) + StuGrades(1) + StuGrades(2) + StuGrades(3) + StuGrades(4)) / 5
+	End Property
+
+	Property Get LetterGrade()
+		If GradeAverage >= 90 Then
+			LetterGrade = "A"
+		ElseIf GradeAverage >= 80 Then
+			LetterGrade = "B"
+		ElseIf GradeAverage >= 70 Then
+			LetterGrade = "C"
+		ElseIf GradeAverage >= 60 Then
+			LetterGrade = "D"
+		Else
+			LetterGrade = "F"
+		End If
+	End Property
+
+	Sub Class_Initialize()
+		StuGrades = Array(0,0,0,0,0)
+	End Sub
+
+End Class
+
+Sub cmdSubmit_OnClick()
+
+	Dim NewStudent
+	Set NewStudent = New GradeCalc
+	
+	NewStudent.Grade(0) = Cint(txtGrade1.Value)
+	NewStudent.Grade(1) = Cint(txtGrade2.Value)
+	NewStudent.Grade(2) = Cint(txtGrade3.Value)
+	NewStudent.Grade(3) = Cint(txtGrade4.Value)
+	NewStudent.Grade(4) = Cint(txtGrade5.Value)
+	NewStudent.StudentName = txtStudentName.Value
+	txtOutput.Value = NewStudent.StudentName & " scored an average " & NewStudent.GradeAverage & " for a(n) " & NewStudent.LetterGrade
+
+End Sub
+
+</SCRIPT>
+	<H2 align=center>Grade Calculator (using class)</H2>
+	<br>
+	Student Name: <input name=txtStudentName size=20 maxlength=20>
+	<br>
+	Grade 1: <input name=txtGrade1 size=3 maxlength=3>
+	<br>
+	Grade 2: <input name=txtGrade2 size=3 maxlength=3>
+	<br>
+	Grade 3: <input name=txtGrade3 size=3 maxlength=3>
+	<br>
+	Grade 4: <input name=txtGrade4 size=3 maxlength=3>
+	<br>
+	Grade 5: <input name=txtGrade5 size=3 maxlength=3>
+	<br>
+	<input name=cmdSubmit type=button value=Calculate>
+	<br>
+	<br>
+	Result: <input name=txtOutput size=50>
+</BODY></HTML>
