@@ -1,0 +1,745 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+ <!-- no cache headers -->
+ <meta http-equiv="Pragma" content="no-cache">
+ <meta http-equiv="no-cache">
+ <meta http-equiv="Expires" content="-1">
+ <meta http-equiv="Cache-Control" content="no-cache">
+ <!-- end no cache headers -->
+ <meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft">
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft">
+	<meta name="description" content="ShowEQ Open Source Project Message Forums">
+	<title>ShowEQ Open Source Project Message Forums</title>
+
+ <meta name="MSSmartTagsPreventParsing" content="TRUE">
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<LINK REL="StyleSheet" HREF="/style.css" TYPE="text/css">
+<style type="text/css">
+BODY {
+	SCROLLBAR-BASE-COLOR: #A3A3CB;
+	SCROLLBAR-ARROW-COLOR: #000000;
+}
+SELECT {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #FFFFFF
+}
+
+TEXTAREA, .bginput {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #FFFFFF
+}
+A:link, A:visited, A:active {
+	COLOR: #000020;
+}
+A:hover {
+	COLOR: #FF4400;
+}
+#cat A:link, #cat A:visited, #cat A:active {
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+}
+#cat A:hover {
+	COLOR: #000000;
+	TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+	COLOR: #000020;
+	TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+	COLOR: #FF4400;
+	TEXT-DECORATION: underline;
+}
+.thtcolor {
+	COLOR: #FFFFFF;
+}
+
+.lf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 14px;
+}
+
+.nf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 12px;
+}
+
+.sf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 10px;
+}
+
+</style>
+
+
+
+<script type="text/javascript">
+<!--
+function openwindow(){
+ window.open ("","Help","toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=600,height=400");
+}
+
+function launch(URL, newName, newFeatures, orgName) {
+  var remote = open(URL, newName, newFeatures);
+  if (remote.opener == null)
+    remote.opener = window;
+  remote.opener.name = orgName;
+  return remote;
+}
+
+function openWindow(URL) {
+  Popup = launch(URL, 'popup', 'dependent=0,height=600,width=900,screenX=200,left=50,screenY=200,top=50,channelmode=0,dependent=0,directories=0,fullscreen=0,location=0,menubar=0,resizable=1,scrollbars=1,status=0,toolbar=0', 'launcher');
+}
+
+
+//-->
+</script>
+
+</head>
+<body bgcolor="#606096" text="#000000" id="all" leftmargin="10" topmargin="0" marginwidth="10" marginheight="10" link="#000020" vlink="#000020" alink="#000020">
+
+<!-- Call the Common Header -->
+<!-- logo and buttons -->
+<center>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+  <td valign="top" align="left" background="/forums/images/menu_background.gif" border="0" height="7" alt="/"><a href="/forums/index.php?s=6dacc4ecf7b861257cd6b867a345b2eb"><img src="/forums/images/vBulletin_logo.gif" border="0" alt="ShowEQ Open Source Project Message Forums"></a></td>
+  <td valign="bottom" align="right" nowrap background="/forums/images/menu_background.gif" border="0" height="7" alt="/">
+<center><font face="verdana,arial,helvetica" size="1" class="sf"></font></center>
+<!-- Begin Buttons -->
+<a href="/index.php?s=6dacc4ecf7b861257cd6b867a345b2eb"><img src="/forums/images/top_home.gif" alt="Home" border="0" width="58" height="25"></a>
+<a href="/forums/index.php?s=6dacc4ecf7b861257cd6b867a345b2eb"><img src="/forums/images/top_forums.gif" alt="Forum" border="0" width="58" height="25"></a>
+<a href="/forums/usercp.php?s=6dacc4ecf7b861257cd6b867a345b2eb"><img src="/forums/images/top_profile.gif" alt="Here you can view your subscribed threads, work with private messages and edit your profile and preferences" border="0" width="58" height="25"></a>
+
+<!-- <a href="/forums/register.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=signup"><img src="/forums/images/top_register.gif" alt="Registration is free!" border="0" width="58" height="25"></a> -->
+<a href="/forums/register.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=signup"><img src="/forums/images/top_register.gif" alt="Registration is free!" border="0" width="58" height="25"></a>
+
+<a href="/forums/calendar.php?s=6dacc4ecf7b861257cd6b867a345b2eb"><img src="/forums/images/top_calendar.gif" alt="Calendar" border="0" width="58" height="25"></a>
+<a href="/forums/memberlist.php?s=6dacc4ecf7b861257cd6b867a345b2eb"><img src="/forums/images/top_members.gif" alt="Find other members" border="0" width="58" height="25"></a>
+<a href="/forums/misc.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=faq"><img src="/forums/images/top_faq.gif" alt="Frequently Asked Questions" border="0" width="58" height="25"></a>
+<a href="/forums/search.php?s=6dacc4ecf7b861257cd6b867a345b2eb"><img src="/forums/images/top_search.gif" alt="Search" border="0" width="58" height="25"></a>
+<!-- End buttons -->
+</td>
+</tr>
+</table>
+<!-- /logo and buttons -->
+
+<!-- If we use custom menus -->
+<!- e.g. The TabMenu and iMac themes -->
+
+
+<!-- Display Left Column -->
+<!-- P_themeleftcolumn -->
+<table bgcolor="#FFFFFF" width="100%" cellpadding="5" cellspacing="0" border="0">
+<tr>
+
+<!-- Start  Left column -->
+<td align="center" width = "150" valign="top"> 
+
+<!-- Display the Leftcolumn blocks -->
+<table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#606096" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#A3A3CB">&nbsp;<font face="verdana, arial, helvetica" size="2" class="nf" color="#000000"><b>Search Box</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf"><table border="0"><tr><td>
+	<form style="margin-bottom:-2;" method="post" name="search" action="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&op=modload&name=Search&file=index">
+	<div align="left"><font face="verdana,arial,helvetica" size="1" class="sf">
+    <select name="type">
+    <option value="forums" selected>Forums</option>
+	<option value="news">News</option>
+   	<option value="googlesearch">Google</option>
+	<option value="comments">Comments</option>
+	<option value="users">Users</option>
+	<option value="sections">Sections</option>
+	<option value="reviews">Reviews</option>
+	<option value="content">Content</option>
+	<option value="downloads">Downloads</option>
+	<option value="links">Web Links</option>
+    <option value="faqs">FAQ</option>
+	<option value="encyc">Encyclopedia</option>
+	
+    </select>
+    <input type="hidden" name="s" value="6dacc4ecf7b861257cd6b867a345b2eb">
+    <input type="hidden" name="file" value="index">
+	<input class="search" onFocus="this.value='';" type="text" name="query" value="Advanced" size="15" maxlength="255" style="font-size: 6pt">
+	<input type="image" src="/forums/images/go.gif" name="Submit" border="0" align="absbottom">
+	</font></div></form></td></tr></table></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#606096" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#A3A3CB">&nbsp;<font face="verdana, arial, helvetica" size="2" class="nf" color="#000000"><b>Main Menu</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf"><b>&#183;&nbsp;</b><a href="/index.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;menu=1">Home Page</a><br /><b>&#183;&nbsp;</b><a href="/forums/index.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;menu=2">Forums</a><br /><b>&#183;&nbsp;</b><a href="http://sourceforge.net/projects/seq/index.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;menu=3">SourceForge</a><br /><b>&#183;&nbsp;</b><a href="http://sourceforge.net/tracker/?atid=310131&group_id=10131&func=browse&amp;s=6dacc4ecf7b861257cd6b867a345b2eb&amp;menu=4">SEQ Patches</a><br /><b>&#183;&nbsp;</b><a href="http://sourceforge.net/tracker/?atid=360131&group_id=10131&func=browse&amp;s=6dacc4ecf7b861257cd6b867a345b2eb&amp;menu=5">SEQ Feature Requests</a><br /><b>&#183;&nbsp;</b><a href="http://sourceforge.net/tracker/?atid=110131&group_id=10131&func=browse&amp;s=6dacc4ecf7b861257cd6b867a345b2eb&amp;menu=6">SEQ Bug Reports</a><br /><b>&#183;&nbsp;</b><a href="http://sourceforge.net/cvs/?group_id=10131&amp;s=6dacc4ecf7b861257cd6b867a345b2eb&amp;menu=7">SEQ CVS</a><br /><b>&#183;&nbsp;</b><a href="http://seq.sourceforge.net/forums/forumdisplay.php?forumid=10&amp;s=6dacc4ecf7b861257cd6b867a345b2eb&amp;menu=8">SEQ Forums</a><br /><b>&#183;&nbsp;</b><a href="http://www.macsrule.com/~seqfaq/seq-faq.html?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;menu=9">ShowEQ FAQ</a><br /><CENTER><br><table><tr><td><FORM name="ExtendedMenu">
+<SELECT size=1 name="URL" onChange="if(options[selectedIndex].value)window.location.href=(options[selectedIndex].value)"><OPTION SELECTED VALUE="/modules.php">Site Features</OPTION><OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=Active_Topics">Active Topics<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=All_Articles">All Articles<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=AvantGo">AvantGo<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=Content">Content<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=Downloads">Downloads<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=Encyclopedia">Encyclopedia<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=Feedback">Feedback<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=News">News<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=News_Topics">News Topics<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=Recommend_Us">Recommend Us<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=Reviews">Reviews<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=Search">Search<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=Sections">Sections<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=Top">Top 10<OPTION VALUE="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&amp;name=Web_Links">Web Links</SELECT>
+<NOSCRIPT>
+<INPUT type=submit value="Go">
+</NOSCRIPT>
+</td>
+<td>
+</FORM>
+</td>
+</tr>
+</table></CENTER></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#606096" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#A3A3CB">&nbsp;<font face="verdana, arial, helvetica" size="2" class="nf" color="#000000"><b>Project SEQ</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf"><DIV ALIGN="CENTER">
+<a href="http://seq.sourceforge.net/forums/forumdisplay.php?forumid=18">Anarchy Online</a><BR>
+<A href="http://seq.sourceforge.net/forums/forumdisplay.php?forumid=20">Asherons Call</a><BR>
+<a href="http://seq.sourceforge.net/forums/forumdisplay.php?forumid=21">Asherons Call 2</a><BR>
+<a href="http://seq.sourceforge.net/forums/forumdisplay.php?forumid=17">DAoC</A><BR>
+<a href="http://seq.sourceforge.net/forums/forumdisplay.php?forumid=16">EverQuest</a><BR>
+<a href="http://seq.sourceforge.net/forums/forumdisplay.php?forumid=45">EverQuest 2</a><BR>
+<a href="http://seq.sourceforge.net/forums/forumdisplay.php?forumid=49">PlanetSide</a><BR>
+<a href="http://seq.sourceforge.net/forums/forumdisplay.php?forumid=19">ShadowBane</a><BR>
+<a href="http://seq.sourceforge.net/forums/forumdisplay.php?forumid=53">Star Wars: Galaxies</a><BR>
+</DIV></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#606096" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#A3A3CB">&nbsp;<font face="verdana, arial, helvetica" size="2" class="nf" color="#000000"><b>ShowEQ Status</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf">ShowEQ Status: <FONT COLOR="YELLOW">YELLOW</FONT><BR>Patch it yourself for green!<BR><BR>
+
+<CENTER><U>Currentl libEQ.a md5</U><BR><BR>Not needed <BR><BR>
+<U>Encryption Key Offset</U><BR><BR>
+Not needed</CENTER>
+<BR><BR>
+ShowEQ is <i><B></i></b> working at this time.</font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#606096" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#A3A3CB">&nbsp;<font face="verdana, arial, helvetica" size="2" class="nf" color="#000000"><b>EQ Server Status</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf"><TABLE>
+<TR><TD ALIGN="CENTER" COLSPAN="2"><font face="verdana,arial,helvetica" size="1" class="sf">13 Jul 2003 06:05 AM PST</font></TD></TR>
+<font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Al'Kabor</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Antonius Bayle</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Ayonae Ro</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Bertoxxulous</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Brell Serilis</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Bristlebane</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Cazic-Thule</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Chat Server</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Drinal</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Druzzil Ro</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">E'ci</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Erollisi Marr</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Fennin Ro</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Firiona Vie</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Innoruuk</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Kane Bayle</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Karana</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Lanys T'Vyl</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Luclin</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Mithaniel Marr</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Morell-Thule</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Povar</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Prexus</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Quellious</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Rallos Zek </font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Rodcet Nife</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Saryrn</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Solusek Ro</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Stormhammer</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Stromm</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Sullon Zek</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Tallon Zek </font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Tarew Marr</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Terris-Thule</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Test Server</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">The Nameless</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">The Rathe</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">The Seventh Hammer</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">The Tribunal</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Tholuxe Paells</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Torvonnilous</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Tunare</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Vallon Zek </font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Vazaelle</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Veeshan</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Xegony</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Xev</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR><font face="verdana,arial,helvetica" size="1" class="sf"><TR><TD><font face="verdana,arial,helvetica" size="1" class="sf">Zebuxoruk</font></TD><TD><font face="verdana,arial,helvetica" size="1" class="sf"><FONT COLOR = '#00FF00'>UP</FONT></font></TD></TR></TABLE></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br>
+
+<!-- Close Leftcolumn / Start Center Column -->
+</td><td valign="top" align="center" width="100%">
+
+<!-- Display the breadcrumb menu for addons -->
+
+
+
+<!-- Display the Centerblocks -->
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+	<td bgcolor="#606096" >
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td bgcolor="#606096">&nbsp;<font face="verdana, arial, helvetica" size="2" class="nf" color="#FFFFFF"><b> If you are registering for the Project SEQ forums... </b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf">Due to a cookie conflict with SourceForge, you absolutely MUST be logged out of SourceForge (and it's a good idea to delete your cookies) before trying to register on this forum.
+<BR><BR>
+When you register, if you get a "Thanks for registering" and your username is a bunch of garbage, you had yourself logged into SourceForge before trying to register here.
+<BR><BR>
+If that happens, you will have to send an email requesting that your account be deleted so you can re-register.  
+<BR><BR>
+This is not a problem with Project SEQ, but a problem with SourceForge cookie domains that will probably never be corrected.
+<BR><BR>
+</font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+	<td bgcolor="#606096" >
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td bgcolor="#606096">&nbsp;<font face="verdana, arial, helvetica" size="2" class="nf" color="#FFFFFF"><b> The News Headlines </b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf"><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="#606096" width="100%">
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+<td bgcolor="#A3A3CB" width="100%">
+<img src="/forums/images/icons/icon0.gif" border="0" height="15" width="15" alt="icon">
+<font face="verdana, arial, helvetica" size="2" class="nf"  color="#000000"><b> 7/10/03 Offsets</b></font>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+<b> Posted by: [<a href="/forums/member.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=mailform&userid=2815">cavemanbob</a>] on 07-10-2003 @ 07:46 PM</b>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF" width="100%" align="right">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF">
+<tr>
+<td bgcolor="#FFFFFF" bordercolor="#FFFFFF">
+
+<font face="verdana,arial,helvetica" size="1" class="sf">
+Here they are, also attached.<br />
+<br />
+<br />
+[Memory Offsets] <br />
+ZoneAddr=7798024<br />
+CharAddr=7424344<br />
+SpawnHeaderAddr=7424288<br />
+TargetAddr=7424356<br />
+ItemsAddr=7424292<br />
+<br />
+[SpawnInfo Offsets]<br />
+NameOffset=1<br />
+XOffset=88<br />
+YOffset=80<br />
+ZOffset=92<br />
+HeadingOffset=76<br />
+SpeedOffset=100<br />
+SpawnIDOffset=328<br />
+TypeOffset=308<br />
+ClassOffset=322<br />
+RaceOffset=336<br />
+HideOffset=320<br />
+LastnameOffset=248<br />
+NextOffset=228<br />
+LevelOffset=316<br />
+<br />
+[GroundItem Offsets]<br />
+NameOffset=220<br />
+XOffset=212<br />
+YOffset=216<br />
+ZOffset=208<br />
+SpawnIDOffset=8<br />
+NextOffset=4<br />
+<br />
+
+</font>
+</td>
+</tr>
+</table>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+<a href="/showarticle.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3747"><b>Read More</b></a>&nbsp;<b> (2 <font face="verdana,arial,helvetica" size="1" class="sf"><b>Comments</b></a></font> )</b></font>&nbsp;
+<a href="/forums/printthread.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3747"  title="Show a Printable Version"><img src="/forums/images/print.gif" border="0" height="11" width="15" alt="Show a Printable Version"></a>&nbsp;<a href="/forums/sendtofriend.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3747" title="Email This Article to Someone!"><img src="/forums/images/friend.gif" border="0" height="11" width="15" alt="Email This Article to Someone!"></a>&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="#606096" width="100%">
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+<td bgcolor="#A3A3CB" width="100%">
+<img src="/forums/images/icons/icon0.gif" border="0" height="15" width="15" alt="icon">
+<font face="verdana, arial, helvetica" size="2" class="nf"  color="#000000"><b> 1.13 client, 1.9b server</b></font>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+<b> Posted by: [<a href="/forums/member.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=mailform&userid=2815">cavemanbob</a>] on 06-23-2003 @ 12:14 AM</b>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF" width="100%" align="right">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF">
+<tr>
+<td bgcolor="#FFFFFF" bordercolor="#FFFFFF">
+<a href="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&op=modload&name=Search&file=index&type=news&topic=3"><img src="images/topics/breakingnews.gif" border="0" alt="Breaking News" align="right" hspace="10" vspace="10"></a>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+<a href="http://alteria.sf.net/myseq-1.13.zip" target="_blank">http://alteria.sf.net/myseq-1.13.zip</a> <br />
+<a href="http://alteria.sf.net/myseqserverc-1.9b.zip" target="_blank">http://alteria.sf.net/myseqserverc-1.9b.zip</a> <br />
+<a href="http://alteria.sf.net/seq-maps.zip" target="_blank">http://alteria.sf.net/seq-maps.zip</a> <br />
+<br />
+<br />
+Still no changes in the server, some stuff in the client.<br />
+<br />
+Major Client Changes:<br />
+* Filters to hide mobs on the map (player/mob/corpse/invis)<br />
+* Added the dll for the magic lib<br />
+* All the maps except veskar should be in there now<br />
+<br />
+One issue I noticed recently is that if you switch between toons, the con's stay at the first one's level.  This is similar to the horse problem.  Hopefully there's no other glaring bugs this time.
+</font>
+</td>
+</tr>
+</table>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+<a href="/showarticle.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3682"><b>Read More</b></a>&nbsp;<b> (20 <font face="verdana,arial,helvetica" size="1" class="sf"><b>Comments</b></a></font> )</b></font>&nbsp;
+<a href="/forums/printthread.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3682"  title="Show a Printable Version"><img src="/forums/images/print.gif" border="0" height="11" width="15" alt="Show a Printable Version"></a>&nbsp;<a href="/forums/sendtofriend.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3682" title="Email This Article to Someone!"><img src="/forums/images/friend.gif" border="0" height="11" width="15" alt="Email This Article to Someone!"></a>&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="#606096" width="100%">
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+<td bgcolor="#A3A3CB" width="100%">
+<img src="/forums/images/icons/icon0.gif" border="0" height="15" width="15" alt="icon">
+<font face="verdana, arial, helvetica" size="2" class="nf"  color="#000000"><b> New poll - go vote</b></font>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+<b> Posted by: [<a href="/forums/member.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=mailform&userid=1">Ratt</a>] on 06-12-2003 @ 05:11 PM</b>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF" width="100%" align="right">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF">
+<tr>
+<td bgcolor="#FFFFFF" bordercolor="#FFFFFF">
+<a href="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&op=modload&name=Search&file=index&type=news&topic=3"><img src="images/topics/breakingnews.gif" border="0" alt="Breaking News" align="right" hspace="10" vspace="10"></a>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+New poll up.  Go vote!<br />
+<br />
+<a href="http://seq.sourceforge.net/forums/showthread.php?s=&threadid=3629" target="_blank">http://seq.sourceforge.net/forums/s...=&threadid=3629</a>
+</font>
+</td>
+</tr>
+</table>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+<a href="/showarticle.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3631"><b>Read More</b></a>&nbsp;<b></b></font>&nbsp;
+<a href="/forums/printthread.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3631"  title="Show a Printable Version"><img src="/forums/images/print.gif" border="0" height="11" width="15" alt="Show a Printable Version"></a>&nbsp;<a href="/forums/sendtofriend.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3631" title="Email This Article to Someone!"><img src="/forums/images/friend.gif" border="0" height="11" width="15" alt="Email This Article to Someone!"></a>&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="#606096" width="100%">
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+<td bgcolor="#A3A3CB" width="100%">
+<img src="/forums/images/icons/icon0.gif" border="0" height="15" width="15" alt="icon">
+<font face="verdana, arial, helvetica" size="2" class="nf"  color="#000000"><b> 6/11/03 Offsets</b></font>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+<b> Posted by: [<a href="/forums/member.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=mailform&userid=2815">cavemanbob</a>] on 06-11-2003 @ 06:46 PM</b>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF" width="100%" align="right">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF">
+<tr>
+<td bgcolor="#FFFFFF" bordercolor="#FFFFFF">
+<a href="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&op=modload&name=Search&file=index&type=news&topic=3"><img src="images/topics/breakingnews.gif" border="0" alt="Breaking News" align="right" hspace="10" vspace="10"></a>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+Here's the new offsets, thanks as always for the quick work at the macroquest project.  Also attached as a zip file.<br />
+<br />
+<br />
+[Memory Offsets] <br />
+ZoneAddr=7832272 <br />
+CharAddr=7737324 <br />
+SpawnHeaderAddr=7737264 <br />
+TargetAddr=7737336 <br />
+ItemsAddr=7737268 <br />
+<br />
+[SpawnInfo Offsets]<br />
+NameOffset=1<br />
+XOffset=88<br />
+YOffset=80<br />
+ZOffset=92<br />
+HeadingOffset=76<br />
+SpeedOffset=100<br />
+SpawnIDOffset=328<br />
+TypeOffset=308<br />
+ClassOffset=322<br />
+RaceOffset=336<br />
+HideOffset=320<br />
+LastnameOffset=248<br />
+NextOffset=228<br />
+LevelOffset=316<br />
+<br />
+[GroundItem Offsets]<br />
+NameOffset=220<br />
+XOffset=212<br />
+YOffset=216<br />
+ZOffset=208<br />
+SpawnIDOffset=8<br />
+NextOffset=4
+</font>
+</td>
+</tr>
+</table>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+<a href="/showarticle.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3626"><b>Read More</b></a>&nbsp;<b> (5 <font face="verdana,arial,helvetica" size="1" class="sf"><b>Comments</b></a></font> )</b></font>&nbsp;
+<a href="/forums/printthread.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3626"  title="Show a Printable Version"><img src="/forums/images/print.gif" border="0" height="11" width="15" alt="Show a Printable Version"></a>&nbsp;<a href="/forums/sendtofriend.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3626" title="Email This Article to Someone!"><img src="/forums/images/friend.gif" border="0" height="11" width="15" alt="Email This Article to Someone!"></a>&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="#606096" width="100%">
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+<td bgcolor="#A3A3CB" width="100%">
+<img src="/forums/images/icons/icon0.gif" border="0" height="15" width="15" alt="icon">
+<font face="verdana, arial, helvetica" size="2" class="nf"  color="#000000"><b> RFC: A lengthy history of (S)EQ</b></font>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+<b> Posted by: [<a href="/forums/member.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=mailform&userid=1">Ratt</a>] on 06-05-2003 @ 10:07 PM</b>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF" width="100%" align="right">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF">
+<tr>
+<td bgcolor="#FFFFFF" bordercolor="#FFFFFF">
+<a href="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&op=modload&name=Search&file=index&type=news&topic=3"><img src="images/topics/breakingnews.gif" border="0" alt="Breaking News" align="right" hspace="10" vspace="10"></a>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+Hello Everyone,<br />
+<br />
+Once again, I'm going put fingers to keyboard in a somewhat entertaining manner.  Or at least, what I hope to be entertaining.<br />
+<br />
+My previous history of SEQ post was written in one sitting in about an hour from by admittedly faulty memory.<br />
+<br />
+I would like to put together a detailed history of EQ as pertains to the rise of SEQ.  There are some murky details that may suprise some of you in regards to the origin of SEQ proper... but I would like to hear the history as some of you know (or think you know) it... especially if you were "there" at the beginning.<br />
+<br />
+More importantly, I think, I would like ancedotes, stories and experiences of the users (and of course developers).  They can be funny, interesting, sad; it doesn't matter.   I can't guarentee any or all of them will be included in the final product, but don't make up or embelish things.  If you can provide links to old posts or logs, so much the better.<br />
+<br />
+I plan on this being a lengthy piece for people who are interested, but mostly to satisfy my own sense of history and for a reference document that can be found easily and readily by anyone who might want it.<br />
+<br />
+I'm not sure if it will be fanciful like my previous history or just the facts... probably a mixture of both. I welcome any comments one way or the other.<br />
+<br />
+Please post whatever you got, or want to talk about, or think would be interesting in relation to this here.  I will be referring back this thread often <img src="/forums/images/smilies/smile.gif" border="0" alt="">
+</font>
+</td>
+</tr>
+</table>
+<font face="verdana,arial,helvetica" size="1" class="sf">
+<a href="/showarticle.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3599"><b>Read More</b></a>&nbsp;<b> (4 <font face="verdana,arial,helvetica" size="1" class="sf"><b>Comments</b></a></font> )</b></font>&nbsp;
+<a href="/forums/printthread.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3599"  title="Show a Printable Version"><img src="/forums/images/print.gif" border="0" height="11" width="15" alt="Show a Printable Version"></a>&nbsp;<a href="/forums/sendtofriend.php?s=6dacc4ecf7b861257cd6b867a345b2eb&threadid=3599" title="Email This Article to Someone!"><img src="/forums/images/friend.gif" border="0" height="11" width="15" alt="Email This Article to Someone!"></a>&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br>
+
+<!-- Display Right Column -->
+<!-- moved this to footer P_themerightcolumn -->
+
+<!-- Display the Theme Footer -->
+
+
+<!-- Close Centercolumn / Start Right Column -->
+</td><td align="center" width = "150" valign="top">
+
+<!-- Display the Rightcolumn blocks -->
+<table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#606096" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#A3A3CB">&nbsp;<font face="verdana, arial, helvetica" size="2" class="nf" color="#000000"><b>News Categories</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf"><FORM name="guideform" style="margin-bottom:-2;"><SELECT name="guidelinks"onChange="window.location=document.guideform.guidelinks.options[document.guideform.guidelinks.selectedIndex].value"><OPTION SELECTED value="javascript:void(0)">--Topics--<OPTION value="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&op=modload&name=Search&file=index&type=news&topic=3">Breaking News<OPTION value="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&op=modload&name=Search&file=index&type=news&topic=1">FYI<OPTION value="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&op=modload&name=Search&file=index&type=news&topic=2">News<OPTION value="/modules.php?s=6dacc4ecf7b861257cd6b867a345b2eb&op=modload&name=Search&file=index&type=news&topic=4">News from EverQuest</SELECT></FORM></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#606096" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#A3A3CB">&nbsp;<font face="verdana, arial, helvetica" size="2" class="nf" color="#000000"><b>User's Login</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf"><form action="/forums/member.php" method="post">
+<input type="hidden" name="action" value="login"><input type="hidden" name="s" value="6dacc4ecf7b861257cd6b867a345b2eb">
+<input type="hidden" name="url" value="/index.php?s=6dacc4ecf7b861257cd6b867a345b2eb">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td nowrap>
+<br>
+</td></tr>
+<tr><td>
+<p align="center"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Username</b>&nbsp;</font><input type="text" name="username" size="7">
+<br><font face="verdana,arial,helvetica" size="1" class="sf"><b>Password</b>&nbsp;&nbsp;</font><input type="password" name="password" size="7"><br>
+<center>
+<input type="submit" value="Login!"></center>
+</p>
+</td></tr>
+<tr><td nowrap>
+<p align="center"><font face="verdana,arial,helvetica" size="1" class="sf"><br>
+Don't have an account? <br>
+<a href="/forums/register.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=signup">Register</a> for one now!<br><br>
+<a href="/forums/member.php?s=6dacc4ecf7b861257cd6b867a345b2eb">Lost Password</a>
+</font>
+</td></tr>
+</table>
+</form></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#606096" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#A3A3CB">&nbsp;<font face="verdana, arial, helvetica" size="2" class="nf" color="#000000"><b>Survey</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf"><form action="/forums/poll.php" method="get">
+<input type="hidden" name="s" value="6dacc4ecf7b861257cd6b867a345b2eb">
+<input type="hidden" name="action" value="pollvote">
+<input type="hidden" name="pollid" value="19">
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#606096"  width="100%" align="center">
+  <tr>
+    <td>
+      <table cellpadding="4" cellspacing="1" border="0"  width="100%">
+        <tr>
+          <td bgcolor="#606096" align="center" colspan="4"><font face="verdana,arial,helvetica" size="1" class="sf" color="#FFFFFF"><b>Should BaeLang update the PvP display sections of ShowEQ?</b></font></td>
+        </tr>
+        <tr><td bgcolor="#E7E7F1" width="5%"><input type="radio" name="optionnumber" value="1"></td><td bgcolor="#E7E7F1" colspan="3"><font face="verdana,arial,helvetica" size="1" class="sf">I don't play on a PvP server so i don't care</font></td></tr><tr><td bgcolor="#E7E7F1" width="5%"><input type="radio" name="optionnumber" value="2"></td><td bgcolor="#E7E7F1" colspan="3"><font face="verdana,arial,helvetica" size="1" class="sf">I crossteam most of the time so i don't care</font></td></tr><tr><td bgcolor="#E7E7F1" width="5%"><input type="radio" name="optionnumber" value="3"></td><td bgcolor="#E7E7F1" colspan="3"><font face="verdana,arial,helvetica" size="1" class="sf">I play on a PvP server but i think you should Leave it the way it is.</font></td></tr><tr><td bgcolor="#E7E7F1" width="5%"><input type="radio" name="optionnumber" value="4"></td><td bgcolor="#E7E7F1" colspan="3"><font face="verdana,arial,helvetica" size="1" class="sf">Yes, that sounds good.  please do it.</font></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+  <tr>
+    <td align="center"><font face="verdana,arial,helvetica" size="1" class="sf"><input type="submit" class="bginput" value="Vote!"><br><br><a href="/forums/poll.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=showresults&pollid=19">View Results</a></font></td>
+  </tr>
+</table>
+</form></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#606096" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#A3A3CB">&nbsp;<font face="verdana, arial, helvetica" size="2" class="nf" color="#000000"><b>Who's Online</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf"><!-- P_loggedinusers -->
+<table><tr id="cat">
+<td bgcolor="#A3A3CB"><a href="/forums/online.php?s=6dacc4ecf7b861257cd6b867a345b2eb"><font face="verdana, arial, helvetica" size="2" class="nf" color="#000000"><b>Currently Active: 17</b></font></a></td>
+</tr>
+<tr><td bgcolor="#FBFBFD"><font face="verdana,arial,helvetica" size="1" class="sf">
+There are currently 2 members and 15 guests on-line. Most users ever online was 354 on 09-05-2002 at 10:10 PM.<br>
+<a href="/forums/member.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=getinfo&userid=3742">Alethal</a>
+<a href="/forums/member.php?s=6dacc4ecf7b861257cd6b867a345b2eb&action=getinfo&userid=2355">SEQaddict</a>
+
+</font></td></tr></table>
+<!-- End --></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br>
+
+
+
+<!-- P_themefooter -->
+
+<!-- close frontpage table -->
+</td></tr></table>
+
+
+<!--- Start custom theme code-->
+<!-- Custom Code would go here -->
+<!-- End custom theme code-->
+<br>
+<center><font face="verdana,arial,helvetica" size="1" class="sf">
+Hosting generously provided by<BR>
+<a href="http://sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=10131&type=4" width="125" height="37" border="0" alt="SourceForge.net Logo" /></a><BR>
+<a href="http://www.starpyre.com"><FONT COLOR="WHITE" SIZE="-2">MS</A></FONT>
+
+
+
+</font></center>
+<br>
+
+<!- Close Body and HTML Tags -->
+</body></html>
+<!-- End -->
+
