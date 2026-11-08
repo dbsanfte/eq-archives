@@ -1,0 +1,695 @@
+<!--
+This contents designed by Uminchu
+Copyright (C) 2000.
+Allrights reserved.
+-->
+<HTML>
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="TEXT/CSS">
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=x-sjis">
+		<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+		<META HTTP-EQUIV="Content-Style-Type"  CONTENT="text/css">
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+		<STYLE TYPE="text/css">
+			<!--
+			A:link	{ text-decoration: none; color: #999999; }
+			A:visited	{ text-decoration: none; color: #999999; }
+			A:active { text-decoration: none; color: orange; }
+			A:hover	{ text-decoration: background; color: #FF5555 }
+
+			.item { background-color:#aa6633;color:#eeeeff;padding:4pt;float:1pt; }
+			.cpyright{ font-size:9pt; font-style:italic; color:#ff4040; }
+			.comment { color:#3399ff; }
+			pre      { color:#6699ff; }
+			
+
+			.MENUCAPTION
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: CENTER;
+			}
+
+			.MENUCAPTION_2
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: CENTER;
+				COLOR: #FFFFFF;
+			}
+			
+			.MENUITEM_LEFT
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: LEFT;
+			}
+
+			.MENUITEM
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: CENTER;
+			}
+
+			.MENUITEM_RIGHT
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: RIGHT;
+			}
+
+			.MENUINDENT
+			{
+				MARGIN-LEFT: 10px;
+			}
+			
+			BODY
+			{
+				scrollbar-face-color: #9999FF;
+				scrollbar-shadow-color: #3333FF;
+				scrollbar-highlight-color: #3333FF;
+				scrollbar-3dlight-color: #444444;
+				scrollbar-darkshadow-color: #444444;
+				scrollbar-track-color: #000000;
+				scrollbar-arrow-color: #FFFFFF;
+				margin: 0px;
+			}
+			-->
+		</STYLE>
+		<TITLE>[Halas Soul]</TITLE>
+		
+		<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+		<!--
+			// Show the contents and music table, if user touch the area.
+			function showMenu(nm)
+			{
+					var style=document.all?document.all(nm).
+						style:(document.getElementById?document.
+						getElementById(nm).
+						style:(document.layers?document.
+						layers[nm]:null));
+	
+					if( style )
+						style.visibility='inherit';
+			}
+	
+			// Hide the contents and music table, if user didn't touch the area.
+			function hideMenu(nm)
+			{
+					var style=document.all?document.
+						all(nm).
+						style:(document.getElementById?document.
+						getElementById(nm).
+						style:(document.layers?document.
+						layers[nm]:null));
+						
+						if(style)
+							style.visibility='hidden';
+			}
+
+			function hideMenuAll()
+			{
+				hideMenu('MENU_GENERAL');
+				hideMenu('MENU_FORUM');
+				hideMenu('MENU_TRADESKILLS');
+				hideMenu('MENU_SHAWLQUEST');
+				hideMenu('MENU_WARRIOR');
+				hideMenu('MENU_ENCHANTER');
+				hideMenu('MENU_MUSIC');
+			}
+			
+			var music_name = new Array();
+			music_name[ 0 ] = "夏影";
+			music_name[ 1 ] = "Largo";
+			music_name[ 2 ] = "Memory";
+			music_name[ 3 ] = "月夜のピアノ";
+			music_name[ 4 ] = "Piano Lesson";
+			music_name[ 5 ] = "君の生まれた日";
+			music_name[ 6 ] = "Love";
+			music_name[ 7 ] = "Nostalgia";
+			music_name[ 8 ] = "The Crave";
+			// 
+			function writeMusicNameOnTime()
+			{
+				document.forms[0].elements[0].value=music_name[ parent.MUSIC.getMusicNumber() ];
+			}
+			
+			function writeMusicName( music_name )
+			{
+				parent.MENU.document.forms[0].elements[0].value=music_name;
+			}
+
+			function init(){
+				if(document.all){
+					document.body.onscroll=movelayer
+				}
+				movelayer()
+			}
+			
+			function movelayer()
+			{
+				if(document.all){
+					document.all.MENU_GENERAL.style.pixelTop=document.body.scrollTop
+					document.all.MENU_FORUM.style.pixelTop=document.body.scrollTop
+					document.all.MENU_TRADESKILLS.style.pixelTop=document.body.scrollTop
+					document.all.MENU_SHAWLQUEST.style.pixelTop=document.body.scrollTop
+					document.all.MENU_ENCHANTER.style.pixelTop=document.body.scrollTop
+					document.all.MENU_WARRIOR.style.pixelTop=document.body.scrollTop
+					document.all.MENU_MUSIC.style.pixelTop=document.body.scrollTop
+			}
+			
+}
+		-->
+		</SCRIPT>
+	</HEAD>
+	<BODY BGCOLOR="#000000" TEXT="#FFFFFF" LINK="#AA0000" VLINK="#AA0000" BACKGROUND="../../img/bg.jpg">
+		<CENTER>
+			<BR><BR>
+			<TABLE WIDTH="90%" CELLPADDING="3" CELLSPACING="0" BORDER="1">
+				<TR><TD ALIGN="CENTER" BGCOLOR="#FFFFFF"><FONT COLOR="#333333" SIZE="-1" ><B>
+					Menu
+				</FONT></B></TD></TR>
+				<TR><TD BGCOLOR="#333333"><FONT COLOR="#FFFFFF" SIZE="-1" ><B>
+					[ Enchanter Quest ]<BR>
+					　　<A HREF="#rodofinsidiousglamour">Rod of Insidious Glamour</A><BR>
+					　　<A HREF="#incandescentmask">Incandescent Mask</A><BR>
+					　　<A HREF="#incandescentgloves">Incandescent Gloves</A><BR>
+					　　<A HREF="#illusioniks">Lv20 Spell Illusion IKS</A><BR>
+					　　<A HREF="#tashania">Lv44 Spell Tashania</A><BR>
+					　　<A HREF="#fv_spells">FVのSpell交換Quest</A><BR>
+					　　<A HREF="#phenocrystsfocus">Phenocryst's Focus</A><BR>
+					<P>
+					[ Thurgadin Prayer Shawl Quest ]<BR>
+					　　<A HREF="#burlapcoldainprayershawl">1st:Burlap Coldain Prayer Shawl</A><BR>
+					　　<A HREF="#clothcoldainprayershawl">2nd:Cloth Coldain Prayer Shawl</A><BR>
+					　　<A HREF="#wovencoldainprayershawl">3rd:Woven Coldain Prayer Shawl</A><BR>
+					　　<A HREF="#fur-linedcoldainprayershawl">4th:Fur-Lined Coldain Prayer Shawl</A><BR>
+					　　<A HREF="#silkdcoldainprayershawl">5th:Silk Coldain Prayer Shawl</A><BR>
+					　　<A HREF="#embroideredcoldainprayershawl">6th:Embroidered Coldain Prayer Shawl</A><BR>
+					　　<A HREF="#runedcoldainprayershawl">7th:Runed Coldain Prayer Shawl</A><BR>
+					<P>
+					[ Enchanter Items ]<BR>
+					　　<A HREF="#opallineearring">Opalline Earring</A><BR>
+					　　<A HREF="#drake-hideleggings">Drake-hide Leggings</A><BR>
+					　　<A HREF="#braidedcinchcord">Braided Cinch Cord</A><BR>
+					　　<A HREF="#gatorscalesleeves">Gatorscale Sleeves</A><BR>
+					　　<A HREF="#sprittome">Sprit Tome</A><BR>
+					　　<A HREF="#acrudestein">A Crude Stein</A><BR>
+					　　<A HREF="#goldenchitinbracer">Golden Chitin Bracer</A><BR>
+					　　<A HREF="#sarnakarcanefetish">Sarnak Arcane Fetish</A><BR>
+					　　<A HREF="#veilofthevortexweaver">Veil of the Vortex Weaver（もう出ないみたいです）</A><BR>
+					　　<A HREF="#robeoftheprimordialritualist">Robe of the Primordial Ritualist（もう出ないみたいです）</A><BR>
+				</FONT></TD></TR>
+			</TABLE>
+			<BR><BR>
+			<TABLE WIDTH="90%" CELLPADDING="3" CELLSPACING="0" BORDER="1">
+				<TR><TD ALIGN="CENTER" BGCOLOR="#333333"><FONT COLOR="#FFFFFF" SIZE="-1" ><B>
+					Enchanter Quest
+				</FONT></B></TD></TR>
+				<TR><TD BGCOLOR="#FFFFFF"><FONT COLOR="#333333" SIZE="-1" ><B>
+					<A NAME="#rodofinsidiousglamour"></A>
+					[ Rod of Insidious Glamour ]
+					<A HREF="rodofinsidiousglamour.html">
+						【 解説 】
+					</A>
+					<BR>
+					6/30, <FONT COLOR="#0000FF">AC 2</FONT>, <FONT COLOR="#0000FF">CHA 12</FONT>, Effect Alliance<BR>
+					<BR>
+					必要人数：Lv30～Lv35 の１パーティ
+					<BR>
+					所要時間：Druが要れば2時間強
+					<A NAME="#incandescentmask"></A>
+					<HR>
+					[ Incandescent Mask ]
+					<A HREF="incandescentmask.html">
+						【 解説 】
+					</A>
+					<BR>
+					<FONT COLOR="#0000FF">AC 3</FONT>, <FONT COLOR="#0000FF">CHA 7</FONT>, <FONT COLOR="#0000FF">INT 5</FONT><BR>
+					<BR>
+					必要人数：Lv35～Lv40 の１パーティ
+					<BR>
+					所要時間：Druが要れば4時間
+					<A NAME="#incandescentgloves"></A>
+					<HR>
+					[ Incandescent Gloves ]
+					<A HREF="incandescentgloves.html">
+						【 解説 】
+					</A>
+					<BR>
+					<FONT COLOR="#0000FF">AC 6</FONT>, STR 3, <FONT COLOR="#0000FF">CHA 3</FONT>, AGI 3, <FONT COLOR="#0000FF">MANA 3</FONT><BR>
+					<BR>
+					必要人数：Lv35～Lv40 の１パーティ
+					<BR>
+					所要時間：Itemがすぐ出れば2時間。出ないと４時間ぐらいだろうか。
+					<A NAME="#illusioniks"></A>
+					<HR>
+					[ Lv20 Spell Illusion IKS ]
+					<A HREF="illusioniks.html">
+						【 解説 】
+					</A>
+					<BR>
+					IKSに変身する魔法<BR>
+					<BR>
+					必要人数：平均Lv40以上の4人以上。
+					<BR>
+					所要時間：3時間弱
+					<A NAME="#tashania"></A>
+					<HR>
+					[ Lv44 Spell Tashania ]
+					<A HREF="tashania.html">
+						【 解説 】
+					</A>
+					<BR>
+					SvM -65 のスペル<BR>
+					<BR>
+					必要人数：Soloで可能
+					<BR>
+					所要時間：Dru or Wizが居れば4時間弱。居ないと大変。
+					<A NAME="#fv_spells"></A>
+					<HR>
+					[ FVのSpell交換Quest ]
+					<A HREF="fv_spells.html">
+						【 解説 】
+					</A>
+					<BR>
+					Theft of Thought、Color Slant、Cripple、Dementiaを渡すとランダムにSpellが貰える。<BR>
+					<BR>
+					必要人数：Soloで可能
+					<BR>
+					所要時間：渡すだけ。
+					<A NAME="#phenocrystsfocus"></A>
+					<HR>
+					[ Phenocryst's Focus ]
+					<A HREF="phenocrystsfocus.html">
+						【 解説 】
+					</A>
+					<BR>
+					<FONT COLOR="#0000FF">AC 5</FONT>, DEX 3, <FONT COLOR="#0000FF">CHA 3</FONT>, <FONT COLOR="#0000FF">INT 10</FONT>, <FONT COLOR="#0000FF">SvF 3</FONT>, <FONT COLOR="#0000FF">SvD 3</FONT>, <FONT COLOR="#0000FF">SvP 3</FONT>, <FONT COLOR="#0000FF">SvC 3</FONT>, <FONT COLOR="#0000FF">SvM 5</FONT><BR>
+					右手/左手装備<BR>
+					<BR>
+					必要人数：Lv50以上の12人以上を推奨
+					<BR>
+					所要時間：4時間
+				</FONT></TD></TR>
+			</TABLE>
+			<BR><BR>
+			<TABLE WIDTH="90%" CELLPADDING="3" CELLSPACING="0" BORDER="1">
+				<TR><TD ALIGN="CENTER" BGCOLOR="#333333"><FONT COLOR="#FFFFFF" SIZE="-1" ><B>
+					Thurgadin Prayer Shawl Quest
+				</FONT></B></TD></TR>
+				<TR><TD BGCOLOR="#FFFFFF"><FONT COLOR="#333333" SIZE="-1" ><B>
+					<BR>
+					Velious大陸のDwarfの町から始まる長編Questです。
+					<P>
+					報酬はAll/AllのShawlで、Caster向けアイテムとなっています。
+					<BR>
+					修正値は、AC, INT, WIS, CHA, Sv各種 です。Factionは Amiably 程度必要です。
+					<BR>
+					Enchanterであれば、Faction上げ魔法を使う事で軽くクリア出来ると思います。
+					<P>
+					Questを一つずつクリアして行く事でShawlの性能が良くなっていきます。
+					<P>
+					<FONT COLOR="#FF0000">
+						3rd QuestでChain Questが一応可能です。しかし、Chainする側の人はシールを失うので注意が必要です。
+						<BR>
+						方法は<A HREF="wovencoldainprayershawl_chain.html">【ここ】</A>に書きました。
+					</FONT>
+					<HR>
+					<P>
+					<A NAME="burlapcoldainprayershawl"></A>
+					[ Burlap Coldain Prayer Shawl ]
+					<A HREF="burlapcoldainprayershawl.html">
+						【 解説 】
+					</A>
+					<BR>
+					<FONT COLOR="#0000FF">AC 1</FONT>, <FONT COLOR="#0000FF">INT 1</FONT>, WIS 1, <FONT COLOR="#0000FF">SvC 1</FONT><BR>
+					<BR>
+					必要人数：Soloで出来なく無いが、出来れば２～３人以上のパーティが望ましい
+					<BR>
+					所要時間：１時間
+					<A NAME="#clothcoldainprayershawl"></A>
+					<HR>
+					[ Cloth Coldain Prayer Shawl ]
+					<A HREF="clothcoldainprayershawl.html">
+						【 解説 】
+					</A>
+					<BR>
+					<FONT COLOR="#0000FF">AC 2</FONT>, <FONT COLOR="#0000FF">INT 2</FONT>, WIS 2, <FONT COLOR="#0000FF">SvC 2</FONT><BR>
+					<BR>
+					必要人数：Soloで出来なく無いが、出来れば２～３人以上のパーティが望ましい
+					<BR>
+					所要時間：１時間
+					<A NAME="#wovencoldainprayershawl"></A>
+					<HR>
+					[ Woven Coldain Prayer Shawl ]
+					<A HREF="wovencoldainprayershawl.html">
+						【 解説 】
+					</A>
+					<BR>
+					<FONT COLOR="#0000FF">AC 3</FONT>, <FONT COLOR="#0000FF">INT 3</FONT>, WIS 3, <FONT COLOR="#0000FF">SvC 3</FONT><BR>
+					Range Slotに入るシールも副産物として貰える。<BR>
+					<FONT COLOR="#0000FF">AC 3</FONT>, <FONT COLOR="#0000FF">INT 3</FONT>, WIS 3, <FONT COLOR="#0000FF">MANA 30</FONT>, SvC 3, <FONT COLOR="#0000FF">SvM 3</FONT><BR>
+					<BR>
+					必要人数：Soloで出来なく無いが、出来れば２～３人以上のパーティが望ましい
+					<BR>
+					必要技術：料理（推奨値 135)、陶芸（推奨値 122）
+					<BR>
+					所要時間：9時間
+					<A NAME="#fur-linedcoldainprayershawl"></A>
+					<HR>
+					[ Fur-Lined Coldain Prayer Shawl ]
+					<A HREF="fur-linedcoldainprayershawl.html">
+						【 解説 】
+					</A>
+					<BR>
+					<FONT COLOR="#0000FF">AC 4</FONT>, <FONT COLOR="#0000FF">INT 4</FONT>, WIS 4, <FONT COLOR="#0000FF">SvC 4</FONT><BR>
+					<BR>
+					必要人数：Soloで出来なく無いが、出来れば２～３人以上のパーティが望ましい
+					<BR>
+					必要技術：陶芸（推奨値 122）
+					<BR>
+					所要時間：3時間
+					<A NAME="#silkdcoldainprayershawl"></A>
+					<HR>
+					[ Silk Coldain Prayer Shawl ]
+					<A HREF="silkcoldainprayershawl.html">
+						【 解説 】
+					</A>
+					<BR>
+					<FONT COLOR="#0000FF">AC 5</FONT>, <FONT COLOR="#0000FF">INT 5</FONT>, <FONT COLOR="#0000FF">CHA 5</FONT>, WIS 5, <FONT COLOR="#0000FF">SvC 5</FONT>, <FONT COLOR="#0000FF">SvF 5</FONT><BR>
+					<BR>
+					必要人数：Lv50以上のFull Party推奨。
+					<BR>
+					必要技術：裁縫（推奨値 114）
+					<BR>
+					所要時間：10時間
+					<A NAME="#embroideredcoldainprayershawl"></A>
+					<HR>
+					[ Embroidered Coldain Prayer Shawl ]
+					<A HREF="embroideredcoldainprayershawl.html">
+						【 解説 】
+					</A>
+					<BR>
+					<FONT COLOR="#0000FF">AC 6</FONT>, <FONT COLOR="#0000FF">INT 6</FONT>, <FONT COLOR="#0000FF">CHA 6</FONT>, WIS 6, <FONT COLOR="#0000FF">SvC 6</FONT>, <FONT COLOR="#0000FF">SvF 6</FONT><BR>
+					<BR>
+					必要人数：Lv50以上のバランスの取れた3人以上推奨。
+					<BR>
+					必要技術：裁縫（推奨値 158）
+					<BR>
+					所要時間：8時間
+					<A NAME="#runedcoldainprayershawl"></A>
+					<HR>
+					[ Runed Coldain Prayer Shawl ]
+					<A HREF="runedcoldainprayershawl.html">
+						【 解説 】
+					</A>
+					<BR>
+					<FONT COLOR="#0000FF">AC 7</FONT>, <FONT COLOR="#0000FF">INT 7</FONT>, <FONT COLOR="#0000FF">CHA 7</FONT>, WIS 7, <FONT COLOR="#0000FF">SvC 7</FONT>, <FONT COLOR="#0000FF">SvF 7</FONT>, <FONT COLOR="#0000FF">SvP 7</FONT><BR>
+					<FONT COLOR="#0000FF">Effect: Flowing Thought I</FONT><BR>
+					<BR>
+					必要人数：Lv50以上のバランスの取れた2パーティ推奨。
+					<BR>
+					必要技術：裁縫（推奨値 163）<BR>
+					　　　　　　 宝石（推奨値 190）<BR>
+					　　　　　　 弓矢（推奨値 190）<BR>
+					　　　　　　 醸造（推奨値 188）<BR>
+					　　　　　　 陶芸（推奨値 188）<BR>
+					<BR>
+					所要時間：実験中につき、不明
+				</B></FONT></TD></TR>
+			</TABLE>
+			<BR><BR>
+			<TABLE WIDTH="90%" CELLPADDING="3" CELLSPACING="0" BORDER="1">
+				<TR><TD ALIGN="CENTER" BGCOLOR="#333333"><FONT COLOR="#FFFFFF" SIZE="-1" ><B>
+					Enchanter Items
+				</FONT></B></TD></TR>
+				<TR><TD BGCOLOR="#FFFFFF"><FONT COLOR="#333333" SIZE="-1" ><B>
+					<A NAME="#opallineearring"></A>
+					<FONT COLOR="#008800">
+						[ Opalline Earring ]
+					</FONT>
+					<BR>
+					<FONT COLOR="#0000FF">AC 2</FONT>, <FONT COLOR="#0000FF">CHA 5</FONT>
+					<BR>
+					必要人数：Lv25～Lv35の１パーティ
+					<BR>
+					装備個所：耳
+					<BR>
+					<BLOCKQUOTE>
+						CHA を上げたい人にお勧めの耳装備。
+						<BR>
+						AC も上がるので尚Good
+						<BR>
+						場所はUnrestのTowerと呼ばれる場所の３階。
+						<BR>
+						Undead Bartenderという敵がたまに持っている。
+						<BR>
+						気をつけたいのは、このTowerの3階で戦っていると自然と４階から敵が来たり、１階から敵が来る事。
+						<BR>
+						しっかりとしたパーティじゃ無いとキツイかも知れません。
+						<BR>
+						ここのハズレItemは Thick Lether ApronというAC8のベルトなので、友達が欲しがっていたら誘うのが良いでしょう。
+					</BLOCKQUOTE>
+					<A NAME="#drake-hideleggings"></A>
+					<HR>
+					<FONT COLOR="#008800">
+						[ Drake-hide Leggings  ]
+					</FONT>
+					<BR>
+					<FONT COLOR="#0000FF">AC 5</FONT>, DEX 5, <FONT COLOR="#0000FF">CHA 5</FONT>
+					<BR>
+					必要人数：Lv20～Lv30 の１パーティ
+					<BR>
+					装備個所：脚
+					<BR>
+					<BLOCKQUOTE>
+						これもCHAを上げたい人にお勧め装備。
+						<BR>
+						場所はSolAで、入り口から近いので楽にCamp可能。
+					</BLOCKQUOTE>
+					<A NAME="#braidedcinchcord"></A>
+					<HR>
+					<FONT COLOR="#008800">
+						[ Braided Cinch Cord ]
+					</FONT>
+					<BR>
+					<FONT COLOR="#0000FF">AC 2</FONT>, <FONT COLOR="#0000FF">INT 4</FONT>, <FONT COLOR="#0000FF">HP 8</FONT>
+					<BR>
+					必要人数：Lv35～Lv45 の１パーティ
+					<BR>
+					装備個所：腰
+					<BR>
+					<BLOCKQUOTE>
+						INTが上がる腰装備は余り無いので、INT Casterの中盤での定番装備がこれ。
+						<BR>
+						場所は GukBottom通称LowerGukのGhoul Sageから出ます。
+						<BR>
+						Ghoul SageはハズレがこのCinch Cordで、アタリが Roned Cowl（INT 9の帽子）なので、INT Casterから大人気のポイントです。
+					</BLOCKQUOTE>
+					<A NAME="#gatorscalesleeves"></A>
+					<HR>
+					<FONT COLOR="#008800">
+						[ Gatorscale Sleeves ]
+					</FONT>
+					<BR>
+					<FONT COLOR="#0000FF">AC6</FONT>, <FONT COLOR="#0000FF">INT 4</FONT>, <FONT COLOR="#0000FF">HP 15</FONT>
+					<BR>
+					必要人数：Lv20～Lv30の1パーティ
+					<BR>
+					装備個所：腕
+					<BLOCKQUOTE>
+						INTが上がる腕装備も余り無く、中盤での定番装備になるでしょう。
+						<BR>
+						場所はUpper Gukの奥の方に居る ancient croc（通称 AC） から出ます。
+						<BR>
+						ACのハズレがこのSleevesで、アタリがLeggingsです。脚装備はWISが上がるので、WIS Casterを連れて行ってCampすれば良いかと思います。
+						<BR>
+						しかし、人気中の人気Campで、ここにCamp出来るだけでラッキーです。
+						<BR>
+						Campしちゃえば3時間程頑張れば出ると思いますが、Camp出来ない事が多いので買っちゃった方が早いかも・・・です。
+					</BLOCKQUOTE>
+					<A NAME="#sprittome"></A>
+					<HR>
+					<FONT COLOR="#008800">
+						[ Sprit Tome ]
+					</FONT>
+					<BR>
+					WIS 6, <FONT COLOR="#0000FF">INT 6</FONT>
+					<BR>
+					必要人数：Lv40～Lv45の1パーティ
+					<BR>
+					装備個所：右手、左手
+					<BLOCKQUOTE>
+						装備すると開いた本になる、通称エロ本
+						<BR>
+						RoKのKaesoraというダンジョンの奥の方、Spectral Librarianという敵から出ます。
+						<BR>
+						INTが上がる装備を求めるならこの選択肢も有るかと思います。
+					</BLOCKQUOTE>
+					<A NAME="#acrudestein"></A>
+					<HR>
+					<FONT COLOR="#008800">
+						[ A Crude Stein  ]
+					</FONT>
+					<BR>
+					STA 10, <FONT COLOR="#0000FF">CHA 15</FONT>
+					<BR>
+					必要人数：Lv40～Lv45の1パーティ
+					<BR>
+					装備個所：右手、左手
+					<BLOCKQUOTE>
+						CHAが上がるマグカップ。
+						<BR>
+						FeerrottのBouncerという名前の付いたガード（？）から出ます。
+						<BR>
+						Track出来る人が居ないと探す事も困難な気がするので、RNG,DRUが必須です。
+						<BR>
+						Dru Ruinから北の川沿いに良く歩いています。
+						<BR>
+						この敵自体はLv37付近なので、Lv40超えていれば割と楽に倒せます。
+					</BLOCKQUOTE>
+					<A NAME="#goldenchitinbracer"></A>
+					<HR>
+					<FONT COLOR="#008800">
+						[ Golden Chitin Bracer  ]
+					</FONT>
+					<BR>
+					<FONT COLOR="#0000FF">AC 5</FONT>, <FONT COLOR="#0000FF">INT 5</FONT>, AGI 5
+					<BR>
+					必要人数：Lv40～Lv50の1パーティ
+					<BR>
+					装備個所：右腕、左腕
+					<BLOCKQUOTE>
+						INT Casterの定番装備通称GCB
+						<BR>
+						SolBのNox Spiderから出ます。
+						<BR>
+						Nox自体RarePOPで、NoxのRareDropがGCBなので、かなり出にくいです。
+						<BR>
+						これを狙ってのCampというのはまず無理かと。
+						<BR>
+						Bat1やDBやSSでCampしていて、Pullに行ったら居たから引っ張ってきた、殺したGCBだった、Roll勝った、ってぐらいじゃないと取れません(^-^;;
+						<BR>
+						とは言え、実はOtokonoko3つもゲットしてたりするんで、SolBに住んでいればその内取れるかと思います。
+						<BR>
+						まあ、半年もSolBに住んでれば3つぐらい出るわな・・・。
+					</BLOCKQUOTE>
+					<A NAME="#sarnakarcanefetish"></A>
+					<HR>
+					<FONT COLOR="#008800">
+						[ Sarnak Arcane Fetish  ]
+					</FONT>
+					<BR>
+					DEX 2, <FONT COLOR="#0000ff">CHA 5</FONT>, <FONT COLOR="#0000ff">INT 6</FONT>
+					<BR>
+					必要人数：Lv45～Lv55の1パーティ
+					<BR>
+					装備個所：首
+					<BLOCKQUOTE>
+						ENCなら是非手に入れたい一品。
+						<BR>
+						場所はRoKのダンジョン Chardok で Sarnak Templar等Caster系から取れる。
+						<BR>
+						CHA,INT両方上がるItemでPlane産じゃ無いものは結構珍しいのでRealが忙しい人はゲットしたい所。
+						<BR>
+						ChardokのExit当たりでCampして、横穴からPullしていればその内落としてくれるかもしれません。
+						<BR>
+						ここでやるにはTankはLv52以上推奨。マジ死ねます。痛すぎ。
+					</BLOCKQUOTE>
+					<A NAME="#veilofthevortexweaver"></A>
+					<HR>
+					<FONT COLOR="#008800">
+						[ Veil of the Vortex Weaver  ]
+					</FONT>
+					<BR>
+					<FONT COLOR="#0000ff">AC 5</FONT>, <FONT COLOR="#0000ff">CHA 10</FONT>, <FONT COLOR="#0000ff">INT 4</FONT>, <FONT COLOR="#0000ff">MANA 5</FONT>, <FONT COLOR="#0000ff">SvM 5</FONT>
+					<BR>
+					必要人数：不明。Lv49以上のEncだと余裕
+					<BR>
+					装備個所：顔
+					<BLOCKQUOTE>
+						<FONT COLOR="#FF0000">＊このアイテムはイベントでBefallenが変化してた時のみで、現在は出なくなった様です＊</FONT>
+						<P>
+						ENCなら是非手に入れたい一品。
+						<P>
+						これ以上の物は相当な難易度になるので、時間が有るときにトライしたい所。
+						<P>
+						場所はBefallen.
+						<P>
+						<A HREF="http://www.eqatlas.com/befallen3map.html" TARGET="_new">Atlas Map</A>の2番の位置にBatが2匹と骨が1、DElfが1居る。
+						<P>
+						ここのNamed Batが持っていて、このBatはRare POP
+						<P>
+						また、Named BatがPOPしてもRare Drop臭い。
+						<P>
+						名前は 「The Vortex Weaver」
+						<P>
+						必ず持っているわけでは無いようだ。
+						<P>
+						私は、1時間半程CampしてPOP、1発ツモでゲット。
+						<P>
+						最長で6時間半Campでゲットを確認。出ない時は出ないらしい・・・。
+						<P>
+						<IMG SRC="img/veilofthevortexweaver_1.jpg">
+						<P>
+					</BLOCKQUOTE>
+					<A NAME="#robeoftheprimordialritualist"></A>
+					<HR>
+					<FONT COLOR="#008800">
+						[ Robe of the Primordial Ritualist ]
+					</FONT>
+					<BR>
+					<FONT COLOR="#0000ff">AC 11</FONT>, STR 2, WIS 4, <FONT COLOR="#0000ff">INT 4</FONT>, <FONT COLOR="#0000ff">HP 10</FONT>, <FONT COLOR="#0000ff">SvM 5</FONT>
+					<BR>
+					必要人数：不明。Lv49以上のEncだと余裕
+					<BR>
+					装備個所：胸
+					<BLOCKQUOTE>
+						<FONT COLOR="#FF0000">＊このアイテムはイベントでBefallenが変化してた時のみで、現在は出なくなった様です＊</FONT>
+						<P>
+						ENCというよりCLR向き？
+						<P>
+						CLRが着れる数少ないRobe。俺は真っ黒に見えるんだけど、人に拠っては濃い緑に見えるらしい。
+						<P>
+						黒い線が2本入っているとか。
+						<P>
+						場所はBefallen.
+						<P>
+						<A HREF="http://www.eqatlas.com/befallen3map.html" TARGET="_new">Atlas Map</A>のLocで言うと Neg850, Pos150 の部屋に出る。
+						<P>
+						尚、EQのLocは(X, Y)では無く,(Y, X)なので注意。
+						<P>
+						ここの部屋は3POPで、Ogreが2（14分Repop）と目的の敵。
+						<P>
+						ハズレはD Elf女で、当たりはSoV 装備のHuman（Repopは共に35分）
+						<P>
+						<IMG SRC="img/robeoftheprimordialritualist_1.jpg">
+						<P>
+						俺はこれを「Kusanami」と呼んでいる。
+						<P>
+						「またハズレPOPだよ、Damn Kusanami」等と使うｗ
+						<P>
+						ちなみに、私は昼から夜までCampして7時間半弱ぐらいでゲット。
+						<P>
+						だけど、これは結構マシな方らしい。20時間Campして取れなかったという話有り。
+						<P>
+						ウルトラ・レア？ｗ
+						<P>
+						<STRIKE>Kusanami</STRIKE>Mob自体のPOPも結構Rareで1/4ぐらいのPOP率だろうか。35分POPでこの確立は止めて欲しい。
+						<P>
+						大体2時間に1匹当たりPOPで更に何も持って無いのが殆ど。Robeを持ってる場合と、1HB（WIS+8?）を持ってる場合が有るらしい。
+						<P>
+						ちなみに、Robe持っててもRobe着てないので、Lootするまで分かりません。
+						<P>
+						<IMG SRC="img/robeoftheprimordialritualist_2.jpg">
+						<P>
+					</BLOCKQUOTE>
+				</B></FONT></TD></TR>
+			</TABLE>
+		</CENTER>
+	</BODY>
+</HTML>
+
