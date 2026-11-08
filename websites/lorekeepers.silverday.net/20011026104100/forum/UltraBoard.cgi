@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <title>Lore Keepers of Norrath Forum</title>
+    <meta name="GENERATOR" content="UltraBoard 2000 Standard Edition">
+    <link type="text/css" href="http://lorekeepers.silverday.net/forum/Public/HTML/Default.css" rel="stylesheet">
+    <script language="JavaScript" type="text/javascript">
+    <!--
+      function PopUp ( url, name, width, height, center, resize, scroll, posleft, postop ) {
+        if (posleft != 0) { x = posleft }
+        if (postop  != 0) { y = postop  }
+        if ((parseInt (navigator.appVersion) >= 4 ) && (center)) {
+          X = (screen.width  - width ) / 2;
+          Y = (screen.height - height) / 2;
+        }
+
+        if (scroll != 0) { scroll = 1 }
+
+        var extra = 'width=' + width + ', height=' + height + ', top=' + Y + ', left=' + X + ', resizable=' + resize + ', scrollbars=' + scroll + ', location=no, directories=no, status=no, menubar=no, toolbar=no';
+        window.open( url, name, extra );
+      }
+    // -->
+    </script>
+
+
+  </head>
+<body marginwidth="5" marginheight="5" topmargin="5" leftmargin="5" >
+<img src="http://lorekeepers.silverday.net/images/lk-title.gif" width="487" height="56" border="0" alt="Lore Keepers of E'Ci">
+<table width="100%" align="Center" cellspacing="0" cellpadding="1" class="border" border="0">
+  <tr>
+    <td>
+      <table width="100%" cellspacing="1" cellpadding="4" border="0">
+        <tr class="title">
+          <td><font class="title">Lore Keepers of Norrath Forum</font><br><font size="1" class="sub-title">This is the messageboard of the Lore Keepers of Norrath. (total 23 members)</font></td></tr>
+        <tr class="menu">
+          <td>
+            <table border="0" width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="100%">
+                  <font class="menu">
+                    <a href="http://lorekeepers.silverday.net/forum/UltraBoard.cgi?action=Login" class="menu">login</a>
+                      &#124;
+                    <a href="http://lorekeepers.silverday.net/forum/UltraBoard.cgi?action=Register" class="menu">register</a>
+                      &#124;
+                    <a href="http://lorekeepers.silverday.net/forum/UltraBoard.cgi?action=Search&SID=856" class="menu">search</a>
+                    <a href="http://lorekeepers.silverday.net/forum/UltraBoard.cgi?action=QuickSearch&D=1&SID=856" class="menu">(today's posts)</a>
+                      &#124;
+                    <a href="http://lorekeepers.silverday.net/forum/UltraBoard.cgi?action=Help" class="menu">help</a>
+                  </font>
+                </td>
+                <td align="right" nowrap><font class="menu"><a href="http://www.lorekeepers.net" class="menu" target="_top">back to Lore Keepers of Norrath</a></font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table border="0" width="100%" align="Center" cellspacing="0" cellpadding="6">
+  <tr>
+    <td width="100%"><font class="normal"><b><a href="UltraBoard.cgi?SID=856" class="normal">Index</a> / </b></font></td>
+    <td nowrap></td>
+  </tr>
+</table>
+<table border="0" width="100%" align="Center" cellspacing="0" cellpadding="1" class="border">
+  <tr>
+    <td>
+      <table border="0" width="100%" cellspacing="1" cellpadding="4">
+        <tr class="header">
+          <td width="30" nowrap><img src="http://lorekeepers.silverday.net/forum/Public/Images/Default/blank.gif" width="30" height="5" border="0"></td>
+          <td width="100%"><font class="header"><b>board name</b></font></td>
+          <td width="50" align="center" nowrap><font class="header"><b>topics</b></font></td>
+          <td width="50" align="center" nowrap><font class="header"><b>posts</b></font></td>
+          <td width="120" nowrap><font class="header"><b>last updated</b></font></td>
+        </tr>
+        <tr class="category">
+          <td colspan="5"><font class="category"><b>Guild News</b></font></td>
+        </tr>
+                <tr class="status">
+          <td colspan="5"><font class="status"><b>Announcement:</b> <a href="javascript:PopUp ('UltraBoard.cgi?action=Announcements&BID=0&AID=1', 'UB2KANNOUNCEMENT', 450, 300, 1, 1)">Welcome to the new Messageboard!, Aug 26, 2001 04:57 a.m.</a></font></td>
+        </tr>
+
+        <tr>
+          <td class="odd" align="center" nowrap><img src="http://lorekeepers.silverday.net/forum/Public/Images/Default/F1.gif" width="16" height="16" border="0" align="absmiddle"></td>
+          <td class="even" valign="top"><font class="row"><b><a href="UltraBoard.cgi?action=Headlines&BID=2&SID=856">Site News</a></b><br><font class="sub-row">On this newsboard news about the site will be posted!</font></font></td>
+          <td class="odd" valign="top" nowrap><font class="row">1</font></td>
+          <td class="odd" valign="top" nowrap><font class="row">1</font></td>
+          <td class="odd" valign="top" nowrap><font class="row">Aug 26, 2001<br><font class="sub-row">05:14 a.m.</font></font></td>
+        </tr>
+        <tr>
+          <td class="odd" align="center" nowrap><img src="http://lorekeepers.silverday.net/forum/Public/Images/Default/F0.gif" width="16" height="16" border="0" align="absmiddle"></td>
+          <td class="even" valign="top"><font class="row"><b><a href="UltraBoard.cgi?action=Headlines&BID=3&SID=856">Guild News</a></b><br><font class="sub-row">News about the Guild can be found here.</font></font></td>
+          <td class="odd" valign="top" nowrap><font class="row">0</font></td>
+          <td class="odd" valign="top" nowrap><font class="row">0</font></td>
+          <td class="odd" valign="top" nowrap><font class="row">n/a</font></td>
+        </tr>
+        <tr class="category">
+          <td colspan="5"><font class="category"><b>The Guild Hall</b></font></td>
+        </tr>
+                <tr class="status">
+          <td colspan="5"><font class="status"><b>Announcement:</b> <a href="javascript:PopUp ('UltraBoard.cgi?action=Announcements&BID=0&AID=1', 'UB2KANNOUNCEMENT', 450, 300, 1, 1)">Welcome to the new Messageboard!, Aug 26, 2001 04:57 a.m.</a></font></td>
+        </tr>
+
+        <tr>
+          <td class="odd" align="center" nowrap><img src="http://lorekeepers.silverday.net/forum/Public/Images/Default/F1.gif" width="16" height="16" border="0" align="absmiddle"></td>
+          <td class="even" valign="top"><font class="row"><b><a href="UltraBoard.cgi?action=Headlines&BID=1&SID=856">The Round Table</a></b><br><font class="sub-row">Many a lively discussion can be heard from the people sitting on the highbacked wooden chairs around this table. A stretcher in the corner stands ready to transport any victims of a too lively discussion to the nearest healer.</font></font></td>
+          <td class="odd" valign="top" nowrap><font class="row">17</font></td>
+          <td class="odd" valign="top" nowrap><font class="row">45</font></td>
+          <td class="odd" valign="top" nowrap><font class="row">Oct 20, 2001<br><font class="sub-row">10:59 p.m.</font></font></td>
+        </tr>
+        <tr class="category">
+          <td colspan="5"><font class="category"><b>Who's Online?</b></font></td>
+        </tr>
+        <tr>
+          <td width="30" height="30" class="odd" align="center" nowrap><img src="http://lorekeepers.silverday.net/forum/Public/Images/Default/online.gif" border="0" align="absmiddle"></td>
+          <td class="even" valign="top" colspan="4"><font class="sub-row">There have been 0 member(s) and 1 guest(s) on the forum within last 30 minutes.<br><font class="sub-row">&nbsp; <a href="UltraBoard.cgi?action=Profile&UID=&SID=856"></a> <a href="UltraBoard.cgi?action=Online&SID=856">(browse the whole list)</a></font></font></td>
+        </tr>
+        <tr class="status">
+          <td colspan="5"><font class="status"> All times are GMT -6.</font></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table border="0" width="100%" align="Center" cellspacing="0" cellpadding="6">
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td valign="top"><img src="http://lorekeepers.silverday.net/forum/Public/Images/Default/F1.gif" width="16" height="16" border="0" alt="">&nbsp;</td>
+          <td><font class="normal">new posts since your last visit.</font></td>
+        </tr>
+        <tr>
+          <td valign="top"><img src="http://lorekeepers.silverday.net/forum/Public/Images/Default/F0.gif" width="16" height="16" border="0" alt="">&nbsp;</td>
+          <td><font class="normal">no new posts since your last visit.</font></td>
+        </tr>
+        <tr>
+          <td valign="top"><img src="http://lorekeepers.silverday.net/forum/Public/Images/Default/redirect.gif" width="16" height="16" border="0" alt="">&nbsp;</td>
+          <td><font class="normal">is a redirection link.</font></td>
+        </tr>
+      </table>
+    </td>
+    <td align="right" valign="top">
+      <script language="JavaScript" type="text/javascript">
+        <!--
+          function GoRedirect (){
+            if (document.redirect.url.options[document.redirect.url.selectedIndex].value != "") {
+              location = "UltraBoard.cgi?" + document.redirect.url.options[document.redirect.url.selectedIndex].value + "&SID=856";
+            }
+          }
+        // -->
+      </script>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr><td nowrap><form name="redirect"></td></tr>
+        <tr>
+          <td><font class="sub-normal">Go to:</font></td>
+        </tr>
+        <tr>
+          <td><select name="url"><option>Go to...</option><option></option><option value="action=Category&CID=1">Guild News</option><option>======================</option><option value="action=Headlines&BID=2">Site News</option><option value="action=Headlines&BID=3">Guild News</option><option></option><option value="action=Category&CID=2">The Guild Hall</option><option>======================</option><option value="action=Headlines&BID=1">The Round Table</option></select>&nbsp;<input type="button" value="Go" onclick="GoRedirect()"></td>
+        </tr>
+        <tr><td nowrap></form></td></tr>
+      </table>
+      <img src="http://lorekeepers.silverday.net/forum/Public/Images/Default/blank.gif" width="10" height="6" border="0"><br>
+      <font class="sub-normal">Powered by <a href="http://www.ub2k.com" target="_blank">UltraBoard</a> 2000 Standard Edition,<br>Copyright &copy; <a href="http://www.ultrascripts.com" target="_blank">UltraScripts.com, Inc.</a> 1999-2000.</font>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
+<!-- Powered by UltraBoard 2000 2.15 Standard Edition, Copyright (c) UltraScripts.com, Inc. 1999-2000. -->
