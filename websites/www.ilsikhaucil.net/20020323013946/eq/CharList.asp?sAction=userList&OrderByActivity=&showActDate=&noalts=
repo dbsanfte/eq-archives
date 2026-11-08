@@ -1,0 +1,689 @@
+
+
+<html>
+<!-- 
+USEFUL ADDITIONS TO QUERYSTRING:
+  &noStatus= - add to disable display of status - all lists
+  &activity=x - shows only the users who have had activity in the last x days - all lists
+  &showActDate= - displays Activity date - rank & user only
+  &noAlts= - only displays primary character - Rank only
+  &OrderByActivity= - sort by activity date first - User only
+-->
+
+<head>
+<title>IH Membership from Game_Everquest</title>
+<style>
+TABLE { border-width: 1px; border-style: solid; margin: 0px; padding: 0px;}
+TD    { color: #000000; font-size: 12px; font-family: verdana, arial, helvetica }
+TH    { color: #000000; font-size: 12px; font-family: verdana, arial, helvetica; font-weight: bold }
+
+
+# old colors:
+# Altbg = f0f0f0
+# altretiredbg = f9f9f9
+# guild rank bg = ddddff
+# retired color = #d0d0d0
+# colors: 00/30, 50, 90, b0
+# colors = 0, 40%, 60%, 80%
+
+TD.PrimaryChar { color: #000000; font-size: 12px; }
+TD.AltChar { color:#303030; font-size: 10px; background-color: #c1b8a2; }
+TH.PrimaryChar { color: #000000; font-size: 12px; }
+TH.AltChar { color:#303030; font-size: 10px; background-color: #c1b8a2; }
+
+TD.PrimaryCharAway { color: #534f46; font-size: 11px;}
+TD.AltCharAway { color:#534f46; font-size: 9px; background-color: #c1b8a2; }
+TH.PrimaryCharAway { color: #534f46; font-size: 11px;}
+TH.AltCharAway { color:#534f46; font-size: 9px; background-color: #c1b8a2; }
+
+TD.PrimaryCharInactive { color: #7c776a; font-size: 10px;}
+TD.AltCharInactive { color:#7c776a; font-size: 8px; background-color: #c1b8a2; }
+TH.PrimaryCharInactive { color: #7c776a; font-size: 10px;}
+TH.AltCharInactive { color:#7c776a; font-size: 8px; background-color: #c1b8a2; }
+
+TD.PrimaryCharRetired { color: #a69f8d; font-size: 9px;}
+TD.AltCharRetired { color:#a69f8d; font-size: 8px; background-color: #cac1ab; }
+TH.PrimaryCharRetired { color: #a69f8d; font-size: 9px;}
+TH.AltCharRetired { color:#a69f8d; font-size: 8px; background-color: #cac1ab; }
+
+.SponsorTag { font-size: 9px; }
+TH.GuildRank { text-align: left; background-color: #b09781; }
+
+BODY {
+	SCROLLBAR-BASE-COLOR: #937551;
+	SCROLLBAR-ARROW-COLOR: #000000;
+	BACKGROUND-COLOR: #d0c7b1;
+}
+SELECT {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+TEXTAREA, .bginput {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+A:link, A:visited, A:active {
+	COLOR: #463D36;
+}
+A:hover {
+	COLOR: #FF4400;
+}
+#cat A:link, #cat A:visited, #cat A:active {
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+}
+#cat A:hover {
+	COLOR: #000000;
+	TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+	COLOR: #463D36;
+	TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+	COLOR: #FF4400;
+	TEXT-DECORATION: underline;
+}
+.thtcolor {
+	COLOR: #000000;
+}
+
+.lf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 14px;
+}
+
+.nf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 12px;
+}
+
+.sf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 10px;
+}
+
+
+</style>
+</head>
+
+<body bgcolor11="#d0c7b1" JMtext="#000000" JMid="all" JMleftmargin="10" JMtopmargin="0" JMmarginwidth="10" JMmarginheight="10">
+<OLDbody alink="#0000ff" vlink="#0000ff" link="#0000ff">
+<table width="100%">
+<tr>
+  <td>
+    <small>
+    Sort by: <a href="CharList.asp?sAction=structureList">Rank</a>&nbsp;<a href="CharList.asp?sAction=structureList&activity=7"><small><small>(only Active)</small></small></a> - 
+    <a href="CharList.asp?sAction=classList">Class</a>&nbsp;<a href="CharList.asp?sAction=classList&activity=7"><small><small>(only Active)</small></small></a> - 
+    <a href="CharList.asp?sAction=userList">User</a>&nbsp;<a href="CharList.asp?sAction=userList&activity=7"><small><small>(only Active)</small></small></a>
+    &nbsp;<a href="CharList.asp?sAction=userList&OrderByActivity=&showActDate=&noalts="><small><small>(Activity)</small></small></a>
+    &nbsp;<a href="CharList.asp?sAction=custom" id="customID"><small><small>(CUSTOM)</small></small></a>
+
+    <script language="JavaScript"><!--
+      
+      var redJump = 1;
+      var blueJump = 1;
+      var greenJump = 1;         
+      function subtleChange(origColor) {
+        if (origColor == "") {
+          return randomHex();
+        }
+        var whichEle = Math.floor(Math.random()*3);
+        var red = new Number("0x" + origColor.substr(1, 2));
+        var blue = new Number("0x" + origColor.substr(3, 2));
+        var green = new Number("0x" + origColor.substr(5, 2));
+        switch (whichEle) {
+          case 0: 
+            red += redJump * (Math.floor(Math.random()*10)+1);
+            if (red > 255) {
+              red = 254; redJump = -(redJump);
+            }
+            if (red < 0) {
+              red = 1; redJump = -(redJump);
+            }
+            break;
+          case 1: 
+            blue += blueJump * (Math.floor(Math.random()*10)+1);
+            if (blue > 255) {
+              blue = 254; blueJump = -(blueJump);
+            }
+            if (blue < 0) {
+              blue = 1; blueJump = -(blueJump);
+            }
+            break;
+          case 2: 
+            green += greenJump * (Math.floor(Math.random()*10)+1);
+            if (green > 255) {
+              green = 254; greenJump = -(greenJump);
+            }
+            if (green < 0) {
+              green = 1; greenJump = -(greenJump);
+            }
+            break;
+        }
+        red = red.toString(16); if (red.length == 1) { red = "0" + red; }
+        blue = blue.toString(16); if (blue.length == 1) { blue = "0" + blue; }
+        green = green.toString(16); if (green.length == 1) { green = "0" + green; }
+        return "#" + red + blue + green;
+      }
+      
+
+      function randomHex() {
+        var rs = "#";
+        for (var i=0; i<6; i++) {
+          var j = Math.floor(Math.random()*16);
+          switch (j) {
+            case 10: j = "a"; break;
+            case 11: j = "b"; break;
+            case 12: j = "c"; break;
+            case 13: j = "d"; break;
+            case 14: j = "e"; break;
+            case 15: j = "f"; break;
+          }
+          rs += j;
+        }
+        return rs;
+      }
+      
+      var changeMode = Math.floor(Math.random()*2);
+      function changeCustomColor() {
+        try {
+          switch (changeMode) {
+            case 0: 
+              document.all.customID.style.color = randomHex();
+              break;
+            case 1:
+              document.all.customID.style.color = subtleChange(document.all.customID.style.color);
+              break;
+          }
+          setTimeout('changeCustomColor();', 100);
+        } catch (e) { }
+      }
+      
+      setTimeout('changeCustomColor();', 500);
+      // -->
+    </script>
+
+    <br>&nbsp;&nbsp;&nbsp;Functions:  
+  
+    <a href="login.asp">Login</a>
+  
+    </small>
+  </td>
+  <td align="right">
+    <a href="../DAoC/CharList.asp?sAction=userList&OrderByActivity=&showActDate=&noalts="><small><small>DAoC</small></small></a>
+    <a href="../EQ/CharList.asp?sAction=userList&OrderByActivity=&showActDate=&noalts="><b><small><small>EQ</small></small></b></a>
+  </td>
+</tr>
+</table>
+
+
+      <table width="100%">
+      <tr>
+        <th colspan="2">Name</th>
+        <th>Level</th>
+        <th>Class</th>
+        <th>Race</th>
+        <th>Rank</th>
+        
+        <th>Act Date</th>
+        
+      </tr>
+         
+                <tr><th align="left" class="PrimaryChar" colspan="6">Haught</th>
+              
+                <th><small><small>3/19/2002 14:26:56</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Miidori<span class="SponsorTag">&nbsp;&nbsp;Sponsors: Ombu,Osheiba,Quasinom,Sendadar,</span></th>
+              
+                <th><small><small>3/18/2002 18:37:34</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Icebone</th>
+              
+                <th><small><small>3/18/2002 18:37:24</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Foulsbane</th>
+              
+                <th><small><small>3/18/2002 18:35:28</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Garnal</th>
+              
+                <th><small><small>3/18/2002 18:35:20</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Halytonel</th>
+              
+                <th><small><small>3/18/2002 18:35:12</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Javik</th>
+              
+                <th><small><small>3/18/2002 18:34:37</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Jeryn</th>
+              
+                <th><small><small>3/18/2002 18:34:28</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Jolie</th>
+              
+                <th><small><small>3/18/2002 18:34:18</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Jooga</th>
+              
+                <th><small><small>3/18/2002 18:34:10</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Kaniel</th>
+              
+                <th><small><small>3/18/2002 18:33:59</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Karisa</th>
+              
+                <th><small><small>3/18/2002 18:33:48</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Luandrea</th>
+              
+                <th><small><small>3/18/2002 18:33:34</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Lythorn</th>
+              
+                <th><small><small>3/18/2002 18:33:22</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Mamaseeta</th>
+              
+                <th><small><small>3/18/2002 18:33:14</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">MiLoran</th>
+              
+                <th><small><small>3/18/2002 18:33:3</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Ombu</th>
+              
+                <th><small><small>3/18/2002 18:32:52</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Osheiba</th>
+              
+                <th><small><small>3/18/2002 18:32:41</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Quasinom</th>
+              
+                <th><small><small>3/18/2002 18:32:33</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Rann</th>
+              
+                <th><small><small>3/18/2002 18:32:23</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Reyun</th>
+              
+                <th><small><small>3/18/2002 18:32:12</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Senthiel</th>
+              
+                <th><small><small>3/18/2002 18:31:47</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Silvan</th>
+              
+                <th><small><small>3/18/2002 18:31:18</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">SowinMasheen</th>
+              
+                <th><small><small>3/18/2002 18:31:7</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Talanic Scorpse</th>
+              
+                <th><small><small>3/18/2002 18:30:56</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Trevekk</th>
+              
+                <th><small><small>3/18/2002 18:30:46</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Triplex</th>
+              
+                <th><small><small>3/18/2002 18:30:34</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Valkith</th>
+              
+                <th><small><small>3/18/2002 18:30:24</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Vampress</th>
+              
+                <th><small><small>3/18/2002 18:30:13</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Vasik</th>
+              
+                <th><small><small>3/18/2002 18:30:5</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Wylee</th>
+              
+                <th><small><small>3/18/2002 18:29:52</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Xandrial</th>
+              
+                <th><small><small>3/18/2002 18:29:43</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Firgorfin</th>
+              
+                <th><small><small>3/18/2002 18:29:28</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Faerri</th>
+              
+                <th><small><small>3/18/2002 18:29:22</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Ezra</th>
+              
+                <th><small><small>3/18/2002 18:29:14</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Elem</th>
+              
+                <th><small><small>3/18/2002 18:29:6</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Drugg</th>
+              
+                <th><small><small>3/18/2002 18:28:55</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Caldo</th>
+              
+                <th><small><small>3/18/2002 18:28:47</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Browu</th>
+              
+                <th><small><small>3/18/2002 18:28:34</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Azragaul</th>
+              
+                <th><small><small>3/18/2002 18:28:26</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Avrus</th>
+              
+                <th><small><small>3/18/2002 18:28:18</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Arduinna</th>
+              
+                <th><small><small>3/18/2002 18:28:7</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Amithraril</th>
+              
+                <th><small><small>3/18/2002 18:27:59</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Aiyane</th>
+              
+                <th><small><small>3/18/2002 18:27:51</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Achuu</th>
+              
+                <th><small><small>3/18/2002 18:27:45</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Fray</th>
+              
+                <th><small><small>3/18/2002 18:27:16</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Setsoru</th>
+              
+                <th><small><small>3/18/2002 18:26:41</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Kaerzan</th>
+              
+                <th><small><small>3/18/2002 18:26:27</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Agachuk</th>
+              
+                <th><small><small>3/18/2002 18:26:1</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Baraki<span class="SponsorTag">&nbsp;&nbsp;Sponsors: Setsoru,Kaerzan,Agachuk,</span></th>
+              
+                <th><small><small>3/18/2002 18:24:53</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharAway" colspan="6">Calanin<i> - Away</i></th>
+              
+                <th><small><small>3/15/2002 2:15:16</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharAway" colspan="6">Sendadar<i> - Away</i></th>
+              
+                <th><small><small>3/11/2002 9:38:28</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharAway" colspan="6">Sandysue<i> - Away</i></th>
+              
+                <th><small><small>3/3/2002 10:57:38</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Spatch<span class="SponsorTag">&nbsp;&nbsp;Sponsors: Faerri,Luandrea,</span><i> - Inactive</i></th>
+              
+                <th><small><small>2/17/2002 8:35:11</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Sheann<span class="SponsorTag">&nbsp;&nbsp;Sponsors: Ezra,Arduinna,</span><i> - Inactive</i></th>
+              
+                <th><small><small>2/17/2002 8:34:35</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Meagen<i> - Inactive</i></th>
+              
+                <th><small><small>2/17/2002 8:32:0</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Bellefemme<span class="SponsorTag">&nbsp;&nbsp;Sponsors: Firgorfin,Halytonel,Xandrial,</span><i> - Inactive</i></th>
+              
+                <th><small><small>2/17/2002 8:27:34</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Ashon<i> - Inactive</i></th>
+              
+                <th><small><small>2/17/2002 8:27:4</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Alegria<i> - Inactive</i></th>
+              
+                <th><small><small>2/17/2002 8:26:39</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Uendias<i> - Retired</i></th>
+              
+                <th><small><small>1/19/2002 18:18:32</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Tuttor<i> - Retired</i></th>
+              
+                <th><small><small>1/19/2002 18:18:21</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Rosestorm<i> - Retired</i></th>
+              
+                <th><small><small>1/19/2002 18:13:11</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Piqa<i> - Retired</i></th>
+              
+                <th><small><small>1/19/2002 18:10:38</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Onyx<i> - Retired</i></th>
+              
+                <th><small><small>1/19/2002 18:10:17</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Micandrius<i> - Retired</i></th>
+              
+                <th><small><small>1/19/2002 18:8:4</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Lenanne<i> - Retired</i></th>
+              
+                <th><small><small>1/19/2002 18:4:49</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Lanyen<i> - Retired</i></th>
+              
+                <th><small><small>1/19/2002 18:4:22</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Miu<i> - Retired</i></th>
+              
+                <th><small><small>12/18/2001 3:55:11</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Saidan<i> - Retired</i></th>
+              
+                <th><small><small>12/11/2001 18:13:25</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Melan<i> - Retired</i></th>
+              
+                <th><small><small>11/12/2001 18:8:20</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Bezaur<i> - Retired</i></th>
+              
+                <th><small><small>10/3/2001 11:27:55</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Corif<i> - Retired</i></th>
+              
+                <th><small><small>12/31/1969 18:0:0</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Eyla<i> - Retired</i></th>
+              
+                <th><small><small>12/31/1969 18:0:0</small></small></th>
+              
+              </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Jaax<i> - Retired</i></th>
+              
+                <th><small><small>12/31/1969 18:0:0</small></small></th>
+              
+              </tr>
+              
+          <tr><td colspan="5">&nbsp;</td></tr>
+          <tr><td colspan="5" bgcolor="#888888"><font color="#dddddd"><b>Distinct players:</b> 74&nbsp;&nbsp;&nbsp;Total characters: 209</font></td></tr>
+          </table>
+          
+          
+
+</body>
+
+</html>

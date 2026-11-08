@@ -1,0 +1,2629 @@
+
+
+<html>
+<!-- 
+USEFUL ADDITIONS TO QUERYSTRING:
+  &noStatus= - add to disable display of status - all lists
+  &activity=x - shows only the users who have had activity in the last x days - all lists
+  &showActDate= - displays Activity date - rank & user only
+  &noAlts= - only displays primary character - Rank only
+  &OrderByActivity= - sort by activity date first - User only
+-->
+
+<head>
+<title>IH Membership from Game_Everquest</title>
+<style>
+TABLE { border-width: 1px; border-style: solid; margin: 0px; padding: 0px;}
+TD    { color: #000000; font-size: 12px; font-family: verdana, arial, helvetica }
+TH    { color: #000000; font-size: 12px; font-family: verdana, arial, helvetica; font-weight: bold }
+
+
+# old colors:
+# Altbg = f0f0f0
+# altretiredbg = f9f9f9
+# guild rank bg = ddddff
+# retired color = #d0d0d0
+# colors: 00/30, 50, 90, b0
+# colors = 0, 40%, 60%, 80%
+
+TD.PrimaryChar { color: #000000; font-size: 12px; }
+TD.AltChar { color:#303030; font-size: 10px; background-color: #c1b8a2; }
+TH.PrimaryChar { color: #000000; font-size: 12px; }
+TH.AltChar { color:#303030; font-size: 10px; background-color: #c1b8a2; }
+
+TD.PrimaryCharAway { color: #534f46; font-size: 11px;}
+TD.AltCharAway { color:#534f46; font-size: 9px; background-color: #c1b8a2; }
+TH.PrimaryCharAway { color: #534f46; font-size: 11px;}
+TH.AltCharAway { color:#534f46; font-size: 9px; background-color: #c1b8a2; }
+
+TD.PrimaryCharInactive { color: #7c776a; font-size: 10px;}
+TD.AltCharInactive { color:#7c776a; font-size: 8px; background-color: #c1b8a2; }
+TH.PrimaryCharInactive { color: #7c776a; font-size: 10px;}
+TH.AltCharInactive { color:#7c776a; font-size: 8px; background-color: #c1b8a2; }
+
+TD.PrimaryCharRetired { color: #a69f8d; font-size: 9px;}
+TD.AltCharRetired { color:#a69f8d; font-size: 8px; background-color: #cac1ab; }
+TH.PrimaryCharRetired { color: #a69f8d; font-size: 9px;}
+TH.AltCharRetired { color:#a69f8d; font-size: 8px; background-color: #cac1ab; }
+
+.SponsorTag { font-size: 9px; }
+TH.GuildRank { text-align: left; background-color: #b09781; }
+
+BODY {
+	SCROLLBAR-BASE-COLOR: #937551;
+	SCROLLBAR-ARROW-COLOR: #000000;
+	BACKGROUND-COLOR: #d0c7b1;
+}
+SELECT {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+TEXTAREA, .bginput {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+A:link, A:visited, A:active {
+	COLOR: #463D36;
+}
+A:hover {
+	COLOR: #FF4400;
+}
+#cat A:link, #cat A:visited, #cat A:active {
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+}
+#cat A:hover {
+	COLOR: #000000;
+	TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+	COLOR: #463D36;
+	TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+	COLOR: #FF4400;
+	TEXT-DECORATION: underline;
+}
+.thtcolor {
+	COLOR: #000000;
+}
+
+.lf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 14px;
+}
+
+.nf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 12px;
+}
+
+.sf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 10px;
+}
+
+
+</style>
+</head>
+
+<body bgcolor11="#d0c7b1" JMtext="#000000" JMid="all" JMleftmargin="10" JMtopmargin="0" JMmarginwidth="10" JMmarginheight="10">
+<OLDbody alink="#0000ff" vlink="#0000ff" link="#0000ff">
+<table width="100%">
+<tr>
+  <td>
+    <small>
+    Sort by: <a href="CharList.asp?sAction=structureList">Rank</a>&nbsp;<a href="CharList.asp?sAction=structureList&activity=7"><small><small>(only Active)</small></small></a> - 
+    <a href="CharList.asp?sAction=classList">Class</a>&nbsp;<a href="CharList.asp?sAction=classList&activity=7"><small><small>(only Active)</small></small></a> - 
+    <a href="CharList.asp?sAction=userList">User</a>&nbsp;<a href="CharList.asp?sAction=userList&activity=7"><small><small>(only Active)</small></small></a>
+    &nbsp;<a href="CharList.asp?sAction=userList&OrderByActivity=&showActDate=&noalts="><small><small>(Activity)</small></small></a>
+    &nbsp;<a href="CharList.asp?sAction=custom" id="customID"><small><small>(CUSTOM)</small></small></a>
+
+    <script language="JavaScript"><!--
+      
+      var redJump = 1;
+      var blueJump = 1;
+      var greenJump = 1;         
+      function subtleChange(origColor) {
+        if (origColor == "") {
+          return randomHex();
+        }
+        var whichEle = Math.floor(Math.random()*3);
+        var red = new Number("0x" + origColor.substr(1, 2));
+        var blue = new Number("0x" + origColor.substr(3, 2));
+        var green = new Number("0x" + origColor.substr(5, 2));
+        switch (whichEle) {
+          case 0: 
+            red += redJump * (Math.floor(Math.random()*10)+1);
+            if (red > 255) {
+              red = 254; redJump = -(redJump);
+            }
+            if (red < 0) {
+              red = 1; redJump = -(redJump);
+            }
+            break;
+          case 1: 
+            blue += blueJump * (Math.floor(Math.random()*10)+1);
+            if (blue > 255) {
+              blue = 254; blueJump = -(blueJump);
+            }
+            if (blue < 0) {
+              blue = 1; blueJump = -(blueJump);
+            }
+            break;
+          case 2: 
+            green += greenJump * (Math.floor(Math.random()*10)+1);
+            if (green > 255) {
+              green = 254; greenJump = -(greenJump);
+            }
+            if (green < 0) {
+              green = 1; greenJump = -(greenJump);
+            }
+            break;
+        }
+        red = red.toString(16); if (red.length == 1) { red = "0" + red; }
+        blue = blue.toString(16); if (blue.length == 1) { blue = "0" + blue; }
+        green = green.toString(16); if (green.length == 1) { green = "0" + green; }
+        return "#" + red + blue + green;
+      }
+      
+
+      function randomHex() {
+        var rs = "#";
+        for (var i=0; i<6; i++) {
+          var j = Math.floor(Math.random()*16);
+          switch (j) {
+            case 10: j = "a"; break;
+            case 11: j = "b"; break;
+            case 12: j = "c"; break;
+            case 13: j = "d"; break;
+            case 14: j = "e"; break;
+            case 15: j = "f"; break;
+          }
+          rs += j;
+        }
+        return rs;
+      }
+      
+      var changeMode = Math.floor(Math.random()*2);
+      function changeCustomColor() {
+        try {
+          switch (changeMode) {
+            case 0: 
+              document.all.customID.style.color = randomHex();
+              break;
+            case 1:
+              document.all.customID.style.color = subtleChange(document.all.customID.style.color);
+              break;
+          }
+          setTimeout('changeCustomColor();', 100);
+        } catch (e) { }
+      }
+      
+      setTimeout('changeCustomColor();', 500);
+      // -->
+    </script>
+
+    <br>&nbsp;&nbsp;&nbsp;Functions:  
+  
+    <a href="login.asp">Login</a>
+  
+    </small>
+  </td>
+  <td align="right">
+    <a href="../DAoC/CharList.asp?sAction=userList"><small><small>DAoC</small></small></a>
+    <a href="../EQ/CharList.asp?sAction=userList"><b><small><small>EQ</small></small></b></a>
+  </td>
+</tr>
+</table>
+
+
+      <table width="100%">
+      <tr>
+        <th colspan="2">Name</th>
+        <th>Level</th>
+        <th>Class</th>
+        <th>Race</th>
+        <th>Rank</th>
+        
+      </tr>
+         
+                <tr><th align="left" class="PrimaryChar" colspan="6">Achuu</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Reignn Eternal</td>
+              <td class="AltChar">57</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Achuu </td>
+              <td class="AltChar">55</td>
+              <td class="AltChar">Magician</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Kanyr </td>
+              <td class="AltChar">44</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Agachuk</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Agachuk </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Troll</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Elrindil </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Jarnauga </td>
+              <td class="AltChar">54</td>
+              <td class="AltChar">Rogue</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Aiyane</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Aiyane N'Farre</td>
+              <td class="AltChar">54</td>
+              <td class="AltChar">Wizard</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Vivianne D'Axx</td>
+              <td class="AltChar">52</td>
+              <td class="AltChar">Necromancer</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Tamarra Gix</td>
+              <td class="AltChar">35</td>
+              <td class="AltChar">Shadow Knight</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Nykkie Gix</td>
+              <td class="AltChar">20</td>
+              <td class="AltChar">Rogue</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Kiraisa </td>
+              <td class="AltChar">8</td>
+              <td class="AltChar">Beastlord</td>
+              <td class="AltChar">Vah'Shir</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Alegria<i> - Inactive</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Alegria </td>
+              <td class="AltCharInactive">53</td>
+              <td class="AltCharInactive">Druid</td>
+              <td class="AltCharInactive">Wood Elf</td>
+              <td class="AltCharInactive">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Kaanu </td>
+              <td class="AltCharInactive">33</td>
+              <td class="AltCharInactive">Warrior</td>
+              <td class="AltCharInactive">Wood Elf</td>
+              <td class="AltCharInactive">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Muasu </td>
+              <td class="AltCharInactive">15</td>
+              <td class="AltCharInactive">Necromancer</td>
+              <td class="AltCharInactive">Dark Elf</td>
+              <td class="AltCharInactive">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Zveena </td>
+              <td class="AltCharInactive">9</td>
+              <td class="AltCharInactive">Cleric</td>
+              <td class="AltCharInactive">Dark Elf</td>
+              <td class="AltCharInactive">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Anastasia </td>
+              <td class="AltCharInactive">6</td>
+              <td class="AltCharInactive">Magician</td>
+              <td class="AltCharInactive">Dark Elf</td>
+              <td class="AltCharInactive">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Amithraril</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Amithraril Elendili</td>
+              <td class="AltChar">58</td>
+              <td class="AltChar">Paladin</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Saakraa </td>
+              <td class="AltChar">42</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Iksar</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Aredhel </td>
+              <td class="AltChar">18</td>
+              <td class="AltChar">Wizard</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Ferkin </td>
+              <td class="AltChar">18</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Arduinna</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Arduinna </td>
+              <td class="AltChar">56</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Gerhobelm </td>
+              <td class="AltChar">54</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Kard </td>
+              <td class="AltChar">53</td>
+              <td class="AltChar">Necromancer</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Ashon<i> - Inactive</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Sutekh </td>
+              <td class="AltCharInactive">60</td>
+              <td class="AltCharInactive">Enchanter</td>
+              <td class="AltCharInactive">Erudite</td>
+              <td class="AltCharInactive">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Barid </td>
+              <td class="AltCharInactive">52</td>
+              <td class="AltCharInactive">Monk</td>
+              <td class="AltCharInactive">Human</td>
+              <td class="AltCharInactive">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Avrus</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Avrus Cadavrus</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Rogue</td>
+              <td class="AltChar">Half Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Impedance Trueshot</td>
+              <td class="AltChar">44</td>
+              <td class="AltChar">Ranger</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Dobrin Battlerager</td>
+              <td class="AltChar">22</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Agacrush </td>
+              <td class="AltChar">9</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Troll</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Kyaal </td>
+              <td class="AltChar">9</td>
+              <td class="AltChar">Magician</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Azragaul</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Azragaul Arkenstone</td>
+              <td class="AltChar">59</td>
+              <td class="AltChar">Ranger</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">GuildMaster</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Azzia </td>
+              <td class="AltChar">29</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">GuildMaster</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Boumbur </td>
+              <td class="AltChar">22</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">GuildMaster</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Ziran </td>
+              <td class="AltChar">22</td>
+              <td class="AltChar">Beastlord</td>
+              <td class="AltChar">Vah'Shir</td>
+              <td class="AltChar">GuildMaster</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Zierren </td>
+              <td class="AltChar">20</td>
+              <td class="AltChar">Necromancer</td>
+              <td class="AltChar">Erudite</td>
+              <td class="AltChar">GuildMaster</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Faldare </td>
+              <td class="AltChar">12</td>
+              <td class="AltChar">Enchanter</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">GuildMaster</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Ariellen </td>
+              <td class="AltChar">9</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">GuildMaster</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Zamm </td>
+              <td class="AltChar">8</td>
+              <td class="AltChar">Shadow Knight</td>
+              <td class="AltChar">Troll</td>
+              <td class="AltChar">GuildMaster</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Baraki<span class="SponsorTag">&nbsp;&nbsp;Sponsors: Setsoru,Kaerzan,Agachuk,</span></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Baraki </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">Dedicated</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Bellefemme<span class="SponsorTag">&nbsp;&nbsp;Sponsors: Firgorfin,Halytonel,Xandrial,</span><i> - Inactive</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Bellefemme </td>
+              <td class="AltCharInactive">55</td>
+              <td class="AltCharInactive">Magician</td>
+              <td class="AltCharInactive">Erudite</td>
+              <td class="AltCharInactive">Dedicated</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Bezaur<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Bezaur DeSlaythe</td>
+              <td class="AltCharRetired">54</td>
+              <td class="AltCharRetired">Enchanter</td>
+              <td class="AltCharRetired">High Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Browu</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Browu Frostforge</td>
+              <td class="AltChar">55</td>
+              <td class="AltChar">Shaman</td>
+              <td class="AltChar">Barbarian</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharAway" colspan="6">Calanin<i> - Away</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharAway">Calanin Lee</td>
+              <td class="AltCharAway">0</td>
+              <td class="AltCharAway">Monk</td>
+              <td class="AltCharAway">Human</td>
+              <td class="AltCharAway">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Caldo</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Caldo Shujin</td>
+              <td class="AltChar">59</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Beecharmer Ovswarmms</td>
+              <td class="AltChar">35</td>
+              <td class="AltChar">Enchanter</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Caldonia Musume</td>
+              <td class="AltChar">35</td>
+              <td class="AltChar">Ranger</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Corif<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Corif Tilken</td>
+              <td class="AltCharRetired">47</td>
+              <td class="AltCharRetired">Cleric</td>
+              <td class="AltCharRetired">Dwarf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Sauriss </td>
+              <td class="AltCharRetired">11</td>
+              <td class="AltCharRetired">Warrior</td>
+              <td class="AltCharRetired">Iksar</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Hale </td>
+              <td class="AltCharRetired">9</td>
+              <td class="AltCharRetired">Ranger</td>
+              <td class="AltCharRetired"></td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Tika </td>
+              <td class="AltCharRetired">4</td>
+              <td class="AltCharRetired">Magician</td>
+              <td class="AltCharRetired"></td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Drugg</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Drugg </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Enchanter</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Elem</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Elem Steelskin</td>
+              <td class="AltChar">55</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Revar </td>
+              <td class="AltChar">5</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Eyla<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Eyla </td>
+              <td class="AltCharRetired">0</td>
+              <td class="AltCharRetired">Druid</td>
+              <td class="AltCharRetired">Wood Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Eylah </td>
+              <td class="AltCharRetired">0</td>
+              <td class="AltCharRetired">Shaman</td>
+              <td class="AltCharRetired">Barbarian</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Ezra</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Ezra Phincanbitemyass</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Magician</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Seki </td>
+              <td class="AltChar">53</td>
+              <td class="AltChar">Monk</td>
+              <td class="AltChar">Iksar</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Lakn </td>
+              <td class="AltChar">51</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Vah Shir</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Faerri</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Faerri Tsuma</td>
+              <td class="AltChar">59</td>
+              <td class="AltChar">Bard</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Swarmm Ovbees</td>
+              <td class="AltChar">35</td>
+              <td class="AltChar">Shadow Knight</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Firgorfin</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Firgorfin Gwaihir</td>
+              <td class="AltChar">58</td>
+              <td class="AltChar">Magician</td>
+              <td class="AltChar">Gnome</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Firgmynah </td>
+              <td class="AltChar">35</td>
+              <td class="AltChar">Monk</td>
+              <td class="AltChar">Iskar</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Foulsbane</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Fbee S'Tank</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Foulsbane Unbeliever</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Jekre </td>
+              <td class="AltChar">55</td>
+              <td class="AltChar">Monk</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Fray</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Fras </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Fray </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Fraxx </td>
+              <td class="AltChar">51</td>
+              <td class="AltChar">Enchanter</td>
+              <td class="AltChar">Erudite</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Wake </td>
+              <td class="AltChar">17</td>
+              <td class="AltChar">Ranger</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Garnal</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Zeer Woundhealer</td>
+              <td class="AltChar">56</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Garnal Shieldbreaker</td>
+              <td class="AltChar">55</td>
+              <td class="AltChar">Paladin</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Yogii Sabear</td>
+              <td class="AltChar">50</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Ogre</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Zail Farslayer</td>
+              <td class="AltChar">45</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Feiry </td>
+              <td class="AltChar">20</td>
+              <td class="AltChar">Wizard</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Bodice </td>
+              <td class="AltChar">16</td>
+              <td class="AltChar">Bard</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Flayed </td>
+              <td class="AltChar">4</td>
+              <td class="AltChar">Necromancer</td>
+              <td class="AltChar">Erudite</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Halytonel</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Halytonel TreeSlayer</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Terron Rronn</td>
+              <td class="AltChar">30</td>
+              <td class="AltChar">Rogue</td>
+              <td class="AltChar">Halfling</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Yohman </td>
+              <td class="AltChar">26</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Dwarf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Haught</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Haught Braveguard</td>
+              <td class="AltChar">55</td>
+              <td class="AltChar">Paladin</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Enas </td>
+              <td class="AltChar">42</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Half Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Griev </td>
+              <td class="AltChar">18</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Barbarian</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Icebone</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Meddikk </td>
+              <td class="AltChar">47</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Alphonis </td>
+              <td class="AltChar">30</td>
+              <td class="AltChar">Magician</td>
+              <td class="AltChar">Erudite</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Obidan </td>
+              <td class="AltChar">23</td>
+              <td class="AltChar">Enchanter</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Gollaan </td>
+              <td class="AltChar">19</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Icebone </td>
+              <td class="AltChar">0</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Barbarian</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Jaax<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Jaax Garrix</td>
+              <td class="AltCharRetired">56</td>
+              <td class="AltCharRetired">Rogue</td>
+              <td class="AltCharRetired">Human</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Javik</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Dranton </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Barbarian</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Morlis Myriadspirit</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Enchanter</td>
+              <td class="AltChar">Erudite</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Javik Truespirit</td>
+              <td class="AltChar">58</td>
+              <td class="AltChar">Shaman</td>
+              <td class="AltChar">Ogre</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Nilkin </td>
+              <td class="AltChar">57</td>
+              <td class="AltChar">Wizard</td>
+              <td class="AltChar">Gnome</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Shrice Battlespirit</td>
+              <td class="AltChar">37</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Halfling</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Javica </td>
+              <td class="AltChar">30</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Vole Demole</td>
+              <td class="AltChar">29</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Gnome</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Izira </td>
+              <td class="AltChar">14</td>
+              <td class="AltChar">Necromancer</td>
+              <td class="AltChar">Iksar</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Jeryn</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Jeryn </td>
+              <td class="AltChar">54</td>
+              <td class="AltChar">Ranger</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Harff Whittyd</td>
+              <td class="AltChar">39</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Barbarian</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Jolie</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Jolie Roux</td>
+              <td class="AltChar">53</td>
+              <td class="AltChar">Shaman</td>
+              <td class="AltChar">Barbarian</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Andian Outlaw</td>
+              <td class="AltChar">24</td>
+              <td class="AltChar">Bard</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Semiana </td>
+              <td class="AltChar">21</td>
+              <td class="AltChar">Ranger</td>
+              <td class="AltChar">Half Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Nalli </td>
+              <td class="AltChar">12</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Gnome</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Chazu </td>
+              <td class="AltChar">10</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Iksar</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Jooga</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Mooga Booglynose</td>
+              <td class="AltChar">50</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Troll</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Jooga Booglyeyes</td>
+              <td class="AltChar">0</td>
+              <td class="AltChar">Shaman</td>
+              <td class="AltChar">Troll</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Kaerzan</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Kaerzan Sadpanda</td>
+              <td class="AltChar">55</td>
+              <td class="AltChar">Shaman</td>
+              <td class="AltChar">Barbarian</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Kaniel</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Kaniel Woodkin</td>
+              <td class="AltChar">59</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Tiba </td>
+              <td class="AltChar">51</td>
+              <td class="AltChar">Bard</td>
+              <td class="AltChar">Vah'Shir</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Autum </td>
+              <td class="AltChar">48</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Barbarian</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Cadi </td>
+              <td class="AltChar">44</td>
+              <td class="AltChar">Ranger</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Channie </td>
+              <td class="AltChar">26</td>
+              <td class="AltChar">Enchanter</td>
+              <td class="AltChar">Erudite</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Karisa</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Karisa Bloodrush</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Wizard</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Aristratta </td>
+              <td class="AltChar">51</td>
+              <td class="AltChar">Magician</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Sarissa </td>
+              <td class="AltChar">41</td>
+              <td class="AltChar">Monk</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">feathers </td>
+              <td class="AltChar">20</td>
+              <td class="AltChar">druid</td>
+              <td class="AltChar">woodelf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">ziaos </td>
+              <td class="AltChar">18</td>
+              <td class="AltChar">bard</td>
+              <td class="AltChar">half-elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Lanyen<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Lanyen Trushot</td>
+              <td class="AltCharRetired">52</td>
+              <td class="AltCharRetired">Ranger</td>
+              <td class="AltCharRetired">Wood Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Tiimm </td>
+              <td class="AltCharRetired">24</td>
+              <td class="AltCharRetired">Wizard</td>
+              <td class="AltCharRetired">Gnome</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Lenanne<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Lenanne </td>
+              <td class="AltCharRetired">40</td>
+              <td class="AltCharRetired">Druid</td>
+              <td class="AltCharRetired">Wood Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Celina </td>
+              <td class="AltCharRetired">22</td>
+              <td class="AltCharRetired">Druid</td>
+              <td class="AltCharRetired"></td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Illiandria </td>
+              <td class="AltCharRetired">13</td>
+              <td class="AltCharRetired">Necromancer</td>
+              <td class="AltCharRetired">Dark Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Radina </td>
+              <td class="AltCharRetired">12</td>
+              <td class="AltCharRetired">Rogue</td>
+              <td class="AltCharRetired"></td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Luandrea</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Luandrea </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Celina </td>
+              <td class="AltChar">22</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Raidena </td>
+              <td class="AltChar">11</td>
+              <td class="AltChar">Rogue</td>
+              <td class="AltChar">Half Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Lythorn</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Lythorn </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Enchanter</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Mamaseeta</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Mamaseeta Heartbreaker</td>
+              <td class="AltChar">59</td>
+              <td class="AltChar">Monk</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Meagen<i> - Inactive</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Meagen Manslayer</td>
+              <td class="AltCharInactive">55</td>
+              <td class="AltCharInactive">Shadow Knight</td>
+              <td class="AltCharInactive">Erudite</td>
+              <td class="AltCharInactive">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Areil </td>
+              <td class="AltCharInactive">41</td>
+              <td class="AltCharInactive">Necromancer</td>
+              <td class="AltCharInactive">Dark Elf</td>
+              <td class="AltCharInactive">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Jasmine Buttercup</td>
+              <td class="AltCharInactive">32</td>
+              <td class="AltCharInactive">Enchanter</td>
+              <td class="AltCharInactive">High Elf</td>
+              <td class="AltCharInactive">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Melan<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Melan De'Slaythe</td>
+              <td class="AltCharRetired">58</td>
+              <td class="AltCharRetired">Druid</td>
+              <td class="AltCharRetired">Wood Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Harmful </td>
+              <td class="AltCharRetired">24</td>
+              <td class="AltCharRetired">Shadow Knight</td>
+              <td class="AltCharRetired">Dark Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Faithless </td>
+              <td class="AltCharRetired">20</td>
+              <td class="AltCharRetired">Paladin</td>
+              <td class="AltCharRetired"></td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Legond </td>
+              <td class="AltCharRetired">19</td>
+              <td class="AltCharRetired">Warrior</td>
+              <td class="AltCharRetired"></td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Micandrius<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Micandrius Melodius</td>
+              <td class="AltCharRetired">55</td>
+              <td class="AltCharRetired">Bard</td>
+              <td class="AltCharRetired">Half-Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Mahmga Mistwalker</td>
+              <td class="AltCharRetired">51</td>
+              <td class="AltCharRetired">Cleric</td>
+              <td class="AltCharRetired">Human</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Talizun Tygerfyre</td>
+              <td class="AltCharRetired">51</td>
+              <td class="AltCharRetired">Magician</td>
+              <td class="AltCharRetired">High Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Baqahnd </td>
+              <td class="AltCharRetired">44</td>
+              <td class="AltCharRetired">Shadow Knight</td>
+              <td class="AltCharRetired">Erudite</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Zooatuul Powatuul</td>
+              <td class="AltCharRetired">44</td>
+              <td class="AltCharRetired">Monk</td>
+              <td class="AltCharRetired">Human</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Miidori<span class="SponsorTag">&nbsp;&nbsp;Sponsors: Ombu,Osheiba,Quasinom,Sendadar,</span></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Miidori </td>
+              <td class="AltChar">59</td>
+              <td class="AltChar">Shaman</td>
+              <td class="AltChar">Ogre</td>
+              <td class="AltChar">Dedicated</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">MiLoran</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Miloran </td>
+              <td class="AltChar">52</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">TaLoran </td>
+              <td class="AltChar">13</td>
+              <td class="AltChar">Rogue</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Curiousitee </td>
+              <td class="AltChar">10</td>
+              <td class="AltChar">Beastlord</td>
+              <td class="AltChar">Vah'Shir</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Miu<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Faline Fatale</td>
+              <td class="AltCharRetired">46</td>
+              <td class="AltCharRetired">Magician</td>
+              <td class="AltCharRetired">High Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Razha </td>
+              <td class="AltCharRetired">7</td>
+              <td class="AltCharRetired">Beastlord</td>
+              <td class="AltCharRetired">Vah Shir</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Ombu</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Ombu Silentoak</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Half Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Onyx<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Onyx Tyrie</td>
+              <td class="AltCharRetired">60</td>
+              <td class="AltCharRetired">Rogue</td>
+              <td class="AltCharRetired">Half Elf</td>
+              <td class="AltCharRetired">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Thror </td>
+              <td class="AltCharRetired">20</td>
+              <td class="AltCharRetired">Paladin</td>
+              <td class="AltCharRetired">Human</td>
+              <td class="AltCharRetired">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Fezrik </td>
+              <td class="AltCharRetired">6</td>
+              <td class="AltCharRetired">Necromancer</td>
+              <td class="AltCharRetired">Erudite</td>
+              <td class="AltCharRetired">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Windowen </td>
+              <td class="AltCharRetired">3</td>
+              <td class="AltCharRetired">Druid</td>
+              <td class="AltCharRetired">Wood Elf</td>
+              <td class="AltCharRetired">Officer</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Osheiba</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Osheiba </td>
+              <td class="AltChar">54</td>
+              <td class="AltChar">Monk</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Piqa<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Piqa Ravenheart</td>
+              <td class="AltCharRetired">55</td>
+              <td class="AltCharRetired">Paladin</td>
+              <td class="AltCharRetired">Half Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Oliv Oil</td>
+              <td class="AltCharRetired">50</td>
+              <td class="AltCharRetired">Necromancer</td>
+              <td class="AltCharRetired">Dark Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Karranza </td>
+              <td class="AltCharRetired">13</td>
+              <td class="AltCharRetired">Magician</td>
+              <td class="AltCharRetired">High Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Quasinom</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Quasinom de Plume</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Magician</td>
+              <td class="AltChar">Gnome</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Piquor Pokketz</td>
+              <td class="AltChar">42</td>
+              <td class="AltChar">Rogue</td>
+              <td class="AltChar">Gnome</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Rann</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Rann Dragonsbane</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Paladin</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Feylanth </td>
+              <td class="AltChar">57</td>
+              <td class="AltChar">Magician</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Naathon </td>
+              <td class="AltChar">4</td>
+              <td class="AltChar">Shadow Knight</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Reyun</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Kinyll </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Bard</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Reyun Spiritchaser</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Monk</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Jarlop Dilly</td>
+              <td class="AltChar">52</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Scrym </td>
+              <td class="AltChar">20</td>
+              <td class="AltChar">Necromancer</td>
+              <td class="AltChar">Iksar</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Rosestorm<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Rosestorm </td>
+              <td class="AltCharRetired">50</td>
+              <td class="AltCharRetired">Ranger</td>
+              <td class="AltCharRetired">Human</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Rosestar </td>
+              <td class="AltCharRetired">30</td>
+              <td class="AltCharRetired">Druid</td>
+              <td class="AltCharRetired"></td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Sagesse </td>
+              <td class="AltCharRetired">4</td>
+              <td class="AltCharRetired">Cleric</td>
+              <td class="AltCharRetired"></td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Saidan<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Eltanin Soulblade</td>
+              <td class="AltCharRetired">56</td>
+              <td class="AltCharRetired">Enchanter</td>
+              <td class="AltCharRetired">Human</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Saidan Soulblade</td>
+              <td class="AltCharRetired">40</td>
+              <td class="AltCharRetired">Paladin</td>
+              <td class="AltCharRetired">Human</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Aipex Soulblade</td>
+              <td class="AltCharRetired">12</td>
+              <td class="AltCharRetired">Bard</td>
+              <td class="AltCharRetired">Half Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharAway" colspan="6">Sandysue<i> - Away</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharAway">Azurella Istarion</td>
+              <td class="AltCharAway">56</td>
+              <td class="AltCharAway">Enchanter</td>
+              <td class="AltCharAway">High Elf</td>
+              <td class="AltCharAway">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharAway">Sandysue Istarion</td>
+              <td class="AltCharAway">55</td>
+              <td class="AltCharAway">Wizard</td>
+              <td class="AltCharAway">High Elf</td>
+              <td class="AltCharAway">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharAway" colspan="6">Sendadar<i> - Away</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharAway">Sendadar Lifegiver</td>
+              <td class="AltCharAway">60</td>
+              <td class="AltCharAway">Shaman</td>
+              <td class="AltCharAway">Barbarian</td>
+              <td class="AltCharAway">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharAway">Sedai Tundrapaws</td>
+              <td class="AltCharAway">31</td>
+              <td class="AltCharAway">Druid</td>
+              <td class="AltCharAway">Wood Elf</td>
+              <td class="AltCharAway">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharAway">Brelden Kegtapper</td>
+              <td class="AltCharAway">29</td>
+              <td class="AltCharAway">Cleric</td>
+              <td class="AltCharAway">Dwarf</td>
+              <td class="AltCharAway">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharAway">Ardanas Frostreaver</td>
+              <td class="AltCharAway">21</td>
+              <td class="AltCharAway">Warrior</td>
+              <td class="AltCharAway">Barbarian</td>
+              <td class="AltCharAway">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharAway">Sendabar Doomfist</td>
+              <td class="AltCharAway">21</td>
+              <td class="AltCharAway">Monk</td>
+              <td class="AltCharAway">Human</td>
+              <td class="AltCharAway">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharAway">Naedalan </td>
+              <td class="AltCharAway">5</td>
+              <td class="AltCharAway">Shadow Knight</td>
+              <td class="AltCharAway">Dark Elf</td>
+              <td class="AltCharAway">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Senthiel</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Senthiel </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Setsoru</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Setsoru Rakurai</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Monk</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Snayke Plysskyn</td>
+              <td class="AltChar">48</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Barbarian</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Nazerhai </td>
+              <td class="AltChar">24</td>
+              <td class="AltChar">Necromancer</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Revyn </td>
+              <td class="AltChar">24</td>
+              <td class="AltChar">Rogue</td>
+              <td class="AltChar">Barbarian</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Sheann<span class="SponsorTag">&nbsp;&nbsp;Sponsors: Ezra,Arduinna,</span><i> - Inactive</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Sheann </td>
+              <td class="AltCharInactive">57</td>
+              <td class="AltCharInactive">Enchanter</td>
+              <td class="AltCharInactive">High Elf</td>
+              <td class="AltCharInactive">Dedicated</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Silvan</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Silvan Tareldar</td>
+              <td class="AltChar">57</td>
+              <td class="AltChar">Paladin</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Crowe </td>
+              <td class="AltChar">48</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">SowinMasheen</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Sowin Masheen</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Mewsy </td>
+              <td class="AltChar">25</td>
+              <td class="AltChar">Rogue</td>
+              <td class="AltChar">Vah'Shir</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Salindra Cahl</td>
+              <td class="AltChar">20</td>
+              <td class="AltChar">Bard</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharInactive" colspan="6">Spatch<span class="SponsorTag">&nbsp;&nbsp;Sponsors: Faerri,Luandrea,</span><i> - Inactive</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharInactive">Spatch Ula</td>
+              <td class="AltCharInactive">57</td>
+              <td class="AltCharInactive">Warrior</td>
+              <td class="AltCharInactive">Human</td>
+              <td class="AltCharInactive">Dedicated</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Talanic Scorpse</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Talanic Scorpse</td>
+              <td class="AltChar">54</td>
+              <td class="AltChar">Bard</td>
+              <td class="AltChar">Half Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Talanik SmithMule</td>
+              <td class="AltChar">2</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Half Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Trevekk</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Trevekk Valor</td>
+              <td class="AltChar">59</td>
+              <td class="AltChar">Paladin</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Ethynn Valor</td>
+              <td class="AltChar">51</td>
+              <td class="AltChar">Monk</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Dashynn Flashynn</td>
+              <td class="AltChar">14</td>
+              <td class="AltChar">Bard</td>
+              <td class="AltChar">Woodelf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Knowah Mystwalker</td>
+              <td class="AltChar">10</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Woodelf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Tendyr Morsal</td>
+              <td class="AltChar">1</td>
+              <td class="AltChar">Rogue</td>
+              <td class="AltChar">Gnome</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Triplex</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Triplex Heartbreaker</td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Quikex Heartbreaker</td>
+              <td class="AltChar">59</td>
+              <td class="AltChar">Druid</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Tuttor<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Alcina </td>
+              <td class="AltCharRetired">50</td>
+              <td class="AltCharRetired">Magician</td>
+              <td class="AltCharRetired"></td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Tuttor </td>
+              <td class="AltCharRetired">0</td>
+              <td class="AltCharRetired">Ranger</td>
+              <td class="AltCharRetired">Wood Elf</td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryCharRetired" colspan="6">Uendias<i> - Retired</i></th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltCharRetired">Uendias </td>
+              <td class="AltCharRetired">0</td>
+              <td class="AltCharRetired">Ranger</td>
+              <td class="AltCharRetired"></td>
+              <td class="AltCharRetired">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Valkith</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Valkith Winden Haucil</td>
+              <td class="AltChar">40</td>
+              <td class="AltChar">Rogue</td>
+              <td class="AltChar">Wood Elf</td>
+              <td class="AltChar">Officer</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Vampress</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Vampress </td>
+              <td class="AltChar">56</td>
+              <td class="AltChar">Necromancer</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Vasik</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Vasik </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Ranger</td>
+              <td class="AltChar">Woodelf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Wylee</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Chubz </td>
+              <td class="AltChar">48</td>
+              <td class="AltChar">Shadow Knight</td>
+              <td class="AltChar">Troll</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Wylee </td>
+              <td class="AltChar">0</td>
+              <td class="AltChar">Necromancer</td>
+              <td class="AltChar">Dark Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+                <tr><th align="left" class="PrimaryChar" colspan="6">Xandrial</th>
+              
+              </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Xandrial </td>
+              <td class="AltChar">60</td>
+              <td class="AltChar">Wizard</td>
+              <td class="AltChar">High Elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Adoran Creed</td>
+              <td class="AltChar">50</td>
+              <td class="AltChar">Warrior</td>
+              <td class="AltChar">Human</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+            
+            <tr>
+              <td width="2%">&nbsp;</td>
+              <td class="AltChar">Everly Creed</td>
+              <td class="AltChar">28</td>
+              <td class="AltChar">Cleric</td>
+              <td class="AltChar">high elf</td>
+              <td class="AltChar">Member</td>
+            </tr>
+              
+          <tr><td colspan="5">&nbsp;</td></tr>
+          <tr><td colspan="5" bgcolor="#888888"><font color="#dddddd"><b>Distinct players:</b> 74&nbsp;&nbsp;&nbsp;Total characters: 209</font></td></tr>
+          </table>
+          
+          
+
+</body>
+
+</html>
