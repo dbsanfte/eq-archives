@@ -1,0 +1,955 @@
+function Page() { }
+Page.prototype.update = function() { };
+Page.prototype.validate = function() { return true; };
+var page = new Array();
+
+
+
+page[page.length] = new Page();
+page[page.length - 1].validate = function() { LoadIcons(); LoadColors(); return true; };
+
+
+page[page.length] = new Page();
+
+
+page[page.length] = new Page();
+page[page.length - 1].update = function() { UpdateBaseRotate(); DisableBaseRequired(); };
+page[page.length - 1].validate = function() { EnableBaseRequired(); return true; };
+
+var base = ["999999", "666666", "999966", "666633"];
+
+var baseHIcon0 = new Array(base.length);
+var baseHEnd0 = new Array(base.length);
+var baseHIcon1 = new Array(base.length);
+var baseHEnd1 = new Array(base.length);
+
+var baseVIcon0 = new Array(base.length);
+var baseVEnd0 = new Array(base.length);
+var baseVIcon1 = new Array(base.length);
+var baseVEnd1 = new Array(base.length);
+
+for (i = 0; i < base.length; i++)
+{
+	baseHIcon0[i] = new Image();
+	baseHIcon0[i].src = "image/base/" + base[i] + "/H/icon0.png";
+	baseHEnd0[i] = new Image();
+	baseHEnd0[i].src = "image/base/" + base[i] + "/H/end0.png";
+	baseHIcon1[i] = new Image();
+	baseHIcon1[i].src = "image/base/" + base[i] + "/H/icon1.png";
+	baseHEnd1[i] = new Image();
+	baseHEnd1[i].src = "image/base/" + base[i] + "/H/end1.png";
+
+	baseVIcon0[i] = new Image();
+	baseVIcon0[i].src = "image/base/" + base[i] + "/V/icon0.png";
+	baseVEnd0[i] = new Image();
+	baseVEnd0[i].src = "image/base/" + base[i] + "/V/end0.png";
+	baseVIcon1[i] = new Image();
+	baseVIcon1[i].src = "image/base/" + base[i] + "/V/icon1.png";
+	baseVEnd1[i] = new Image();
+	baseVEnd1[i].src = "image/base/" + base[i] + "/V/end1.png";
+}
+
+function ChangeBase(i)
+{
+	if (document.forms.customize.rotate.checked)
+		document.forms.customize["base-horizontal-" + i].checked = true;
+	else
+		document.forms.customize["base-vertical-" + i].checked = true;
+	document.forms.customize.base.value = base[i];
+}
+
+function ChangeDimensions()
+{
+	if (document.forms.customize.rotate.checked)
+		document.forms.customize.dimensions.value = "22 x " + String(Number(document.forms.customize.size.value) + 25) + " pixels (W x H).";
+	else
+		document.forms.customize.dimensions.value = String(Number(document.forms.customize.size.value) + 25) + " x 22 pixels (W x H).";
+}
+
+function UpdateBaseRotate()
+{
+	document.getElementById("horizontal").style.display = document.forms.customize.rotate.checked ? "none" : "";
+	document.getElementById("vertical").style.display = document.forms.customize.rotate.checked ? "" : "none";
+
+	UpdateBaseFlip();
+	UpdateBaseSize();
+}
+
+function UpdateBaseFlip()
+{
+	if (document.forms.customize.flip.checked)
+	{
+		if (document.forms.customize.rotate.checked)
+		{
+			for (i = 0; i < base.length; i++)
+			{
+				document.getElementById("top-" + base[i]).style.height = "3px";
+				document.getElementById("bottom-" + base[i]).style.height = "22px";
+				document.getElementById("top-" + base[i]).style.backgroundImage = "url(" + baseVEnd1[i].src + ")";
+				document.getElementById("bottom-" + base[i]).style.backgroundImage = "url(" + baseVIcon1[i].src + ")";
+			}
+		}
+		else
+		{
+			for (i = 0; i < base.length; i++)
+			{
+				document.getElementById("left-" + base[i]).style.width = "3px";
+				document.getElementById("right-" + base[i]).style.width = "22px";
+				document.getElementById("left-" + base[i]).style.backgroundImage = "url(" + baseHEnd1[i].src + ")";
+				document.getElementById("right-" + base[i]).style.backgroundImage = "url(" + baseHIcon1[i].src + ")";
+			}
+		}
+	}
+	else
+	{
+		if (document.forms.customize.rotate.checked)
+		{
+			for (i = 0; i < base.length; i++)
+			{
+				document.getElementById("top-" + base[i]).style.height = "22px";
+				document.getElementById("bottom-" + base[i]).style.height = "3px";
+				document.getElementById("top-" + base[i]).style.backgroundImage = "url(" + baseVIcon0[i].src + ")";
+				document.getElementById("bottom-" + base[i]).style.backgroundImage = "url(" + baseVEnd0[i].src + ")";
+			}
+		}
+		else
+		{
+			for (i = 0; i < base.length; i++)
+			{
+				document.getElementById("left-" + base[i]).style.width = "22px";
+				document.getElementById("right-" + base[i]).style.width = "3px";
+				document.getElementById("left-" + base[i]).style.backgroundImage = "url(" + baseHIcon0[i].src + ")";
+				document.getElementById("right-" + base[i]).style.backgroundImage = "url(" + baseHEnd0[i].src + ")";
+			}
+		}
+	}
+}
+
+function UpdateBaseSize()
+{
+	if (document.forms.customize.rotate.checked)
+	{
+		for (i = 0; i < base.length; i++)
+		{
+			document.getElementById("middle-" + base[i]).style.height = Number(document.forms.customize.size.value);
+		}
+	}
+	else
+	{
+		for (i = 0; i < base.length; i++)
+		{
+			document.getElementById("center-" + base[i]).style.width = Number(document.forms.customize.size.value);
+		}
+	}
+}
+
+function DisableBaseRequired()
+{
+	if (document.forms.customize["_size"].value == "*") document.forms.customize.size.disabled = true;
+	if (document.forms.customize["_rotate"].value == "*") document.forms.customize.rotate.disabled = true;
+	if (document.forms.customize["_flip"].value == "*") document.forms.customize.flip.disabled = true;
+}
+
+function EnableBaseRequired()
+{
+	if (document.forms.customize["_size"].value == "*") document.forms.customize.size.disabled = false;
+	if (document.forms.customize["_rotate"].value == "*") document.forms.customize.rotate.disabled = false;
+	if (document.forms.customize["_flip"].value == "*") document.forms.customize.flip.disabled = false;
+}
+
+page[page.length] = new Page();
+page[page.length - 1].update = function() { InitializeLayout(); UpdateLayout(); UpdateTabs(); UpdateDimensions(); DisableLayoutRequired(); };
+page[page.length - 1].validate = function() { EnableLayoutRequired(); return ValidateTabs(true); };
+
+var number = new Array(8);
+for (i = 0; i < 8; i++)
+{
+	number[i] = new Image(5, 7);
+	number[i].src = "image/" + (Number(i) + 1) + ".png";
+}
+
+function InitializeLayout()
+{
+	if (document.forms.customize.rotate.checked)
+	{
+		for (var row = 1; row <= 8; row++)
+		{
+			for (var col = 1; col <= 8; col++)
+			{
+				document.getElementById("layout-" + col + row).style.width = "9px";
+				document.getElementById("layout-" + col + row).style.height = "45px";
+			}
+		}
+	}
+	else
+	{
+		for (var row = 1; row <= 8; row++)
+		{
+			for (var col = 1; col <= 8; col++)
+			{
+				document.getElementById("layout-" + col + row).style.width = "45px";
+				document.getElementById("layout-" + col + row).style.height = "9px";
+			}
+		}
+	}
+}
+
+function UpdateLayout()
+{
+	var count = 0;
+	for (var row = 1; row <= 8; row++)
+	{
+		if (row <= document.forms.customize.rows.value)
+		{
+			document.getElementById("layout-row-" + row).style.display = "";
+			for (var col = 1; col <= 8; col++)
+			{
+				if (col <= document.forms.customize.cols.value)
+				{
+					document.getElementById("layout-" + col + row).style.backgroundColor = "#333333";
+					document.getElementById("layout-image-" + col + row).src = number[count++].src;
+				}
+				else
+				{
+					document.getElementById("layout-" + col + row).style.backgroundColor = "#FFFFFF";
+					document.getElementById("layout-image-" + col + row).src = "image/blank.png";
+				}
+			}
+		}
+		else
+		{
+			document.getElementById("layout-row-" + row).style.display = "none";
+		}
+	}
+}
+
+function UpdateTabs()
+{
+	document.forms.customize.pages.disabled = !document.getElementById("useTabs").checked;
+	document.getElementById("tab-warning").style.display = document.getElementById("oneTab").checked ? "" : "none";
+}
+
+function ChangeLayout()
+{
+	document.forms.customize.cols.value = String(document.forms.customize.layout.value).charAt(0);
+	document.forms.customize.rows.value = String(document.forms.customize.layout.value).charAt(2);
+	document.forms.customize.count.value = Number(document.forms.customize.cols.value) * Number(document.forms.customize.rows.value);
+
+	UpdateLayout();
+	document.getElementById("layout-alert").style.display = ValidateTabs(false) ? "none" : "";
+}
+
+function ChangeTabs()
+{
+	document.forms.customize.tabs.value = document.getElementById("useTabs").checked ? document.forms.customize.pages.value : 
+		(document.getElementById("oneTab").checked ? 1 : 0);
+
+	UpdateTabs();
+	document.getElementById("layout-alert").style.display = ValidateTabs(false) ? "none" : "";
+}
+
+function ValidateTabs(dialog)
+{
+	if (document.forms.customize.tabs.value > 1 && Number(document.forms.customize.count.value) * Number(document.forms.customize.tabs.value) > 12)
+	{
+		if (dialog) alert("Please decrease the number of pages or the number of timers per page.\n\nSingle page: can have up to 8 timers\n2 tabbed pages: can have up to 6 timers per page\n3 tabbed pages: can have up to 4 timers per page\n4 tabbed pages: can have up to 3 timers per page");
+		return false;
+	}
+
+	return true;
+}
+
+function UpdateDimensions()
+{
+	var width = document.forms.customize.rotate.checked ? 22 : (Number(document.forms.customize.size.value) + 25);
+	var height = document.forms.customize.rotate.checked ? (Number(document.forms.customize.size.value) + 25) : 22;
+	
+	width += Number(document.forms.customize.spacing.value);
+	height += Number(document.forms.customize.spacing.value);
+	
+	width *= Number(document.forms.customize.cols.value);
+	height *= Number(document.forms.customize.rows.value);
+	
+	width -= Number(document.forms.customize.spacing.value);
+	height -= Number(document.forms.customize.spacing.value);
+	
+	if (document.forms.customize.tabs.value > 1) height += 22;
+
+	document.forms.customize["dimensions-all"].value = width + " x " + height + " pixels (W x H).";
+}
+
+function DisableLayoutRequired()
+{
+	if (document.forms.customize["_layout"].value == "*") document.forms.customize.layout.disabled = true;
+	if (document.forms.customize["_spacing"].value == "*") document.forms.customize.spacing.disabled = true;
+}
+
+function EnableLayoutRequired()
+{
+	if (document.forms.customize["_layout"].value == "*") document.forms.customize.layout.disabled = false;
+	if (document.forms.customize["_spacing"].value == "*") document.forms.customize.spacing.disabled = false;
+}
+
+page[page.length] = new Page();
+page[page.length - 1].update = function() { UpdateTimers(); UpdateReverse(); UpdateSections(); };
+page[page.length - 1].validate = function() { return ValidateTimers(); };
+
+function Edit(t)
+{
+	document.forms.customize.edit.value = t;
+	LoadData(t);
+	
+	UpdateTimers();
+	scrollTo(0, 0);
+}
+
+function OK()
+{
+	if (ValidateEdit())
+	{
+		SaveData(document.forms.customize.edit.value);
+		document.forms.customize.edit.value = "";
+		
+		UpdateTimers();
+		scrollTo(0, 0);
+	}
+}
+
+function UpdateTimer(t)
+{
+	document.getElementById("color-" + t).style.backgroundColor = "#" + document.forms.customize["color." + t].value;
+	
+	document.getElementById("standard-" + t).style.display = document.forms.customize["marker." + t].value == "1" ? "" : "none";
+	document.getElementById("split-" + t).style.display = document.forms.customize["marker." + t].value == "2" ? "" : "none";
+
+	document.images["icon-" + t].src = "image/icon/" + document.forms.customize["icon-tga." + t].value + "/" +
+		String(document.forms.customize["icon-x." + t].value) + String(document.forms.customize["icon-y." + t].value) + ".png";
+}
+
+function UpdateOverview()
+{
+	var tab = ["A", "B", "C", "D"];
+	var pages = document.forms.customize.tabs.value;
+	if (pages == 0) pages = 1;
+
+	document.getElementById("tab-0").style.display = (document.forms.customize.tabs.value == 0) ? "none" : "";
+	for (var p = 0; p < pages; p++)
+	{
+		if (p > 0)
+			document.getElementById("tab-" + p).style.display = "";
+		for (var t = 1; t <= document.forms.customize.count.value; t++)
+		{
+			if (t > 1)
+				document.getElementById("timer-" + tab[p] + t).style.display = "";
+				
+			UpdateTimer(tab[p] + t);
+		}
+		if (t <= 8 && (p + 1) * t <= 12)
+			document.getElementById("timer-" + tab[p] + t).style.display = "none";
+	}
+	if (pages < 4)
+		document.getElementById("tab-" + pages).style.display = "none";
+}
+
+function UpdateTimers()
+{
+	if (document.forms.customize.edit.value == "")
+	{
+		document.forms.customize.back.style.display = document.forms.customize.next.style.display = "";
+		document.forms.customize.style.display = "";
+		document.getElementById("edit-view").style.display = "none";
+		UpdateOverview();
+	}
+	else
+	{
+		document.forms.customize.back.style.display = document.forms.customize.next.style.display = "none";
+		document.forms.customize.style.display = "none";
+		document.getElementById("edit-view").style.display = "";
+		UpdateEdit();
+	}
+}
+
+function ValidateTab(tab)
+{
+	var name = document.forms.customize["tab." + tab].value;
+	var pattern = /^[!-~]([!-~ ]{0,10}[!-~])?$/;
+
+	if (pattern.test(name))
+		return true;
+
+	alert("Please enter a different tab name. Rules:\n- name must contain between 1 and 12 characters\n- only use characters found on a standard US keyboard\n- name cannot begin or end with a space");
+	document.forms.customize["tab." + tab].select();
+	return false;
+}
+
+function ValidateTimers()
+{
+	var tab = ["A", "B", "C", "D"];
+	var pages = document.forms.customize.tabs.value;
+	if (pages == 0) pages = 1;
+	
+	if (document.forms.customize.tabs.value > 0)
+	{
+		for (p = 0; p < pages; p++)
+		{
+			if (!ValidateTab(tab[p]))
+				return false;
+		}
+	}
+	
+	for (p = 0; p < pages; p++)
+	{
+		for (t = 1; t <= document.forms.customize.count.value; t++)
+		{
+			if (document.forms.customize["duration." + tab[p] + t].value == 0)
+			{
+				alert("All timers must have durations greater than 0:00:00.\nPlease edit your timer properties accordingly.");
+				return false;
+			}
+		}
+	}
+	
+	return true;
+}
+
+function UpdateReverse()
+{
+	document.getElementById("forward-H").style.display = document.getElementById("reverse-H").style.display = document.forms.customize.rotate.checked ? "none" : "";
+	document.getElementById("forward-V").style.display = document.getElementById("reverse-V").style.display = document.forms.customize.rotate.checked ? "" : "none";
+}
+
+
+page[page.length] = new Page();
+page[page.length - 1].update = function() { Preview(); }
+
+var color = [
+	"660000", "663300",
+	"666600", "336600",
+	"006600", "006633",
+	"006666", "003366",
+	"000066", "330066",
+	"660066", "660033"];
+	
+var colorBarH = new Array(color.length);
+var colorBarV = new Array(color.length);
+var colorsLoaded = false;
+function LoadColors()
+{
+	if (colorsLoaded) return;
+	colorsLoaded = true;
+	for (i = 0; i < color.length; i++)
+	{
+		colorBarH[i] = new Image(1, 16);
+		colorBarH[i].src = "image/color/H/" + color[i] + ".png";
+		colorBarV[i] = new Image(16, 1);
+		colorBarV[i].src = "image/color/V/" + color[i] + ".png";
+	}
+}
+
+var doc, rotate, flip;
+
+function w(x) { return (document.forms.customize.rotate.checked ? "height" : "width") + ": " + x + "px;"; }
+function h(y) { return (document.forms.customize.rotate.checked ? "width" : "height") + ": " + y + "px;"; }
+function W(x) { return " " + (document.forms.customize.rotate.checked ? "HEIGHT" : "WIDTH") + "=" + x; }
+function H(y) { return " " + (document.forms.customize.rotate.checked ? "WIDTH" : "HEIGHT") + "=" + y; }
+
+function RandomOffset()
+{
+	return Math.floor(Math.random() * ((document.forms.customize.size.value - 6) / 2)) * 2;
+}
+
+function none() { }
+
+function Preview()
+{
+	rotate = document.forms.customize.rotate.checked ? "V" : "H";
+
+	var preview = document.getElementById("preview");
+	
+	var height = document.forms.customize.rotate.checked ? (Number(document.forms.customize.size.value) + 25) : 22;
+	height += Number(document.forms.customize.spacing.value);
+	height *= Number(document.forms.customize.rows.value);
+	height += Number(document.forms.customize.spacing.value);
+	height += 37 + (document.forms.customize.tabs.value > 0 ? 23 : 0) + 16;
+	preview.style.height = height + "px";
+	
+	if (preview.contentWindow)
+		doc = preview.contentWindow.document;
+	else if (preview.contentDocument)
+		doc = preview.contentDocument;
+	else if (document.frames["preview"])
+		doc = document.frames["preview"].document;
+	else
+	{
+		alert("The preview is not supported by your browser, and will not be shown.");
+		return;
+	}
+
+	doc.open("text/html", "replace");
+	
+	doc.writeln('<HTML><HEAD>');
+	
+	doc.writeln('<STYLE TYPE="text/css">');
+	doc.writeln('BODY { margin-left: 8px; margin-top: 8px; margin-right: 8px; margin-bottom: 0px; background-color: #000000; }');
+	if (document.forms.customize.tabs.value > 0)
+	{
+		var highlight = new Object;
+		highlight["666666"] = "999999";
+		highlight["999999"] = "CCCCCC";
+		highlight["666633"] = "999966";
+		highlight["999966"] = "CCCC99";
+	
+		doc.writeln('BODY, TD, INPUT, SELECT { font-family: Arial; font-size: 11px; }');
+		doc.writeln('A { text-decoration: none; } A.active { color: #' + highlight[document.forms.customize.base.value] + '; } A.inactive { color: #' + document.forms.customize.base.value + '; }');
+	}
+	doc.writeln('</STYLE>');
+	
+	if (document.forms.customize.tabs.value > 0)
+	{
+		doc.writeln('<SCRIPT TYPE="text/javascript">');
+		doc.writeln('var tab = "A";');
+		doc.writeln('function ShowTab(t) { if (tab == t) return; document.getElementById("tab-" + tab).style.display = "none"; document.getElementById("link-" + tab).className = "inactive"; tab = t; document.getElementById("tab-" + tab).style.display = ""; document.getElementById("link-" + tab).className = "active"; }');
+		doc.writeln('</SCR' + 'IPT>');
+	}
+	
+	doc.writeln('</HEAD><BODY>');
+	
+	doc.writeln('<TABLE BORDER=0 CELLSPACING=8 CELLPADDING=0>');
+	
+	// tab stuff
+	var tab = ["A"];
+	if (document.forms.customize.tabs.value > 1) tab.push("B");
+	if (document.forms.customize.tabs.value > 2) tab.push("C");
+	if (document.forms.customize.tabs.value > 3) tab.push("D");
+	
+	if (document.forms.customize.tabs.value > 0)
+	{
+		doc.writeln('<TR>');
+		for (var p = 0; p < tab.length; p++)
+		{
+			doc.writeln('<TD ALIGN=center><A ID="link-' + tab[p] + '" CLASS="' + (p == 0 ? "active" : "inactive") + '" HREF="javascript:ShowTab(\'' + tab[p] + '\')">' + document.forms.customize["tab." + tab[p]].value + '</A></TD>');
+		}
+		doc.writeln('</TR>');
+	}
+	
+	doc.writeln('<TR><TD COLSPAN=' + tab.length + '>');
+	
+	for (var p = 0; p < tab.length; p++)
+	{
+		var t = 0;
+		doc.writeln('<TABLE ID="tab-' + tab[p] + '" BORDER=0 CELLSPACING=' + document.forms.customize.spacing.value + ' CELLPADDING=0' + (p == 0 ? '' : ' STYLE="display: none"') + '>');
+		for (var row = 0; row < document.forms.customize.rows.value; row++)
+		{
+			doc.writeln('<TR>')
+			for (var col = 0; col < document.forms.customize.cols.value; col++)
+			{
+				doc.writeln('<TD>')
+				PreviewTimer(tab[p] + (++t));
+				doc.writeln('</TD>')
+			}
+			doc.writeln('</TR>')
+		}
+		doc.writeln('</TABLE>');
+	}
+	
+	doc.writeln('</TD></TR>');
+		
+	var width = document.forms.customize.rotate.checked ? 22 : (Number(document.forms.customize.size.value) + 25);
+	width += Number(document.forms.customize.spacing.value);
+	width *= Number(document.forms.customize.cols.value);
+	width += Number(document.forms.customize.spacing.value);
+	doc.writeln('<TR><TD COLSPAN=' + tab.length + '><IMG SRC="image/blank.png" WIDTH=' + width + ' HEIGHT=1></TD></TR>');
+//	doc.writeln('<IMG SRC="image/blank.png" WIDTH=' + width + ' HEIGHT=1>');
+
+	doc.writeln('</TABLE>');
+	doc.writeln('</BODY></HTML>');
+	
+	doc.close();
+}
+
+function PreviewTimer(timer)
+{
+	doc.writeln('<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>');
+	doc.writeln('<TR>');
+	
+	if (document.forms.customize.flip.checked)
+	{
+		doc.writeln('<TD STYLE="' + w(3) + h(22) + 'background-image: url(image/base/' + document.forms.customize.base.value + '/' + rotate + '/end1.png)"></TD>');
+	}
+	else
+	{
+		doc.write('<TD STYLE="' + w(22) + h(22) + 'background-image: url(image/base/' + document.forms.customize.base.value + '/' + rotate + '/icon0.png)" ALIGN=center VALIGN=middle>');
+		PreviewIcon(timer);
+		doc.writeln('</TD>');
+	}
+		
+	if (document.forms.customize.rotate.checked) doc.writeln('	</TR><TR>');
+
+	doc.writeln('<TD STYLE="' + w(document.forms.customize.size.value) + h(22) + 'background-image: url(image/base/' + document.forms.customize.base.value + '/' + rotate + '/bar.png)">');
+	PreviewBar(timer);		
+	doc.writeln('</TD>');
+		
+	if (document.forms.customize.rotate.checked) doc.writeln('</TR><TR>');
+
+	if (document.forms.customize.flip.checked)
+	{
+		doc.write('<TD STYLE="' + w(22) + h(22) + 'background-image: url(image/base/' + document.forms.customize.base.value + '/' + rotate + '/icon1.png)" ALIGN=center VALIGN=middle>');
+		PreviewIcon(timer);
+		doc.writeln('</TD>');
+	}
+	else
+	{
+		doc.writeln('<TD STYLE="' + w(3) + h(22) + 'background-image: url(image/base/' + document.forms.customize.base.value + '/' + rotate + '/end0.png)"></TD>');
+	}
+	
+	doc.writeln('</TR>');
+	doc.writeln('</TABLE>');
+}
+
+function PreviewIcon(timer)
+{
+	doc.write('<A HREF="javascript:parent.none()" TITLE="' + document.forms.customize["label." + timer].value + '" ONMOUSEOVER="status=\'\'; return true">');
+	doc.write('<IMG BORDER=0 WIDTH=16 HEIGHT=16 SRC="image/icon/' + document.forms.customize["icon-tga." + timer].value + '/' + document.forms.customize["icon-x." + timer].value + document.forms.customize["icon-y." + timer].value + '.png">');
+	doc.write('</A>');
+}
+
+function PreviewBar(timer)
+{
+	var markerA = RandomOffset();
+	var markerB = document.forms.customize["marker." + timer].value == "2" ? RandomOffset() : markerA;
+
+	doc.writeln('<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=100% HEIGHT=100%>');
+	doc.writeln('<TR>');
+
+	doc.write('<TD STYLE="' + h(3) + '" ALIGN=left VALIGN=top>');
+	if (markerA) doc.write('<IMG SRC="image/blank.png"' + W(markerA) + H(3) + '>');
+	doc.write('<IMG SRC="image/base/' + document.forms.customize.base.value + '/' + rotate + '/markerA_.png"' + W(8) + H(3) + '>');
+	doc.writeln('</TD>');
+		
+	if (!document.forms.customize.rotate.checked) doc.writeln('</TR><TR>');
+		
+	doc.writeln('<TD STYLE="' + h(16) + 'background-image: url(image/color/' + rotate + '/' + document.forms.customize["color." + timer].value + '.png)" ALIGN=left VALIGN=top>');
+	PreviewColor(timer, markerA, markerB);
+	doc.writeln('</TD>');
+		
+	if (!document.forms.customize.rotate.checked) doc.writeln('</TR><TR>');
+		
+	doc.write('<TD STYLE="' + h(3) + '" ALIGN=left VALIGN=top>')
+	if (markerB) doc.write('<IMG SRC="image/blank.png"' + W(markerB) + H(3) + '>');
+	doc.write('<IMG SRC="image/base/' + document.forms.customize.base.value + '/' + rotate + '/markerB_.png"' + W(8) + H(3) + '>');
+	doc.writeln('</TD>');
+		
+	doc.writeln('</TR>');
+	doc.writeln('</TABLE>');
+}
+
+function PreviewColor(timer, markerA, markerB)
+{
+	var dot = RandomOffset();
+
+	doc.writeln('<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=100% HEIGHT=100%>');
+	doc.writeln('<TR>');
+
+	doc.write('<TD STYLE="' + h(4) + '" ALIGN=left VALIGN=top>');
+	if (markerA) doc.write('<IMG SRC="image/blank.png" ' + W(markerA) + H(4) + '>');
+	doc.write('<IMG SRC="image/base/' + document.forms.customize.base.value + '/' + rotate + '/markerA.png"' + W(8) + H(4) + '>');
+	doc.writeln('</TD>');
+		
+	if (!document.forms.customize.rotate.checked) doc.writeln('</TR><TR>');
+		
+	doc.write('<TD STYLE="' + h(8) + 'background-image: url(image/base/' + document.forms.customize.base.value + '/' + rotate + '/bar' + (dot % 16) + '.png)" ALIGN=left VALIGN=top>');
+	if (dot) doc.write('<IMG SRC="image/blank.png"' + W(dot) + H(8) + '>');
+	doc.write('<IMG SRC="image/base/' + document.forms.customize.base.value + '/' + rotate + '/dot.png"' + W(8) + H(8) + '>');
+	doc.writeln('</TD>');
+
+	if (!document.forms.customize.rotate.checked) doc.writeln('</TR><TR>');
+		
+	doc.write('<TD STYLE="' + h(4) + '" ALIGN=left VALIGN=top>');
+	if (markerB) doc.write('<IMG SRC="image/blank.png" ' + W(markerB) + H(4) + '>');
+	doc.write('<IMG SRC="image/base/' + document.forms.customize.base.value + '/' + rotate + '/markerB.png"' + W(8) + H(4) + '>');
+	doc.writeln('</TD>');
+		
+	doc.writeln('</TR>');
+	doc.writeln('</TABLE>');
+}
+
+
+function UpdatePage()
+{
+	document.forms.customize.back.style.display = Number(document.forms.customize.page.value) == 0 ? "none" : "";
+	document.getElementById("IE").style.display = Number(document.forms.customize.page.value) == 0 ? "" : "none";
+	document.forms.customize.next.style.display = Number(document.forms.customize.page.value) == (page.length - 1) ? "none" : "";
+	document.forms.customize.download.style.display = Number(document.forms.customize.page.value) == (page.length - 1) ? "" : "none";
+
+	document.getElementById("page" + document.forms.customize.page.value).style.display = "";
+	page[Number(document.forms.customize.page.value)].update();
+}
+
+function Back()
+{
+	if (Number(document.forms.customize.page.value) > 0)
+	{
+		document.getElementById("page" + document.forms.customize.page.value).style.display = "none";
+		document.forms.customize.page.value = Number(document.forms.customize.page.value) - 1;
+		UpdatePage();
+		scrollTo(0, 0);
+	}
+}
+
+function Next()
+{
+	if (Number(document.forms.customize.page.value) < page.length - 1 && page[Number(document.forms.customize.page.value)].validate())
+	{
+		document.getElementById("page" + document.forms.customize.page.value).style.display = "none";
+		document.forms.customize.page.value = Number(document.forms.customize.page.value) + 1;
+		UpdatePage();
+		scrollTo(0, 0);
+	}
+}
+
+function UpdateForm()
+{
+	document.getElementById("loading").style.display = "none";
+	UpdatePage();
+}
+
+function ValidateName()
+{
+	var name = document.forms.edit["name"].value;
+	var pattern = /^[!-~]([!-~ ]{0,30}[!-~])?$/;
+
+	if (pattern.test(name))
+		return true;
+
+	alert("Please enter a different name. Rules:\n- name must contain between 1 and 32 characters\n- only use characters found on a standard US keyboard\n- name cannot begin or end with a space");
+	document.forms.edit["name"].select();
+	return false;
+}
+
+function ValidateDuration()
+{
+	if (document.forms.edit["hours"].value > 0 ||
+		document.forms.edit["minutes"].value > 0 ||
+		document.forms.edit["seconds"].value > 0)
+		return true;
+		
+	alert("Please enter a duration greater than 0:00:00.");
+	return false;
+}
+
+var icons = new Array(34);
+var iconsLoaded = false;
+function LoadIcons()
+{
+	if (iconsLoaded) return;
+	iconsLoaded = true;
+	for (i = 0; i < 34; i++)
+	{
+		icons[i] = new Image(240, 240);
+		if (i < 7)
+			icons[i].src = "image/icon/Spells0" + (Number(i) + 1) + ".png";
+		else
+			icons[i].src = "image/icon/dragitem" + (Number(i) - 6) + ".png";
+	}
+}
+
+function ChangeIcon(x, y)
+{
+	if (document.forms.edit["tga"].value == "Spells07")
+	{
+		if (x > 0 || y > 0)
+			return;
+	}
+	else if (document.forms.edit["tga"].value == "dragitem21")
+	{
+		if (x == 1 && y == 4)
+			return;
+	}
+	else if (document.forms.edit["tga"].value == "dragitem27")
+	{
+		if ((x == 4 && y >= 3) || x == 5)
+			return;
+	}
+
+	document.forms.edit["icon-tga"].value = document.forms.edit["tga"].value;
+	document.forms.edit["icon-x"].value = x;
+	document.forms.edit["icon-y"].value = y;
+
+	UpdateIcon();
+}
+
+function UpdateIcons()
+{
+	document.images["edit-icons"].src = "image/icon/" + document.forms.edit["tga"].value + ".png";
+}
+
+function LoadData(t)
+{
+	// close calculator if open
+	if (document.forms.edit.calc.value == "<< Calculator")
+		ToggleCalc();
+
+	// label
+	var label = String(document.forms.customize["label." + t].value);
+	document.forms.edit["name"].value = label.substr(0, label.length - 10);
+	
+	// duration
+	var duration = Number(document.forms.customize["duration." + t].value);
+	document.forms.edit["hours"].value = Math.floor(duration / 3600);
+	document.forms.edit["minutes"].value = Math.floor((duration % 3600) / 60);
+	document.forms.edit["seconds"].value = duration % 60;
+
+	// color
+	document.getElementById("edit-color-" + document.forms.customize["color." + t].value).checked = true;
+	
+	// marker
+	document.getElementById("edit-marker-" + document.forms.customize["marker." + t].value).checked = true;
+	
+	// icon
+	document.forms.edit["icon-tga"].value = document.forms.customize["icon-tga." + t].value;
+	document.forms.edit["icon-x"].value = document.forms.customize["icon-x." + t].value;
+	document.forms.edit["icon-y"].value = document.forms.customize["icon-y." + t].value;
+}
+
+function SaveData(t)
+{
+	// label	
+	document.forms.customize["label." + t].value =
+		document.forms.edit["name"].value + " (" +
+		document.forms.edit["hours"].value + ":" +
+		(document.forms.edit["minutes"].value < 10 ? "0" : "") + document.forms.edit["minutes"].value + ":" +
+		(document.forms.edit["seconds"].value < 10 ? "0" : "") + document.forms.edit["seconds"].value + ")";
+
+	// duration
+	document.forms.customize["duration." + t].value = 
+		Number(document.forms.edit["hours"].value * 3600) +
+		Number(document.forms.edit["minutes"].value * 60) +
+		Number(document.forms.edit["seconds"].value);
+
+	// color
+	for (i = 0; i < color.length; i++)
+	{
+		if (document.getElementById("edit-color-" + color[i]).checked)
+		{
+			document.forms.customize["color." + t].value = color[i];
+			break;
+		}
+	}
+	
+	// marker
+	document.forms.customize["marker." + t].value = document.getElementById("edit-marker-2").checked ? "2" : "1";
+	
+	// icon
+	document.forms.customize["icon-tga." + t].value = document.forms.edit["icon-tga"].value;
+	document.forms.customize["icon-x." + t].value = document.forms.edit["icon-x"].value;
+	document.forms.customize["icon-y." + t].value = document.forms.edit["icon-y"].value;
+}
+
+function UpdateIcon()
+{
+	// icon
+	document.images["edit-icon"].src = "image/icon/" + document.forms.edit["icon-tga"].value + "/" +
+		String(document.forms.edit["icon-x"].value) + String(document.forms.edit["icon-y"].value) + ".png";
+}
+
+function UpdateEdit()
+{
+	UpdateIcon();
+	UpdateIcons();
+}
+
+function ValidateEdit()
+{
+	return ValidateName() && ValidateDuration();
+}
+
+
+
+function ToggleCalc()
+{
+	if (document.forms.edit.calc.value == "Calculator >>")
+	{
+		document.forms.edit.calc.value = "<< Calculator";
+		document.getElementById("calc-view").style.display = "";
+		
+		UpdateModifier();
+		UpdateCalcModifier();
+		UpdateCalcSection();
+	}
+	else
+	{
+		document.forms.edit.calc.value = "Calculator >>";
+		document.getElementById("calc-view").style.display = "none";
+	}
+}
+
+function UpdateModifier()
+{
+	document.forms.edit["modifier-duration-aa"].disabled = document.forms.edit["modifier-duration-focus"].disabled =
+		document.forms.edit["modifier-reuse-aa"].selectedIndex != 0;
+
+	document.forms.edit["modifier-reuse-aa"].disabled =
+		document.forms.edit["modifier-duration-aa"].selectedIndex != 0 || document.forms.edit["modifier-duration-focus"].selectedIndex != 0;
+}
+
+function UpdateCalcModifier()
+{
+	document.forms.edit["calc-modifier"].disabled = (
+		document.forms.edit["base-hours"].value == 0 &&
+		document.forms.edit["base-minutes"].value == 0 &&
+		document.forms.edit["base-seconds"].value == 0) || (
+		document.forms.edit["modifier-duration-aa"].selectedIndex == 0 &&
+		document.forms.edit["modifier-duration-focus"].selectedIndex == 0 &&
+		document.forms.edit["modifier-reuse-aa"].selectedIndex == 0);
+}
+
+function UpdateCalcSection()
+{
+	document.forms.edit["calc-section"].disabled = (
+		document.forms.edit["section-minutes"].value == 0 &&
+		document.forms.edit["section-seconds"].value == 0);
+}
+
+function CalcModifier()
+{
+	var duration = 
+		Number(document.forms.edit["base-hours"].value * 3600) +
+		Number(document.forms.edit["base-minutes"].value * 60) +
+		Number(document.forms.edit["base-seconds"].value);
+
+	if (document.forms.edit["modifier-duration-aa"].selectedIndex != 0 || document.forms.edit["modifier-duration-focus"].selectedIndex != 0)
+	{
+		duration += Math.floor(duration * (Number(document.forms.edit["modifier-duration-aa"].value) + Number(document.forms.edit["modifier-duration-focus"].value)) / 100);
+	}
+	else if (document.forms.edit["modifier-reuse-aa"].selectedIndex != 0)
+	{
+		duration = Math.floor(Number(eval(String(duration) + String(document.forms.edit["modifier-reuse-aa"].value))));
+		if (duration < 0)
+			duration = 0;
+	}
+
+	ApplyDuration(duration);
+}
+
+function CalcSection()
+{
+	var duration = 
+		Number(document.forms.edit["section-minutes"].value * 60) +
+		Number(document.forms.edit["section-seconds"].value);
+		
+	duration *= (Number(document.forms.customize.size.value) / 16);
+
+	ApplyDuration(duration);
+}
+
+function ApplyDuration(duration)
+{
+	document.forms.edit.hours.value = Math.floor(duration / 3600);
+	document.forms.edit.minutes.value = Math.floor((duration % 3600) / 60);
+	document.forms.edit.seconds.value = duration % 60;
+}
+
+function UpdateSections()
+{
+	document.forms.edit.sections.value = (document.forms.customize.size.value / 16) + " sections.";
+}
