@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>My Diary</title>
+<link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+
+<body>
+<div class="document">
+<div class="link">
+	<a href="../index.html">▲戻る</a> / 
+	<a href="./diary.cgi?mode=loglist">タイトル一覧</a> / 
+	<a href="./diary.cgi?mode=search">ログ検索</a> / 
+<a href="./diary.cgi?mode=past">過去ログ</a> / 
+	<a href="./diary.cgi?mode=admin">管理者用</a>
+</div>
+<div align="right">
+Access 05593
+</div>
+<div class="title">
+<h1>My Diary</h1>
+	～ 日々の喜怒哀楽をつづった日記帳 ～<br>
+	<br>
+</div>
+<table align="center">
+	<tr>
+		<td valign="top">
+<table border="1" class="table">
+	<tr>
+		<th colspan="7" height="30" class="table_head"><a href="./diary.cgi?exec=move&year=2004&month=5" title="5月に移動">&lt;&lt;</a> <a href="./diary.cgi?year=2004&month=6" title="2004年6月の日記を一覧表示">2004年 6月</a> <a href="./diary.cgi?exec=move&year=2004&month=7" title="7月に移動">&gt;&gt;</a></th>
+	</tr>
+	<tr>
+<td align="center" width="25" height="30" class="table_data">
+<span style="color:#FF0000;">日</span>
+</td>
+<td align="center" width="25" height="30" class="table_data">
+<span style="color:#000000;">月</span>
+</td>
+<td align="center" width="25" height="30" class="table_data">
+<span style="color:#000000;">火</span>
+</td>
+<td align="center" width="25" height="30" class="table_data">
+<span style="color:#000000;">水</span>
+</td>
+<td align="center" width="25" height="30" class="table_data">
+<span style="color:#000000;">木</span>
+</td>
+<td align="center" width="25" height="30" class="table_data">
+<span style="color:#000000;">金</span>
+</td>
+<td align="center" width="25" height="30" class="table_data">
+<span style="color:#0000FF;">土</span>
+</td>
+</tr><tr><td align="center" height="40" class="table_data">-</td>
+<td align="center" height="40" class="table_data">-</td>
+<td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">1</span>
+<br><a href="./diary.cgi?date=20040601" title="日記を表示">■</a>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">2</span>
+<br><a href="./diary.cgi?date=20040602" title="日記を表示">■</a>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">3</span>
+<br><a href="./diary.cgi?date=20040603" title="日記を表示">■</a>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">4</span>
+</td><td align="center" valign="top" height="40" class="table_data" style="background-color:#EEEEEE;"><span style="color:#0000FF;">5</span>
+</td></tr><tr><td align="center" valign="top" height="40" class="table_data"><span style="color:#FF0000;">6</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">7</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">8</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">9</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">10</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">11</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#0000FF;">12</span>
+</td></tr><tr><td align="center" valign="top" height="40" class="table_data"><span style="color:#FF0000;">13</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">14</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">15</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">16</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">17</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">18</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#0000FF;">19</span>
+</td></tr><tr><td align="center" valign="top" height="40" class="table_data"><span style="color:#FF0000;">20</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">21</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">22</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">23</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">24</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">25</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#0000FF;">26</span>
+</td></tr><tr><td align="center" valign="top" height="40" class="table_data"><span style="color:#FF0000;">27</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">28</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">29</span>
+</td><td align="center" valign="top" height="40" class="table_data"><span style="color:#000000;">30</span>
+</td><td align="center" height="40" class="table_data">-</td>
+<td align="center" height="40" class="table_data">-</td>
+<td align="center" height="40" class="table_data">-</td>
+</tr><tr><td align="center" height="40" class="table_data">-</td>
+<td align="center" height="40" class="table_data">-</td>
+<td align="center" height="40" class="table_data">-</td>
+<td align="center" height="40" class="table_data">-</td>
+<td align="center" height="40" class="table_data">-</td>
+<td align="center" height="40" class="table_data">-</td>
+<td align="center" height="40" class="table_data">-</td>
+</tr></table>
+<p class="navi"><a href="./diary.cgi?exec=move&year=2004&month=5">&lt;&lt; 前の月</a>
+ / <a href="./diary.cgi?exec=move&year=2004&month=7">次の月 &gt;&gt;</a>
+</p>
+<div align="center">
+	<form action="./diary.cgi" method="post" name="form" enctype="multipart/form-data">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="exec" value="move">
+<select name="year">
+<option value="2003">2003年</option>
+<option value="2004" selected>2004年</option>
+<option value="2005">2005年</option>
+</select>
+<select name="month">
+<option value="1">1月</option>
+<option value="2">2月</option>
+<option value="3">3月</option>
+<option value="4">4月</option>
+<option value="5">5月</option>
+<option value="6" selected>6月</option>
+<option value="7">7月</option>
+<option value="8">8月</option>
+<option value="9">9月</option>
+<option value="10">10月</option>
+<option value="11">11月</option>
+<option value="12">12月</option>
+</select>
+		<input type="submit" value="表示" class="submit">
+	</form>
+</div>
+<table width="100%" border="1" class="table">
+	<tr>
+		<td class="table_head">■ <strong>更新履歴</strong></td>
+	</tr>
+	<tr>
+		<td class="table_data">
+<a href="./diary.cgi?no=124">2004/06/03</a> <span style="color:#FF0000;">New!</span><br>最近の出来事<br><br>
+<a href="./diary.cgi?no=123">2004/06/02</a> <br>ＳｏＥからお友達紹介メールが<br><br>
+<a href="./diary.cgi?no=122">2004/06/01</a> <br>Groupトライアルも終盤に<br><br>
+<a href="./diary.cgi?no=121">2004/05/31</a> <br>IKKI3で時間切れ<br><br>
+<a href="./diary.cgi?no=120">2004/05/30</a> <br>初心者にも分かるGODガイド募集中ｗ<br><br>
+			<br>
+			<div class="navi"><a href="./diary.cgi?exec=move&record=1">↓以前の日記</a></div>
+		</td>
+	</tr>
+</table>
+			</td>
+			<td valign="top">
+<div class="log">
+	<table class="log_table">
+		<tr>
+			<td class="log_table_head">■ <strong>最近の出来事</strong> <span style="color:#FF0000;">New!</span></td>
+			<td align="right" class="log_table_head">2004年06月03日（木）</td>
+		</tr>
+		<tr>
+			<td class="log_table_data" colspan="2">
+				<br>
+				<table width="100%">
+					<tr>
+						<td class="log_table_indent">&nbsp;</td>
+						<td><a href="javascript:void(0)" onClick="window.open('./diary.cgi?mode=img&file=124.jpg&width=285&height=229&byte=18,053', 'Img', 'width=285,height=229')"><img src="./upfile/124.jpg" alt="18,053 byte" border="0" width="200" height="160"></a><br><br>6/2 VPN網ダウン PM3:00～PM8:00くらい<br><br>EQのパッチと同じくらいダウンです。<br>バックアップも逝っちゃってたみたい・・・嗚呼。。<br>働かせていただいている会社でもIP電話が逝って<br>しまって、それはもう大変でした（まじ<br>なんでも起きる時代なんだなと危機管理って言葉が<br>ザルのように通り過ぎていきます。<br>とりあえず、自分の危機管理はNorrath限定にしとき<br>ますｗ<br><br>6/2 EQパッチ<br><br>あの後、TimeRaidしたとこから、RZだけまだ直って<br>ないよーとだとか。。他は直ってるのかな？ｗ<br>RZも壁使わずになんとかKillできたので、RZだけ<br>おかしくても問題なさげ。<br>GODのTASKクエストがちんぷんかんぷんで、すごく<br>やばいｗ<br>なんとかクリアしないと先に進めないのでがんばら<br>ないと・・<br><br>6/3 16日からマックグランハンバーガー発売<br><br>大人のハンバーガー（本格的な味なんだそうです。<br>テスト販売でも好評だったみたい。<br>個人的に、お昼食べる時間が無いときでどうしても<br>食事抜かしたくないとき、マックいきますね。<br>牛肉のパディン、あんまおいしくない気がすると<br>思ったら、（聞いた話でアレですが）、狂牛病とかで<br>生産者から十分に牛肉が確保できなくなるのは困る<br>ので、アメリカだけでなく、オーストラリアとか<br>どの牛肉を使っても味が変わらないように調整したん<br>だかなんだか。<br>それにしても、食べてみたげｗ
+</td>
+						<td class="log_table_indent">&nbsp;</td>
+					</tr>
+				</table>
+				<br>
+				<div align="right"> </div>
+			</td>
+		</tr>
+	</table>
+</div>
+<br>
+<div class="log">
+	<table class="log_table">
+		<tr>
+			<td class="log_table_head">■ <strong>ＳｏＥからお友達紹介メールが</strong> </td>
+			<td align="right" class="log_table_head">2004年06月02日（水）</td>
+		</tr>
+		<tr>
+			<td class="log_table_data" colspan="2">
+				<br>
+				<table width="100%">
+					<tr>
+						<td class="log_table_indent">&nbsp;</td>
+						<td><a href="javascript:void(0)" onClick="window.open('./diary.cgi?mode=img&file=123.jpg&width=1073&height=645&byte=57,785', 'Img', 'width=1073,height=645')"><img src="./upfile/123.jpg" alt="57,785 byte" border="0" width="200" height="120"></a><br><br>お友達にEQを紹介するとき、CDROMを貸してあげて<br>セットアップできるみたい。<br><br>アカウントキーは３０日間のトライアルのもので、<br>メールにはコレ使ってねと（ほにゃらら）書いて<br>あるのを打てば使えるみたい。<br><br>３０日後、続ける人はクレジットカードやゲーム<br>タイムなどを購入して続けてねって書いてあります。<br><br>----<br><br>こないだ、EQはもっと座敷を下げるべきだという<br>コメント記事を読ませてもらいました。<br><br>新しいチュートリアルや、今回のお友達紹介メール<br>からして、着実に計画が動いているのが感じられ<br>ます。。<br><br>むーーん、日本サーバも増えちゃったりして・・
+</td>
+						<td class="log_table_indent">&nbsp;</td>
+					</tr>
+				</table>
+				<br>
+				<div align="right"> </div>
+			</td>
+		</tr>
+	</table>
+</div>
+<br>
+<div class="log">
+	<table class="log_table">
+		<tr>
+			<td class="log_table_head">■ <strong>Groupトライアルも終盤に</strong> </td>
+			<td align="right" class="log_table_head">2004年06月01日（火）</td>
+		</tr>
+		<tr>
+			<td class="log_table_data" colspan="2">
+				<br>
+				<table width="100%">
+					<tr>
+						<td class="log_table_indent">&nbsp;</td>
+						<td><a href="javascript:void(0)" onClick="window.open('./diary.cgi?mode=img&file=122.jpg&width=1135&height=480&byte=90,846', 'Img', 'width=1135,height=480')"><img src="./upfile/122.jpg" alt="90,846 byte" border="0" width="200" height="84"></a><br><br>昨日は遅い時間のため中段してしまった（しても<br>らった汗）Ikkiz3ですが、改善点もいくつか見出す<br>ことができました。<br>それを活かして今日はIkkiz3へ再チャレンジです。<br><br>ボスがだんだん増えていくIkkizシリーズですが<br>今回は３匹のボスを相手にします。<br>雑魚のリポップが早いので、早く３匹を倒したいと<br>ころですが、Discを使わないとヒールが追いつかない<br>こともあって時間の調節に苦労しました。
+</td>
+						<td class="log_table_indent">&nbsp;</td>
+					</tr>
+				</table>
+				<br>
+				<div align="right"> </div>
+			</td>
+		</tr>
+	</table>
+</div>
+<br>
+<div class="log">
+	<table class="log_table">
+		<tr>
+			<td class="log_table_head">■ <strong>IKKI3で時間切れ</strong> </td>
+			<td align="right" class="log_table_head">2004年05月31日（月）</td>
+		</tr>
+		<tr>
+			<td class="log_table_data" colspan="2">
+				<br>
+				<table width="100%">
+					<tr>
+						<td class="log_table_indent">&nbsp;</td>
+						<td><a href="javascript:void(0)" onClick="window.open('./diary.cgi?mode=img&file=121.jpg&width=1078&height=769&byte=95,530', 'Img', 'width=1078,height=769')"><img src="./upfile/121.jpg" alt="95,530 byte" border="0" width="200" height="142"></a><br><br>本当はもっとやりたかったんですが<br>さすがに2時30分過ぎるとPlane of Realが<br>恐ろしいのでやむなく中段、ごめんなさい。
+</td>
+						<td class="log_table_indent">&nbsp;</td>
+					</tr>
+				</table>
+				<br>
+				<div align="right"> </div>
+			</td>
+		</tr>
+	</table>
+</div>
+<br>
+<div class="log">
+	<table class="log_table">
+		<tr>
+			<td class="log_table_head">■ <strong>初心者にも分かるGODガイド募集中ｗ</strong> </td>
+			<td align="right" class="log_table_head">2004年05月30日（日）</td>
+		</tr>
+		<tr>
+			<td class="log_table_data" colspan="2">
+				<br>
+				<table width="100%">
+					<tr>
+						<td class="log_table_indent">&nbsp;</td>
+						<td><a href="javascript:void(0)" onClick="window.open('./diary.cgi?mode=img&file=120.jpg&width=1151&height=654&byte=79,352', 'Img', 'width=1151,height=654')"><img src="./upfile/120.jpg" alt="79,352 byte" border="0" width="200" height="113"></a><br><br>VEX/TIPT の作り方分からない人ーと呼ばれたら<br>手を上げてしまいます。<br><br>どういうストーリーでNPCに話しかける必要があるのか<br>フラグの仕組みがどうなっているのか、最近そういっ<br>た話題にまったく付いていけず、慌てふためいている<br>このごろです。<br><br>結構Ｗｅｂは見てるほうなんですけどね、探し方が<br>ヘタっぽいです（汗<br><br>それで今日は、仕掛けのわかってないままIKKI2にチャ<br>レンジです。　もう言われるままにゾーンしている感<br>じが・・これではいけませんね。汗<br><br>----<br><br>IKKI2は、KODマップで一番右下の建物からゾーンしま<br>す。入り口よりちょい左にネコNPCがいて、彼女から<br>トライアルを受けれるみたい。<br>クリアしたときにルートしたクエストアイテムをこの<br>ネコNPCに渡すとトライアル完了っぽいです。<br><br>ゾーンすると、IKKI1と同じマップがでてきますが、<br>ボスがいる部屋が変わります。<br><br>ここには２匹のボスがいて、２つの隣り合った部屋に<br>ポップしています。ボスの周りに７匹のはげ頭がいて<br>Killする毎にボスのＨＰがだんだん減っていって、<br>１４匹すべて殲滅するとボスのＨＰが１１％まで減っ<br>た状態で動き始めます。<br><br>ボスは片っ方だけKillしても、早い時間で復活してし<br>まうので、一度に２匹ともKillしないとだめみたいで<br>す。<br><br>この２匹のボスに同時にアタックをしかけるのですが<br>ＨＰが１１％といっても、ROG２人ついても２分近く<br>かかるのと、WARでDEF使っても470-750くらいのダメ<br>ージがものすごい速さで喰らうので、ヒーラーにも<br>かなり負担がかかります。<br><br>そこがIKKI1よりとても難しいと感じました。<br><br>IKKI2のほうが簡単だよ、という話は多分PATCH前の話<br>じゃないかなぁ、と思ったりします。
+</td>
+						<td class="log_table_indent">&nbsp;</td>
+					</tr>
+				</table>
+				<br>
+				<div align="right"> </div>
+			</td>
+		</tr>
+	</table>
+</div>
+<br>
+<p class="navi"><a href="./diary.cgi?page=1">↓以前の日記</a></p>
+		</td>
+	</tr>
+</table>
+<hr>
+<!-- Copyright -->
+<div align="center">- <a href="http://www.big.or.jp/~knight/" target="_blank">Web Diary Professional ver 2.23</a> -</div>
+</div>
+</body>
+
+</html>
