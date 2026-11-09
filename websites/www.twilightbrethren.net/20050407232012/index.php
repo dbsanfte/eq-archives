@@ -1,0 +1,581 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="top" href="phpBB2/index.php?sid=34d97f47614e5d450bcac93d6ee2aa47" title="Twilight Brethren Forum Index" />
+<link rel="search" href="phpBB2/search.php?sid=34d97f47614e5d450bcac93d6ee2aa47" title="Search" />
+<link rel="help" href="phpBB2/faq.php?sid=34d97f47614e5d450bcac93d6ee2aa47" title="FAQ" />
+<link rel="author" href="phpBB2/memberlist.php?sid=34d97f47614e5d450bcac93d6ee2aa47" title="Memberlist" />
+
+
+
+
+<base href="http://www.twilightbrethren.net/phpBB2/">
+
+<title>Twilight Brethren :: News</title>
+<!-- link rel="stylesheet" href="templates/subRebel/subRebel.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The subRebel Theme for phpBB version 2+
+  Created by Karl Tauber
+  http://www.ktauber.com
+
+  Based on the original subSilver Theme for phpBB version 2+
+  Created by subBlue design
+  http://www.subBlue.com
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #CCCCCC;
+	scrollbar-face-color: #E5E5E5;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #E5E5E5;
+	scrollbar-3dlight-color: #E5E5E5;
+	scrollbar-arrow-color:  #000066;
+	scrollbar-track-color: #E5E5E5;
+	scrollbar-darkshadow-color: #000066;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #000066; }
+a:hover		{ text-decoration: underline; color : #CC0000; }
+hr	{ height: 0px; border: solid #E5E5E5 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #FFFFFF; border: 1px #000066 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #FFFFFF; border: 2px #000066 solid; }
+.forumline2	{ background-color: #FFFFFF; border: 2px #000066 solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #E5E5E5; }
+td.row2	{ background-color: #E5E5E5; }
+td.row3	{ background-color: #E5E5E5; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #FFFFFF;
+		background-image: url(templates/subRebel/images/cellpic2.jpg);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #FFFFFF; font-size: 11px; font-weight : bold;
+	background-color: #000066; height: 25px;
+	background-image: url(templates/subRebel/images/cellpic3.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/subRebel/images/cellpic1.gif);
+			background-color:#E5E5E5; border: #FFFFFF; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #FFFFFF; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E5E5E5; border: #FFFFFF; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 1px 1px 0px 1px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 1px 0px 1px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 1px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 1px; }
+th.thBottom,td.catBottom  { border-width: 0px 1px 1px 1px; }
+th.thTop	 { border-width: 1px 0px 0px 0px; }
+th.thCornerL { border-width: 1px 0px 0px 1px; }
+th.thCornerR { border-width: 1px 1px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 22px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-heigh	<th width="50" class="thTop" nowrap="nowrap">&nbsp;Posts&nbsp;</th>t : 120%; color : #000000;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #000000; }
+a.gen,a.genmed,a.gensmall { color: #000066; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #CC0000; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #000000 }
+a.mainmenu		{ text-decoration: none; color : #000066;  }
+a.mainmenu:hover{ text-decoration: underline; color : #CC0000; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #000066}
+a.cattitle		{ text-decoration: none; color : #000066; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #000066; }
+a.forumlink 	{ text-decoration: none; color : #000066; }
+a.forumlink:hover{ text-decoration: underline; color : #CC0000; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #000000;}
+a.nav			{ text-decoration: none; color : #000066; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #000000; }
+a.topictitle:link   { text-decoration: none; color : #000066; }
+a.topictitle:visited { text-decoration: none; color : #666666; }
+a.topictitle:hover	{ text-decoration: underline; color : #CC0000; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #000000; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px}
+a.postlink:link	{ text-decoration: none; color : #000066 }
+a.postlink:visited { text-decoration: none; color : #666666; }
+a.postlink:hover { text-decoration: underline; color : #CC0000}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #CC0000;
+	background-color: #FAFAFA; border: #E5E5E5; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #FAFAFA; border: #E5E5E5; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #000000; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #000000;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #000000;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #FFFFFF;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #E5E5E5;
+	color : #000000;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #FAFAFA;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #FAFAFA;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #E5E5E5; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/subRebel/formIE.css");
+-->
+</style>
+<script type="text/javascript" src="templates/rollout.js"></script>
+</head>
+<body bgcolor="#CCCCCC" text="#000000" link="#000066" vlink="#666666">
+
+<a name="top"></a>
+
+<table width="100%" cellspacing="0" cellpadding="10" border="0" align="center">
+	<tr>
+		<td class="bodyline"><table width="100%" cellspacing="1" cellpadding="2" border="0">
+	<tr>
+		<td align="center" class="forumline">
+
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" class="forumline">
+				<tr>
+				<td align="center" colspan="5" bgcolor="black"><a href="index.php?sid=34d97f47614e5d450bcac93d6ee2aa47"><img src="/images/brlogo.gif" border="0" alt="Twilight Brethren Forum Index" vspace="1" /></a></td></tr>
+
+				<tr><td bgcolor="black" align="center"><a href="/index.php"><img src="/buttons/homebutt.gif" border="0"></a></td>
+				<td bgcolor="black" align="center"><a href="/charter.php"><img src="/buttons/charterbutt.gif" border="0"></a></td>
+				<td bgcolor="black" align="center"><a href="/phpBB2/index.php"><img src="/buttons/forumsbutt.gif" border="0"></a></td>
+				<td bgcolor="black" align="center"><a href="/members.php"><img src="/buttons/memblistbutt.gif" border="0"></a></td>
+				<td bgcolor="black" align="center"><a href="/links.php"><img src="/buttons/linksbutt.gif" border="0"></a></td></tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td align="center" width="100%" valign="middle">
+			<table cellspacing="0" cellpadding="2" border="0">
+				<tr>
+					<td align="center" valign="top" nowrap="nowrap"><span class="mainmenu">&nbsp;<a href="faq.php?sid=34d97f47614e5d450bcac93d6ee2aa47" class="mainmenu"><img src="templates/subRebel/images/icon_mini_faq.gif" width="12" height="13" border="0" alt="FAQ" hspace="3" />FAQ</a></span><span class="mainmenu">&nbsp; &nbsp;<a href="search.php?sid=34d97f47614e5d450bcac93d6ee2aa47" class="mainmenu"><img src="templates/subRebel/images/icon_mini_search.gif" width="12" height="13" border="0" alt="Search" hspace="3" />Search</a>&nbsp; &nbsp;<a href="memberlist.php?sid=34d97f47614e5d450bcac93d6ee2aa47" class="mainmenu"><img src="templates/subRebel/images/icon_mini_members.gif" width="12" height="13" border="0" alt="Memberlist" hspace="3" />Memberlist</a>&nbsp; &nbsp;<a href="groupcp.php?sid=34d97f47614e5d450bcac93d6ee2aa47" class="mainmenu"><img src="templates/subRebel/images/icon_mini_groups.gif" width="12" height="13" border="0" alt="Usergroups" hspace="3" />Usergroups</a>&nbsp;
+						&nbsp;<a href="profile.php?mode=register&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="mainmenu"><img src="templates/subRebel/images/icon_mini_register.gif" width="12" height="13" border="0" alt="Register" hspace="3" />Register</a></span>&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td height="25" align="center" valign="top" nowrap="nowrap"><span class="mainmenu">&nbsp;<a href="profile.php?mode=editprofile&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="mainmenu"><img src="templates/subRebel/images/icon_mini_profile.gif" width="12" height="13" border="0" alt="Profile" hspace="3" />Profile</a>&nbsp; &nbsp;<a href="privmsg.php?folder=inbox&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="mainmenu"><img src="templates/subRebel/images/icon_mini_message.gif" width="12" height="13" border="0" alt="Log in to check your private messages" hspace="3" />Log in to check your private messages</a>&nbsp; &nbsp;<a href="login.php?sid=34d97f47614e5d450bcac93d6ee2aa47" class="mainmenu"><img src="templates/subRebel/images/icon_mini_login.gif" width="12" height="13" border="0" alt="Log in" hspace="3" />Log in</a>&nbsp;</span></td>
+					</tr>
+				</table></td>
+			</tr>
+</table>
+
+<br />
+
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1997&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">New forum!</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">Added a World of Warcraft forum to the website for all your warcrafty chat!
+<br />
+
+<br />
+I've moved all the posts I could see at a glance - poke me if any others need moving.
+<br />
+
+<br />
+Teg</span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=9&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Tegoutz</a> on 02-14 5:18AM (58 reads)<br>(<b><a href="viewtopic.php?t=1997&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=13012#13012&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">0 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1984&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">The future of the Twilight Brethren website...</a></span></td>
+	</tr>
+	<tr>
+		<td class="row2" style="border-bottom: solid 1px #FFFFFF"><table cellspacing="0" cellpadding="2" border="0" align="center">
+			<tr>
+				<td colspan="4" align="center"><span class="gen"><b>What should we do with the website now?</b></span></td>
+			</tr>
+			<tr>
+				<td align="center"><table cellspacing="0" cellpadding="2" border="0">
+					<tr>
+						<td><span class="gen"></span></td>
+						<td><table cellspacing="0" cellpadding="0" border="0">
+							<tr>
+								<td><img src="templates/subSilver/images/vote_lcap.gif" width="4" alt="" height="12" /></td>
+								<td><img src="templates/subRebel/images/voting_bar.gif" width="183" height="12" alt="89%" /></td>
+								<td><img src="templates/subSilver/images/vote_rcap.gif" width="4" alt="" height="12" /></td>
+							</tr>
+						</table></td>
+						<td align="center"><b><span class="gen">&nbsp;89%&nbsp;</span></b></td>
+						<td align="center"><span class="gen">[ 17 ]</span></td>
+					</tr>
+					<tr>
+						<td><span class="gen"></span></td>
+						<td><table cellspacing="0" cellpadding="0" border="0">
+							<tr>
+								<td><img src="templates/subSilver/images/vote_lcap.gif" width="4" alt="" height="12" /></td>
+								<td><img src="templates/subRebel/images/voting_bar.gif" width="22" height="12" alt="10%" /></td>
+								<td><img src="templates/subSilver/images/vote_rcap.gif" width="4" alt="" height="12" /></td>
+							</tr>
+						</table></td>
+						<td align="center"><b><span class="gen">&nbsp;10%&nbsp;</span></b></td>
+						<td align="center"><span class="gen">[ 2 ]</span></td>
+					</tr>
+					<tr>
+						<td><span class="gen"></span></td>
+						<td><table cellspacing="0" cellpadding="0" border="0">
+							<tr>
+								<td><img src="templates/subSilver/images/vote_lcap.gif" width="4" alt="" height="12" /></td>
+								<td><img src="templates/subRebel/images/voting_bar.gif" width="0" height="12" alt="0%" /></td>
+								<td><img src="templates/subSilver/images/vote_rcap.gif" width="4" alt="" height="12" /></td>
+							</tr>
+						</table></td>
+						<td align="center"><b><span class="gen">&nbsp;0%&nbsp;</span></b></td>
+						<td align="center"><span class="gen">[ 0 ]</span></td>
+					</tr>
+				</table></td>
+			</tr>
+			<tr>
+				<td colspan="4" align="center"><span class="gen"><b>Total Votes : 19</b></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">It seems to me that it's a bit of a misnomer to refer to the TB website as an Everquest 1 guild these days, because really I think more people play WoW/EQII now than EQ1, but still come back here!
+<br />
+
+<br />
+So, a poll for you all!</span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=9&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Tegoutz</a> on 02-09 6:05AM (211 reads)<br>(<b><a href="viewtopic.php?t=1984&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=12970#12970&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">6 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1927&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">The all new brethren!</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">The rumours were true! This evening the Freeport citizens formed their own branch of the Brethren, called the Dark Brethren.  This means the whole of Norrath is now available to the Brethren! 
+<br />
+
+<br />
+The evil founding members of Dark Brethren:
+<br />
+<img src="http://www.twilightbrethren.net/pics/darkb.jpg" border="0" />
+<br />
+
+<br />
+The good founding members of Twilight Brethren:
+<br />
+<img src="http://www.twilightbrethren.net/pics/twilightb.jpg" border="0" />[/img]</span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=9&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Tegoutz</a> on 12-09 4:06PM (309 reads)<br>(<b><a href="viewtopic.php?t=1927&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=12866#12866&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">4 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1924&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">www.twilightbrethren.net downtime</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">There will be some downtime this weekend on the forums so that maintenance can be carried out.  I'll try to keep it to a minimum  <img src="images/smiles/icon_lol.gif" alt="Laughing" border="0" /></span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=9&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Tegoutz</a> on 12-08 11:39PM (149 reads)<br>(<b><a href="viewtopic.php?t=1924&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=12568#12568&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">0 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1915&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">Twilight Brethren reborn in Everquest II!</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">500 years into the future, in a world shaken by cataclysm, some of Twilight Brethrens ancestors have found their way to the light of Qeynos, and reformed the guild of their forefathers!  
+<br />
+
+<br />
+There is word on the streets of Freeport that similar events will soon come to pass there also, so that once again the whole of Norrath will be the playing ground of the brethren!
+<br />
+
+<br />
+(I'll post a screenshot of the founding members later on =)</span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=9&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Tegoutz</a> on 12-05 11:39PM (166 reads)<br>(<b><a href="viewtopic.php?t=1915&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=12535#12535&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">0 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1878&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">New Everquest 2 forum!</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">Because it seems a lot of us have started Everquest 2 I've created a separate forum for it - so it doesn't get mixed up with the other games - enjoy!</span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=9&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Tegoutz</a> on 11-14 11:14PM (214 reads)<br>(<b><a href="viewtopic.php?t=1878&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=12255#12255&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">0 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1805&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">Forum reshuffle!</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">I thought it was about time we had a bit of shuffling around of the forums. 
+<br />
+
+<br />
+Check out the 2 new forums!
+<br />
+
+<br />
+<span style="font-weight: bold">Other Games</span> - so we can keep track of who is playing what and when!
+<br />
+
+<br />
+<span style="font-weight: bold">Class Discussion</span> - a merged form of the old class discussion area - so that it stays a bit more active and keeps the page a bit slimmer!
+<br />
+
+<br />
+Let me know what you think!
+<br />
+
+<br />
+Enjoy!</span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=9&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Tegoutz</a> on 10-12 1:05PM (388 reads)<br>(<b><a href="viewtopic.php?t=1805&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=11861#11861&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">2 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1797&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">Welcome Teriden and Masantiz!</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">Sorry, I've been meaning to post this all week but work has been horrible, grr!  We have two new members who you've probably all met by now <img src="images/smiles/icon_smile.gif" alt="Smile" border="0" />  Welcome guys!</span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=6&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">maviscruet</a> on 10-08 2:54AM (203 reads)<br>(<b><a href="viewtopic.php?t=1797&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=11641#11641&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">0 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1651&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">New epic wizzie very soon!</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">Grats to Niccko who got his last epic piece in Fear last night!  Grats also to Morgram and I who got nice SK shields: makes up for the big golems not being up with our epic items <img src="images/smiles/icon_smile.gif" alt="Smile" border="0" /></span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=6&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">maviscruet</a> on 08-21 12:10PM (353 reads)<br>(<b><a href="viewtopic.php?t=1651&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=10860#10860&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">2 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1636&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">TB rock the Manaetic Prototypes</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">Thanks to Fed and Oly for organising an excellent bashing of the manaetic prototypes in PoI last night.  The first two dropped trash but the third one dropped some very nice priest gear <img src="images/smiles/icon_smile.gif" alt="Smile" border="0" />
+<br />
+
+<br />
+Bereg gets the raid hero award for giving up part of his birthday to come along: thanks to you too!</span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=6&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">maviscruet</a> on 08-16 3:08AM (314 reads)<br>(<b><a href="viewtopic.php?t=1636&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=10733#10733&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">1 comment</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1520&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">TB &gt; Torgiran Mines!</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">I would just like to thank Cam, Fed and Oly for leading a raid to Torgiran Mines Sunday evening, and congratulate eveyone on a job well done <img src="images/smiles/icon_smile.gif" alt="Smile" border="0" />
+<br />
+
+<br />
+I remember when we first went there when LoY was just being discovered and Overseer Wrank completely owned us. This time we managed to take down both Overseer Wrank and Overlord Ngrub and get some nice upgrades for some of our guild members.
+<br />
+
+<br />
+Special grats to Seaddora (Supple Black Gloves), Wenlass (Grobb Hide Sleaves), Lathlarien (Etched Zraxxthil Braxer), Ekacssa (Leggings of Duty) and Tindos (Hate Forged Mail) on their upgrades! 
+<br />
+
+<br />
+Hopefully pictures to follow
+<br />
+
+<br />
+Milli x</span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=34&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Milliana</a> on 07-11 12:48PM (648 reads)<br>(<b><a href="viewtopic.php?t=1520&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=10018#10018&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">6 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1415&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">BoT flag farming mission success</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">Thanks to everyone who came to PoS last night to get key parts.  Most of the nameds were up and lots of peeps got parts of their keys.  We'll be going back soon!
+<br />
+
+<br />
+I took some photos but they seem to be broken &lt;grumble&gt;</span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=6&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">maviscruet</a> on 06-13 1:22PM (521 reads)<br>(<b><a href="viewtopic.php?t=1415&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=9206#9206&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">3 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1382&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">Elektrosmog Goes to Nashville!</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">with the release of his first full-length album "Por Primera Vez" (translates to: "a poor swamp donkey named Vez stole my checking account, so i'm gonna sing about it") Elektrosmog is planning his US and European tours! Don't miss out!
+<br />
+
+<br />
+<img src="http://www.twilightbrethren.net/images/smog.jpg" border="0" /></span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=14&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Smoggy</a> on 06-06 7:37AM (853 reads)<br>(<b><a href="viewtopic.php?t=1382&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=8892#8892&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">6 comments</a>)</span></td>
+	</tr>
+</table></p>
+<p><table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle"><a href="viewtopic.php?t=1289&amp;sid=34d97f47614e5d450bcac93d6ee2aa47" class="cattitle">New news system!</a></span></td>
+	</tr>
+	<tr>
+		<td class="row1"><span class="postbody">As TB are aiming to have some exciting news soon with our adventures into PoP I thought it might be nice to be able to show them off, so welcome to the new news system!
+<br />
+
+<br />
+Go check out the sticky post in the News forum for details!
+<br />
+
+<br />
+Enjoy!</span><span class="gensmall"></span></td>
+	</tr>
+	<tr>
+		<td class="row2" align="center"><span class="gensmall">Posted by <a href="profile.php?mode=viewprofile&amp;id=9&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Tegoutz</a> on 05-16 12:14AM (370 reads)<br>(<b><a href="viewtopic.php?t=1289&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">Read more...</a></b> | <a href="viewtopic.php?p=8299#8299&amp;sid=34d97f47614e5d450bcac93d6ee2aa47">0 comments</a>)</span></td>
+	</tr>
+</table></p>
+
+<div align="center"><span class="copyright"><br /><br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the
+	Powered by phpBB 2.0.11 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected.
+
+	The phpBB Group : 2002
+// -->
+Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright">phpBB</a> 2.0.11 &copy; 2001, 2002 phpBB Group<br />subRebel style by <a href="http://www.ktauber.com/" target="_ktauber" class="copyright">ktauber</a><br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
+

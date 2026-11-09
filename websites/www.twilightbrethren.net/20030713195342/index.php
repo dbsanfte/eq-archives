@@ -1,0 +1,74 @@
+<html><head><title>Twilight Brethren Home</title></head>
+<body bgcolor="#000000" text=lightblue leftmargin="0" topmargin="0" marginheight="0" marginwidth="0" link=blue vlink=blue><basefont face=verdana size=1>
+<center>
+<table border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	  <td width=800 colspan=3>
+	     <img src=/images/brlogo.gif alt="Twilight Brethren Logo"><br>
+	  </td>
+	</tr>
+	<tr>
+	  <td width=800 height=10>
+	<!--     <img src="/images/1x1blk.gif" width=640 height=10><br> -->
+	  </td>
+	</tr>
+</table>
+	<!-- This table contains the content portion of the page. It is closed in footer.html -->
+
+	<table border="0"  cellpadding="0" cellspacing="0">
+	<tr>
+
+	<!-- Navbar cells -->
+	  <td width=140 bgcolor="black" valign="top">
+	      
+	      <a href="index.php"><img src="/buttons/homebutt.gif" border="0" width=130 height=20 alt="Home"></a><br>
+	      <img src="/images/1x1blk.gif" width=130 height=2><br>
+	      <a href="charter.php"><img src="/buttons/charterbutt.gif" border="0" width=130 height=20 alt="Charter"></a><br>
+	      <img src="/images/1x1blk.gif" width=130 height=2><br>
+<!--	      <a href="calendar/eventcalendar.pl"><img src="/buttons/calendarbutt.gif" border=0 width=130 height=20 alt="Event Calendar"></a><br>
+	      <img src="/images/1x1blk.gif" width=130 height=2><br> -->
+	      <a href="/phpBB2/index.php"><img src="/buttons/forumsbutt.gif" border="0" width=130 height=20 alt="Forums"></a><br>
+	      <img src="/images/1x1blk.gif" width=130 height=2><br>
+	      <a href="members.php"><img src="/buttons/memblistbutt.gif" border="0" width=130 height=20 alt="Member Database"></a><br>
+	      <img src="/images/1x1blk.gif" width=130 height=2><br>
+<!--	      <a href="contacts.php"><img src="/buttons/contactsbutt.gif" border="0" width=130 height=20 alt="Contacts"></a><br>
+	      <img src="/images/1x1blk.gif" width=130 height=2><br> -->
+<!--	      <a href="gallery/gallery.cgi"><img src="/buttons/gallerybutt.gif" border="0" width=130 height=20 alt="Screenshot Gallery"></a><br>
+	      <img src="/images/1x1blk.gif" width=130 height=2><br> -->
+	      <a href="cgi-bin/newspro/newspro.cgi"><img src="/buttons/newsbutt.gif" border="0" width=130 height=20 alt="Submit news"></a><br>
+	      <img src="/images/1x1blk.gif" width=130 height=2><br>
+	      <a href="links.php"><img src="/buttons/linksbutt.gif" border="0" width=130 height=20 alt="links"></a><b</a><br>
+	      <img src="/images/1x1blk.gif" width=130 height=2><br>
+<!--	      <a href="guides.shtml"><img src="/buttons/guidesbutt.gif" border="0" width=130 height=20 alt="Dungeon Guides"></a><br>
+	      <img src="/images/1x1blk.gif" width=130 height=2><br>
+	      <a href="articles.shtml"><img src="/buttons/artbutt.gif" border="0" width=130 height=20 alt="Articles"></a><br> -->
+<!--   <a href="chat.php"><img src="/buttons/chatbutt.gif" border="0" width=130 height=20 alt="Chat"></a><b</a><br>
+	      <img src="/images/1x1blk.gif" width=130 height=2><br> -->
+
+
+
+	      <strong><FONT size=-2>You are not logged in.<br><A HREF = "/cgi-bin/UltraBoard/UltraBoard.cgi?action=Login">Login</a></strong>	      </font>
+
+	  </td>
+	  <td width=5>
+	  <img src="/images/1x1blk.gif" width=5>
+	  <td width=525 bgcolor="black" valign=top>
+	<!-- End Navbar cells -->
+<img src="/images/newstop.gif"><br>
+	<!-- NP v3.8 -->
+	<a name="newsitem1052938289,13761,"></a>
+<p><strong><font color="#ff0000">New forum now the official forum.</font> </strong><small>Posted Wednesday, May 14, 2003 by <a href="mailto:webmaster@twilightbrethren.net">dangalak</a></small><br>I will change the forum button to go to the new ones and put up a link to the old ones so you can finish up any disscussions you need to. Don't start any new threads on the old one please. If you haven't done so yet, register with the new forums. Read the FAQ on the new ones so you no how to use them. I will be changing the member database section to use the new forums once we have group moderators all set up.</p>
+<a name="newsitem1051128342,31003,"></a>
+<p><strong><font color="#ff0000">New forum</font> </strong><small>Posted Wednesday, April 23, 2003 by <a href="mailto:webmaster@twilightbrethren.net">dangalak</a></small><br>I have installed the new forums. I'll be mucking around with the source code as the days go by so don't be surprised if you see some wierd looking pages occasionally. If you want to play with the new forums just click the TEST NEW FORUMS link over there on the menu. <---<br><br>Read the faq to get instructions on how to use phpBB to its fullest. (Link is near the top on any forum page)</p>
+<a name="newsitem1051048402,50449,"></a>
+<p><strong><font color="#ff0000">Changes to the site</font> </strong><small>Posted Tuesday, April 22, 2003 by <a href="mailto:webmaster@twilightbrethren.net">dangalak</a></small><br>The forum software is malfunctioning. New members are unable to register. Please post as a guest for now.<br><br>The forum software (UltraBoard) we have been using since the start of the site is no longer supported or being worked on. I believe the company has gone under. It is written in Perl, which I detest. I will be phasing out the old forums and we will be using phpBB2 for the new forums.<br><br>phpBB is open source and well supported with a large community. Unfortunately there is no converter available to move the old posts over or the user database. This gives us an opportunity to wipe the databases of ex-members and clean things up in general.<br><br>I will have to fix the member database to use the new forum's database. I will be wiping out the member database once this is done. After it's all working everyone will re-register with the new forums and then put their characters back into the database.<br><br>There will be some changes made to how the forum works. You will only be able to register as a guest. Then you will send an email or message to one of a group of officers to confirm that you are actually in the guild and they will put you into the appropriate group. Members of SOTO should have a delegated officer that can confirm their status as a member of their guild. This will enable us to have a secure forum to discuss upcoming raids privately.<br><br>More news will follow so keep an eye on the front page.<br><br>Thanks, Dangalak</p>
+ <i><small>News managed by <a href="http://www.amphibianweb.com/newspro/" target="_top">NewsPro</a>.</small></i><br> </font>
+  </td>
+  <td width=130>
+   </td>
+
+</tr>
+
+</table>
+</center>
+</body></html>
