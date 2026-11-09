@@ -1,0 +1,250 @@
+<HTML>
+<HEAD>
+	<TITLE>Ykz - Xev</TITLE>
+<STYLE>
+body	{background:black;margin: 0px;font-family: Verdana, Arial, sans-serif;color: white;}
+.blogtitle	{font-family: Verdana, Arial, sans-serif;color: white;font-size:36px;margin:2px;}
+.links	{font-family: Verdana, Arial, sans-serif;color: black;font-size:11px;}
+A.links:hover{color:white;}
+A	{font-weight:bold;text-decoration:none;}
+A:hover	{color:red;}
+.date	{font-family: Verdana, Arial, sans-serif;color: #FFB8A6;font-size:11px;font-weight:bold;}
+.posts	{font-family: Verdana, Arial, sans-serif;color: #DCD0CC;font-size:12px;}
+.byline	{font-family: Verdana, Arial, sans-serif;color: #CCCC99;font-size:11px;}
+
+TD { font-family: Verdana, Arial, sans-serif; font-size: 12px; color: #EEEEEE; }
+SELECT { FONT-FAMILY: Small Fonts; FONT-SIZE: 7pt; color: #EEEEEE; background-color: #000000; border-color: #000000; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;  }
+
+</STYLE>
+</HEAD>
+<script language="JavaScript">
+
+<!--
+
+function MM_swapImgRestore() { //v3.0
+
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+
+}
+
+
+
+function MM_preloadImages() { //v3.0
+
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+
+}
+
+
+
+function MM_findObj(n, d) { //v4.0
+
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+
+}
+
+
+
+function MM_swapImage() { //v3.0
+
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+
+}
+
+function owi(adresse1){
+  NewWindowA = window.open(adresse1,"PicWindow", "top=100,left=100,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=800,height=500");
+  NewWindowA.focus();
+  }
+
+//-->
+
+</script>
+</head>
+
+
+<body bgcolor="#000000" text="#CC6666" link="#FF9966" vlink="#996666" onLoad="MM_preloadImages('titles/iNews.gif','titles/iMembers.gif','titles/iForums.gif','titles/iCharter.gif','titles/iScreenshots.gif')">
+<img src="titles/maintitle.gif" width="300" height="109" align="left">
+<table width="361" border="0" height="74" cellpadding="1" cellspacing="1">
+  <tr> 
+    <td width="4" height="23">&nbsp;</td>
+    <td width="108" height="23"><a href="members_level.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('members','','titles/iMembers.gif',1)"><img name="members" border="0" src="titles/Members.gif" width="100" height="33"></a></td>
+    <td width="64" height="23">&nbsp;</td>
+    <td width="172" height="23"><a href="charter.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('charter','','titles/iCharter.gif',1)"><img name="charter" border="0" src="titles/Charter.gif" width="80" height="30"></a></td>
+  </tr>
+  <tr> 
+    <td width="4" height="10">&nbsp;</td>
+    <td width="108" height="10">&nbsp;</td>
+    <td width="64" height="10"><a href="index.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('news','','titles/iNews.gif',1)" ><img name="news" border="0" src="titles/News.gif" width="65" height="29"></a></td>
+    <td width="172" height="10">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="4">&nbsp;</td>
+    <td width="108"><a href="http://pub22.ezboard.com/byakuzaeverquest" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('forums','','titles/iForums.gif',1)" target="_parent"><img name="forums" border="0" src="titles/Forums.gif" width="85" height="28"></a></td>
+    <td width="64">&nbsp;</td>
+    <td width="172"><a href="screenshots.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('screenshots','','titles/iScreenshots.gif',1)"><img name="screenshots" border="0" src="titles/Screenshots.gif" width="120" height="29"></a></td>
+  </tr>
+</table><div class="page" style="width:730px; position:absolute; left:50px;" >
+<br>
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0"><TR><TD BGCOLOR="#666666"><A HREF="members.php?listing=Name">Name</A>&nbsp;</TD><TD BGCOLOR="#666666"><A HREF="members.php?listing=Status">Status</A>&nbsp;</TD><TD BGCOLOR="#666666"><A HREF="members.php?listing=Level">Level</A>&nbsp;</TD><TD BGCOLOR="#666666"><A HREF="members.php?listing=Class">Class</A>&nbsp;</TD><TD BGCOLOR="#666666"><A HREF="members.php?listing=Alts">Alts</A>&nbsp;</TD><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=14698')">Kaiy Lun &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=14698')">Leader &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=14698')">60 &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=14698')">Monk &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=14698')"> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Rukcus Rebelyell &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>58 &nbsp;&nbsp;</TD><TD>Bard &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Taeren &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>58 &nbsp;&nbsp;</TD><TD>Bard &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Sello &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Bard &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Kagara Beastlore &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>53 &nbsp;&nbsp;</TD><TD>Beastlord &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Ellana Bravehearted &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>58 &nbsp;&nbsp;</TD><TD>Cleric &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Koda Braveheart &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>59 &nbsp;&nbsp;</TD><TD>Cleric &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=172597')">Mallon Ta`Veren &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=172597')">Member &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=172597')">59 &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=172597')">Cleric &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=172597')"> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Dini Lifekeeper &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Cleric &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Faydar &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Cleric &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Ninina Asklepios &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Cleric &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Stax &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Cleric &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Temparus Tantrums &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Cleric &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Sinyena Soulshine &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>54 &nbsp;&nbsp;</TD><TD>Druid &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=113883')">Landale Palemoon &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=113883')">Member &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=113883')">55 &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=113883')">Druid &nbsp;&nbsp;</TD><TD><SELECT Name="Altchars"><OPTION>Weiden 15 Bard <OPTION>Tico 22 Rogue </SELECT></TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Seekr Mobwrangler &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Druid &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=173746')">Ayer Silvershade &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=173746')">Member &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=173746')">58 &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=173746')">Enchanter &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=173746')"> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Akuna &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>59 &nbsp;&nbsp;</TD><TD>Enchanter &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Thedosius Dreamtwister &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>59 &nbsp;&nbsp;</TD><TD>Enchanter &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=171625')">Fallor Elem`Fury &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=171625')">Member &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=171625')">56 &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=171625')">Magician &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=171625')"> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=91305')">Fyreflyte Wyndforce &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=91305')">Member &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=91305')">60 &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=91305')">Magician &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=91305')"> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Kiksar Kikstar &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>55 &nbsp;&nbsp;</TD><TD>Monk &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Murbid &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>56 &nbsp;&nbsp;</TD><TD>Monk &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Unkemup &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Monk &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Tumeldaraa &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>55 &nbsp;&nbsp;</TD><TD>Necromancer &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Wicht &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>56 &nbsp;&nbsp;</TD><TD>Necromancer &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Baator &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>51 &nbsp;&nbsp;</TD><TD>Paladin &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Katera Evilsbane &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>56 &nbsp;&nbsp;</TD><TD>Paladin &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=109853')">Jayz Dwarf &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=109853')">Member &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=109853')">60 &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=109853')">Paladin &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=109853')"> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Pendulum &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Paladin &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Lugus &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>55 &nbsp;&nbsp;</TD><TD>Ranger &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Linkwar &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>57 &nbsp;&nbsp;</TD><TD>Ranger &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Kinlin Endpoint &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>59 &nbsp;&nbsp;</TD><TD>Ranger &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=172340')">Xteria &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=172340')">Member &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=172340')">59 &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=172340')">Ranger &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=172340')"> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Bunnix Fufoo &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Ranger &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Mithous Aker &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Ranger &nbsp;&nbsp;</TD><TD><SELECT Name="Altchars"><OPTION>Mithoues 56 Enchanter </SELECT></TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Ikarus &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>53 &nbsp;&nbsp;</TD><TD>Rogue &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Hecs &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>55 &nbsp;&nbsp;</TD><TD>Rogue &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Drogoh Nyteblade &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>56 &nbsp;&nbsp;</TD><TD>Rogue &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Dunkkin &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>57 &nbsp;&nbsp;</TD><TD>Rogue &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Ariakus Nightbringer &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>59 &nbsp;&nbsp;</TD><TD>Rogue &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Xenomist &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Shadow Knight &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Qwantum Traveller &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>58 &nbsp;&nbsp;</TD><TD>Shaman &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Tebbun Bloodspiller &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>53 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Zoggs Brewchugger &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>54 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Bradd Nowell &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>55 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Rukobgar Spinebuster &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>58 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Gryndolf Grimblade &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Nagrach Von`Nagalot &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Sora Braveheart &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Warhornze Stealinyourface &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Arabella &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>55 &nbsp;&nbsp;</TD><TD>Wizard &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Mandrose &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>55 &nbsp;&nbsp;</TD><TD>Wizard &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Fyen &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Wizard &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Ubudn &nbsp;&nbsp;</TD><TD>Member &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Wizard &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Xixi &nbsp;&nbsp;</TD><TD>Officer &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Cleric &nbsp;&nbsp;</TD><TD><SELECT Name="Altchars"><OPTION>Candari 60 Enchanter </SELECT></TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=67339')">Pendarin Timberwolf &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=67339')">Officer &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=67339')">59 &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=67339')">Druid &nbsp;&nbsp;</TD><TD><SELECT Name="Altchars"><OPTION>Pend N`imh 31 Cleric </SELECT></TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Pobo Braveheart &nbsp;&nbsp;</TD><TD>Officer &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Druid &nbsp;&nbsp;</TD><TD><SELECT Name="Altchars"><OPTION>Irwin 56 Rogue </SELECT></TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=68658')">Kiyosa Moritani &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=68658')">Officer &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=68658')">60 &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=68658')">Enchanter &nbsp;&nbsp;</TD><TD onClick="javascript:owi('http://www.magelo.com/eq_view_profile.html?num=68658')"> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Jimon De`War &nbsp;&nbsp;</TD><TD>Officer &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Linudan Coomiw &nbsp;&nbsp;</TD><TD>Officer &nbsp;&nbsp;</TD><TD>60 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Briella &nbsp;&nbsp;</TD><TD>Trial Member &nbsp;&nbsp;</TD><TD>52 &nbsp;&nbsp;</TD><TD>Druid &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Yumbus Numbus &nbsp;&nbsp;</TD><TD>Trial Member &nbsp;&nbsp;</TD><TD>52 &nbsp;&nbsp;</TD><TD>Magician &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Tauvas &nbsp;&nbsp;</TD><TD>Trial Member &nbsp;&nbsp;</TD><TD>51 &nbsp;&nbsp;</TD><TD>Rogue &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Temujen &nbsp;&nbsp;</TD><TD>Trial Member &nbsp;&nbsp;</TD><TD>56 &nbsp;&nbsp;</TD><TD>Shaman &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#000000" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#000000';"><TD>Furrytoes &nbsp;&nbsp;</TD><TD>Trial Member &nbsp;&nbsp;</TD><TD>54 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR BGCOLOR="#333333" 
+			onMouseOver="this.bgColor='#663333';" 
+			onMouseOut="this.bgColor='#333333';"><TD>Nindapuss Dwarf &nbsp;&nbsp;</TD><TD>Trial Member &nbsp;&nbsp;</TD><TD>59 &nbsp;&nbsp;</TD><TD>Warrior &nbsp;&nbsp;</TD><TD> &nbsp;&nbsp;</TD></TR><TR><TD BGCOLOR="#666666" COLSPAN="7" ALIGN="CENTER"><FONT COLOR="#FFB8A6"><B>Total: 67 members</B></FONT></TD></TR><TR><TD COLSPAN="5" ALIGN="CENTER"><FONT SIZE="1"><I>Click on a row to view member profile (if available), or click on column heading to sort.</I></FONT></TD></TR></TABLE></DIV><P>&nbsp;
+</BODY>
+</HTML>
