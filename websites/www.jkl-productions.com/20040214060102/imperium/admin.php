@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>PHP-Nuke Powered Site - Administration Menu</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="EXPIRES" CONTENT="0">
+<META NAME="RESOURCE-TYPE" CONTENT="DOCUMENT">
+<META NAME="DISTRIBUTION" CONTENT="GLOBAL">
+<META NAME="AUTHOR" CONTENT="PHP-Nuke Powered Site">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) 2002 by PHP-Nuke Powered Site">
+<META NAME="KEYWORDS" CONTENT="News, news, New, new, Technology, technology, Headlines, headlines, Nuke, nuke, PHP-Nuke, phpnuke, php-nuke, Geek, geek, Geeks, geeks, Hacker, hacker, Hackers, hackers, Linux, linux, Windows, windows, Software, software, Download, download, Downloads, downloads, Free, FREE, free, Community, community, MP3, mp3, Forum, forum, Forums, forums, Bulletin, bulletin, Board, board, Boards, boards, PHP, php, Survey, survey, Kernel, kernel, Comment, comment, Comments, comments, Portal, portal, ODP, odp, Open, open, Open Source, OpenSource, Opensource, opensource, open source, Free Software, FreeSoftware, Freesoftware, free software, GNU, gnu, GPL, gpl, License, license, Unix, UNIX, *nix, unix, MySQL, mysql, SQL, sql, Database, DataBase, Blogs, blogs, Blog, blog, database, Mandrake, mandrake, Red Hat, RedHat, red hat, Slackware, slackware, SUSE, SuSE, suse, Debian, debian, Gnome, GNOME, gnome, Kde, KDE, kde, Enlightenment, enlightenment, Intercative, interactive, Programming, programming, Extreme, extreme, Game, game, Games, games, Web Site, web site, Weblog, WebLog, weblog, Guru, GURU, guru">
+<META NAME="DESCRIPTION" CONTENT="Your slogan here">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<META NAME="REVISIT-AFTER" CONTENT="1 DAYS">
+<META NAME="RATING" CONTENT="GENERAL">
+<META NAME="GENERATOR" CONTENT="PHP-Nuke 6.0 - Copyright 2002 by http://phpnuke.org">
+<LINK REL="StyleSheet" HREF="themes/DeepBlue/style/style.css" TYPE="text/css">
+
+
+
+
+
+</head>
+
+<body bgcolor="#0E3259" text="#000000" link="0000ff"><br><br><table border="0" cellpadding="0" cellspacing="0" width="840" align="center">
+<tr><td width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="840">
+<tr><td width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="840">
+<tr><td width="100%" height="88" bgcolor="#FFFFFF">
+<table border=0 width=100% cellpadding=0 cellspacing=0><tr><td align="left"><a href="index.php"><img border="0" src="themes/DeepBlue/images/logo.gif" alt="Welcome to OpenMax!" hspace="20"></a></td><td align="right"><img border="0" src="themes/DeepBlue/images/logo-graphic.gif" width=""></td></tr></table></td></tr>
+<tr><td width="100%" bgcolor="#000000" height="19" valign="bottom">
+<a href="index.php"><img border="0" src="themes/DeepBlue/images/home.gif" width="140" height="18"></a><a href="modules.php?name=Your_Account"><img border="0" src="themes/DeepBlue/images/account.gif" width="140" height="18"></a><a href="modules.php?name=Downloads"><img border="0" src="themes/DeepBlue/images/downloads.gif" width="140" height="18"></a><a href="modules.php?name=Submit_News"><img border="0" src="themes/DeepBlue/images/submit.gif" width="140" height="18"></a><a href="modules.php?name=Topics"><img border="0" src="themes/DeepBlue/images/topics.gif" width="140" height="18"></a><a href="modules.php?name=Top"><img border="0" src="themes/DeepBlue/images/top10.gif" width="140" height="18"></a></td></tr><tr><td width="100%" height="10" bgcolor="#d3e2ea">
+</td></tr></table>
+</td></tr><tr><td width="100%"><table width='100%' cellspacing='0' cellpadding='0' border='0'><tr><td bgcolor='#d3e2ea'>
+<br></td></tr></table><table width="840" cellpadding="0" bgcolor="d3e2ea" cellspacing="0" border="0">
+<tr valign="top">
+<td><img src="themes/DeepBlue/images/pixel.gif" width="6" height="1" border="0" alt=""></td>
+<td width="138" bgcolor="d3e2ea" valign="top">
+<table border="0" align="center" width="138" cellpadding="0" cellspacing="0"><tr><td background="themes/DeepBlue/images/table-title.gif" width="138" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FFFFFF"><b>Modules</b></font></td></tr><tr><td><img src="themes/DeepBlue/images/pixel.gif" width="100%" height="3"></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="138">
+<tr><td width="138" bgcolor="#000000">
+<table border="0" cellpadding="1" cellspacing="1" width="138">
+<tr><td width="138" bgcolor="#ffffff">
+<strong><big>&middot;</big></strong>&nbsp;<a href="index.php">Home</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="http://www.jkl-productions.com/imperium/phpbb" target="_blank">FORUMS</a><br>
+<strong><big>&middot;</big></strong>&nbsp<a href="http://www.jkl-productions.com/imperium/pps" target="_blank">PPS</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=AvantGo">AvantGo</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Downloads">Downloads</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Feedback">Feedback</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Journal">Journal</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Private_Messages">Private Messages</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Recommend_Us">Recommend Us</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Search">Search</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Statistics">Statistics</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Stories_Archive">Stories Archive</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Submit_News">Submit News</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Surveys">Surveys</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Topics">Topics</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Web_Links">Web Links</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=WebMail">WebMail</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Your_Account">Your Account</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Top">Top 10</a><br>
+</td></tr></table></td></tr></table><br><table border="0" align="center" width="138" cellpadding="0" cellspacing="0"><tr><td background="themes/DeepBlue/images/table-title.gif" width="138" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FFFFFF"><b>Who's Online</b></font></td></tr><tr><td><img src="themes/DeepBlue/images/pixel.gif" width="100%" height="3"></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="138">
+<tr><td width="138" bgcolor="#000000">
+<table border="0" cellpadding="1" cellspacing="1" width="138">
+<tr><td width="138" bgcolor="#ffffff">
+<center><font class="content">There are currently, 1 guest(s) and 0 member(s) that are online.<br><br>You are Anonymous user. You can register for free by clicking <a href="modules.php?name=Your_Account">here</a></font></center></td></tr></table></td></tr></table><br><table border="0" align="center" width="138" cellpadding="0" cellspacing="0"><tr><td background="themes/DeepBlue/images/table-title.gif" width="138" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FFFFFF"><b>Languages</b></font></td></tr><tr><td><img src="themes/DeepBlue/images/pixel.gif" width="100%" height="3"></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="138">
+<tr><td width="138" bgcolor="#000000">
+<table border="0" cellpadding="1" cellspacing="1" width="138">
+<tr><td width="138" bgcolor="#ffffff">
+<center><font class="content">Select Interface Language:<br><br></font><form action="index.php" method="get"><select name="newlanguage" onChange="top.location.href=this.options[this.selectedIndex].value"><option value="index.php?newlang=albanian" >Albanian</option>
+<option value="index.php?newlang=arabic" >Arabic</option>
+<option value="index.php?newlang=brazilian" >Brazilian</option>
+<option value="index.php?newlang=catala" >Catala</option>
+<option value="index.php?newlang=chinese" >Chinese</option>
+<option value="index.php?newlang=czech" >Czech</option>
+<option value="index.php?newlang=danish" >Danish</option>
+<option value="index.php?newlang=dutch" >Dutch</option>
+<option value="index.php?newlang=english"  selected>English</option>
+<option value="index.php?newlang=euskara" >Euskara</option>
+<option value="index.php?newlang=finnish" >Finnish</option>
+<option value="index.php?newlang=french" >French</option>
+<option value="index.php?newlang=galego" >Galego</option>
+<option value="index.php?newlang=german" >German</option>
+<option value="index.php?newlang=greek" >Greek</option>
+<option value="index.php?newlang=hungarian" >Hungarian</option>
+<option value="index.php?newlang=icelandic" >Icelandic</option>
+<option value="index.php?newlang=indonesian" >Indonesian</option>
+<option value="index.php?newlang=italian" >Italian</option>
+<option value="index.php?newlang=macedonian" >Macedonian</option>
+<option value="index.php?newlang=norwegian" >Norwegian</option>
+<option value="index.php?newlang=polish" >Polish</option>
+<option value="index.php?newlang=portuguese" >Portuguese</option>
+<option value="index.php?newlang=romanian" >Romanian</option>
+<option value="index.php?newlang=russian" >Russian</option>
+<option value="index.php?newlang=slovak" >Slovak</option>
+<option value="index.php?newlang=slovenian" >Slovenian</option>
+<option value="index.php?newlang=spanish" >Spanish</option>
+<option value="index.php?newlang=swedish" >Swedish</option>
+<option value="index.php?newlang=thai" >Thai</option>
+<option value="index.php?newlang=turkish" >Turkish</option>
+<option value="index.php?newlang=ukrainian" >Ukrainian</option>
+<option value="index.php?newlang=vietnamese" >Vietnamese</option>
+</select></form></center></td></tr></table></td></tr></table><br><table border="0" align="center" width="138" cellpadding="0" cellspacing="0"><tr><td background="themes/DeepBlue/images/table-title.gif" width="138" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FFFFFF"><b>Amazon</b></font></td></tr><tr><td><img src="themes/DeepBlue/images/pixel.gif" width="100%" height="3"></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="138">
+<tr><td width="138" bgcolor="#000000">
+<table border="0" cellpadding="1" cellspacing="1" width="138">
+<tr><td width="138" bgcolor="#ffffff">
+<br><center><a href="http://www.amazon.com/exec/obidos/ASIN/B00003CXXJ/phpnuke-20" target="_blank"><img src="images/amazon/B00003CXXJ.jpg" border="0" alt=""><br><br></center></td></tr></table></td></tr></table><br></td><td><img src="themes/DeepBlue/images/pixel.gif" width="10" height="1" border="0" alt=""></td><td width="100%">
+<table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#9cbee6"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="8" bgcolor="#ffffff"><tr><td>
+<center><font class="title"><b>Administration System Login</b></font></center></td></tr></table></td></tr></table>
+<br><table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#9cbee6"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="8" bgcolor="#ffffff"><tr><td>
+<form action="admin.php" method="post"><table border="0"><tr><td>Admin ID</td><td><input type="text" NAME="aid" SIZE="20" MAXLENGTH="25"></td></tr><tr><td>Password</td><td><input type="password" NAME="pwd" SIZE="20" MAXLENGTH="18"></td></tr><tr><td><input type="hidden" NAME="op" value="login"><input type="submit" VALUE="Login"></td></tr></table></form></td></tr></table></td></tr></table>
+<br></td><td colspan="2"><img src="themes/DeepBlue/images/pixel.gif" width="10" height="1" border="0" alt=""><br><br></td></tr></table>
+<br><center><font class="footmsg">
+<a href='http://phpnuke.org' target='blank'><img src='images/powered/nuke.gif' border='0' Alt='Web site powered by PHP-Nuke' hspace='10'></a><br><br>
+All logos and trademarks in this site are property of their respective owner. The comments are property of their posters, all the rest © 2002 by me<br>
+You can syndicate our news using the file <a href='backend.php'><font class='footmsg_l'>backend.php</font></a> or <a href='ultramode.txt'><font class='footmsg_l'>ultramode.txt</font></a><br>
+Web site engine's code is Copyright &copy; 2002 by <a href="http://phpnuke.org"><font class='footmsg_l'>PHP-Nuke</font></a>. All Rights Reserved. PHP-Nuke is Free Software released under the <a href="http://www.gnu.org"><font class='footmsg_l'>GNU/GPL license</font></a>.<br>Page Generation: 0.217 Seconds<br>
+</font>
+</center></body>
+</html>
