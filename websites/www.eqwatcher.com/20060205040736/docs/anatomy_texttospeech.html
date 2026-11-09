@@ -1,0 +1,203 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>EQWatcher Advanced -> Anatomy -> Text-to-Speech</title>
+</head>
+
+<body stylesrc="toc.html" bgcolor="#000000" text="#FFFFFF" link="#808080" vlink="#C0C0C0" alink="#00FFFF">
+
+<p><b><a href="toc.html">EQWatcher Evolution &gt; Anatomy</a> &gt; Text-to-Speech</b></p>
+<hr>
+<p>Changing voice characteristics is actually pretty simple, but can also get 
+pretty ugly.</p>
+<p>The Text-to-Speech engine by default will process XML tags (don't get scared 
+now) if the first character of the string is a &quot;<b><font color="#00FFFF">&lt;</font></b>&quot;.&nbsp; 
+XML tags are used within text that is supposed to be spoken, to change voice 
+characteristics and even some other things immediately as it is being spoken.&nbsp; 
+Please note that they ONLY modify the CURRENT line of speech, so the next line 
+you speak will be normal again.</p>
+<p>First, an explanation of what a tag is and how to use them:&nbsp; These tags 
+can be used in 2 ways. #1 you can use XML tags to change how all following 
+speech will be spoken #2 you can use these tags to change how a specific range 
+of text will be spoken. The first way is done by making the tag look like this:
+<b><font color="#00FFFF">&lt;TAG XXXX/&gt;</font></b> (the slash at the end provides 
+the effect). The second way is done by using 2 tags, the first tag being
+<font color="#00FFFF"><b>&lt;TAG XXXX&gt;</b></font> and then the second being
+<font color="#00FFFF"><b>&lt;/TAG&gt;</b></font> (all of the text between the 2 tags 
+is affected by the change). ***NOTE: Either way, the tags ONLY affect the 
+CURRENT text to speak. Any new speech calls will be normal again.</p>
+<p><b>Examples:</b></p>
+<blockquote>
+  <hr>
+  <p><b><font color="#00FFFF">&lt;volume level=&quot;50&quot;&gt;</font><font color="#00FF00">This 
+  text is affected</font><font color="#00FFFF">&lt;/volume&gt; </font>and this text is 
+  not.</b></p>
+  <p><b><font color="#00FFFF">&lt;voice required=&quot;Name=Microsoft Mary&quot;&gt;</font><font color="#00FF00">This 
+  is spoken by Mary, if she exists on this computer,</font><font color="#00FFFF">&lt;/voice&gt;</font> 
+  and this is spoken by the default voice.</b></p>
+  <p><b><font color="#00FFFF">&lt;volume level=&quot;50&quot;/&gt;</font><font color="#00FF00">This 
+  entire line is affected and spoken at volume level 50%.</font></b></p>
+  <p><b><font color="#00FFFF">&lt;voice required=&quot;Name=Microsoft Mary&quot;/&gt;</font><font color="#00FF00">This 
+  entire line is spoken by Mary, if she exists on this computer.</font></b></p>
+  <hr>
+</blockquote>
+<p>I will explain the use of 7 different options: volume, rate, pitch, emphasis, 
+spell it out, silence, and voice.</p>
+<p><b>Volume</b></p>
+<blockquote>
+  <hr>
+  <p>Volume is set using the following format &quot;<b><font color="#00FFFF">&lt;volume 
+  level=&quot;</font><font color="#FF0000">[Level]</font><font color="#00FFFF">&quot;&gt;</font></b>&quot;, 
+  where Level is a number between 0 and 100.&nbsp; </p>
+  <hr>
+</blockquote>
+<p><b>Rate</b></p>
+<blockquote>
+  <hr>
+  <p>There are to ways to set the rate of speech, absolute and relative.&nbsp; 
+  Setting it relatively means it is relative to the current rate of speech (the 
+  number given will be ADDED to the current rate, so if the current rate is 5 
+  and you say 5, it will be 10.&nbsp; If the current rate is 5 and you say -5, 
+  it will be 0.), and setting absolute means the rate will be set to the exact 
+  number specified.&nbsp; Possible values for the rate are -10 to 10.&nbsp; 
+  Anything outside of this range is truncated to -10 or 10 depending on which 
+  range it is outside of, but is surely legal to use.&nbsp; -10 is slowest, and 
+  10 is fastest.&nbsp; </p>
+  <p>The format for setting the absolute rate is &quot;<b><font color="#00FFFF">&lt;rate 
+  absspeed=&quot;</font><font color="#FF0000">[Rate]</font><font color="#00FFFF">&quot;&gt;</font></b>&quot;, 
+  and the format for setting the relative rate is &quot;<b><font color="#00FFFF">&lt;rate 
+  speed=&quot;</font><font color="#FF0000">[Rate]</font><font color="#00FFFF">&quot;&gt;</font></b>&quot;.</p>
+  <hr>
+</blockquote>
+<p><b>Pitch</b></p>
+<blockquote>
+  <hr>
+  <p>Setting the pitch is quite similar to setting the rate.&nbsp; There are 
+  still two ways, absolute and relative.&nbsp; The values are still -10 to 10, 
+  etc.&nbsp; -10 is lowest, and 10 is highest.</p>
+  <p>The format for setting the absolute pitch is &quot;<font color="#00FFFF"><b>&lt;pitch 
+  absmiddle=&quot;</font><font color="#FF0000">[Pitch]</font><font color="#00FFFF">&quot;&gt;</font></b>&quot;, 
+  and the format for setting the relative pitch is &quot;<b><font color="#00FFFF">&lt;pitch 
+  middle=&quot;</font><font color="#FF0000">[Pitch]</font><font color="#00FFFF">&quot;&gt;</font></b>&quot;.</p>
+  <hr>
+</blockquote>
+<p><b>Emphasis</b></p>
+<blockquote>
+  <hr>
+  <p>The &quot;emph&quot; tag instructs the voice to emphasize a specific word or section 
+  of text.&nbsp; This tag CANNOT be &quot;empty&quot; which means it must have both a 
+  begin tag and end tag like <b><font color="#00FFFF">&lt;emph&gt;</font><font color="#00FF00">text</font><font color="#00FFFF">&lt;/emph&gt;</font></b>, 
+  rather than having the single &lt;emph/&gt;.</p>
+  <hr>
+</blockquote>
+<p><b>Spell it Out</b></p>
+<blockquote>
+  <hr>
+  <p>The &quot;spell&quot; tag instructs the voice to spell out a specific word or section 
+  of text, rather than read it as a word or phrase.&nbsp; This tag CANNOT be 
+  &quot;empty&quot; which means it must have both a begin tag and end tag like <b>
+  <font color="#00FFFF">&lt;spell&gt;</font><font color="#00FF00">text</font><font color="#00FFFF">&lt;/spell&gt;</font></b>, 
+  rather than having the single &lt;spell/&gt;.</p>
+  <hr>
+</blockquote>
+<p><b>Silence</b></p>
+<blockquote>
+  <hr>
+  <p>This tag is used to insert a pause for a specified number of milliseconds.&nbsp; 
+  This tag MUST be &quot;empty&quot; which it means it cannot have a begin tag and end 
+  tag, just one single tag that looks like this: <b><font color="#00FFFF">
+  &lt;silence msec=&quot;[Milliseconds]&quot;/&gt;</font></b></p>
+  <hr>
+</blockquote>
+<p><b>Voice</b></p>
+<blockquote>
+  <hr>
+  <p>This tag is used to select a voice to use, and is more complicated than the 
+  other tags.&nbsp; The preferred voice is searched for in the system's list of 
+  voices by specified attributes, which can be any or all of:
+  <font color="#00FFFF">Age</font>, <font color="#00FFFF">Gender</font>,
+  <font color="#00FFFF">Language</font>, <font color="#00FFFF">Name</font>,
+  <font color="#00FFFF">Vendor</font>, and <font color="#00FFFF">VendorPreferred</font>.&nbsp;
+  </p>
+  <p>The voice tag has two attributes, required and optional.&nbsp; The voice 
+  that ends up being selected will have ALL of the &quot;required&quot; attributes, and 
+  more of the &quot;optional&quot; attributes than the other installed voices (if several 
+  voices have equal numbers of optional attributes one of those will be selected 
+  at random.&nbsp; Note that I'm not positive it will actually be &quot;random&quot; 
+  rather than the same voice each time, but that's what it says in Microsoft's 
+  documentation).&nbsp; If no voice is found that matches all of the required 
+  attributes, no voice change will occur.</p>
+  <p>The format of the voice tag should look something like this:
+  <font color="#00FFFF"><b>&lt;voice required=&quot;</font><font color="#FF0000">[Attributes]</font><font color="#00FFFF">&quot;&gt;</font></b>,&nbsp;
+  <font color="#00FFFF"><b>&lt;voice optional=&quot;</font><font color="#FF0000">[Attributes]</font><font color="#00FFFF">&quot;&gt;</font></b>, 
+  or <b><font color="#00FFFF">&lt;voice required=&quot;</font><font color="#FF0000">[Attributes]</font><font color="#00FFFF">&quot; 
+  optional=&quot;</font><font color="#FF0000">[Attributes]</font><font color="#00FFFF">&quot;&gt;</font></b>.</p>
+  <p><b><font color="#FF0000">Attributes</font></b>: This includes any number of 
+  the Age, Gender, etc. options separated by a semi-colon.&nbsp; Each attribute 
+  takes the form &quot;<b><font color="#FF0000">[Attribute]</font><font color="#00FFFF">=</font><font color="#FF0000">[Value]</font></b>&quot; 
+  if you wish the attribute's value to be equal to this value, or &quot;<b><font color="#FF0000">[Attribute]</font><font color="#00FFFF">!=</font><font color="#FF0000">[Value]</font></b>&quot; 
+  if you wish the attribute's value to NOT be equal to this value.&nbsp; 
+  Separating values of course then becomes &quot;<b><font color="#FF0000">[Attribute]</font><font color="#00FFFF">=</font><font color="#FF0000">[Value]</font><font color="#00FFFF">;</font><font color="#FF0000">[Attribute]</font><font color="#00FFFF">=</font><font color="#FF0000">[Value]</font></b>&quot;.</p>
+  <p>Possible values of <font color="#00FFFF">Age</font> are
+  <font color="#00FFFF">Child</font>, <font color="#00FFFF">Teen</font>,
+  <font color="#00FFFF">Adult</font>.&nbsp; Possible values of
+  <font color="#00FFFF">Gender</font> are <font color="#00FFFF">Female</font>,
+  <font color="#00FFFF">Male</font>.&nbsp; Possible values of
+  <font color="#00FFFF">Language</font> are <font color="#00FFFF">409</font> for 
+  English and I have no idea the rest.&nbsp; Possible values of
+  <font color="#00FFFF">Name</font> are exactly how they are shown in the Speech 
+  control panel (<font color="#00FFFF">LH Michael</font>, <font color="#00FFFF">
+  LH Michelle</font>, <font color="#00FFFF">Microsoft Mary</font>,
+  <font color="#00FFFF">Microsoft Mike</font>, <font color="#00FFFF">Microsoft 
+  Sam</font>,<font color="#00FFFF"> SampleTTSVoice</font>).&nbsp; Possible 
+  values of <font color="#00FFFF">Vendor</font> are <font color="#00FFFF">
+  Microsoft</font> and I haven't seen any others.. and I don't see any values of
+  <font color="#00FFFF">VendorPreferred</font>.</p>
+  <p>Here's an example or two:</p>
+  <p><b><font color="#00FFFF">&lt;voice required=&quot;Gender=Female&quot; 
+  optional=&quot;Age=Teen&quot;&gt;</font></b> This selects a female voice, preferably teen 
+  (although if there is no teen female voice, a female voice will be selected at 
+  random).</p>
+  <p><b><font color="#00FFFF">&lt;voice required=&quot;Age=Teen&quot; optional=&quot;Gender=Male&quot;&gt;</font></b> 
+  This selects a teen-age voice, preferably male (although if there is no male 
+  teen voice, a teen voice will be selected at random).</p>
+  <p><font color="#00FFFF"><b>&lt;voice required=&quot;Name=LH Michelle&quot;&gt; </b></font>
+  This selects the &quot;LH Michelle&quot; voice (if it doesn't exist, there is no voice 
+  change).</p>
+  <hr>
+</blockquote>
+<p><b>Applying these tags in EQWatcher</b></p>
+<blockquote>
+  <hr>
+  <p>For general EQWatcher commands using Text-to-Speech, you really need to 
+  know nothing other than the fact that the sentence must start with a &quot;<b><font color="#00FFFF">&lt;</font></b>&quot;.&nbsp; 
+  This is causes the TTS interpreter to assume it is supposed to look for XML 
+  tags.&nbsp; Therefore, the first part of the sentence must be an XML tag.&nbsp; 
+  If you need to use a tag in the middle rather than at the beginning, you can 
+  simply use <font color="#00FFFF"><b>&lt;SAPI&gt;</b></font> as the first tag, with 
+  no ill effect.</p>
+  <p><b>Examples: </b></p>
+  <blockquote>
+    <p><b><font color="#00FFFF">speak &lt;SAPI&gt;This is an example showing &lt;emph&gt;</font><font color="#00FF00">emphasis</font><font color="#00FFFF">&lt;/emph&gt;</font></b></p>
+    <p><b><font color="#00FFFF">speak &lt;rate absspeed=&quot;10&quot;/&gt;</font><font color="#00FF00">This 
+    gets spoken at top speed</font></b></p>
+  </blockquote>
+  <p>For EQWatcher scripts, you must remember that using quotation marks within 
+  strings requires using a control character, so the compiler does not think it 
+  is the end of the string.</p>
+  <p><b>Examples:</b></p>
+  <blockquote>
+    <p><b><font color="#00FFFF">SpeakSync(&quot;&lt;SAPI&gt;This is an example showing &lt;emph&gt;</font><font color="#00FF00">emphasis</font><font color="#00FFFF">&lt;/emph&gt;&quot;);</font></b></p>
+    <p><b><font color="#00FFFF">SpeakSync(&quot;&lt;rate absspeed=\&quot;10\&quot;/&gt;</font><font color="#00FF00">This 
+    gets spoken at top speed</font><font color="#00FFFF">&quot;);</font></b></p>
+  </blockquote>
+  <hr>
+</blockquote>
+
+</body>
+
+</html>
