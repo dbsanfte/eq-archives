@@ -1,0 +1,43 @@
+<HTML>
+<link rel="stylesheet" href="styles.css">
+<HEAD>
+<TITLE>EverQuest Guild- Avatars of Shadows</TITLE>
+</HEAD>
+<BODY BGCOLOR=#000000 topmargin=0 marginheight=0 leftmargin=0 marginwidth=0>
+<!-- ImageReady Slices (menu.psd) -->
+<map name=nav>
+<area shape=rect coords="0,0,110,20" href="/menu.php?click=charter">
+<area shape=rect coords="0,21,110,40" href="/menu.php?click=join">
+<area shape=rect coords="0,41,110,60" href="/menu.php?click=members">
+<area shape=rect coords="0,61,110,80" href="/menu.php?click=contact">
+<area shape=rect coords="0,101,110,120" href="/menu.php?click=images">
+<area shape=rect coords="0,121,110,140" href="/menu.php?click=library">
+<area shape=rect coords="0,141,110,161" href="/menu.php?click=links">
+<area shape=rect coords="0,181,110,200" href="http://pub46.ezboard.com/boverlordsofdestiny" target="_blank">
+<area shape=rect coords="0,201,110,220" href="http://pub46.ezboard.com/foverlordsofdestinyfrm13" target="_blank">
+</map>
+<TABLE WIDTH=740 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD COLSPAN=2>
+			<IMG SRC="images/menu_01.jpg" WIDTH=740 HEIGHT=125></TD>
+	</TR>
+	<TR>
+		<TD valign=top>
+			<a href="/menu.php"><IMG SRC="images/menu_02.jpg" WIDTH=110 HEIGHT=50 border=0></a><br>
+			<IMG SRC="images/menu_04.jpg" WIDTH=110 HEIGHT=225 border=0 usemap=#nav></td>
+		<TD valign=top>
+		<!--text goes here-->
+		<table width=550 align=center border=0 cellpadding=0 cellspacing=0><tr><td>
+		<div align=center><img src="images/dragon.jpg" width="600" height="450" alt="" border="0"></div>
+
+<h1 align=center>Welcome to the wonderful world of EverQuest.</h1>  <h1 align=center>We hope you survive the experience...</h1>		</td></tr></table>
+		</TD>
+	</TR>
+	<tr>
+		<td></td>
+		<td><IMG SRC="images/menu_05.jpg" WIDTH=630 HEIGHT=65></td>
+	</tr>	
+</TABLE>
+<!-- End ImageReady Slices -->
+</BODY>
+</HTML>
