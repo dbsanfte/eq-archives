@@ -1,0 +1,180 @@
+<html>
+   <head>
+   <title>Mitglieder der Gilde...</title>
+<link rel="stylesheet" Type="text/css" href="../hz.css">
+</head>
+<body bgcolor="#000000" text="#000000" link="#FFD700" alink="#FFEF9F" vlink="#FFD700">
+<table id="Tabelle01" align="center" cellpadding="0" cellspacing="0" border="0" width="750" background="../pics/bg_grau.jpg">
+    <tr>
+	<td>
+   <table id="Tabelle02" align="center" cellspacing="0" cellpadding="0" border="0" width="750">
+    <tr>
+	<td height="15" width="137"></td>
+	<td width="603"></td>
+	<td width="10"></td>
+    </tr>
+    <tr>
+	<td height="199" background="../pics/banner.jpg" colspan="3"></td>
+    </tr>
+    <tr rowspan="2">
+	<td></td>
+	<td></td>
+	<td></td>
+    </tr>
+    <tr>
+	<td height="800" valign="top" background="../pics/menu_bg3.gif">
+	<table id="Tabelle03" cellpadding="0" cellspacing="0" border="0" width="137" align="left">
+	    <tr>
+		<td height="20" width="137"><p class="menuheader">News</p></td>
+	    </tr>
+	    <tr>
+		<td><p class="menu">
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../index.php">News</a><br><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../editorial.php">Editorial</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="http://www.arhain-tosaith.de/guestbook/index.php" target="_blank">G&auml;stebuch</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../screenshots/screenshots.php">Screenshots</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../links.php">Links</a><br><br></p>
+		</td>
+	    </tr>
+	    <tr>
+		<td><img src="../pics/temppx.gif" height="7" alt=""></td>
+	    </tr>
+	    <tr>
+		<td height="20"><p class="menuheader">Gilde</p></td>
+	    </tr>
+	    <tr>
+		<td><p class="menu">
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="gesetze.php">Gesetze</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="mitglieder.php">Mitglieder</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="bewerbung.php">Bewerbung</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="http://www.arhain-tosaith.de/phpBB2/" target="_blank">Foren</a><br><br></p>
+		</td>
+	    </tr>
+	    <tr>
+		<td><img src="../pics/temppx.gif" height="7" alt=""></td>
+	    </tr>
+	    <tr>
+		<td height="20"><p class="menuheader">Allgemeines</p></td>
+	    </tr>
+	    <tr>
+		<td><p class="menu">
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../allgemein/geschichte.php">Geschichte</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../allgemein/emotes.php">Befehle/Emotes</a><br>
+		&nbsp;<img src='../pics/dot.gif'>&nbsp;<a href='../allgemein/faq.php?faq_id=1'>FAQ's</a><br><br></p>
+		</td>
+	    </tr>
+	    <tr>
+		<td><img src="../pics/temppx.gif" height="7" alt=""></td>
+	    </tr>
+	    <tr>
+		<td height="20"><p class="menuheader">Bibliothek</p></td>
+	    </tr>
+	    <tr>
+		<td><p class="menu">
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/rassen/allgemein.php">Rassen</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/goetter.php">G&ouml;tter</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/stats.php">Attribute</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/haeuser.php">H&auml;user</a><br><br>
+		<span class="menusmall">Skills</span><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/skills/allgemein.php">&Uuml;bersicht</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/skills/training.php">Training</a><br><br>
+		<span class="menusmall">Schulen</span><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/schulen/allgemein.php">Allgemeines</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/schulen/kaempfer.php">K&auml;mpfer</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/schulen/heiler.php">Heiler</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/schulen/scout.php">Scout</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/schulen/zauberer.php">Zauberer</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/schulen/ausruester.php">Ausr&uuml;ster</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/schulen/gelehrter.php">Gelehrter</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/schulen/sammler.php">Sammler</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/schulen/schmied.php">Schmied</a><br><br>
+		<span class="menusmall">Magie</span><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/magie/allgemein.php">Allgemeines</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/magie/spells.php">Spells</a><br><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/forschung/forschung.php">Forschung</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/ausruestung/ausruestung.php">Ausr&uuml;stung</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/guides/guides.php">Guides</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/quests/quests.php">Quests</a><br>
+		&nbsp;<img src="../pics/dot.gif">&nbsp;<a href="../bibliothek/atlas/atlas.php">Atlas</a><br><br></p>
+		</td>
+	    </tr>
+	    <tr>
+		<td><img src="../pics/temppx.gif" height="7" alt=""></td>
+	    </tr>
+	</table>
+	</td>
+	<td valign="top"><br>
+	<table id="Tabelle04" cellpadding="0" cellspacing="0" border="0" width="585" align="center">
+	    <tr>
+		<td background="../pics/left.jpg" width="6" height="29"></td>
+		<td background="../pics/header.gif" width="573" height="29"><p class="header" align="center">Mitglieder</p></td>
+		<td background="../pics/right.jpg" width="6" height="29"></td>
+	    </tr>
+	</table><br>
+	<table id="Tabelle05" cellpadding="0" cellspacing="0" border="0" width="585" align="center">
+	    <tr>
+		<td><p class="white">Die Spalte<span class="menu">"Kampf"</span> zeigt an, in welcher <i>Kampfschule</i> ein Charakter Mitglied ist 
+		und die Spalte <span class="menu">"Handel"</span> gibt Auskunft	über die Zugehörigkeit zu einer <i>Handelsschule</i>. Beim Anklicken
+		eines farblich hervorgehobenen Namens wird die Detailansicht des Charakters geöffnet. Auf Wunsch kann die Tabelle auch nach bestimmten 
+		Kriterien sortiert werden.</p>
+	<p class="menu" align="center"><u>Aktive Maincharaktere</u></p>
+<table id='members_outside' bgcolor='#000000' cellpadding='0' cellspacing='0' border='0' width='585' align='center'>
+<tr>
+<td>
+<table id='members_inside' cellpadding='3' cellspacing='1' border='0' width='585' align='center'>
+	<tr>
+		<td width='150' background='../pics/back_top_hell_large.jpg'><p class='question'>&nbsp;<a href='mitglieder.php?OrderBy=name'>Name</a></p></td>
+		<td width='100' align='center' background='../pics/back_top_hell_large.jpg'><p class='question'>&nbsp;<a href='mitglieder.php?OrderBy=rasse'>Rasse</a></p></td>
+		<td width='80' align='center' background='../pics/back_top_hell_large.jpg'><p class='question'>&nbsp;<a href='mitglieder.php?OrderBy=kampf'>Kampf</a></p></td>
+		<td width='80' align='center' background='../pics/back_top_hell_large.jpg'><p class='question'>&nbsp;<a href='mitglieder.php?OrderBy=handel'>Handel</a></p></td>
+		<td width='175' align='center' background='../pics/back_top_hell_large.jpg'><p class='question'>&nbsp;Sonstiges</p></td>
+	</tr>
+	<tr>
+		<td bgcolor='#8292A9' height='18' width='150'><p class='text'>Aelvenara</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='100'><p class='text'>Elf</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='80'><p class='text'>Heiler</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='80'><p class='text'>-</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='175'><p class='text'></p></td>
+	</tr>
+	<tr>
+		<td bgcolor='#8292A9' height='18' width='150'><p class='text'>Damos</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='100'><p class='text'>Gnome</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='80'><p class='text'>Scout</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='80'><p class='text'>-</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='175'><p class='text'></p></td>
+	</tr>
+	<tr>
+		<td bgcolor='#8292A9' height='18' width='150'><p class='text'>Kharass Steinbrecher</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='100'><p class='text'>Zwerg</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='80'><p class='text'>Kämpfer</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='80'><p class='text'>Schmied</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='175'><p class='text'></p></td>
+	</tr>
+	<tr>
+		<td bgcolor='#8292A9' height='18' width='150'><p class='text'>Mandovar</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='100'><p class='text'>Zwerg</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='80'><p class='text'>Kämpfer</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='80'><p class='text'>Schmied</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='175'><p class='text'></p></td>
+	</tr>
+	<tr>
+		<td bgcolor='#8292A9' height='18' width='150'><p class='text'>Momrad</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='100'><p class='text'>Elf</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='80'><p class='text'>Scout</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='80'><p class='text'>-</p></td>
+		<td align='center' bgcolor='#8292A9' height='18' width='175'><p class='text'></p></td>
+	</tr>
+
+</table>
+</td></tr></table><p class='text' align='center'>Es befinden sich zur Zeit <span class='question'>5</span> Mitglieder in der Gilde</p>	</td>
+	    </tr>
+	</table><br>
+	</td>
+	<td></td>
+    </tr>
+   </table>
+	</td>
+    </tr>
+</table>
+</body>
+</html>
