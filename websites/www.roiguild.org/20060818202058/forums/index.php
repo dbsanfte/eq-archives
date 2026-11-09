@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="Realm of Insanity - Index" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="http://www.roiguild.org/forums/Themes/default/script.js?rc2"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://www.roiguild.org/forums/Themes/Cerberus";
+		var smf_images_url = "http://www.roiguild.org/forums/Themes/Cerberus/images";
+		var smf_scripturl = "http://www.roiguild.org/forums/index.php";
+	// ]]></script>
+	<title>Realm of Insanity - Index</title>
+	<link rel="stylesheet" type="text/css" href="http://www.roiguild.org/forums/Themes/Cerberus/style.css?rc2" />
+	<link rel="stylesheet" type="text/css" href="http://www.roiguild.org/forums/Themes/default/print.css?rc2" media="print" />
+	<link rel="help" href="http://www.roiguild.org/forums/index.php?action=help" target="_blank" />
+	<link rel="search" href="http://www.roiguild.org/forums/index.php?action=search" />
+	<link rel="contents" href="http://www.roiguild.org/forums/index.php" />
+	<link rel="alternate" type="application/rss+xml" title="Realm of Insanity - RSS" href="http://www.roiguild.org/forums/index.php?type=rss;action=.xml" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+								document.getElementById("upshrink_user").src = smf_images_url + (mode ? "/shell/middlebar-left2.jpg" : "/shell/middlebar-left2.jpg");
+
+								document.getElementById("upshrinkHeaderUser1").style.display = mode ? "none" : "";
+								document.getElementById("upshrinkHeaderUser2").style.display = mode ? "none" : "";
+
+								current_header = mode;
+					 }
+		  // ]]></script>
+</head>
+<body>
+		  <div id="headerarea" style="padding: 12px 10px 4px 10px;"><table width="100%" cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								 <td valign="top" width="100%"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="height: 53px; width: 19px;" valign="top"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barleft.jpg" style="height: 53px; width: 19px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td style="width: 68px;height: 53px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barmid.jpg); "><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barleft2.jpg" style="height: 53px; width: 68px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td width="100%" style="height: 53px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barmid.jpg); " class="forum_name">Realm of Insanity</td><td style="width: 62px;height: 53px;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barright2.jpg" style="height: 53px; width: 62px; border: 0px; padding: 0px; margin: 0px;" /></td><td style="width: 19px;height: 53px;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barright.jpg" style="height: 53px; width: 19px; border: 0px; padding: 0px; margin: 0px;" /></td></tr><tr id="upshrinkHeaderUser1"><td style="height: 10px; width: 19px;" valign="top"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/topleft.jpg" style="height: 10px; width: 19px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td style="height: 10px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/topmid.jpg); " colspan="3"> </td><td style="width: 19px;height: 10px;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/topright.jpg" style="height: 10px; width: 19px; border: 0px; padding: 0px; margin: 0px;" /></td></tr><tr id="upshrinkHeaderUser2"><td style="width: 19px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/midleft.jpg); background-repeat: repeat-y;" valign="top"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/midleft.jpg" style="height: 12px; width: 19px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td style="background-color: #353535;" colspan="3"><div class="mybox"><table width="99%" cellpadding="0" cellspacing="5" border="0"><tr><td width="60%" valign="top" class="smalltext">
+																		  Welcome, <b>Guest</b>. Please <a href="http://www.roiguild.org/forums/index.php?action=login">login</a> or <a href="http://www.roiguild.org/forums/index.php?action=register">register</a>.<br />
+																		  August 18, 2006, 01:20:58 PM<br />
+
+																		  <script language="JavaScript" type="text/javascript" src="http://www.roiguild.org/forums/Themes/default/sha1.js"></script>
+																		  <script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+																					 function hashPassword(doForm)
+																					 {
+																								if (typeof(hex_sha1) == "undefined")
+																										  return;
+																								// Are they using an email address?
+																								if (doForm.user.value.indexOf("@") != -1)
+																										  return;
+
+																								doForm.hash_passwrd.value = hex_sha1(hex_sha1(doForm.user.value.toLowerCase() + doForm.passwrd.value) + "1e8c97934458b1209ed30f8045a689a9");
+																								doForm.passwrd.value = doForm.passwrd.value.replace(/./g, "*");
+																					 }
+																		  // ]]></script>
+
+																		  <form action="http://www.roiguild.org/forums/index.php?action=login2" method="post" style="margin: 3px 1ex 1px 0; text-align: right;" onsubmit="hashLoginPassword(this, '1e8c97934458b1209ed30f8045a689a9');">
+																					 <input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+																					 <select name="cookielength">
+																								<option value="60">1 Hour</option>
+																								<option value="1440">1 Day</option>
+																								<option value="10080">1 Week</option>
+																								<option value="302400">1 Month</option>
+																								<option value="-1" selected="selected">Forever</option>
+																					 </select>
+																					 <input type="submit" value="Login" /><br />
+																					 Login with username, password and session length
+																					 <input type="hidden" name="hash_passwrd" value="" />
+																		  </form>													 </td><td width="40%">
+										 <div style="height: 60px; overflow: auto; padding: 5px;" class="smalltext">Welcome to Realm of Insanity's Guild Messageboards - A guild on the EverQuest server: The Combine</div>
+								 </td></tr></table></div></td><td style="width: 19px;height: 12px;background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/midright.jpg); background-repeat: repeat-y;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/midright.jpg" style="height: 12px; width: 19px; border: 0px; padding: 0px; margin: 0px;" /></td></tr><tr><td style="height: 20px; width: 19px;" valign="top"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/middlebar-left.jpg" style="height: 20px; width: 19px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td style="width: 16px;height: 20px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/middlebar-mid.jpg); " colspan="2" class="bar_name"><div nowrap="nowrap" style="bar_name"><a href="#" onclick="shrinkHeader_User(!current_header); return false;"><img align="middle" id="upshrink_user" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/middlebar-left2.jpg" alt="*" title="Shrink or expand the header." style="margin: 0;" border="0" /></a><img id="upshrinkTemp_User" src="http://www.roiguild.org/forums/Themes/Cerberus/images/blank.gif" alt="" border="0" style="margin: 0;width: 5px; height: 5px;" align="middle" />USER INFO</div></td><td style="width: 26px;height: 20px;background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/middlebar-mid.jpg);" align="right"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/middlebar-right2.jpg" style="height: 20px; width: 26px; border: 0px; padding: 0px; margin: 0px;" /></td><td style="background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/middlebar-mid.jpg); width: 19px;height: 20px;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/middlebar-right.jpg" style="height: 20px; width: 19px; border: 0px; padding: 0px; margin: 0px;" /></td></tr><tr><td style="height: 39px; width: 19px;" valign="top"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-left.jpg" style="height: 39px; width: 19px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td style="width: 68px;height: 39px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-mid.jpg); "><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-left2.jpg" style="height: 39px; width: 68px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td align="center" style="height: 39px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-mid.jpg); " class="smalltext">&nbsp;<td style="width: 62px;height: 39px;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-right2.jpg" style="height: 39px; width: 62px; border: 0px; padding: 0px; margin: 0px;" /></td><td style="width: 19px;height: 39px;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-right.jpg" style="height: 39px; width: 19px; border: 0px; padding: 0px; margin: 0px;" /></td></tr></table></td></tr><tr><td valign="top"><div align="center"><form action="http://www.roiguild.org/forums/index.php?action=search2" method="post" style="margin-left: 20px; ">
+																<b>Search: </b><input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+																<input type="submit" name="submit" value="Search" style="width: 8ex;" />&nbsp;
+																<a href="http://www.roiguild.org/forums/index.php?action=search;advanced">Advanced search</a>
+																<input type="hidden" name="advanced" value="0" />
+													 </form></div><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="height: 53px; width: 19px;" valign="top"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barleft.jpg" style="height: 53px; width: 19px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td style="width: 68px;height: 53px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barmid.jpg); "><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barleft2.jpg" style="height: 53px; width: 68px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td width="100%" style="height: 53px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barmid.jpg); " align="center"><b>
+										  <a href="http://www.roiguild.org/forums/index.php"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/english/home.gif" alt="Home" style="margin: 2px 0;" border="0" /></a> 
+										  <a href="http://www.roiguild.org/forums/index.php?action=help" target="_blank"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/english/help.gif" alt="Help" style="margin: 2px 0;" border="0" /></a> 
+										  <a href="http://www.roiguild.org/forums/index.php?action=search"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/english/search.gif" alt="Search" style="margin: 2px 0;" border="0" /></a> 
+										  <a href="http://www.roiguild.org/forums/index.php?action=login"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/english/login.gif" alt="Login" style="margin: 2px 0;" border="0" /></a> 
+										  <a href="http://www.roiguild.org/forums/index.php?action=register"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/english/register.gif" alt="Register" style="margin: 2px 0;" border="0" /></a>&nbsp;&nbsp;&nbsp;</b></td><td style="width: 62px;height: 53px;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barright2.jpg" style="height: 53px; width: 62px; border: 0px; padding: 0px; margin: 0px;" /></td><td style="width: 19px;height: 53px;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/barright.jpg" style="height: 53px; width: 19px; border: 0px; padding: 0px; margin: 0px;" /></td></tr><td style="height: 10px; width: 19px;" valign="top"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/topleft.jpg" style="height: 10px; width: 19px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td style="height: 10px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/topmid.jpg); " colspan="3"> </td><td style="width: 19px;height: 10px;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/topright.jpg" style="height: 10px; width: 19px; border: 0px; padding: 0px; margin: 0px;" /></td></tr><tr><td style="width: 19px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/midleft.jpg); background-repeat: repeat-y;" valign="top"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/midleft.jpg" style="height: 12px; width: 19px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td style="background-color: #353535;" colspan="3"><div class="mybox">
+		  <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+					 <td id="bodyarea" style="padding: 1ex 20px 2ex 20px;">
+<table width="100%" cellpadding="3" cellspacing="0">
+		  <tr>
+					 <td valign="bottom"><span class="nav"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="http://www.roiguild.org/forums/index.php" class="nav">Realm of Insanity</a></b></span></td>
+					 <td align="right">
+					 </td>
+		  </tr>
+</table>
+<div class="tborder"><table border="0" width="100%" cellspacing="1" cellpadding="5">
+		  <tr>
+					 <td colspan="4" class="catbg" height="18">
+								<a name="1" href="http://www.roiguild.org/forums/index.php#1">General Category</a>
+					 </td>
+		  </tr>
+		  <tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><a href="http://www.roiguild.org/forums/index.php?action=unread;board=1.0"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></a></td>
+					 <td align="left" class="windowbg2">
+								<b><a href="http://www.roiguild.org/forums/index.php?board=1.0" name="b1">General Discussion</a></b><br />
+								Feel free to talk about anything and everything in this board.
+					 </td>
+					 <td class="windowbg" valign="middle" align="center" style="width: 12ex;"><span class="smalltext">
+								688 Posts in<br />
+								79 Topics
+					 </span></td>
+					 <td class="windowbg2" valign="middle" width="22%"><span class="smalltext">
+								Last post on August 07, 2006, 02:57:42 AM<br />
+								in <a href="http://www.roiguild.org/forums/index.php?topic=37.msg4832#new" title="Re: OMG IT'Z FAYZE">Re: OMG IT'Z FAYZE</a> by <a href="http://www.roiguild.org/forums/index.php?action=profile;u=480">Scythee</a>
+					 </span></td>
+		  </tr>
+		  <tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><a href="http://www.roiguild.org/forums/index.php?action=unread;board=16.0"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></a></td>
+					 <td align="left" class="windowbg2">
+								<b><a href="http://www.roiguild.org/forums/index.php?board=16.0" name="b16">Auction House</a></b><br />
+								Sell your wares here.
+					 </td>
+					 <td class="windowbg" valign="middle" align="center" style="width: 12ex;"><span class="smalltext">
+								7 Posts in<br />
+								4 Topics
+					 </span></td>
+					 <td class="windowbg2" valign="middle" width="22%"><span class="smalltext">
+								Last post on August 15, 2006, 01:38:37 PM<br />
+								in <a href="http://www.roiguild.org/forums/index.php?topic=940.msg4832#new" title="Re: Tailoring Supplies">Re: Tailoring Supplies</a> by <a href="http://www.roiguild.org/forums/index.php?action=profile;u=49">Nyuk (Yerm)</a>
+					 </span></td>
+		  </tr>
+		  <tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><a href="http://www.roiguild.org/forums/index.php?action=unread;board=2.0"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></a></td>
+					 <td align="left" class="windowbg2">
+								<b><a href="http://www.roiguild.org/forums/index.php?board=2.0" name="b2">Recruitment</a></b><br />
+								Seeking to be a part of Realm of Insanity? Apply within.
+					 </td>
+					 <td class="windowbg" valign="middle" align="center" style="width: 12ex;"><span class="smalltext">
+								10 Posts in<br />
+								5 Topics
+					 </span></td>
+					 <td class="windowbg2" valign="middle" width="22%"><span class="smalltext">
+								Last post on August 17, 2006, 01:37:50 AM<br />
+								in <a href="http://www.roiguild.org/forums/index.php?topic=969.msg4832#new" title="Re: Roshan, 60 Warrior">Re: Roshan, 60 Warrior</a> by <a href="http://www.roiguild.org/forums/index.php?action=profile;u=519">Hoodwink</a>
+					 </span></td>
+		  </tr>
+</table></div>
+<br />
+<br />
+<div class="tborder"><table border="0" width="100%" cellspacing="1" cellpadding="4">
+		  <tr class="titlebg">
+					 <td align="center" colspan="2">Realm of Insanity - Info Center</td>
+		  </tr>
+		  <tr>
+					 <td class="catbg" colspan="2">Forum Stats</td>
+		  </tr>
+		  <tr>
+					 <td class="windowbg" width="20" valign="middle" align="center">
+								<a href="http://www.roiguild.org/forums/index.php?action=stats">
+										  <img src="http://www.roiguild.org/forums/Themes/Cerberus/images/icons/info.gif" alt="Forum Stats" border="0" /></a>
+					 </td>
+					 <td class="windowbg2" width="100%">
+								<table border="0" width="90%"><tr>
+										  <td class="smalltext">
+					<div style="float: left; width: 50%;">Total Topics: <b>878</b></div>Total Posts: <b>4257</b><br />
+													 Latest Post: &quot;<a href="http://www.roiguild.org/forums/index.php?topic=969.msg4832#new" title="Re: Roshan, 60 Warrior">Re: Roshan, 60 Warrior</a>&quot;  (August 17, 2006, 01:37:50 AM)<br />
+													 <a href="http://www.roiguild.org/forums/index.php?action=recent">View the most recent posts on the forum.</a><br />
+													 <a href="http://www.roiguild.org/forums/index.php?action=stats">[More Stats]</a>
+										  </td>
+										  <td width="32%" class="smalltext" valign="top">
+					Total Members: <b><a href="http://www.roiguild.org/forums/index.php?action=mlist">535</a></b><br />
+					Latest Member: <b><a href="http://www.roiguild.org/forums/index.php?action=profile;u=542">Xeudian</a></b><br />
+										  </td>
+								</tr></table>
+					 </td>
+		  </tr>
+		  <tr>
+					 <td class="catbg" colspan="2">Users Online</td>
+	</tr><tr>
+		<td class="windowbg" width="20" valign="middle" align="center">
+			<img src="http://www.roiguild.org/forums/Themes/Cerberus/images/icons/online.gif" alt="Users Online" border="0" />
+		</td>
+		<td class="windowbg2" width="100%">1 Guest, 3 Users (1 Hidden)
+			<div class="smalltext">
+										  Users active in past 15 minutes:<br /><a href="http://www.roiguild.org/forums/index.php?action=profile;u=255" style="color: orange;">Mithandriel</a>, <a href="http://www.roiguild.org/forums/index.php?action=profile;u=57" style="color: orange;">Bumdaorf</a>
+										  <br />
+			</div>
+					 </td>
+		  </tr>
+</table></div></td>
+		  </tr></table>
+			  </div><div class="mybox">
+
+		  <div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+					 <script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+								function smfFooterHighlight(element, value)
+								{
+										  element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+								}
+					 // ]]></script>
+					 <table cellspacing="0" cellpadding="3" border="0" align="center" width="100%">
+								<tr>
+										  <td width="28%" valign="middle" align="right">
+													 <a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="http://www.roiguild.org/forums/Themes/Cerberus/images/powered-mysql.gif" alt="Powered by MySQL" border="0"  /></a>
+													 <a href="http://www.php.net/" target="_blank"><img id="powered-php" src="http://www.roiguild.org/forums/Themes/Cerberus/images/powered-php.gif" alt="Powered by PHP" border="0"  /></a>
+										  </td>
+										  <td valign="middle" align="center" style="white-space: nowrap;" class="smalltext">
+													 
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1 RC2</a> | 
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2001-2005, Lewis Media</a>
+		</span>
+													 <br /><b>Cerberus</b> design by <a href="http://www.bloczone.net" target="_blank">Bloc</a>
+										  </td>
+										  <td width="28%" valign="middle" align="left">
+													 <a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="http://www.roiguild.org/forums/Themes/Cerberus/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" border="0"  /></a>
+													 <a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="http://www.roiguild.org/forums/Themes/Cerberus/images/valid-css.gif" alt="Valid CSS!" border="0"  /></a>
+										  </td>
+								</tr>
+					 </table>
+					 </div></div></td><td style="width: 19px;height: 12px;background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/midright.jpg); background-repeat: repeat-y;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/midright.jpg" style="height: 12px; width: 19px; border: 0px; padding: 0px; margin: 0px;" /></td></tr><tr><td style="height: 39px; width: 19px;" valign="top"><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-left.jpg" style="height: 39px; width: 19px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td style="width: 68px;height: 39px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-mid.jpg); "><img src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-left2.jpg" style="height: 39px; width: 68px; border: 0px; padding: 0px; margin: 0px;" alt="gfx" /></td><td style="height: 39px; background-image: url(http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-mid.jpg); " >&nbsp;<td style="width: 62px;height: 39px;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-right2.jpg" style="height: 39px; width: 62px; border: 0px; padding: 0px; margin: 0px;" /></td><td style="width: 19px;height: 39px;"><img alt="gfx" src="http://www.roiguild.org/forums/Themes/Cerberus/images/shell/botbar-right.jpg" style="height: 39px; width: 19px; border: 0px; padding: 0px; margin: 0px;" /></td></tr></table></td></tr></table></div></body>
+</html>
