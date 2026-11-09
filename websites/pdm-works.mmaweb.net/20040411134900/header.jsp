@@ -1,0 +1,9 @@
+
+<html>
+<head>
+<title>Emissaries of Dread</title>
+</head>
+<body bgcolor=black>
+<CENTER><img src="WebMain/images/titleimage.gif" height=75 ></CENTER>
+</body>
+
