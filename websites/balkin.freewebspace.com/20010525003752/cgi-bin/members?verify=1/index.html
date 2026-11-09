@@ -1,0 +1,190 @@
+<!-- Area:utility CGI:members Step:login_info Partner:default.partner Template:utility/members.html -->
+<HTML>
+<HEAD><TITLE>Member Login - Free Web Space</TITLE></HEAD>
+<BODY BGCOLOR=white LINK="003399" ALINK="003399" VLINK="003399">
+<CENTER>
+
+
+<TABLE WIDTH=40% BORDER=0 CELLSPACING=0 CELLPADDING=3>
+ <TR>
+  <TD VALIGN=bottom><IMG NAME=logo SRC=/cgi-bin/image/logo_small.gif></TD>
+  <TD ALIGN=right VALIGN=bottom>&nbsp;</TD>
+ </TR>
+</TABLE>
+
+
+<TABLE WIDTH=40% BORDER=0 CELLSPACING=0 CELLPADDING=0>
+ <TR>
+  <TD COLSPAN=2>
+   <TABLE WIDTH=100% BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR=000066>
+		  <TR> 
+	    <TD ROWSPAN=2 VALIGN=top WIDTH=1%><IMG SRC=/fs_img/white_TL.gif WIDTH=10 HEIGHT=10></TD>
+	    <TD ROWSPAN=2 VALIGN=middle WIDTH=1%>
+ 	    <TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+							<TR>
+						  <TD NOWRAP>
+         <FONT FACE="Arial,Helvetica,sans-serif" SIZE="2" COLOR="white"><B>Member Login</B></FONT>
+        </TD>
+							</TR>
+	     </TABLE>
+	    </TD>
+	    <TD ROWSPAN=2 VALIGN=top WIDTH=1% ALIGN=right><IMG SRC=/fs_img/white_TR.gif WIDTH=10 HEIGHT=10></TD>
+	    <TD BGCOLOR=white><IMG SRC=/fs_img/spacer.gif WIDTH=3 HEIGHT=15></TD>
+    </TR>
+	   <TR>
+	    <TD VALIGN=top ALIGN=right><IMG SRC=/fs_img/white_TR.gif WIDTH=10 HEIGHT=10></TD>
+		  </TR>
+	  </TABLE>
+	 </TD>
+	</TR>
+</TABLE>
+
+
+<TABLE WIDTH=40% BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR=white>
+ <TR>
+  <TD BGCOLOR=000066 ROWSPAN=4 WIDTH=2><IMG SRC=/fs_img/spacer.gif WIDTH=1 HEIGHT=1></TD>
+  <TD BGCOLOR=cccc99 COLSPAN=2><IMG SRC=/fs_img/spacer.gif WIDTH=100 HEIGHT=10></TD>
+  <TD BGCOLOR=000066 ROWSPAN=4 WIDTH=2><IMG SRC=/fs_img/spacer.gif WIDTH=1 HEIGHT=1></TD>
+ </TR>
+ <TR> 
+  <TD ALIGN=left BGCOLOR=white VALIGN=top COLSPAN=2>
+   <TABLE WIDTH=100% BORDER=0 CELLPADDING=5 CELLSPACING=0>
+    <TR>
+     <TD VALIGN=top ALIGN=center>
+      <!-- include -- Partner "default.partner" -- File "members/login_info.txt" -->
+ 
+<FORM METHOD=get ACTION=/cgi-bin/members NAME=a>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=10>
+  <TR> 
+    <TD VALIGN=top>
+      <FONT FACE="Arial,Helvetica" SIZE="2" COLOR="#000000"> 
+      <INPUT TYPE=hidden NAME=save_password VALUE=''>
+      <INPUT TYPE=hidden NAME=redirect VALUE='/cgi-bin/util/my_member_area'>
+      <INPUT TYPE=hidden NAME=avail VALUE=''>
+      <B>Site:</B><BR>
+      <FONT SIZE=3>
+      &nbsp;&nbsp;
+        <INPUT NAME=site TYPE=text SIZE=25>
+      </FONT>
+      <P>
+      <B>Password:</B><BR>
+      &nbsp;&nbsp;
+          <INPUT NAME=password TYPE=password SIZE=25>
+      </FONT></TD>
+  </TR><TR> 
+    <TD ALIGN=right>
+      <SCRIPT><!--
+        document.write("<input type=button value='Login!' onclick=encodeUserPass();>");
+      //--></SCRIPT>
+      <NOSCRIPT>
+        <INPUT TYPE=submit VALUE='Login!'>
+      </NOSCRIPT>
+    </TD>
+  </TR>
+</TABLE>
+</FORM>
+<FORM METHOD=get ACTION=/cgi-bin/members NAME=b>
+  <INPUT TYPE=hidden NAME=site VALUE=''>
+  <INPUT TYPE=hidden NAME=redirect VALUE='/cgi-bin/util/my_member_area'>
+  <INPUT TYPE=hidden NAME=verify VALUE='1'>
+  <INPUT TYPE=hidden NAME=save_password VALUE=''>
+  <INPUT TYPE=hidden NAME=userpass VALUE=''>
+</FORM>
+
+<SCRIPT><!--
+
+function encodeUserPass(){
+  if (!document.a.site.value){ 
+  	alert("Please enter your Site");
+	}
+  else if (!document.a.password.value){
+  	alert("Please enter your Password");
+	}
+  else{
+  document.b.userpass.value=base64(''+document.a.site.value+':'+document.a.password.value);
+  document.b.site.value=document.a.site.value;
+  if(document.a.save_password.checked) document.b.save_password.value='true';
+  document.b.submit();
+  }
+}
+
+
+window.onload=focus_me;
+
+function focus_me(){
+  document.a.site.focus();
+}
+
+function base64(str){
+  var x=0;
+  var Alph='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+  var asciiD=new Array();
+  var ret='';
+  while (x<str.length) {
+    var n;
+    asciiD[0]=asciiD[1]=asciiD[2]=0;
+    for(n=0; n<3; n++){
+      if(x++ >= str.length) break;
+      asciiD[n]=ascii(str.charAt(x-1));
+    }
+    if(n > 0){
+      ret+=Alph.charAt( asciiD[0] >> 2 );
+      ret+=Alph.charAt( ((asciiD[0] & 3) << 4) | (asciiD[1] >> 4) );
+      var dig1=Alph.charAt( ((asciiD[1] & 0xF) << 2) | (asciiD[2] >> 6) );
+      var dig2=Alph.charAt( asciiD[2] & 0x3F );
+      if(n < 3){
+        dig2 = '=';
+	if (n < 2) dig1 = '=';
+      }
+      ret+=dig1+dig2;
+    }
+  }
+  return ret;
+}
+
+function ascii(Char){
+  var i=' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~'.indexOf(Char);
+  if(i>-1) return i+32;
+  else{
+    i='\t\n \r'.indexOf(Char);
+    if(i>-1) return i+9;
+  }
+  return 32;
+}
+//--></SCRIPT>
+     </TD>
+    </TR>
+   </TABLE>
+	 </TD>
+ </TR>
+ <TR>
+  <TD BGCOLOR=cccc99 COLSPAN=2><IMG SRC=/fs_img/spacer.gif WIDTH=1 HEIGHT=10></TD>
+ </TR>
+ <TR> 
+  <TD BGCOLOR=000066 COLSPAN=2 ALIGN=center>
+   <IMG SRC=/fs_img/spacer.gif WIDTH=1 HEIGHT=5><BR>
+   <A HREF=/cgi-bin/forgot><FONT FACE="Arial,Helvetica,sans-serif" SIZE="2" COLOR="white"><FONT SIZE='-1'>
+   I forgot my password. Help!
+   </FONT></FONT></A><BR>
+   <IMG SRC=/fs_img/spacer.gif WIDTH=1 HEIGHT=5>
+  </TD>
+ </TR>
+</TABLE>
+
+
+<TABLE WIDTH=40% BORDER=0 CELLSPACING=0 CELLPADDING=3 ALIGN=center>
+ <TR>
+      <TD ALIGN=center VALIGN=bottom>&nbsp; <IMG SRC="/cgi-bin/image/images/cobrand_logo.gif" VSPACE="5" BORDER="0"> 
+      </TD>
+ </TR>
+</TABLE>
+
+
+<FONT FACE="Arial,Helvetica,sans-serif" SIZE="2">
+<A HREF=http://signup.freewebspace.com/cgi-bin/signup><FONT SIZE='-1' COLOR=black>Not a member yet? Click here to sign up!</FONT></A>
+</FONT>
+
+
+</CENTER>
+</BODY>
+</HTML>
