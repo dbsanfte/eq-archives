@@ -1,0 +1,11 @@
+<html><head><title>Fennin-Ro Japanese GUILD Thurgadin Quest Armor List@Keeper login</title></head><BODY BGCOLOR=#FFF2C8 TEXT=#000000><CENTER> <!-- start AD -->
+<CENTER>
+<A href="http://www.infoseek.co.jp/redirect?sv=FM&lk=&ak=MOBL-2006-1013-H1375&rd=http://i.infoseek.co.jp/" class="##DIRECT##">&#63721;ÓÊŞ²ÙŒŸõ»°ËŞ½<BR>infoseekÓÊŞ²Ù&#63873;</A></CENTER>
+<!-- end AD -->
+</CENTER><HR><FONT SIZE=+2>Fennin-Ro Japanese GUILD Thurgadin Quest Armor List@Keeper login</FONT><BR>
+<FORM ACTION="./login.cgi" METHOD="POST" ENCTYPE="application/x-www-form-urlencoded">
+Keeper Password<INPUT TYPE="PASSWORD" NAME="PASS" SIZE="12">
+<INPUT TYPE="HIDDEN" NAME="MODE" VALUE="login">
+<INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="‘—M">
+</FORM>
+</body></html>
