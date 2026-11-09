@@ -1,0 +1,715 @@
+<!--INCLUDE FILE="LangMODS_Ls3kAU4_1030.asp" --><!--INCLUDE FILE="LangMODS_Ls3kAU4_1033.asp" --><!--INCLUDE FILE="LangMODS_Ls3kAU4_1034.asp" --><!--INCLUDE FILE="LangMODS_Ls3kAU4_1036.asp" --><!--INCLUDE FILE="LangMODS_Ls3kAU4_1037.asp" --><!--INCLUDE FILE="LangMODS_Ls3kAU4_1041.asp" --><!--INCLUDE FILE="LangMODS_Ls3kAU4_1043.asp" --><!--INCLUDE FILE="LangMODS_Ls3kAU4_1046.asp" --><!--INCLUDE FILE="LangMODS_Ls3kAU4_1053.asp" --><!--INCLUDE FILE="LangMODS_Ls3kAU4_2070.asp" --><html>
+
+<head>
+<title>E'Ci Unbroken</title>
+<meta name="copyright" content="This Forum code is Copyright (C) 2000-02 Michael Anderson, Pierre Gorissen, Huw Reddick and Richard Kinser, Non-Forum Related code is Copyright (C) E'Ci Unbroken">
+<script language="JavaScript" type="text/javascript">
+<!-- hide from JavaScript-challenged browsers
+function admin(url) {
+	popupWin = window.open(url,'new_page','width=750,height=500,scrollbars=yes')
+}
+function viewfull(url) {
+	popupWin = window.open(url,'new_page','width=500,height=400,scrollbars=yes')
+}
+function openWindow(url) {
+	popupWin = window.open(url,'new_page','width=400,height=400')
+}
+function openWindow2(url) {
+	popupWin = window.open(url,'new_page','width=400,height=450')
+}
+function openWindow3(url) {
+	popupWin = window.open(url,'new_page','width=400,height=450,scrollbars=yes')
+}
+function openWindow4(url) {
+	popupWin = window.open(url,'new_page','width=400,height=525')
+}
+function openWindow5(url) {
+	popupWin = window.open(url,'new_page','width=450,height=525,scrollbars=yes,toolbars=yes,menubar=yes,resizable=yes')
+}
+function openWindow6(url) {
+	popupWin = window.open(url,'new_page','width=500,height=450,scrollbars=yes')
+}
+function openWindowHelp(url) {
+	popupWin = window.open(url,'new_page','width=470,height=200,scrollbars=yes')
+}
+// ################## Poll Mod ##################
+function openPollWindow(url,w,h) {
+	popupWin = window.open(url,'new_page','width='+w+',height='+h+',scrollbars=yes')
+}
+function submitPoll(btnPressed) {
+	btnPressed.disabled=true;
+	if (btnPressed.name == "results") {
+		document.Poll.Method_Type.value = "guest_vote";
+	} else {
+		document.Poll.Method_Type.value = "member_vote";
+	}
+	document.Poll.submit();
+}
+// #############################################
+function OpenSpellCheck()
+{
+var curCookie = "strMessagePreview=" + escape(document.PostTopic.Message.value);
+document.cookie = curCookie;
+popupWin = window.open('pop_spellcheck.asp', 'preview_page', 'scrollbars=yes,width=650,height=400')
+}
+// done hiding -->
+</script>
+<style type="text/css">
+<!--
+/* ##### Extended Color Code Mod ##### */
+body {Scrollbar-Face-Color:;Scrollbar-Arrow-Color:;Scrollbar-Track-Color:;Scrollbar-Shadow-Color:;Scrollbar-Highlight-Color:;Scrollbar-3Dlight-Color:}
+a:link    {color:black;background-color:;text-decoration:underline}
+a:visited {color:black;background-color:;text-decoration:underline}
+a:hover   {color:red;background-color:;text-decoration:underline}
+a:active  {color:red;background-color:;text-decoration:none}
+.spnMessageText a:link    {color:darkblue;background-color:;text-decoration:underline}
+.spnMessageText a:visited {color:blue;background-color:;text-decoration:underline}
+.spnMessageText a:hover   {color:red;background-color:;text-decoration:underline}
+.spnMessageText a:active  {color:red;background-color:;text-decoration:underline}
+/* ################################### */
+select {background-color:whitesmoke; color: black; border-width:0; border-color:black}
+textarea {background-color:whitesmoke; color: black; border-width:1; border-color:black}
+input.buttons {background-color:whitesmoke; color: black; border-width:1; border-color:black}
+input.buttons2 {background-color:darkgray; color: black; border-width:1; border-color:black}
+input.newLogin {background-color:whitesmoke; color:black; border-width:1; border-color:black}
+input.search {background-color:darkgray; color:black; border-width:1; border-color:black}
+input.radio {background-color:"; color:#000000}
+a:link    {color:black;text-decoration:underline}
+a:visited {color:black;text-decoration:underline}
+a:hover   {color:red;text-decoration:underline}
+a:active  {color:red;text-decoration:none}
+.spnMessageText a:link    {color:darkblue;text-decoration:underline}
+.spnMessageText a:visited {color:blue;text-decoration:underline}
+.spnMessageText a:hover   {color:red;text-decoration:underline}
+.spnMessageText a:active  {color:red;text-decoration:underline}
+.spnSearchHighlight {background-color:yellow}
+-->
+</style>
+</head>
+
+<body bgColor="#61667A" text="black" link="black" aLink="red" vLink="black" topmargin="20" leftmargin="20">
+<a name="top"></a><font face="Verdana, Arial, Helvetica">
+<table align="center" border="0" cellPadding="0" cellSpacing="0" width="100%">
+  <tr>
+<td width="50%" height="120">
+<a href="../" tabindex="-1"><img src="http://www.eciunbroken.com/images/logo.jpg" border="0" alt="E'Ci Unbroken" title="E'Ci Unbroken" /></a><br>
+</td>
+    <td align="right" valign="middle" width="50%" height="120">
+      <table border="0" cellPadding="2" cellSpacing="0">
+        <form action="/forums/default.asp" method="post" id="form1" name="form1">
+        <input type="hidden" name="Method_Type" value="login">
+        <tr>
+          <td align="right">
+            <table border="0" cellpadding="4" cellspacing="">
+        	<tr><td>
+                <table border="0" cellpadding="1" cellspacing="0"><tr><td align="right" width="1"><img SRC="http://www.eciunbroken.com/forums/images/icon_member.gif"></td><td align="left" width="100"><font face="Verdana, Arial, Helvetica" size="1" color="black"><b>Username:</b></font></td></tr>
+                <tr><td colspan="2" align="left"><input type="text" class="newLogin" name="Name" size="15" maxLength="25" value=""></td></tr>
+                <tr><td align="right" width="1"><img SRC="http://www.eciunbroken.com/forums/images/icon_lock2.gif"></td><td align="left"  width="100"><font face="Verdana, Arial, Helvetica" size="1" color="black"><b>Password:</b></font></td></tr>
+                <tr><td colspan="2" align="left"><input type="password" class="newLogin" name="Password" size="15" maxLength="25" value=""></td></tr>
+                <tr><td colspan="2" align="left"><font face="Verdana, Arial, Helvetica" size="1" color="black">
+                <input type="checkbox" class="radio" name="SavePassWord" value="true" tabindex="-1" CHECKED><b> Save Password</b></font></td></tr></table>
+                <td align="center" valign="top"><br>
+                <input src="http://www.eciunbroken.com/forums/images/button_login.gif" type="image" border="0" value="Login" id="submit1" name="Login">
+		<br><font face="Verdana, Arial, Helvetica" size="3"><a href="policy.asp" tabindex="-1"><b>Register</b></a></font>
+               <br><font face="Verdana, Arial, Helvetica" size="1"><a href="password.asp" onMouseOver="(window.status='Choose a new password if you have forgotten your current one...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1">Forgot Password?</a></font>
+             </td>
+              </tr>
+                </font></td>
+              </td></tr>
+            </table>
+          </td>
+        </tr>
+        </form>
+      </table>
+    </td>
+  </tr>
+  <tr>
+  <td colspan="2">
+  <table border="0" bgcolor="black" align="left" cellPadding="0" cellSpacing="1" width="100%" height="27">
+  <tr>
+  <td bgcolor="slategray" width="100%">
+<table align="center" border="0" cellPadding="4" cellSpacing="0" width="100%">
+ <tr>
+  <td>
+          <font face="Verdana, Arial, Helvetica" size="2">&nbsp;<a href="../" onMouseOver="(window.status='Homepage'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="Homepage"><img src="http://www.eciunbroken.com/forums/images/icon_nav_home.gif" border=0> Home</acronym></a>
+          &nbsp;
+          <a href="default.asp" onMouseOver="(window.status='See whats going on in the forum'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="See whats going on in the forum"><img src="http://www.eciunbroken.com/forums/images/icon_folder_open_topic.gif" border=0> Forums</acronym></a>
+          &nbsp;
+          <a href="cal.asp" target="_self"><acronym title="Check out the events calendar"><img src="http://www.eciunbroken.com/forums/images/icon_nav_calendar.gif" border=0> Events Calendar</acronym></a>
+          &nbsp;
+          <a href="about.asp" onMouseOver="(window.status='View to the rogues gallery'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="View to the rogues gallery"><img src="http://www.eciunbroken.com/forums/images/icon_smile_evil.gif" border=0> The Rabble</acronym></a>
+          &nbsp;
+          <a href="guestbook.asp" onMouseOver="(window.status='Please sign our Guestbook'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="Please sign our Guestbook"><img src="http://www.eciunbroken.com/forums/images/icon_nav_guestbook.gif" border=0> Guestbook</acronym></a>
+          &nbsp;
+          <a href="faq.asp" onMouseOver="(window.status='Answers to Frequently Asked Questions...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="Answers to Frequently Asked Questions..."><img src="http://www.eciunbroken.com/forums/images/icon_nav_help.gif" border=0> FAQ</acronym></a>
+          &nbsp;
+          &nbsp;
+          <a href="policy.asp" onMouseOver="(window.status='Register to post to our forum...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="Register to post to our forum..."><img src="http://www.eciunbroken.com/forums/images/icon_nav_register.gif" border=0> Register</acronym></a>
+</font>
+  </td>
+ </tr>
+</table>
+  </td>
+  </tr>
+  <tr>
+  <td bgColor="whitesmoke">
+<table align="center" border="0" cellPadding="4" cellSpacing="0" width="100%">
+ <tr>
+  <td>
+  <font face="Verdana, Arial, Helvetica" size="1">
+  <a href="active.asp" target="_self">Active Topics</a>&nbsp;|&nbsp;<a href="active_polls.asp" target="_self">Active Polls</a>&nbsp;|&nbsp;<a href="res_livenews.asp" target="_self">Resources</a>&nbsp;|&nbsp;<a href="members.asp" target="_self">Members</a>&nbsp;|&nbsp;<a href="active_users.asp" target="_self">Online Users</a>&nbsp;|&nbsp;<a href="liquidchat.asp" target="_self">Live Chat</a>&nbsp;|&nbsp;<a href="pop_avatarlegend.asp" target="_self">Avatar Legend</a>&nbsp;|&nbsp;<a href="search.asp" target="_self">Search</a>&nbsp;|&nbsp;<a href="member_stats.asp" target="_self">Statistics</a>
+  </font>
+  </td>
+ </tr>
+</table>
+  </td>
+  </tr>
+  <tr>
+  <td bgcolor="whitesmoke" align="left" width="100%" nowrap>
+<table align="center" border="0" cellPadding="4" cellSpacing="0" width="100%">
+ <tr>
+  <td>
+          <font face="Verdana, Arial, Helvetica" size="1" color="midnightblue">
+            [ Active Members: <b><font color="darkblue">1</font></b> | 
+            Anonymous Members: <b><font color="darkblue">1</font></b> | 
+            Guests: <b><font color="darkblue">8</font></b> ]&nbsp;&nbsp;[ 
+            Total: <b><font color="darkblue">10</font></b>
+		]
+<font face="Verdana, Arial, Helvetica" size="1" color="midnightblue">&nbsp;[ Newest Member: <font color="darkblue"><span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=326" title="View Katatonik's Profile" onMouseOver="(window.status='View Katatonik\'s Profile'); return true" onMouseOut="(window.status=''); return true">Katatonik</a></span></font> ]</font>
+  </td>
+ </tr>
+</table>
+  </td>
+ </tr>
+ <tr>
+  <td>
+<table align="center" border="0" cellPadding="4" cellSpacing="0" width="100%">
+  </td>
+ </tr>
+</table>
+<tr>
+<td bgcolor="whitesmoke">
+<table bgcolor="whitesmoke" align="center" border="0" cellPadding="0" cellSpacing="0" width="100%">
+  <tr>
+    <td colspan="3">
+    <script language="JavaScript" type="text/javascript">
+    <!-- hide from JavaScript-challenged browsers
+    function mOvr(src,clrOver) {if (!src.contains(event.fromElement))  {src.bgColor = clrOver;}}
+    function mOut(src,clrIn)   {if (!src.contains(event.toElement))    {src.style.cursor = 'default'; src.bgColor = clrIn;}}
+    // --->
+    </script>
+    <script language="JavaScript" type="text/javascript">
+    <!--
+    function unsub_confirm(link){
+    	var where_to= confirm("Do you really want to Unsubscribe?");
+       if (where_to== true) {
+       	popupWin = window.open(link,'new_page','width=400,height=400')
+       }
+    }
+    //-->
+    </script>
+      <table border="0" width="100%" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td bgcolor="black">
+            <table border="0" width="100%" cellspacing="1" cellpadding="4">
+              <tr>
+                <td align="center" bgcolor="slategray" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="black">&nbsp;</font></b></td>
+                <td align="center" bgcolor="slategray" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="black">Forum</font></b></td>
+                <td align="center" bgcolor="slategray" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="black">Topics</font></b></td>
+                <td align="center" bgcolor="slategray" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="black">Posts</font></b></td>
+                <td align="center" bgcolor="slategray" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="black">Last&nbsp;Post</font></b></td>
+                <td align="center" bgcolor="slategray">&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="slategray" colspan="5" valign="top"><a href="/forums/default.asp?Snitz00HideCat2=Y"><img src="http://www.eciunbroken.com/forums/images/icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category" title="Collapse This Category" /></a>&nbsp;<a href="default.asp?CAT_ID=2" title="View only the Forums in this Category"><font face="Verdana, Arial, Helvetica" size="2" color="black"><b>E'Ci Unbroken</b></font></a>&nbsp;&nbsp;</td>
+                <td bgcolor="slategray" align="center" valign="top" nowrap><b><font face="Verdana, Arial, Helvetica" size="2">&nbsp;</font></b></td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=29"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=29'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=29">Alliances</a><br /><font size="1"> Look here for information on guild alliances and events.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">15</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">96</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/16/2004</b><br /> 10:28:01 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=9" title="View lostheart's Profile" onMouseOver="(window.status='View lostheart\'s Profile'); return true" onMouseOut="(window.status=''); return true">lostheart</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=22"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=22'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=22">DKP/ Raid Points</a><br /><font size="1">  </font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">34</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">188</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/14/2004</b><br /> 4:59:09 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=30" title="View Sacoythis's Profile" onMouseOver="(window.status='View Sacoythis\'s Profile'); return true" onMouseOut="(window.status=''); return true">Sacoythis</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=23"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=23'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=23">Fun Stuff</a><br /><font size="1">  </font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">8</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">19</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/07/2004</b><br /> 06:14:15 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=24" title="View Xslia's Profile" onMouseOver="(window.status='View Xslia\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xslia</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=2"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=2'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=2">General</a><br /><font size="1"> General chat forum to post what's new, what's going on, or whatever for members and visitors.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">259</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1257</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/16/2004</b><br /> 1:23:49 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=8" title="View Crazyfrog's Profile" onMouseOver="(window.status='View Crazyfrog\'s Profile'); return true" onMouseOut="(window.status=''); return true">Crazyfrog</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=24"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=24'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=24">Guild Vault</a><br /><font size="1"> Posting Spells and Items people have in bank - gathering dust.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">2</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">5</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/03/2004</b><br /> 12:54:04 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=221" title="View saibot's Profile" onMouseOver="(window.status='View saibot\'s Profile'); return true" onMouseOut="(window.status=''); return true">saibot</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=27"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=27'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=27">Raid Checklists, Strategies, and Mob Info</a><br /><font size="1"> Guild information on mobs & stragegies.  Each Target will have a Strategy (that will be a stickey) and we can post discussion threads on them.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">34</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">142</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/16/2004</b><br /> 12:34:00 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=230" title="View seronia's Profile" onMouseOver="(window.status='View seronia\'s Profile'); return true" onMouseOut="(window.status=''); return true">seronia</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=28"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=28'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=28">Raid Pictures</a><br /><font size="1">  </font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">9</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">24</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/14/2004</b><br /> 8:19:29 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=260" title="View vip37's Profile" onMouseOver="(window.status='View vip37\'s Profile'); return true" onMouseOut="(window.status=''); return true">vip37</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=3"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=3'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=3">Raids and Events</a><br /><font size="1"> Check here for news on raids and scheduled events.<br /><br />Note: This is a private guild forum.  Your account will be approved and added for access for this forum.  Please give us a day or 2 to grant you access into the forum after you register.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">66</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">394</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/15/2004</b><br /> 11:44:59 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=171" title="View 2w171's Profile" onMouseOver="(window.status='View 2w171\'s Profile'); return true" onMouseOut="(window.status=''); return true">2w171</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=21"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=21'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=21">Recruitment</a><br /><font size="1"> Interested in joining the ranks of E'Ci Unbroken?  This is the place for you.<br /><br />Please review the recruitment questions in the top sticky post and post your answers here for officers to review.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">74</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">128</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/14/2004</b><br /> 2:55:04 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=322" title="View Enron's Profile" onMouseOver="(window.status='View Enron\'s Profile'); return true" onMouseOut="(window.status=''); return true">Enron</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=5"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=5'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=5">The Bazaar</a><br /><font size="1"> Use this forum to post items you have for sale, trade, or items you are looking for.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">25</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">99</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/08/2004</b><br /> 4:45:08 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=271" title="View Twistur's Profile" onMouseOver="(window.status='View Twistur\'s Profile'); return true" onMouseOut="(window.status=''); return true">Twistur</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="slategray" colspan="5" valign="top"><a href="/forums/default.asp?Snitz00HideCat3=Y"><img src="http://www.eciunbroken.com/forums/images/icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category" title="Collapse This Category" /></a>&nbsp;<a href="default.asp?CAT_ID=3" title="View only the Forums in this Category"><font face="Verdana, Arial, Helvetica" size="2" color="black"><b>Epics</b></font></a>&nbsp;&nbsp;</td>
+                <td bgcolor="slategray" align="center" valign="top" nowrap><b><font face="Verdana, Arial, Helvetica" size="2">&nbsp;</font></b></td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=25"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=25'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=25">An Epic Raid Request & Epic Request Rules</a><br /><font size="1"> Need help with a mob for epic - please read rules and post request here.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">7</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">22</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>05/31/2004</b><br /> 03:04:49 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=9" title="View lostheart's Profile" onMouseOver="(window.status='View lostheart\'s Profile'); return true" onMouseOut="(window.status=''); return true">lostheart</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=7"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=7'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=7">Bard Epic</a><br /><font size="1"> Post here for status on bard epic or to ask for info/help on the bard epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">2</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">3</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/07/2004</b><br /> 5:17:43 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=250" title="View minamin's Profile" onMouseOver="(window.status='View minamin\'s Profile'); return true" onMouseOut="(window.status=''); return true">minamin</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=8"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=8'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=8">Beastlord Epic</a><br /><font size="1"> Post here for status on beastlord epic or to ask for info/help on the beastlord epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">3</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">18</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>04/30/2004</b><br /> 11:34:04 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=127" title="View Bigdum's Profile" onMouseOver="(window.status='View Bigdum\'s Profile'); return true" onMouseOut="(window.status=''); return true">Bigdum</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=6"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=6'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=6">Cleric Epic</a><br /><font size="1"> Post here for status on cleric epic or to ask for info/help on the cleric epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">12</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">33</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/10/2004</b><br /> 06:03:24 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=259" title="View Krieg's Profile" onMouseOver="(window.status='View Krieg\'s Profile'); return true" onMouseOut="(window.status=''); return true">Krieg</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=9"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=9'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=9">Druid Epic</a><br /><font size="1"> Post here for status on druid epic or to ask for info/help on the druid epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">6</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">15</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>04/29/2004</b><br /> 05:36:51 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=230" title="View seronia's Profile" onMouseOver="(window.status='View seronia\'s Profile'); return true" onMouseOut="(window.status=''); return true">seronia</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=10"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=10'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=10">Enchanter Epic</a><br /><font size="1"> Post here for status on enchanter epic or to ask for info/help on the enchanter epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">2</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>02/15/2004</b><br /> 1:48:16 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=9" title="View lostheart's Profile" onMouseOver="(window.status='View lostheart\'s Profile'); return true" onMouseOut="(window.status=''); return true">lostheart</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=11"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=11'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=11">Magician Epic</a><br /><font size="1"> Post here for status on magician epic or to ask for info/help on the magician epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>10/24/2003</b><br /> 08:51:15 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=17" title="View Maesterr's Profile" onMouseOver="(window.status='View Maesterr\'s Profile'); return true" onMouseOut="(window.status=''); return true">Maesterr</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=12"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=12'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=12">Monk Epic</a><br /><font size="1"> Post here for status on monk epic or to ask for info/help on the monk epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">3</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">9</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>05/03/2004</b><br /> 4:36:10 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=237" title="View Zzakam's Profile" onMouseOver="(window.status='View Zzakam\'s Profile'); return true" onMouseOut="(window.status=''); return true">Zzakam</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=13"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=13'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=13">Necromancer Epic</a><br /><font size="1"> Post here for status on necromancer epic or to ask for info/help on the necromancer epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">3</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">4</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/13/2004</b><br /> 02:17:25 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=221" title="View saibot's Profile" onMouseOver="(window.status='View saibot\'s Profile'); return true" onMouseOut="(window.status=''); return true">saibot</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=14"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=14'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=14">Paladin Epic</a><br /><font size="1"> Post here for status on paladin epic or to ask for info/help on the paladin epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">2</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>10/24/2003</b><br /> 09:04:40 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=17" title="View Maesterr's Profile" onMouseOver="(window.status='View Maesterr\'s Profile'); return true" onMouseOut="(window.status=''); return true">Maesterr</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=15"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=15'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=15">Ranger Epic</a><br /><font size="1"> Post here for status on ranger epic or to ask for info/help on the ranger epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">9</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">16</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>04/26/2004</b><br /> 09:24:38 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=231" title="View Colomar's Profile" onMouseOver="(window.status='View Colomar\'s Profile'); return true" onMouseOut="(window.status=''); return true">Colomar</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=16"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=16'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=16">Rogue Epic</a><br /><font size="1"> Post here for status on rogue epic or to ask for info/help on the rogue epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">3</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">4</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>03/18/2004</b><br /> 9:54:03 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=174" title="View Shomt's Profile" onMouseOver="(window.status='View Shomt\'s Profile'); return true" onMouseOut="(window.status=''); return true">Shomt</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=17"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=17'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=17">Shadowknight Epic</a><br /><font size="1"> Post here for status on shadowknight epic or to ask for info/help on the shadowknight epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">2</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>03/10/2004</b><br /> 1:23:23 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=179" title="View Diablenoir's Profile" onMouseOver="(window.status='View Diablenoir\'s Profile'); return true" onMouseOut="(window.status=''); return true">Diablenoir</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=18"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=18'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=18">Shaman Epic</a><br /><font size="1"> Post here for status on shaman epic or to ask for info/help on the shaman epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">3</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">8</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>03/08/2004</b><br /> 10:48:04 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=194" title="View Mengg's Profile" onMouseOver="(window.status='View Mengg\'s Profile'); return true" onMouseOut="(window.status=''); return true">Mengg</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=19"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=19'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=19">Warrior Epic</a><br /><font size="1"> Post here for status on warrior epic or to ask for info/help on the warrior epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">5</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>02/20/2004</b><br /> 11:34:52 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=171" title="View 2w171's Profile" onMouseOver="(window.status='View 2w171\'s Profile'); return true" onMouseOut="(window.status=''); return true">2w171</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=20"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=20'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=20">Wizard Epic</a><br /><font size="1"> Post here for status on wizard epic or to ask for info/help on the wizard epic.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>10/24/2003</b><br /> 09:07:34 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=17" title="View Maesterr's Profile" onMouseOver="(window.status='View Maesterr\'s Profile'); return true" onMouseOut="(window.status=''); return true">Maesterr</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="slategray" colspan="5" valign="top"><a href="/forums/default.asp?Snitz00HideCat15=Y"><img src="http://www.eciunbroken.com/forums/images/icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category" title="Collapse This Category" /></a>&nbsp;<a href="default.asp?CAT_ID=15" title="View only the Forums in this Category"><font face="Verdana, Arial, Helvetica" size="2" color="black"><b>Tradeskills</b></font></a>&nbsp;&nbsp;</td>
+                <td bgcolor="slategray" align="center" valign="top" nowrap><b><font face="Verdana, Arial, Helvetica" size="2">&nbsp;</font></b></td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=31"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=31'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=31">Blacksmithing</a><br /><font size="1"> Forum for recipes, information, and the like for the blacksmith trade.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">2</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>05/20/2004</b><br /> 09:15:20 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=8" title="View Crazyfrog's Profile" onMouseOver="(window.status='View Crazyfrog\'s Profile'); return true" onMouseOut="(window.status=''); return true">Crazyfrog</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=33"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=33'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=33">Brewing</a><br /><font size="1"> Forum for recipes, information, and guides for getting drunk here.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">2</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>05/20/2004</b><br /> 09:21:57 AM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=8" title="View Crazyfrog's Profile" onMouseOver="(window.status='View Crazyfrog\'s Profile'); return true" onMouseOut="(window.status=''); return true">Crazyfrog</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=32"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=32'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=32">Fletching</a><br /><font size="1"> Forum for recipes, information, and guides for fletching here.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">3</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>05/27/2004</b><br /> 12:47:37 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=184" title="View Jorann Sagewind's Profile" onMouseOver="(window.status='View Jorann Sagewind\'s Profile'); return true" onMouseOut="(window.status=''); return true">Jorann Sagewind</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=34"><img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=34'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=34">Jewelcrafting</a><br /><font size="1"> Forum for recipes, information, and guides for jewelcrafting here.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">2</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>06/09/2004</b><br /> 12:43:14 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=138" title="View Cutenkraw's Profile" onMouseOver="(window.status='View Cutenkraw\'s Profile'); return true" onMouseOut="(window.status=''); return true">Cutenkraw</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr bgcolor="whitesmoke" onMouseOver="mOvr(this,'whitesmoke')" onMouseOut="mOut(this,'whitesmoke')">
+                <td bgcolor="whitesmoke" align="center" valign="top"><a href="forum.asp?FORUM_ID=30"><img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td style="cursor: hand" onClick="window.location.href='forum.asp?FORUM_ID=30'" class="button" bgcolor="whitesmoke" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=30">Tailoring</a><br /><font size="1"> Post recipes, information, and guides for tailoring here.</font></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">3</font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1"><b>05/28/2004</b><br /> 11:05:53 PM<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=39" title="View Kroakinfrog's Profile" onMouseOver="(window.status='View Kroakinfrog\'s Profile'); return true" onMouseOut="(window.status=''); return true">Kroakinfrog</a></span></font></td>
+                <td bgcolor="whitesmoke" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+      <tr>
+        <td bgcolor="slategray" colspan="6">
+<a href="/forums/default.asp?HideActiveUsers=Y"><img src="http://www.eciunbroken.com/forums/images/icon_minus.gif" width="10" height="10" border="0" alt="Collapse Active Users" title="Collapse Active Users" /></a>          <font face="Verdana, Arial, Helvetica" size="2" color="black"><b>
+            Active Users
+          </b></font>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="whitesmoke" rowspan="2" width="10px">
+          <img src="http://www.eciunbroken.com/forums/images/icon_group.gif" width="15" height="15" border="0" alt="" title="" />
+        </td>
+        <td bgcolor="whitesmoke" colspan="5">
+          <font face="Verdana, Arial, Helvetica" size="1" color="midnightblue">
+            [ Active Members: <font color="darkblue"><b>1</b></font> | 
+            Anonymous Members: <font color="darkblue"><b>1</b></font> | 
+            Guests: <font color="darkblue"><b>8</b></font> ]&nbsp;&nbsp;[ 
+            Total: <font color="darkblue"><b>10 </b></font> ]
+          &nbsp;&nbsp;[ <font color="orangered">Administrators</font> | <font color="forestgreen">Moderators</font> ]
+            <br>
+            Active Users Record: <font color="darkblue"><b>56</b></font> | Record Set On: <font color="darkblue"><b>06/04/2004 </b></font>at<font color="darkblue"><b>  10:58:40 AM
+          </b></font></font>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="whitesmoke" colspan="5">
+          <font face="Verdana, Arial, Helvetica" size="1">
+            Members Online: <a href="pop_profile.asp?mode=display&id=259"><font color="black">Krieg</font></a>
+          </font>
+        </td>
+      </tr>              <tr>
+                <td bgcolor="slategray" colspan="6"><font face="Verdana, Arial, Helvetica" size="2" color="black"><b>Statistics</b></font></td>
+              </tr>
+              <tr>
+                <td rowspan="4" bgcolor="whitesmoke">&nbsp;</td>
+                <td bgcolor="whitesmoke" colspan="5"><font face="Verdana, Arial, Helvetica" size="1" color="midnightblue">178 of 227 <span class="spnMessageText"><a href="members.asp">Members</a></span> have  made 2509 posts in 31 forums, with the last post on <span class="spnMessageText"><a href="topic.asp?whichpage=-1&TOPIC_ID=861&REPLY_ID=2829">06/16/2004 1:23:49 PM</a></span> by: <span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=8" title="View Crazyfrog's Profile" onMouseOver="(window.status='View Crazyfrog\'s Profile'); return true" onMouseOut="(window.status=''); return true">Crazyfrog</a></span>.</font></td>
+              </tr>
+              <tr>
+                <td bgcolor="whitesmoke" colspan="5"><font face="Verdana, Arial, Helvetica" size="1" color="midnightblue">There are  currently 588 topics.</font></td>
+              </tr>
+              <tr>
+                <td bgcolor="whitesmoke" colspan="5"><font face="Verdana, Arial, Helvetica" size="1" color="midnightblue">Please welcome our newest member: <span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=326" title="View Katatonik's Profile" onMouseOver="(window.status='View Katatonik\'s Profile'); return true" onMouseOut="(window.status=''); return true">Katatonik</a></span>.</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%">
+              <tr>
+                <td><font face="Verdana, Arial, Helvetica" size="1">
+                <img src="http://www.eciunbroken.com/forums/images/icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" align="absmiddle" /> Contains new posts since last visit.<br />
+                <img src="http://www.eciunbroken.com/forums/images/icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" align="absmiddle" /> No new posts since the last visit.<br /></font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+<style>
+.smallcalendar
+	{font: 10px Verdana, Arial, Helvetica; text-align:center;}
+.smallcalendar td
+	{height:18px;}
+.smallcalendar a:link, .smallcalendar a:visited
+	{text-decoration:none; color: darkblue;}
+.smallcalendar a:hover   {color:red;text-decoration:underline}
+.smallcalendar a:active  {color:red;text-decoration:none}
+.smalleventslist 
+	{font: 10px Verdana, Arial, Helvetica;}
+.smalleventslist ul
+	{list-style:square inside; margin:5px;}
+.eventslist 
+	{font: 12px Verdana, Arial, Helvetica;}
+.eventslist td 
+	{background:darkgray;}
+.largecalendarcell 
+	{font: 10px Verdana, Arial, Helvetica;}
+.largecalendarcell ul
+	{list-style:square inside; margin:0px; }
+.largecalendarcell a:link, .largecalendarcell a:visited 
+	{text-decoration:none; color: darkblue;}
+.largecalendarcell a:hover   {color:red;text-decoration:underline}
+.largecalendarcell a:active  {color:red;text-decoration:none}
+.isevent a:link, .isevent a:hover, .isevent a:active, .isevent a:visited
+	{color: red;}
+#datetoday 
+	{border-collapse:collapse; border: 2px solid black;}
+.dateselected
+	{background: yellow;}
+</style>
+<TABLE border="0" width="100%" cellspacing="0" cellpadding="0" align="center">
+<TR><TD bgcolor="black">
+	<TABLE border="0" width="100%" cellspacing="1" cellpadding="4">
+	<TR><TD colspan="3" align="center" bgcolor="slategray" noWrap vAlign="top"><b>
+		<A href="cal.asp"><font face="Verdana, Arial, Helvetica" size="2" color="black">Events Calendar<FONT></A>
+	</TD></TR>
+	<TR><TD rowSpan="2" width="1%" bgcolor="whitesmoke" valign="top">
+<TABLE width="210" border="0" cellSpacing="0" cellPadding="0">
+<TR><TD bgColor=black><TABLE width="210" border="0" cellSpacing="1" cellPadding="0">
+<TR align="center">
+	<TD bgColor="slategray"><A href="cal.asp?view=monthly&date=6/16/2004" style="text-decoration:none;">
+	<B><A href="cal.asp?view=monthly&date=6/16/2004" style="text-decoration:none">
+		<FONT face="Verdana, Arial, Helvetica" size="2" color="black">June&nbsp;2004</FONT></A></B></TR>
+<TR class="smallcalendar"><TD colSpan=3>
+<TABLE width="100%" bgColor="whitesmoke" class="smallcalendar">
+<TR>
+	<TD>S</TD>
+	<TD>M</TD>
+	<TD>T</TD>
+	<TD>W</TD>
+	<TD>T</TD>
+	<TD>F</TD>
+	<TD>S</TD>
+</TR>
+<TR>
+	<TD></TD>
+	<TD></TD>
+	<TD><A href="cal.asp?date=6/1/2004">1</A></TD>
+	<TD><A href="cal.asp?date=6/2/2004">2</A></TD>
+	<TD><A href="cal.asp?date=6/3/2004">3</A></TD>
+	<TD><A href="cal.asp?date=6/4/2004">4</A></TD>
+	<TD><A href="cal.asp?date=6/5/2004">5</A></TD>
+</TR>
+<TR>
+	<TD><A href="cal.asp?date=6/6/2004">6</A></TD>
+	<TD><A href="cal.asp?date=6/7/2004">7</A></TD>
+	<TD><A href="cal.asp?date=6/8/2004">8</A></TD>
+	<TD><A href="cal.asp?date=6/9/2004">9</A></TD>
+	<TD><A href="cal.asp?date=6/10/2004">10</A></TD>
+	<TD><A href="cal.asp?date=6/11/2004">11</A></TD>
+	<TD><A href="cal.asp?date=6/12/2004">12</A></TD>
+</TR>
+<TR>
+	<TD><A href="cal.asp?date=6/13/2004">13</A></TD>
+	<TD><A href="cal.asp?date=6/14/2004">14</A></TD>
+	<TD><A href="cal.asp?date=6/15/2004">15</A></TD>
+	<TD> <DIV id="datetoday"><A href="cal.asp?date=6/16/2004">16</A> </DIV></TD>
+	<TD><A href="cal.asp?date=6/17/2004">17</A></TD>
+	<TD><A href="cal.asp?date=6/18/2004">18</A></TD>
+	<TD><A href="cal.asp?date=6/19/2004">19</A></TD>
+</TR>
+<TR>
+	<TD><A href="cal.asp?date=6/20/2004">20</A></TD>
+	<TD><A href="cal.asp?date=6/21/2004">21</A></TD>
+	<TD><A href="cal.asp?date=6/22/2004">22</A></TD>
+	<TD><A href="cal.asp?date=6/23/2004">23</A></TD>
+	<TD><A href="cal.asp?date=6/24/2004">24</A></TD>
+	<TD><A href="cal.asp?date=6/25/2004">25</A></TD>
+	<TD><A href="cal.asp?date=6/26/2004">26</A></TD>
+</TR>
+<TR>
+	<TD><A href="cal.asp?date=6/27/2004">27</A></TD>
+	<TD><A href="cal.asp?date=6/28/2004">28</A></TD>
+	<TD><A href="cal.asp?date=6/29/2004">29</A></TD>
+	<TD><A href="cal.asp?date=6/30/2004">30</A></TD>
+	<TD></TD>
+	<TD></TD>
+	<TD></TD>
+</TR>
+<TR>
+	<TD></TD>
+	<TD></TD>
+	<TD></TD>
+	<TD></TD>
+	<TD></TD>
+	<TD></TD>
+	<TD></TD>
+</TR>
+</TR></TABLE></TR></TABLE></TD></TR></TABLE>	</TD>
+	<TD rowSpan="2" bgcolor="whitesmoke" vAlign="top" class="smalleventslist">
+Events for <BR><B>Wednesday, June 16, 2004</B>
+<UL>
+	<P><LI><FONT face=Verdana, Arial, Helvetica size=1 color=midnightblue>There are no events for this date. </FONT></P></UL>
+	<TD width="50%" bgcolor="whitesmoke" valign="top" class="smalleventslist"><b>Upcoming Events</b><br>
+<ul><li><FONT face="Verdana, Arial, Helvetica" size="1" color="midnightblue">There are no Upcoming Events. </ul>	</TD></TR>
+	<TR><TD width="50%" bgcolor="whitesmoke" valign="top" class="smalleventslist"><b>Recent Events</b><br>
+<ul><FONT face="Verdana, Arial, Helvetica" size="1" color="midnightblue"><li>
+<SPAN class="spnMessageText">23&nbsp;May<br>- <A href="topic.asp?topic_ID=758">Carp Raid</A></SPAN></li></FONT><FONT face="Verdana, Arial, Helvetica" size="1" color="midnightblue"><li>
+<SPAN class="spnMessageText">21&nbsp;May<br>- <A href="topic.asp?topic_ID=750">TT  May 21, 2002</A></SPAN></li></FONT><FONT face="Verdana, Arial, Helvetica" size="1" color="midnightblue"><li>
+<SPAN class="spnMessageText">19&nbsp;May<br>- <A href="topic.asp?topic_ID=742">Vindi Raid</A></SPAN></li></FONT><FONT face="Verdana, Arial, Helvetica" size="1" color="midnightblue"><li>
+<SPAN class="spnMessageText">4&nbsp;May<br>- <A href="topic.asp?topic_ID=660">agnarr- loss</A></SPAN></li></FONT><FONT face="Verdana, Arial, Helvetica" size="1" color="midnightblue"><li>
+<SPAN class="spnMessageText">3&nbsp;May<br>- <A href="topic.asp?topic_ID=657">Fatty DIES</A></SPAN></li></FONT></ul>	</TD>
+	</TD></TR>
+	</TABLE>
+</TD></TR>
+</TABLE>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" bgcolor="black">
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2">
+      <table border="0" bordercolor="black" align="left" cellPadding="4" cellSpacing="0" width="100%">
+        <tr>
+          <td  bgcolor="slategray" align="left" valign="top" nowrap><font face="Verdana, Arial, Helvetica" size="1" color="black">E'Ci Unbroken</font></td>
+          <td  bgcolor="slategray" align="right" valign="top" nowrap><font face="Verdana, Arial, Helvetica" size="1" color="black">&copy; E'Ci Unbroken</font></td>
+          <td  bgcolor="slategray" width="10" nowrap><a href="#top" onMouseOver="(window.status='Go To Top Of Page...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><img src="http://www.eciunbroken.com/forums/images/icon_go_up.gif" width="15" height="15" border="0" alt="Go To Top Of Page" title="Go To Top Of Page" align="right" /></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+ </table>
+   </td>
+  </tr>
+</table>
+  </td>
+</tr>
+  <tr>
+    <td width="100%" colspan="2">
+      <table border="0" bordercolor="black" align="left" cellPadding="4" cellSpacing="0" width="100%">
+<tr><td width="33%" align="left" valign="top">
+</td><td align="center" width="33%">
+
+<!-- Place code here -->
+
+
+
+<!-- Place code here -->
+    </td><td align="right" valign="top" width="33%"><font face="Verdana, Arial, Helvetica" size="1">
+<a href="http://forum.snitz.com" target="_blank" tabindex="-1"><acronym title="Powered By: Snitz Forums 2000 Version 3.4.03">Powered By: Snitz Forums 2000</acronym></a></font>
+  </td>
+ </tr>
+</table>
+  </td>
+ </tr>
+</table>
+</font>
+</body>
+</html>
