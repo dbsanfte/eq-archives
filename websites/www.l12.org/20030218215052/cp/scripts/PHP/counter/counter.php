@@ -1,0 +1,1 @@
+<center><img src=images/digits/2.gif><img src=images/digits/0.gif><img src=images/digits/7.gif><img src=images/digits/4.gif></center>
