@@ -1,0 +1,360 @@
+<!-- BEGIN TEMPLATE: forumhome -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="shortcut icon" HREF="http://www.lowlandelites.net/vb/favicon.ico">
+	<!-- no cache headers -->
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<!-- end no cache headers -->
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft">
+	<meta name="description" content="Lowland Elites Webforums is a discussion forum powered by vBulletin. To visit the forum, go to http://www.lowlandelites.net/vb/ . To find out about vBulletin, go to http://www.vbulletin.com/ .">
+	<title>Lowland Elites Webforums - powered by vBulletin</title>
+	<!-- BEGIN TEMPLATE: headinclude -->
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<style type="text/css">
+BODY {
+	SCROLLBAR-BASE-COLOR: #B6C6D4;
+	SCROLLBAR-ARROW-COLOR: #EEEEFF;
+}
+SELECT {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+TEXTAREA, .bginput {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+A:link, A:visited, A:active {
+	COLOR: #000020;
+}
+A:hover {
+	COLOR: #FF4400;
+}
+#cat A:link, #cat A:visited, #cat A:active {
+	COLOR: #EEEEFF;
+	TEXT-DECORATION: none;
+}
+#cat A:hover {
+	COLOR: #EEEEFF;
+	TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+	COLOR: #000020;
+	TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+	COLOR: #FF4400;
+	TEXT-DECORATION: underline;
+}
+.thtcolor {
+	COLOR: #EEEEFF;
+}
+</style>
+
+
+<!-- END TEMPLATE: headinclude -->
+
+</head>
+<body bgcolor="#235C7C" text="#000000" id="all" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" link="#000020" vlink="#000020" alink="#000020">
+<!-- BEGIN TEMPLATE: header -->
+<!-- logo and buttons -->
+<center><table border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+  <td valign="top" align="left" background="images/menu_background.gif"><a href="index.php?s=03375c6317173c0d164f659826493543"><img src="images/le_logo.gif" border="0" alt="Lowland Elites Webforums" width="500" higth="300"></a></td>
+  <td valign="bottom" align="right" nowrap background="images/menu_background.gif">
+   <!-- toplinks -->
+   <a href="usercp.php?s=03375c6317173c0d164f659826493543"><img src="images/top_profile.gif" alt="Here you can view your subscribed threads, work with private messages and edit your profile and preferences" border="0"></a>
+   <a href="register.php?s=03375c6317173c0d164f659826493543&action=signup"><img src="images/top_register.gif" alt="Registration is free!" border="0"></a>
+   <a href="calendar.php?s=03375c6317173c0d164f659826493543"><img src="images/top_calendar.gif" alt="Calendar" border="0"></a>
+   <a href="memberlist.php?s=03375c6317173c0d164f659826493543"><img src="images/top_members.gif" alt="Find other members" border="0"></a>
+   <a href="misc.php?s=03375c6317173c0d164f659826493543&action=faq"><img src="images/top_faq.gif" alt="Frequently Asked Questions" border="0"></a>
+   <a href="search.php?s=03375c6317173c0d164f659826493543"><img src="images/top_search.gif" alt="Search" border="0"></a>
+   <a href="index.php?s=03375c6317173c0d164f659826493543"><img src="images/top_home.gif" alt="Home" border="0"></a>
+   <!-- <a href="member.php?s=03375c6317173c0d164f659826493543&action=logout"><img src="images/top_logout.gif" alt="Logout" border="0"></a>  -->
+   &nbsp;
+   <!-- /toplinks -->
+  </td>
+</tr>
+</table>
+<!-- /logo and buttons -->
+
+<!-- content table -->
+<table bgcolor="#FFFFFF" width="100%" cellpadding="10" cellspacing="0" border="0">
+<tr>
+  <td>
+        </SCRIPT>
+<script language="JavaScript">
+<!--
+  function Eins()
+    {window.status = "      [ -  -  -  -  -  -   ][ www.lowlandelites.net ][   -  -  -  -  -  - ]  ";
+    setTimeout("Zwei()",50);
+    }
+  function Zwei()
+    {window.status = "      [  -  -  -  -  -  -  ][ www.lowlandelites.net ][  -  -  -  -  -  -  ]  ";
+    setTimeout("Drei()",50);
+    }
+  function Drei()
+    {window.status = "      [   -  -  -  -  -  - ][ www.lowlandelites.net ][ -  -  -  -  -  -   ]  ";
+    setTimeout("Eins()",50);
+    }
+  Eins();
+// -->
+</script>
+<SCRIPT type='text/javascript' >
+	function view_profile(num) {
+		var profile=window.open('http://www.magelo.com/eq_view_profile.html?num='+num,'','width=800,height=600');
+	}
+</SCRIPT>
+<!-- END TEMPLATE: header -->
+
+<!-- text -->
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<tr valign="top">
+	<td><img src="images/vb_bullet.gif" border="0" align="middle" alt="Lowland Elites Webforums : Powered by vBulletin version 2.2.6">
+	<font face="verdana, arial, helvetica" size="2" ><b>Lowland Elites Webforums</b></font></td>
+	<td align="right"><font face="verdana,arial,helvetica" size="1" ><br><b><!-- BEGIN TEMPLATE: forumhome_todayposts -->
+<a href="search.php?s=03375c6317173c0d164f659826493543&action=getdaily">View Today's Active Threads</a>
+<!-- END TEMPLATE: forumhome_todayposts --></b></font></td>
+</tr>
+</table>
+
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<!-- BEGIN TEMPLATE: forumhome_unregmessage -->
+<tr>
+	<td colspan="2"><font face="verdana, arial, helvetica" size="2" ><b>Welcome to the Lowland Elites Webforums.</b></font><br>
+	<font face="verdana,arial,helvetica" size="1" >If this is your first visit, be sure to check out the <a href="misc.php?s=03375c6317173c0d164f659826493543&action=faq"><b>FAQ</b></a>
+	by clicking the link above. You may have to <a href="register.php?s=03375c6317173c0d164f659826493543"><b>register</b></a>
+	before you can post: click the register link above to proceed.
+	To start viewing messages, select the forum that you want to visit from the selection below.</font><hr></td>
+</tr>
+<!-- END TEMPLATE: forumhome_unregmessage -->
+<tr valign="bottom">
+	<td><font face="verdana,arial,helvetica" size="1" >
+	Members: 218, Threads: 3,980, Posts: 34,595<br>
+	Welcome to our newest member, <a href="member.php?s=03375c6317173c0d164f659826493543&action=getinfo&userid=258">WILLEECOYOTE</a>
+	</font></td>
+	<td align="right"><font face="verdana,arial,helvetica" size="1" >
+	The time now is 06:21.<br>
+	You last visited: 4th December 2003 06:21.
+	</font></td>
+</tr>
+</table>
+<!-- /text -->
+
+<br>
+
+<!-- main -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#235C7C"  width="100%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0"  width="100%">
+<tr align="center">
+  <td bgcolor="#235C7C"><font face="verdana,arial,helvetica" size="1" >&nbsp;</font></td>
+  <td bgcolor="#235C7C" width="80%" align="left"><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF"><b>Forum</b></font></td>
+  <td bgcolor="#235C7C"><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF"><b>Posts</b></font></td>
+  <td bgcolor="#235C7C"><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF"><b>Threads</b></font></td>
+  <td bgcolor="#235C7C" nowrap><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF"><b>Last Post</b></font></td>
+  <td bgcolor="#235C7C" width="20%"><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF"><b>Moderator</b></font></td>
+</tr>
+<!-- BEGIN TEMPLATE: forumhome_forumbit_level1_nopost -->
+<tr id="cat">
+	<td bgcolor="#B6C6D4" colspan="6"><a href="forumdisplay.php?s=03375c6317173c0d164f659826493543&forumid=1"><font face="verdana, arial, helvetica" size="2"  color="#EEEEFF"><b>Open Category</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF">Open for all</font></td>
+</tr>
+<!-- END TEMPLATE: forumhome_forumbit_level1_nopost --><!-- BEGIN TEMPLATE: forumhome_forumbit_level2_post -->
+<tr align="center">
+	<td bgcolor="#F1F1F1" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#F1F1F1" align="left"><a href="forumdisplay.php?s=03375c6317173c0d164f659826493543&forumid=2"><font face="verdana, arial, helvetica" size="2" ><b>Open Discussion</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >This forum can be used by members and none-members.</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana, arial, helvetica" size="2" >1228</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana, arial, helvetica" size="2" >124</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><!-- BEGIN TEMPLATE: forumhome_lastpostby -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >27th November 2003 <font color="#235C7C">11:26</font><br>
+		by <a href="member.php?s=03375c6317173c0d164f659826493543&action=getinfo&find=lastposter&forumid=2"><b>preins</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=03375c6317173c0d164f659826493543&goto=lastpost&forumid=2"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table>
+<!-- END TEMPLATE: forumhome_lastpostby --></font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" >&nbsp;</font></td>
+</tr>
+
+<!-- END TEMPLATE: forumhome_forumbit_level2_post --><!-- BEGIN TEMPLATE: forumhome_forumbit_level2_post -->
+<tr align="center">
+	<td bgcolor="#F1F1F1" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#F1F1F1" align="left"><a href="forumdisplay.php?s=03375c6317173c0d164f659826493543&forumid=3"><font face="verdana, arial, helvetica" size="2" ><b>Open Membership</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >Post here if you want to become a member of the Guild.</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana, arial, helvetica" size="2" >1165</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana, arial, helvetica" size="2" >116</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><!-- BEGIN TEMPLATE: forumhome_lastpostby -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >28th November 2003 <font color="#235C7C">11:48</font><br>
+		by <a href="member.php?s=03375c6317173c0d164f659826493543&action=getinfo&find=lastposter&forumid=3"><b>Golando</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=03375c6317173c0d164f659826493543&goto=lastpost&forumid=3"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table>
+<!-- END TEMPLATE: forumhome_lastpostby --></font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><!-- BEGIN TEMPLATE: forumhome_moderator -->
+<a href="member.php?s=03375c6317173c0d164f659826493543&action=getinfo&userid=8">Hebzibah</a>
+<!-- END TEMPLATE: forumhome_moderator --></font></td>
+</tr>
+
+<!-- END TEMPLATE: forumhome_forumbit_level2_post --><!-- BEGIN TEMPLATE: forumhome_forumbit_level2_post -->
+<tr align="center">
+	<td bgcolor="#F1F1F1" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#F1F1F1" align="left"><a href="forumdisplay.php?s=03375c6317173c0d164f659826493543&forumid=18"><font face="verdana, arial, helvetica" size="2" ><b>EQ Screens</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >The place to put your EQ screens.</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana, arial, helvetica" size="2" >1557</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana, arial, helvetica" size="2" >256</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><!-- BEGIN TEMPLATE: forumhome_lastpostby -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >26th November 2003 <font color="#235C7C">02:51</font><br>
+		by <a href="member.php?s=03375c6317173c0d164f659826493543&action=getinfo&find=lastposter&forumid=18"><b>goros</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=03375c6317173c0d164f659826493543&goto=lastpost&forumid=18"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table>
+<!-- END TEMPLATE: forumhome_lastpostby --></font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" >&nbsp;</font></td>
+</tr>
+
+<!-- END TEMPLATE: forumhome_forumbit_level2_post --><!-- BEGIN TEMPLATE: forumhome_forumbit_level2_post -->
+<tr align="center">
+	<td bgcolor="#F1F1F1" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#F1F1F1" align="left"><a href="forumdisplay.php?s=03375c6317173c0d164f659826493543&forumid=29"><font face="verdana, arial, helvetica" size="2" ><b>Forum Access</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >Post here if you are a member and you want access to the forum.</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana, arial, helvetica" size="2" >1</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana, arial, helvetica" size="2" >1</font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><!-- BEGIN TEMPLATE: forumhome_lastpostby -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >21st October 2003 <font color="#235C7C">07:55</font><br>
+		by <a href="member.php?s=03375c6317173c0d164f659826493543&action=getinfo&find=lastposter&forumid=29"><b>Roberto</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=03375c6317173c0d164f659826493543&goto=lastpost&forumid=29"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table>
+<!-- END TEMPLATE: forumhome_lastpostby --></font></td>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" >&nbsp;</font></td>
+</tr>
+
+<!-- END TEMPLATE: forumhome_forumbit_level2_post -->
+<!-- BEGIN TEMPLATE: forumhome_loggedinusers -->
+<tr id="cat">
+	<td bgcolor="#B6C6D4" colspan="6"><a href="online.php?s=03375c6317173c0d164f659826493543"><font face="verdana, arial, helvetica" size="2"  color="#EEEEFF"><b>Currently Active Users</b></font></a><font face="verdana, arial, helvetica" size="2"  color="#EEEEFF"><b>: 1</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1" colspan="6"><font face="verdana,arial,helvetica" size="1" >
+	<nobr>There are currently  0 members and 1 guests on the boards.</nobr> |
+	<nobr>Most users ever online was 63 on 25th November 2003 at 10:16.</nobr><br>
+	</font></td>
+</tr>
+
+<!-- END TEMPLATE: forumhome_loggedinusers -->
+
+
+</table>
+</td></tr></table>
+<!-- /main -->
+
+<br>
+
+<!-- timezone/login-->
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<tr valign="top">
+  <td><font face="verdana,arial,helvetica" size="1" ><!-- BEGIN TEMPLATE: timezone -->
+All times are GMT. The time now is 06:21.
+<!-- END TEMPLATE: timezone --></font></td>
+  <td align="right"><!-- BEGIN TEMPLATE: forumhome_logincode -->
+<font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=03375c6317173c0d164f659826493543&action=markread">Mark All Forums Read</a> | <a href="showgroups.php?s=03375c6317173c0d164f659826493543">Forum Leaders</a></font>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<form action="member.php" method="post">
+<tr>
+	<td nowrap><font face="verdana,arial,helvetica" size="1" ><b>Not cookied?</b><br>Login with username and password:</font></td>
+</tr><tr>
+	<td nowrap><input type="hidden" name="s" value="03375c6317173c0d164f659826493543">
+	<input type="hidden" name="action" value="login">
+	<input type="text" class="bginput" name="username" size="7">
+	<input type="password" class="bginput" name="password" size="7">
+	<input type="submit" class="bginput" value="Login!"></td>
+</tr>
+</form>
+</table>
+
+<!-- END TEMPLATE: forumhome_logincode --></td>
+</tr>
+</table>
+<!-- /timezone/login -->
+
+<br>
+
+<!-- icons -->
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<tr>
+	<td align="center">
+	<img src="images/on.gif" border="0" alt="On" align="absmiddle">
+	<b><font face="verdana,arial,helvetica" size="1" >New posts</font></b>
+	&nbsp;&nbsp;
+	<img src="images/off.gif" border="0" alt="Off" align="absmiddle">
+	<b><font face="verdana,arial,helvetica" size="1" >No new posts</font></b>
+	&nbsp;&nbsp;
+	<img src="images/lock.gif" border="0" alt="Closed Forum" align="absmiddle">
+	<b><font face="verdana,arial,helvetica" size="1" >A closed forum</font></b>
+	</td>
+</tr>
+</table>
+<!-- /icons -->
+
+<!-- BEGIN TEMPLATE: footer -->
+  </td>
+</tr>
+</table>
+<!-- /content area table -->
+</center>
+
+<p align="center">
+  <font face="verdana, arial, helvetica" size="2" ><b>&lt; <a href="mailto:boardmaster@lowlandelites.net">Contact Us</a> - <a href="http://www.lowlandelites.net/">Lowland Elites</a>
+  <!-- - <a href="">Privacy Statement</a> --> &gt;</b></font>
+</p>
+
+<p align="center"><font face="verdana,arial,helvetica" size="1" >
+<!-- Do not remove this copyright notice -->
+  Powered by: vBulletin Version 2.2.6<br>
+  Copyright &copy;2000, 2001, Jelsoft Enterprises Limited.<br>
+<!-- Do not remove this copyright notice -->
+
+</font></p>
+<!-- END TEMPLATE: footer -->
+<script language="JavaScript">
+
+var totaal = 6; // 
+var num = Math.random() * totaal; // 
+
+if (num < 1) // 
+{
+document.write('<embed src="http://www.lowlandelites.net/vb/audio/skbinnen.mid" hidden="true" border="0" width="20" height="20" autostart="true" loop="false">');
+}
+else if (num < 2) // 
+{
+   document.write('<embed src="http://www.lowlandelites.net/vb/audio/hwkdk.mid" hidden="true" border="0" width="20" height="20" autostart="true" loop="false">');
+}
+else if (num < 3) // 
+{
+   document.write('<embed src="http://www.lowlandelites.net/vb/audio/hdwwddb.mid" hidden="true" border="0" width="20" height="20" autostart="true" loop="false">');
+}
+else if (num < 4) // 
+{
+   document.write('<embed src="http://www.lowlandelites.net/vb/audio/dzvsk.mid" hidden="true" border="0" width="20" height="20" autostart="true" loop="false">');
+}
+else if (num < 5) // 
+{
+   document.write('<embed src="http://www.lowlandelites.net/vb/audio/sintmaandoorbomen.mid" hidden="true" border="0" width="20" height="20" autostart="true" loop="false">');
+}
+else if (num < 6) // 
+{
+   document.write('<embed src="http://www.lowlandelites.net/vb/audio/ohkomereenskijken.mid" hidden="true" border="0" width="20" height="20" autostart="true" loop="false">');
+}
+
+</script>
+</body>
+</html>
+<!-- END TEMPLATE: forumhome -->
