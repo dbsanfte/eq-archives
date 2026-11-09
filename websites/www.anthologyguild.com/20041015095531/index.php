@@ -1,0 +1,222 @@
+<html>
+<head>
+<script language="JavaScript">
+var popup_id = 0;
+function popup(uri, width, height, id) {
+x = (window.screen.availWidth - width)/4;
+y = (window.screen.availHeight - height)/2;
+popup_window = window.open(uri, 'eli'+id+popup_id, 'width='+width+',height='+height+',toolbar=no,menubar=no,directories=no,resizable=yes,status=no,scrollbars=yes,left='+x+',top='+y+',screenX='+x+',screenY='+y);
+if (!popup_window) {
+alert("Pop-up Windows must be allowed in order to perform this action. Please turn off pop-up blocking in your web-browser.");
+} else {
+popup_id += 1;
+}
+}
+//-->
+</script>
+<title>OXiDE search ....radical results (TM)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta NAME="Keywords" CONTENT="USE OXIDE SEARCH POWER">
+<meta NAME="Description" CONTENT="Search the web and find what you are looking for with OXiDE Search! Live Life Through OXiDE!">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+function MM_findObj(n, d) { //v4.0
+var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+function MM_swapImage() { //v3.0
+var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" style="margin:0px 0px 0px 0px;" background="images/bkgnd-orange.gif" onLoad="MM_preloadImages('images/fnav/mnu-2-on.gif','images/fnav/mnu-4-on.gif');document.search.s.focus()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr align="left" valign="top">
+<td background="images/bkgnd-left.gif">&nbsp;</td>
+<td width="780">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr align="left" valign="top">
+<td width="16" background="images/fnav/lay1-1.gif"><img src="images/fnav/spacer.gif" width="1" height="88"></td>
+<td width="751" background="images/fnav/lay1-2.gif" align="center">
+<table width="97%" border="0" cellspacing="0" cellpadding="0">
+<tr align="left" valign="top">
+<td class="txt-blk-sml"><img src="images/inav/arrow.gif" width="7" height="5"> <a href="contact.html" class="top">contact
+us</a> | <a href="privacy.html" class="top">terms &amp; privacy</a> | <a href="banners.html" class="top" style="font-size:7pt;">banners</a>
+</td>
+<td class="txt-blk-sml" width="45%" align="right"><img src="images/inav/arrow.gif" width="7" height="5"> <a class="top" href="http://www.oxide.com" onclick="style.behavior='url(#default#homepage)'; setHomePage('http://www.oxide.com/');"> make oxide your homepage </a></td>
+</tr>
+<tr align="left" valign="top">
+<td class="txt-blk-sml" colspan="2">
+<p><br>
+<br>
+</p>
+</td>
+</tr>
+</table>
+</td>
+<td background="images/fnav/lay1-3.gif" width="13">&nbsp;</td>
+</tr>
+<tr align="left" valign="top">
+<td width="16" background="images/fnav/lay1-1.gif">&nbsp;</td>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr align="left" valign="top">
+<td width="433"><a href="http://www.oxide.com"><img src="images/fnav/title.gif" width="433" height="84" border="0"></a></td>
+<td><img src="images/fnav/mnu-1.gif" width="318" height="5"><br><a href="http://www.oxide.com" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image17','','images/fnav/mnu-2-on.gif',1)"><img name="Image17" border="0" src="images/fnav/mnu-2.gif" width="318" height="25"></a><br>
+<a href="http://web.oxide.com/fma.main1/redirs_all.htm?pgtarg=ylwi" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image18','','images/fnav/mnu-3-on.gif',1)"><img name="Image18" border="0" src="images/fnav/mnu-3.gif" width="318" height="24"></a><br>
+<a href="http://web.oxide.com/fma.main1/redirs_all.htm?pgtarg=ppli" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image19','','images/fnav/mnu-4-on.gif',1)"><img name="Image19" border="0" src="images/fnav/mnu-4.gif" width="318" height="25"></a><br>
+<img src="images/fnav/mnu-5.gif" width="318" height="5"></td>
+</tr>
+</table>
+</td>
+<td background="images/fnav/lay1-3.gif">&nbsp;</td>
+</tr>
+<tr align="left" valign="top">
+<td width="16" background="images/fnav/lay2-1.gif"><img src="images/fnav/spacer.gif" width="1" height="204"></td>
+<td background="images/fnav/lay2-2.gif" align="center" valign="middle">
+<form method="GET" name="search" action="search.oxide">
+<table width="65%" border="0" cellspacing="0" cellpadding="2">
+<tr>
+<td align="left" valign="top" class="txt-white-sml">
+<input type="radio" name="category" value="web" checked>
+Web Pages
+<input type="radio" name="category" value="images">
+Images
+<input type="radio" name="category" value="audio">
+Audio
+<input type="radio" name="category" value="multimedia">
+Multimedia
+<input type="radio" name="category" value="news">
+News
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="middle" align="center" height="20">
+<td align="left" valign="top">
+<input type="text" value="" name="s" size="50">
+</td>
+<td width="40%" align="left" valign="top">&nbsp;&nbsp;<a href="javascript:document.forms['search'].submit();" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image20','','images/btn-search-on.gif',1)"><img name="Image20" border="0" src="images/btn-search.gif" width="83" height="22"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" valign="top"><a href="http://search.oxide.com/fma.main2/search/advance.htm?ran=356" class="smlnav">Advanced Search</a> | <a href="http://search.oxide.com/fma.main2/search/preferences.htm?ran=3655" class="smlnav">Preferences</a> | <a href="http://search.oxide.com/fma.main2/search/help/index.htm?ran=847" class="smlnav">Tools
+&amp; Tips</a></td>
+</tr>
+</table>
+</form>
+</td>
+<td background="images/fnav/lay2-3.gif">&nbsp;</td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="3">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr align="left" valign="top">
+<td width="46"><img src="images/fnav/lay3-1.gif" width="46" height="21"></td>
+<td bgcolor="#FFFFFF" width="711">&nbsp;</td>
+<td width="23" background="images/fnav/right_tb_bg.gif"><img src="images/fnav/right_tb_bg.gif" width="23" height="21" style="visibility:hidden;"></td>
+</tr>
+<tr align="left" valign="top">
+<td width="39" background="images/fnav/left_tb_bg.gif">&nbsp;</td>
+<td bgcolor="#FFFFFF">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr align="left" valign="top">
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr align="left" valign="top">
+<td align="center" valign="middle" width="110"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="92" height="32">
+<param name=movie value="images/logos/banner.swf">
+<param name=quality value=high>
+<param name="wmode" value="transparent">
+<embed src="images/logos/banner.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="92" height="32" wmode="transparent">
+</embed>
+</object></td>
+<td><img src="images/dotted-stripe.gif" width="7" height="90"></td>
+<td valign="middle" align="center">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0"
+width="262" height="78">
+<param name=movie value="banner-front.swf">
+<param name=quality value=high>
+<embed src="banner-front.swf" quality=high
+pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
+type="application/x-shockwave-flash" width="262" height="78">
+</embed>
+</object>
+</td>
+</tr>
+</table>
+</td>
+<td width="320">
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+<tr align="left" valign="top">
+<td class="txt-blue-sml" width="15">&nbsp;</td>
+<td class="txt-blue-sml" width="50%"><b>RADICAL RESULTS</b></td>
+<td class="txt-blue-sml" width="50%"><b>WEB RESOURCES</b></td>
+</tr>
+<tr align="left" valign="top">
+<td class="txt-blk-sml-ln-height" width="15">&nbsp;</td>
+<td class="txt-blk-sml-ln-height" width="50%">
+<p>
+&middot; <a href="search.oxide?s=George+W.+Bush">George W. Bush</a><br>&middot; <a href="search.oxide?s=John+Kerry">John Kerry</a><br>&middot; <a href="search.oxide?s=Presidential+Polls">Presidential Polls</a><br>&middot; <a href="search.oxide?s=New+York+Yankees">New York Yankees</a><br>&middot; <a href="search.oxide?s=NASCAR">NASCAR</a><br>&middot; <a href="search.oxide?s=Drudge+Report+">Drudge Report </a><br>
+</p>
+</td>
+<td class="txt-blk-sml-ln-height" width="50%">&middot; <a href="http://maps.oxide.com">Maps</a><br>
+&middot; <a href="http://weather.oxide.com">Weather</a><br>
+&middot; <a href="http://horoscopes.oxide.com">Horoscope</a> <br>
+&middot; <a href="http://classifieds.oxide.com/fma.main1/index_cls.htm">Classifieds</a> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td background="images/fnav/right_tb_bg.gif">&nbsp;</td>
+</tr>
+<tr align="left" valign="top">
+<td width="39"><img src="images/fnav/left_tb_corner.gif" width="46" height="22"></td>
+<td background="images/fnav/bottom_tb.gif">&nbsp;</td>
+<td><img src="images/fnav/right_tb_corner.gif" width="23" height="22"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="3">
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+<tr valign="bottom">
+<td width="50%" align="left" class="txt-white-sml">&copy; OXiDE.com 1999-2004</td>
+<td align="right" class="txt-white-sml"><a href="http://www.fma.com/" target="_blank" style="color:white;">Brought to you by: Future Media Architects,
+Inc. (FMA)</a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td background="images/bkgnd-right.gif">&nbsp;</td>
+</tr>
+</table>
+<script language="JavaScript">
+<!--
+document.search.s.focus();
+//-->
+</script>
+</body>
+</html>
