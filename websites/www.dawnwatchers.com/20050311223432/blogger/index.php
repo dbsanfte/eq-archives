@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>
+Dawnwatchers
+</title>
+<meta name="GENERATOR" content="Ikonboard 3.1.2a">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<LINK REL=stylesheet HREF='http://www.dawnwatchers.com/iB_html/non-cgi/Skin/SKIN-2/ikonboard.css' TYPE='text/css'>
+<script language="JavaScript">
+<!--
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+if (restore) selObj.selectedIndex=0;
+}
+function MM_findObj(n, d) { //v3.0
+var p,i,x; if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+function MM_jumpMenuGo(selName,targ,restore){ //v3.0
+var selObj = MM_findObj(selName); if (selObj) MM_jumpMenu(targ,selObj,restore);
+}
+//-->
+</script>
+</head>
+<body bgcolor='#FFFFFF' leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" alink='#000000' vlink='#000000'>
+<!-- Cgi-bot Begin Header -->
+<a name="head"></a>
+<table cellpadding='0' cellspacing='0' border='0' width="98%" align='center'>
+<tr>
+<td align='left' valign='middle' width='70%' rowspan='2'> <a href="http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi" title="You last visited on: Mar. 11 2005,22:31, Your last action was on: Mar. 11 2005,22:31"><img src="http://www.dawnwatchers.com/iB_html/non-cgi/Skin/SKIN-2/images/welcome.gif" border=0 alt=''></a></td>
+<td nowrap align='center' valign='bottom' width='30%' id='nav'><br><a href='http://www.dawnwatchers.com'>Main Site</a> :: <a href="http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi">Dawnwatchers</a><br>Guild Forums :: <br><form name="form1">
+<select name="menu1" onChange="MM_jumpMenu('parent',this,0)">
+<option value="http://www.gry-online.pl/eq2/index.asp">EQ2 Maps</option>
+<option value="http://eq2players.station.sony.com/en/guild.vm?guildId=461303" selected>Dawnwatchers Stats Overview</option>
+<option value="http://eq2players.station.sony.com/en/guild_wof.vm?guildId=461303&rank=guildPointRank&type=HighestGuildStatusContributor">Highest Guild Status Contributors</option>
+<option value="http://eq2players.station.sony.com/en/guild_roster.vm?guildId=461303">Official Guild Roster</option>
+<option value="http://eq2players.station.sony.com/en/guild_srankings.vm?serverId=303">Official Guild Ranking</option>
+<option value="http://www.dawnwatchers.com/ts/listing.php">TeamSpeak Server
+List</option>
+<option value="http://www.dawnwatchers.com/blogger/index.php">Dawnwatchers
+Bloggers</option>
+<option value="http://eq2players.station.sony.com/en/network_status.vm">SOE EQ2 Server Status</option>
+<option value="http://eqiiforums.station.sony.com/eq2?no_redir=true">SOE EQ2 Forums</option>
+<option value="http://eq2.allakhazam.com">EQ2 Allakhazam</option>
+<option value="http://eq2.eqtraders.com">EQ2 Traders</option>
+<option value="http://eq2.ogaming.com/db/">EQ2 Online Gaming Network</option>
+<option value="http://www.gnorrath.com">Gnorrath</option>
+<option value="http://www.splitpaw.net">Splitpaw.net</option>
+<option value="http://www.eq2interface.com">EQ2 Interface</option>
+<option value="http://www.circonian.com">Circonian Network</option>
+<option value="http://clanwhitestorm.com/eq2info/index.htm">Clan Whitestorm
+EQ2 Info</option>
+<option value="http://www.eq2priests.com">EQ2 Priests</option>
+<option value="http://www.thescoutssanctuary.com/">Scouts Sanctuary</option>
+</select>
+<input type="button" name="Button1" value="Go" onClick="MM_jumpMenuGo('menu1','parent',0)">
+</form></td>
+</tr>
+<tr>
+<td nowrap align='center' valign='middle'>
+<br><a href="http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi?s=bda047aa6749955230a485eaba8ae96f;act=Search;CODE=00;"><img src="http://www.dawnwatchers.com/iB_html/non-cgi/Skin/SKIN-2/images/m_search.gif" border="0" alt="Search"></a>
+<a href="http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi?s=bda047aa6749955230a485eaba8ae96f;act=Members"><img src="http://www.dawnwatchers.com/iB_html/non-cgi/Skin/SKIN-2/images/m_members.gif" border="0" alt="Members"></a>
+<a href="http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi?s=bda047aa6749955230a485eaba8ae96f;act=Help;CODE=00"><img src="http://www.dawnwatchers.com/iB_html/non-cgi/Skin/SKIN-2/images/m_help.gif" border="0" alt="Help"></a>
+<a href="http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi?s=bda047aa6749955230a485eaba8ae96f;act=aRPGstats;CODE=00"><img src="http://www.dawnwatchers.com/iB_html/non-cgi/Skin/SKIN-2/images/battle.gif" border="0" alt="Battle Stats"></a>
+</td>
+</tr>
+</table>
+<!-- Cgi-bot End Header -->
+<!-- PHP BLOGS REMOVE START -->
+<!-- PHP BLOGS REMOVE STOP -->
+<!-- Cgi-bot Begin Navigation -->
+<table cellpadding='0' cellspacing='0' border='0' width='98%' bgcolor='#D7D7D7' align='center'>
+<tr>
+<td>
+<table cellpadding='4' cellspacing='1' border='0' width='100%'>
+<tr>
+<td bgcolor="#ff6633" valign='middle' id='nav'><img src="http://www.dawnwatchers.com/iB_html/non-cgi/Skin/SKIN-2/images/nav_img.gif" border="0" align="absmiddle" alt="">
+<a href="http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi?s=bda047aa6749955230a485eaba8ae96f">Dawnwatchers</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+<!-- Cgi-bot End Navigation -->
+<!-- PHP BLOGS START -->
+
+
+
+<!-- PHP BLOGS TEMPLATE OUTPUT BUFFERING START -->
+
+<table><tr><td>
+<link href="http://www.dawnwatchers.com/blogger/blogs.css" rel="stylesheet" type="text/css" />
+
+<script language="JavaScript">
+<!-- // hide this stuff
+function BlogInfo() {
+    window.open('http://www.dawnwatchers.com/blogger/whatisablog.html','blog','width=630,height=500,directories=no,location=no,menubar=no,scrollbars=yes,status=no,toolbar=no,resizable=no');
+	return true;
+}
+
+var statbar="PHP Blogs :: Bringing the power of the \'blog\' to Ikonboard...";
+self.status = statbar;
+
+//-->
+</script>
+
+<!-- PHP BLOGS FORM START -->
+<form method='Post' name='REPLIER' action='http://www.dawnwatchers.com/blogger/index.php'>
+<div class='small'><br 'clear=all' /></div>
+<table align='center' class="mastertable" cellspacing='0' cellpadding='0' border='0'>
+  <tr>
+    <td class="wallpaper" width="100%" valign="top" align="center"><a name="top"></a>
+<table width='100%' border='0' cellspacing='0' cellpadding='0' class='banner'>
+<tr><td align='left' valign='middle'><img src='images/blog_banner.gif' width='580' height='50' align='center'></td><td align='right' valign='middle'><a href='http://www.dawnwatchers.com'><img vspace='1' src='images/top-main.jpg' border='0' width='42' height='42' alt='Go to Dawnwatchers home page...'></a>&nbsp;
+<a href='http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi'><img vspace='1' hspace='2' src='images/top-forums.jpg' border='0' width='42' height='42'  alt='Go to Dawnwatchers...'></a>
+</td></tr>
+  <tr><td colspan='2' class='bannerline'></td></tr>
+  <tr><td colspan='2' class='bannersub' align='left'><span class='bannerwelcome'>&nbsp;&nbsp;&#8226;&nbsp;Welcome, Guests, please browse our member's blogs by using the calendar links below...<br />&nbsp;&nbsp;&#8226;&nbsp;Each blog is the exclusive and personal opinion of the author, only registered/logged on forum members may blog here...<br />
+<br />&nbsp;&nbsp;&#8226;&nbsp;What is a 'blog'? <a href='#' onclick='return BlogInfo();'>Click here</a> to find out and learn about blogging guidelines...
+<br />&nbsp;&nbsp;&#8226;&nbsp;Please be advised of potential explicit language in blogs as they are uncensored. This is not a message forum, no replies are permitted as that's not blogging..
+<br />&nbsp;&nbsp;&#8226;&nbsp;For more blogs you may want to visit <a href='http://www.localfeeds.com' target='localfeeds'>LocalFeeds.com</a>, or <a href='http://www.bloglines.com' target='bloglines'>Bloglines.com</a>...<br /><br />
+</span></td></tr>
+<tr><td colspan='2' class='bannerline'><img src='images/pix1.gif'></td></tr>
+</table>
+<table width='100%' border='0' cellspacing='1' cellpadding='5'>
+  <tr><td valign='top' width='210' nowrap>
+
+
+
+<script language='JavaScript'>
+<!--//
+function ClickMe(link) {
+window.location=link; }
+//--></script>
+
+
+<table width='100%' border='0' cellpadding='0' cellspacing='1' class='blogcalendarborder'>
+<tr><td colspan='7'>
+  <table class='blogcalendarbackground' width='100%' border='0' cellspacing='1' cellpadding='0'><tr>
+    <td class='blogcalendarpreviousmonth'><a href='http://www.dawnwatchers.com/blogger/index.php?month=2&year=2005'>&lt&lt;</a></td>
+    <td class='blogcalendarmonth'>March 2005</td>
+    <td class='blogcalendarnextmonth'><span class='blogcalendarnextmonthnolink'>&gt;&gt;</span></td>
+  </tr></table>
+</td>
+<tr>
+  <td class='blogcalendarweekday'>S</td>
+  <td class='blogcalendarweekday'>M</td>
+  <td class='blogcalendarweekday'>T</td>
+  <td class='blogcalendarweekday'>W</td>
+  <td class='blogcalendarweekday'>T</td>
+  <td class='blogcalendarweekday'>F</td>
+  <td class='blogcalendarweekday'>S</td>
+</tr>
+</tr>
+<tr>
+<td class='blogcalendardayblank'>&nbsp;</td>
+<td class='blogcalendardayblank'>&nbsp;</td>
+<td class='blogcalendardayoff'>1</td>
+<td class='blogcalendardayoff'>2</td>
+<td class='blogcalendardayoff'>3</td>
+<td class='blogcalendardayoff'>4</td>
+<td class='blogcalendardayoff'>5</td>
+</tr>
+<tr>
+<td class='blogcalendardayoff'>6</td>
+<td onclick="ClickMe('http://www.dawnwatchers.com/blogger/index.php?year=2005&month=3&day=7');" class='blogcalendardayon'><a href='http://www.dawnwatchers.com/blogger/index.php?year=2005&month=3&day=7'>7</a></td>
+<td class='blogcalendardayoff'>8</td>
+<td class='blogcalendardayoff'>9</td>
+<td class='blogcalendardayoff'>10</td>
+<td class='blogcalendardayoff'>11</td>
+<td class='blogcalendardayoff'>12</td>
+</tr>
+<tr>
+<td class='blogcalendardayoff'>13</td>
+<td class='blogcalendardayoff'>14</td>
+<td class='blogcalendardayoff'>15</td>
+<td class='blogcalendardayoff'>16</td>
+<td class='blogcalendardayoff'>17</td>
+<td class='blogcalendardayoff'>18</td>
+<td class='blogcalendardayoff'>19</td>
+</tr>
+<tr>
+<td class='blogcalendardayoff'>20</td>
+<td class='blogcalendardayoff'>21</td>
+<td class='blogcalendardayoff'>22</td>
+<td class='blogcalendardayoff'>23</td>
+<td class='blogcalendardayoff'>24</td>
+<td class='blogcalendardayoff'>25</td>
+<td class='blogcalendardayoff'>26</td>
+</tr>
+<tr>
+<td class='blogcalendardayoff'>27</td>
+<td class='blogcalendardayoff'>28</td>
+<td class='blogcalendardayoff'>29</td>
+<td class='blogcalendardayoff'>30</td>
+<td class='blogcalendardayoff'>31</td>
+<td class='blogcalendardayblank'>&nbsp;</td>
+<td class='blogcalendardayblank'>&nbsp;</td>
+</tr><tr><td colspan='7' class='blogcalendarbackground'><span class='blogcalendarfootertext'><span class='blogcalendarfooterdayonkey'>&nbsp;&nbsp;&nbsp;</span> BLOG POSTED  &nbsp;&nbsp;<span class='blogcalendarfooterdayoffkey'>&nbsp;&nbsp;&nbsp;</span> NO BLOGS</span></td></tr><tr><td colspan='7' class='blogcalendarbackground'><span class='blogcalendarfootertext'>Old blogs are pruned after 90 days<br /><span class='blogcalendarfooterprune'>No blogs were pruned...</span></span></td></tr></table>
+<table border='0' cellspacing='0' cellpadding='0'><tr><td><img src='images/pix5.gif' width='5' height='5'></td></tr></table>
+<table width='100%' class='bloglistbackground' cellspacing='1' cellpadding='1'>
+<tr><td class='bloglistbannerbackground' align='center'><span class='small'>Blogs for  March<br /><span class='small'>1 blog has been added thus far...</span></span></td></tr><tr><td bgcolor='#ffffff' nowrap><table border='0' cellspacing='1' width='100%'><tr><td><table width='100%' cellspacing='0' cellpadding='2'><tr><td class='bloglisttitle'><span class='list_title'>&quot; Happyt times in Goa! &quot;</span></td></tr><tr><td class='bloglistdetail'><span class='list_date'><a href='http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi?act=Profile;CODE=03;MID=83-1102337446' target='_blank'><img align='left' src='http://www.dawnwatchers.com/iB_html/non-cgi/avatars/uploaded_boobs2.gif' width='64' height='64' hspace='2' vspace='2' class='blogavatar' border='0' alt='Click this avatar image to view the personal profile of Skaltum...'></a><br />By Skaltum<br />Mon Mar. 7th @ 8:41AM GMT<br />Currently viewing &nbsp;<img src='images/pointing-hand.gif' border='0'><br /></span></td></tr></table></td></tr></table></td></tr>
+</table>
+<span class='small'>&nbsp;&nbsp;<a href="#top"><img align="middle" vspace="4" alt="Go to top..." src="images/goto-top.gif" width="20" height="20" border="0"></a></span>
+</td><td valign='top'>
+<table border='0' width='100%' class='blogborder' cellspacing='0' cellpadding='0'>
+<tr><td><table class='currentblogbodytext' border='0' width='100%' cellspacing='0' cellpadding='2'>
+  <tr>
+    <td width='25%' valign='middle' class='blogbannerbackground' align='left' nowrap><span class='normal'><a href="#bottom"><img hspace="5" align="middle" alt="Go to bottom..." src="images/goto-bottom.gif" width="20" height="20" border="0"></a></span></td>    <td width='50%' valign='middle' class='blogbannerbackground' align='center'>    <span class='currentblogtitle'>&quot; Happyt times in Goa! &quot;</span></td>    <td width='25%' valign='middle' class='blogbannerbackground' align='right' nowrap>&nbsp;     </td>  </tr>
+  <tr>
+ <td colspan='3' class='blogbannerinfo' align='center'><table border='0' align='center' width='100%' cellpadding='0' cellspacing='0'><tr><td align='left' valign='top'><a href='http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi?act=Profile;CODE=03;MID=83-1102337446' target='_blank'><img align='left' src='http://www.dawnwatchers.com/iB_html/non-cgi/avatars/uploaded_boobs2.gif' width='64' height='64' hspace='2' vspace='2' class='blogavatar' border='0' alt='Click this avatar image to view the personal profile of Skaltum...'></a></td><td width='100%' align='center' valign='top' style='whitespace: nowrap;'><br />The thoughts of <strong>Skaltum</strong> as of Monday March 7th, 2005 @ 3:41AM GMT<br />This blog has been viewed 18 times / <a href='http://www.dawnwatchers.com/blogger/index.php?ViewMemberBlogs=83-1102337446'>View all of Skaltum's blogs</a><br /><br />&#8226; Skaltum has 3 blogs in our database &#8226;</td><td width='40' align='right' valign='top'><a href='http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi?act=Profile;CODE=03;MID=83-1102337446' target='profile'><img src='images/profile.gif' border='0' alt='Please click here for the forum profile of Skaltum...'></a></td></td></tr></table></td>
+  </tr>
+  <tr>
+    <td colspan='3'><table class='currentblogparenttable' width='100%' cellpadding='32' cellspacing='2'><tr><td><div class='currentblogbodytext'>Dudes! I'm in Goa India now! <br />All is well, and all is dirt cheap aswell! Soon gonnna get down to the beach and get a room no more than 50 m from the ocean.  <img src='http://www.dawnwatchers.com/iB_html/non-cgi/emoticons/biggrin.gif' border='0'> <br />Otherwise it mostly been traveling so far. 16 hours from Malmo to Mumbai(Bombay). Well there we thought that it was abit to big (almost 15 mill people) and noisy so we moverd on by train to Goa, which was 12 hours of treebench arseache. Still hurts abit tbh... But well worth it. Wicked fun watching peaople, the landscape, and the foodvendors flooding the traincart when we had a longer stop. <img src='http://www.dawnwatchers.com/iB_html/non-cgi/emoticons/smile.gif' border='0'><br />So I'm still alive and kicking, and oblviously blogging. ^^<br />I'll keep ya updated.<br /><br />Love Peace and Heavy Metal<br />Skallie Boi! <img src='http://www.dawnwatchers.com/iB_html/non-cgi/emoticons/biggrin.gif' border='0'>evil:</div></td></tr></table></td>
+  </tr>
+  <tr>
+    <td colspan='3' class='commentsbackground'>
+<table width='100%' align='center' cellpadding='0' cellspacing='0' border='0'><tr><td align='left' class='normal'><a href='#top'><img hspace='4' alt='Go to top...' src='images/goto-top.gif' width='20' height='20' border='0'></a></td><td align='right' class='normal'>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+
+<table align='center' width='100%' border='0' cellpadding='4'><tr><td align='center' valign='bottom' class='copyright'><br />PHP Blogs v1.30 Wide Release (GPL) :: By <a href='mailto:sysop@accessdeniedbbs.net?Subject=PHP Blogs Ikonboard add-on script'>Jim Goldbloom</a> :: <a href='http://www.accessdeniedbbs.net' target='adbbs'>Access Denied BBS (Blogs &amp; Forum)</a><br /><a href='http://www.dawnwatchers.com/cgi-bin/boards/ikonboard.cgi'>Guild Forums</a> :: Copyright &copy; 2004
+</td></tr></table>
+<a name="bottom"></a>
+</td></tr></table>
+</td></tr></table><div class='small'><br 'clear=all' /></div>
+</form>
+
+<!-- PHP BLOGS FORM STOP -->
+
+<!-- PHP BLOGS TEMPLATE OUTPUT BUFFERING STOP -->
+
+<!-- PHP BLOGS STOP -->
+<!-- iB Copyright Information -->
+<p><table width='80%' align='center' cellpadding='3' cellspacing='0'><tr><td align='center' valign='middle' id='copyright'>&copy; 2003-4 dawnwatchers.com<br>Powered by <a href="http://www.ikonboard.com" class="copyright" target='_blank'>Ikonboard</a> 3.1.2a &copy; 2003 <a href='http://www.ikonboard.com' target='_blank'>Ikonboard</a></td></tr></table><p>
+</body>
+</html>

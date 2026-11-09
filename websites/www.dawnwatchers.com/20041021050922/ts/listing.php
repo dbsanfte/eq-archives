@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Dawnwatchers TS - TeamSpeak2 Serverlist</title>
+<meta name="keywords" content="teamspeak, serverlist, webpost, Dawnwatchers TS">
+<meta name="description" content="gllcTS2 v4.1.7 for TeamSpeak 2 (c) Gryphon, LLC www.gryphonllc.com">
+<meta name="robots" content="all">
+<style type="text/css">
+body { scrollbar-base-color: #f76b08; scrollbar-arrow-color: #ffffff; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px }
+input, textarea { background-color: #333333; color: #ececec; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold}
+.button { background-color: #333333; color: #ececec; font-family: verdana,arial,helvetica,sans-serif; font-size:10px; }
+.listing { color: #ececec; }
+.listing a:link { color: #f76b08; text-decoration: none; }
+.listing a:visited { color: #ececec; text-decoration: none; }
+.listing a:active { color: #ffffff; text-decoration: none; }
+.listing a:hover { color: #005C8C; text-decoration: underline; }
+.glisting { color: #ececec; }
+.glisting a:link { color: #f76b08; text-decoration: none; }
+.glisting a:visited { color: #ececec; text-decoration: none; }
+.glisting a:active { color: #ffffff; text-decoration: none; }
+.glisting a:hover { color: #005C8C; text-decoration: underline; }
+.catagory { color: #ffffff; }
+.catagory a:link, .catagory a:visited, .catagory a:active { color: #ffffff; text-decoration: none; }
+.catagory a:hover { color: #ffffff; text-decoration: underline; }
+.listfont tr, .listfont td { font-size: 10px; font-family: verdana,arial,helvetica,sans-serif; }
+.glistfont tr, .glistfont td { font-size: 12px; font-family: verdana,arial,helvetica,sans-serif; }
+</style>
+<script language="javascript" type="text/javascript">
+var win = null;
+function NewWindow(mypage,myname,w,h) {
+  LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+  TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+  settings = 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+'';
+  win = window.open(mypage,myname,settings);
+}
+function upc(preview,newvalue,findword) {
+  preview.style.backgroundColor = newvalue;
+}
+</script>
+<meta http-equiv="refresh" content="600">
+</head>
+
+<body bgcolor="#333333" text="#ececec" link="#F76B08" vlink="#ececec" alink="#ffffff" >
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="700" class="listfont">
+  <tr>
+    <td>
+      <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td valign="top">
+            <table cellpadding="2" cellspacing="0" width="100%">
+              <tr>
+                <td align="center" bgcolor="#f76b08" class="catagory" colspan="8"><a href="listing.php?sort=clients_current&direction=desc&showgroup=all">Active Servers</a>: 0 | <a href="listing.php?sort=clients_current&direction=desc&showgroup=all">Users Online</a>: 0</td>
+              </tr>
+            </table>
+            <a href="index.php"><img src="images/ts_logo.gif" border="0" alt="Dawnwatchers TS"></a>
+          </td>
+          <td align="center" width="100%"><b>The Dawnwatchers server is members only and passworded.<br>Set your PostUrl in the Server settings to<br>http://www.dawnwatchers.com/ts/webpost.php<br>to join this directory if you host your own server!<br><a href="http://www.dawnwatchers.com">Return to Dawnwatchers</a>.</b></td>
+        </tr>
+      </table>
+      <br>
+      <table align="center" border="0" cellpadding="3" cellspacing="1" width="100%" bgcolor="#000000">
+        <tr>
+          <td align="center" bgcolor="#f76b08" class="catagory" valign="middle" nowrap><b>1</b></td>
+          <td align="center" bgcolor="#f76b08" class="catagory" valign="middle" nowrap><b><a href="listing.php?sort=server_password&direction=&showgroup=all">Priv/Pub</a> </b></td>
+          <td align="center" bgcolor="#f76b08" class="catagory" valign="middle" nowrap><b><a href="listing.php?sort=server_name&direction=desc&showgroup=all">Name</a> <img src="images/asc.gif" border="0"></b></td>
+          <td align="center" bgcolor="#f76b08" class="catagory" valign="middle" nowrap><b><a href="listing.php?sort=server_ip&direction=&showgroup=all">Server IP : Port</a> </b></td>
+          <td align="center" bgcolor="#f76b08" class="catagory" valign="middle" nowrap><b> <a href="listing.php?sort=clients_current&direction=&showgroup=all">On</a>/<a href="listing.php?sort=clients_maximum&direction=&showgroup=all">Max</a> </b></td>
+          <td align="center" bgcolor="#f76b08" class="catagory" valign="middle" nowrap><b><a href="listing.php?sort=server_platform&direction=&showgroup=all">Server</a> </b></td>
+          <td align="center" bgcolor="#f76b08" class="catagory" valign="middle" nowrap><b><a href="listing.php?sort=server_version&direction=&showgroup=all">Version</a> </b></td>
+        </tr>
+        <tr>
+          <td align="center" bgcolor="#333333" class="listing"><a href="listing.php?detail=213.208.103.152&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all">Details</a></td>
+          <td align="center" bgcolor="#333333" class="listing"><img src="images/dark_private.gif" border="0" alt="Private" title="This server requires a password to join."></td>
+          <td align="center" bgcolor="#333333" class="listing">Dawnwatchers</a></td>
+          <td align="center" bgcolor="#333333" class="listing"><a href="login.php?detail=1" title="Click to join 213.208.103.152:8767 | This opens in a popup window." onClick="NewWindow(this.href,'login','220','380');return false">213.208.103.152:8767</a></td>
+          <td align="center" bgcolor="#333333" class="listing">0/16</td>
+          <td align="center" bgcolor="#333333" class="listing"><img src="images/dark_Win32.gif" border="0" alt="Win32" title="Win32 v2.0.20.1"></td>
+          <td align="center" bgcolor="#333333" class="listing"><nobr>v2.0.20.1</nobr></td>
+        </tr>
+        <tr>
+          <td align="center" bgcolor="#f76b08" class="catagory" colspan="7">Servers update in 5 minute intervals | <a href="http://www.gryphonllc.com" target="_blank">© 2002-2004 Gryphon, LLC</a> | Total Servers: 1 | Total Channels: 1</td>
+        </tr>
+        <tr>
+          <td align="center" bgcolor="#f76b08" class="catagory" colspan="7">Contact the serverlist administrator at <a href="mailto:dwitherpot@dawnwatchers.com">dwitherpot@dawnwatchers.com</a> | 600 second Auto-refresh.          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+</body>
+</html>
