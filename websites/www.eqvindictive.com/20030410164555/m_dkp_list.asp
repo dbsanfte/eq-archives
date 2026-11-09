@@ -1,0 +1,849 @@
+
+<html>
+<head>
+<title>Vindictive - Sullon Zek</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+body {scrollbar-face-color: #10131B; 
+scrollbar-shadow-color: #000000; 
+scrollbar-highlight-color: #e1e1e1; 
+scrollbar-3dlight-color: #000000; 
+scrollbar-darkshadow-color: black; 
+scrollbar-track-color: #000000; 
+scrollbar-arrow-color: #7D92BB}
+a:link   	{text-decoration:none}
+a:visited	{text-decoration:none}
+a:hover  	{color:"Gold";text-decoration:none}
+</style>
+</head>
+<body bgcolor="#422100" text="#7D92BB" link="#7D92BB" vlink="#7D92BB" alink="#7D92BB" background="images/bg-3.jpg">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function ShowPop( psFile ) { 
+ window.open('' + psFile,'ShowPop','toolbar=0,width=399,height=188,resizable=no,scrollbars=no');
+} 
+
+// -->
+</SCRIPT>
+<form name="form1">
+  <div align="center"> 
+    <table width="758" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr> 
+        <td valign="top" width="648" bgcolor="#000000"><a href="http://www.eqvindictive.com"><img src="images/left-logo3.jpg" width="425" height="84" border="0"></a></td>
+        <td valign="top" width="110" bgcolor="#000000"> 
+          <div align="right"><a href="http://www.everquest.com" target="_blank"><img src="images/eq-logo.jpg" width="72" height="27" vspace="7" hspace="5" border="0"></a></div>
+        </td>
+      </tr>
+      <tr> 
+        <td valign="top" colspan="2"><img src="images/bar-2.jpg" width="758" height="4"></td>
+      </tr>
+    </table>
+    <table width="758" border="0" cellspacing="0" cellpadding="3" align="center">
+      <tr> 
+        <td width="267" bgcolor="#10131B" valign="middle" height="7"><font size="1" face="Verdana, Arial" color="#7D92BB">&nbsp;Thursday, April 10, 2003</font></td>
+        <td bgcolor="#10131B" width="471" valign="middle" height="7"> 
+          <div align="right"><font size="2" face="Arial, Helvetica, sans-serif"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1">| 
+            <a href="http://www.eqVindictive.com">home</a> |</font><font size="2" face="Arial, Helvetica, sans-serif"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+            <a href="m_login.asp">login</a> |</font></b></font><font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+            <a href="http://pub90.ezboard.com/bdarksectsullonzek" target="_blank">msg 
+            board</a> | <a href="m_roster.asp">roster</a> | <a href="guildinfo.asp">guild 
+            info</a> |</font></b></font></div>
+        </td>
+      </tr>
+    </table>
+    <table width="758" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr> 
+        <td><img src="images/bar-2.jpg" width="758" height="4"></td>
+      </tr>
+    </table>
+    <table width="758" border="0" cellspacing="0" cellpadding="0" bgcolor="#000000" height="100%">
+      <tr> 
+        <td valign="top" bgcolor="#10131B"> 
+          <table width="100%" border="0" cellspacing="0" cellpadding="10" height="100%">
+            <tr> 
+              <td valign="top" bgcolor="#000000"> 
+                <div align="right"></div>
+                <table width="100%" border="1" cellspacing="0" cellpadding="5" bordercolor="#10131B">
+                  <tr> 
+                    <td bgcolor="#10131B"> 
+                      <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="gold"><b>Attendance 
+                        Promotion System</b></font><br>
+                        <font size="1" face="Verdana, Arial, Helvetica, sans-serif">Item 
+                        Database - [<a href="m_dkp_search.asp">search</a>]</font></div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td valign="top"> 
+                      <table width="100%" border="0" cellpadding="10">
+                        <tr> 
+                          <td bgcolor="#000000"> 
+                            <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#e1e1e1"> 
+                              <br>
+                              Items <font color="#FFE96A">1</font> to <font color="#FFE96A">50</font> of <font color="#FFE96A"><b>544</b></font> </font><br>
+                            </div>
+                            <table width="100%" border="1" cellspacing="1" cellpadding="4" bordercolor="#10131B">
+                              <tr> 
+                                <td width="29%" bgcolor="#10131B"> 
+                                  <div align="center"><a href="m_dkp_list.asp?Q1_OB=Item_Name&Q1_O=ASC"><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFF00"><u>Item 
+                                    Name</u></font></a></div>
+                                </td>
+                                <td width="15%" bgcolor="#10131B"> 
+                                  <div align="center"><a href="m_dkp_list.asp?Q1_OB=Item_PointValue&Q1_O=DESC"><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFF00"><u>Point 
+                                    Value</u></font></a></div>
+                                </td>
+                                <td width="20%" bgcolor="#10131B"> 
+                                  <div align="center"><a href="m_dkp_list.asp?Q1_OB=Item_Mob&Q1_O=ASC"><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFF00"><u>Item 
+                                    NPC</u></font></a></div>
+                                </td>
+                                <td width="22%" bgcolor="#10131B"> 
+                                  <div align="center"><a href="m_dkp_list.asp?Q1_OB=Item_Zone&Q1_O=ASC"><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFF00"><u>Item 
+                                    Zone</u></font></a></div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7384'); return false;">Koadic's Robe of Heightened Focus</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">65</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Emperor Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7390'); return false;">Torque of the Wyrmlord</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">65</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Emperor Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7388'); return false;">Velvet Slippers of Harmony</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Emperor Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7381'); return false;">Envenomed Mocassins</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Emperor Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7385'); return false;">Shawl of Awakenings</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Emperor Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7595'); return false;">Starred Yttrium Ring</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Lord Inquisitor Seru</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Sanctus Seru</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7383'); return false;">Hobart's Ring of Rage</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Emperor Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7509'); return false;">Shield of Ssraeshza</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">High Priest of Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7387'); return false;">The Sword of Ssraeshza</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Emperor Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7379'); return false;">Azaliil's Ring of Analogies</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Emperor Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7421'); return false;">Nocnivin's Small Book of Logic</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vyzh'dra the Cursed</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7382'); return false;">Gebron's Demented Cloak</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Emperor Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7593'); return false;">Heavy Yttrium Chestplate</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Lord Inquisitor Seru</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Sanctus Seru</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7357'); return false;">Azaliil's Ring of Anger</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">60</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Emperor Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7416'); return false;">Cloak Of Mourning</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vyzh'dra the Cursed</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7417'); return false;">Crystallized Serpent Eye</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vyzh'dra the Cursed</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7159'); return false;">Feeliux's Cord of Velocity</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vulak'Aerr</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Temple of Veeshan</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7594'); return false;">Seru's Torque</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Lord Inquisitor Seru</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Sanctus Seru</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7241'); return false;">Solist's Earring of Insight</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vulak'Aerr</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Temple of Veeshan</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7151'); return false;">Do'Vassir's Gauntlets of Might</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vulak'Aerr</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Temple of Veeshan</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7251'); return false;">Valtron's Necklace of Wonder</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vulak'Aerr</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Temple of Veeshan</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7149'); return false;">Crystasia's Crystal Ring</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vulak'Aerr</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Temple of Veeshan</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7458'); return false;">Bile Drenched Flesh Robe</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">The Burrower Beast</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">The Deep</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7456'); return false;">Ancient Burrower Hide Tunic</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">The Burrower Beast</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">The Deep</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7386'); return false;">Shield of Mental Fortitude</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Emperor Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7422'); return false;">Nocnivin's Tiny Book of Logic </a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vyzh'dra the Cursed</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7110'); return false;">Abashi's Rod of Disempowerment</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vulak'Aerr</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Temple of Veeshan</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7596'); return false;">Yttrium Studded Leather Boots</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Lord Inquisitor Seru</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Sanctus Seru</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7221'); return false;">Sal'Varae's Robe of Darkness</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">55</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vulak'Aerr</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Temple of Veeshan</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7415'); return false;">Cloak of Dark Shadows</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">52</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vyzh'dra the Cursed</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7423'); return false;">Opaline Charm</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">52</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vyzh'dra the Cursed</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7302'); return false;">Crown of the Undead Warmaster</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Ring of Fire</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Acrylia Caverns</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7281'); return false;">Golden Leaf Earring</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Tunare</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Plane of Growth</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7091'); return false;">Ring of Destruction</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">The Avatar of War</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Kael Drakkal</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7610'); return false;">Yttrium Studded Mantle</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Lord Inquisitor Seru</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Sanctus Seru</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7307'); return false;">Seer's Orb of Power</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Ring of Fire</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Acrylia Caverns</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7359'); return false;">Faded Skull Medallion</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Arch Lich Rhag`Zadune</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7373'); return false;">Blood Veil of the Shissar</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Blood of Ssraeshza</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7619'); return false;">Yttrium Wrapped Leggings</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Lord Inquisitor Seru</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Sanctus Seru</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7455'); return false;">Ancient Burrower Flesh Cap</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">The Burrower Beast</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">The Deep</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7309'); return false;">Warmaster's Mask of Battle</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Ring of Fire</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Acrylia Caverns</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7590'); return false;">Bloodied Berserker's Blade</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Lord Inquisitor Seru</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Sanctus Seru</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7597'); return false;">Yttrium Studded Veil</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Lord Inquisitor Seru</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Sanctus Seru</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7238'); return false;">Sirran's Boots of Insanity</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Vulak'Aerr</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Temple of Veeshan</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7278'); return false;">Essence of Nature</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Tunare</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Plane of Growth</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7592'); return false;">Glowing Amber Band</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Lord Inquisitor Seru</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Sanctus Seru</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7598'); return false;">Yttrium Wrapped Sleeves</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Lord Inquisitor Seru</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Sanctus Seru</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7376'); return false;">Ssraeshzaen Blood Cord</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">50</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Blood of Ssraeshzra</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7233'); return false;">Silver Charm of Tranquility</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">48</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Dozekar Quests</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Temple of Veeshan</font> </div>
+                                </td>
+                              </tr>
+                              
+                              <tr> 
+                                <td width="29%"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+                                  <a href="" onClick="ShowPop('m_itempop.asp?id=7370'); return false;">Shield of Auras</a> </font></b></font></td>
+                                <td width="15%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">48</font> </div>
+                                </td>
+                                <td width="20%"> 
+                                  <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Arch Lich Rhag`Zadune</font> </div>
+                                </td>
+                                <td width="22%"> 
+                                  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Ssraeshza Temple</font> </div>
+                                </td>
+                              </tr>
+                              
+                            </table>
+                            <br>
+                            <table border="1" width="50%" align="center" bordercolor="#10131B">
+                              <tr> 
+                                <td width="23%" align="center"> <font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+                                  <a href="/m_dkp_list.asp?offset=0">First</a> 
+                                  </font></td>
+                                <td width="31%" align="center"> <font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+                                  <a href="/m_dkp_list.asp?offset=0">Previous</a> 
+                                  </font></td>
+                                <td width="23%" align="center"> <font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+                                  <a href="/m_dkp_list.asp?offset=50">Next</a> 
+                                  </font></td>
+                                <td width="23%" align="center"> <font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+                                  <a href="/m_dkp_list.asp?offset=-1">Last</a> 
+                                  </font></td>
+                              </tr>
+                            </table>
+                            <div align="center"></div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr> 
+        <td valign="top" bgcolor="#000000" height="2"><img src="images/bottombar.jpg" width="758" height="14"></td>
+      </tr>
+    </table>
+    <table width="758" border="0" cellspacing="0" cellpadding="5">
+      <tr> 
+        <td> 
+          <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#e1e1e1">&copy;2002-03 
+            Vindictive - Sullon Zek</font></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+</html>
