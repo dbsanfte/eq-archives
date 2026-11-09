@@ -1,0 +1,209 @@
+<html>
+<head>
+<style type="text/css">
+body {
+background-color: #ffffff;
+}
+
+a {
+text-decoration: none;
+color: #333399;
+}
+
+.post {
+font-size: 17px;
+font-weight: bold;
+font-family: arial, verdana;
+}
+
+.header {
+color: #ffffff;
+background-color: #778899;
+font-family: arial, verdana;
+font-weight: bold;
+font-size: 12px;
+}
+
+.15px {
+background-color: #eeeeee;
+font-size: 15px;
+font-family: arial, verdana;
+color: #000000;
+}
+
+.category {
+background-color: #C0C0C0;
+font-family: arial, verdana;
+font-size: 12px;
+}
+
+.tablerow {
+font-family: arial, verdana;
+color: #000000;
+font-size: 13px;
+}
+
+.nav {
+font-family: arial, verdana;
+font-weight: bold;
+font-size: 12px;
+}
+
+.postauthor {
+font-size: 13px;
+font-weight: bold;
+font-family: arial, verdana;
+}
+
+.11px {
+font-size: 11px;
+font-family: arial, verdana;
+}
+
+.12px {
+font-size: 12px;
+font-family: arial, verdana;
+}
+
+.navtd {
+font-size: 10px;
+font-family: arial, verdana;
+color: #ffffff;
+background-color: #778899;
+}
+
+BODY {
+	SCROLLBAR-FACE-COLOR: #000080; SCROLLBAR-HIGHLIGHT-COLOR: #000080; SCROLLBAR-SHADOW-COLOR: #ffffcc; SCROLLBAR-3DLIGHT-COLOR: #000000; SCROLLBAR-ARROW-COLOR: #ffffff; SCROLLBAR-TRACK-COLOR: #ffffcc; SCROLLBAR-DARKSHADOW-COLOR: #FFFF00
+}
+</style>
+<script language="JavaScript"> 
+function Popup(url, window_name, window_width, window_height) 
+{ settings= 
+"toolbar=no,location=no,directories=no,"+ 
+"status=no,menubar=no,scrollbars=yes,"+ 
+"resizable=yes,width="+window_width+",height="+window_height; 
+
+NewWindow=window.open(url,window_name,settings); } 
+</script> 
+
+<title>Forum Metacherche - Distribué Metacherche.com</title>
+</head>
+<body text="#000000" > 
+
+<table cellspacing="0" cellpadding="0" border="0" width="92%" align="center">
+<tr><td bgcolor="#000000">
+
+<table border="0" cellspacing="1" cellpadding="3" width="100%">
+<tr class="15px">
+<td width="100%"><span class="12px"><b>Vous n'êtes pas connecté</b></span> &nbsp;&nbsp; <span class="11px"></span><br>Retour sur <a href='http://www.metacherche.com' target='_top'><b>Metacherche</b></a> - <font face=Arial size=1>
+Forum <b><a href="http://www.xmbforum.com" target="_top">XMB</a></b> Copyright © 2001 XMB Dev Team.</td></tr>
+
+<tr class="navtd"><td>
+<a href="member.php?action=reg"><span class="navtd"><img src='images/top_register.gif' border=0></span></a> | 
+<a href="member.php?action=list"><span class="navtd"><img src='images/top_members.gif' border=0></span></a> | 
+<a href="member.php?action=editpro"><span class="navtd"><img src='images/top_profile.gif' border='0'></span></a> | <a href="misc.php?action=login"><span class="navtd"><img src='images/top_connexion.gif' border='0'></span></a> | 
+<a href="misc.php?action=search"><span class="navtd"><img src='images/top_search.gif' border='0'></span></a>  | 
+<a href="misc.php?action=faq"><span class="navtd"><img src='images/top_faq.gif' border='0'></span></a>
+</td></tr>
+</table>
+
+</td></tr></table>
+<table width="92%" align="center">
+<tr><td class="nav"><img src='images/top_home.gif' border='0'></td></tr>
+<tr><td><form method="post" action="forumdisplay.php"><span class="11px">Allez sur:</span><br><select name="fid" style='font-family: Arial, serif; font-weight: bold; font-size: 8 pt; color: #FFFFFF; background-color: #000080; border: 1px ridge #000000'><option value="home"><img src='images/top_home.gif' border='0'></option><option value="annouce">Annonces</option><option value="">-------------------------</option><option value="cat1">SATORI</option><option value="1">&gt; tester le forum</option><option value="2">&gt; discutions generales</option><option value="3">&gt; membres</option><option value="4">&gt; raid</option><option value="">-------------------------</option></select>&nbsp;<input type="submit" value="OK" style='font-family: Arial, serif; font-weight: bold; font-size: 8 pt; color: #FFFFFF; background-color: #000080; border: 1px ridge #000000'></form></td><td><a href='http://www.metacherche.com/' target='_top'><img src='images/logo1.png' border='0'></a></td></tr>
+</table><br />
+<table cellspacing="0" cellpadding="0" border="0" width="92%" align="center"> 
+<tr><td bgcolor="#000000"> 
+
+<table border="0" cellspacing="1" cellpadding="3" width="100%"> 
+<tr class="header"> 
+<td width="3%">&nbsp;</td> 
+<td width="35%">Forums:</td> 
+<td width="7%">Sujets:</td> 
+<td width="7%">Postés</td> 
+<td width="30%">Dernier message:</td> 
+<td width="18%">Modérateurs:</td> 
+</tr>
+
+
+<tr class="category"> 
+<td colspan="6"><a href="misc.php?action=announce"><b>Annonces</b></a></td> 
+</tr> 
+<tr class="tablerow"> 
+<td bgcolor="#dededf"><img src="images/folder.png"></td> 
+<td bgcolor="#eeeeee"><span class="12px"><a href="misc.php?action=announce">Annonces</a></span><br /><span class="11px">Annonces sur le Forum</span></td> 
+<td bgcolor="#dededf" align="center"><span class="12px">0</span></td> 
+<td bgcolor="#eeeeee">&nbsp;</td> 
+<td bgcolor="#dededf" class="11px">Pas de messages</td> 
+<td bgcolor="#eeeeee">&nbsp;</td> 
+</tr>
+
+
+<tr class="category">
+<td bgcolor=#ffffff colspan="6"><font face=Arial size=2><b><img src="images/on.gif"> <a href="index.php?cid=1"><font face=Arial color=navy><b>SATORI</b></font></a></td>
+</tr>
+
+
+<tr class="tablerow"> 
+<td bgcolor="#dededf"><img src="images/red_folder.png"></td> 
+<td bgcolor="#eeeeee"><span class="12px"><a href="forumdisplay.php?fid=1">tester le forum</a></span><br /> 
+<span class="11px">essayer en deposant des messages</span></td> 
+<td bgcolor="#dededf" align="center"><span class="12px">1</span></td> 
+<td bgcolor="#eeeeee" align="center"><span class="12px">1</span></td> 
+<td bgcolor="#dededf"><span class="11px">Posté le 24/5/2001 à 12:58 par <a href="member.php?action=viewpro&member=Iamine ">Iamine </a></span></td> 
+<td bgcolor="#eeeeee"><span class="tablerow">&nbsp;</span></td> 
+</tr> 
+
+
+<tr class="tablerow"> 
+<td bgcolor="#dededf"><img src="images/red_folder.png"></td> 
+<td bgcolor="#eeeeee"><span class="12px"><a href="forumdisplay.php?fid=2">discutions generales</a></span><br /> 
+<span class="11px">tous sujets</span></td> 
+<td bgcolor="#dededf" align="center"><span class="12px">1</span></td> 
+<td bgcolor="#eeeeee" align="center"><span class="12px">8</span></td> 
+<td bgcolor="#dededf"><span class="11px">Posté le 11/6/2001 à 17:21 par <a href="member.php?action=viewpro&member=aradia ">aradia </a></span></td> 
+<td bgcolor="#eeeeee"><span class="tablerow">&nbsp;</span></td> 
+</tr> 
+
+
+<tr class="tablerow"> 
+<td bgcolor="#dededf"><img src="images/red_folder.png"></td> 
+<td bgcolor="#eeeeee"><span class="12px"><a href="forumdisplay.php?fid=3">membres</a></span><br /> 
+<span class="11px">pour notifier les renseignements de vos persos</span></td> 
+<td bgcolor="#dededf" align="center"><span class="12px">6</span></td> 
+<td bgcolor="#eeeeee" align="center"><span class="12px">18</span></td> 
+<td bgcolor="#dededf"><span class="11px">Posté le 8/6/2001 à 06:23 par <a href="member.php?action=viewpro&member=frere letriste ">frere letriste </a></span></td> 
+<td bgcolor="#eeeeee"><span class="tablerow">&nbsp;</span></td> 
+</tr> 
+
+
+<tr class="tablerow"> 
+<td bgcolor="#dededf"><img src="images/folder.png"></td> 
+<td bgcolor="#eeeeee"><span class="12px"><a href="forumdisplay.php?fid=4">raid</a></span><br /> 
+<span class="11px">nos sorties</span></td> 
+<td bgcolor="#dededf" align="center"><span class="12px">0</span></td> 
+<td bgcolor="#eeeeee" align="center"><span class="12px">0</span></td> 
+<td bgcolor="#dededf"><span class="11px">Pas de messages</span></td> 
+<td bgcolor="#eeeeee"><span class="tablerow">&nbsp;</span></td> 
+</tr> 
+
+
+<tr class="category">
+<td colspan="6"><b><font color="#333399">Qui est en ligne? - <span class="11px">Il y a actuellement 1 utilisateur(s), 0 membre(s), et 0 utilisateur(s) anonyme(s).</span></font></b></td>
+</tr>
+<tr class="tablerow">
+<td bgcolor="#dededf">&nbsp;</td>
+<td bgcolor="#eeeeee" colspan="5">Membres connectés:
+<br>Il y a un total de <b>29</b> messages postés dans <b>10</b> sujets<br />Il y a <b>6</b> membres enregistrés, le dernier membre enregistré <a href="member.php?action=viewpro&member=Erkon"><b>Erkon</b></a>.<br /><br /><img src="images/red_folder.png"> = Nouveaux messages dans ce forum depuis votre dernière connexion<br /><img src="images/folder.png"> = Pas de nouveaux messages dans ce forum depuis votre dernière visite  </td>
+</tr>
+
+</table>
+</td></tr></table>
+<table width="92%" align="center"><tr class="tablerow">
+<td width="20%"></td>
+</tr></table>
+<br />
+<div align="center"><font face=Arial size=1>
+Forum <b><a href="http://www.metacherche.com" target="_top">Metacherche</a></b> Copyright © 2001.
+</div>
+</body></html>
