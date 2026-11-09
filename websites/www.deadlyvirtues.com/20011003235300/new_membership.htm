@@ -1,0 +1,721 @@
+<SCRIPT>
+
+// First update this date
+
+LastUpdate = "16 September 2001";
+
+// See instructions below...
+
+
+function Member(name, mclass)
+{
+	this.name = name;
+	this.mclass = mclass;
+		if (arguments.length == 3) {
+		this.officer = arguments[2];
+	} else {
+		this.officer = 0;
+	}
+}
+
+// MV
+function SecondaryMember(name, mclass, level, primary) 
+{
+	this.name = name;
+	this.mclass = mclass;
+	this.level = level;
+	this.primary = primary;
+}
+
+function TrialMember(name, mclass, end, status, key_sebelis, key_charasis, key_cs, fr, cr, pr) 
+{
+	this.name = name;
+	this.mclass = mclass;
+	this.end = end;
+	this.status = status;
+	this.key_cs = key_cs;
+	this.key_sebelis = key_sebelis;
+	this.key_charasis = key_charasis, 
+	this.fr = fr;
+	this.cr = cr;
+	this.pr = pr;
+}
+
+// MV
+function AlternateMember(name, mclass, level, primary) 
+{
+	this.name = name;
+	this.mclass = mclass;
+	this.level = level;
+	this.primary = primary;
+}
+
+// MV
+function HonoraryMember(name, mclass, sdate) 
+{
+	this.name = name;
+	this.mclass = mclass;
+	this.sdate = sdate;
+}
+
+// MV
+function InactiveMember(name, mclass, sdate) 
+{
+	this.name = name;
+	this.mclass = mclass;
+	this.sdate = sdate;
+}
+
+//	Sample trial member line:
+//	
+//	new TrialMember("Name", class number, "Trial End", "Last Eval", S, C, CS, FR, CR, PR)
+//
+//	The order of the entries isn't important...  The script will organize them by class.
+//
+//  Note: When you add a trail member be sure to put a comma on the end of the previous line.
+// 
+//	If we don't have any trial members, just remove add the entries from the array:
+//		var trial_members = new Array();
+//
+//	Sample member line:
+//
+//	new Member("Name", class number)	
+//
+//  For an officer use the following line:
+//
+//	new Member("Name", class number, 1)	
+//
+//  Note: As with trial members, when you add a member be sure to put a comma on the end of the previous line.
+//
+// Class Numbers:
+//	0	bard
+//	1	cleric
+//	2	druid
+//	3	enchanter
+//	4	magician
+//	5	monk
+//	6	necromancer
+//	7	paladin
+//	8	ranger
+//	9	rogue
+//	10	shadow knight
+//	11	shaman
+//	12	warrior
+//	13	wizard
+//
+//
+//	The guild member list is broken into two tables.  The following line specifies which class
+//	will be the first in the 2nd table.  As new members are added, you might want to play with
+//	this value in order to make the two tables approximately the same size.
+
+var tableSplit = 7;
+
+var members = new Array(
+//	new Member("Dalyryder Dirgestone", 0),	  moved to honorary 010802	
+	new Member("Highnote Jukebot", 0),  // Yawma switched 9 Sep 01
+	new Member("Maravana Vireo", 0, 1),			
+	new Member("Roxan Rollz", 0),
+	new Member("Uwen Lightsinger", 0),  // switched 9 Sep 01
+//	new Member("Zildjan", 0),   moved to inactive 010802
+	new Member("Braaknag", 1),  // full member 9 Sep 01
+	new Member("Drakkaenn Sunforge",1),
+	new Member("Gromril", 1),
+	new Member("Kahla Celestine", 1),
+	new Member("Lelu Dallus", 1),
+	new Member("Mappan Muffinbiter", 1),  // split from Yawma 22 Jul 01
+	new Member("Rezzar Bot", 1),
+	new Member("Ruumm Forrezz", 1),  // full member 9 Sep 01
+      new Member("Sinisade", 1, 1),
+	new Member("Zestraa", 1),
+	new Member("Daktari Plainsrunner", 2),
+	new Member("Grifn Slayer", 2),
+	new Member("Jalokavich", 2),
+      new Member("Kolanya", 2),
+      new Member("Mattas Valemyst", 2),
+	new Member("Tanika Ceadserc", 2),
+	new Member("Fyzz Mysterywalker ", 3),
+	new Member("Joanna Evermist", 3),
+	new Member("Maja Angleripper", 3), // full member 22 Jul 01
+	new Member("Mezzer Bot", 3),
+//	new Member("Zanex", 3),  // moved to honorary 16 Sep 01
+	new Member("DamienVryce Petbot", 4),
+	new Member("Iumdar Terrastrike", 4), // full member 13 Aug 01
+	new Member("Rathmata Kataemal", 4),
+	new Member("Sadiven Ceadserc", 4),
+	new Member("Gryffin Skystrider", 5, 1),
+	new Member("Serano", 5),
+	new Member("Shobab", 5), // full member 29 Aug 01
+	new Member("Ramme Feignbot", 5),
+	new Member("Bobithyjr", 6), // full member 9 Sep 01
+	new Member("Kania Ra`Baenre", 6), // full member 29 Aug 01
+	new Member("Abrham", 7),
+	new Member("Bamelen Phoenix", 7),
+	new Member("Beckman Trueblade", 7),
+	new Member("Knight Vireo", 7, 1),
+//	new Member("Alaweni", 8), //  to honorary 29 Aug 01
+	new Member("Carthinor Truestrike", 8), //  from honorary 22 Jul 01
+	new Member("Cheb Chortleberry", 8), // full member 22 Jul 01
+	new Member("Efil Trackbot", 8),
+	new Member("Temin Anla`Shok", 8),
+	new Member("Zilva D`unedain", 8),
+//	new Member("Darafayen Switchblades", 9),  // moved to honorary 29 Aug 01
+	new Member("Dreezil", 9), // added 9 Sep 2001
+	new Member("Nicci SisteroftheDark", 9), // full member 2 Aug 01
+	new Member("Jazzin Kur`Nel", 9),
+	new Member("Kaleth", 9), // full member 29 Aug 01
+	new Member("Phingers", 9),
+//	new Member("Sindane", 9),  // moved to honorary 29 Aug 01
+	new Member("Ulicia SisteroftheDark", 9), // full member 2 Aug 01
+	new Member("Ceruix Moriquendi", 10),
+//	new Member("Grumpie Buffbot", 11), //  to honorary 29 Aug 01
+	new Member("Guladan", 11),
+	new Member("Melvar Malicious", 11), // full member 9 Sep 01
+	new Member("Raxthorn SpiritWolf", 11),
+//	new Member("Selu Snakefist", 11),  // moved to honorary 29 Aug 01
+	new Member("Avienda MistStalker", 12), // full member 22 Jul 01
+	new Member("Cloudburst", 12), // full member 2 Aug 01
+	new Member("Failbhean Threehammers", 12),  // full member 22 Jul 01
+	new Member("Gismirante Silverlorn", 12),
+	new Member("Kroo TankBot", 12),
+	new Member("McRaven Dragonblood", 12), // full member 9 Sep 01
+	new Member("Nalesar", 12), // full member 22 Jul 01
+	new Member("Odiseous", 12),
+	new Member("Thengel Ele`sheir", 12),
+	new Member("Alano D`unedain", 13),
+	new Member("Alewulf Boozehound", 13),
+	new Member("Kalvorie Ra`Baenre", 13), //  from honorary 22 Jul 01
+	new Member("Kixxa", 13), // full member 9 Sep 01
+	new Member("Merklynn Stormecrowe", 13),
+	new Member("Retro Active", 13),   //  from honorary 2 Aug 01
+	new Member("Talasyn DrachenFire", 13),
+	new Member("Terwiz Zaura", 13),
+	new Member("Wokka", 13),
+	new Member("Yanaddar", 13)  // full member 9 Sep 01
+);
+
+//	new TrialMember("Name", class number, "Trial End", "Last Eval", S, C, CS, FR, CR, PR)
+var trial_members = new Array(
+	new TrialMember("Rindaili", 0, "25 Aug 01", "13 Sep 01", 1, 1, 1, 1, 1, 1),
+	new TrialMember("Yillandria Del`Galandraca", 2, "1 Oct 01", "9 Sep 01", 1, 1, 1, 1, 1, 1),
+	new TrialMember("Astos Del`Galandraca", 3, "1 Oct 01", "4 Sep 01", 1, 1, 1, 1, 1, 1),
+	new TrialMember("Daewar Darkeslayer", 13, "20 Sep 01", "23 Aug 01", 1, 1, 1, 1, 1, 1),
+	new TrialMember("Kurk Volens", 4, "1 Oct 01", "15 Sep 01", 1, 1, 1, 1, 1, 1),
+	new TrialMember("Marikin Soulmender", 1, "1 Oct 01", "11 Sep 01", 1, 1, 1, 1, 1, 1),
+	new TrialMember("Zeppelin", 6, "18 Sep 01", "", 0, 0, 0, 0, 0, 0)
+
+);
+
+
+var secondary_members = new Array(
+	new SecondaryMember( "Denales", 1, "32","Nalesar"),
+	new SecondaryMember( "Koramek Spiritforge", 1,"Dragon capable","Raxthorne"),
+	new SecondaryMember( "Redora GaytBot", 2,"Dragon capable","Rezzar"),
+	new SecondaryMember( "Zartan", 4,"","Carthinor"),
+	new SecondaryMember( "Zwen Lightbender", 3, "53+", "Uwen"),  // switched 9 Sep 01
+	new SecondaryMember( "Caramon", 5, "Dragon capable", "Knight"),
+	new SecondaryMember( "Chroi", 5,"<20","Tanika"),
+	new SecondaryMember( "Drell", 5,"Dragon capable","Phingers"),
+	new SecondaryMember( "Gulone", 5,"53+","Guladan"),
+	new SecondaryMember( "Holland", 5,"Dragon capable","McRaven"),
+	new SecondaryMember( "Leelew Corpse", 5,"Dragon capable","Lelu"),
+	new SecondaryMember( "Kelr DeVille", 6,"53+","Beckman"),
+	new SecondaryMember( "Draist Holyblade", 7,"Dragon capable","DamienVryce"),
+	new SecondaryMember( "Silia Trueblade", 7,"Dragon capable","Zestraa"),
+	new SecondaryMember( "Qwack Pluma Blanca", 7,"Dragon capable","Daktari"),
+	new SecondaryMember( "Eleandryl Oakenshield", 8,"Dragon capable","Thengel"),
+	new SecondaryMember( "Cuss", 9,"21-45","Mattas"),
+	new SecondaryMember( "Sormonicon", 10,"30","Jalokavich"),
+	new SecondaryMember( "Jarnhann", 11,"<20","Gryffin"),
+	new SecondaryMember( "Magnuss", 11,"Dragon capable","Serano"),
+//	new SecondaryMember( "Aagrok Zek", 12,"Dragon capable","Grymspine"),
+	new SecondaryMember( "High Anxiety", 12,"50","Cheb"),
+	new SecondaryMember( "Thunderclap Booming", 12,"Dragon capable","Grifn"),
+	new SecondaryMember( "Cinius Shade", 13,"53+","Sinisade"),
+	new SecondaryMember( "Mikkell", 13,"Dragon capable","Iumdar"),
+	new SecondaryMember( "Mynt", 13,"Dragon capable","Temin"),
+	new SecondaryMember( "Yawma Slaywell", 13, "53+","Highnote") //  split from Mappan 22 Jul 01
+	
+);
+
+
+var alternate_members = new Array(
+	new AlternateMember( "Aadune Vireo", 2,"21-45","Gryffin"),
+	new AlternateMember( "Aawen", 2,"","Zwen"),
+//	new AlternateMember( "Abahein Ebon`Falahem", 1,"53+","Grymspine"),
+	new AlternateMember( "Ader Draconis", 6,"<20","Darafayen"),
+	new AlternateMember( "Alagorn", 5,"","Grifn"),
+	new AlternateMember( "Amyll", 0,"","Kroo"),
+	new AlternateMember( "Ardrit Del`Canis", 2,"Planes capable","Ceruix"),
+	new AlternateMember( "Atelan Phoenix", 6,"","Bamelen"),
+	new AlternateMember( "Bagukum", 12,"<20","Gryffin"),
+	new AlternateMember( "Bakkel BoneBasher", 1,"","Kroo"),
+	new AlternateMember( "Bames", 5,"","Bamelen"),
+	new AlternateMember( "Bashm Smashm", 12,"","Beckman"),
+	new AlternateMember( "Beryl Vireo", 2,"21-45","Maravana"),
+	new AlternateMember( "Bitsy", 13,"","Zestraa"),
+	new AlternateMember( "Born Phoenix", 1,"","Bamelen"),
+	new AlternateMember( "Boxie", 5,"","Alaweni"),
+	new AlternateMember( "Brackens", 3,"","Serano"),
+	new AlternateMember( "Budan BuffBot", 11,"","Mezzer"),
+	new AlternateMember( "Caeruix", 3,"","Ceruix"),
+	new AlternateMember( "Candili", 5,"51","Zwen"),
+	new AlternateMember( "Caramon", 5,"40","Knight"),
+	new AlternateMember( "Caruix Moriquendi", 1,"","Ceruix"),
+	new AlternateMember( "Cebra", 11,"","Kolanya"),
+	new AlternateMember( "Cenami Lightbringer", 7,"","Zanex"),
+	new AlternateMember( "Chalky Chortleberry", 1,"51","Cheb"),
+	new AlternateMember( "Chasa", 6,"31","Zwen"),
+	new AlternateMember( "Chort", 2,"21","Cheb"),
+	new AlternateMember( "Chrystalis Lunari", 13,"","Zanex"),
+	new AlternateMember( "Cindylou", 5,"","Zestraa"),
+	new AlternateMember( "Cinnamin Phoenix", 3,"","Bamelen"),
+	new AlternateMember( "Deava D`Mentia", 9,"","Ramme"),
+	new AlternateMember( "Duin D`unedain", 0,"","Alano"),
+	new AlternateMember( "Dusty", 0,"Dragon capable","Drakkaenn"),
+	new AlternateMember( "Fanci", 5,"","Rezzar"),
+	new AlternateMember( "Fyzzmon Starwalker", 2,"","Fyzz"),
+	new AlternateMember( "Giggas", 9,"","Mezzer"),
+	new AlternateMember( "Guano", 11,"18","Cheb"),
+	new AlternateMember( "Gulant", 2,"53+","Guladan"),
+	new AlternateMember( "Gulmar", 7,"46-52","Guladan"),
+//	new AlternateMember( "Gulgamar", 5,"","Grymspine"),
+	new AlternateMember( "Hemloch", 12,"","Tanika"),
+	new AlternateMember( "Hokas", 4,"","Grifn"),
+	new AlternateMember( "Jaxkel Kur`Nel", 13,"","Jazzin"),
+	new AlternateMember( "Kalvyn Ve`Fascinatus", 3,"","Kalvorie"),
+	new AlternateMember( "Kareem", 11,"","Bamelen"),
+	new AlternateMember( "Kelzy", 8,"","Fyzz"),
+	new AlternateMember( "Kreiger", 12,"","Serano"),
+	new AlternateMember( "Kuatsu", 5,"53+","Kalvorie"),
+	new AlternateMember( "Kwaichangkane", 5,"","Bamelen"),
+	new AlternateMember( "Maladeem Oombelle", 1,"","Jalokavich"),
+	new AlternateMember( "Maraqa", 5,"28","Maravana"),
+	new AlternateMember( "Marauda", 9,"<20","Maravana"),
+	new AlternateMember( "Maryln", 6,"","Thengel"),
+	new AlternateMember( "Medden", 1,"","Efil"),
+	new AlternateMember( "Moonchaser Dreamweaver", 0,"","Grifn"),
+	new AlternateMember( "Morningsun Rising", 13,"","Grifn"),
+	new AlternateMember( "Narlix Kur`Nel", 10,"","Jazzin"),
+	new AlternateMember( "Nilas Sirius", 2,"","Kalvorie"),
+	new AlternateMember( "Nikto", 1,"<20","Maravana"),
+	new AlternateMember( "Ninoa", 6,"","Alaweni"),
+	new AlternateMember( "Patheon", 11,"","Zanex"),
+	new AlternateMember( "Porthios Vireo", 13,"Planes capable","Knight"),
+	new AlternateMember( "Raraki", 5,"","Beckman"),
+	new AlternateMember( "Rathkal", 2,"","Rathmata"),
+	new AlternateMember( "Rathmaul Kataemal", 12,"","Rathmata"),
+	new AlternateMember( "Rathsong", 0,"","Rathmata"),
+	new AlternateMember( "Raxillian Spiritbones", 6,"","Raxthorne"),
+	new AlternateMember( "Redan", 12,"Dragon capable","Mezzer"),
+	new AlternateMember( "Redora Gaytbot", 2,"Dragon capable","Rezzar"),
+	new AlternateMember( "Renye", 1,"","Tanika"),
+	new AlternateMember( "Ruxith", 5,"","Mezzer"),
+	new AlternateMember( "Sadivon", 3,"","Sadiven"),
+	new AlternateMember( "Silvar D`unedain", 3,"","Zilva"),
+//	new AlternateMember( "Soloti", 5,"","Grymspine"),
+	new AlternateMember( "Syrith Spiritclaw", 5,"","Raxthorne"),
+	new AlternateMember( "Torbrashal Vera`am", 3,"53+","Knight"),
+	new AlternateMember( "Tutton", 9,"","Bamelen"),
+	new AlternateMember( "Underhill MD", 1,"","Grifn"),
+//	new AlternateMember( "Velio", 0,"","Grymspine"),
+	new AlternateMember( "Verrin De`Vissari", 1,"Dragon capable","Kalvorie"),
+	new AlternateMember( "Vermeil", 1,"","Gismirante"),
+	new AlternateMember( "Vloag Trueblade", 12,"","Jalokavich"),
+	new AlternateMember( "Winterr", 10,"","Zestraa"),
+	new AlternateMember( "Wotz", 10,"22","Cheb"),
+	new AlternateMember( "Xikren Corpsebot", 6,"53+","Ramme"),
+//	new AlternateMember( "Ygra SheWolf", 11,"53+","Zildjan"),
+	new AlternateMember( "Zilvie", 2,"","Zilva"),
+	new AlternateMember( "Zypheus", 3,"Dragon capable","Raxthorne")
+
+);
+
+var honorary_members = new Array(
+	new HonoraryMember("Alaweni", 8, "29 Aug 01"),
+	new HonoraryMember("Broda", 1, "1 Feb 01"),
+	new HonoraryMember("Dalyryder Dirgestone", 0, "2 Aug 01"),	
+	new HonoraryMember("Darafayen Switchblades", 9, "29 Aug 01"),
+	new HonoraryMember("Grumpie Buffbot", 11, "29 Aug 01"),
+	new HonoraryMember("Grymspine Mael`fesience", 6, "15 Aug 01"),
+	new HonoraryMember("Marccuss Well`Be", 1, "9 Sep 01"), // by request
+	new HonoraryMember("Morde - Guild Bank", 2, "1 Dec 00"),
+	new HonoraryMember("Selu Snakefist", 11, "29 Aug 01"),
+	new HonoraryMember("Sindane", 9, "29 Aug 01"),
+	new HonoraryMember("Zanex", 3, "16 Sep 01")
+);
+
+var inactive_members = new Array(
+	new InactiveMember("Zildjan", 0, "2 Aug 01")
+);
+
+var classes = new Array(
+	"Bard", "Cleric", "Druid", "Enchanter", "Magician", "Monk", "Necromancer",
+	"Paladin", "Ranger", "Rogue", "Shadow Knight", "Shaman", "Warrior", "Wizard"	
+);
+
+function TickOrBlank(i)
+{
+	if (i != 0) 
+	{
+		document.write('<TD align=center valign=center><IMG src="tick.gif"></TD>');
+	} else 
+	{
+		document.write("<TD>&nbsp;</TD>");
+	}
+}
+
+
+function CreateMemberTable()
+{
+	var tcol = 0;
+	document.write("<TABLE border=0 align=center><TR>");
+
+	for (cloop = 0; cloop < 14; cloop++) {
+		tcol = (cloop == tableSplit); 
+		if ((cloop == 0) || tcol) {
+			if (tcol) 
+				document.write("</TABLE></TD>");
+			document.write("<TD valign=top>");
+			document.write('<TABLE border=1 cellpadding=3 bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+			document.write("<TR bgcolor=BLACK>");
+			document.write('<TD align=middle width="10%">Class</TD>');
+			document.write('<TD align=middle width="10%">Total</TD>');
+			document.write("<TD align=middle>Name</TD>");
+			document.write("</TR>");
+		}
+		var shortList = new Array();
+		for (lloop = 0; lloop < members.length; lloop++) {		
+			if (members[lloop].mclass == cloop) {
+				shortList[shortList.length] = members[lloop];
+			}
+		}			
+		if (shortList.length) {
+			document.write("<TR><TD align=middle valign=middle rowspan=");
+			document.write(shortList.length);
+			document.write(">");
+			document.write(classes[cloop], "</TD>");
+			document.write("<TD align=middle valign=middle rowspan=", shortList.length, ">");
+			document.write(shortList.length, "</TD>");
+
+			for (sloop = 0; sloop < shortList.length; sloop++) {
+				if (sloop != 0) 
+					document.write("<TR>");
+				document.write("<TD>");
+				if (shortList[sloop].officer) 
+					document.write("<B>");
+				document.write(shortList[sloop].name);
+				if (shortList[sloop].officer) 
+					document.write("</B>");
+				document.write("</TD>");
+				document.write("</TR>");
+			};
+		}
+		delete shortList;
+	}
+	document.write("</TD></TR></TABLE></TABLE>");
+	
+	document.write("<P align=center>");
+	document.write("<FONT color=BLACK><P align=center><B>Total number of primary characters: ")
+ 	document.write(members.length);
+	document.write("</B></P></FONT>");
+	document.write("<P align=center>");
+	document.write("<FONT color=BLACK><B>Bold text</B> indicates officers of Deadly Virtues.</FONT>");
+	document.write("</P>");
+	document.write("<BR>");
+
+		
+}
+
+
+var SecTableSplit = -1;
+
+function CreateSecondaryTable()
+{
+	var tcol = 0;
+	document.write("<TABLE border=0 align=center><TR>");
+
+	for (cloop = 0; cloop < 14; cloop++) {
+		tcol = (cloop == SecTableSplit); 
+		if ((cloop == 0) || tcol) {
+			if (tcol) 
+				document.write("</TABLE></TD>");
+			document.write("<TD valign=top>");
+			document.write('<TABLE border=1 cellpadding=3 bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+			document.write("<TR bgcolor=BLACK>");
+			document.write('<TD align=middle width="10%">Class</TD>');
+			document.write('<TD align=middle width="10%">Total</TD>');
+			document.write("<TD align=middle>Name</TD>");
+			document.write("<TD align=middle>Level</TD>");
+			document.write("<TD align=middle>Secondary of:</TD>");
+			document.write("</TR>");
+		}
+		var shortList = new Array();
+		for (lloop = 0; lloop < secondary_members.length; lloop++) {		
+			if (secondary_members[lloop].mclass == cloop) {
+				shortList[shortList.length] = secondary_members[lloop];
+			}
+		}			
+		if (shortList.length) {
+			document.write("<TR><TD align=middle valign=middle rowspan=");
+			document.write(shortList.length);
+			document.write(">");
+			document.write(classes[cloop], "</TD>");
+			document.write("<TD align=middle valign=middle rowspan=", shortList.length, ">");
+			document.write(shortList.length, "</TD>");
+
+			for (sloop = 0; sloop < shortList.length; sloop++) {
+				if (sloop != 0) 
+					document.write("<TR>");
+		                document.write("<TD>", shortList[sloop].name,"&nbsp;</TD>");
+		                document.write("<TD>", shortList[sloop].level, "&nbsp;</TD>");
+		                document.write("<TD>", shortList[sloop].primary, "</TD>");
+				document.write("</TR>");
+			};
+		}
+		delete shortList;
+	}
+	document.write("</TD></TR></TABLE></TABLE>");
+	
+	document.write("<P align=center>");
+	document.write("<FONT color=BLACK><P align=center><B>Total number of secondary characters: ")
+ 	document.write(secondary_members.length);
+	document.write("</B></P></FONT>");
+	document.write("<BR>");
+
+		
+}
+function CreateTrialTable()
+{
+	if (trial_members.length == 0) {
+		document.write("<P align=center><B><FONT color=BLACK>No members currently in trial.</FONT></B></P>");
+		return;
+	}
+	
+	document.write('<TABLE border=1 cellpadding=3 width="80%" align=center bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+	document.write("<TR bgcolor=BLACK>");
+	document.write("<TD align=middle rowspan=2>Class</TD>");
+	document.write("<TD align=middle rowspan=2>Name</TD>");
+	document.write("<TD align=middle rowspan=2>End Date</TD>");
+	document.write("<TD align=middle rowspan=2>Last Update</TD>");
+	document.write("<TD align=middle colspan=3>Keys</TD>");
+	document.write("<TD align=middle rowspan=2>FR</TD>");
+	document.write("<TD align=middle rowspan=2>CR</TD>");
+	document.write("<TD align=middle rowspan=2>PR</TD>");
+	document.write("</TR>");
+	document.write("<TR bgcolor=BLACK>");
+	document.write("<TD>S</TD>");
+	document.write("<TD>C</TD>");
+	document.write("<TD>CS</TD>");
+	document.write("</TR>");
+	
+	// This part is pretty inefficient, but it's not like we're counting cpu cycles here. ;)
+	for (cloop = 0; cloop < 14; cloop++) {		
+		var shortList = new Array();
+		for (lloop = 0; lloop < trial_members.length; lloop++) {		
+			if (trial_members[lloop].mclass == cloop) {
+				shortList[shortList.length] = trial_members[lloop];
+			}
+		}			
+		if (shortList.length) {
+			document.write("<TR><TD align=middle valign=middle rowspan=");
+			document.write(shortList.length);
+			document.write(">");
+			document.write(classes[cloop]);
+			document.write("</TD>");
+
+			for (sloop = 0; sloop < shortList.length; sloop++) {
+				if (sloop != 0) 
+					document.write("<TR>");
+				document.write("<TD>", shortList[sloop].name,"&nbsp;</TD>");
+				document.write("<TD>", shortList[sloop].end, "&nbsp;</TD>");
+				document.write("<TD>", shortList[sloop].status, "&nbsp;</TD>");
+				TickOrBlank(shortList[sloop].key_sebelis);
+				TickOrBlank(shortList[sloop].key_charasis);
+				TickOrBlank(shortList[sloop].key_cs);
+				TickOrBlank(shortList[sloop].fr);
+				TickOrBlank(shortList[sloop].cr);
+				TickOrBlank(shortList[sloop].pr);
+				document.write("</TR>");
+			};
+		}
+		delete shortList;
+	}
+	document.write("</TABLE>");
+
+	document.write("<P align=center>");
+	document.write("<FONT color=BLACK><P align=center><B>Total number of members in trial: ")
+ 	document.write(trial_members.length);
+	document.write("</B></P></FONT>");
+	document.write("<BR>");
+
+
+}
+
+// MV
+function CreateAlternateTable()
+{
+	if (alternate_members.length == 0) {
+		document.write("<P align=center><B><FONT color=BLACK>No alternate characters of members currently listed.</FONT></B></P>");
+		return;
+	}
+	
+	document.write('<TABLE border=1 cellpadding=3 width="80%" align=center bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+	document.write("<TR bgcolor=BLACK>");
+	document.write("<TD align=middle>Name</TD>");
+	document.write("<TD align=middle>Class</TD>");
+	document.write("<TD align=middle>Level</TD>");
+	document.write("<TD align=middle>Alternate of:</TD>");
+	document.write("</TR>");
+
+	for (floop = 0; floop < alternate_members.length; floop++) {
+		if (floop != 0) 
+			document.write("<TR>");		
+		document.write("<TD>", alternate_members[floop].name,"&nbsp;</TD>");
+		document.write("<TD>", classes[alternate_members[floop].mclass],"&nbsp;</TD>");
+		document.write("<TD>", alternate_members[floop].level, "&nbsp;</TD>");
+		document.write("<TD>", alternate_members[floop].primary, "</TD>");
+		document.write("</TR>");
+	}
+
+	
+	document.write("</TABLE>");
+	document.write("<FONT color=BLACK><P align=center><B>Total number of alternate characters: ")
+ 	document.write(alternate_members.length);
+	document.write("</B></P></FONT>");
+}
+
+// MV
+function CreateHonoraryTable()
+{
+	if (honorary_members.length == 0) {
+		document.write("<P align=center><B><FONT color=BLACK>No honorary members currently listed.</FONT></B></P>");
+		return;
+	}
+	
+	document.write('<TABLE border=1 cellpadding=3 width="80%" align=center bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+	document.write("<TR bgcolor=BLACK>");
+	document.write("<TD align=middle>Name</TD>");
+	document.write("<TD align=middle>Class</TD>");
+	document.write("<TD align=middle>Date</TD>");
+	document.write("</TR>");
+	
+	for (floop = 0; floop < honorary_members.length; floop++) {
+		if (floop != 0) 
+			document.write("<TR>");		
+		document.write("<TD>", honorary_members[floop].name,"&nbsp;</TD>");
+		document.write("<TD>", classes[honorary_members[floop].mclass],"&nbsp;</TD>");
+		document.write("<TD>", honorary_members[floop].sdate, "&nbsp;</TD>");
+		document.write("</TR>");
+	}
+
+	document.write("</TABLE>");
+	document.write("<FONT color=BLACK><P align=center><B>Total number of honorary members: ")
+ 	document.write(honorary_members.length);
+	document.write("</B></P></FONT>");
+//	document.write("<FONT color=BLACK><P align=center><B>*Trial Members</B></P></FONT>")
+}
+
+
+// MV
+function CreateInactiveTable()
+{
+	if (inactive_members.length == 0) {
+		document.write("<P align=center><B><FONT color=BLACK>No inactive members currently listed.</FONT></B></P>");
+		return;
+	}
+	
+	document.write('<TABLE border=1 cellpadding=3 width="80%" align=center bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+	document.write("<TR bgcolor=BLACK>");
+	document.write("<TD align=middle>Name</TD>");
+	document.write("<TD align=middle>Class</TD>");
+	document.write("<TD align=middle>Date</TD>");
+	document.write("</TR>");
+
+	for (floop = 0; floop < inactive_members.length; floop++) {
+		if (floop != 0) 
+			document.write("<TR>");		
+		document.write("<TD>", inactive_members[floop].name,"&nbsp;</TD>");
+		document.write("<TD>", classes[inactive_members[floop].mclass],"&nbsp;</TD>");
+		document.write("<TD>", inactive_members[floop].sdate, "&nbsp;</TD>");
+		document.write("</TR>");
+	}
+
+	document.write("</TABLE>");
+	document.write("<FONT color=BLACK><P align=center><B>Total number of inactive members: ");
+ 	document.write(inactive_members.length);
+	document.write("</B></P></FONT>");
+}
+
+function WriteDate()
+{
+	document.write("<FONT color=BLACK><P align=center><B>This information was last updated on ")
+ 	document.write(LastUpdate);
+	document.write("</B></P></FONT>");
+}
+
+</SCRIPT>
+
+<HTML>
+<HEAD>
+<TITLE>Members Page</TITLE>
+</HEAD>
+
+<BODY aLink=#ffffff bgColor=#ffffff leftMargin=0 link=#ffffff text=#FFFFFF topMargin=20 vLink=#ffffff>
+
+<SCRIPT>WriteDate();</SCRIPT>
+
+
+<P align=center>
+<IMG height=18 src="leftarrow.gif"> 
+<FONT color=BLACK size=5>Guild Members</FONT>
+<IMG height=18 src="rightarrow.gif"> 
+<BR>
+<BR>
+</P>
+
+<SCRIPT>CreateMemberTable();</SCRIPT>
+
+<P align=center>
+<IMG height=18 src="leftarrow.gif"> 
+<FONT color=BLACK size=5>Secondary Characters</FONT>
+<IMG height=18 src="rightarrow.gif"> 
+</P>
+
+<SCRIPT>CreateSecondaryTable();</SCRIPT>
+
+<P align=center>
+<IMG height=18 src="leftarrow.gif"> 
+<FONT color=BLACK size=5>Members in Trial Period</FONT>
+<IMG height=18 src="rightarrow.gif"> 
+</P>
+
+<SCRIPT>CreateTrialTable();</SCRIPT>
+
+<P align=center>
+<IMG height=18 src="leftarrow.gif"> 
+<FONT color=BLACK size=5>Alternate Characters</FONT>
+<IMG height=18 src="rightarrow.gif"> 
+</P>
+
+<SCRIPT>CreateAlternateTable();</SCRIPT>
+
+
+<P align=center>
+<IMG height=18 src="leftarrow.gif"> 
+<FONT color=BLACK size=5>Honorary Members</FONT>
+<IMG height=18 src="rightarrow.gif"> 
+</P>
+
+<SCRIPT>CreateHonoraryTable();</SCRIPT>
+
+<P align=center>
+<IMG height=18 src="leftarrow.gif"> 
+<FONT color=BLACK size=5>Inactive Members</FONT>
+<IMG height=18 src="rightarrow.gif"> 
+</P>
+
+<SCRIPT>CreateInactiveTable();</SCRIPT>
+
+</BODY>
+</HTML>
+

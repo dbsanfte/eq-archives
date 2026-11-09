@@ -1,0 +1,1685 @@
+  The Linux CD-ROM HOWTO
+  Jeff Tranter, jeff_tranter@pobox.com
+  v1.10, 5 January 1997
+
+  This document describes how to install, configure, and use CD-ROM
+  drives under Linux. It lists the supported hardware and answers a num­
+  ber of frequently asked questions. The intent is to bring new users up
+  to speed quickly and reduce the amount of traffic in the Usenet news
+  groups and mailing lists.
+
+  1.  Introduction
+
+  This is the Linux CD-ROM HOWTO. It is intended as a quick reference
+  covering everything you need to know to install and configure CD-ROM
+  hardware under Linux. Frequently asked questions related to CD-ROM are
+  answered, and references are given to other sources of information
+  related to CD-ROM applications and technology.
+
+  1.1.  Acknowledgments
+
+  Much of this information came from the documentation and source files
+  provided with the Linux kernel, the Internet alt.cdrom newsgroup FAQ,
+  and input from Linux users.
+
+  Thanks to the Linuxdoc-SGML package, this HOWTO is available in
+  several formats, all generated from a common source file.
+
+  1.2.  Revision History
+
+     Version 1.0
+        First version made publicly available
+
+     Version 1.1
+        CDU33A is explicitly supported as of 1.1.20 kernel; notes on
+        Reveal FX; info on reading audio tracks; info on some alpha
+        drivers; added troubleshooting section; a few other minor
+        additions
+
+     Version 1.2
+        ISO-9660 file systems must be mounted read-only starting with
+        1.1.33 kernel; clarified that SB16 SCSI is supported and newer
+        Aztech drives are not supported; references to photocd and xpcd
+        programs; note on new SBPCD auto eject feature
+
+     Version 1.3
+        Minor change to the way SBPCD eject feature is disabled starting
+        with the 1.1.49 kernel; added info on XA discs and how to
+        identify them
+
+     Version 1.4
+        HOWTO now available in other languages; IBM and Longshine drives
+        now supported by SBPCD; alpha driver for Aztech drives; CDU-33
+        driver no longer auto-probes, supports PhotoCD and audio; more
+        than 2 SCSI drives are supported; new driver for IDE; reminder
+        to check drive jumpers; can now set SBPCD auto-eject with IOCTL;
+        list drivers with multisession support; question on flashing
+        light on CDU-33
+
+     Version 1.5
+        A long overdue update (I've been busy); document placed under
+        GPL; info on many new kernel drivers; more info on configuration
+        and troubleshooting; lots of HTML links added; many other minor
+        changes
+
+     Version 1.6
+        Added link to eject program; question on file permission patch;
+        link to Creative Labs Web site; reference to ATA/EIDE FAQ and
+        FTP site; note that many Creative Labs and Mitsumi drives are
+        now EIDE; mention Supermount; drives listed as supporting
+        digital data are obsolete, refer to cdda2wav; more info on
+        writing CDs; multi-disc EIDE drive info; a few typos fixed
+
+     Version 1.7
+        new kernel version; most README files moved to
+        /usr/src/linux/Documentation; some drivers are no longer
+        experimental; a few more supported drives; emphasize that most
+        drives are now IDE/ATAPI; added questions on Plug and Play
+        support and identifying drive speed; vger mailing lists being
+        shut down; other miscellaneous minor changes
+
+     Version 1.8
+        question on why CD-ROM stops working after install; aztcd driver
+        now supports two CyCDROM drives; more pleading not to use SBPCD
+        driver with IDE drives; some ATAPI multi-disc changer support;
+        note on (lack of) support for parallel port drives; latest
+        stable kernel is 2.0; other miscellaneous minor changes
+
+     Version 1.9
+        removed some questions that were very old and now obsolete; new
+        e-mail address for author; Chinese translation available; fixed
+        some links to point to latest software packages; more
+        information on multimedia book; minor spelling and grammatical
+        changes
+
+     Version 1.10
+        clarify that new Aztech drives are ATAPI; added CDU31A options
+        for modular driver; mount option for reading hidden files; added
+        six month "best before" date; new URL to web page for book;
+        minor spelling and grammatical changes
+
+  1.3.  New Versions Of This Document
+
+  New versions of this document will be periodically posted to the
+  comp.os.linux.answers newsgroup. They will also be uploaded to various
+  anonymous ftp sites that archive such information including
+  <ftp://sunsite.unc.edu/pub/Linux/docs/HOWTO/>.
+
+  Hypertext versions of this and other Linux HOWTOs are available on
+  many World-Wide-Web sites, including
+  <http://sunsite.unc.edu/mdw/mdw.html>. Most Linux CD-ROM distributions
+  include the HOWTOs, often under the  </usr/doc/> directory, and you
+  can also buy printed copies from several vendors. Sometimes the HOWTOs
+  available from CD-ROM vendors, ftp sites, and printed format are out
+  of date. If the date on this HOWTO is more than six months in the
+  past, then a newer copy is probably available on the Internet.
+
+  A French translation of this document, by Bruno Cornec
+  (cornec@stna7.stna.dgac.fr) is available at
+  <ftp://ftp.ibp.fr/pub2/linux/french/docs/HOWTO/>.
+
+  A Japanese translation by Itsushi Minoura (minoura@uni.zool.s.u-
+  tokyo.ac.jp) is available from  <http://jf.linux.or.jp/JF/JF.html/>.
+
+  A Chinese translation (BIG-5 encoding) by Yung-kang Wu
+  (yorkwu@in3.csie.ncu.edu.tw) is available from
+  <http://www.csie.ncu.edu.tw/~yorkwu/linux/howto/cdrom/>.
+
+  If you make a translation of this document into another language, let
+  me know and I'll include a reference to it here.
+
+  1.4.  Feedback
+
+  I rely on you, the reader, to make this HOWTO useful. If you have any
+  suggestions, corrections, or comments, please send them to me,
+  jeff_tranter@pobox.com, and I will try to incorporate them in the next
+  revision.
+
+  I am also willing to answer general questions on CD-ROM and Linux, as
+  best I can. Before doing so, please read all of the information in
+  this HOWTO, and send me detailed information about the problem.
+
+  If you publish this document on a CD-ROM or in hardcopy form, a
+  complimentary copy would be appreciated; mail me for my postal
+  address. Also consider making a donation to the Linux Documentation
+  Project to help support free documentation for Linux. Contact the
+  Linux HOWTO coordinator, Greg Hankins (gregh@sunsite.unc.edu), for
+  more information.
+
+  1.5.  Distribution Policy
+
+  Copyright 1995-1997 Jeff Tranter.
+
+  This HOWTO is free documentation; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License as
+  published by the Free Software Foundation; either version 2 of the
+  License, or (at your option) any later version.
+
+  This document is distributed in the hope that it will be useful, but
+  without any warranty; without even the implied warranty of
+  merchantability or fitness for a particular purpose.  See the GNU
+  General Public License for more details.
+
+  You can obtain a copy of the GNU General Public License by writing to
+  the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139,
+  USA.
+
+  2.  CD-ROM Technology
+
+  "CD-ROM is read-only memory, and audio compact disc system is
+  available as package-media of digital data for those purpose. For
+  playing audio CD, please insert Head-phone jack."
+  --- from a CD-ROM instruction manual
+
+  Don't Panic! The world of CD-ROM technology is not as confusing as
+  your instruction manual.
+
+  CD-ROM stands for Compact Disc Read-Only Memory, a mass storage medium
+  utilizing an optical laser to read microscopic pits on the aluminized
+  layer of a polycarbonate disc. The same format is used for audio
+  Compact Discs. Because of its high storage capacity, reliability, and
+  low cost, CD-ROM has become an increasingly popular storage media.
+
+  The storage capacity of a CD-ROM disc is approximately 650 megabytes,
+  equivalent to over 500 high density 3.5" floppy disks or roughly
+  250,000 typed pages.
+
+  First generation drives (known as single speed), provided a transfer
+  rate of approximately 150 kilobytes per second; these are now
+  generally considered obsolete. Hardware manufacturers have introduced
+  double speed (300 kB/sec), quad speed (600 kB/sec), 6 times (6X), 8
+  times (8x), and even higher speed drives.
+
+  Most CD-ROM drives use either the Small Computer Systems Interface
+  (SCSI), ATAPI enhanced IDE interface, or a vendor proprietary
+  interface. They also typically support playing audio CDs via an
+  external headphone jack or line level output. Some CDs also allow
+  reading the frames of data from audio CDs in digital form.
+
+  CD-ROMs are usually formatted with an ISO-9660 (formerly called High
+  Sierra) file system. This format restricts filenames to the MS-DOS
+  style (8+3 characters). The Rock Ridge Extensions use undefined fields
+  in the ISO-9660 standard to support longer filenames and additional
+  Unix style information (e.g. file ownership, symbolic links, etc.).
+
+  PhotoCD is a standard developed by Kodak for storing photographic
+  images as digital data on a CD-ROM. With appropriate software, you can
+  view the images on a computer, manipulate them, or send them to a
+  printer. Information can be added to a PhotoCD at a later date; this
+  is known as multi-session capability.
+
+  CD recorders (CD-R) have recently become available. They use a
+  different media and specialized equipment for recording, but the
+  resulting disc can be read by any CD-ROM drive.
+
+  In the future CD-ROM drive vendors are expected to offer new
+  technologies that will increase storage capacity by an order of
+  magnitude.
+
+  3.  Supported Hardware
+
+  This section lists the CD-ROM drivers and interfaces that are
+  currently supported under Linux. The information here is based on the
+  latest stable Linux kernel, which at time of writing was version
+  2.0.27. A development kernel (2.1.x versions) is also available but is
+  not guaranteed to be stable.
+
+  This information is only valid for Linux on the Intel platform. Much
+  of it should be applicable to Linux on other processor architectures,
+  but I have no first hand experience or information.
+
+  3.1.  ATAPI CD-ROM Drives
+
+  ATAPI (ATA Packet Interface) is a protocol for controlling mass
+  storage devices. It builds on the ATA (AT Attachment) interface, the
+  official ANSI standard name for the IDE interface developed for hard
+  disk drives. ATAPI is commonly used for hard disks, CD-ROM drives,
+  tape drives, and other devices.  Currently the most popular type of
+  interface, it offers most of the functionality of SCSI, without the
+  need for an expensive controller or cables.
+
+  The Linux kernel has a device driver that should work with any ATAPI
+  compliant CD-ROM drive. Vendors shipping compatible drives include
+  Aztech, Mitsumi, NEC, Sony, Creative Labs, and Vertos. If you have
+  recently purchased a CD-ROM drive, especially if it is quad speed or
+  faster, it is almost guaranteed to be IDE/ATAPI.
+
+  3.2.  SCSI CD-ROM Drives
+
+  SCSI (Small Computer Systems Interface) is a popular format for CD-ROM
+  drives. Its chief advantages are a reasonably fast transfer rate,
+  multi-device capability, and support on a variety of computer
+  platforms. Some disadvantages of SCSI are the need for a relatively
+  expensive controller card and cables.
+
+  Any SCSI CD-ROM drive with a block size of 512 or 2048 bytes should
+  work under Linux; this includes the vast majority of CD-ROM drives on
+  the market.
+
+  You will also need a supported SCSI controller card; see the SCSI
+  HOWTO for more information on interface hardware.
+
+  Note that some CD-ROMs include a proprietary controller with a
+  modified interface that is not fully SCSI compatible (e.g. it may not
+  support adding other SCSI devices on the bus). These will most likely
+  not work under Linux.
+
+  3.3.  Proprietary CD-ROM Drives
+
+  Several CD-ROM drives using proprietary interfaces are available; the
+  interface is often provided on a sound card. Simple interface cards
+  equivalent to that provided on the sound card are also available.
+  These drives generally tend to be lower in cost and smaller than SCSI
+  drives. Their disadvantages are the lack of standardization and
+  expandability.
+
+  Note that proprietary interfaces are sometimes erroneously referred to
+  as IDE interfaces, because like IDE hard disks, they use a simple
+  interface based on the PC/AT bus. To add to the confusion, some
+  vendors, most notably Creative Labs, have shipped many different types
+  of CD-ROM drives and have offered proprietary, SCSI, and ATAPI
+  interfaces on their sound cards.
+
+  The table below lists the proprietary CD-ROM drives that are known to
+  be supported under Linux. Drivers for additional devices may be
+  available in the latest development kernels or as kernel patches. The
+  latter can most often be found at
+  <ftp://sunsite.unc.edu/pub/Linux/kernel/patches/cdrom/>. Also check
+  the README files included with the kernel distribution, usually
+  installed /usr/src/linux/Documentation/cdrom/, for the latest
+  information.
+
+                  Proprietary CD-ROM Drives
+
+  Vendor          Model           Kernel Driver   Notes
+  ------          -----           -------------   --------
+  Panasonic       CR-521          sbpcd           Note 1
+  Panasonic       CR-522          sbpcd           Note 1
+  Panasonic       CR-523          sbpcd           Note 1
+  Panasonic       CR-562          sbpcd           Note 1
+  Panasonic       CR-563          sbpcd           Note 1
+  Creative Labs   CD-200          sbpcd
+  IBM             External ISA    sbpcd           Note 2
+  Longshine       LCS-7260        sbpcd
+  Teac            CD-55A          sbpcd
+  Sony            CDU-31A         cdu31a
+  Sony            CDU-33A         cdu31a
+  Sony            CDU-535         sonycd535       Note 3
+  Sony            CDU-531         sonycd535
+  Aztech          CDA268-01A      aztcd           Note 4
+  Orchid          CDS-3110        aztcd
+  Okano/Wearnes   CDD110          aztcd
+  Conrad          TXC             aztcd
+  CyCDROM         CR520ie         aztcd
+  CyCDROM         CR940ie         aztcd
+  GoldStar        R420            gscd            Note 5
+  Philips/LMS     CM206           cm206           Note 6
+  Mitsumi         CRMC LU005S     mcd/mcdx        Note 7, 8
+  Mitsumi         FX001           mcd/mcdx        Note 7, 8
+  Optics Storage  Dolphin 8000AT  optcd
+  Lasermate       CR328A          optcd
+  Sanyo           H94A            sjcd
+  various         various         isp16           Note 9
+
+  Notes:
+
+  1. These drives may be sold under the names Creative Labs, Panasonic,
+     Matsushita, or Kotobuki.
+
+  2. This drive is the same as a Panasonic CR-562.
+
+  3. May also be sold under the Procomm name.
+
+  4. This driver is for the CDA268-01A only. Other models, including the
+     CDA268-03I and CDA269-031SE are not proprietary and should use the
+     IDECD (ATAPI) kernel driver.
+
+  5. May also be sold as part of a Reveal Multimedia Kit.
+
+  6. The Philips CM205 is not supported by this driver, but there is a
+     separate alpha release driver available from ftp://sunsite.unc.edu
+     in /pub/Linux/kernel/patches/cdrom/lmscd0.4.tar.gz
+
+  7. May also be sold under the Radio Shack name.
+
+  8. There are two drivers available. "mcd" is the original one, and
+     "mcdx" is a newer driver with more features (but possibly less
+     stable).
+
+  9. This driver works with CD-ROM drives that are attached to the
+     interface on an ISP16, MAD16 or Mozart sound card.
+
+  If a drive listed here is not supported by your kernel, you probably
+  need to upgrade to a newer version.
+
+  If your drive is not one of the models listed here, particularly if it
+  was bought recently and is quad speed or faster, it probably uses the
+  IDE/ATAPI interface listed in a previous section. The single most
+  common error among Linux CD-ROM users is to assume that any drive
+  connected to a SoundBlaster card should use the SBPCD driver. Creative
+  Labs and most other vendors are no longer selling proprietary
+  interface drives, they are following the standard ATAPI/IDE interface.
+
+  3.4.  Parallel Port Drives
+
+  Some vendors sell CD-ROM drives that attach to the PC parallel port.
+  The standard Linux kernel does not support these drives, and I am not
+  aware of anyone working on drivers.
+
+  4.  Installation
+
+  Installation of a CD-ROM under Linux consists of these steps:
+
+  1. Installing the hardware.
+
+  2. Configuring and building the Linux kernel.
+
+  3. Creating device files and setting boot time parameters
+
+  4. Booting the Linux kernel.
+
+  5. Mounting the media.
+
+  The next sections will cover each of these steps in detail.
+
+  4.1.  Installing the Hardware
+
+  Follow the manufacturer's instructions for installing the hardware or
+  have your dealer perform the installation. The details will vary
+  depending on whether the drive is internal or external and on the type
+  of interface used. There are no special installation requirements for
+  Linux. You may need to set jumpers on the drive and/or interface card
+  for correct operation; some of the kernel drivers include README files
+  that include this information.
+
+  As explained in the file ide-cd, ATAPI CD-ROMS should be jumpered as
+  "single" or "master", and not "slave" when only one IDE device is
+  attached to an interface (although this restriction is no longer
+  enforced with recent kernels).
+
+  4.2.  Configuring and Building the Kernel
+
+  When initially installing Linux from CD-ROM you will likely be using a
+  boot and/or root disk provided as part of a Linux distribution. If
+  possible, you should choose a boot disk with the kernel driver for
+  your CD-ROM device type. If you cannot find a boot disk with the
+  necessary CD-ROM driver, you have several options:
+
+  1. Install over a network
+
+  2. Boot DOS, and install the Linux files onto your hard disk
+
+  3. Boot DOS, and create a set of floppies to install Linux
+
+  4. Find someone who can build you a boot disk with the needed CD-ROM
+     driver
+
+  The Linux Installation HOWTO
+  <http://sunsite.unc.edu/mdw/HOWTO/Installation-HOWTO.html> has more
+  information on installing Linux. If you purchased Linux on CD-ROM, it
+  likely also came with some installation instructions (that little
+  booklet inside the jewel case, and/or files on the CD).
+
+  Once Linux has initially been installed, most users will want to
+  compile their own kernel, usually for one of these reasons:
+
+  ·  to support a CD-ROM drive or other hardware
+
+  ·  to upgrade to a newer kernel release
+
+  ·  to free up memory resources by minimizing the size of the kernel
+
+  The Linux Kernel HOWTO <http://sunsite.unc.edu/mdw/HOWTO/Kernel-
+  HOWTO.html> should be consulted for the details of building a kernel.
+  I will just mention here some issues that are specific to CD-ROM
+  drives.
+
+  Obviously, you need to compile in support for your CD-ROM drive when
+  you do a "make config".
+
+  If you have an ATAPI CD-ROM drive, you need to answer yes to the
+  questions:
+
+       Enhanced IDE/MFM/RLL disk/cdrom/tape support (CONFIG_BLK_DEV_IDE) [Y/n/?]
+       Include IDE/ATAPI CDROM support (CONFIG_BLK_DEV_IDECD) [Y/n/?]
+
+  For SCSI CD-ROM drives, enable these options:
+
+       SCSI support (CONFIG_SCSI) [Y/n/m/?]
+       SCSI CD-ROM support (CONFIG_BLK_DEV_SR) [Y/n/m/?]
+
+  Also enable support for your SCSI host adapter when prompted, e.g.
+
+       Adaptec AHA152X support (CONFIG_SCSI_AHA152X) [Y/n/m/?]
+
+  For proprietary interface CD-ROM drives, enable the appropriate
+  driver. You can use the table listed previously to determine the
+  driver to use for your model.
+
+  Virtually all CD-ROMs use the ISO-9660 file system, so you must also
+  enable:
+
+       ISO9660 cdrom filesystem support (CONFIG_ISO9660_FS) [Y/n/m/?]
+
+  Although not needed for CD-ROM operation, if you have a sound card
+  that is supported under Linux you might want to enable and configure
+  the kernel sound driver at this time as well. The Sound HOWTO
+  <http://sunsite.unc.edu/mdw/HOWTO/Sound-HOWTO.html> can be a useful
+  reference here.
+
+  You should then follow the usual procedure for building the kernel and
+  installing it. Don't boot with the new kernel until you create the
+  device files and set up any boot time parameters as described in the
+  next section.
+
+  The ISO-9660 filesystem and almost all of the CD-ROM drivers can be
+  built as loadable kernel modules. This scheme allows the kernel
+  drivers to be loaded and unloaded without rebooting the kernel,
+  freeing up memory. I recommend you get your CD-ROM installation
+  running using compiled-in drivers first. How to use modules is
+  described in the modules documentation and the Kernel HOWTO
+  <http://sunsite.unc.edu/mdw/HOWTO/Kernel-HOWTO.html>.
+
+  If a drive type listed here is not supported by your kernel, you
+  likely need to upgrade to a newer version.
+
+  It is possible that you need to use a driver that is distributed
+  separately from the kernel source code. This usually involves patching
+  the kernel. Again, the Kernel HOWTO
+  <http://sunsite.unc.edu/mdw/HOWTO/Kernel-HOWTO.html> explains how to
+  do this.
+
+  Note that there is a menu-based kernel configuration program invoked
+  by "make menuconfig" and an X11-based graphical configuration invoked
+  as "make xconfig". All three configuration methods offer on-line help.
+
+  4.3.  Creating Device Files and Setting Boot Time Parameters
+
+  The kernel uses device files to identify which device driver to use.
+  If you are running a standard Linux distribution you may have created
+  the necessary device files during installation. Under Slackware Linux,
+  for example, there is a menu-based setup tool that includes CD-ROM
+  setup, and most systems have a /dev/MAKEDEV script. If you don't use
+  these methods, you can use the more manual procedure listed in this
+  section. Even if you use either of these methods, it is recommended
+  that you at least verify the device files against the information in
+  this section.
+
+  You create the device file by running the shell commands indicated for
+  your drive type. This should be done as user root. Note that some
+  Linux distributions may use slightly different CD-ROM device names
+  from those listed here.
+
+  It is recommended that you also create a symbolic link to the CD-ROM
+  device to make it easier to remember. For example, for an IDE CD-ROM
+  drive that is the second device on the secondary interface, the link
+  would be created using
+
+       # ln -s /dev/hdd /dev/cdrom
+
+  If you want to play audio CDs, you will need to set the protection on
+  the device file (the real file, not the symbolic link to it) to allow
+  all users to read, e.g.
+
+       # chmod 664 /dev/hdd
+       # ls -l /dev/hdd
+       brw-rw-r--   1 root     disk      22,  64 Feb  4  1995 /dev/hdd
+
+  When booting Linux, the device drivers attempt to determine whether
+  the appropriate devices are present, typically by probing specific
+  addresses. Many of the drivers auto-probe at several addresses, but
+  because of differences in configuration, possible device conflicts,
+  and hardware limitations, the drivers sometimes need help identifying
+  the addresses and other parameters. Most drivers support an option on
+  the kernel command line to pass this information to the device driver.
+  This can be done interactively, or more commonly, configured into your
+  boot loader. With LILO, for example, you would add an append command
+  such as the following to your /etc/lilo.conf file:
+
+       append = "sbpcd=0x230,SoundBlaster"
+
+  See the LILO documentation for more information.
+
+  In the next section I discuss issues specific to individual device
+  drivers, including device files, boot parameters, and the capabilities
+  of the different drivers. You probably only need to read the section
+  relevant to your drive type. The README files are usually found in the
+  directory /usr/src/linux/Documentation/cdrom.
+
+  4.3.1.  Sbpcd Driver
+
+         Principal author: Eberhard Moenkeberg (emoenke@gwdg.de)
+    Multi-session support: yes (but not all drives)
+   Multiple drive support: yes
+  Loadable module support: yes
+     Reading audio frames: yes (CR-562, CR-563, CD-200 only)
+             Auto-probing: yes
+              Device file: /dev/sbpcd, major 25
+       Configuration file: sbpcd.h
+     Kernel config option: Matsushita/Panasonic CDROM support?
+              README file: sbpcd
+
+  This driver accepts a kernel command line of the form:
+
+  sbpcd=<io-address>,<interface-type>
+
+  where the first parameter is the base address of the device (e.g.
+  0x230), and <interface-type> is one of "SoundBlaster", "LaserMate", or
+  "SPEA". See the file sbpcd.h for hints on what interface type to use.
+  Using sbpcd=0 disables auto-probing, disabling the driver.
+
+  The device file can be created using:
+
+       # mknod /dev/sbpcd b 25 0
+
+  Up to four drives per controller are supported. The next three drives
+  on the first controller would use minor device numbers 1 through 3.
+  If you have more than one controller, create devices with major
+  numbers 26, 27, and 28, up to a maximum of 4 controllers (this is 16
+  CD-ROM drives in total; hopefully enough for most users :-).
+
+  See the file sbpcd for more information on this driver.
+
+  If you recently bought a CD-ROM drive, don't assume that if it
+  connects to a SoundBlaster card it should use this kernel driver. Most
+  CD-ROM drives being sold by Creative Labs are now EIDE/ATAPI drives.
+  Please don't bug the author with questions about using this driver
+  with IDE drives. I quote from the README file:
+
+  sbpcd really, really is NOT for ANY IDE/ATAPI drive!
+  Not even if you have an "original" SoundBlaster card with an IDE interface!
+  So, you better have a look into README.ide if your port address is 0x1F0,
+  0x170, 0x1E8, 0x168 or similar.
+  I get tons of mails from IDE/ATAPI drive users - I really can't continue
+  any more to answer them all. So, if your drive/interface information sheets
+  mention "IDE" (primary, secondary, tertiary, quaternary) and the DOS driver
+  invoking line within your CONFIG.SYS is using an address below 0x230:
+  DON'T ROB MY LAST NERVE - jumper your interface to address 0x170 and IRQ 15
+  (that is the "secondary IDE" configuration), set your drive to "master" and
+  use ide-cd as your driver. If you do not have a second IDE hard disk, use the
+  LILO commands
+     hdb=noprobe hdc=cdrom
+  and get lucky.
+  To make it fully clear to you: if you mail me about IDE/ATAPI drive problems,
+  my answer is above, and I simply will discard your mail, hoping to stop the
+  flood and to find time to lead my 12-years old son towards happy computing.
+
+  4.3.2.  Sonycdu535 Driver
+
+         Principal author: Ken Pizzini (ken@halcyon.com)
+    Multi-session support: no
+   Multiple drive support: no
+  Loadable module support: yes
+     Reading audio frames: no
+             Auto-probing: no
+              Device file: /dev/sonycd535, major 24
+       Configuration file: sonycd535.h
+     Kernel config option: Sony CDU535 CDROM support?
+              README file: sonycd535
+
+  This driver accepts a kernel command line of the form:
+
+       sonycd535=<io-address>
+
+  where <io-address> is the base address of the controller (e.g. 0x320).
+  Alternatively you can set the address in the file sonycd535.h and
+  compile it in.
+
+  The device file can be created using:
+
+       # mknod /dev/sonycd535 b 24 0
+
+  Some Linux distributions use /dev/sonycd for this device.  Older
+  versions of the driver used major device number 21; make sure your
+  device file is correct.
+
+  This driver was previously distributed as a patch but is now part of
+  the standard kernel. See the file sonycd535 for more information on
+  this driver.
+
+  4.3.3.  Cdu31a Driver
+
+         Principal author: Corey Minyard (minyard@-rch.cirr.com)
+    Multi-session support: yes
+   Multiple drive support: no
+  Loadable module support: yes
+     Reading audio frames: yes
+             Auto-probing: no
+              Device file: /dev/cdu31a, major 15
+       Configuration file: cdu31a.h
+     Kernel config option: Sony CDU31A/CDU33A CDROM support?
+              README file: cdu31a
+
+  This driver accepts a kernel command line of the form:
+
+  cdu31a=<io-address>,<interrupt>,PAS
+
+  The first number is the I/O base address of the card (e.g. 0x340). The
+  second is the interrupt number to use (0 means to use polled i/o). The
+  optional third parameter should be "PAS" if the drive is connected to
+  a Pro-Audio Spectrum 16 sound card, otherwise left blank.
+
+  If the driver is loaded as a module, it uses a slightly different
+  format. When loading the driver using the modprobe or insmod command,
+  the parameters take the form:
+
+       cdu31a_port=<io-address> cdu31a_irq=<interrupt>
+
+  The base io-address is required while the interrupt number is
+  optional.
+
+  The device file can be created using:
+
+       # mknod /dev/cdu31a b 15 0
+
+  See the file cdu31a for more information on this driver.
+
+  Also see the Web page put together by Jeffrey Oxenreider
+  (zureal@infinet.com) that covers a lot of common problems with these
+  drives. It can be found at
+  <http://www.infinet.com/~zureal/cdu31a.html>.
+
+  4.3.4.  Aztcd Driver
+
+         Principal author: Werner Zimmermann (zimmerma@rz.fht-esslingen.de)
+    Multi-session support: yes
+   Multiple drive support: no
+  Loadable module support: yes
+     Reading audio frames: no
+             Auto-probing: no
+              Device file: /dev/aztcd0, major 29
+       Configuration file: aztcd.h
+     Kernel config option: Aztech/Orchid/Okano/Wearnes (non IDE) CDROM support?
+              README file: aztcd
+
+  This driver accepts a kernel command line of the form:
+
+       aztcd=<io-address>
+
+  where the parameter is the I/O base address of the card (e.g. 0x340).
+
+  The device file can be created using:
+
+       # mknod /dev/aztcd0 b 29 0
+
+  Note that this driver is for the CDA268-01A only. Other models,
+  including the CDA268-03I and CDA269-031SE are not proprietary and
+  should use the IDECD (ATAPI) kernel driver.
+
+  See the file aztcd for more information on this driver.
+
+  4.3.5.  Gscd Driver
+
+         Principal author: Oliver Raupach (raupach@nwfs1.rz.fh-hannover.de)
+    Multi-session support: no
+   Multiple drive support: no
+  Loadable module support: yes
+     Reading audio frames: no
+             Auto-probing: no
+              Device file: /dev/gscd0, major 16
+       Configuration file: gscd.h
+     Kernel config option: Goldstar R420 CDROM support?
+              README file: gscd
+
+  This driver accepts a kernel command line of the form:
+
+       gscd=<io-address>
+
+  specifying the I/O base address of the card (e.g. 0x340).
+
+  The device file can be created using:
+
+       # mknod /dev/gscd0 b 16 0
+
+  See the file gscd and the World-Wide Web site <http://linux.rz.fh-
+  hannover.de/~raupach> for more information on this driver.
+
+  4.3.6.  Mcd Driver
+
+         Principal author: Martin  (martin@bdsi.com)
+      Multi-session support: no
+   Multiple drive support: no
+  Loadable module support: yes
+     Reading audio frames: no
+             Auto-probing: no
+              Device file: /dev/mcd, major 23
+       Configuration file: mcd.h
+     Kernel config option: Standard Mitsumi CDROM support?
+              README file: mcd
+
+  This is the older driver for Mitsumi drivers that has been available
+  for some time. You might want to try the newer mcdx driver, which has
+  some new features but is possibly less stable.
+
+  This driver accepts a kernel command line of the form:
+
+       mcd=<io-address>,<irq>
+
+  specifying the I/O base address of the card (e.g. 0x340) and the IRQ
+  request number used.
+
+  The device file can be created using:
+
+       # mknod /dev/mcd b 23 0
+
+  See the file mcd for more information on this driver.
+
+  4.3.7.  Mcdx Driver
+
+         Principal author: Heiko Schlittermann
+    Multi-session support: yes
+   Multiple drive support: yes
+  Loadable module support: yes
+     Reading audio frames: no (not supported by hardware)
+             Auto-probing: no
+              Device file: /dev/mcdx0, major 20
+       Configuration file: mcdx.h
+     Kernel config option: Experimental Mitsumi support?
+              README file: mcdx
+
+  This is a newer driver for Mitsumi drivers. The older and possibly
+  more stable mcd driver is still available.
+
+  This driver accepts a kernel command line of the form:
+
+  mcdx=<io-address>,<irq>
+
+  specifying the I/O base address of the card (e.g. 0x340) and the IRQ
+  request number used.
+
+  The device file can be created using:
+
+       # mknod /dev/mcdx0 b 20 0
+
+  If you recently bought a Mitsumi CD-ROM drive, don't assume that it
+  should use this kernel driver. Some Mitsumi models are now EIDE/ATAPI
+  drives and should use the idecd kernel driver.
+
+  See the file mcdx for more information on this driver.
+
+  4.3.8.  Cm206 Driver
+
+         Principal author: David A. van Leeuwen (david@tm.tno.)
+    Multi-session support: yes
+   Multiple drive support: no
+  Loadable module support: yes
+     Reading audio frames: no
+             Auto-probing: yes
+              Device file: /dev/cm206cd, major 32
+       Configuration file: cm206.h
+     Kernel config option: Philips/LMS CM206 CDROM support?
+              README file: cm206
+
+  The driver accepts a kernel command line of the form:
+
+       cm206=<io-address>,<interrupt>
+
+  where the first number is the I/O base address of the card (e.g.
+  0x340). The second is the interrupt channel.
+
+  The device file can be created using:
+
+       # mknod /dev/cm206cd b 32 0
+
+  See the file cm206 for more information on this driver.
+
+  4.3.9.  Optcd Driver
+
+         Principal author: Leo Spiekman (spiekman@dutette.et.tudelft.nl)
+    Multi-session support: yes
+   Multiple drive support: no
+  Loadable module support: yes
+     Reading audio frames: no
+             Auto-probing: no
+              Device file: /dev/optcd0, major 17
+       Configuration file: optcd.h
+     Kernel config option: Experimental Optics Storage ... CDROM support?
+              README file: optcd
+
+  The driver accepts a kernel command line of the form
+
+       optcd=<io-address>
+
+  to specify the I/O base address of the card (e.g. 0x340).
+
+  The device file can be created using:
+
+       # mknod /dev/optcd0 b 17 0
+
+  See the file optcd for more information on this driver.
+
+  4.3.10.  Sjcd Driver
+
+         Principal author: Vadim V. Model (vadim@rbrf.msk.su)
+    Multi-session support: no
+   Multiple drive support: no
+  Loadable module support: yes
+     Reading audio frames: no
+             Auto-probing: no
+              Device file: /dev/sjcd, major 18
+       Configuration file: sjcd.h
+     Kernel config option: Experimental Sanyo H94A CDROM support?
+              README file: sjcd
+
+  The driver accepts a kernel command line of the form:
+
+       sjcd=<io-address>,<interrupt>,<dma>
+
+  indicating the base address, interrupt, and DMA channel to be used
+  (e.g. sjcd=0x340,10,5).
+
+  The device file can be created using:
+
+       # mknod /dev/sjcd b 18 0
+
+  See the file sjcd for more information on this driver.
+
+  4.3.11.  SCSI Driver
+
+         Principal author: David Giller
+    Multi-session support: yes (depending on drive)
+   Multiple drive support: yes
+  Loadable module support: yes
+     Reading audio frames: no
+             Auto-probing: yes
+              Device file: /dev/scd0, major 11
+       Configuration file: cdrom.h
+     Kernel config option: SCSI CDROM support?
+              README file: none
+
+  There are kernel command line option specific to each type of SCSI
+  controller. See the SCSI HOWTO for more information.
+
+  Multiple drives are supported (up to the limit of the maximum number
+  of devices on the SCSI bus). Create device files with major number 11
+  and minor numbers starting at zero:
+
+       # mknod /dev/scd0 b 11 0
+       # mknod /dev/scd1 b 11 1
+
+  While the kernel driver itself does not support reading digital audio
+  frames, some SCSI drives have the capability and will work with the
+  cdda2wav program (which uses the generic SCSI kernel interface).
+
+  4.3.12.  IDECD Driver
+
+         Principal author: Scott Snyder (snyder@fnald0.fnal.gov)
+    Multi-session support: yes
+   Multiple drive support: yes
+  Loadable module support: no
+     Reading audio frames: yes (on supported drives)
+             Auto-probing: yes
+              Device file: /dev/hd{a,b,c,d},  major 22
+       Configuration file: cdrom.h
+     Kernel config option: Include support for IDE/ATAPI CDROMs?
+              README file: ide-cd
+
+  This is the driver for ATAPI CD-ROMS. The driver accepts a kernel
+  command line of the form
+
+       hdx=cyls,heads,sects,wpcom,irq
+         or
+       hdx=cdrom
+
+  where hdx can be any of {hda,hdb,hdc,hdd}, or simply hd, for the
+  "next" drive in sequence. Only the first three parameters are required
+  (cyls,heads,sects). For example hdc=1050,32,64 hdd=cdrom.
+
+  Getting the IDE driver to recognize your CD-ROM drive can be tricky,
+  especially if you have more than 2 devices or more than one IDE
+  controller. Usually all that is required is to pass the right command
+  line options from LILO. The file  </usr/src/linux/Documentation/ide-
+  cd> explains how to do this. Read it carefully.
+
+  Recent Linux kernels have better support for multiple IDE devices. If
+  you have problems with an older kernel, upgrading may help.
+
+  Some IDE controllers have hardware problems which the kernel driver
+  can work around. You may need to pass additional parameters to the
+  driver to enable this. See the documentation for details.
+
+  4.4.  Booting the Linux Kernel
+
+  You can now reboot with the new kernel. Watch for a message such as
+  the following indicating that the CD-ROM has been found by the device
+  driver (the message will vary depending on the drive type):
+
+       hdd: NEC CD-ROM DRIVE:282, ATAPI CDROM drive
+
+  If the bootup messages scroll by too quickly to read, you should be
+  able to retrieve them using dmesg or tail /var/adm/messages.
+
+  If the drive is not found, then a problem has occurred, See the
+  section on troubleshooting.
+
+  4.5.  Mounting, Unmounting, and Ejecting Devices
+
+  To mount a CD-ROM, insert a disc in the drive, and run the mount
+  command as root (this assumes you created a symbolic link to your
+  device file as recommended above and that an empty directory
+  /mnt/cdrom exists):
+
+       # mount -t iso9660 -r /dev/cdrom /mnt/cdrom
+
+  The CD can now be accessed under the directory /mnt/cdrom.
+
+  There are other options to the mount command that you may wish to use;
+  see the mount(8) man page for details.
+
+  You can add an entry to /etc/fstab to automatically mount a CD-ROM
+  when Linux boots or to specify parameters to use when it is mounted;
+  see the fstab(5) man page.
+
+  Note that to play audio CDs you should not try to mount them.
+
+  To unmount a CD-ROM, use the umount command as root:
+
+       # umount /mnt/cdrom
+
+  The disc can only be unmounted if no processes are currently accessing
+  the drive (including having their default directory set to the mounted
+  drive). You can then eject the disc. Most drives have an eject button;
+  there is also a standalone eject program that allows ejecting CD-ROMs
+  under software control.
+
+  Note that you should not eject a disc while it is mounted (this may or
+  may not be possible depending on the type of drive). Some CD-ROM
+  drivers can automatically eject a CD-ROM when it is unmounted and
+  insert the CD tray when a disc is mounted (you can turn this feature
+  off when compiling the kernel or by using a software command).
+
+  Its possible that after playing an audio CD you may not be able to
+  mount a CD-ROM. You need to send a CD audio "stop" command (using a CD
+  player program) before trying the mount. This problem only appears to
+  occur with the SBPCD driver.
+
+  Stephen Tweedie (sct@dcs.ed.ac.uk) has written the Supermount package
+  which provides transparent mounting of removable media including CD-
+  ROM. You can find it at
+  <ftp://sunsite.unc.edu/pub/linux/patches/diskdrives/>.
+
+  4.6.  Troubleshooting
+
+  If you still encounter problems after following the instructions in
+  the HOWTO, here are some things to check. The checks are listed in
+  increasing order of complexity. If a check fails, solve the problem
+  before moving to the next stage.
+
+  4.6.1.  Step 1: Make sure you are really running the kernel you com­
+  piled
+
+  You can check the date stamp on the kernel to see if you are running
+  the one that you compiled with CD-ROM support. You can do this with
+  the uname command:
+
+       % uname -a
+       Linux fizzbin 2.0.18 #1 Fri Sep 6 10:10:54 EDT 1996 i586
+
+  or by displaying the file /proc/version:
+
+       % cat /proc/version
+       Linux version 2.0.18 (root@fizzbin) (gcc version 2.7.2) #1 Fri Sep 6 10:10:54 EDT 1996
+
+  If the date stamp doesn't seem to match when you compiled the kernel,
+  then you are running an old kernel. Did you really reboot? If you use
+  LILO, did you re-install it (typically by running /sbin/lilo)? If
+  booting from floppy, did you create a new boot floppy and use it when
+  booting?
+
+  4.6.2.  Step 2: Make sure the proper kernel drivers are compiled in
+
+  You can see what drivers are compiled in by looking at /proc/devices:
+
+       % cat /proc/devices
+       Character devices:
+        1 mem
+        2 pty
+        3 ttyp
+        4 ttyS
+        5 cua
+        7 vcs
+
+       Block devices:
+        3 ide0
+       22 ide1
+
+  First look for your CD-ROM device driver. These are all block devices,
+  in this case we can see that the idecd driver with major number 22 was
+  present.
+
+  Also make sure that ISO-9660 filesystem support was compiled in, by
+  looking at /proc/filesystems:
+
+  % cat /proc/filesystems
+          ext2
+          msdos
+  nodev   proc
+          iso9660
+
+  You can also see what i/o port addresses are being used by a driver
+  with the file /proc/ioports:
+
+       howto % cat /proc/ioports
+        ...
+       0230-0233 : sbpcd
+        ...
+
+  If any of the drivers you thought you compiled in are not displayed,
+  then something went wrong with the kernel configuration or build.
+  Start the installation process again, beginning with configuration and
+  building of the kernel.
+
+  4.6.3.  Step 3: Did the kernel detect your drive during booting?
+
+  Make sure that the CD-ROM device was detected when the kernel booted.
+  You should have seen a message on bootup. If the messages scrolled off
+  the screen, you can usually recall them using the dmesg command:
+
+       % dmesg
+
+  or
+
+       % tail /var/adm/messages
+
+  If your drive was not found then something is wrong. Make sure it is
+  powered on and all cables are connected. If your drive has hardware
+  jumpers for addressing, check that they are set correctly (e.g. drive
+  0 if you have only one drive). ATAPI CD-ROMS must be jumpered as
+  "single" or "master", and not "slave" when only one IDE device is
+  attached to an interface. If the drive works under DOS then you can be
+  reasonably confident that the hardware is working.
+
+  Many kernel drivers using auto-probing, but some do not, and in any
+  case the probing is not always reliable. Use the kernel command line
+  option listed for your kernel driver type. You may want to try several
+  different values if you are not sure of the i/o address or other
+  parameters. LILO can be (and usually is) configured to allow you to
+  enter the parameters manually when booting.
+
+  Another possibility is that you used the wrong kernel driver for your
+  CD-ROM driver. Some documentation may refer to proprietary interfaces
+  as IDE, leading some to mistakenly believe they are ATAPI drives.
+
+  Another possibility is that your drive (or interface card) is one of
+  the "compatible" type that requires initialization by the DOS driver.
+  Try booting DOS and loading the vendor supplied DOS device driver.
+  Then soft boot Linux using Control-Alt-Delete.
+
+  If your drive is not listed in this document, it is possible that
+  there are no drivers for it available under Linux. You can check with
+  some of the references listed at the end of this document for
+  assistance.
+
+  4.6.4.  Step 4: Can you read data from the drive?
+
+  Try reading from the CD-ROM drive. Typing the following command should
+  cause the drive activity light (if present) to come on and no errors
+  should be reported. Use whatever device file is appropriate for your
+  drive and make sure a CD-ROM is inserted; use Control-C to exit.
+
+       # dd if=/dev/cdrom of=/dev/null bs=2048
+       ^C
+       124+0 records in
+       124+0 records out
+
+  If this works, then the kernel is communicating with the drive and you
+  can move on to step 5.
+
+  If not, then a possible cause is the device file. Make sure than the
+  device file in the /dev directory has the correct major and minor
+  numbers as listed previously for your drive type. Check that the
+  permissions on the device file allow reading and writing.
+
+  A remote possibility is a hardware problem. Try testing the drive
+  under DOS, if possible, to determine if this could be the case.
+
+  4.6.5.  Step 5: Can you mount the drive?
+
+  If you can read from the drive but cannot mount it, first verify that
+  you compiled in ISO-9660 file system support by reading
+  /proc/filesystems, as described previously.
+
+  Make sure you are mounting the drive with the "-t iso9660" and "-r"
+  options and that a known good ISO-9660 CD-ROM (not Audio CD) is
+  inserted in the drive. You normally must mount drives as user root.
+
+  Make sure that the mount point exists and is an empty directory.
+
+  If you are automatically mounting the CD-ROM on bootup, make sure that
+  you have correct entries in the /etc/fstab file.
+
+  If you are running the syslog daemon, there may be error messages from
+  the kernel that you are not seeing. Try using the "dmesg" command:
+
+  % dmesg
+  SBPCD: sbpcd_open: no disk in drive
+
+  There may also be errors logged to files in /var/adm, depending on how
+  your system is configured.
+
+  4.6.6.  Debugging Audio Problems
+
+  If the drive works with CD-ROMs, but not for playing audio CDs, here
+  are some possible solutions.
+
+  You need an application program to play audio CDs. Some applications
+  may be broken or may not be compatible with your drive. Try other
+  applications and/or try recompiling them yourself. A good place to
+  look for software is
+  <ftp://sunsite.unc.edu/pub/linux/apps/sound/cds/>.
+
+  A few of the CD-ROM drivers do not support playing Audio CDs. Check
+  the README file or source code to see if that is the case.
+
+  Check if the audio can be played through the headphone jack. If so,
+  then the problem is likely related to your sound card. Use a mixer
+  program to set the input device and volume levels. Make sure you have
+  installed an audio cable from the CD-ROM drive to the sound card. Make
+  sure that the kernel sound card driver is installed and working (see
+  the Sound HOWTO).
+
+  4.6.7.  When All Else Fails
+
+  If you still have problems, here are some final suggestions for things
+  to try:
+
+  ·  carefully re-read this HOWTO document
+
+  ·  read the references listed at the end of this document, especially
+     the relevant kernel source README files
+
+  ·  post a question to one of the comp.os.linux or other usenet
+     newsgroups
+
+  ·  send a question to the Linux mailing list
+
+  ·  try using the latest Linux kernel
+
+  ·  contact your computer dealer
+
+  ·  contact the CD-ROM manufacturer
+
+  ·  send mail to the author of the relevant kernel driver
+
+  ·  send mail to me
+
+  ·  fire up emacs and type Esc-x doctor :-)
+
+  5.  Applications
+
+  This section briefly lists some of the key applications related to CD-
+  ROM that are available under Linux. Check the Linux Software Map for
+  the latest versions and archive sites.
+
+  5.1.  Audio CD Players
+
+  Several programs are available for playing audio CDs, either through a
+  headphone jack or an attached sound card.
+
+     Workman
+        a graphical player running under X11 and supporting a CD
+        database and many other features
+
+     WorkBone
+        an interactive text-mode player
+
+     xcdplayer
+        a simple X11 based player
+
+     cdplayer
+        a very simple command line based player
+
+     Xmcd
+        an X11/Motif based player
+
+     xmitsumi
+        another X11 based player for Mitsumi drives
+
+     xplaycd
+        another X11 based player, bundled with sound mixer and VU meter
+        programs
+
+     cdtool
+        command line tools for playing audio CDs
+
+  Some of these programs are coded to use a specific device file for the
+  CD-ROM (e.g. /dev/cdrom). You may be able to pass the correct device
+  name as a parameter, or you can create a symbolic link in the /dev
+  directory. If sending the CD output to a sound card, you may wish to
+  use a mixer program to set volume settings or select the CD-ROM input
+  for recording.
+
+  5.2.  PhotoCD
+
+  PhotoCDs use an ISO-9660 file system containing image files in a
+  proprietary format. Not all CD-ROM drives support reading PhotoCDs.
+
+  The hpcdtoppm program by Hadmut Danisch converts PhotoCD files to the
+  portable pixmap format. It can be obtained from
+  <ftp://ftp.gwdg.de/pub/linux/hpcdtoppm> or as part of the PBM
+  (portable bit map) utilities, available on many archive sites (look
+  for "pbm" or "netpbm").
+
+  The photocd program by Gerd Knorr kraxel@cs.tu-berlin.de can convert
+  PhotoCD images into Targa or Windows and OS/2 bitmap files.
+
+  The same author has written the program xpcd, an X11-based program for
+  handling PhotoCD images. You can select the images with a mouse,
+  preview the image in a small window, and load the image with any of
+  the five possible resolutions. You can also mark a part of the Image
+  and load only the selected part. Look for these packages at
+  <ftp://ftp.cs.tu-berlin.de/pub/linux/Local/misc/>.
+
+  The ImageMagick image file manipulation program also supports PhotoCD
+  files. It is available from
+  <ftp://ftp.x.org/contrib/applications/ImageMagick/>.
+
+  5.3.  Mkisofs
+
+  Eric Youngdale's mkisofs package allows creating an ISO-9660 file
+  system on a hard disk partition. This can then be used to assist in
+  creating and testing CD-ROM file systems before mastering discs.
+
+  The tools for actually writing data to writable CD-ROM drives tend to
+  be vendor specific. They also require writing the data with no
+  interruptions, so a multitasking operating system like Linux is not
+  particularly well suited.
+
+  5.4.  ISO-9660 Utilities
+
+  These are some utilities for verifying the format of ISO-9660
+  formatted discs; you may find them useful for testing suspect CDs. The
+  package can be found at  <ftp://ftp.cdrom.com/pub/cdrom/ptf/>.  They
+  were written by Bill Siegmund and Rich Morin.
+
+  6.  Answers to Frequently Asked Questions
+
+  6.1.  How can a non-root user mount and unmount discs?
+
+  Most mount commands support the user option. If you make an entry such
+  as the following in /etc/fstab:
+
+       /dev/sbpcd  /mnt/cdrom   iso9660     user,noauto,ro
+
+  then an ordinary user will be allowed to mount and unmount the drive
+  using these commands:
+
+       % mount /mnt/cdrom
+       % umount /mnt/cdrom
+
+  The disc will be mounted with some options that help enforce security
+  (e.g. programs cannot executed, device files are ignored); in some
+  cases this may be too restrictive.
+
+  Another method is to get the usermount package which allows non-root
+  users to mount and unmount removable devices such as floppies and CD-
+  ROMs, but restricts access to other devices (such as hard disk
+  partitions). It is available on major archive sites.
+
+  The archive site ftp.cdrom.com has the source file mount.c which
+  allows mounting an unmounting of CD-ROMs (only) by normal users. It
+  runs as a setuid executable.
+
+  6.2.  Why do I get device is busy when unmounting a CD-ROM?
+
+  The disc cannot be unmounted if any processes are accessing the drive,
+  including having their default directory set to the mounted
+  filesystem. If you cannot identify the processes using the disc, you
+  can use the fuser command, as shown in the following example.
+
+       % umount /cdrom
+       umount: /dev/hdd: device is busy
+       % fuser -v /cdrom
+                            USER       PID ACCESS COMMAND
+       /mnt/cdrom           tranter    133 ..c..  bash
+
+  6.3.  How do I export a CD-ROM to other hosts over NFS?
+
+  You need to add an entry to the /etc/exports file. Users on other
+  machines will then be able to mount the device. See the exports(5) man
+  page for details.
+
+  6.4.  Can I boot Linux from a CD-ROM?
+
+  When initially installing Linux the most common method is to use a
+  boot floppy. Some distributions allow booting a Linux kernel on CD
+  directly from DOS.
+
+  I've been told that it is possible to boot from ATAPI CD-ROM drives
+  which have the appropriate ROM BIOS functions, but I have no first
+  hand experience.
+
+  6.5.  How can I read digital data from audio CDs?
+
+  Heiko Eissfeldt (heiko@colossus.escape.de) and Olaf Kindel have
+  written a utility that reads audio data and saves it as .wav format
+  sound files. The package is called cdda2wav.tar.gz and can be found on
+  sunsite.unc.edu.
+
+  Because CD-ROM drives are changing very quickly, it is difficult to
+  list which models support reading digital data. You best bet is to get
+  the latest cdda2wav package and read the documentation.
+
+  For more information on this subject, see the web site
+  http://www.tardis.ed.ac.uk/~psyche/pc/cdrom/CDDA.html and the alt.cd-
+  rom FAQ listed in the references section.
+
+  6.6.  Why doesn't the find command work properly?
+
+  On ISO-9660 formatted discs without the Rock Ridge Extensions, you
+  need to add the -noleaf option to the find command.  See the find(1)
+  man page for details.
+
+  (In my experience virtually all recent Linux CDs use the Rock Ridge
+  extensions, so this problem should occur very rarely.)
+
+  6.7.  Does Linux support any recordable CD-ROM drives?
+
+  The X-CD-Roast package for Linux is a graphical front-end for using CD
+  writers. The package can be found at sunsite.unc.edu in
+  /pub/Linux/utls/disk-management/xcdroast-0.95.tar.gz
+
+  Also see the Linux CD-Writer mini-HOWTO document, found at
+  <ftp://sunsite.unc.edu/pub/Linux/docs/HOWTO/mini/CD-Writer> or
+  <http://sunsite.unc.edu/mdw/HOWTO/CD-Writer.html>.
+
+  6.8.  Why do I get mount: Read-only file system when mounting a CD-
+  ROM?
+
+  CD-ROM is a read-only media. With some early kernels you could mount a
+  CD-ROM for read/write; attempts to write data to the CD would simple
+  be ignored. As of kernel version 1.1.33 this was corrected so that CD-
+  ROMs must be mounted read only (e.g. using the -r option to mount).
+
+  6.9.  Why does the disc tray open when I shut down the system?
+
+  As of the 1.1.38 kernel, the sbpcd driver ejects the CD when it is
+  unmounted. If you shut down the system, a mounted CD will be
+  unmounted, causing it to eject.
+
+  This feature is for convenience when changing discs. If the tray is
+  open when you mount or read a CD, it will also automatically be
+  closed.
+
+  I found that this caused problems with a few programs (e.g. cdplay and
+  workbone). As of the 1.1.60 kernel you can control this feature under
+  software control. A sample program is included in the sbpcd
+  documentation file (or use the eject program).
+
+  6.10.  I have a "special" CD that can't be mounted
+
+  The "special" CD is likely an XA disc (like all Photo CDs or "one-
+  offs" created using CD-R drives). Most of the Linux kernel CD-ROM
+  drivers do not support XA discs, although you may be able to find a
+  patch to add support on one of the archive sites.
+
+  The sbpcd driver does support XA. If you are using this driver you can
+  determine if the disc is XA using the following procedure: go into the
+  file sbpcd.c and enable the display of the "Table of Contents"
+  (DBG_TOC). Build and install the new kernel and boot from it. During
+  each mount the TOC info will be written (either to the console or to a
+  log file). If the first displayed value in the TOC header line is
+  "20", then it is an XA disc. That byte is "00" with normal disks. If
+  the TOC display shows different tracks, that is also a sign that it is
+  an XA disc.
+
+  (thanks to Eberhard Moenkeberg for the above information)
+
+  Other possibilities for unreadable CDs are:
+
+  1. The disc doesn't use an ISO-9660 file system (e.g. some use SunOS
+     or HFS)
+
+  2. It is an audio CD
+
+  3. The CD is damaged or defective
+
+  4. You put it in the drive upside down :-)
+
+  6.11.  Do multi-platter CD-ROM drives work with Linux?
+
+  Several users have reported success with SCSI multi-disc CD-ROM
+  changers.  You probably need to enable the "Probe all LUNs on each
+  SCSI device" kernel configuration option. At least one user also had
+  to increase a SCSI timeout value in the kernel driver. The Nakamichi
+  MBR-7 7 disc changer and Pioneer 12 disc changer have been reported to
+  work.
+
+  EIDE/ATAPI multi-disc changers are also available. The 2.0 kernel has
+  rudimentary support for some drives using the CDROM_SELECT_DISC ioctl
+  function. The IDE-CD kernel driver documentation file includes source
+  code for a program to select changer slots, or you can use a recent
+  version of the eject program described earlier.
+
+  6.12.  I get "/cdrom: Permission denied" errors
+
+  Some CDs have root directory file permissions that only allow user
+  root to read them. The March 1995 InfoMagic CD set is one example.
+  This is a real inconvenience.
+
+  The following patch, courtesy of Christoph Lameter
+  (clameter@waterf.org) patches the kernel to get around this problem.
+
+  From: clameter@waterf.org (Christoph Lameter)
+  Newsgroups: comp.os.linux.setup
+  Subject: InfoMagic Developers Set: Fix for CD-ROM permissions
+  Date: 12 Apr 1995 20:32:03 -0700
+  Organization: The Water Fountain - Mining for streams of Living Water
+  NNTP-Posting-Host: waterf.org
+  X-Newsreader: TIN [version 1.2 PL2]
+
+  The March 1995 Edition of the InfoMagic Developers CD-ROM Set has
+  problems because the information stored in the root directory
+  permissions is causing the following problems with using the CDs
+
+  1. Disc1 will always have the owner/group of 5101/51 and has write
+  access allowed (?)
+
+  2. Disc2 and 3 have rwx set for root and no rights at all for any
+  other group/user. These discs cannot be accessed from any user other
+  than root! I run a BBS and I need to make them accessible for download
+  by others.
+
+  I have seen several fixes to this problem already floating
+  around. Trouble is that these fixes usually change the rights for ALL
+  directories on the CD. This fix here changes ONLY the rights for the
+  root directory of the CD-ROM. If you want to run parts of Linux
+  directly off the CD you might run into trouble if all directories are
+  readable for everyone and if they are all owned by root.
+
+  This fix will set the rights for the root directory to r-xr-xr-x and
+  the owner/group to the values indicated in the uid and gid options to
+  the mount command.
+
+  To apply:
+   cd /usr/src/linux/fs/isofs
+   patch <**THIS MESSAGE**
+
+  and recompile kernel (you may have to fix up the patch by hand
+  depending on your kernel version).
+
+  This fix should probably be incorporated into the kernel. What business
+  does data on a CD have to mess around with the permissions/owners of the
+  mount-point anyways?
+
+  --- inode.c.ORIG        Wed Apr 12 17:24:36 1995
+  +++ inode.c     Wed Apr 12 17:59:12 1995
+  @@ -552,7 +552,15 @@
+      these numbers in the inode structure. */
+
+          if (!high_sierra)
+  -         parse_rock_ridge_inode(raw_inode, inode);
+  +       {  parse_rock_ridge_inode(raw_inode, inode);
+  +           /* check for access to the root directory rights/owner CL */
+  +          if((inode->i_sb->u.isofs_sb.s_firstdatazone) == inode->i_ino)
+  +           { /* Change owner/rights to the ones demanded by the mount command */
+  +             inode->i_uid = inode->i_sb->u.isofs_sb.s_uid;
+  +             inode->i_gid = inode->i_sb->u.isofs_sb.s_gid;
+  +            inode->i_mode = S_IRUGO | S_IXUGO | S_IFDIR;
+  +           }
+  +        }
+
+   #ifdef DEBUG
+          printk("Inode: %x extent: %x\n",inode->i_ino, inode->u.isofs_i.i_first_extent);
+  @@ -805,4 +813,3 @@
+   }
+
+   #endif
+  -
+  Note that the above patch is somewhat old and probably won't apply
+  cleanly against recent 2.0 kernels. Also see the related question on
+  hidden files later in this document.
+
+  6.13.  How do I interpret IDE CD kernel error messages?
+
+  What does it mean when I get a kernel message from the IDE CD-ROM
+  driver like "hdxx: code: xx key: x asc: xx ascq: x"?
+
+  This is an status/error message from the IDE CD-ROM drive. By default
+  the IDECD driver prints out the raw information instead of wasting
+  kernel space with error messages.  You can change the default to
+  display the actual error messages by going into
+  </usr/src/linux/drivers/block/ide-cd.c>, changing the value of
+  VERBOSE_IDE_CD_ERRORS to 1, and recompiling the kernel.
+
+  6.14.  How can I tell what speed CD-ROM I have?
+
+  Here's one way. This command measures how long is takes to read 1500K
+  of data from CD:
+
+       % time -p dd if=/dev/cdrom of=/dev/null bs=1k count=1500
+       1500+0 records in
+       1500+0 records out
+       real 5.24
+       user 0.03
+       sys 5.07
+
+  The transfer rate of single speed drives is 150 kilobytes per second,
+  which should take about 10 seconds. At double speed it would take five
+  seconds, quad speed would take 2.5, etc...
+
+  The "real" time above is probably the best number to look at -- in
+  this case it indicates a double speed drive. You can increase the
+  amount of data transferred to get a more accurate value (in case you
+  were wondering, the data does not get cached). You should probably run
+  the command a few times and take the average.
+
+  6.15.  My CD-ROM stopped working after Linux was installed
+
+  The usual symptom is that the boot disk used to initially install
+  Linux recognized your CD-ROM drive, but after Linux was installed on
+  the hard drive or floppy and rebooted it no longer recognizes the CD-
+  ROM.
+
+  The most common reason for this problem is that with some Linux
+  distributions the kernel that is installed on your hard drive (or
+  floppy) is not necessarily the same one that was on your boot disk.
+  You selected a boot disk that matched your CD-ROM hardware, while the
+  kernel you installed is a "generic" kernel that is lacking CD-ROM
+  support. You can verify this by following the troubleshooting
+  guidelines discussed previously in this document (e.g. start by
+  checking /proc/devices).
+
+  The solution is to recompile the kernel, ensuring that the drivers for
+  your CD-ROM drive and any others that are needed (e.g. SCSI
+  controller, ISO-9660 file system) are included. See the Kernel HOWTO
+  <http://sunsite.unc.edu/mdw/HOWTO/Kernel-HOWTO.html> if you don't know
+  how to do this.
+
+  If you passed any command line options to the boot disk (e.g.
+  "hdc=cdrom") you need to add these to your boot program configuration
+  file (typically /etc/lilo.conf).
+
+  6.16.  There are "hidden" files on a CD which I can't read
+
+  Some CDs have files with the "hidden" bit set on them. Normally these
+  files are not visible. If you mount the CD with the "unhide" option
+  then the files should be accessible (this doesn't seem to be
+  documented anywhere).
+
+  7.  References
+
+  I have already mentioned the README files, typically installed in
+  </usr/src/linux/Documentation/cdrom/>. These can be a gold mine of
+  useful information.
+
+  The following usenet FAQs are posted periodically to news.answers and
+  archived at Internet FTP sites such as  <ftp://rtfm.mit.edu/>:
+
+  ·  alt.cd-rom FAQ
+
+  ·  comp.periphs.scsi FAQ
+
+  ·  Enhanced IDE/Fast-ATA/ATA-2 FAQ
+
+  Several other Linux HOWTOs have useful information relevant to CD-ROM:
+
+  ·  SCSI HOWTO <http://sunsite.unc.edu/mdw/HOWTO/SCSI-HOWTO.html>
+
+  ·  Hardware Compatibility HOWTO
+     <http://sunsite.unc.edu/mdw/HOWTO/Hardware-HOWTO.html>
+
+  ·  Sound HOWTO <http://sunsite.unc.edu/mdw/HOWTO/Sound-HOWTO.html>
+
+  ·  Kernel HOWTO <http://sunsite.unc.edu/mdw/HOWTO/Kernel-HOWTO.html>
+
+  ·  Distribution HOWTO <http://sunsite.unc.edu/mdw/HOWTO/Distribution-
+     HOWTO.html>
+
+  At least a dozen companies sell Linux distributions on CD-ROM; most of
+  them are listed in the Distribution HOWTO.
+
+  The following Usenet news groups cover CD-ROM related topics:
+
+  ·  comp.publish.cdrom.hardware
+
+  ·  comp.publish.cdrom.multimedia
+
+  ·  comp.publish.cdrom.software
+
+  ·  comp.sys.ibm.pc.hardware.cd-rom
+
+  ·  alt.cd-rom
+
+  ·  alt.cd-rom.reviews
+
+  The comp.os.linux newsgroups are also good sources of Linux specific
+  information.
+
+  There is a large archive of CD-ROM information and software at
+  <ftp://ftp.cdrom.com/pub/cdrom/>.
+
+  A FAQ document on IDE and ATA devices can be found at
+  <ftp://rtfm.mit.edu/pub/usenet/news.answers/pc-hardware-faq/enhanced-
+  IDE/> and at  <http://www.seagate.com/techsuppt/faq/faqlist.html>.
+
+  Western Digital, the company that started the IDE protocol, has
+  information available on the IDE protocol available on their FTP site
+  at  <ftp://fission.dt.wdc.com/pub/standards/atapi>.
+
+  A Web site dedicated to multimedia can be found at
+  <http://viswiz.gmd.de/MultimediaInfo/>. Creative Labs has a Web site
+  at  <http://www.creaf.com/>.
+
+  The Linux Documentation Project has produced several books on Linux,
+  including Linux Installation and Getting Started. These are freely
+  available by anonymous FTP from major Linux archive sites or can be
+  purchased in hardcopy format.
+
+  The Linux Software Map (LSM) is an invaluable reference for locating
+  Linux software. The LSM can be found on various anonymous FTP sites,
+  including  <ftp://sunsite.unc.edu/pub/Linux/docs/LSM.gz/>.
+
+  The Linux mailing list has a number of "channels" dedicated to
+  different topics. To find out how to join, send a mail message with
+  the word "help" as the message body to majordomo@vger.rutgers.edu
+  (Note: at time of writing these mailing lists were severely overloaded
+  and a replacement was being sought).
+
+  Finally, a shameless plug: If you want to learn a lot more about
+  multimedia under Linux (especially CD-ROM and sound card applications
+  and programming), check out my book Linux Multimedia Guide, ISBN
+  1-56592-219-0, published by O'Reilly and Associates. For details, call
+  800-998-9938 in North America or check the Web page
+  <http://www.ora.com/catalog/multilinux/noframes.html>.
+

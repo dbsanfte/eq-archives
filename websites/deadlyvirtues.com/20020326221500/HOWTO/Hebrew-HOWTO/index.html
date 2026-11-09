@@ -1,0 +1,639 @@
+  The Hebrew HOWTO
+  Maintained by Yair G. Rajwan, <tt>yair@hobbes.jct.ac.il</tt>
+  v0.4, 12 September 1995
+
+  This `Frequently Asked Questions' (FAQ) / HOWTO document describes how
+  to configure your Linux machine to use Hebrew characters on X-Windows
+  and Virtual Consoles. The most up-to-date version of the Hebrew-HOWTO
+  may be obtained from my Web page
+  <http://shekel.jct.ac.il/~rajwan/Hebrew.html> or from
+  <tt>ftp://hobbes.jct.ac.il</tt> <ftp://hobbes.jct.ac.il>.
+
+  1.  Introduction
+
+  Any language setup, other than the original American English, has two
+  issues:
+
+  1. Displaying the right characters (fonts) - for Hebrew it's
+     ISO-8859-8 standard.
+
+  2. Mapping the keyboard.
+
+  There is much more to Hebrew than that (like right to left, geometry
+  in X-Windows,etc), but this HOWTO (at least for the first draft) deals
+  only with the basic issues.
+
+  More information can be found in the various "national" HOWTOs
+  (German, Danish, etc.) and in the ISO 8859-1 HOWTO
+  (ftp://ftp.vlsivie.tuwien.ac.at/pub/8bit
+  <ftp://ftp.vlsivie.tuwien.ac.at/pub/8bit>  FAQ-ISO-8859-1).
+
+  1.1.  Changes.
+
+  ·  FIRST DRAFT to 0.2.
+
+     Most of this file is taken from the first draft by Vlad Moseanu.
+
+  ·  0.2 to 0.3Beta.
+
+     Added excerpts from documents from the archive e-brew.zip from
+     ftp://ftp.jer1.co.il/pub/software/msdos/communication
+     <ftp://ftp.jer1.co.il/pub/software/msdos/communication>, and some
+     bug fixes with the help of JCT Linux-il group members.
+
+  ·  0.3Beta to 0.4.
+
+     After the first release of the Hebrew-HOWTO to the Linux-il it
+     contain all the E-mail send to me regarding spelling/grammer and
+     Tex-Xet, Mule and Vim info.
+
+  1.2.  Thanks
+
+  This HOWTO prepared by the help of all the group: Linux-il - 'The
+  Israeli Linux users group' and especially by:
+
+  The Linux-il group      (Linux-il@hagiga.jct.ac.il)
+
+  Vlad Moseanu            (vlad@actcom.co.il)
+
+  Gili Granot             (gil@csc.cs.technion.ac.il)
+
+  Harvey J. Stein         (hjstein@math.huji.ac.il)
+
+  Dovie Adler             (dadler@hobbes.jct.ac.il)
+
+  Gavrie Philipson        (gavrie@shekel.jct.ac.il)
+
+  2.  Standards for representation of Hebrew characters
+
+  2.1.  ASCII
+
+  To make one thing clear, for once and forever: There is no such thing
+  as 8-bit ASCII. ASCII is only 7 bits. Any 8-bit code is not ASCII, but
+  that doesn't mean it's not standard. ISO-8859-8 is standard, but not
+  ASCII. Thanks!
+
+  2.2.  DOS Hebrew
+
+  The Hebrew encoding starts at 128d for Aleph. Therefore, encoding
+  requires 8 bits. This is what you have on the Video card EPROM
+  hardware fonts, all of the Hebrew DOS based editors use this table
+  (Qtext, HED, etc.).
+
+  2.3.  ISO Hebrew
+
+  The Hebrew encoding starts at 224 for Aleph. This is the Internet
+  standard, international standard and basically the standard for Ms-
+  Windows and for Macintoshes (Dagesh, etc...).
+
+  2.4.  OLD PC Hebrew
+
+  This is 7-bit, and obsolete, as it occupies essentially the same ASCII
+  range as English lowercase letters. So, it is best avoided. However,
+  when ISO Hebrew gets its eighth bit stripped off by some ignorant Unix
+  mail program (so you get a jumble of English letters for the Hebrew
+  part of your message and the regular English, reversed or not, mixed
+  in), you will get this, and will need to transform it to PC or ISO. If
+  there was English mixed in with the Hebrew, this will be a sad
+  situation, as you will either get Hebrew plus jumble, or English plus
+  jumble...
+
+  2.5.  Conversions
+
+  Here are some simple scripts to convert from each standard to the
+  other:
+
+       DOS - ISO:      tr '\200-\232' '\340-\372' < {dos_file} > {iso_file}
+       ISO - DOS:      tr '\340-\372' '\200-\232' < {iso_file} > {dos_file}
+       OLD - DOS:      tr -z '\200-\232' < {old_Hebrew_file} > {dos_file}
+
+  NOTE:   The numbers use by tr are in octal!
+
+  3.  Virtual Consoles (VCs)
+
+  Every distribution of Slackware comes with kbd; the package is called
+  keytbls under Slackware (a4 in 2.3.0 - kbd 0.90). Joel Hoffman has
+  contributed Hebrew fonts and keymaps from his original codepage.tar.Z
+  file. Look under /usr/lib/kbd for iso08.* files. It follows ISO 8859-8
+  and the Hebrew keytables and maps.
+  Put the following lines in /etc/rc.d/rc.local:
+
+       -----
+       #!/bin/sh
+       #       Put any local setup commands in here
+       #
+       INITTY=/dev/tty[1-6]
+       PATH=/sbin:/etc:/bin:/usr/sbin:/usr/bin
+       #
+       #       kbd - Set the the console font and keyboard
+       #       set numlock and set metabit mode on tty1 .. tty8
+       for tty in $INITTY
+       do
+       #       setleds -D +num < $tty > /dev/null
+               setmetamode metabit < $tty > /dev/null
+       done
+       #       Latin8(Hebrew) keyboard/console
+       setfont iso08.f16
+       mapscrn trivial
+       loadkeys Hebrew
+       #       enable mapping
+       for tty in $INITTY
+       do
+               echo -n -e "\\033(K" >$tty
+       done
+       -----
+
+  NOTE: If you are using X Windows be careful with "setleds", it may
+  hang the X server.
+
+  The above setup works fine with the Hebrew version of pico (pine) and
+  displays correctly ISO 8859-8 Hebrew (X Windows, MS Windows).
+
+  4.  X Windows setup - XFree86 3.1
+
+  4.1.  Hebrew fonts.
+
+  XFree86 3.1 comes with two Hebrew fonts: heb6x13, heb8x13. Additional
+  Hebrew fonts can be found on the Net:
+
+  ·  The web Type1 fonts (Helvetica/David style (proportional) and
+     Courier/Shalom Stick style (fixed space) ) from the snunit-project
+     archive at ftp://snunit.huji.ac.il/pub/fonts/
+     <ftp://snunit.huji.ac.il/pub/fonts/>, it's good for netscape Hebrew
+     pages.
+
+  ·  Avner Lottem, (lottem@techUnix.technion.ac.il) put some Hebrew-ISO
+     8859-8 fonts on archive at
+     ftp://sunsite.unc.edu/pub/Linux/X11/fonts/hebxfonts-0.1.tgz
+     <ftp://sunsite.unc.edu/pub/Linux/X11/fonts/>, it has a font that's
+     good for dosemu under X-Windows (read his README file).
+
+  4.2.  Installing fonts
+
+  ·  Fonts exaptable: pcf (Portable Compiled Format), bdf (Bitmap
+     Distribution Format), pfb (Type1 fonts).
+
+  ·  Move the fonts to some existing directory (/usr/lib/X11/fonts/misc)
+     or create a new one (/usr/lib/X11/fonts/Hebrew). compress (to *.Z)
+     the fonts to save space (NOT GZIP!!!).
+
+  ·  Run the mkfontdir to create/re-create the fonts.dir and edit
+     fonts.alias (optional) to define new aliases.
+
+  ·  For Type1 fonts, mkfontdir does nothing. You have to add these
+     fonts to fonts.dir manually.
+
+  ·  Make sure that the directory is in the X server path. Edit the
+     XF86Config and add the appropriate path -- FontPath
+     "/usr/X11R6/lib/X11/fonts/...".
+
+  4.3.  Making an X application to use Hebrew fonts.
+
+  In short you need to set the appropriate resource.
+
+  4.3.1.  Xterm
+
+  Put the following line in the $HOME/.Xresources:
+
+  xterm*font:  heb8x13
+
+  or simply start xterm with xterm -fn heb8x13 The above font is way too
+  small, so search for a better one ...  See the comments/examples on
+  starting X11.
+
+  4.3.2.  Netscape
+
+  Usaly you can use the hebrew fonts from ``snunit - webfonts'', Install
+  it ``as described'', and then put the next defaults in your local
+
+       ----
+       *documentFonts.latin1.variable.italic*slant:            r
+       *documentFonts.latin1.variable.boldItalic*slant:        r
+       *documentFonts.latin1.variable*family:                  web
+       *documentFonts.latin1.fixed*family:                     webmono
+       *documentFonts.latin1*registry:                         iso8859
+       *documentFonts.latin1*encoding:                         8
+       ----
+
+  In general you can put any fonts insted of the webfonts files as long
+  as its supported by X11 ``as described''.
+
+  4.4.  Mapping the keyboard.
+
+  For some reason the X server doesn't inherit the keymap from the
+  previous paragraph, and anyway I would like to define ALT Left and ALT
+  Right and Scroll Lock. When pressing ALT together with some key it
+  will generate a Hebrew character, Scroll Lock will lock in Hebrew
+  mode.
+
+  To do that we need to use xmodmap. Following is a Xmodmap which also
+  corrects the bugs with the "Num Lock":
+
+  -----
+  ! Hebrew key mapping for XFree86 (for US/Hebrew keyboards).
+  ! By Vlad Moseanu
+  !
+  keysym Alt_L = Mode_switch
+  keysym Alt_R = Mode_switch
+  !clear Mod1
+  clear Mod2
+  !add Mod1 = Alt_L
+  add Mod2 = Mode_switch
+  !
+  ! Set the mapping for each key
+  !
+  keycode   8 =
+  keycode   9 = Escape
+  keycode  10 = 1 exclam
+  keycode  11 = 2 at
+  keycode  12 = 3 numbersign
+  keycode  13 = 4 dollar
+  keycode  14 = 5 percent
+  keycode  15 = 6 asciicircum
+  keycode  16 = 7 ampersand
+  keycode  17 = 8 asterisk
+  keycode  18 = 9 parenleft
+  keycode  19 = 0 parenright
+  keycode  20 = minus underscore
+  keycode  21 = equal plus
+  keycode  22 = Delete
+  keycode  23 = Tab
+  keycode  24 = q Q slash Q
+  keycode  25 = w W apostrophe W
+  keycode  26 = e E 0x00f7 E
+  keycode  27 = r R 0x00f8 R
+  keycode  28 = t T 0x00e0 T
+  keycode  29 = y Y 0x00e8 Y
+  keycode  30 = u U 0x00e5 U
+  keycode  31 = i I 0x00ef I
+  keycode  32 = o O 0x00ed O
+  keycode  33 = p P 0x00f4 P
+  keycode  34 = bracketleft braceleft
+  keycode  35 = bracketright braceright
+  keycode  36 = Return
+  keycode  37 = Control_L
+  keycode  38 = a A 0x00f9 A
+  keycode  39 = s S 0x00e3 S
+  keycode  40 = d D 0x00e2 D
+  keycode  41 = f F 0x00eb F
+  keycode  42 = g G 0x00f2 G
+  keycode  43 = h H 0x00e9 H
+  keycode  44 = j J 0x00e7 J
+  keycode  45 = k K 0x00ec K
+  keycode  46 = l L 0x00ea L
+  keycode  47 = semicolon colon 0x00f3 colon
+  keycode  48 = apostrophe quotedbl comma quotedbl
+  keycode  49 = grave asciitilde semicolon asciitilde
+  keycode  50 = Shift_L
+  keycode  51 = backslash bar
+  keycode  52 = z Z 0x00e6 Z
+  keycode  53 = x X 0x00f1 X
+  keycode  54 = c C 0x00e1 C
+  keycode  55 = v V 0x00e4 V
+  keycode  56 = b B 0x00f0 B
+  keycode  57 = n N 0x00ee N
+  keycode  58 = m M 0x00f6 M
+  keycode  59 = comma less 0x00fa less
+  keycode  60 = period greater 0x00f5 greater
+  keycode  61 = slash question period question
+  keycode  62 = Shift_R
+  keycode  63 = KP_Multiply
+  !keycode  64 = Alt_L Meta_L
+  keycode  65 = space
+  keycode  66 = Caps_Lock
+  keycode  67 = F1
+  keycode  68 = F2
+  keycode  69 = F3
+  keycode  70 = F4
+  keycode  71 = F5
+  keycode  72 = F6
+  keycode  73 = F7
+  keycode  74 = F8
+  keycode  75 = Escape
+  keycode  76 = F10
+  keycode  77 = Num_Lock
+  keycode  78 = Scroll_Lock
+  keycode  79 = KP_7
+  keycode  80 = KP_8
+  keycode  81 = KP_9
+  keycode  82 = KP_Subtract
+  keycode  83 = KP_4
+  keycode  84 = KP_5
+  keycode  85 = KP_6
+  keycode  86 = KP_Add
+  keycode  87 = KP_1
+  keycode  88 = KP_2
+  keycode  89 = KP_3
+  keycode  90 = KP_0
+  keycode  91 = KP_Decimal
+  keycode  92 = Sys_Req
+  keycode  93 =
+  keycode  94 =
+  keycode  95 = F11
+  keycode  96 = F12
+  keycode  97 = Home
+  keycode  98 = Up
+  keycode  99 = Prior
+  keycode 100 = Left
+  keycode 101 = Begin
+  keycode 102 = Right
+  keycode 103 = End
+  keycode 104 = Down
+  keycode 105 = Next
+  keycode 106 = Insert
+  keycode 107 = Delete
+  keycode 108 = KP_Enter
+  keycode 109 = Control_R
+  keycode 110 = Pause
+  keycode 111 = Print
+  keycode 112 = KP_Divide
+  !keycode 113 = Alt_R Meta_R
+  keycode 114 = Break
+  !
+  ! This xmodmap file can be use to set the correct numerical keypad mapping
+  ! when "ServerNumLock" is set in the XF86Config file.  In this case the
+  ! Xserver takes care of the Num Lock processing.
+  !
+  !
+  keycode  136 = KP_7
+  keycode  137 = KP_8
+  keycode  138 = KP_9
+  keycode  139 = KP_4
+  keycode  140 = KP_5
+  keycode  141 = KP_6
+  keycode  142 = KP_1
+  keycode  143 = KP_2
+  keycode  144 = KP_3
+  keycode  145 = KP_0
+  keycode  146 = KP_Decimal
+  keycode  147 = Home
+  keycode  148 = Up
+  keycode  149 = Prior
+  keycode  150 = Left
+  keycode  151 = Begin
+  keycode  152 = Right
+  keycode  153 = End
+  keycode  154 = Down
+  keycode  155 = Next
+  keycode  156 = Insert
+  keycode  157 = Delete
+  -----
+
+  To use the Xmodmap above define "Scroll-Lock  Mode-Lock" in the
+  XF86Config.
+
+  4.5.  Integrating all the above, examples.
+
+  If you are using xdm a $HOME/.xsession should look like the following:
+
+  -----
+  #!/bin/sh
+  # $XConsortium: Xsession,v 1.9 92/08/29 16:24:57 gildea Exp $
+  #
+  # General defs
+  #
+  export OPENWINHOME=/usr/openwin
+  export MANPATH=/usr/local/man:/usr/man/preformat:/usr/man:/usr/X11R6/man
+  #export HOSTNAME="`cat /etc/HOSTNAME`"
+  export PATH="/bin: /usr/bin: /usr/X11/bin: /usr/X386/bin: /usr/TeX/bini: /usr/local/bin: /usr/games:."
+  LESS=-MM
+  if [ -z $XAPPLRESDIR ]; then
+          XAPPLRESDIR=/usr/lib/X11/app-defaults:/usr/local/lib/X11/app-defaults
+  else
+          XAPPLRESDIR=$XAPPLRESDIR:/usr/lib/X11/app-defaults
+  fi
+  export XAPPLRESDIR
+  #
+  sysresources=/usr/lib/X11/Xresources
+  sysmodmap=/usr/lib/X11/Xmodmap
+  resources=$HOME/.Xresources
+  xmodmap=$HOME/.Xmodmap
+  if [ -f $sysresources ]; then
+          xrdb -merge $sysresources
+  fi
+  if [ -f $sysmodmap ]; then
+          xmodmap $sysmodmap
+  fi
+  if [ -f $resources ]; then
+          xrdb -merge $resources
+  fi
+  if [ -f $xmodmap ]; then
+          xmodmap $xmodmap
+  fi
+  #
+  # Start applications
+  #
+  # xterm -ls -sb &
+  xhost +                 # look out !!!
+  exec fvwm
+  -----
+
+  If you prefer startx use the above as an example for .xinitrc.
+
+  5.  Shells setup.
+
+  For more details read the ``ISO 8859-1'' HOWTO.
+
+  5.1.  bash
+
+  Create a $HOME/.inputrc contain the following:
+
+       -----
+       set meta-flag On
+       set convert-meta Off
+       set output-meta On
+       -----
+
+  5.2.  tcsh
+
+  Define the following in the $HOME/.login or /etc/csh.login:
+       setenv LANG iw_IL.ISO8859-8 (or iw_IL) Actually because the
+  binary version of tcsh is complied without nls the LANG can be set to
+  anything and it will still work (no need for /usr/lib/nls...).  The
+  lang. name also shows my Digital bias ...
+
+  6.  Applications
+
+  6.1.  Vim
+
+  ·  The Vim is a Vi IMproved editor with some enhanced commands and the
+     hebrew support was made bu Dov Grobgeld (HED developer).
+
+  ·  Another Vim patch announced by Avner Lottem,
+     lottem@techunix.technion.ac.il and can be obtained from
+     ftp://sunsite.unc.edu/pub/Linux/apps/editors/vi/vim3.0-rlh0.1.tgz
+     <ftp://sunsite.unc.edu/pub/Linux/apps/editors/vi/vim3.0-rlh0.1.tgz>.
+
+  ·  For more info, you can look at
+     http://www.cs.technion.ac.il/~gil/var.html
+     <http://www.cs.technion.ac.il/~gil/var.html>
+
+  6.2.  Hebrew pine and pico
+
+  The pine and it's additional editor pico had been changed by Helen
+  Zommer from CC-huji and has a bug-report mail: pineh-
+  bug@horizon.cc.huji.ac.il. It can be down-loaded from
+  ftp://horizon.cc.huji.ac.il/pub <ftp://horizon.cc.huji.ac.il/pub>.
+
+  6.3.  Some emacs Hebrew ports.
+
+  ·  Hebrew package by Joseph Friedman. It includes some Hebrew fonts in
+     BDF format, patch for emacs 18.58 and an elisp package. It is fine,
+     but nobody uses emacs 18.* anymore. It can be obtained from:
+     ftp://archive.cis.ohio-state.edu/pub/gnu/emacs/elisp-
+     archive/misc/Hebrew.tar.Z <ftp://archive.cis.ohio-
+     state.edu/pub/gnu/emacs/elisp-archive/misc/Hebrew.tar.Z>.
+
+  ·  A very simple Hebrew package. Includes only right-to-left cursor
+     movement support and right-to-left sorting. Works without any
+     patches with FSF emacs 19. Can be obtained from
+     ftp://archive.cis.ohio-state.edu/pub/gnu/emacs/elisp-
+     archive/misc/Hebrew.el.Z <ftp://archive.cis.ohio-
+     state.edu/pub/gnu/emacs/elisp-archive/misc/Hebrew.el.Z>.
+
+  ·  One of emacs branches - MULE (Multi Lingual Emacs) Supports a lot
+     of languages including Hebrew. It compiles and runs under Linux
+     with no problem.  It is full Emacs, with Hebrew support and double-
+     direction handling. It can be obtained from:
+     ftp://kelim.jct.ac.il/pub/Hebrew <ftp://kelim.jct.ac.il/pub/Hebrew>
+
+  6.4.  Dosemu
+
+  For a VC dosemu you can use your Hebrew from the Video card EPROM, and
+  if you don't have it there are plenty of Hebrew dos fonts from EGA
+  support to the VGA Hebrew support.
+
+  For X-Windows support you should download the file:
+  ftp://sunsite.unc.edu/pub/Linux/X11/fonts/hebxfonts-0.1.tgz
+  <ftp://sunsite.unc.edu/pub/Linux/X11/fonts/hebxfonts-0.1.tgz> it's
+  contain some fonts include one called vgah.pcf that you should install
+  it on your fonts directory as describe ``above'' the fonts are:
+
+  6.5.  XHTerm
+
+  There is a main port of the regular X-Term program for use with a
+  Hebrew fonts - XHTerm =  xterm +  Hebrew support. The port for a sun
+  machine was made avalible by the help of Danny
+  <tt>danny@cs.huji.ac.il</tt>. Evgeny has some patch for use this port
+  under Linux. His version should come with a pre-compiled XHTerm for
+  both X11R5 and X11R6. You should use xhterm with the option -fn and a
+  Hebrew font ``as described''!  Danny's port (for SUN) can be obtained
+  from: ftp://ftp.huji.ac.il/pub/local/xhterm
+  <ftp://ftp.huji.ac.il/pub/local/xhterm> and the patched version of
+  Evgeny Stambulchik is on: ftp://plasma-
+  gate.weizmann.ac.il/pub/software/linux <ftp://plasma-
+  gate.weizmann.ac.il/pub/software/linux> Get it from there and you'll
+  get 5 ``fonts with  it'': [heb10x20.pcf, heb6x13.bdf, heb6x13.pcf,
+  heb8x13.bdf, heb8x13.pcf]
+
+  6.6.  TeX--XeT - Hebrew Tex.
+
+  The bigest problem with Tex with Hebrew is that the charecters should
+  go backwards relative to Visual look (i.e. pico inserts the charecters
+  from right to left), so the best thing is to get XHterm with a regular
+  emacs and write the Hebrew left to right, backwards as well.
+
+  The newer NTeX distribution on sunsite (v1.5) includes everything,
+  including TeX--XeT, precompiled for Linux. It can be obtained from
+  ftp://sunsite.unc.edu.gz/pub/Linux/apps/tex/ntex
+  <ftp://sunsite.unc.edu.gz/pub/Linux/apps/tex/ntex>. An older version
+  of TeX--XeT can be obtained from ftp://noa.huji.ac.il/tex
+  <ftp://noa.huji.ac.il/tex>. This older version, however, has to be
+  recompiled (not recommended).
+
+  These TeX distributions are fine if you use LaTeX2.09. If you want to
+  use LaTeX2e (the current de facto standard) you have a problem.  Alon
+  Ziv (alonz@csa.cs.technion.ac.il) is currently working in support for
+  LaTeX2e with Hebrew, using the Babel languages system. I don't know
+  the current status of his work -- ask him!
+
+  7.  Printer setup
+
+  Mainly there is not to say, if you have a regular ASCII line printer
+  (who does, these days?) there is a good chance that there are Hebrew
+  fonts in it on the EPROM chip.
+
+  If you use PostScript, you should download soft fonts to the printer
+  (you can always use the ``earlier mentioned'' Web fonts for that.
+  These fonts are also useable with Ghostscript).
+
+  If you have a PCL printer (LaserJet etc.), you can either use font
+  cartridges or use Ghostscript.
+
+  8.  Commercial products.
+
+  8.1.  El-Mar software.
+
+  The Hebrew Support for X-Windows & Motif, is a product of El-Mar
+  Software, which adds Hebrew functionality to many of the parts and
+  layers of X-Windows and Motif, including Xlib, all of the widgets of
+  Motif, hterm (Hebrew xterm), demos and simple useful applications
+  (e.g. bi-lingual Motif-based editor), fonts (including scalable
+  Type1), keyboard-manager in order to allow Hebrew and push-mode for
+  non-Motif applications, etc.
+
+  Despite allowing many new features and variations for Motif widgets,
+  the support doesn't have any modification to internal data-structures
+  of Motif, so existing applications which were compiled and linked
+  under non-Hebrew environment and libraries, can be relinked (without
+  compilation!) and run with Hebrew (you can replace shared-libraries,
+  so even the relink is not needed!)
+
+  By using another tool of us, Motif/Xplorer, you can take commercial
+  applications (without their source) and translate them to Hebrew. This
+  was the way of giving Hebrew support for Oracle Forms 4, Intellicorp's
+  Kappa and OMW, CA-Unicenter, and many other leading UNIX tools sold in
+  Israel. This product was purchased and adopted by most of the
+  workstation vendors (9 of them, including the biggest: Sun, HP, SGI),
+  and many other software houses.  There are Makefiles for more than 30
+  platforms and operating systems.
+
+  We believe only in open software, so all the customers get the
+  compelete source code. We have good relations with the leading forces
+  in this industry, including the technical staff of X-Consortium and
+  the technical staff of COSE.
+
+       Eli Marmor
+       El-Mar Software Ltd.
+       Voice: 050-237338
+       FAX: 09-984279
+
+  marmor@sunshine.cs.biu.ac.il
+
+  P.S.: The announcement of the Arabic Support for X-Windows & Motif, is
+  expected in January. English, Hebrew, and Arabic will be handled by 8
+  bits (!), including the full set of Arabic glyphes.
+
+  9.  Hebrew around the Internet.
+
+  9.1.  WWW
+
+  ·  Jerusalem 1 - has many program and FAQ files about Hebrew on Unix
+     and other platforms http://www.jer1.co.il <http://www.jer1.co.il>.
+
+  ·  Gili Granot's Hebrew archive page - sumerize of all Hebrew related
+     issues around the Web (include all kind of files)
+     http://www.cs.technion.ac.il/~gil
+     <http://www.cs.technion.ac.il/~gil>.
+
+  ·  Gavrie has some info about Hebrew on his ftp site:
+     ftp://kelim.jct.ac.il <ftp://kelim.jct.ac.il>
+
+  9.2.  Gopher
+
+  ·  A one word testing for Hebrew-gopher can be found on
+     gopher://shekel.jct.ac.il <gopher://shekel.jct.ac.il>
+
+  9.3.  Ftp
+
+  ·  Some Tex-Xet programs and the main FTP site for Tex Hebrew support
+     for PC and Unix is at ftp://noa.huji.ac.il/tex
+     <ftp://noa.huji.ac.il/tex>.
+
+  ·  Horizon site as ``said allready'' contains the main site of
+     pine/pico Hebrew support - ftp://horizon.huji.ac.il/pub
+     <ftp://horizon.huji.ac.il/pub>.
+
+  ·  Gili Granot's Hebrew archive page ftp site is at
+     ftp://ssl.cs.technion.ac.il/pub <ftp://ssl.cs.technion.ac.il/pub>.
+

@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Potted Intro to PPP</title>
+  </head>
+
+  <body>
+    <TABLE>
+      <TR><TD> <A HREF="">NTS Home</A></A> </TD><TD> 
+    </TABLE>
+
+      <h1>Potted Intro to PPP</h1>
+
+      <p>Redhat users may want to use <tt>netcfg</tt> to set up their PPP connection.  This procedure should work on any version of Linux, though.  For more on PPP see the <A HREF="../../links.html#ppp">PPP help</a> 
+section of the links page. 
+</p>
+
+      <h4>Preliminaries:</h4>  
+
+      <p>You'll need PPP support in your kernel.  If you wish to use <A HREF="http://www.dna.lth.se/~erics/diald.html">diald</a> then you should also
+	include SLIP support.  For help on this see the <A HREF="/HOWTO/Kernel-HOWTO">Kernel HOWTO</a> or the README in <tt>/usr/src/linux</tt>.
+</p>
+
+      <h4>Setting up the modem</h4>
+
+      <p>If the install procedure did not already create a soft link from
+	<tt>/dev/modem</tt> to the serial port your modem is on (<tt>/dev/cua0</tt> for COM1: or
+	<tt>/dev/cua1</tt> for COM2:) do so now.
+</p>
+      <p>Slackware users should first run <tt>setup</tt> to set up their modem and <tt>netconfig</tt>
+to set up loopback only networking. 
+</p>
+      <p>If things are set up correctly then you should be able to dial out with
+	<tt>minicom</tt> or <tt>seyon</tt> (you'll have to be root unless you set the permissions on
+	<tt>/dev/cuaN</tt> differently.) 
+</p>
+
+      <h4>Adding the DNS numbers</h4>
+
+      <p>Now add the dotted quad numbers for your ISP's DNS servers to your
+	<tt>/etc/resolv.conf</tt> as in this example for cts.com:
+</p>
+      <pre>
+# /etc/resolv.conf
+
+search cts.com 
+nameserver 192.188.72.18
+nameserver 192.188.72.21
+</pre>      
+      <p>If you've got your PPP connection set up under Win95, you can find the
+numbers under you networking properties.  Otherwise, call customer support
+at your ISP and ask for the numbers.  If you were assigned a static IP
+address then get that while you're at it.  Now is also a good time to ask
+if there are any special login procedures for PPP accounts.
+</p>
+
+      <h4>Creating the CHAT script</h4>
+
+      <p>Now use <tt>minicom</tt> to dial you're ISP and record verbatim the prompts and
+responses neccessary to get PPP started.  You'll use this to make your
+	chat script.  Save this in, for example, <tt>/etc/ppp/chatscript</tt>.  The chat
+script below will probably work for most ISPs, though.  If your ISP uses PAP or CHAP,
+consult the links in the <A HREF="links.html#ppp">PPP Help</a> section.
+</p>
+      <pre>ABORT BUSY
+ABORT ERROR
+ABORT 'NO CARRIER'
+ABORT 'NO DIALTONE'
+ABORT 'Invalid Login'
+ABORT 'Login incorrect'
+'' ATZ
+OK ATDT5551212
+CONNECT ''
+ogin: yourloginname
+ord: '\qyourpassword'
+</pre>
+
+      <p>The first part of this chat script defines strings that will cause chat to
+abort.  The second part consists of expect/send pairs:
+</p>
+
+      <p>expect nothing/send command to initialize modem<br>
+	expect OK from modem/send command to dial phone number<br>
+	expect CONNECT/send nothing<br>
+	expect ogin: (in case the l is dropped by line noise)/send login name<br>
+expect ord:/send password
+</p>
+
+      <p>The <tt>'\q'</tt> ensures that your password is not visible in the system logs.</p>
+
+Since the chat script contains your password, make sure that it is not world readable
+      <pre># chmod o-rw /etc/ppp/chatscript</pre>
+      <h4>Running pppd</h4>
+
+      <p>Create the file <tt>/etc/ppp/options</tt>.  It doesn't have to have anything in it
+for now, so just
+</p>
+      <code># touch /etc/ppp/options
+</code>
+      <p>if the file isn't already there.  
+Now you can start <tt>pppd</tt>.  You can either log in as root each time to do
+	this, or you can set the suid of the <tt>pppd</tt> binary</p>
+
+      <code># chmod u+s /usr/sbin/pppd
+</code>
+      <p>We're ready to rock.  For a dynamic IP address try
+</p>
+      <pre>$ /usr/sbin/pppd lock modem crtscts asyncmap 0 defaultroute  \
+    /dev/modem 115200 connect "/usr/sbin/chat -f /etc/ppp/chatscript" 
+</pre>
+
+Here's a brief rundown on the options given to pppd above:
+
+      <p>      <tt>lock</tt>: use a lock file to ensure exclusive use of the device.<br>
+	<tt>modem</tt>: use the modem control lines. <br>
+	<tt>crtscts</tt>: use hardware flow control. (RTS/CTS)<br>
+	<tt>asyncmap 0</tt>: do not escape the ASCII characters from 0x00 to 0x1F.<br>
+	<tt>defaultroute</tt>: add  a  default route to the system routing tables,
+              using the peer as the gateway.<br>
+	<tt>/dev/modem 115200</tt>: communicate  over  the  named  device with the indicated baud rate.<br>
+	<tt>connect "..."</tt>: use the specified command to talk to the modem.
+</p>
+      <p>For a static IP address just add the dotted quad address on the line followed by
+a colon (you could add the route address after the colon, but we'll tell
+<tt>pppd</tt> take care of that with the defaultroute option.) 
+</p>
+      <pre>$ /usr/sbin/pppd lock modem crtscts asyncmap 0 198.168.0.1: defaultroute  \
+    /dev/modem 115200 connect "/usr/sbin/chat -f /etc/ppp/chatscript" 
+</pre>
+      <p>See the <tt>pppd</tt> man page for all the options to the <tt>pppd</tt> command.
+</p>
+      <p>To kill this you can use
+</p>
+      <pre>$ killall pppd
+</pre>
+      <p>The next step would be to write scripts around these invocations.  
+	You should have the <tt>ppp-on</tt> and <tt>ppp-off</tt> scripts that come with the 
+	ppp package (in <tt>/usr/sbin</tt> on a Slackware system). 
+</p>
+
+      <hr>
+      <address><a href="mailto:dmcook@cts.com">David M. Cook</a></address>
+<!-- Created: Fri Jan 10 01:06:59 PST 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Jan 20 06:07:37 PST 
+<!-- hhmts end -->
+  </body>
+</html>
+
+
+
+

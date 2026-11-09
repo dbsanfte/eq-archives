@@ -1,0 +1,516 @@
+<SCRIPT>
+
+// First update this date
+
+LastUpdate = "06 May 2002";
+
+// See instructions below...
+
+
+function Member(name, mclass, status, officer, enddate, lastupdate)
+{
+	this.name = name;
+	this.mclass = mclass;
+	this.status = status;
+	this.officer = officer;
+	this.endd = enddate;
+	this.lastud = lastupdate;
+}
+
+// Sample trial member line:
+//	
+// The order of the entries isn't important...  The script will organize them by class.
+// However, alph order is important for the sorting.
+// 
+// Sample member line:
+//
+// new Member("Raxthorne SpiritWolf", 11, 1, "no"),	
+//
+// name (Character Name of Member):
+//      "Raxthorne SpiritWolf"
+//
+// mclass (Character Class Numbers):
+//	0	bard
+//	1	cleric
+//	2	druid
+//	3	enchanter
+//	4	magician
+//	5	monk
+//	6	necromancer
+//	7	paladin
+//	8	ranger
+//	9	rogue
+//	10	shadow knight
+//	11	shaman
+//	12	warrior
+//	13	wizard
+//
+// status (Member Status Numbers):
+//	0	deactive (will not show up in lists at all)
+//	1	active member
+//	2	part time member
+//	3	alumni member
+//	4	trial member
+//
+// officer (Deadly Virtues Officer);
+//      "no"    member is not officer
+//      "yes"   member is officer
+//      "raid"  member is raid officer
+//
+//	The guild member list is broken into two tables.  The following line specifies which class
+//	will be the first in the 2nd table.  As new members are added, you might want to play with
+//	this value in order to make the two tables approximately the same size.
+
+var tableSplit = 7;
+
+//          Member(name, mclass, status, officer, enddate, lastupdate)
+var members = new Array(
+// A
+	new Member("Alaweni", 8, 3, "no", "", ""), //  to honorary 29 Aug 01
+	new Member("Abrham", 7, 1, "no", "", ""),
+	new Member("Alano D`unedain", 13, 2, "no", "", ""),
+	new Member("Alewulf Boozehound", 13, 1, "no", "", ""),
+	new Member("Althalus", 9, 1, "no", "", ""),			
+	new Member("Astaroth", 10, 2, "no", "", ""), // full member 15 Nov 01
+	new Member("Astos Del`Galandraca", 3, 1, "no", "", ""),  // full member 17 Oct 01
+	new Member("Aylia", 7, 4, "no", "30 day", "5/6/2002"),
+// B
+	new Member("Baker", 12, 0, "no", "", ""), // sold account
+	new Member("Bamelen Phoenix", 7, 1, "no", "", ""),
+	new Member("Battlewiz", 13, 1, "no", "", ""),  // full member 12 Dec 01
+	new Member("Beckman Trueblade", 7, 1, "raid", "", ""),
+	new Member("Blackhood", 6, 1, "no", "", ""), // full member 27 Oct 01
+	new Member("Bobithyjr", 6, 2, "no", "", ""), // full member 9 Sep 01
+	new Member("Braaknag", 1, 1, "no", "", ""),  // full member 9 Sep 01
+	new Member("Broda", 1, 3, "no", "", ""), 
+// C
+	new Member("Carin", 5, 2, "no", "", ""),
+	new Member("Carthinor Truestrike", 8, 2, "no", "", ""), //  from honorary 22 Jul 01
+	new Member("Ceruix Moriquendi", 10, 1, "no", "", ""),
+	new Member("Chomis", 7, 1, "no", "", ""), // full member 12 Dec 01
+	new Member("Cheb Chortleberry", 8, 1, "no", "", ""), // full member 22 Jul 01
+	new Member("Cloudburst", 12, 1, "no", "", ""), // full member 2 Aug 01
+	new Member("Crista", 11, 1, "no", "", ""),
+// D
+	new Member("Daewar Darkeslayer", 13, 1, "no", "", ""),  // full member 17 Oct 01
+	new Member("Daktari Plainsrunner", 2, 1, "no", "", ""),
+	new Member("Dalyryder Dirgestone", 0, 3, "no", "", ""),	 // moved to honorary 010802	
+	new Member("DamienVryce Petbot", 4, 2, "no", "", ""),
+	new Member("Dedron", 1, 1, "no", "", ""),  // full member 26 Oct 01
+	new Member("Dirke", 1, 1, "no", "4/3/2002", ""),
+	new Member("Drakkaenn Sunforge", 1, 1, "no", "", ""),
+	new Member("Dreezil", 9, 1, "raid", "", ""), // added 9 Sep 2001
+// E
+	new Member("Efil Trackbot", 8, 1, "no", "", ""),
+        new Member("Elmarnieh", 8, 1, "no", "", ""),	//moved to Member 02 Feb 02
+	new Member("Erasmis", 1, 1, "no", "", ""),			
+// F
+	new Member("Failbhean Threehammers", 12, 1, "no", "", ""),  // full member 22 Jul 01
+	new Member("Fehreel", 3, 0, "no", "3/26/2002", ""), // removed from guild
+	new Member("Fyzz Mysterywalker", 3, 1, "no", "", ""),
+// G
+	new Member("Gismirante Silverlorn", 12, 1, "no", "", ""),
+	new Member("Grifn Slayer", 2, 1, "no", "", ""),
+	new Member("Gromril Ironchalice", 1, 3, "no", "", ""),
+	new Member("Grumpie Buffbot", 11, 3, "no", "", ""), //  to honorary 29 Aug 01
+	new Member("Gryffin Skystrider", 5, 1, "yes", "", ""),
+	new Member("Guffertot", 1, 1, "no", "", ""),  // split from Yawma 22 Jul 01
+	new Member("Guladan", 11, 1, "no", "", ""),
+// H
+	new Member("Hawkmiles", 13, 1, "no", "", ""), // full member 2 Feb 02
+	new Member("Highnote Jukebot", 0, 1, "no", "", ""),  // Yawma switched 9 Sep 01
+// I
+	new Member("Iridal", 0, 1, "no", "4/30/2002", ""),			
+	new Member("Iumdar Terrastrike", 4, 1, "no", "", ""), // full member 13 Aug 01
+// J
+	new Member("Jalokavich", 2, 0, "no", "", ""),
+	new Member("Jazzin Kur`Nel", 9, 2, "no", "", ""),
+	new Member("Joanna Evermist", 3, 0, "no", "", ""), //removed from guild
+// K
+	new Member("Kahla Celestine", 1, 2, "no", "", ""),
+	new Member("Kania", 6, 1, "no", "", ""), // full member 27 Oct 01
+	new Member("Kalvorie Ra`Baenre", 13, 2, "no", "", ""), //  from honorary 22 Jul 01
+	new Member("Kiiarku", 12, 1, "no", "", ""),
+	new Member("Knight Vireo", 7, 1, "yes", "", ""),
+        new Member("Kolanya", 2, 1, "no", "", ""),
+	new Member("Kopla", 4, 1, "no", "researching", "3/27/2002"),
+	new Member("Kroo TankBot", 12, 1, "raid", "", ""),
+	new Member("Kukuie", 10, 4, "no", "30 day", "5/6/2002"), // full member 15 Nov 01
+	new Member("Kurk Volens", 4, 1, "no", "", ""),  // full member 17 Oct 01
+// L
+	new Member("Lelu Dallus", 1, 1, "no", "", ""),
+	new Member("Loeil", 8, 1, "no", "", ""),
+// M
+	new Member("Mappan Muffinbiter", 1, 2, "no", "", ""),  // split from Yawma 22 Jul 01
+	new Member("Maravana Vireo", 0, 1, "yes", "", ""),			
+	new Member("Marccuss", 1, 3, "no", "", ""),  // split from Yawma 22 Jul 01
+	new Member("Marikin Soulmender", 1, 1, "no", "", ""),  // full member 17 Oct 01
+        new Member("Mattas Valemyst", 2, 2, "no", "", ""),
+	new Member("McRaven Dragonblood", 12, 1, "no", "", ""), // full member 9 Sep 01 - left Nov 01 back in Feb 02
+	new Member("Melvar Malicious", 11, 3, "no", "", ""), // full member 9 Sep 01 - went to FR, GMT play time back to DV
+	new Member("Memek", 0, 1, "no", "30 Day", "5/6/2002"),			
+	new Member("Mepponea Farseer", 2, 1, "no", "4/17/2002", ""),
+	new Member("Mezzer Bot", 3, 2, "raid", "", ""),
+	new Member("Miylaina", 1, 2, "no", "30 Day", "5/6/2002"),
+	new Member("Mortifier", 6, 1, "no", "", ""), // full member 2 Feb 02
+	new Member("Mymm", 7, 1, "no", "", ""),			
+// N
+	new Member("Nalesar", 12, 1, "no", "", ""), // full member 22 Jul 01
+	new Member("Nicci SisteroftheDark", 9, 1, "no", "", ""), // full member 2 Aug 01
+// O
+	new Member("Odiseous", 12, 1, "no", "", ""),
+	new Member("Oninoa", 4, 4, "no", "extended", "5/6/2002"),
+// P
+	new Member("Painar", 5, 1, "no", "", ""),			
+	new Member("Phingers", 9, 2, "no", "", ""),
+	new Member("Pitch Black", 9, 1, "no", "", ""), // full member 26 Oct 01
+// Q
+	new Member("Qest", 3, 1, "no", "", ""),
+// R
+	new Member("Rabyn Defynwyk", 9, 1,"no", "", ""), // full member 02 Feb 02
+	new Member("Ramme Feignbot", 5, 1, "no", "", ""),
+	new Member("Raxthorne SpiritWolf", 11, 1, "no", "", ""),
+	new Member("Retro Active", 13, 1, "no", "", ""),   //  from honorary 2 Aug 01
+	new Member("Rezzar Bot", 1, 2, "no", "", ""),
+	new Member("Rindaili", 0, 2, "no", "", ""),  // full member 17 Oct 01
+	new Member("Rolalron Ravenaur", 5, 1, "no", "", ""), // full member 8 Nov 01
+	new Member("Roxan Rollz", 0, 2, "no", "", ""),
+	new Member("Ruumm Forrezz", 1, 3, "no", "", ""),  // full member 9 Sep 01
+// S
+	new Member("Shadiza", 5, 1, "no", "", ""),
+        new Member("Sinisade", 1, 1, "yes", "", ""),  // stopped playing Dec 01
+	new Member("Slit", 13, 2, "no", "4/3/2002", ""),
+	new Member("Starevil", 3, 4, "no", "30 day", "5/6/2002"),
+// T
+	new Member("Talasyn DrachenFire", 13, 3, "no", "", ""),
+	new Member("Talloen", 12, 1, "no", "", ""),			
+	new Member("Tanika Ceadserc", 2, 1, "no", "", ""),
+	new Member("Temin", 8, 1, "no", "", ""),
+	new Member("Terilya", 2, 4, "no", "30 day", "5/6/2002"),
+	new Member("Thieven", 9, 1, "no", "", ""), // full member 12 Dec 01
+	new Member("Thengel Ele`sheir", 12, 3, "no", "", ""),  // honorary 12 Dec 01
+	new Member("Tomarrse", 1, 2, "no", "", ""), // full member 2 Feb 02
+// U
+	new Member("Ulicia SisteroftheDark", 9, 2, "no", "", ""), // full member 2 Aug 01
+	new Member("Utntout", 12, 1, "no", "", ""), // full member 2 Feb 02
+	new Member("Uwen Lightsinger", 0, 1, "no", "", ""),  // switched 9 Sep 01
+// V
+	new Member("Vadmaniac", 10, 1, "no", "", ""), // full member 15 Nov 01
+	new Member("Valice Ravenaur", 1, 1, "no", "", ""),
+	new Member("VyKyng", 10, 2, "no", "", ""), // full member 15 Nov 01
+// W
+	new Member("Waooga", 12,1,"no", "", ""),	
+	new Member("Winlulu", 2, 3, "no", "", ""),
+	new Member("Wyverness", 13, 2, "no", "", ""),			
+// X
+	new Member("Xixxik", 9, 1, "no", "", ""), // full member 2 Feb 02
+// Y
+	new Member("Yillandria Del`Galandraca", 2, 1, "no", "", ""),  // full member 17 Oct 01
+// Z
+	new Member("Zanex", 3, 2, "no", "", ""),  // moved to honorary 16 Sep 01
+	new Member("Zeppelin", 6, 2, "no", "", ""),  // full member 17 Oct 01
+	new Member("Zeronx", 13, 4, "no", "30 day", "5/6/2002"),			
+  	new Member("Zildjan", 0, 3, "no", "", ""),   // moved to inactive 010802; restored 17 Oct 01
+	new Member("Zilva D`unedain", 8, 2, "no", "", ""),
+
+// This entry is a dummy and does not get displayed. It is a placeholder for the end of the array.
+	new Member("PlaceHolder", 0, 0, "no", "", "")
+);
+
+
+var classes = new Array(
+	"Bard", "Cleric", "Druid", "Enchanter", "Magician", "Monk", "Necromancer",
+	"Paladin", "Ranger", "Rogue", "Shadow Knight", "Shaman", "Warrior", "Wizard"	
+);
+
+function CreateMemberTable()
+{
+        var memcount = 0;
+	var tcol = 0;
+	document.write("<TABLE border=0 align=center><TR>");
+
+	for (cloop = 0; cloop < 14; cloop++) {
+		tcol = (cloop == tableSplit); 
+		if ((cloop == 0) || tcol) {
+			if (tcol) 
+			document.write("</TABLE></TD>");
+			document.write("<TD valign=top>");
+			document.write('<TABLE border=1 cellpadding=5 bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+			document.write("<TR bgcolor=BLACK>");
+			document.write('<TD align=middle width="10%">Class</TD>');
+			document.write('<TD align=middle width="10%">Total</TD>');
+			document.write("<TD align=middle>Name</TD>");
+			document.write("</TR>");
+		}
+		var shortList = new Array();
+		for (lloop = 0; lloop < members.length; lloop++) {		
+			if (members[lloop].mclass == cloop && members[lloop].status == 1) {
+				shortList[shortList.length] = members[lloop];
+                                memcount ++;
+			}
+		}
+		if (shortList.length) {
+			document.write("<TR><TD align=middle valign=middle rowspan=");
+			document.write(shortList.length);
+			document.write(">");
+			document.write(classes[cloop], "</TD>");
+			document.write("<TD align=middle valign=middle rowspan=", shortList.length, ">");
+			document.write(shortList.length, "</TD>");
+
+			for (sloop = 0; sloop < shortList.length; sloop++) {
+				if (sloop != 0) 
+				document.write("<TR>");
+				document.write("<TD>");
+				if (shortList[sloop].officer == "raid") 
+					document.write("<I>");
+				if (shortList[sloop].officer == "yes" || shortList[sloop].officer == "raid") 
+					document.write("<B>");
+				document.write(shortList[sloop].name);
+				if (shortList[sloop].officer == "yes" || shortList[sloop].officer == "raid") 
+					document.write("</B>");
+				if (shortList[sloop].officer == "raid") 
+					document.write("</I>");
+				document.write("</TD>");
+				document.write("</TR>");
+			};
+		}
+		delete shortList;
+	}
+
+	document.write("</TD></TR></TABLE></TABLE>");
+	document.write("<P align=center>");
+	document.write("<FONT color=BLACK><P align=center><B>Total number of full time members: ")
+ 	document.write(memcount);
+	document.write("</B></P></FONT>");
+	document.write("<P align=center>");
+	document.write("<FONT color=BLACK><B>Bold text</B> indicates officers of Deadly Virtues.</FONT>");
+	document.write("</P>");
+	document.write("<P align=center>");
+	document.write("<FONT color=BLACK><I><B>Bold & Italic text</B></I> indicates raid officers of Deadly Virtues.</FONT>");
+	document.write("</P>");
+	document.write("<br>");
+		
+}
+
+
+function CreatePartTimeTable()
+{
+        var ptcount = 0;
+	var tcol = 0;
+	document.write("<TABLE border=0 align=center><TR>");
+
+	for (cloop = 0; cloop < 14; cloop++) {
+		tcol = (cloop == tableSplit); 
+		if ((cloop == 0) || tcol) {
+			if (tcol) 
+			document.write("</TABLE></TD>");
+			document.write("<TD valign=top>");
+			document.write('<TABLE border=1 cellpadding=5 bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+			document.write("<TR bgcolor=BLACK>");
+			document.write('<TD align=middle width="10%">Class</TD>');
+			document.write('<TD align=middle width="10%">Total</TD>');
+			document.write("<TD align=middle>Name</TD>");
+			document.write("</TR>");
+		}
+		var shortList = new Array();
+		for (lloop = 0; lloop < members.length; lloop++) {		
+			if (members[lloop].mclass == cloop && members[lloop].status == 2) {
+				shortList[shortList.length] = members[lloop];
+                                ptcount ++;
+			}
+		}
+		if (shortList.length) {
+			document.write("<TR><TD align=middle valign=middle rowspan=");
+			document.write(shortList.length);
+			document.write(">");
+			document.write(classes[cloop], "</TD>");
+			document.write("<TD align=middle valign=middle rowspan=", shortList.length, ">");
+			document.write(shortList.length, "</TD>");
+
+			for (sloop = 0; sloop < shortList.length; sloop++) {
+				if (sloop != 0) 
+				document.write("<TR>");
+				document.write("<TD>");
+				if (shortList[sloop].officer == "raid") 
+					document.write("<I>");
+				if (shortList[sloop].officer == "yes" || shortList[sloop].officer == "raid") 
+					document.write("<B>");
+				document.write(shortList[sloop].name);
+				if (shortList[sloop].officer == "yes" || shortList[sloop].officer == "raid") 
+					document.write("</B>");
+				if (shortList[sloop].officer == "raid") 
+					document.write("</I>");
+				document.write("</TD>");
+				document.write("</TR>");
+			};
+		}
+		delete shortList;
+	}
+
+	document.write("</TD></TR></TABLE></TABLE>");
+	document.write("<P align=center>");
+	document.write("<FONT color=BLACK><P align=center><B>Total number of part time members: ")
+ 	document.write(ptcount);
+	document.write("</B></P></FONT>");
+	document.write("<P align=center>");
+	document.write("<FONT color=BLACK><I><B>Bold & Italic text</B></I> indicates raid officers of Deadly Virtues.</FONT>");
+	document.write("</P>");
+	document.write("<BR>");
+
+}
+
+var SecTableSplit = -1;
+
+function CreateAlumniTable()
+{
+
+        var alumnicount = 0;
+        var shortList = new Array();
+	for (lloop = 0; lloop < members.length; lloop++) {		
+	    if (members[lloop].status == 3) {
+		shortList[shortList.length] = members[lloop];
+                alumnicount ++;
+	    }
+	}
+
+	if (shortList.length == 0) {
+		document.write("<P align=center><B><FONT color=BLACK>No alumni members currently listed.</FONT></B></P>");
+		return;
+	}
+	
+	// document.write('<TABLE border=1 cellpadding=3 width="80%" align=center bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+	document.write('<TABLE border=1 cellpadding=3 align=center bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+	document.write("<TR bgcolor=BLACK>");
+	document.write("<TD align=middle>Name</TD>");
+	document.write("<TD align=middle>Class</TD>");
+	//document.write("<TD align=middle>Date</TD>");
+	document.write("</TR>");
+
+	if (shortList.length) {
+ 	   for (floop = 0; floop < shortList.length; floop++) {
+		if (floop != 0) 
+		document.write("<TR>");		
+		document.write("<TD>", shortList[floop].name,"&nbsp;</TD>");
+		document.write("<TD>", classes[shortList[floop].mclass],"&nbsp;</TD>");
+		//document.write("<TD>", shortList[floop].sdate, "&nbsp;</TD>");
+		document.write("</TR>");
+	   }
+	}
+	delete shortList;
+
+	document.write("</TABLE>");
+	document.write("<FONT color=BLACK><P align=center><B>Total number of alumni: ")
+ 	document.write(alumnicount);
+	document.write("</B></P></FONT>");
+	document.write("<BR>");
+}
+
+function CreateTrialTable()
+{
+
+        var trialcount = 0;
+        var shortList = new Array();
+	for (lloop = 0; lloop < members.length; lloop++) {		
+	    if (members[lloop].status == 4) {
+		shortList[shortList.length] = members[lloop];
+                trialcount ++;
+	    }
+	}
+
+	if (shortList.length == 0) {
+		document.write("<P align=center><B><FONT color=BLACK>No trial members currently listed.</FONT></B></P>");
+		return;
+	}
+	
+	// document.write('<TABLE border=1 cellpadding=3 width="80%" align=center bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+	document.write('<TABLE border=1 cellpadding=3 align=center bgcolor=#990000 bordercolorlight=#BB00000 bordercolordark=#500000>');
+	document.write("<TR bgcolor=BLACK>");
+	document.write("<TD align=middle>Name</TD>");
+	document.write("<TD align=middle>Class</TD>");
+	document.write("<TD align=middle>Status</TD>");
+	document.write("<TD align=middle>Last Update</TD>");
+	document.write("</TR>");
+
+	if (shortList.length) {
+ 	   for (floop = 0; floop < shortList.length; floop++) {
+		if (floop != 0) 
+		document.write("<TR>");		
+		document.write("<TD>", shortList[floop].name,"&nbsp;</TD>");
+		document.write("<TD>", classes[shortList[floop].mclass],"&nbsp;</TD>");
+		document.write("<TD>", shortList[floop].endd, "&nbsp;</TD>");
+		document.write("<TD>", shortList[floop].lastud, "&nbsp;</TD>");
+		document.write("</TR>");
+	   }
+	}
+	delete shortList;
+
+	document.write("</TABLE>");
+	document.write("<FONT color=BLACK><P align=center><B>Total number of trial members: ")
+ 	document.write(alumnicount);
+	document.write("</B></P></FONT>");
+	document.write("<BR>");
+}
+
+
+function WriteDate()
+{
+	document.write("<FONT color=BLACK><P align=center><B>This information was last updated on ")
+ 	document.write(LastUpdate);
+	document.write("</B></P></FONT>");
+	document.write("<FONT color=BLACK><P align=center><B>Total number of members: ")
+ 	document.write(members.length);
+	document.write("</B></P></FONT>");
+}
+</SCRIPT>
+
+<HTML>
+<HEAD>
+<TITLE>Members Page</TITLE>
+</HEAD>
+
+<BODY bgColor=#ffffff leftMargin=0 text=#FFFFFF topMargin=20 aLink=#800080 link=#0000ff vLink=#800080>
+
+<center><b>
+<a href="secondaries.htm">Secondary Characters</a>&nbsp;&nbsp;
+<a href="alternates.htm">Alternate Characters</a>
+</b></center>
+
+<SCRIPT>WriteDate();</SCRIPT>
+
+<P align=center>
+<IMG height=18 src="leftarrow.gif"> 
+<FONT color=BLACK size=5>Guild Members</FONT>
+<IMG height=18 src="rightarrow.gif"> 
+<BR>
+<BR>
+</P>
+
+<SCRIPT>CreateMemberTable();</SCRIPT>
+
+<P align=center>
+<IMG height=18 src="leftarrow.gif"> 
+<FONT color=BLACK size=5>Part Time Members</FONT>
+<IMG height=18 src="rightarrow.gif"> 
+</P>
+
+<SCRIPT>CreatePartTimeTable();</SCRIPT>
+
+<P align=center>
+<IMG height=18 src="leftarrow.gif"> 
+<FONT color=BLACK size=5>Members in Trial Period</FONT>
+<IMG height=18 src="rightarrow.gif"> 
+</P>
+
+<SCRIPT>CreateTrialTable();</SCRIPT>
+
+<P align=center>
+<IMG height=18 src="leftarrow.gif"> 
+<FONT color=BLACK size=5>Alumni Members</FONT>
+<IMG height=18 src="rightarrow.gif"> 
+</P>
+
+<SCRIPT>CreateAlumniTable();</SCRIPT>
+
+</BODY>
+</HTML>
+

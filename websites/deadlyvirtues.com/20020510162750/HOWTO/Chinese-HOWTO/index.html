@@ -1,0 +1,1374 @@
+  The Chinese HOWTO
+  Hong Zhang, hongz@seas.ucla.edu
+  v0.1, 2 April 1997
+
+  This is the HOWTO document for using Chinese in Linux environment. It
+  describes how to obtain, install, and configure various Chinese soft­
+  ware.  The most up-to-date version of this Chinese HOWTO may be found
+  at turb10.seas.ucla.edu:/pub/
+
+  1.  Introduction
+
+  This is an overdue document for using Chinese in Linux. I have been
+  expecting this HOWTO for a long time. Obviously there is no such HOWTO
+  available on Internet, I decided to write one by myself.  It is
+  nothing else but an attempt to make life a little bit easer.  Please
+  send your comments and suggestions to hongz@seas.ucla.edu.  There is
+  no copyright issue associated with this document. You may do whatever
+  you want with this HOWTO except for suing me for the damage caused by
+  this document or bringing me into a lawsuit.
+
+  You can get most of the Chinese Software at:
+
+       <http://cnapps.ifcss.org> and
+       <ftp://linux.csie.nctu.edu.tw:/pub/linux>
+
+  2.  The Chinese X Windows
+
+  The X Window system is a large and powerful graphics environment for
+  UNIX. XFree86 is a free port of the MIT X Window System (X11R6). The
+  Chinese X Windows is a patch to the XFree86 for displaying chinese
+  charactors in X Window environment. The author is Shin-Ray Lee
+  (srlee@csie.nctu.edu.tw). Current version of CXwin only supports BIG5
+  coding. It is available for both XFree86 3.1 and XFree86 3.2 .  CXwin
+  gives your Chinese popup menu, Chinese window title for various window
+  managers and also can display Chinese characters in some applications.
+
+  2.1.  Where to get it
+
+  2.1.1.  CXwin 3.1
+
+  The XFree86 3.1 version of Chinese X Windows can be found at the major
+  chinese software ftp site
+  ftp.ifcss.org:/pub/software/linux/X11R6/CXwin/elf or its mirror sites.
+  You only need to get one X server for yourself.  In my case, I need
+  XF86_SVGA.gz. But XF86_VGA16.gz should work for most of the graphics
+  cards.
+
+  2.1.2.  CXwin 3.2
+
+  As I know, the latest version for CXwin is XFree86 3.2 .  You can
+  fetch the linux ELF format of CXwin 3.2 at
+  linux.csie.nctu.edu.tw:/pub/linux/CXwin/elf
+
+  2.1.3.  Patches
+
+  If you have the source for XFree86, you can get patch at the same
+  place and compile the binary file by yourself.
+
+  2.2.  How to install it
+
+  Uncompress the gzipped file, in my case it is /tmp/XF86_SVGA.gz
+
+       # gzip -d XF86_SVGA.gz
+
+  Become superuser (root) and make a backup copy of your orignal X
+  server
+
+       # cd /usr/X11R6/bin
+       # mv XF86_SVGA XF86_SVGA_BACKUP
+
+  Move the CXwin to its place
+
+       # mv /tmp/XF86_SVGA /usr/X11R6/bin
+       # chown root.bin XF86_SVGA
+       # chmod 4755 XF86_SVGA
+
+  CXwin also needs four BIG5 fonts to work properly, namely taipei15,
+  taipei16, taipeik20 and  taipeik24. Please refer to ``Section ``''''
+  for how to intall Chinese fonts.
+
+  CXwin 3.1 is buggy and unstable. It is recommended that you upgrade to
+  XFree86 3.2 and use CXwin 3.2. CXwin is in alpha state, you may use it
+  at your own risk. But I have been using it for over three months, it
+  works just great. At  <http://turb10.seas.ucla.edu/ hongz>, you will
+  find some nice screenshots of my desktop.
+
+  3.  The CXterm and Hztty
+
+  CXterm is a terminal simulator just like xterm but with the ability of
+  displaying and inputting chinese charactors. It supports GB, BIG5
+  coding. Along with hztty, you can also read HZ encoded text which is
+  commonly used in chinese newsgroup. You may read CXTERM.FAQ
+  (cs.purdue.edu:ftp/pub/ygz) for installation details.  Yongguang Zhang
+  is the author of this great software.
+
+  3.1.  Getting the cxterm package and hztty
+
+  cxterm5.0.p3.tar.gz is the latest version of cxterm (version 5.0).
+  This single package includes cxterm and chinese fonts. It is very easy
+  to install the cxterm. You can get cxterm and hztty from
+
+  cxterm5.0.p3.tar.gz    ftp.ifcss.org:/pub/software/x-win/cxterm
+  hztty-2.0.tar.gz       ftp.ifcss.org:/pub/software/unix/convert
+
+  3.2.  Installing cxterm
+
+  Unpacking the cxterm package
+
+       # tar -xvzf cxterm5.0.p3.tar.gz
+
+  Which will creat a new directory cxterm-5.0
+
+       # cd cxterm-5.0
+       # ./config.sh
+
+  If you want to install cxterm for all the users on the system, you
+  need to become root before you run the command ``./config.sh''. Now
+  you can follow the instruction to compile and to install cxterm.
+
+  -----------------------------------------------------------------------------
+      --- BASIC MENU ---
+    0. Read COPYRIGHT Notice
+    1. Compile, Install, and Configure "CXTERM 5.0" in One Step
+
+      --- OPTION MENU ---
+    2. Compile cxterm (not to install)
+    3. Install cxterm (after successful compilation in 2)
+    4. Install additional Chinese font(s) for your X window
+    5. Configure your account for using cxterm (after installation in 3)
+
+    x. Exit
+  -----------------------------------------------------------------------------
+  Please choose (0/1/2/3/4/5/x) :
+
+  Choose option 1 if you want the installation script to do everything
+  for you. At the middle, you will be prompt to enter the installing
+  directory.  In my case, I installed cxterm in /usr/local/chinese.
+  There are also two fonts come with the cxterm package, choose option 1
+  and 3 will install the fonts automatically. You can also install extra
+  fonts using option 4. After installing cxterm, make sure the
+  executables cxterm and CXterm in your search path.  For C shell and
+  Tcsh
+
+       # set path (/usr/local/chinese/bin $path)
+
+  For sh and bash
+
+       # setenv PATH=$PATH:/usr/local/chinese/bin ; export PATH
+
+  CXterm is a shell script for loading X window resources and bringing
+  up the cxterm.  For using cxterm in GB mode, try this
+
+  # CXterm -gb
+
+  Or in BIG5 mode
+
+       # CXterm -big5
+
+  3.3.  Installing hztty
+
+  Hztty translates Chinese between different encoding.  Unpacking
+  hztty-2.0.tar.gz
+
+       # tar -xvzf hztty-2.0.tar.gz
+       # cd hztty-2.0
+       # make linux
+
+  After compiling, move the executable hztty to your bin directory and
+  the man page to your man directory.
+
+       # mv hztty /usr/local/bin
+       # chmod 555 /usr/local/bin/hztty
+       # cp hztty.1 /usr/local/man/man1
+       # chmod 444 /usr/local/man/man1/hztty.1
+
+  Read the hztty man page for how to use hztty.
+
+  3.4.  Color patch for cxterm
+
+  There are also one patch file cxterm-5.0.p3-color.patch.gz locate in
+  the same directory as cxterm5.0.p3.tar.gz at
+  ftp.ifcss.org:/pub/software/x-win/cxterm. You can patch the cxterm
+  source to get ANSI color for cxterm. Here suppose you have the cxterm
+  source tree in /tmp/cxterm-5.0
+
+       # cp cxterm-5.0.p3-color.patch.gz /tmp
+       # gzip -d cxterm-5.0.p3-color.patch.gz
+       # patch < cxterm-5.0.p3-color.patch
+       # cd cxterm-5.0
+       # ./config.sh
+
+  The color-cxterm is kind of cool. But There is one annoying thing when
+  I try to input Chinese in color-cxterm: the input area at the low bot­
+  tom of cxterm does not redraw properly, I have to press ``Ctrl-L'' to
+  redraw the whole screen. This maybe just a termcap problem. Hope some­
+  one will give me a hint.
+
+  3.5.  Trouble shooting
+
+  Sometimes Cut  Paste may not working in cxterm shell prompt. Tcsh
+  strips the 8th bit. You need to type ``setenv LANG'' to correct this.
+  Also try ``stty pass8''.
+
+  4.  Chinese Editors
+
+  4.1.  Celvis and CVim -  clones of vi/ex
+
+  C-Elvis is a clone of vi/ex, the standard UNIX editor. C-Elvis
+  supports editing of Chinese text, English text, and the mixture of
+  both. C-Elvis supports nearly all the vi/ex commands, in both visual
+  mode and ex (colon) mode, for both Chinese and English characters. You
+  can use C-Elvis for both GB2312-80 standard and Big5 encoding Chinese
+  text. You need to use it in a Chinese terminal such as cxterm to
+  input/output Chinese character.
+
+  4.1.1.  Getting the celvis
+
+  The ftp site for celvis is
+
+  celvis-1.3.tar.gz               ifcss.org:/pub/software/unix/editor
+
+  4.1.2.  Installing celvis
+
+       # tar -xvzf celvis-1.3.tar.gz
+       # cd celvis
+
+  You need to edit tmp.c, delete line 93-95
+
+  ______________________________________________________________________
+  #if OS9
+                    if we don't have write permission...
+  #endif
+  ______________________________________________________________________
+
+  Then you can compile it by
+
+       # cp Makefile.s5 Makefile
+       # make install
+
+  Because the Makefile is not for Linux, you may get a lot of warning
+  messages. But you can ignore all of them. The celvis will installed in
+  in /usr/local/bin.
+
+  4.1.3.  Cvim
+
+  CVim is a patch to add Chinese support for vim-4.2.  CVim includes
+  some vi's features which are not supported by celvis-1.3, such as line
+  number, line wrap, and large file editing.  you can get
+  vim-4.2-Chinese-patch and vim-4.2.tar.gz at
+  ftp.csie.nctu.edu.tw:/pub/Unix/Chinese/cvim
+
+       # tar -xvzf vim-4.2.tar.gz
+       # cd vim-4.2/src
+       # patch < ../../vim-4.2-Chinese-patch
+
+  The file ``vim-4.2/src/feature.h'' can be edited to match your prefer­
+  ences. Compiling is simple, just do
+
+       # make
+       # make install
+
+  4.2.  Cjoe - Joe's Own Chinese Editor
+
+  JOE is a professional freeware ASCII text screen editor for UNIX.  JOE
+  has the feel of most IBM PC text editors. Although I am not using it
+  myself, it is definitly a great editor.
+
+  4.2.1.  Getting cjoe
+
+  You can find cjoe-2.8.tgz at the same place as celvis-1.3.tar.gz
+
+  cjoe-2.8.tgz            ifcss.org:/pub/software/unix/editor
+
+  4.2.2.  Compiling and Installing cjoe
+
+  Edit the Makefile file if you want to change the locations for
+  binaries, keymap initialization files and man page. Otherwise, just do
+  the following
+
+       # make
+       # make install
+
+  4.3.  Cemacs and CChelp For Emacs
+
+  Cemacs is a method of using GNU Emacs to display and edit Chinese
+  files.  To use Cemacs, it is necessary to run Emacs on a Chinese
+  terminal or under a Chinese terminal emulator program such as cxterm.
+  CCHELP is a system to obtain instant helpful information on Chinese
+  characters. Once CCHELP is installed, you can click the mouse on any
+  Chinese character and a help messag will appear giving the character
+  itself, its PinYin pronunciation, and an indication of its English
+  meaning. Both GB- and Big5-coded Chinese are supported.
+
+  4.3.1.  Getting Cemacs and CChelp
+
+  Both cemacs and cchelp can be fetched at
+  ftp.math.psu.edu:/pub/simpson/chinese
+
+  4.3.2.  Installing
+
+  Follow the README files for cemacs and cchelp.
+
+  4.4.  Mule and Xemacs 20.0
+
+  4.4.1.  Getting Mule-2.3 and the Patch for Linux
+
+  mule-2.3.tar.gz            ftp.ifcss.org:/pub/software/mule/editor
+                             sunsite.unc.edu:/pub/Linux/distribution/je/sources/mule
+  mule-2.3+lx.diff.gz        sunsite.unc.edu:/pub/Linux/distribution/je/sources/mule
+
+  4.4.2.  Compile and Installing
+
+  Unpack the package and apply the patch
+
+       # tar -xvzf mule-2.3.tar.gz
+       # patch < mule-2.3+lx.diff
+       # cd mule-2.3/
+       # ./configure "i386-*-linux" --with-x11 --with-x-toolkit --with-gcc
+
+  If you want to customize your mule, read the file ``INSTALL'' and try
+  ``./configure --help''. After the configuration, you need to modify
+  the file ``src/Makefile'' a little bit, change ``-lcurses'' to
+  ``-lncurses''. Now
+
+       # make
+       # make install
+
+  The default installation directory is /usr/local.
+
+  4.4.3.  Use Chinese in Mule-2.3
+
+  If you have fonts intalled, you can use mule for input/output Chinese.
+  Most of the Chinese fonts are 16 pts or 24 pts, so try
+
+       # mule -fn 8x16 &
+
+  Or
+
+       # mule -fn 12x24 &
+
+  In mule type M-x load-library RETURN chinese RETURN .  The command
+  ``Ctrl-]'' toggles input methods.
+
+  4.4.4.  Xemacs 20.0
+
+  Haven't try yet.
+
+  5.  Installing Chinese fonts
+
+  5.1.  Installing X window fonts
+
+  5.1.1.  Where to get GB and BIG5 fonts
+
+  Most likely you may already have some Chinese fonts sitting in your
+  system. You can find GB fonts by
+
+       # xlsfonts | grep gb
+       -cclib-song-medium-r-normal--0-0-72-72-c-0-gb2312.1980-1
+       -cclib-song-medium-r-normal--16-160-72-72-c-160-gb2312.1980-1
+       -isas-fangsong ti-medium-r-normal--0-0-72-72-c-0-gb2312.1980-0
+       -isas-fangsong ti-medium-r-normal--16-160-72-72-c-160-gb2312.1980-0
+       -isas-song ti-medium-r-normal--0-0-72-72-c-0-gb2312.1980-0
+       -isas-song ti-medium-r-normal--16-160-72-72-c-160-gb2312.1980-0
+       -isas-song ti-medium-r-normal--24-240-72-72-c-240-gb2312.1980-0
+       hanzigb13fs
+       hanzigb13st
+       hanzigb16fs
+       hanzigb16st
+       hanzigb24st
+
+  The last five fonts in this case are just the aliases of the first
+  five fonts. Or to find BIG5 fonts
+
+       # xlsfonts | grep big5
+       -kc-kai-medium-r-normal-fantizi-0-0-75-75-c-0-big5.eten.3.10-1
+       -kc-kai-medium-r-normal-fantizi-20-200-75-75-c-200-big5.eten.3.10-1
+       -kc-kai-medium-r-normal-fantizi-24-240-75-75-c-240-big5.eten.3.10-1
+       -kc-ming-medium-r-normal-fantizi-0-0-75-75-c-0-big5.eten.3.10-1
+       -kc-ming-medium-r-normal-fantizi-15-150-75-75-c-160-big5.eten.3.10-1
+       -kc-ming-medium-r-normal-fantizi-24-240-75-75-c-240-big5.eten.3.10-1
+       -uw-ming-medium-r-normal-fantizi-0-0-75-75-c-0-big5.eten.3.10-1
+       -uw-ming-medium-r-normal-fantizi-16-160-75-75-c-160-big5.eten.3.10-1
+       -uw-ming-medium-r-normal-fantizi-20-200-75-75-c-200-big5.eten.3.10-1
+       -uw-songti-medium-r-normal-fantizi-0-0-75-75-c-0-big5.eten.3.10-1
+       -uw-songti-medium-r-normal-fantizi-20-200-75-75-c-200-big5.eten.3.10-1
+       -uw-songti-medium-r-normal-fantizi-24-240-75-75-c-240-big5.eten.3.10-1
+
+  If you don't have any Chinese fonts installed or just want more fonts,
+  you may look into ftp.ifcss.org:/pub/software/fonts/ where gb/bdf/ is
+  for GB fonts, big5/bdf is for BIG5 fonts.
+
+  5.1.2.  Installing X fonts
+
+  Suppose you get BIG5 font eb5-24k2.bdf.gz and GB font gb24st.bdf.gz.
+  To build the fonts into .pcf format
+       # gzip -cd eb5-24k2.bdf.gz | bdftopcf -t > eb5-24k2.pcf
+       # gzip -cd gb24st.bdf.gz | bdftopcf -t > gb24st.pcf
+       # compress *.pcf
+
+  Install the fonts into /usr/X11R6/lib/X11/fonts/misc
+
+       # mv *.pcf.Z /usr/X11R6/lib/X11/fonts/misc/
+       # cd /usr/X11R6/lib/X11/fonts/misc
+       # mkfontdir .
+
+  After installing the fonts, looking into the file fonts.dir, which now
+  contains two lines
+
+       eb5-24k2.pcf.Z -kc-kai-medium-r-normal-fantizi-24-240-75-75-c-240-big5.eten.3.10-1
+       gb24st.pcf.Z -isas-song ti-medium-r-normal--24-240-72-72-c-240-gb2312.1980-0
+
+  You may need to make aliases for these fonts, which will save you a
+  lot of typing when bringing up Chinese software, add two lines to the
+  file fonts.alias
+
+       gb24st    "-isas-song ti-medium-r-normal--24-240-72-72-c-240-gb2312.1980-0"
+       taipeik24 "-kc-kai-medium-r-normal-fantizi-24-240-75-75-c-240-big5.eten.3.10-1"
+
+  Now inform your X window system server by
+
+       # xset fp rehash
+
+  If everything goes well, you can use your new fonts now
+
+       # cxterm -GB -fn 12x24 -fh gb24st &
+
+  5.2.  HBF fonts
+
+  HBF fonts contain header files and bitmap font files. You need to get
+  both header file and font files to install one HBF font. HBF fonts are
+  in ftp.ifcss.org:/pub/software/fonts .
+
+  Suppose you want to use font ccfs24.hbf, a GB, FangSong, Jianti font,
+  you should get three files ccfs24.hbf, cclib.n24 and ccsys.24. The
+  file 00index.txt in the ifcss fonts directory gives you filenames of
+  each HBF font.
+
+  6.  Printing Utilities
+
+  6.1.  CNPRINT
+
+  Cnprint is an utility to print Chinese text or convert Chinese text to
+  PostScript. It works just like a print command and support GB, HZ and
+  BIG5 formats.
+
+  6.1.1.  Where is cnprint
+
+  cnprint260.tar.gz can be found at
+  ftp.ifcss.org:/pub/software/unix/print
+
+  6.1.2.  Install cnprint
+
+  The package cnprint260.tar.gz contains only four files
+
+       # ls
+       cnprint.1     cnprint.c     cnprint.cmd   cnprint.help
+
+  You can compile it by
+
+       # gcc cnprint.c -o cnprint
+       # mv cnprint /usr/local/bin
+       # mv cnprint.1 /usr/local/man/man1
+
+  For cnprint to work properly, you need to specify the full path for
+  the fonts files (HBF fonts). In csh or tcsh
+
+       # setenv HBFPATH "/usr/local/chinese/HBF/"
+
+  In sh or Bash
+
+       # set HBFPATH="/usr/local/chinese/HBF/"; export HBFPATH
+
+  The file cnprint.cmd contains the default settings for cnprint. It
+  should be put in BFPATH
+
+       # cp cnprint.cmd $HBFPATH
+
+  If you convert Chinese text file to PostScript use the command
+  ``cnprint -w FILENAME''
+
+  6.2.  GB2PS
+
+  GB2PS is another printing utility support GB and HZ encoding. It comes
+  with a cover page for printing HXWZ.
+
+  6.2.1.  Where to find GB2PS
+
+  Package:
+  gb2ps.2.02.tar.gz       ftp.ifcss.org:/pub/software/unix/print
+
+  fonts:
+  csong24.ccf     ckai24.ccf   ftp.ifcss.org:/pub/software/fonts/gb/misc
+  cfang24.ccf     chei24.ccf
+
+  Put fonts in some place. Mine is in /usr/local/chinese/CFONT
+
+  6.2.2.  Installing GB2PS
+
+  Before you compile gb2ps, you need to change two settings in the
+  Makefile, the fonts directory and cover page location
+
+       CFONT=/usr/local/chinese/CFONT/
+       COVERPAGE=/usr/local/chinese/lib/cover.ps
+
+  Then just type
+
+       # make
+       # cp gb2ps /usr/local/bin
+
+  6.3.  DTop
+
+  Don't know much about it
+
+  7.  Displaying Chinese in Netscape
+
+  There are many web pages on the Internet devoting to this topic.
+  Netscape (better use version 2.1 and up) supports both GB and BIG5.
+  Hare are three steps to view Chinese(BIG5) in Netscape
+
+  1. Setup X fonts as in ``Section ``''''
+
+  2. Bring up netscape and choose menu Options/Document
+     Encoding/Tranditional Chinese (Big5)
+
+  3. In menu Options/General Preferences/fonts choose the font you want
+     to use.
+
+     But you may wonder why you can only use Fixed(HKU) Size 16.0.  It
+     turns out you need to edit the /usr/X11R6/lib/X11/app-
+     defaults/Netscape to get more fonts.  Suppose you have the
+     following BIG5 fonts
+
+  # xlsfonts | grep big5
+  -hku-fixed-medium-r-normal--0-0-72-72-c-0-big5.hku-0
+  -hku-fixed-medium-r-normal--16-160-72-72-c-160-big5.hku-0
+  -kc-kai-medium-r-normal-fantizi-0-0-75-75-c-0-big5.eten.3.10-1
+  -kc-kai-medium-r-normal-fantizi-20-200-75-75-c-200-big5.eten.3.10-1
+  -kc-kai-medium-r-normal-fantizi-24-240-75-75-c-240-big5.eten.3.10-1
+  -kc-ming-medium-r-normal-fantizi-0-0-75-75-c-0-big5.eten.3.10-1
+  -kc-ming-medium-r-normal-fantizi-15-150-75-75-c-160-big5.eten.3.10-1
+  -kc-ming-medium-r-normal-fantizi-24-240-75-75-c-240-big5.eten.3.10-1
+  -uw-ming-medium-r-normal-fantizi-0-0-75-75-c-0-big5.eten.3.10-1
+  -uw-ming-medium-r-normal-fantizi-16-160-75-75-c-160-big5.eten.3.10-1
+  -uw-ming-medium-r-normal-fantizi-20-200-75-75-c-200-big5.eten.3.10-1
+  -uw-songti-medium-r-normal-fantizi-0-0-75-75-c-0-big5.eten.3.10-1
+  -uw-songti-medium-r-normal-fantizi-20-200-75-75-c-200-big5.eten.3.10-1
+  -uw-songti-medium-r-normal-fantizi-24-240-75-75-c-240-big5.eten.3.10-1
+
+  Add this line to your /usr/X11R6/lib/X11/app-defaults/Netscape
+
+       *documentFonts.charset*big5.eten.3.10-1:              x-x-big5
+
+  Now netscape can use all of them.
+
+  8.  Chinese Tex
+
+  Don't know much about these packages
+
+  8.1.  CJK
+
+  8.2.  Poor Man's Tex
+
+  8.3.  ChTex
+
+  9.  Using Chinese in Console -- Chdrv and WZCE
+
+  Chdrv is a Chinese Terminal Simulator.It can display Chinese without
+  X-Windows. It bases on VGALIB, and a VGA or super VGA monitor is
+  required. It supports BIG5 coding only, but you can view GB files by
+  using hztty
+
+  9.1.  Getting chdrv
+
+  chdrvbin-1.0.7.tar.gz      sunsite.unc.edu:/pub/Linux/util/nls
+                             ftp.ifcss.org:/pub/software/linux/tty
+  chdrvfont.tar.gz (HBF)     ftp.ifcss.org:/pub/software/linux/tty
+
+  9.2.  Installing chdrv
+
+  Unpack the binary distribution package
+
+       # tar -xvzf chdrvbin-1.0.7.tar.gz
+       # mv chdrvfont.tar.gz chdrv-1.0.7/
+       # cd chdrv-1.0.7
+
+  Read the install instruction file INSTALL.1.0. Edit the script file
+  installbin. If you are using shadow password for your system, you also
+  need to edit the file chinese.conf, uncomment the line
+
+  LOGINPROGRAM /bin/telnet
+
+  and comment out the line
+
+  LOGINPROGRAM /bin/login
+
+  Now you are ready to go
+
+       # ./installbin
+
+  9.3.  GB Chinese Console - WZCE
+
+  Wei Zhong Chinese Environment is a software package support Chinese
+  information processing on PC UNIX's VGA console virtual screens.
+
+  9.3.1.  Where is it
+
+  wzce_linux_elf_2.21n.tgz    ftp.ifcss.org:/pub/software/linux/tty
+
+  9.3.2.  Installing
+
+  Read wzce_linux.readme
+
+  10.  Chinese WordProcessor -- ChinesePower
+
+  A very user friendly WYSIWYG East Asia Word Processor on X window.
+  Support GB, Big5, JIS and KS encoding mixed input, PS print, and
+  display. It can generate gif file of the document with 7 colors. Cool
+  for for generating Chinese Web Page. ChinesePower uses HBF or TTF
+  fonts.
+
+  10.1.  Where to get chpower
+
+  chpower-2.0.tar.gz       ftp.ifcss.org:/pub/software/x-win/editor/
+
+  10.2.  Installing chpower
+
+  Chpower requires HBF fonts and also need Motif library to compile.
+  First modify Makefile, then
+
+       # make
+
+  will build the binaries for you. Also set some environment variables
+
+  # setenv HBFPATH /usr/local/chinese/HBF/
+  # setenv TTFPATH /usr/local/chinese/TTF/
+  # setenv HZINPUTDIR /usr/local/chinese/dict/
+  # setenv CHPOWERPATH path_of_chinesepower
+
+  11.  Wabi 2.2 and Chinese window system
+
+  I have been using SoftPC on NextStep. I have Chinese Star intalled in
+  SoftPC. It works great. But I have no extra bucks for Wabi 2.2, please
+  let me know if you are using Chinese software in Wabi 2.2 for Linux.
+
+  12.  Other Cool Stuffs
+
+  12.1.  Crxvt
+
+  The xcin.tar.gz package includes a Chinese rxvt. It supports ANSI
+  color and consumes less memory then cxterm. Xcin itself is an input
+  server (Eten Input ?). But I use crxvt only
+
+  12.1.1.  Getting Crxvt
+
+  xcin-2.1a.tgz       ftp.ifcss.org:/pub/software/x-win/xcin
+
+  12.1.2.  Compiling and Installing
+
+  Here is the procedure to compile crxvt only (xcin may need ETEN
+  system).
+
+       # tar -xvzf xcin-2.1a.tgz
+       # cd big5-pack/xcin
+       # xmkmf
+       # gcc -I/usr/X11R6/include -O2 -m486 -pipe -DDELETE_K=0 -DAuto_First=1 \
+       > -c cli_xcin.c -o cli_xcin.o
+       # cd ../crxvt
+       # xmkmf
+       # make
+       # cp crxvt /usr/local/bin
+
+  12.2.  Ktty
+
+  Ktty is another Hztty like utility for reading Chinese in kterm or
+  pxvt.  You can get ktty1.3.tar.gz from
+  ftp.ifcss.org:/pub/software/unix/convert. This package does not
+  compile on Linux. You need to use the file ``tty.c'' from the
+  hztty-2.0.tar.gz package and also add two lines to the Makefile
+
+  ______________________________________________________________________
+  linux:
+        ${MAKE} ${MFLAGS} DEFINES='-DPOSIX -DSYSV -DUSE_SYSV_UTMP' ${PROG}
+  ______________________________________________________________________
+
+  Now compile it by
+
+       # make linux
+
+  12.3.  TinTin++
+
+  TinTin++ is not a Chinese software. It is very useful when you are
+  playing Chinese Mud. TinTin++ can be found at
+  ftp.princeton.edu:/pub/tintin++.  Here are three Chinese Mud sites
+
+  FengYun                  fengyun.com   5555
+  Xi You Ji                129.105.79.24 6905
+  Xia ke Xing              207.76.64.2   5555
+
+  13.  Need more help ?
+
+  ·  rtfm.mit.edu:/pub/usenet/news.answers/chinese-text/big5-faq
+
+  ·  CXterm.FAQ
+
+  14.  Appendix - Chinese Software Catalogue of FTP.IFCSS.ORG
+
+  Waring: The precompiled the packages for Linux are out of date, and
+  may not working !
+
+  ****
+  UNIX
+  ****
+
+  ========
+  UNIX:BBS
+  ========
+
+  software: Phoenix BBS
+  version : 4.0, 1995.08.31
+  function: o UNIX platform multiuser BBS system,
+            o discussion boards, private email
+            o multichannel chat, one-to-one chat
+            o Internet Email, News gateway,
+            o 0Announce : Gopher-like information query interface.
+            o fine tuned to allow more than 256 users on-line
+            o configurable menu, screen display
+            o Chinese message
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/bbs/PhoenixBBS-4.0.tar.gz
+  author  : Ji-Tzay Yang, Ming-Feng Chen, Tzung-Yu Wen
+
+  ============
+  UNIX:C-UTILS
+  ============
+
+  software: addpy
+  version : 1.0
+  function: To annotate Pinyin to rare Hanzi and a portion of
+            randomly selected common Hanzi.  Both GB (simplified) and
+            Big5 (traditional) versions.  Based on statistics derived
+            from huge Chinese corpus and well prepared hazni-freq-pinyin
+            tables.  Source code and raw data provided.
+  URL     : ftp://ifcss.org/pub/software/unix/c-utils/addpy.tar.gz
+  filename: README.addpy, b5addpy.l, gbaddpy.l, b5addpy.dat,
+            gbaddpy.dat, makefile
+  author  : Guo Jin
+
+  software: rm4mat
+  version : n/a
+  function: remove formating codes for printing in some GB files
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/c-utils/rm4mat.c
+  author  : Chenghong Wang
+
+  software: mail_hxwz
+  version : 1.1
+  function: It extracts HXWZ from your mail (Suppose you are subscribing
+            it).  It is a Bourne shell program which works on most Unix
+            systems.  It can rerun itself every Friday automatically.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/c-utils/mail_hxwz
+  author  : Yaoen Zhang
+
+  software: auto_get_hxwz
+  Version : 1.2
+  Function: It gets the current issue of HXWZ in GB or postscipt format.
+            It also process and print these files, and do the clean up.
+            It save your time and server machine time.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/c-utils/auto_get_hxwz
+  author  : Yaoen Zhang
+
+  software: Chinese less
+  version : 290, 1995.5.25
+  function: Browse BIG5 and GB text files
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/c-utils/cless-290.tar.gz
+  author  : Paul W. Shew
+  comment : requires a chinese terminal, like cxterm.
+
+  software: cscreen
+  version : 3.2b
+  function: This is a modified screen to minic ETen in cxterm.
+            After you run cscreen in cxterm, it will intercept
+            every key movement and examine if the current
+            screen postion has a Chinese char. If it has,
+            auto-key movements will be made accordingly.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/c-utils/cscreen-3.2b.tar.gz
+  author  : Shih-Kun Huang
+
+  software: ytalk
+  version : 3.0.2c6
+  function: ytalk-3.02c provides better compatibility for DEC's
+            workstations, two-byte refresh for terminal like cxterm, and
+            capable of passing character code 254, internally used as erase
+            function in ytalk-3.0; Compatible with ytalk-3.0, cytalk-3.0,
+            cytalk-3.0.2, ytalk-3.02c0/1/2/3/4/5, that is, you can still use
+            Delete, or Backspace key.  If both ends use ytalk-3.02c4, the code
+            254 is transparent, you can use more Chinese words to talk to
+            others.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/c-utils/ytalk-3.0.2c6.tar.gz
+  author  : Sze-Yao Ni
+
+  software: lunar
+  version : 2.1
+  function: conversion program between Solar and Chinese lunar calendars;
+            calculation of birthday in "4-column" astrology as well
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/c-utils/lunar-2.1.tar.gz
+  author  : Ricky Yeung and Fung Fung Lee
+  comment : can output GB code, bitmap, or just ASCII
+
+  software: DateStar - Chinese Calendar Producer
+  version : 1.1
+  function: Displays Chinese and western calendar in
+            ASCII code, BIG-5 code (Hongkong, Taiwan),
+                GuoBiao code (PRC Standard), and HZ code (Network)
+            Prints on two most popular laser printers
+                PostScript laser printers, and
+                HP LaserJet (PCL) printers
+            Generates four different format
+                Yearly calendar, Monthly calendar,
+                One-page Weekly calendar, and Two-page Weekly calendar
+            Shows calendar with 24 Solar Terms (JieQi),
+                the Heavenly Stems and Earthly Branches
+                (TianGan DiZhi Eight Characters)
+            Supports user defined annotations
+            Applicable from year 1841 through to 2060
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/c-utils/datestar-1.1.tar.gz
+  author  : Youzhen Cheng
+  comment : UNIX version works on SUN Workstation with SUN OS 4.1.x
+            see /software/dos/c-utils for DOS version
+
+  software: pull
+  version : 2.9, 1996.4.7
+  function: 1. Extracts the original file(s) from uuencoded/compressed/split
+               file(s).
+               a) uudecode a file and display the name of its decoded file
+               b) decompress .zz (= .gz/.Z/.zip) file
+               c) uudecode + decompress
+               d) uudecode + cat (concatenate) + gunzip
+            2. Packs file. Reverse the above `extracting' process.
+               compresses, (splits), then encodes file(s)
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/utils/pull.c.gz
+  author  : Yao Li
+
+  software: utf-utils
+  version : 15 Oct 1993.
+  function: some utility programs for manipulating Unicode/ISO-10646 text
+            in the FSS-UTF encoding.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/c-utils/utf-utils.tar.gz
+  author  : Ross Paterson
+
+  software: gbfmt
+  version : 1.0
+  function: GB formatting with variable line width, GB<->HZ
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/c-utils/gbformat.tar.gz
+  author  : Dongxiao Yue (http://www.cs.umn.edu/~dyue/wiihist/gbfmt.html)
+
+  ===========
+  UNIX:EDITOR
+  ===========
+
+  software: celvis
+  version : 1.3
+  function: vi editor with Chinese handling capabilities.
+            Most run on some Chinese terminal, e.g. cxterm, or IBM-PC with
+            some kind of Chinese DOS.  Work exactly like Unix vi editor,
+            except that it side-scrolls long lines instead of wrapping.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/editor/celvis.tar.gz
+            ftp://ftp.cs.purdue.edu/pub/ygz
+  author  : Man-Chi Pong, Yongguang Zhang
+  comment : comments, bug-reports, modifications to: c-elvis@cs.purdue.edu
+
+  software: Chinese JOE (Joe's Own Editor)
+  version : 2.8c
+  function: Chinese BIG5 localized text screen editor.  The key sequences are
+            remeniscent of WordStar and TURBO-PASCAL. Makes full use of
+            termcap/terminfo, is designed to work well over slow networks and
+            low baud rate modems, and has the best features of vi. Most
+            useful for editing unformatted text, such as USENET news articles
+            and for editing block-structured languages such as C and PASCAL.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/editor/joe2.8_c.tar.gz
+  author  : <u8222034@cc.nctu.edu.tw>
+
+  ============
+  UNIX:CONVERT
+  ============
+
+  software: cn2jp
+  version : 1.3.2, 1996.4.11
+  function: code conversion routines for Chinese and Japanese
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/cn2jp1.3.2.tar.gz
+  author  : Seke Wei
+
+  software: ktty
+  version : 1.3, 1996.4.11
+  function: This is a kanji terminal translator among Chinese and Japanese.
+            It allows online translation of codes so that you can view a
+            specific code real time using your Chinese or Japanese terminal.
+            It runs on Unix and is derived from the 'hztty' package
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/ktty1.3.tar.gz
+  author  : Seke Wei
+
+  software: code1
+  version : 1.3, 1996.4.11
+  function: This is a multilingual file browser for Chinese and Japanese.
+            It runs on Unix and allows browsing of files in various codes
+            using a Chinese or Japanese terminal.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/code1.3.tar.gz
+  author  : Seke Wei
+
+  software: HUG program
+  version : 1.0, 1995.5.20
+  function: Converting between HZ, Uudecode/uuencode, GB codes
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/shug.osf.zip
+            ftp://ftp.ifcss.org/pub/software/unix/convert/shug.sun4.zip
+  author  : Yinrong Huang
+
+  software: hztty
+  version : 2.0 Jan 29, 1994
+  Function: This program turns a tty session from one encoding to another.
+            For example, running hztty on cxterm can allow you to read/write
+            Chinese in HZ format, which was not supported by cxterm.
+            If you have many applications in different encodings but your
+            favor terminal program only supports one, hztty can make life easy.
+            For example, hztty can your GB cxterm into a HZ terminal, a
+            Unicode (16bit, or UTF8, or UTF7) terminal, or a Big5 terminal.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/hztty-2.0.tar.gz
+  author  : Yongguang Zhang
+
+  software: EHZ
+  version : 2.0
+  function: Conversion among GB/BIG5/CNS and EHZ-BIG5/GB/CNS.
+            Patch to hztty to support EHZ-BIG5/GB/CNS.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/EHZ-2.0.tar.gz
+  author  : Ricky Yeung
+  comment : Also contains the EHZ spec and Fung Fung Lee's EHZ-BIG5-CNS spec.
+
+  software: b5cns
+  version : prototype
+  function: functions to convert Big5 <-> CNS
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/b5cns.tar.gz
+  author  : Ross Paterson
+
+  software: c2t
+  version : n/a
+  function: converts GB or BIG5 coded chinese to _pinyin_
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/c2t.tar.gz
+  authors : Tommi Kaikkonen and Katya Ta
+
+  software: BeTTY/CCF/B5Encode package
+  version : 1.534, 1995.03.22
+  function: a chinese code conversion package for codes widely used
+            in Taiwan and the GB code widely used in Mainland, plus
+            a 7-bit Big5 encoding method (B5Encode3/B5E3, an extension
+            to HZ encoding for GB),
+            including off-line converters (CCF/Chinese Code Filters and
+            B5E/B5Encode) and an on-line converter (BeTTY) which simulates
+            your native chinese terminal to become aware of the coding
+            systems widely used in Taiwan and GB, HZ encoding.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/BeTTY-1.534.tar.gz
+            ftp://hermes.ee.nthu.edu.tw/shin/betty/BeTTY-1.534.tar.gz
+  author  : Jing-Shin Chang
+
+  software: BeTTY-ws_2fl.p1
+  version : 1.0 (patch to BeTTY-1.534) Oct. 1995.
+  function: 1. makes BeTTY respect the window(tty) size.
+            2. a second Chinese code converting filter can be added on.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/BeTTY-ws2fl.p1.tar.gz
+  author  : Wei Dong
+
+  software: c2gif
+  version : 0.01, 1995.10.21
+  function: convert a BIG5 text file to a GIF file
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/c2gif001.tar.gz
+            http://www.math.ncu.edu.tw/~luors/c2gif/
+  author  : Luoh Ren-Shan
+  software: gb2jis
+  version : 1.5, 1995.11.19
+  function: convert GB (or HZ) to JIS with two-letter pinyin
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/gb2jis.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/gb/bdf/guobiao16.bdf.gz
+  author  : Koichi Yasuoka
+
+  software: jis2gb
+  version : 1.5, 1996.1.10
+  function: convert JIS to GB (or HZ)
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/jis2gb.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/gb/bdf/guobiao16.bdf.gz
+  author  : Koichi Yasuoka
+
+  software: HZ
+  version : 2.0
+  function: convert among GB, HZ and zW
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/HZ-2.0.tar.gz
+  author  : Fung F. Lee
+
+  software: HZ+ specification and conversion utilities
+  version : 0.77
+  function: HZ+ is a convenient 7-bit representation of mixed Big5, GB,
+            and ASCII text for use in Internet e-mail, news, etc.
+            Source code for Big5 <-> HZ+ and GB <-> HZ+ conversion
+            utilities is here.  DOS executables can be found in
+            another archive, /software/dos/convert/hzp.zip.  New in
+            this Unix version is a simple HZ+ terminal program for cxterm
+            which allows the user to transparently read HZ+ mail and news.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/hzp.tar.gz
+  author  : Stephen G. Simpson
+
+  software: hc
+  version : 3.0
+  function: convert between GB and BIG5
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/hc-30.tar.gz
+  author  : Fung F. Lee and Ricky Yeung
+
+  software: Support Table for Hanzi Convert (hc)
+  version : 1994/05/01
+  function: Convert table supports the program Hanzi Convert
+            (Author  : Fung F. Lee and Ricky Yeung) GB<->Big5.
+            Include Russian, number, Japanese, graphing symbols and
+            "incorrect" codes. Text file, comments in it.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/sym-supp.tab
+            ftp://ftp.ifcss.org/pub/software/unix/convert/in-corr.tab
+  author  : Chi-Ming Tsai
+
+  software: pbmbig5
+  version : 0.01, 1995.11.2
+  function: convert big5 coded Chinese text file to pbm graphic file
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/pbmbig5-0.01.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/big/hbf/kck24.hbf
+            ftp://ftp.ifcss.org/pub/software/fonts/big/hbf/kcchin24.f02
+  author  : Wei-Jou Chen
+
+  software: UTF utilities
+  version : 31 May 1994.
+  function: various utilities for the UTF encoding of Unicode/ISO-10646,
+            including conversion from ISO-2022 and (partially) back again.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/utf.tar.gz
+  author  : Ross Paterson
+
+  software: utf7
+  version : prototype, use at your own risk
+  function: functions to convert between UTF-7 and other codes
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/utf7.tar.gz
+  author  : Ross Paterson
+
+  software: ISO-2022-CN encoder and decoder
+  version : beta 960408
+  function: Convert between CN-GB and CN-CNS codes
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/convert/iso-cn.tgz
+  author  : handa@etl.go.jp
+  comment : BIG5 code is not yet supported.
+
+  ===============
+  UNIX:NETWORKING
+  ===============
+
+  software: gopher2.014c
+  version : 2.0.14
+  function: A Chinese localized gopher client capable of 8-bit BIG5 Chinese
+            string search on IBM AIX, SUN OS, and any other machines.
+            Compatable with any BIG5 Chinese system such as ET and
+            cxterm. executable binary for ibm and sun included.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/networking/gopher2.014c.tar.gz
+            ftp://ftp.ifcss.org/pub/software/unix/networking/gopher.ibm.tar.gz
+            ftp://ftp.ifcss.org/pub/software/unix/networking/gopher.sun.tar.gz
+  author  : Hoo-Tung Cheuk (NCTU CIS, Taiwan)
+
+  software: Chinese Tin
+  version : 1.2PL2a
+  function: tin 1.2PL2 newsreader with English/Big5 message toggle.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/networking/ctin122a.tar.gz
+  author  : Shih-Kun Huang
+
+  software: NcFTP with chinese message compatible
+  version : 2.3.0c, 1996.1.17
+  function: Chinese (BIG5) patch to NcFTP.
+            Now it can display any chinese message from ftp server instead
+            of "\xxx".  ANSI color compatible in Line Mode.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/networking/ncftp-2.3.0.chinese.tgz
+  author  : NCEMRSoft (orig), Aiken Sam (chinese patch)
+
+  ==========
+  UNIX:PRINT
+  ==========
+
+  software: C2PS
+  version : 1.30 Aug 1 1995
+  function: Translate Big5 coded Chinese document into Level 2 PostScript.
+            This is the version for Sparcstation. Using Chinese TrueType fonts,
+            you can create the most beautiful document with C2PS.
+            This is a DEMO version. You can freely copied and use it.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/print/c2ps130sos.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/big5/ms-win/
+  author  : Hsueh-I Lu
+
+  software: cnprint
+  version : 2.60  JAN-25-95
+  function: print GB/Hz/BIG5/JIS/KSC/UTF8 etc or convert to PostScript
+            (conforms to EPSF-3.0). Fast.  Multicolumn. Vertical printing.
+            Small disk space requirement. "Intelligent" treatment of
+            punctuations.  Flexible change of fonts, char size,
+            width/height, char and line spaces, paper orientation and
+            margins, etc.  Support of European chars.  Special modes for
+            printing HXWZ.  See readme for more
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/print/cnprint260.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/{gb,big5,misc,unicode}/hbf/
+  author  : Yidao Cai
+  comment : v2.60 is also for VMS, use v2.61 for DOS
+  software: GBscript
+  version : 1.11
+  function: Convert GB/ASCII mixed text to PostScript output.
+            High print speed (4ppm on LaserWriter NTX).
+            Support Adobe-2.1.
+            Small PS file size (400K for one HXWZ issue).
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/print/gbscript-1.11.tar.gz
+  author  : Yan Zhou
+
+  software: gb2ps
+  version : 2.02
+  function: convert GB/HZ to postscript, supports simple page formatting
+            (change chinese fonts and font size, cover page, page
+            number, etc). Five chinese fonts are provided in this
+            release, they are Song, Kai, Fang Song, Hei and FanTi
+            The HZ ENCODING is also supported.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/print/gb2ps.2.02.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/fan24.ccf.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/fang24.ccf.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/hei24.ccf.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/kai24.ccf.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/song24.ccf.gz
+  author  : Wei SUN
+
+  software: news2ps
+  version : n/a
+  function: news2ps converts BIG5 to Postscript
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/print/news2ps.c
+            ftp://ftp.ifcss.org/pub/software/fonts/big5/misc/chinese.16.new
+  author  : The Society of HKU Postgraduate on Chinese Affairs
+  comment : rename chinese.16.new to chinese.16
+
+  software: hz2ps
+  version : 3.1
+  function: Convert hanzi (GB/BIG5) text to PostScript.
+            Use HBF font files.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/print/hz2ps-3.1.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/{gb,big5}/hbf/
+  author  : Fung F. Lee
+
+  ===========
+  UNIX:VIEWER
+  ===========
+
+  software: ChiRK
+  version : 1.2a
+  function: GB/HZ/BIG5 text viewer on terminals (or emulations) capable
+            of displaying Tektronics 401x graphics, such as GraphOn,DEC
+            VT240/330, Xterm, Tektool on Sun, EM4105 on PC,
+            VersaTerm-Pro on Mac, etc.
+            displays up to 17x40 Chinese characters per screen. works directly
+            under UNIX mail and news programs. Comes with four fonts.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/viewer/ChiRK-1.2a.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/gb/hbf/cclib.v
+            ftp://ftp.ifcss.org/pub/software/fonts/gb/hbf/cclib.16
+            ftp://ftp.ifcss.org/pub/software/fonts/gb/hbf/cclibf.16.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/big5/misc/chinese.16.new.gz
+  author  : Bo Yang
+  comment : rename chinese.16.new to chinese.16
+
+  software: Cbanner
+  version : 1.10, 950821
+  function: To show Chinese word's banner
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/banner/cbanner1.10.tar.gz
+  author  : Sheen Cherng-Dar, rewritten by Jonen Liu
+  comment : requires ETen Big5 Chinese System's fonts.
+  software: gb2text
+  version : n/a
+  function: convert GB to text
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/viewer/gb2text.c
+  author  : Ding Yijun
+
+  software: hzbanner
+  version : 1.1, Feb 15, 1995
+  function: Display Song style GuoBiao in large ASCII characters,
+            supports GB2312-80 (^[$A), GB2312-80 + GB8565-88 (^[$(E),
+            Chinese-EUC (8-bit Guobiao) CNS Plane 1 & 2, BIG5 and HZ-encoding
+            ( ç·ã)
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/viewer/hzbanner11.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/gb/bdf/guobiao16.bdf.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/cns/bdf/cns1hku16.bdf.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/cns/bdf/cns2hku16.bdf.gz
+  author  : Koichi Yasuoka
+
+  software: hzview
+  version : 3.1
+  function: Display hanzi (GB/BIG5) text on dumb terminal.
+            Use HBF font files.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/viewer/hzview-3.1.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/{gb,big5}/hbf/
+  author  : Fung F. Lee
+
+  Software: cnview
+  Version : 3.1 (UNIX version. DOS version available under /software/dos/viewer)
+  Function: View GB/Hz/Big5 encoded Chinese text file on * HP-UNIX (X-window) *
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/viewer/cnview.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/{big5,gb}/hbf/
+  Author  : Jifang Lin (æåºè³)
+
+  software: readgb
+  version : n/a
+  function: convert GB to text
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/viewer/readgb.c
+  author  : Yuzhao Lu
+  comment : modified from readnews.c
+
+  software: readnews
+  version : n/a
+  function: readnews converts BIG5 to ascii dot-matrix picture
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/viewer/readnews.c
+            ftp://ftp.ifcss.org/pub/software/fonts/big5/misc/chinese.16.new.gz
+  author  : The Society of HKU Postgraduate on Chinese Affairs
+  comment : rename chinese.16.new to chinese.16
+
+  ==========
+  UNIX:INPUT
+  ==========
+
+  software: CCTeach
+  version : 1.0
+  function: Chinese Character input method Teacher.
+            Help new user to learn CC input and some utility programs
+                of "cxterm NewFace" for associate dictionary tool,
+                hotkey tool, WuBi phrase encoder, and converter with
+                ".tit" <==> ".titnf".
+            Based on GB and Big5 (ETen and HongKong).
+            Support all input method by external dictionary file.
+            Need cxterm in unix, CC DOS or ZW DOS in PC.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/input/CCTeach1.0.tar.gz
+  author  : Xiaokun Zhu
+
+  =========
+  UNIX:MISC
+  =========
+
+  software: ICCS 1.3
+  version : 1.3, June 26, 1994
+  function: Internet Chinese Chess Server
+  URL     : ifcss.org:/software/unix/misc/iccs-1.3.tar.gz
+  author  : Xi Chen
+  comment : file off-lined due to legal status July 3, 1996. Please contact
+            the author Xi Chen at xichen@abel.math.harvard.edu for further info.
+
+  ========
+  UNIX:WWW
+  ========
+
+  software: cdelegate
+  version : 1.4a, 1996.5.1
+  function: This is a Chinese patch on DeleGate, a gateway for the WWW services.
+            provides code translation between Chinese/Japanese for WWW browsers
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/www/cdelegate1.4.tar.gz
+  author  : Seke Wei
+
+  software: Chinese Lynx
+  version : 2.5FMc, 1996.7.19
+  function: Chinese BIG5/GB patch to lynx, a WWW client for vt100 terminals.
+            Volunteers needed to continue on the patch.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/www/clynx25.zip
+  author  : Nelson Chin
+
+  software: Internet MahJong Server (server + client applet)
+  version : 0.2beta
+  function: provides a server and a graphic client for playing MahJong on
+            the Internet.
+  URL     : ftp://ftp.ifcss.org/pub/software/unix/www/MJ_dist.tar.gz
+  author  : Zuwei Thomas Feng
+  *****
+  LINUX
+  *****
+
+  software: D Series (Chinese Tools, ELF binary)
+  version : 1.00,  March 25, 1995
+  function: Binary distribution of various useful Chinese tools:
+            Viewers -- cxterm, crxvt; Input server -- xcin; GB,Big5,HZ,B5E3
+            code converters -- ccf, hc, hz2gb, gb2hz, zw2hz, b5decode,
+            b5encode; Print tool -- lunar, ttf2ps; Pseudo tty -- hztty,
+            betty; Various handy scripts, man pages, dictionaries, HBF fonts,
+            xfonts included; chdrv, celvis, elm, sendmail
+  URL     : ftp://ftp.ifcss.org/pub/software/linux/CLinux/CTool/d1
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/CTool/d2
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/CTool/d3
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/CTool/d4
+  author  : Eric Lin
+  comment : requires XFree86 3.1+, ELF libraries
+
+  software: C Series (Chinese packages for Slackware)
+  version : N/A
+  function: The Chinese packages collected by Wei-Jou Chen can be installed by
+            Slackware's setup tools. Basic idea are that we have right to install
+            and remove Chinese softwares easily and beginners can play them
+            without much trouble.
+  URL     : ftp://ftp.ifcss.org/pub/software/linux/CLinux/c1/
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/c2/
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/c3/
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/c4/
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/c5/
+  compiler: CHEN, Wei-Jou
+  software: MU Series (Mule packages for Slackware)
+  version : N/A
+  function: The Multilingual Emacs 2.0 packages for XFree86 2.X and 3.1
+            collected by Shawn Hsiao can be installed by Slackware's setup
+            tools
+  URL     : ftp://ftp.ifcss.org/pub/software/linux/CLinux/mu1/
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/mu2/
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/mu3/
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/mu4/
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/mu5/
+            ftp://ftp.ifcss.org/pub/software/linux/CLinux/mu6/
+  compiler: Shawn Hsiao
+
+  =============
+  LINUX:C-UTILS
+  =============
+
+  software: GNU fileutils-3.9
+  version : 3.9, 1 August 1994
+  function: Chinese version of the GNU file utility programs for Linux.
+  URL     : ftp://ftp.ifcss.org/pub/software/linux/c-utils/fileutils-3.9-bin-chinese.tar.gz
+  author  : Patrick D'Cruze
+
+  software: C2PS
+  version : 1.30 Aug 1 1995
+  function: Translate Big5 coded Chinese document into Level 2 PostScript.
+            This is the version for Linux. Using Chinese TrueType fonts, you
+            can create the most beautiful Chinese documents with C2PS.
+            This is a DEMO version. You can freely copied and use it.
+  URL     : ftp://ftp.ifcss.org/pub/software/linux/chinese_utils/c2ps130lnx.tar.gz
+            ftp://ftp.ifcss.org/pub/software/fonts/big5/ms-win/
+  author  : Hsueh-I Lu
+
+  ============
+  LINUX:EDITOR
+  ============
+
+  software: ãæ¼¢æ¸ãfor Linux (promotion version)
+  version : v2.163
+  function: PE2-like text editor, special designed for Chinese
+  URL     : ftp://ftp.ifcss.org/pub/software/
+  agent   : LU, Heman (åæµ·é)
+
+  =========
+  LINUX:TTY
+  =========
+
+  software: chdrv
+  version : 1.0.7, 1995.12.20
+  function: Chinese Terminal Simulator. Does not require X-Windows.
+  URL     : ftp://ftp.ifcss.org/pub/software/linux/tty/chdrv-1.0.7.tar.gz
+            ftp://ftp.ifcss.org/pub/software/linux/tty/chdrvbin-1.0.7.tar.gz
+            ftp://ftp.ifcss.org/pub/software/linux/tty/chdrvfont.tar.gz
+  author  : WANG, Yu-Chung
+
+  ===========
+  LINUX:X11R6
+  ===========
+
+  software: Behavior DTop (for Linux) [å­æ¸ä¸­è±ææçç³»çµ±]
+  version : 1.4, Beta
+  function: A full-featured Chinese DeskTop Publishing Software Package
+            characterized by object-oriented design for manipulating
+            various document objects, including text, tables, graphics,
+            equations, images, in an integrated way. Two outline fonts
+            are provided in the Beta Version. PostScript output.
+            Good as an English DeskTop Publishing Software Package too.
+            (See the README's & formated DTop manual files for a long and
+            complete list of functions and characteristics).
+  URL     : ftp://ftp.ifcss.org/pub/software/linux/X11R6/dtop1.4/
+  author  : DTop Development Group
+
