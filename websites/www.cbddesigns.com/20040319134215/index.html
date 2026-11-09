@@ -1,0 +1,925 @@
+<HTML>
+
+<HEAD>  <!-- Created with AOLpress/2.0 -->
+	<TITLE>CBDDESIGNS HOME PAGE</TITLE>
+
+	
+
+<meta http-equiv="Page-Enter" content="blendTrans(Duration=0)">
+<LINK REL=stylesheet HREF="indexdoc.css" TYPE="text/css">
+
+<script language="javascript">
+/****************************************************************************************************
+Change this to false if you want all the submenus to get unfold when you
+foldout a new one.
+*****/
+var stayFolded=false
+var stayFolded2=true
+var m1Limit=5
+var ThisDoc=-1
+var initialized = false
+var clickmenu = -1
+</script>
+
+<script language="javascript" type="text/javascript">
+/****************************************************************************************************
+Copyright (C) 1999 Thomas Brattli
+This script is made by and copyrighted to Thomas Brattli at www.bratta.com
+Visit for more great scripts. This may be used freely as long as this msg is intact!
+
+This script is a "foldout" menu script, all the "foldouts" will stay outfolded in older browsers.
+Works in ie4+ and ns4+.
+
+To change where the menu appears change the left and top values of the divCont in the stylesheets,
+it's currently placed relative so you can place this menu in tables or similar if you want.
+Change the text colors and size in the A.clMain and A.clSubb classes.
+
+/****************************************************************************************************
+Browsercheck																					*****/
+var n = (document.layers) ? 1:0;
+var ie = (document.all) ? 1:0;
+var browser=((n || ie) && parseInt(navigator.appVersion)>=4);  
+var version = window.navigator.appVersion;
+var pos = version.search(/MSIE/i) + 5;
+version = version.substr(pos,1);
+var LastRow = -1;
+var LastCol = -1;
+var InSub=false
+
+/****************************************************************************************************
+Making cross-browser objects																	*****/
+function makeMenu(obj,nest)
+{
+	nest=(!nest) ? '':'document.'+nest+'.'										
+	this.css=(n) ? eval(nest+'document.'+obj):eval('document.all.'+obj+'.style')					
+   	this.ref=(n) ? eval(nest+'document.'+obj+'.document'):eval('document');		
+	this.height=n?this.ref.height:eval(obj+'.offsetHeight')
+	this.x=(n)? this.css.left:this.css.pixelLeft;this.y=(n)? this.css.top:this.css.pixelTop;
+	this.name=eval('document.all.'+obj)							
+	this.hideIt=b_hideIt;	this.showIt=b_showIt; this.vis=b_vis; this.moveIt=b_moveIt
+	this.ShowBack=b_ShowBack; this.HideBack=b_HideBack											
+	return this
+}
+//This function controls the color of the text of the dropdown menu after mousing over the words in it.
+function b_ShowBack() { this.css.color='yellow';
+  		 			  	this.css.background='0000FF';
+		 				this.css.cursor='hand';
+						window.defaultStatus='HOME'}
+//This function controls the color of the text of the dropdown menu after mousing over any part of the table.
+function b_HideBack() { this.css.color='cyan';
+		 			  	this.css.background=0;
+						window.defaultStatus='Site Optimized for 1024x768 Resolution with Small Fonts.'}
+function b_showIt()   { this.css.visibility="visible"}
+function b_hideIt()   { this.css.visibility="hidden"}
+function b_vis()      { if(this.css.visibility=="hidden" || this.css.visibility=="hide") return true;}
+function b_moveIt(x,y){ this.x=x;
+		 				this.y=y;
+						this.css.left=this.x;
+						this.css.top=this.y}
+function RsetSubMenu()
+{
+   if (LastRow != -1)
+   {
+      oSubButton[LastRow][LastCol].css.backgroundColor= '#0000ff';
+	  oSubButton[LastRow][LastCol].css.color = '#ffffff';
+	  LastRow = -1;
+   }
+}
+function SubMenu(row,col)
+{
+   RsetSubMenu()
+   oSubButton[row][col].css.backgroundColor= '#000080';
+   oSubButton[row][col].css.color = '#ff00ff';
+   oSubButton[row][col].css.cursor = 'hand';
+   LastRow = row;
+   LastCol = col;
+ }
+/****************************************************************************************************
+This is the function that changes the sub menus to folded or unfolded state.					*****/
+function menu(num)
+{
+ 	if (!initialized) return;
+    if (num != LastRow | !InSub)
+	{
+	   RsetSubMenu()
+	}
+ 	if (num > -1)
+	{
+ 	   var w = oButton[num].name.clientWidth
+	}
+	if(browser)
+	{
+		if(!stayFolded)
+		{	
+			for(i=0;i<oMenu.length;i++)
+			{
+			 	if (oMenu[i] == 1) 
+				{
+				   if(i!=num) oSub[i].hideIt()
+				   oButton[i].css.borderWidth=0
+				}
+			}
+		}
+		if (num > -1)
+		{
+		   oButton[num].ShowBack()
+		   if (num == 5 | num == 6 | num == 7 | num == 8)
+		   {
+		   	  oButton[num].css.cursor='default'
+		   }
+		   if (oMenu[num] == 1)
+		   {
+		      oSub[num].showIt()
+			  oSub[num].css.pixelLeft = -LeftPad[num]
+			  oSub[num].css.pixelTop = oButton[num].name.clientHeight
+			  //oButton[num].css.borderWidth=1
+			 // oSub[num].css.pixelLeft = -1*w/2
+			  //document.all.divSub1.style.pixelLeft = -1*w/2
+			  //alert(document.all.divSub1.style.pixelLeft)
+		   } 
+		   // oSub[num].vis()?oSub[num].showIt():oSub[num].hideIt()
+		}
+		if (version < 5)
+		{
+		   if (num != -1 && oMenu[num] == 1)
+		   {
+		   	  document.all.Buttons.style.display = "block";
+		   	  if (num == 6)
+			  {
+		   	  	 document.all.Buttons.style.height = 120;
+			  } 
+			  if (num == 8)
+			  {
+			  	 document.all.Buttons.style.height = 330;
+			  } 
+		   }
+		   else
+		   {
+		   	  document.all.Buttons.style.height = "0";
+			  document.all.Buttons.style.display="none";
+		   }
+		}
+		for(i=0;i<oButton.length;i++) 
+		{
+		 	if(i != num) 
+			{
+			   oButton[i].HideBack()
+			}
+		}
+	}
+	
+}
+/*function menu(num)
+{
+	if(browser)
+	{
+		//if (num <= m1Limit) {
+			if(!stayFolded)
+			{
+				for(i=0;i<=m1Limit;i++)
+				{
+					if(i!=num) oSub[i].hideIt()
+				}
+				for(i=1;i<=m1Limit;i++)
+				{
+					oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height)
+				}
+			}
+			if (num > -1)
+			{ 
+			   oSub[num].vis()?oSub[num].showIt():oSub[num].hideIt()
+			}
+			for(i=1;i<=m1Limit;i++)
+			{
+				if(!oSub[i-1].vis()) oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height+oSub[i-1].height)
+				else oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height)
+			}
+		}
+		else
+		{
+			if(!stayFolded2)
+			{
+				for(i=m1Limit+1;i<oSub.length;i++)
+				{
+					if(i!=num) oSub[i].hideIt()
+				}
+				for(i=m1Limit+1;i<oTop.length;i++)
+				{
+					oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height)
+				}
+			}
+			oSub[num].vis()?oSub[num].showIt():oSub[num].hideIt()
+			for(i=m1Limit+2;i<oTop.length;i++)
+			{
+				if(!oSub[i-1].vis()) oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height+oSub[i-1].height) 
+				else oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height)
+			}
+		}
+	}
+}*/
+</script>
+
+<script language="JavaScript">
+/****************************************************************************************************
+Initiating the page. Just add to the arrays here to get more menuitems and add divs in the page *****/
+function init()
+{
+ 	//document.all.Button1.style.pixelWidth=0
+	//alert(document.all.Button1.clientWidth)
+	//a.style.aa=0
+	/*if (version < 5)
+	{
+  	   document.all.Button0.style.paddingTop = 0;
+	   document.all.Button1.style.paddingTop = 0;
+	   document.all.Button2.style.paddingTop = 0;
+	   document.all.Button3.style.paddingTop = 0;
+	   document.all.Button4.style.paddingTop = 0;
+	   document.all.Button5.style.paddingTop = 0;
+	   document.all.Button6.style.paddingTop = 0;
+//	   document.all.Button0Pad.style.display = "none";
+//	   document.all.Button1Pad.style.display = "none";
+	}*/
+	//if (version < 5) window.navigate("http://apop/index-ie4.html")
+	
+	document.all.Buttons.style.display = "none"
+	oMenu=new Array()
+	oButton=new Array()
+	oTop=new Array()
+	oSubButton = new Array(7)
+	oAbs = new Array()
+		
+	oAbs[5] = new makeMenu('Abs5','')
+	oAbs[6] = new makeMenu('Abs6','')
+	oAbs[7] = new makeMenu('Abs7','')
+	oAbs[8] = new makeMenu('Abs8','')
+	//---------------------------------------
+	oRow5 = new Array(3)
+	oRow5[0] = new makeMenu('SubButton50','')
+	oRow5[1] = new makeMenu('SubButton51','')
+	oRow5[2] = new makeMenu('SubButton52','')
+	oSubButton[5] = oRow5
+	//---------------------------------------
+	oRow6 = new Array(3)
+	oRow6[0] = new makeMenu('SubButton60','')
+	oRow6[1] = new makeMenu('SubButton61','')
+	oRow6[2] = new makeMenu('SubButton62','')
+	oSubButton[6] = oRow6
+	//---------------------------------------
+	oRow7 = new Array(3)
+	oRow7[0] = new makeMenu('SubButton70','')
+	oSubButton[7] = oRow7
+	//---------------------------------------
+	oRow8 = new Array(10)
+	oRow8[0] = new makeMenu('SubButton80','')
+	oRow8[1] = new makeMenu('SubButton81','')
+	oRow8[2] = new makeMenu('SubButton82','')
+	oRow8[3] = new makeMenu('SubButton83','')
+	oRow8[4] = new makeMenu('SubButton84','')
+	oRow8[5] = new makeMenu('SubButton85','')
+	oRow8[6] = new makeMenu('SubButton86','')
+	oRow8[7] = new makeMenu('SubButton87','')
+	oRow8[8] = new makeMenu('SubButton88','')
+	//oRow8[4] = new makeMenu('SubButton84','')
+	oSubButton[8] = oRow8
+	//---------------------------------------
+	
+	//this part is for telling whether or not there is a menu popdown 1=yes 0=no 
+	oMenu[0] = 0
+	oMenu[1] = 0
+	oMenu[2] = 0
+	oMenu[3] = 0
+	oMenu[4] = 0
+	oMenu[5] = 1
+	oMenu[6] = 1
+	oMenu[7] = 1
+	oMenu[8] = 1
+	oMenu[9] = 0
+	
+	
+	oButton[0] = new makeMenu('Button0','')
+	oButton[1] = new makeMenu('Button1','')
+	oButton[2] = new makeMenu('Button2','')
+	oButton[3] = new makeMenu('Button3','')
+	oButton[4] = new makeMenu('Button4','')
+	oButton[5] = new makeMenu('Button5','')
+	oButton[6] = new makeMenu('Button6','')
+	oButton[7] = new makeMenu('Button7','')
+	oButton[8] = new makeMenu('Button8','')
+	oButton[9] = new makeMenu('Button9','')
+	
+	//oTop[0]=new makeMenu('divTop0','divCont')
+	oTop[5]=new makeMenu('divTop5','divCont')
+	oTop[6]=new makeMenu('divTop6','divCont')
+	oTop[7]=new makeMenu('divTop7','divCont')
+	oTop[8]=new makeMenu('divTop8','divCont')
+	//oTop[3]=new makeMenu('divTop3','divCont')
+	//oTop[5]=new makeMenu('divTop5','divCont')
+	
+	oSub=new Array()
+	oSub[5]=new makeMenu('divSub5','divCont.document.divTop5')
+	oSub[6]=new makeMenu('divSub6','divCont.document.divTop6')
+	oSub[7]=new makeMenu('divSub7','divCont.document.divTop7')
+	oSub[8]=new makeMenu('divSub8','divCont.document.divTop8')
+	//oSub[0]=new makeMenu('divSub0','divCont.document.divTop0')
+	//oSub[3]=new makeMenu('divSub3','divCont.document.divTop3')
+	//oSub[5]=new makeMenu('divSub5','divCont.document.divTop5')
+	
+	for(i=0;i<oSub.length;i++)
+	{
+		if (i != ThisDoc && oMenu[i] == 1)
+		{
+	       oSub[i].hideIt()
+		} 
+	}
+	initialized = true
+	LeftPad = new Array()
+	var work
+	for (i=0;i<oMenu.length;i++) {
+	   if (oMenu[i] == 1) {
+	      work = oButton[i].name.clientWidth / 2
+		  work = work - (oAbs[i].name.clientWidth / 2)
+		   oAbs[i].css.pixelLeft = work
+		  LeftPad[i] = work
+
+	   }
+	}
+		  
+		  
+	
+	//document.all.Button0Pad.style.pixelleft = document.all.Button1.style.pixelleft 
+/*	for(i=1;i<=m1Limit;i++)
+	{
+	    if (i-1 != ThisDoc)
+		{
+		    //alert(oTop[i-1].height) 
+	        oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height) 
+		}
+		else
+		{
+		    oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height+oSub[i-1].height)
+		}
+	}
+	oTop[m1Limit+1].moveIt(0,0)
+	for(i=2+m1Limit;i<oTop.length;++i){oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height)}
+*/	
+}
+//Initiating the menus onload, if it's a 4.x+ browser.
+if(browser) onload=init;
+</script>
+
+
+<!----------          JavaScript MouseOver Button Change Image Definitions          ---------->
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!-- hide this
+
+window.defaultStatus="Site Optimized for 1024x768 Resolution with Small Fonts."
+
+function test()
+		 {
+		 //***** You have to add <form name=thisform> and </form> tags
+		 document.thisform.action="op/apopdept1.htm";
+		 document.thisform.target="autopay1";
+		 document.thisform.submit();
+		 //***** You can also use the code below to do the same thing and you don't have to add any tags, 
+		 //***** but it only works with Internet Explorer browser.
+		 //***** And you can not use the '#' in the iframe name here. Better remove the '#' in the iframe name even if 
+		 //***** you don't want to use this cause it might cause some other problems in the future.
+		 //autopay1.location.href="c:/abc/index2.html";
+		 }
+function changeiframe(website) 
+		 {	document.all.autopay1.src=website /*"http://apop/apopdept.htm"*/;
+		 }
+function JavaScriptAlert()
+		 { window.alert("JavaScript Alert") 
+		 }
+function JavaScriptOpen()
+		 {
+		    window.open("http://www.google.com/", "", "WIDTH=800,HEIGHT=400,LOCATION,SCROLLBARS,STATUS,TOOLBAR") 
+		 }
+		 // Menubar, Toolbar, Ststus, Scrollbars, width=, height=, resizable, left=, top=, location(address)
+		 //									 'width=470,height=295,resizable,left=300,top=110,menubar,status,location,toolbar'
+/*
+function JavaScriptConfirm()
+		 { window.confirm("JavaScript Confirm") 
+		 }
+function JavaScriptPrompt()
+		 { window.prompt("Start HyperText Markup Language?", "Yes") 
+		 }
+function JavaScriptStatus()
+		 { window.status='JavaScript Status' 
+		 }<img src="http://www.geocities.com/eqlodl/images/lodl.gif" width="220" height="45" onmouseover="menu(-1)">
+*/
+// -->
+</SCRIPT>
+<script language=javascript>
+//var isNS4 = (navigator.appName == "Netscape" && parseInt(navigator.appVersion) < 5);
+//if(isNS4) window.location = "oldBrowser.html";
+</script>
+
+	
+</HEAD>
+
+<BODY BGCOLOR="#680a68" LINK="#00ffff" VLINK="#ffff00">
+
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%" height="10%">
+
+<TR height="48">
+	<TD width="179" height="175" align="center" valign="middle"  rowspan=5   bgcolor="#ff80ff"><font color="black">		
+		<IMG SRC="me5b.jpg" HEIGHT="155" onmouseover="menu(-1)">
+	</td>
+	
+	<td onmouseover="menu(-1)" align="center">
+			<IMG SRC="widthholder.gif" border=0 width="600" height=0>
+			<br>
+			<IMG SRC="images/CBDDesigns Logo1c.gif" border=0>
+			<br>
+			<IMG SRC="widthholder.gif" border=0 width="600" height=0>
+	</td>
+</TR>
+
+<TR height="10">
+	<TD valign="middle" align="center">
+		<table border="2"
+			width="500"
+			height="100%" 
+			cellpadding="10"
+			cellspacing="0"
+			bordercolorlight="cyan"
+			bordercolordark="cyan"
+			bordercolor="cyan">
+		<tr>
+			<td id="Button0" class="menubutton"  
+			   	style="background: 'clear'; border-left-width:0px"  
+				width="60" 
+				valign="center" 
+				align="center"
+				onclick="changeiframe('home.html')"
+				bordercolor="#008080" 
+				bordercolorlight="#008080" 
+				bordercolordark="#008080"  
+			   	ONMOUSEOVER="menu(0),window.defaultStatus='button0'"> 
+				button1			
+			</td>
+			<td id="Button1"  class="menubutton"
+				style="background: 'clear'; border-left-width:0px;"  
+				width="120"
+				valign="center" 
+				align="center" 
+				onclick="changeiframe('BOTB.html')"
+				ONMOUSEOVER="menu(1),window.defaultStatus='button1'">	
+				button1			
+			</td> 																					
+			<td id="Button2"  class="menubutton"
+				style="background: 'clear'; border-left-width:0px;"  
+				width="100"
+				valign="center" 
+				align="center" 
+				onclick="changeiframe('HOF.html')"
+				ONMOUSEOVER="menu(2),window.defaultStatus='button2'">	
+				button2			
+			</td> 																					
+			<td id="Button3"  class="menubutton"
+				style="background: 'clear'; border-left-width:0px;"  
+				width="110"
+				valign="center" 
+				align="center" 
+				onclick="changeiframe('Pastlight.html')"
+				ONMOUSEOVER="menu(3),window.defaultStatus='button3'">	
+				button3			
+			</td> 																					
+			<td id="Button4" class="menubutton"
+				style="background: 'clear'; border-left-width:0px;"  
+				width="110" 
+				valign="center" 
+				align="center" 
+				onclick="changeiframe('BazaarBattles.html')"
+			   	ONMOUSEOVER="menu(4),window.defaultStatus='button4'"> 
+				button4			
+			</td>																					
+		</tr>
+		</table>
+	</TD>
+</TR>
+
+<TR onmouseover="menu(-1)" height="5">
+	<td>
+	</td>
+</TR>
+
+<TR height="10">
+	<TD valign="middle" align="center">		
+		<table border="2"
+			height="100%"
+			cellpadding="0"
+			cellspacing="0"
+			bordercolorlight="cyan"
+			bordercolordark="cyan"
+			bordercolor="cyan">
+		<tr>
+			<td id="Button5"  class="menubutton"
+				style="background: 'clear'; padding-left:0px"  
+				width="120" 
+				valign="top" 
+				align="left" 
+				onclick="menu(5)"
+			   	ONMOUSEOVER="menu(5),window.defaultStatus='button5'">
+				<div class="rel1">
+				<div id="Abs5" class="abs1">
+				button5			
+					<div id="divTop5" class="clTop" align="center">
+			 	   		<div id="divSub5"  class="clSub" align="left">
+							<table border="0" class="clsub">
+								<tr>
+									<td id="SubButton50"
+										class="clSub"
+										onclick="changeiframe('BOTB.html')"  
+								   		onmouseover="SubMenu(5,0);InSub=true"
+										onmouseout="InSub=false">
+										  button5a
+									</td>
+								</tr>
+								<tr>
+									<td id="SubButton51"
+										class="clSub"
+										onclick="changeiframe('HOF.html')"  
+								   		onmouseover="SubMenu(5,1);InSub=true"
+										onmouseout="InSub=false">
+										  button5a
+									</td>
+								</tr>
+								<tr>
+									<td id="SubButton52"
+										class="clSub"
+										onclick="changeiframe('Pastlight.html')"  
+								   		onmouseover="SubMenu(5,2);InSub=true"
+										onmouseout="InSub=false">
+										  button5a
+									</td>
+								</tr>
+							</table>   			
+			    		</div>
+					</div>
+					<br>
+				</div>
+				</div>
+			</td>																					
+			<td id="Button6"  class="menubutton"
+				style="background: 'clear'; padding-left:0px"  
+				width="60" 
+				valign="top" 
+				align="left" 
+				onclick="menu(6)"
+			   	ONMOUSEOVER="menu(6),window.defaultStatus='button6'">
+				<div class="rel1">
+				<div id="Abs6" class="abs1">
+				button6			
+					<div id="divTop6" class="clTop" align="center">
+			 	   		<div id="divSub6"  class="clSub" align="left">
+							<table border="0" class="clsub">
+								<tr>
+									<td id="SubButton60"
+										class="clSub"
+										onclick="changeiframe('quests/paladin/paladin.html')"  
+								   		onmouseover="SubMenu(6,0);InSub=true"
+										onmouseout="InSub=false">
+										  button6
+									</td>
+								</tr>
+								<tr>
+									<td id="SubButton61"
+										class="clSub"
+										onclick="changeiframe('quests/cleric/cleric.html')"
+								   		onmouseover="SubMenu(6,1);InSub=true"
+										onmouseout="InSub=false">
+										  button6
+									</td>
+								</tr>
+								<tr>
+									<td id="SubButton62"
+										class="clSub"
+										onclick="changeiframe('')"  
+								   		onmouseover="SubMenu(6,2);InSub=true"
+										onmouseout="InSub=false">
+										  button6
+									</td>
+								</tr>
+							</table>   			
+			    		</div>
+					</div>
+					<br>
+				</div>
+				</div>
+			</td>																					
+			<td id="Button7"  class="menubutton"
+				style="background: 'clear'; border-left-width:0px; padding-top:0px; padding-left:0px"  
+				width="110" 
+				valign="top" 
+				align="left" 
+				onclick="menu(7)"
+			   	ONMOUSEOVER="menu(7),window.defaultStatus='button7'">
+				<div class="rel1">
+				<div id="Abs7" class="abs1">
+				button7			
+					<div id="divTop7" class="clTop" align="left">
+			 	   		<div id="divSub7" class="clSub" align="left">
+							<table border="0" class="clsub">
+								<tr>
+									<td id="SubButton70"
+										class="clSub"
+										onclick="changeiframe('screenshots/EQscreenshots.html')"  
+								   		onmouseover="SubMenu(7,0);InSub=true"
+										onmouseout="InSub=false">
+										  button7
+									</td>
+								</tr>
+							</table>   			
+			    		</div>
+					</div>
+					<br>
+				</div>
+				</div>
+			</td>																					
+			<td id="Button8" class="menubutton"
+				style="background: 'clear'; border-left-width:0px; padding-top:-0px; padding-left:0px"    
+				width="50" 
+				valign="top" 
+				align="left" 
+				onclick="menu(8)"
+				ONMOUSEOVER="menu(8),window.defaultStatus='button8'">
+				<div class="rel1">
+				<div id="Abs8" class="abs1">
+				button8			
+					<div id="divTop8" class="clTop" align="left">
+						<div id="divSub8" class="clSub" align="left">
+							<table border="0" class="clsub">
+								<tr>
+									<td	class="clSubb">
+				 					</td>
+								</tr>
+								<tr>
+									<td class="clSub"
+										cursor="arrow"
+							   			onmouseover="this.style.color='ffffff'"
+							   			onmouseout="this.style.color='ffffff'">
+										<b><font size=3 color="yellow">
+										&nbsp;button8
+				 					</td>
+								</tr>
+								<tr>
+									<td id="SubButton80"
+										class="clSub"
+										onclick="changeiframe('http://www.geocities.com/eqlodl/main.htm')"
+							   			onmouseover="SubMenu(8,0);InSub=true"
+										onmouseout="InSub=false">
+										&nbsp;&nbsp;&nbsp;button8
+				 					</td>
+								</tr>
+								<tr>
+									<td id="SubButton81"
+										class="clSub"
+										onclick="changeiframe('http://www.lodl.org')"
+							   			onmouseover="SubMenu(8,1);InSub=true"
+										onmouseout="InSub=false">
+										&nbsp;&nbsp;&nbsp;button8
+				 					</td>
+								</tr>
+								<tr>
+									<td	class="clSubb">
+				 						  
+				 					</td>
+								</tr>
+								<tr>
+									<td	class="clSubb">
+				 						  
+				 					</td>
+								</tr>
+								<tr>
+									<td	class="clSub"
+										onmouseover="this.style.color='ffffff'; return false" 
+										onmouseout="this.style.color='ffffff'; return false">
+										<b><font size=3 color="yellow">
+				 						&nbsp;button8
+				 					</td>
+								</tr>
+								<tr>
+									<td id="SubButton82"
+										class="clSub"
+										onclick="changeiframe('http://www.lodl.org/bb')"
+							   			onmouseover="SubMenu(8,2);InSub=true"
+										onmouseout="InSub=false">
+										&nbsp;&nbsp;&nbsp;button8
+				 					</td>
+								</tr>
+								<tr>
+									<td id="SubButton83"
+										class="clSub"
+										onclick="changeiframe('http://pub9.ezboard.com/blegionofdivinelight')"
+							   			onmouseover="SubMenu(8,3);InSub=true"
+										onmouseout="InSub=false">
+										&nbsp;&nbsp;&nbsp;button8
+				 					</td>
+								</tr>
+								<tr>
+									<td id="SubButton84"
+										class="clSub"
+										onclick="changeiframe('http://pub10.ezboard.com/bsfaboard75419')"
+							   			onmouseover="SubMenu(8,4);InSub=true"
+										onmouseout="InSub=false">
+										&nbsp;&nbsp;&nbsp;button8
+				 					</td>
+								</tr>
+								<tr>
+									<td id="SubButton85"
+										class="clSub"
+										onclick="changeiframe('http://pub94.ezboard.com/bconclaveofsteel49598')"
+							   			onmouseover="SubMenu(8,5);InSub=true"
+										onmouseout="InSub=false">
+										&nbsp;&nbsp;&nbsp;button8
+				 					</td>
+								</tr>
+								<tr>
+									<td id="SubButton86"
+										class="clSub"
+										onclick="changeiframe('http://pub13.ezboard.com/bpaladinsofnorrath')"
+							   			onmouseover="SubMenu(8,6);InSub=true"
+										onmouseout="InSub=false">
+										&nbsp;&nbsp;&nbsp;button8
+										<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button8
+				 					</td>
+								</tr>
+								<tr>
+									<td	class="clSub"
+										onmouseover="this.style.color='ffffff'; return false" 
+										onmouseout="this.style.color='ffffff'; return false">
+										<b><font size=3 color="yellow">
+				 						&nbsp;button8
+				 					</td>
+								</tr>
+								<tr>
+									<td	id="SubButton87"
+										class="clSub"
+										onclick="changeiframe('pages/EQHumorAnim.html')"
+							   			onmouseover="SubMenu(8,7);InSub=true"
+										onmouseout="InSub=false">
+				 						&nbsp;&nbsp;&nbsp;button8
+										<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; button8
+				 					</td>
+								</tr>
+								<tr>
+									<td	id="SubButton88"
+										class="clSub"
+										onclick="window.open('http://www.google.com/', '', 'width=800,height=500,resizable,left=50,top=50,menubar,status,location,toolbar')"
+							   			onmouseover="SubMenu(8,8);InSub=true"
+										onmouseout="InSub=false">
+				 						&nbsp;&nbsp;&nbsp;Internet Search
+										<br>&nbsp;&nbsp; Engine (Google)
+				 					</td>
+								</tr>
+							</table>				
+			    		</div>
+					</div>
+					<br>
+				</div>
+				</div>
+			</td>																					
+			<td id="Button9"  class="menubutton"
+				style="background: 'clear'; border-left-width:0px;"  
+				width="90"
+				valign="center" 
+				align="center" 
+				onclick="changeiframe('')"
+				ONMOUSEOVER="menu(9),window.defaultStatus='button9'">	
+				button9			
+			</td> 																					
+		</tr>
+		</table>
+	</TD>
+</TR>
+
+<TR onmouseover="menu(-1)" height="48">
+	<td aligns="right">
+	</td>
+</TR>
+
+<TR id="Buttons" height="10" onmouseover="menu(-1)">
+	<td colspan="3">
+		<IMG SRC="widthholder.gif" width=800 height=0 border=10>
+	</td>
+</TR>
+
+
+</TABLE>
+
+<br>
+
+<TABLE border=0 width=100%>
+	<tr>
+		<td width="179" valign="top">
+			<IMG align="Middle" WIDTH="179" HEIGHT="1" SRC="bar3_anm.gif">
+			<center>
+			<A HREF="downloads"><font COLOR="#ff80ff" size="6">Downloads<br>Section</font></A>
+			<br>
+			<br>
+			
+			<FONT COLOR="#ff8080" size="5 ">
+			<i><b>Sites<br>Created:</b></i>
+			<br>
+			<A HREF="http://www.allskillnofill.com">
+			<font COLOR="#ff80ff" size="4">Something For<br>Everyone
+			<br> - All Skill No Fill</font></A>
+			
+			<br>
+			<br>
+			<i><b>Sites<br>Maintained:</b></i>
+			<br>
+			<A HREF="http://www.picturethisphotography.net"><font COLOR="#ff80ff" size="4">Picture This Photography</font></A>
+			
+			<br>
+			<br>
+			<A HREF="http://www.freebuttons.com/"><IMG SRC="http://www.freebuttons.com/ima/banner2.gif" WIDTH="88" HEIGHT=31 BORDER=0 ALT="FreeButtons"></A>
+			<br>
+			<A HREF="http://www.freebuttons.com/"><IMG SRC="http://www.freebuttons.com/ima/banner.gif" WIDTH="88" HEIGHT=31 BORDER=0 ALT="FreeButtons" ></A> 
+			
+			<IMG align="Middle" WIDTH="179" HEIGHT="1" SRC="bar3_anm.gif">
+		</td>
+		<td width="100%">
+			<P ALIGN=Center>
+			<FONT COLOR="#00ffff" size="6">
+			Visual Basic Programmer <br>and AutoCAD Designer
+			</FONT>
+			<FONT COLOR="#ff8000" size=4>
+				<P ALIGN=Center>
+				Graduate of CLC INC. (Computer Learning Center Inc.) with distinction.
+				<P ALIGN=Center>
+				3 Years experience in Form and Font designs, Group Support involving:
+				<br>
+				Backup Support - PC Support - Printer Support
+				<br>
+				Group Intranet Websight creator and maintenance
+				<br>
+				<P ALIGN=Center>
+				6 Years experience as a CAD Draftsman/Designer at a Mechanical Engineering Company. 
+				<P ALIGN=Center>
+				3 Years experience as a Lab Aid/Monitor, helped and taught students in AutoCAD and Computer Skills.
+				<br>
+				<br>
+				Other skills included Javascript, ASP
+			</FONT>
+			<P ALIGN=Center>
+			<FONT COLOR="#ff80ff" size=4>
+			If you are interested in my services,
+			</FONT>
+			<P ALIGN=Center>
+			<FONT COLOR="#ff80ff"><BIG> </BIG>
+			</FONT>
+			<P ALIGN=Center>
+			<FONT COLOR="#ff80ff">
+			<BIG> Please 
+			<A HREF="mailto:christian-d@rcn.com"><IMG ALIGN="Middle" SRC="email0_anm.gif" border=0></A>
+			me </BIG>
+			</FONT>
+			<P ALIGN=Center>
+			<IMG HEIGHT="250" ALIGN="Top" SRC="daguin1.jpg">
+		</TD>
+	</TR>
+</TABLE>
+
+<P ALIGN=Center>
+<FONT COLOR="#ff8080" size="10">
+Please visit these other sites.
+</FONT>
+<br>
+<br>
+<br>
+
+
+
+<P ALIGN=Center><A HREF="http://www.CaribbeanCuisine.net"><IMG border=0 SRC="http://www.CaribbeanCuisine.net/banners/banner_red_on_white.jpg"></A>
+<br>
+<br>
+<br>
+
+<table border="0">
+	<tr>
+		<td bgcolor="yellow">
+			 &nbsp; &nbsp;<A HREF="http://www.cruisepirates.com">
+			<font color="black" size="20" face="Monotype Corsiva">
+			<b>
+			Cruise Pirates.com</b></FONT></A> &nbsp; &nbsp;
+		</td>
+	</tr>
+</table>
+<br>
+<br>
+<br>
+
+
+
+
+<P ALIGN=Center>
+<FONT COLOR="#ff80ff">
+This page created by CBD Designs
+</FONT>
+
+</BODY>
+</HTML>
