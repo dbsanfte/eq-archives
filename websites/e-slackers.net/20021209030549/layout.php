@@ -1,0 +1,149 @@
+<head>
+<TITLE></TITLE>
+<script language="JavaScript" src="images/layout/js-standard.js" type="text/javascript"></script>
+<link rel="stylesheet" href="images/layout/default.css" type="text/css">
+<LINK REL="SHORTCUT ICON" HREF="images/favicon.ico">
+</head>
+
+<body bgcolor="#000000" marginheight="0" marginwidth="0" topmargin="0" bottommargin="0" rightmargin="0" leftmargin="0" onload="window.defaultStatus=''">
+
+
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td colspan="5"><img src="images/layout/header.jpg"></td></tr>
+ <tr><td colspan="5"><img src="images/layout/butstart.jpg"><a href="aim:goim?screenname=Krezdian" onMouseover="window.status='Send Krezdian an Instant Message';return true;"><img alt="Send an Instant-Message to the proprietor of e-slackers.net, Krezdian" border="0" src="images/layout/aim.jpg" onmouseover="this.src='images/layout/aimover.jpg'" onmouseout="this.src='images/layout/aim.jpg'"></a><a style="cursor:hand" onClick="this.style.behavior='url(#default#homepage)'; this.setHomePage('http://e-slackers.net');" onMouseover="window.status='Make e-slackers.net your Home Page';return true;"><img alt="Make e-slackers.net your Home Page" border="0" src="images/layout/home.jpg" onmouseover="this.src='images/layout/homeover.jpg'" onmouseout="this.src='images/layout/home.jpg'"></a><a href="javascript:window.external.AddFavorite('http://www.e-slackers.net', 'e-slackers.net. You just wasted your time.')" onMouseover="window.status='Add e-slackers.net to your Favorites';return true;"><img border="0" alt="Add e-slackers.net to your favorites" src="images/layout/fav.jpg" onmouseover="this.src='images/layout/favover.jpg'" onmouseout="this.src='images/layout/fav.jpg'"></a><img src="images/layout/butlast.jpg"></td></tr>
+ <tr><td colspan="5"><img src="images/layout/butunder.jpg"></td></tr>
+
+ <tr><td><img src="images/layout/midleft.jpg"></td><td>
+
+   <table width="116" height="100%" cellspacing="0" cellpadding="0" border="0">
+ <tr style="cursor:pointer;cursor:hand">
+<td class="small" height="20" background="images/layout/a.jpg"> <img src="images/layout/dot.jpg" align="absmiddle"> <a href="layout.php?include=home.html">Home</a></td>
+ </tr>
+ <tr style="cursor:pointer;cursor:hand">
+<td class="small" height="20" background="images/layout/b.jpg"> <img src="images/layout/dot.jpg" align="absmiddle"> <a href="layout.php?include=movies.html&action=thumbnail">Movies</a></td>
+ </tr>
+ <tr style="cursor:pointer;cursor:hand">
+<td class="small" height="20" background="images/layout/c.jpg"> <img src="images/layout/dot.jpg" align="absmiddle"> <a href="layout.php?include=fans.html&action=list">Fans</a></td>
+ </tr>
+ <tr style="cursor:pointer;cursor:hand">
+<td class="small" height="20" background="images/layout/d.jpg"> <img src="images/layout/dot.jpg" align="absmiddle"> <a href="layout.php?include=music.html&action=list">Music</a></td>
+ </tr>
+ <tr style="cursor:pointer;cursor:hand">
+<td class="small" height="20" background="images/layout/e.jpg"> <img src="images/layout/dot.jpg" align="absmiddle"> <a href="layout.php?include=everquest.html">EverQuest</a></td>
+ </tr>
+ <tr style="cursor:pointer;cursor:hand">
+<td class="small" height="20" background="images/layout/f.jpg"> <img src="images/layout/dot.jpg" align="absmiddle"> <a href="layout.php?include=forums.html">Forums</a></td>
+ </tr>
+ <tr style="cursor:pointer;cursor:hand">
+<td class="small" height="20" background="images/layout/g.jpg"> <img src="images/layout/dot.jpg" align="absmiddle"> <a href="layout.php?include=doltism.html">Doltism</a></td>
+ </tr>
+ <tr style="cursor:pointer;cursor:hand">
+<td class="small" height="20" background="images/layout/h.jpg"> <img src="images/layout/dot.jpg" align="absmiddle"> <a href="layout.php?include=links.html">Link-a-roos</a></td>
+ </tr>
+
+ <tr>
+<td width="116" height="165" valign="top" background="images/layout/midnavtop.jpg"></td>
+ </tr>
+ <tr>
+<td height="104" background="images/layout/midnavbot.jpg"><center><br><embed src="http://ww1.ninjai.com/banners/banner1_120x90.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100" height="75"></embed></center>
+</td>
+ </tr>
+</table>
+</td><td><img src="images/layout/midmid.jpg"></td>
+
+<td>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td background="images/layout/textbox2.jpg" width="637" height="405" valign="top">
+
+<table cellpadding="1">
+<tr>
+<td>
+
+
+<h4>Welcome to the new e-slackers.net</h4>
+<p class="small">
+Current projects: <a href="http://tde.e-slackers.net" target="_blank">The Dark Exile</a>, <a href="http://past-endeavour.e-slackers.net" target="_blank">Past Endeavour's website</a>, and the even newer <a href="http://e-slackers.net/new/" target="_blank">e-slackers.net</a>.<br><br><br><a href="javascript:window.close()">CLOSE THIS STINKING POPUP</a>.<br><br>
+<center>
+<a href="http://tde.e-slackers.net" target="_blank">
+<img height="225" width="500" border="0" src="http://tde.e-slackers.net/images/updates/empcorpse.jpg"><h2>EMPEROR DEAD!</h2></a><center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+<tr>
+<td background="images/layout/textboxlow.jpg" align="right" valign="bottom"><img style="cursor:pointer;cursor:hand" src="images/layout/back.jpg" onmouseover="this.src='images/layout/backover.jpg'" onmouseout="this.src='images/layout/back.jpg'" border="0"><img style="cursor:pointer;cursor:hand" src="images/layout/forward.jpg" onmouseover="this.src='images/layout/forwardover.jpg'" onmouseout="this.src='images/layout/forward.jpg'" border="0"></td>
+</tr>
+</table>
+
+
+</td>
+
+<td><img src="images/layout/midright.jpg"></td></tr><tr><td colspan="5"><img src="images/layout/bottom.jpg"></td></tr></table>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
