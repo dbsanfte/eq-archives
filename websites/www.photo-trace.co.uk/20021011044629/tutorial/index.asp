@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Photo-trace.co.uk</title>
+	<style type="text/css">
+	.ivorytext {font-family:Arial,Helvetica; font-size:10pt; color:"ivory";}
+	.text {font-family:Arial,Helvetica; font-size:10pt; color:"red";}
+	A {text-decoration: none;}
+	A.Visited {color:blue;}
+	TD {font-family: arial; font-size: 12px;}
+	</style>
+</head>
+<BODY link="blue" vlink="blue">
+	<form action="prequest.asp" method="POST">
+<center><table name=table1 cellpadding=5 border=2 bordercolor="#BA0000" width=600 bgcolor='ivory'><tr><td>
+	<table cellspacing=0 cellpadding=5 border=0 width=100% height=100%>
+	<tr>
+		   <td width=100% colspan=2 height="60" bgcolor="#BA0000" align=center><font face="arial" size="5" color="ivory">Reprographics Costing Suite</font></td>
+	</tr>
+	<tr>
+	       <td width=100% colspan=2 align=center valign=center><i><strong><font face="arial" color="#BA0000" size="3"><br>Welcome to Photo-trace.co.uk, the Reprographics Software Suite ...</font></i></strong></td>
+	</tr>
+	<tr>
+	       <td width=50% align=right><span class="text">User Name :</span></td>
+	       <td width=50% align=left><input name="username" type="text" value=""></td>
+	</tr>
+	<tr>
+	       <td width=50% align=right><span class="text">Password :</span></td>
+	       <td width=50% align=left><input name="password" type="password" value=""></td>
+	</tr>
+	<tr>
+	       <td width=100% colspan=2 height=20></td>
+	</tr>
+	<tr>
+	       <td width=50% align=right><input type="image" src="images/login.gif">&nbsp;&nbsp;</td>
+	       <td width=50% align=left>&nbsp;&nbsp;<a href="index.asp"><img Src="images/clear.gif" border=0></a></td>
+	</tr>
+	<tr>
+	       <td width=100% colspan=2 height=20></td>
+	</tr>
+	</table>
+</TD></TR></table></center>
+	</form>
+
+
+<TAble border=0>
+<TR><TD Colspan=2>
+This is the Photo-trace tutorial site. This is a working copy of a version of photo-trace that is using 2 photo-copiers.</TD></TR>
+<TR><TD Colspan=2>
+Feel free to log in and see what it is like or add yourself as a user.</TD></tR>
+<TR><TD>UserName</TD><TD>Password</TD></TR>
+<TR><TD>&nbsp;</TD></TD>
+<TR><TD>Admin</TD><TD>easypass</TD></TR><TR><TD>sarah</TD><TD>sarahspass</TD></TR>
+</TAble>
+
+<center><hr width="80%" size=1 noshade><font size=-2 face=arial color=#8d8d8d>Copyright &copy; 2002 photo-trace.co.uk. All rights reserved.</Center>
+</BODY>
+</html>
