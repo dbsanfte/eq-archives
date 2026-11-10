@@ -1,0 +1,649 @@
+<!-- BEGIN --> <center> <table height=0 width=596 border=0 cellpadding=0 cellspacing=0> <tr><td><IFRAME SRC="http://connect.247media.ads.link4ads.com/serv/1/netfirms/netfirmsros/netfirmsros/24903;type=t;uniq=67681114" WIDTH="468" HEIGHT="60" MARGINWIDTH="0" MARGINHEIGHT="0" FRAMEBORDER="0" SCROLLING="no"><a href="http://connect.247media.ads.link4ads.com/click/1/netfirms/netfirmsros/netfirmsros/24903;uniq=67681114" target="_top"><img src="http://connect.247media.ads.link4ads.com/serv/1/netfirms/netfirmsros/netfirmsros/24903;uniq=67681114" BORDER="0" height="60" width="468"></a></IFRAME></td><td><a href="http://www.netfirms.com"><img border="0" alt="Free Web Hosting by Netfirms" src="/nf-images/freewebhosting.gif" width="120" height="60"><br></a></td></tr> <tr> <td colspan="2" align="center"> <img border="0" src="/nf-images/freewebhosting.webhosting.gif" width="1" height="1" alt="Free Web Site Hosting by Netfirms"><br> <font size="2"><a href="http://www.netfirms.com">This site is hosted by <b>Netfirms</b> Web Hosting</a></font> </td> </tr> </table> </center> <!-- END -->
+
+
+<HTML>
+<HEAD>
+	<TITLE>Calendar</TITLE>
+<META HTTP-EQUIV="expires" CONTENT="now">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<STYLE>
+A { text-decoration:none; }
+A:hover { text-decoration:underline; }
+.thinborder { border-color:#666666; border-style:solid; border-width:1px; }
+.columnheader { color:#000000; }
+.navigationtext { color:#FFFFFF; }
+.navigationselectedtext { color:#000000; }
+.commandtext { color:#FFFFFF; }
+.gridtext { color:#000000; }
+.griddatetext { color:#000000; }
+.footertext { color:#FFFFFF; }
+.text { color:#000000; }
+    </STYLE>
+    <style fprolloverstyle>A:hover {color: #0000FF; font-weight: bold}
+    </style>
+</HEAD>
+<BODY BGCOLOR="#B29D78" LINK="#000000" ALINK="#000000" VLINK="#000000" LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<p align="center"><a href="../../../../index.htm">
+<img border="0" src="../../../../images/adco1.jpg" width="504" height="108"></a></p>
+<p align="center"><font size="5">
+<a href="http://pub5.ezboard.com/badventurerscompany">Adventurers Company</a>&nbsp;&nbsp;&nbsp;
+<a href="http://pub54.ezboard.com/bthealliance59294">The Alliance</a>&nbsp;&nbsp;&nbsp;
+<a href="http://pub14.ezboard.com/bghostchapel">Ghost Chapel</a>&nbsp;&nbsp;&nbsp; </font></p>
+<p align="center"><font size="5"><a href="http://pub7.ezboard.com/bbrewmasters">Brew Masters</a>&nbsp;&nbsp;&nbsp;
+<a href="http://pub4.ezboard.com/btroublesband">Troubles Band</a>&nbsp;&nbsp;&nbsp;
+<a href="http://pub21.ezboard.com/bauroraknights">Aurora Knights</a></font></p>
+<p align="center">Welcome to our new calendar.&nbsp; Let me point out a few 
+things while you are here.&nbsp; At this point in time, anyone is allowed to 
+post a event.&nbsp; However, it may be changed to needing approval from an 
+Officer before it gets published, so if it does not show up after you submit it, 
+that's why.&nbsp; This calendar is not to try and set up a day of grinding, but 
+for the purpose to have a guild function or raid.&nbsp; All dates and events are 
+subject to change and may be deleted at anytime without notice.</p>
+<p align="center">&nbsp;</p>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" WIDTH="100%" HEIGHT="100%">
+	<TR>
+		<TD COLSPAN="2">
+			
+				
+				
+				<TABLE BORDER="0" CLASS="thinborder" CELLPADDING="0" CELLSPACING="0" WIDTH=100% style="border-collapse: collapse" bordercolor="#111111">
+				<TR>
+					<TD ALIGN="center" WIDTH="8%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?year=2001" CLASS="navigationtext">
+                    &lt;&nbsp;2001</A></B></TD>
+					
+						
+						<TD ALIGN="center" WIDTH="6%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?month=1" CLASS="navigationtext">Jan</A></B></TD>
+						
+					
+						
+						<TD ALIGN="center" WIDTH="12%" BGCOLOR="#EEEEEE" CLASS="thinborder"><SPAN CLASS="navigationselectedtext"><B>Feb 2002</B></SPAN></TD>
+						
+					
+						
+						<TD ALIGN="center" WIDTH="6%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?month=3" CLASS="navigationtext">Mar</A></B></TD>
+						
+					
+						
+						<TD ALIGN="center" WIDTH="6%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?month=4" CLASS="navigationtext">Apr</A></B></TD>
+						
+					
+						
+						<TD ALIGN="center" WIDTH="6%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?month=5" CLASS="navigationtext">May</A></B></TD>
+						
+					
+						
+						<TD ALIGN="center" WIDTH="6%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?month=6" CLASS="navigationtext">Jun</A></B></TD>
+						
+					
+						
+						<TD ALIGN="center" WIDTH="6%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?month=7" CLASS="navigationtext">Jul</A></B></TD>
+						
+					
+						
+						<TD ALIGN="center" WIDTH="6%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?month=8" CLASS="navigationtext">Aug</A></B></TD>
+						
+					
+						
+						<TD ALIGN="center" WIDTH="6%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?month=9" CLASS="navigationtext">Sep</A></B></TD>
+						
+					
+						
+						<TD ALIGN="center" WIDTH="6%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?month=10" CLASS="navigationtext">Oct</A></B></TD>
+						
+					
+						
+						<TD ALIGN="center" WIDTH="6%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?month=11" CLASS="navigationtext">Nov</A></B></TD>
+						
+					
+						
+						<TD ALIGN="center" WIDTH="6%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?month=12" CLASS="navigationtext">Dec</A></B></TD>
+						
+					
+					<TD ALIGN="center" WIDTH="8%" CLASS="thinborder" BGCOLOR="#008080"><B><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?year=2003" CLASS="navigationtext">2003&nbsp;&gt;</A></B></TD>
+				</TR>
+				</TABLE>
+				
+			
+	</TD>
+</TR>
+
+
+
+<TR>
+	<TD WIDTH="100" align="left" valign="top">
+		
+		<TABLE BORDER="0" CLASS="thinborder" WIDTH="100" BGCOLOR="">
+		<TR><TD BGCOLOR="#009999"><B><a href="http://advcom.netfirms.com/cgi-bin/calendar.pl?style=Grid" CLASS="commandtext">Grid</A></B></TD></TR>
+		<TR><TD BGCOLOR="#A28D68"><B><a href="http://advcom.netfirms.com/cgi-bin/calendar.pl?style=List" CLASS="commandtext">List</A></B></TD></TR>
+		</TABLE>
+		<p>
+		<BR>
+		</p>
+		<TABLE BORDER="0" CLASS="thinborder" WIDTH="100" BGCOLOR="">
+		<TR><TD BGCOLOR="#A28D68"><B><a href="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Day&datestring=20020208&selected_datestring=20020208" CLASS="commandtext">Today</A></B></TD></TR>
+		<TR><TD BGCOLOR="#A28D68"><B><a href="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Week" CLASS="commandtext">Week</A></B></TD></TR>
+		<TR><TD BGCOLOR="#A28D68"><B><a href="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Two-Week" CLASS="commandtext">2-Week</A></B></TD></TR>
+		<TR><TD BGCOLOR="#A28D68"><B><a href="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Three-Week" CLASS="commandtext">3-Week</A></B></TD></TR>
+		<TR><TD BGCOLOR="#A28D68"><B><a href="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Four-Week" CLASS="commandtext">4-Week</A></B></TD></TR>
+		<TR><TD BGCOLOR="#009999"><B><a href="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Month" CLASS="commandtext">Month</A></B></TD></TR>
+		</TABLE>
+		<p>
+		<BR>
+		</p>
+		<TABLE BORDER="0" CLASS="thinborder" WIDTH="100" BGCOLOR="">
+		<TR><TD BGCOLOR="#A28D68"><B><a href="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Search" CLASS="commandtext">Search</A></B></TD></TR>
+		
+			<TR><TD BGCOLOR="#A28D68"><B><a href="http://advcom.netfirms.com/cgi-bin/calendar_admin.pl?calendar=default&username=anonymous&template=add_edit_event.html" CLASS="commandtext">Add Event</A></B></TD></TR>
+		
+		
+		
+		
+		<TR><TD BGCOLOR="#A28D68"><B><a href="http://advcom.netfirms.com/cgi-bin/calendar.pl?template=login.html" CLASS="commandtext">Login</A></B></TD></TR>
+		
+		</TABLE>
+		
+	</TD>
+	<TD VALIGN="top" ALIGN="left" WIDTH="100%">
+		
+		
+		
+
+		
+		
+			
+			
+				<TABLE BORDER="1" CLASS="thinborder" HEIGHT=100% WIDTH=100% CELLPADDING="2" CELLSPACING="1">
+					<TR>
+						
+						<TH CLASS="thinborder" BGCOLOR="#CCCCCC"><SPAN CLASS="columnheader">Sunday</SPAN>&nbsp;</TH>
+						
+						<TH CLASS="thinborder" BGCOLOR="#CCCCCC"><SPAN CLASS="columnheader">Monday</SPAN>&nbsp;</TH>
+						
+						<TH CLASS="thinborder" BGCOLOR="#CCCCCC"><SPAN CLASS="columnheader">Tuesday</SPAN>&nbsp;</TH>
+						
+						<TH CLASS="thinborder" BGCOLOR="#CCCCCC"><SPAN CLASS="columnheader">Wednesday</SPAN>&nbsp;</TH>
+						
+						<TH CLASS="thinborder" BGCOLOR="#CCCCCC"><SPAN CLASS="columnheader">Thursday</SPAN>&nbsp;</TH>
+						
+						<TH CLASS="thinborder" BGCOLOR="#CCCCCC"><SPAN CLASS="columnheader">Friday</SPAN>&nbsp;</TH>
+						
+						<TH CLASS="thinborder" BGCOLOR="#CCCCCC"><SPAN CLASS="columnheader">Saturday</SPAN>&nbsp;</TH>
+						
+					</TR>
+					
+					<TR HEIGHT="18%">
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020201&datestring=20020201&view=Day" CLASS="griddatetext">1</A></b>&nbsp;</NOBR></SPAN>
+								
+									
+									<SPAN CLASS="gridtext">
+									<FONT FACE="arial" SIZE="-2">
+									&#149;
+									7:30 pm
+									-11:59 pm
+									 : 
+									<A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Event&event_id=63" CLASS="gridtext">Kael Raid</A><BR>
+									</FONT>
+									</SPAN>
+								
+								
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020202&datestring=20020202&view=Day" CLASS="griddatetext">2</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+					</TR>
+					
+					<TR HEIGHT="18%">
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020203&datestring=20020203&view=Day" CLASS="griddatetext">3</A></b>&nbsp;</NOBR></SPAN>
+								
+									
+									<SPAN CLASS="gridtext">
+									<FONT FACE="arial" SIZE="-2">
+									&#149;
+									
+									
+									
+									<A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Event&event_id=49" CLASS="gridtext">Fear - 2/3 at 2p EST  (Alliance)</A><BR>
+									</FONT>
+									</SPAN>
+								
+								
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020204&datestring=20020204&view=Day" CLASS="griddatetext">4</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020205&datestring=20020205&view=Day" CLASS="griddatetext">5</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020206&datestring=20020206&view=Day" CLASS="griddatetext">6</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020207&datestring=20020207&view=Day" CLASS="griddatetext">7</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#CCCCCC">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020208&datestring=20020208&view=Day" CLASS="griddatetext">8</A></b>&nbsp;</NOBR></SPAN>
+								
+									
+									<SPAN CLASS="gridtext">
+									<FONT FACE="arial" SIZE="-2">
+									&#149;
+									7:00 pm
+									-11:59 pm
+									 : 
+									<A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Event&event_id=73" CLASS="gridtext">Unrest Raid</A><BR>
+									</FONT>
+									</SPAN>
+								
+								
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020209&datestring=20020209&view=Day" CLASS="griddatetext">9</A></b>&nbsp;</NOBR></SPAN>
+								
+									
+									<SPAN CLASS="gridtext">
+									<FONT FACE="arial" SIZE="-2">
+									&#149;
+									2:00 pm
+									-11:59 pm
+									 : 
+									<A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Event&event_id=59" CLASS="gridtext">Chardok Prince/King Raid (alliance)</A><BR>
+									</FONT>
+									</SPAN>
+								
+								
+							
+						&nbsp;
+						</TD>
+						
+					</TR>
+					
+					<TR HEIGHT="18%">
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020210&datestring=20020210&view=Day" CLASS="griddatetext">10</A></b>&nbsp;</NOBR></SPAN>
+								
+									
+									<SPAN CLASS="gridtext">
+									<FONT FACE="arial" SIZE="-2">
+									&#149;
+									12:00 pm
+									-6:00 pm
+									 : 
+									<A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Event&event_id=69" CLASS="gridtext">The Hole (Alliance / Ghost Chapel)</A><BR>
+									</FONT>
+									</SPAN>
+								
+									
+									<SPAN CLASS="gridtext">
+									<FONT FACE="arial" SIZE="-2">
+									&#149;
+									4:00 pm
+									-10:00 pm
+									 : 
+									<A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Event&event_id=65" CLASS="gridtext">Dawnshroud Peaks Twink Grind</A><BR>
+									</FONT>
+									</SPAN>
+								
+								
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020211&datestring=20020211&view=Day" CLASS="griddatetext">11</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020212&datestring=20020212&view=Day" CLASS="griddatetext">12</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020213&datestring=20020213&view=Day" CLASS="griddatetext">13</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020214&datestring=20020214&view=Day" CLASS="griddatetext">14</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020215&datestring=20020215&view=Day" CLASS="griddatetext">15</A></b>&nbsp;</NOBR></SPAN>
+								
+									
+									<SPAN CLASS="gridtext">
+									<FONT FACE="arial" SIZE="-2">
+									&#149;
+									7:00 pm
+									-11:59 pm
+									 : 
+									<A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Event&event_id=68" CLASS="gridtext">CoM to Finish Alistair's Epic (Ghost Chapel)</A><BR>
+									</FONT>
+									</SPAN>
+								
+								
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020216&datestring=20020216&view=Day" CLASS="griddatetext">16</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+					</TR>
+					
+					<TR HEIGHT="18%">
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020217&datestring=20020217&view=Day" CLASS="griddatetext">17</A></b>&nbsp;</NOBR></SPAN>
+								
+									
+									<SPAN CLASS="gridtext">
+									<FONT FACE="arial" SIZE="-2">
+									&#149;
+									4:00 pm
+									-10:00 pm
+									 : 
+									<A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Event&event_id=66" CLASS="gridtext">Frontier Mountains Twink Grind</A><BR>
+									</FONT>
+									</SPAN>
+								
+								
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020218&datestring=20020218&view=Day" CLASS="griddatetext">18</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020219&datestring=20020219&view=Day" CLASS="griddatetext">19</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020220&datestring=20020220&view=Day" CLASS="griddatetext">20</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020221&datestring=20020221&view=Day" CLASS="griddatetext">21</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020222&datestring=20020222&view=Day" CLASS="griddatetext">22</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020223&datestring=20020223&view=Day" CLASS="griddatetext">23</A></b>&nbsp;</NOBR></SPAN>
+								
+									
+									<SPAN CLASS="gridtext">
+									<FONT FACE="arial" SIZE="-2">
+									&#149;
+									9:30 am
+									-4:00 pm
+									 : 
+									<A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Event&event_id=64" CLASS="gridtext">Hate Raid </A><BR>
+									</FONT>
+									</SPAN>
+								
+								
+							
+						&nbsp;
+						</TD>
+						
+					</TR>
+					
+					<TR HEIGHT="18%">
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020224&datestring=20020224&view=Day" CLASS="griddatetext">24</A></b>&nbsp;</NOBR></SPAN>
+								
+									
+									<SPAN CLASS="gridtext">
+									<FONT FACE="arial" SIZE="-2">
+									&#149;
+									4:00 pm
+									-10:00 pm
+									 : 
+									<A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?view=Event&event_id=67" CLASS="gridtext">Rathe Mountains Grind</A><BR>
+									</FONT>
+									</SPAN>
+								
+								
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020225&datestring=20020225&view=Day" CLASS="griddatetext">25</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020226&datestring=20020226&view=Day" CLASS="griddatetext">26</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020227&datestring=20020227&view=Day" CLASS="griddatetext">27</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+								<SPAN BGCOLOR="#CCCCCC" STYLE="background-color:#CCCCCC">&nbsp;<NOBR><b><A HREF="http://advcom.netfirms.com/cgi-bin/calendar.pl?selected_datestring=20020228&datestring=20020228&view=Day" CLASS="griddatetext">28</A></b>&nbsp;</NOBR></SPAN>
+								
+								<BR>&nbsp;<BR>&nbsp;
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+						&nbsp;
+						</TD>
+						
+						
+						<TD CLASS="thinborder" VALIGN=TOP WIDTH=14% HEIGHT="18%" BGCOLOR="#EEEEEE">
+							
+						&nbsp;
+						</TD>
+						
+					</TR>
+					
+				</TABLE>
+			
+			
+			
+
+		
+		
+		
+		
+		
+		
+	</TD>
+</TR>
+<TR>
+	<TD ALIGN="center" COLSPAN="2" BGCOLOR="#008080">
+	&nbsp;</TD>
+</TR>
+</TABLE>
+
+<p align="center"><br>
+&nbsp;</p>
+
+</BODY>
+</HTML>
