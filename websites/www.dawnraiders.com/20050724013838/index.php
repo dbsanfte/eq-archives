@@ -1,0 +1,131 @@
+<HTML>
+<TITLE>Dawnraiders of Venril Sathir</TITLE>
+<HEAD>
+<link rel="stylesheet" type="text/css" href="style.css">
+</HEAD>
+<BODY text="#FFFFFF" LINK="#FF9900" ALINK="#FF9900" VLINK="#FF9900">
+	<table cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+       <td width="165">
+       <td width="82%">
+       <td width="18%">
+      </TR>
+	<tr>
+	  <td colspan="2" align="left" style="background-repeat: no-repeat;" background="images/exempledr_1x1.jpg" height="96"></td>
+	  <td width="18%" align="right">
+	  	   <form method="POST" action="login.php"><input type="hidden" name="PHPSESSID" value="87839b2eaeb2b10a0846fbe72f75bbe6" />
+		  UserName:<input class="text" type="text" name="UserName" size="20"><br>
+		  Password:<input class="text" type="password" name="Password" size="20"><br>
+          <input type="checkbox" name="Keeplogged" value="1">Keep me Logged in&nbsp;
+		  <input class="button" type="submit" value="Login" name="Login">
+	   </form>
+	  	  </td>
+	</tr>
+	<tr>
+	  <td Class="leftframe" background="images/exempledr_2x1.jpg" valign="top" align="center" width="156" rowspan="2">	
+		<img src="images/spacer.gif" height="65" width="1">
+		  <img src="images/spacer.gif" height="10" width="1">
+  <table cellpadding="2" cellspacing="0" width="165">
+    <tr>
+      <td class="menu" height="19" Align="center">.:&nbsp;Latest News&nbsp;:.</td>
+    </tr>
+  </table>
+  <img src="images/spacer.gif" height="2" width="1">
+  <table cellpadding="0" cellspacing="0" width="165">
+    <tr>
+      <td class="menu" height="19" Align="center">
+<a class="nav" href="#A0" >CBQ BBQ'd</a><BR><a class="nav" href="#A1" >Araxt and Qukret PWNED, Barxt to follow!</a><BR><a class="nav" href="#A2" >Ikkinz 4 pwnd!!</a><BR><a class="nav" href="#A3" >DR Anihilates Time Once Again!</a><BR>      </td>
+    </tr>
+  </table>
+  <img src="images/spacer.gif" height="10" width="1">
+  <table cellpadding="2" cellspacing="0" width="165">
+    <tr>
+      <td class="menu" height="19" Align="center">.:&nbsp;SoE News&nbsp;:.</td>
+    </tr>
+  </table>
+  <img src="images/spacer.gif" height="2" width="1">
+  <table cellpadding="0" cellspacing="0" width="165">
+    <tr>
+      <td class="menu" height="19" Align="center">
+        <SCRIPT language="JavaScript" SRC="/includes/js_news/eq_headlines.jsp"></SCRIPT>
+	<noscript>The EverQuest Live news requires you to have JavaScript turned on.</noscript>
+      </td>
+    </tr>
+  </table>
+	  </td>
+	  <td align="center" valign="top" colspan="2">
+            <table cellpadding="0" cellspacing="0" width="95%">
+	  	<tr>
+		  <td class="menu" height="19" Align="center">
+		    	<a href="index.php?PHPSESSID=87839b2eaeb2b10a0846fbe72f75bbe6" class="nav">News</font></a>&nbsp;&nbsp;&nbsp;
+		    	<a href="/forum?PHPSESSID=87839b2eaeb2b10a0846fbe72f75bbe6" class="nav">Forum</font></a>&nbsp;&nbsp;&nbsp;
+		    	<a href="charter.php?PHPSESSID=87839b2eaeb2b10a0846fbe72f75bbe6" class="nav">Charter</font></a>&nbsp;&nbsp;&nbsp;
+		    	<a href="members.php?PHPSESSID=87839b2eaeb2b10a0846fbe72f75bbe6" class="nav">Members</font></a>&nbsp;&nbsp;&nbsp;
+		    	<a href="links.php?PHPSESSID=87839b2eaeb2b10a0846fbe72f75bbe6" class="nav">Links</font></a>
+		    			  </td>
+		</tr>
+		</table>
+	  </td>
+	</tr>
+	<tr>
+	  <td align="center" valign="top" colspan="2">
+	  <img src="images/spacer.gif" height="10" width="1">
+	 <a id="A0" >		<table cellpadding="2" cellspacing="0" width="95%">
+		  	<tr>
+			  <td class="NewsTop" height="19" Align="left" background="images/cellpic2.gif"><b>CBQ BBQ'd</b><BR>posted by <font color="#CC0033"><b>Lluianae</b></font> @ 23-3-2005</td>
+			</tr><tr>
+			  <td class="NewsBody" height="19">It was a cold winter's night in Natimbi. Rain was pouring hard on the Dawnraider's faces, our foe? The Cragbeast Queen. Our guild goes from strength to strength, within the first attempt she went down like the scewered lizard that she is. Grats Dawnraiders on the first CBQ kill! Expect more farmage of her, as we continue to suceed in the expansion of GoD. Well done Dawnraiders!			  				<BR>
+				<p align="center"><img border="0" src="images/BBQ.jpg"></p>
+				<BR>
+			  			</td>
+			</tr>
+			
+		</table>
+		<BR>  
+		<a id="A1" >		<table cellpadding="2" cellspacing="0" width="95%">
+		  	<tr>
+			  <td class="NewsTop" height="19" Align="left" background="images/cellpic2.gif"><b>Araxt and Qukret PWNED, Barxt to follow!</b><BR>posted by <font color="#CC0033"><b>Lluianae</b></font> @ 17-3-2005</td>
+			</tr><tr>
+			  <td class="NewsBody" height="19">After what has been a long while, Dawnraiders finally returned to where we left off- Uqua. 54 brave Dawnraiders ventured deep within, and we dealt with the instance with skill. What did we get? Twins  added to our list, with Barxt within our grasp. Well done Dawnraiders!			  				<BR>
+				<p align="center"><img border="0" src="images/Araxt.jpg"></p>
+				<BR>
+			  			</td>
+			</tr>
+			
+		</table>
+		<BR>  
+		<a id="A2" >		<table cellpadding="2" cellspacing="0" width="95%">
+		  	<tr>
+			  <td class="NewsTop" height="19" Align="left" background="images/cellpic2.gif"><b>Ikkinz 4 pwnd!!</b><BR>posted by <font color="#CC0033"><b>Cujek</b></font> @ 5-3-2005</td>
+			</tr><tr>
+			  <td class="NewsBody" height="19">So we arrived in Ikkinz 4 - it was nice to be back, we've been away for a while. Apparently its been beefed up a little. We sacrified a hobbit or two to our heathen gods, notified our wives, girlfriends and mistresses we may be a little late, then set to kicking ass.
+
+Mission accomplished..... Qvic gets one step closer. Uqua - you're next!
+
+We're still recruiting for 3 - 4 highly skilled players. If you're interested, please check our the application forum
+
+			  				<BR>
+				<p align="center"><img border="0" src="images/kkk.jpg"></p>
+				<BR>
+			  			</td>
+			</tr>
+			
+		</table>
+		<BR>  
+		<a id="A3" >		<table cellpadding="2" cellspacing="0" width="95%">
+		  	<tr>
+			  <td class="NewsTop" height="19" Align="left" background="images/cellpic2.gif"><b>DR Anihilates Time Once Again!</b><BR>posted by <font color="#CC0033"><b>Kserasera</b></font> @ 6-2-2005</td>
+			</tr><tr>
+			  <td class="NewsBody" height="19">DR Back on form again with a complete clear of Time - Congratulations all Old and New DR members on nailing this smoothly and cleanly all the way through to the big boy Quarm :)			  				<BR>
+				<p align="center"><img border="0" src="images/drquarm1.jpg"></p>
+				<BR>
+			  			</td>
+			</tr>
+			
+		</table>
+		<BR>  
+			  </td>
+	</tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,108 @@
+<HTML>
+<TITLE>Dawnraiders of Venril Sathir</TITLE>
+<HEAD>
+<link rel="stylesheet" type="text/css" href="style.css">
+</HEAD>
+<BODY text="#FFFFFF" bgcolor="#000000" LINK="#FF9900" ALINK="#FF9900" VLINK="#FF9900" class="body">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td width="100%" background="images/banner.jpg" colspan="2" height="40" align="right"><img border="0" src="images/guild.gif" height="40"></td>
+  </tr>
+  <tr>
+    <td width="200" Valign="top"><table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1" height="40" Width="15%">
+  <tr>
+    <td width="100%" background="images/cellpic1.gif"><font face="Verdana" color="#FFFF00" Size="2">
+    Welcome, guest    </font></td>
+  </tr>
+        		<tr>
+    		 <td width='200' Align='center'><a href='index.php' class='nav'><font face='Verdana'>News</font></a></td>    		</tr>
+        		<tr>
+    		 <td width='200' Align='center'><a href='forum/' class='nav'><font face='Verdana'>Forum</font></a></td>    		</tr>
+        		<tr>
+    		 <td width='200' Align='center'><a href='charter.php' class='nav'><font face='Verdana'>Charter</font></a></td>    		</tr>
+        		<tr>
+    		 <td width='200' Align='center'><a href='members.php' class='nav'><font face='Verdana'>Members</font></a></td>    		</tr>
+        		<tr>
+    		 <td width='200' Align='center'><a href='links.php' class='nav'><font face='Verdana'>Links</font></a></td>    		</tr>
+        <tr>
+    <td width="100%" background="images/cellpic1.gif"><font face="Verdana" color="#FFFF00" Size="2">EverQuest Live News</font></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#212121">
+    <SCRIPT language="JavaScript" SRC="http://eqlive.station.sony.com/includes/js_news/eq_headlines.jsp?target=_eqlive"></SCRIPT>
+    <noscript>The EverQuest Live news requires you to have JavaScript turned on.</noscript>
+    </td>
+  </tr>
+     <tr>
+    <td width="100%" background="images/cellpic1.gif"><font face="Verdana" color="#FFFF00" Size="2">Login</font></td>
+  </tr>
+  <tr>
+      <td width="14%" Align="center" bgcolor="#212121"><BR>
+      	<form method="post">
+	<font face="Terminal" size="1">
+	Username:&nbsp;
+	<input type="text" name=username size="15" style="border: 1px solid #808080; color:#FFCC00; background-image:url('images/cellpic1.gif')">
+	Password:&nbsp; 
+	<input type="password" name=password size="15" style="border: 1px solid #808080; color:#FFCC00; background-image:url('images/cellpic1.gif')">
+	<input type="hidden" name="action" value="charedit">
+	<input type="submit" value="Login" name="Login" style="border:1px solid #808080; color:#FFCC00; width:150px; background-image:url('images/cellpic3.gif')">
+	</font>
+	</form>
+     </td>
+    </tr>
+</table>
+</td>
+    <td width="100%" Valign="top">
+    	<table border="1" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+	  <td width="100%" background="images/cellpic3.gif" height="15" bordercolorlight="#808080" bordercolordark="#808080"><font face="Verdana" color="#FFFF00" Size="1">
+	  30-3-2004 Xegony we are comming for you...	  </font></td>
+	</tr>
+	<tr> 
+	  <td width="100%" bordercolorlight="#808080" bordercolordark="#808080" align="center"><p align="center"><font face="Verdana" size="2" color="#FFCC00">
+	  As we all know the state of the game is very bugged atm, yet that couldn't hold DR back to go up To Xeg island for the third time to try and kill the big breasted lady. Since alot of things are not working as they should be it took us 3 tries to get back to the point where we left off last time we came up. In a last attempt before bed time we got wave4 of the adds down, at that time Xegony got stuck and range on the MT was all screwed... Yes another loss, but we left with the feeling she will go down big time when we go up gain.<BR><BR> I know i have been slacking on the news but there wasn't alot to tell you, we cleared the planes many times and a getting geared and ready for the next encounters on route to time. <BR><BR> We are opening up some recruitment atm. We are looking for 2 druids, a beserker, a bard and a wizard atm. You should be elemental flagged or just missing rallos zek/solro if you apply.		<br><br>
+		<img border=0 src="images/Raid220304.jpg">
+	  	  </p><BR><BR><p align="right">Rundark	  </font></td>
+	   </font></td>
+	</tr>
+    </table>
+    <br>
+    	<table border="1" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+	  <td width="100%" background="images/cellpic3.gif" height="15" bordercolorlight="#808080" bordercolordark="#808080"><font face="Verdana" color="#FFFF00" Size="1">
+	  15-3-2004 ever wonder....	  </font></td>
+	</tr>
+	<tr> 
+	  <td width="100%" bordercolorlight="#808080" bordercolordark="#808080" align="center"><p align="center"><font face="Verdana" size="2" color="#FFCC00">
+	  ...whats its like to raid with DR?<BR><BR>
+
+<a href=http://www.dawnraiders.com/Saradoc/sunday.avi>A typical Sunday (18MB)</a>	  </p><BR><BR><p align="right">Rundark	  </font></td>
+	   </font></td>
+	</tr>
+    </table>
+    <br>
+    	<table border="1" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+	  <td width="100%" background="images/cellpic3.gif" height="15" bordercolorlight="#808080" bordercolordark="#808080"><font face="Verdana" color="#FFFF00" Size="1">
+	  15-2-2004 The Story of Fenin Ro!	  </font></td>
+	</tr>
+	<tr> 
+	  <td width="100%" bordercolorlight="#808080" bordercolordark="#808080" align="center"><p align="center"><font face="Verdana" size="2" color="#FFCC00">
+	  So it has been 2 weeks now since the brave band of adventures, lead by one great person whos name we shall not mention here (just look at the botom of this post), killed solro and ventured into the elemental plane of fire. Its been 4 weeks even since they slayed that foul god Rallos Zek and well many felt it was time to slay another god. "Its been 2 weeks!" someone said with a loud voice. "aye" one replied, "2 weeks since we killed a god!". The adventurerers had been working hard slaying all kinds of stuff before, but most were minor things. "Well ok", said the fearless leader (look at bottom of post again), "lets kill us a Fenin Ro". And the band of friends moved into the plane of fire again where the tyrant would await them. The tyrant had put up some defenses tho in the form of birds, big frogs, giant spiders and even demons but nothing could stop these adventureres. They went past the first defense wall into the second castle. Here at a table they took a brake to eat first tho as its unhealthy to slay gods on an empty stomach. Then they started a war on the giant more deamons birds spiders and other trash launches at them, even other bands of adventurerers came laughing with them thinking they would never succeed. Fenin himself thought he was safe but was he?<br> <img src="images/Raid150204_1.jpg"><br>
+At this point the band of adventureres was scared at the sight of fenin ro, many wanted to run to their mommy, but the fearless leader said " Hold we came this far lets kill the basterd!" (bottom of post  again). The result was soon known 1 dead god and no dead dawnraiders.<BR>
+<img src="images/Raid150204_2.jpg"><br>
+Shouts of congratualtions came waving thru norrath as these proud men and women walked out of the plane of fire wearing these wierd shields.<br>
+<img src="images/Raid150204_3.jpg"><br>
+A big gratz to everyone there and just as a reminder there are still some spots open to join one of the finest guilds on EQ. Cya soon for the story of xegony the bitch with too big boobies!	  </p><BR><BR><p align="right">Rundark	  </font></td>
+	   </font></td>
+	</tr>
+    </table>
+    <br>
+    	</td>
+  </tr>
+  <tr>
+    <td width="100%" height="19" colspan="2" background="images/cellpic1.gif"></td>
+  </tr>
+</table>
+</BODY>
+</HTML>

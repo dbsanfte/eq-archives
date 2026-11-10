@@ -1,0 +1,128 @@
+<HTML>
+<TITLE>Dawnraiders of Venril Sathir</TITLE>
+<HEAD>
+<link rel="stylesheet" type="text/css" href="style.css">
+</HEAD>
+<BODY text="#FFFFFF" LINK="#FF9900" ALINK="#FF9900" VLINK="#FF9900">
+	<table cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+       <td width="165">
+       <td width="82%">
+       <td width="18%">
+      </TR>
+	<tr>
+	  <td colspan="2" align="left" style="background-repeat: no-repeat;" background="images/exempledr_1x1.jpg" height="96"></td>
+	  <td width="18%" align="right">
+	  	   <form method="POST" action="login.php"><input type="hidden" name="PHPSESSID" value="43742d67a4e3c18f40e9edcb00f18a0c" />
+		  UserName:<input class="text" type="text" name="UserName" size="20"><br>
+		  Password:<input class="text" type="password" name="Password" size="20"><br>
+          <input type="checkbox" name="Keeplogged" value="1">Keep me Logged in&nbsp;
+		  <input class="button" type="submit" value="Login" name="Login">
+	   </form>
+	  	  </td>
+	</tr>
+	<tr>
+	  <td Class="leftframe" background="images/exempledr_2x1.jpg" valign="top" align="center" width="156" rowspan="2">	
+		<img src="images/spacer.gif" height="65" width="1">
+		  <img src="images/spacer.gif" height="10" width="1">
+  <table cellpadding="2" cellspacing="0" width="165">
+    <tr>
+      <td class="menu" height="19" Align="center">.:&nbsp;Latest News&nbsp;:.</td>
+    </tr>
+  </table>
+  <img src="images/spacer.gif" height="2" width="1">
+  <table cellpadding="0" cellspacing="0" width="165">
+    <tr>
+      <td class="menu" height="19" Align="center">
+<a class="nav" href="#A0" >DR Breaks into RS</a><BR><a class="nav" href="#A1" >Xeg is Dead</a><BR><a class="nav" href="#A2" >Merry Christmas</a><BR><a class="nav" href="#A3" >Another Year</a><BR>      </td>
+    </tr>
+  </table>
+  <img src="images/spacer.gif" height="10" width="1">
+  <table cellpadding="2" cellspacing="0" width="165">
+    <tr>
+      <td class="menu" height="19" Align="center">.:&nbsp;SoE News&nbsp;:.</td>
+    </tr>
+  </table>
+  <img src="images/spacer.gif" height="2" width="1">
+  <table cellpadding="0" cellspacing="0" width="165">
+    <tr>
+      <td class="menu" height="19" Align="center">
+        <SCRIPT language="JavaScript" SRC="/includes/js_news/eq_headlines.jsp"></SCRIPT>
+	<noscript>The EverQuest Live news requires you to have JavaScript turned on.</noscript>
+      </td>
+    </tr>
+  </table>
+	  </td>
+	  <td align="center" valign="top" colspan="2">
+            <table cellpadding="0" cellspacing="0" width="95%">
+	  	<tr>
+		  <td class="menu" height="19" Align="center">
+		    	<a href="index.php?PHPSESSID=43742d67a4e3c18f40e9edcb00f18a0c" class="nav">News</font></a>&nbsp;&nbsp;&nbsp;
+		    	<a href="/forum?PHPSESSID=43742d67a4e3c18f40e9edcb00f18a0c" class="nav">Forum</font></a>&nbsp;&nbsp;&nbsp;
+		    	<a href="charter.php?PHPSESSID=43742d67a4e3c18f40e9edcb00f18a0c" class="nav">Charter</font></a>&nbsp;&nbsp;&nbsp;
+		    	<a href="members.php?PHPSESSID=43742d67a4e3c18f40e9edcb00f18a0c" class="nav">Members</font></a>&nbsp;&nbsp;&nbsp;
+		    	<a href="links.php?PHPSESSID=43742d67a4e3c18f40e9edcb00f18a0c" class="nav">Links</font></a>
+		    			  </td>
+		</tr>
+		</table>
+	  </td>
+	</tr>
+	<tr>
+	  <td align="center" valign="top" colspan="2">
+	  <img src="images/spacer.gif" height="10" width="1">
+	 <a id="A0" >		<table cellpadding="2" cellspacing="0" width="95%">
+		  	<tr>
+			  <td class="NewsTop" height="19" Align="left" background="images/cellpic2.gif"><b>DR Breaks into RS</b><BR>posted by <font color="#CC0033"><b>Kserasera</b></font> @ 2-2-2005</td>
+			</tr><tr>
+			  <td class="NewsBody" height="19">Congratulations to Dawnraiders on the first raid into RiftSeekers with the 1st victim being Feratha			  				<BR>
+				<p align="center"><img border="0" src="images/drrs1.jpg"></p>
+				<BR>
+			  			</td>
+			</tr>
+			
+		</table>
+		<BR>  
+		<a id="A1" >		<table cellpadding="2" cellspacing="0" width="95%">
+		  	<tr>
+			  <td class="NewsTop" height="19" Align="left" background="images/cellpic2.gif"><b>Xeg is Dead</b><BR>posted by <font color="#CC0033"><b>Gonorn</b></font> @ 27-1-2005</td>
+			</tr><tr>
+			  <td class="NewsBody" height="19">What more can i say apart from Gratz ALL on a job well done.
+/BOW before the the power of the Mighty DAWNRAIDERS			  				<BR>
+				<p align="center"><img border="0" src="images/drxeg.JPG"></p>
+				<BR>
+			  			</td>
+			</tr>
+			
+		</table>
+		<BR>  
+		<a id="A2" >		<table cellpadding="2" cellspacing="0" width="95%">
+		  	<tr>
+			  <td class="NewsTop" height="19" Align="left" background="images/cellpic2.gif"><b>Merry Christmas</b><BR>posted by <font color="#CC0033"><b>Tallaxo</b></font> @ 25-12-2004</td>
+			</tr><tr>
+			  <td class="NewsBody" height="19">Merry Christmas everyone.  			  				<BR>
+				<p align="center"><img border="0" src="images/window.jpg"></p>
+				<BR>
+			  			</td>
+			</tr>
+			
+		</table>
+		<BR>  
+		<a id="A3" >		<table cellpadding="2" cellspacing="0" width="95%">
+		  	<tr>
+			  <td class="NewsTop" height="19" Align="left" background="images/cellpic2.gif"><b>Another Year</b><BR>posted by <font color="#CC0033"><b>Tallaxo</b></font> @ 14-12-2004</td>
+			</tr><tr>
+			  <td class="NewsBody" height="19">Well, its been a hell of a year with all its ups and downs.  But with the help of our new found friends we are firmly back on track, and doing what we do best, Raiding and having fun. As you can see from the screenshot a small group of us Decended to the Plane of Bristol, and generally caused havoc and mayhem.  Thanks to everyone who could make it.
+2005 is almost apon us and will see us Grow from strength to strength. Cheers to you all.
+			  				<BR>
+				<p align="center"><img border="0" src="images/group2.jpg"></p>
+				<BR>
+			  			</td>
+			</tr>
+			
+		</table>
+		<BR>  
+			  </td>
+	</tr>
+	</table>
+</BODY>
+</HTML>
