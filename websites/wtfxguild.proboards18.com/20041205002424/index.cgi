@@ -1,0 +1,330 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> -->
+<html>
+<head>
+<title>Woodland Tree Friends - Home</title>
+<style type="text/css">
+<!--
+/* General layout */
+A:link        { text-decoration: none; color: 00FF00; }
+A:visited     { text-decoration: none; color: 339900; }
+A:hover       { text-decoration: underline overline; color: 00FF00; }
+BODY          { font-family: Verdana,Arial;
+                font-size:12px; margin-top: 0; margin-left: 0; margin-right: 0; padding-top: 0; padding-left: 0;
+                padding-right: 0; }
+TD            { font-family: Verdana,Arial; color: FFFFFF; font-size:11px}
+input         { font-family: Verdana,Arial; font-size: 9pt; color: 000000; }
+textarea      { font-family: Verdana,Arial; font-size: 9pt; color: 000000; }
+select        { font-family: Verdana,Arial; font-size: 7pt; color: 000000; }
+
+.nav          { font-size: 10px; text-decoration: none; color: FFFFFF; }
+.nav:link     { font-size: 10px; text-decoration: none; color: 00FF00; }
+.nav:visited  { font-size: 10px; text-decoration: none; color: 339900; }
+.nav:hover    { font-size: 10px; text-decoration: none; color: 00FF00; font-weight: bold; text-decoration: underline; }
+
+.windowbg     { background-color: 000000; font-size: 11px; font-family: Verdana,Arial; color: FFFFFF; }
+.windowbg2    { background-color: 000000; font-size: 11px; font-family: Verdana,Arial; color: FFFFFF; }
+.windowbg3    { background-color: FFB903; font-size: 11px; font-family: Verdana,Arial; color: FFFFFF; }
+
+.hr           { color: 000099;}
+.titlebg      { background-color: 000000; color: FFFFFF; }
+.text1        { font-style: normal; font-weight: bold; font-size: 12px; color: 00CCFF; }
+.catbg        { background-color: 999900; color: FFFFFF; font-weight: bold; font-size: 13px; }
+.bordercolor  { background-color: FFFFFF; }
+
+.quote        { font-size: 10px; font-family: Verdana,Arial; color: FFFFFF; background-color: 000000; }
+.code         { font-size: 10px; font-family: Courier New; color: FFFFFF; background-color: 000000; }
+-->
+</style>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+  if ((navigator.appVersion.substring(0,1) == "5" &&
+navigator.userAgent.indexOf('Gecko') != -1) ||
+navigator.userAgent.search(/Opera/) != -1) {
+   document.write('<META HTTP-EQUIV="pragma" CONTENT="no-cache">');
+  }
+// -->
+</script>
+</head>
+<body text="FFFFFF" bgcolor="000099" link="00FF00" vlink="339900" alink="">
+<br>
+
+<table width="92%" cellspacing="1" cellpadding="0" border="0" align="CENTER" bgcolor="FFFFFF" class="bordercolor">
+<tr>
+<td width="100%">
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td height="50" align="center" class="welcomebg" bgcolor="000099"><font size="+1">Woodland Tree Friends</font><br>
+<font size="-1">« Home »</font></td>
+<td class="welcomebg" bgcolor="000099">
+<p><font size="2">
+Welcome Guest. Please <A HREF="index.cgi?action=login">Login</A> or <A HREF="index.cgi?action=register">Register.</A><BR>Dec 4<sup>th</sup>, 2004, 6:23pm
+</font><br></p>
+</td>
+</tr>
+</table>
+</td>
+</tr><tr>
+<td align="center">
+<table width="100%" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td width="100%" align="center">
+<table border="0" width="100%" cellpadding="3" cellspacing="0" align="center">
+<tr>
+<td class="menubg" valign="middle" bgcolor="000000" align="center"><font size="1">
+<A HREF="index.cgi"><IMG SRC="http://4d5.net/boardimages/menu/home.gif" BORDER=0></A>
+ <A HREF="http://proboards8.com/help" target="_blank" style="cursor:help;"><IMG SRC="http://4d5.net/boardimages/menu/help.gif" BORDER=0></A>
+ <A HREF="index.cgi?action=search"><IMG SRC="http://4d5.net/boardimages/menu/search.gif" BORDER=0></A> <A HREF="index.cgi?action=login"><IMG SRC="http://4d5.net/boardimages/menu/login.gif" BORDER=0></A>
+ <A HREF="index.cgi?action=register"><IMG SRC="http://4d5.net/boardimages/menu/register.gif" BORDER=0></A>
+</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<BR>
+<!-- --></object></layer></div></span></style></noscript></script></applet></textarea></form></noembed></noframes>
+<center><script type="text/javascript"><!--
+google_ad_client = "pub-4696585109196199";google_alternate_ad_url = "http://banners.4d5.net/ads/ads.cgi?";google_ad_width = 728;google_ad_height = 90;google_ad_format = "728x90_as";google_color_border = "262626";google_color_bg = "B4BAD9";google_color_link = "74788C";google_color_url = "8C8C8C";google_color_text = "000000";//--></script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script></center>
+
+
+
+<!-- --></object></layer></div></span></style></noscript></script></applet></textarea></form></noembed></noframes>
+
+<CENTER>
+<table width="92%" cellspacing="0" cellpadding="0" align="center"><!-- change celpadding from 3-->
+  <tr>
+    <td valign="TOP" width="100%">
+      <BR><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td><IMG SRC="http://4d5.net/boardimages/open.gif" BORDER=0> <A HREF="index.cgi" class="nav"><B>Woodland Tree Friends</B></A><BR></font></td><form action="index.cgi?action=login2" method="post"><td valign=bottom align=right><B>user: <input type="text" name="username" size="6" style="font-size: 7pt"> pass: <input type="password" name="password" size="6" style="font-size: 7pt"> <input type=submit value="login" style="font-size: 7pt"></td></form></tr></table>
+<table border=0 width="100%" cellspacing="0" cellpadding="0" bgcolor="FFFFFF" class="bordercolor">
+<tr>
+<td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr>
+<td bgcolor="000000" class="titlebg" align="center"><font color="00CCFF" size="2"><b>News</b></font></td>
+</tr>
+<tr>
+<td valign="middle" align="center" height="60" bgcolor="000000">
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+var delay = 4500;
+var bcolor = "111111"
+var tcolor = "EEEE11"
+begintag = '<font size="2"><B>'
+var fcontent = new Array()
+fcontent[0] = "~WTF has moved~ --{ wtf.ksilebo.net }--"
+
+closetag = '</b></font>'
+
+var frame = 50;
+var st = 30;
+var wait = 1;
+
+ie4 = document.all&&!document.getElementById;
+ns4 = document.layers;
+DOM2 = document.getElementById;
+
+bR = HexToR(bcolor);
+bG = HexToG(bcolor);
+bB = HexToB(bcolor);
+tR = HexToR(tcolor);
+tG = HexToG(tcolor);
+tB = HexToB(tcolor);
+bR_m = bR;
+bG_m = bG;
+bB_m = bB;
+tR_m = tR;
+tG_m = tG;
+tB_m = tB;
+
+function HexToR(h) { return parseInt((cutHex(h)).substring(0,2),16) }
+function HexToG(h) { return parseInt((cutHex(h)).substring(2,4),16) }
+function HexToB(h) { return parseInt((cutHex(h)).substring(4,6),16) }
+function cutHex(h) { return (h.charAt(0)=="#") ? h.substring(1,7) : h}
+
+dir = ((tR+tG+tB) > (bR+bG+bB)) ? "up" : "down";
+dirback = ((tR+tG+tB) < (bR+bG+bB)) ? "up" : "down";
+dir_m = dir;
+index = 0;
+frame_m = frame;
+framehalf = frame / 2;
+wait_m = wait;
+stepR = Math.abs(tR - bR) / framehalf;
+stepG = Math.abs(tG - bG) / framehalf;
+stepB = Math.abs(tB - bB) / framehalf;
+step = Math.min(Math.round(Math.max(stepR,Math.max(stepG,stepB))),(240/framehalf));
+
+function fade() {
+if (index>=fcontent.length)
+	index = 0;
+if (DOM2) {
+	document.getElementById("fscroller").innerHTML=begintag+fcontent[index]+closetag;
+	index++;
+	colorfade();
+	}
+else if (ie4) {
+	document.all.fscroller.innerHTML=begintag+fcontent[index]+closetag;
+	index++;
+	setTimeout("fade()",delay);
+	}
+else if (ns4) {
+	document.fscrollerns.document.fscrollerns_sub.document.write(begintag+fcontent[index]+closetag);
+	document.fscrollerns.document.fscrollerns_sub.document.close();
+	index++;
+	setTimeout("fade()",delay);
+	}
+}
+
+function colorfade() {
+if (frame>0) {
+	if (frame==framehalf && wait>0) {
+		document.getElementById("fscroller").style.color="rgb("+wR+","+wG+","+wB+")";
+		wait--;
+		setTimeout("colorfade()",delay);
+		}
+	else {
+		if (dir=="down") {
+			if (bR>tR) bR-=step;
+			if (bG>tG) bG-=step;
+			if (bB>tB) bB-=step;
+			bR = Math.max(bR,1);
+			bG = Math.max(bG,1);
+			bB = Math.max(bB,1);
+			}
+		else {
+			if (bR<tR) bR+=step;
+			if (bG<tG) bG+=step;
+			if (bB<tB) bB+=step;
+			bR = Math.min(bR,255);
+			bG = Math.min(bG,255);
+			bB = Math.min(bB,255);
+			}
+		document.getElementById("fscroller").style.color="rgb("+bR+","+bG+","+bB+")";
+		if (frame==framehalf+1) {
+			document.getElementById("fscroller").style.color="rgb("+tR+","+tG+","+tB+")";
+			dir = dirback;
+			wR = tR;
+			wG = tG;
+			wB = tB;
+			tR = bR_m;
+			tG = bG_m;
+			tB = bB_m;
+			}
+		frame--;
+		setTimeout("colorfade()",st);
+		}
+	}
+else {
+	document.getElementById("fscroller").innerHTML=" ";
+	dir = dir_m;
+	frame = frame_m;
+	wait = wait_m;
+	tR = tR_m;
+	tG = tG_m;
+	tB = tB_m;
+	bR = bR_m;
+	bG = bG_m;
+	bB = bB_m;
+	setTimeout("fade()",st);
+	}
+}
+
+if (navigator.appVersion.substring(0,1) < 5 && navigator.appName == "Netscape") {
+var fwidth = screen.availWidth / 2;
+var bwidth = screen.availWidth / 4;
+document.write('<ilayer id="fscrollerns" width='+fwidth+' height=35 left='+bwidth+' top=0><layer id="fscrollerns_sub" width='+fwidth+' height=35 left=0 top=0></layer></ilayer>');
+window.onload = fade;
+}
+else if (navigator.userAgent.search(/Opera/) != -1 || (navigator.platform != "Win32" && navigator.userAgent.indexOf('Gecko') == -1)) {
+document.open();
+document.write('<div id="fscroller" style="width:90% height:15px; padding:2px">');
+for(i=0; i < fcontent.length; ++i) {
+document.write(begintag+fcontent[i]+closetag+'<br>');
+}
+document.write('</div>');
+document.close();
+window.onload = fade;
+}
+else {
+document.write('<div id="fscroller" style="width:90% height:15px; padding:2px"></div>');
+window.onload = fade;
+}
+// -->
+</script>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<table border=0 width="100%" cellspacing="0" cellpadding="0" bgcolor="FFFFFF" class="bordercolor">
+<tr>
+<td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr>
+<td class="titlebg" bgcolor="000000" colspan="2"><font class="text1" color="00CCFF" size="2"><b>Forum Name</b></font></td>
+<td class="titlebg" bgcolor="000000" width="1%" align="center"><font class="text1" color="00CCFF" size="2"><b>Topics</b></font></td>
+<td class="titlebg" bgcolor="000000" width="1%" align="center"><font class="text1" color="00CCFF" size="2"><b>Posts</b></font></td>
+<td class="titlebg" bgcolor="000000" width="24%" align="center"><font class="text1" color="00CCFF" size="2"><b>Last Post</b></font></td>
+</tr>
+</table></td></tr></table>
+<BR><BR>
+
+<table border=0 width="100%" cellspacing="0" cellpadding="0" bgcolor="FFFFFF" class="bordercolor">
+<tr>
+<td>
+	<table cellpadding="4" cellspacing="1" border="0" width="100%">
+	<tr>
+	<td bgcolor="000000" class="titlebg" align="center" colspan="2">
+	<font class="text1" color="FFFFFF" size="2"><b>Info Center</b></font></td>
+	</tr><tr>
+	<td class="catbg" bgcolor="999900" colspan="2"> <font size="2" class="cattext" color="00FFFF"><b>Forum Statistics</b></font></td>
+	</tr><tr>
+	<td class="windowbg" bgcolor="000000" width="20" valign="middle" align="center"><IMG SRC="http://4d5.net/boardimages/info.gif" BORDER=0></td>
+	<td class="windowbg2" bgcolor="000000" valign="top" align="center"><font size="1">
+		<table width="98%" cellpadding="3" align="center">
+		<tr>
+		<td valign="top" align="left" width="60%"><font size="1">
+		Total Topics: <B>0</B> &nbsp; - &nbsp; Total Posts: <B>0</B>
+		<BR>Last Updated Topic: <B>N/A</B><BR>View the <A href="index.cgi?action=recent">10 most recent posts</a> of this forum.
+		</font></td>
+		<td valign="top" align="left" width="40%"><font size="1">
+		Total Members: <a href="index.cgi?action=mlall"><B>31</B></a>
+		<BR>Newest Member: <A HREF="index.cgi?action=viewprofile&username=tumamil"><B>tumamil</B></A></font></td>
+</tr>
+</table>
+
+</font></td>
+</tr><tr>
+<td class="catbg" bgcolor="999900" colspan="2"> <font size="2" class="cattext" color="00FFFF"><b>Users Online</b></font></td>
+</tr><tr>
+<td class="windowbg" bgcolor="000000" width="20" valign="middle" align="center"><IMG SRC="http://4d5.net/boardimages/online.gif" BORDER=0></td>
+<td class="windowbg2" bgcolor="000000"><font size=1>
+<table width="98%" cellpadding="3" align="center">
+<tr>
+<td valign="top" align="left"><font size="1">1 Guests, 0 Members<BR>
+</font></td>
+</tr>
+</table>
+</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table><BR>
+    </td>
+  </tr>
+</table>
+</CENTER>
+
+
+<center><font size="-1"><b>Ad-Free is Back!</b> <a href="http://www.proboards.com/adfree-signup.cgi?wtfxguild.proboards18.com">Click Here to Make This Board Ad-Free!</a></font></center><br/>
+<CENTER> | <A HREF="http://www.vacations.net">Vacations</A> | <A HREF="http://www.hotels.net">Hotel Reservations</A> | <A HREF="http://www.everythingt1.com/">T1</A> | <A HREF="http://www.sunfinder.com">Vacation Packages</A> | <A HREF="http://www.sunfinder.com/airline_tickets.htm">Airline Tickets</A> | <A HREF="http://www.1800fastdsl.com/">DSL</A> | <A HREF="http://www.cliquepcs.com">Extreme PC</A> | </CENTER>
+<br><center><font face="Verdana,Arial" size="-2">This Board Hosted For FREE By <A HREF="http://www.proboards.com/" TARGET="_blank">ProBoards</A><BR>
+<font face="Verdana,Arial" size="-2">Get Your Own <A HREF="http://www.proboards.com/" TARGET="_blank">Free Message Board</A>!</FONT></CENTER>
+</body>
+</html>
+<!-- http://wtfxguild.proboards18.com/index.cgi? -->

@@ -1,0 +1,1 @@
+<A HREF="http://banners.4d5.net/ads/click.cgi?a=powertoolbars.selfserve/1" target="_blank"><IMG SRC="http://banners.proboards.com/banners/powertoolbars.1119270102.gif" BORDER="0"></A>

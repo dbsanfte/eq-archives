@@ -1,0 +1,1 @@
+<A HREF="http://banners.4d5.net/ads/click.cgi?a=vitaeb.selfserve/1" target="_blank"><IMG SRC="http://banners.proboards.com/banners/vitaeb.1122561792.gif" BORDER="0"></A>
