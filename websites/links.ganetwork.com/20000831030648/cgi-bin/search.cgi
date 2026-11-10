@@ -1,0 +1,132 @@
+<html>
+<head>
+	<title>Game Answers Links Database</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" text="#BBD9EA" link="E8F2F8" vlink="#D6E8EB" alink="#FFFFFF">
+
+<table width="95%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td nowrap> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td background="/images/head_titlebg.gif"> 
+            <table width="693" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td align="left" valign="top" width="322"><img src="/images/head_lefttop.gif" width="322" height="55"></td>
+                <td rowspan="2" bgcolor="#222843" align="left" valign="top" width="371"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" width="371" height="102" border="0">
+                    <param name=movie value="/images/head_titlelinks.swf">
+                    <param name=quality value=high>
+                    <embed src="/images/head_titlelinks.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="371" height="102" border="0"></embed> 
+                  </object></td>
+              </tr>
+              <tr> 
+                <td background="/images/options_top_tab.gif" width="322" align="center" valign="middle" height="47"> 
+				<h1>Search Options</h1>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td background="/images/head_titlebg.gif">&nbsp;</td>
+          <td width="2" align="left" valign="top"><img src="/images/head_right.gif" width="2" height="102"></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr background="/images/options_bottom_topbg.gif"> 
+          <td colspan="2" height="15" bgcolor="#457CB4"><img src="/images/bluecolor.gif" width="11" height="11"></td>
+        </tr>
+        <tr bgcolor="#669BD0" align="center" valign="middle">
+			<td colspan="2"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">			
+				<a href="http://links.ganetwork.com/links">Home</a> | 
+				<a href="http://links.ganetwork.com/cgi-bin/add.cgi">Add a site</a> | 
+				<a href="http://links.ganetwork.com/cgi-bin/modify.cgi">Modify a site</a> | 
+				<a href="http://links.ganetwork.com/links/New">What's new</a> | 
+				<a href="http://links.ganetwork.com/links/Cool">What's cool</a> | 
+				<a href="http://links.ganetwork.com/cgi-bin/jump.cgi?ID=random"">Random Link</a> | 
+				<a href="http://links.ganetwork.com/cgi-bin/search.cgi"">Search</a></font>
+			</td>
+        </tr>
+        <tr> 
+          <td colspan="2" background="/images/options_top_bottombg.gif"><img src="/images/options_top_bottombg.gif" width="56" height="8"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  	<!-- begin MAIN CONTENT -->
+	<tr bgcolor="#314C73"> 
+		<td>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr> 
+					<td background="/images/bannerbg.gif">
+						<!-- BANNER -->		
+						<table width="100%" height="60" rows=2 cols=1 cellspacing="0" cellpadding="0" align=center border="0"><tr><td align="center"><iframe src="http://ad.doubleclick.net/adi/gameanswers.com/;sz=468x60;ord=1?" width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no bordercolor="#000000"></iframe><SCRIPT LANGUAGE='JavaScript' SRC='http://ad.doubleclick.net/adj/gameanswers.com/;abr=!ie;abr=!webtv;sz=468x60;ord=1?'></SCRIPT><NOSCRIPT><A HREF="http://ad.doubleclick.net/jump/gameanswers.com/;abr=!ie4;abr=!ie5;sz=468x60;ord=1?"><IMG SRC="http://ad.doubleclick.net/ad/gameanswers.com/;abr=!ie4;abr=!ie5a;sz=468x60;ord=?"></a></NOSCRIPT></td></tr></table>
+						<!-- end BANNER -->
+					</td>
+				</tr>
+				<tr> 
+					<td background="/images/main_top.gif"><img src="/images/main_top.gif" width="69" height="7"></td>
+				</tr>
+			</table>
+			<blockquote>
+				
+				<form action="http://links.ganetwork.com/cgi-bin/search.cgi" method="GET">
+				<div class="margin">
+				<table border="0" cellpadding="0" cellspacing="0">
+				<tr><td>Search: <input type="TEXT" name="query" size="30"> <input type="Submit" value="Search"></td></tr>
+				<tr><td>Number of Results: <SELECT name="mh"><OPTION>10<OPTION SELECTED>25<OPTION>50<OPTION>100</SELECT></td></tr>
+				<tr><td>As Keywords: <input type="RADIO" name="type" value="keyword" CHECKED> As Phrase: <input type="RADIO" name="type" value="phrase"></td></tr>
+				<tr><td>AND connector: <input type="RADIO" name="bool" value="and" CHECKED> OR connector: <input type="RADIO" name="bool" value="or"></td></tr>
+				</table>
+				</div>
+				</form>
+			</blockquote>	
+		</td>
+	</tr>
+	<!-- end MAIN CONTENT -->
+	
+  <tr bgcolor="#222843" align="left" valign="top"> 
+    <td height="100%"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr bgcolor="#457CB4"> 
+          <td colspan="2" background="/images/options_bottom_topbg.gif"><img src="/images/options_bottom_topbg.gif" width="73" height="14"></td>
+        </tr>
+        <tr bgcolor="#669BD0" align="center" valign="middle">
+			<td colspan="2"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">			
+				<a href="http://links.ganetwork.com/links">Home</a> | 
+				<a href="http://links.ganetwork.com/cgi-bin/add.cgi">Add a site</a> | 
+				<a href="http://links.ganetwork.com/cgi-bin/modify.cgi">Modify a site</a> | 
+				<a href="http://links.ganetwork.com/links/New">What's new</a> | 
+				<a href="http://links.ganetwork.com/links/Cool">What's cool</a> | 
+				<a href="http://links.ganetwork.com/cgi-bin/jump.cgi?ID=random"">Random Link</a> | 
+				<a href="http://links.ganetwork.com/cgi-bin/search.cgi"">Search</a></font>
+			</td>
+        </tr>
+        <tr background="/images/options_bottom_bottombg2.gif" bgcolor="#222843" align="left" valign="top"> 
+          <td colspan="2"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr bgcolor="#457CB4" align="center" valign="middle" background="/images/bluecolor.gif"> 
+                <td><br><small class="update">Pages Updated On: 30-Aug-2000 - 22:04:58<br></td>
+              </tr>
+              <tr>
+                <td>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td align="left" valign="bottom" bgcolor="#457CB4" background="/images/bluecolor.gif"><img src="/images/options_bottom_cornerleft.gif" width="11" height="11"></td>
+                      <td align="right" valign="bottom" bgcolor="#457CB4" background="/images/bluecolor.gif"><img src="/images/options_bottom_cornerright.gif" width="11" height="11"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <p align="center"><font size="1" face="Arial, Helvetica, sans-serif" color="457CB4">COPYRIGHT 2000 Game Answer Network</font></p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+
