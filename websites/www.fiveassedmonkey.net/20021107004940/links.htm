@@ -1,0 +1,510 @@
+<html>
+
+<head>
+<title>Grey Hawke</title>
+<meta name="GENERATOR" content="Namo WebEditor v5.0(Trial)">
+<meta name="description" content="Document with a banner and navigation bars.">
+<script language="JavaScript">
+<!--
+function namosw_list(parent, visible, width, height, font, size, fgColor, bgColor, indent, hbgColor, hfgColor) {
+  this.additem = namosw_l_additem;
+  this.addlist = namosw_l_addlist;
+  this.make    = namosw_l_make;
+  this.write   = namosw_l_write;
+  this.show    = namosw_l_show;
+  this.update  = namosw_l_update;
+  this.updateparent = namosw_l_updateparent;
+  this.items = new Array();
+  this.id = document.namosw_lists.length;
+  this.parent_id = 0;
+  this.x = 0;
+  this.y = 0;
+  this.visible = visible;
+  this.width    = width;
+  this.height   = height;
+  this.parent   = parent;
+  this.indent = indent;
+  this.fgColor = fgColor;
+  this.hfgColor = hfgColor;
+  this.bgColor  = bgColor;
+  this.hbgColor = hbgColor;
+
+  this.font_start = '';
+  this.font_end   = '';
+
+  this.font_start = '<font color=' + fgColor;
+  if (font != '') this.font_start += ' face=\"' + font + '\"';
+  if (size != '' && size.indexOf('pt', 0) == -1) this.font_start += ' size=' + size;
+  this.font_start += '>';
+
+  this.font_start += '<span';
+  if (size.indexOf('pt', 0) != -1)
+    this.font_start += ' style="font-size:' +size+ ';"';
+  this.font_start += '>';
+
+  this.font_end  = '</span>';
+  this.font_end += '</font>';
+
+  this.made     = false;
+  this.shown    = false;
+  document.namosw_lists[document.namosw_lists.length] = this;
+}
+
+function namosw_l_setclip(layer, left, right, top, bottom) {
+  if (navigator.appName.indexOf('Netscape', 0) != -1) {
+    layer.clip.left   = left; 
+    layer.clip.right  = right;
+    layer.clip.top    = top;  
+    layer.clip.bottom = bottom;
+  } else {    
+    layer.style.pixelWidth  = right-left;
+    layer.style.pixelHeight = bottom-top;
+    layer.style.clip  = "rect(" + top + "," + right + "," + bottom + "," + left + ")";
+  }
+}
+
+function namosw_l_write() {
+  var layer, clip, str;
+  for(var i = 0; i < this.items.length; i++) { 
+    layer = this.items[i];
+    if (navigator.appName.indexOf('Netscape', 0) != -1) 
+      layer.visibility = "hidden";
+    else 
+      layer.style.visibility = "hidden";
+    str = "";
+
+    str += "<table width="+this.width+" nowrap border='0' cellpadding='0' cellspacing='0'><tr>";
+    if (0 < this.indent) str += "<td width="+this.indent+" nowrap>&nbsp;</td>";
+    if (layer.type == 'list') {
+      str += "<td width=15  valign='middle' nowrap><a";
+      if (navigator.appName.indexOf('Netscape', 0) != -1) str += " href=\"javascript:void(0);\"";
+      else                                                str += " style=\"cursor:hand;\"";
+      str += " onclick=\"namosw_l_expand("+layer.list.id+");\"><img src=\"collapsed.gif\" name=\"_img"+layer.list.id+"\" border='0'></a></td>";
+    } else {
+      str += "<td width=15 nowrap>&nbsp;</td>";
+    }
+    str += "<td height="+(this.height-3)+" width="+(this.width-15-this.indent)+" valign='middle' align='left'>";
+
+    if (layer.url)       str += "<a href=\"" + layer.url + "\" target=\"" + layer.frame + "\" style=\"text-decoration:none;\">";
+    if (this.font_start) str += this.font_start;
+    str += layer.text;
+    if (this.font_end) str += this.font_end;
+    if (layer.url)       str += "</a>";
+    str += "</td></table>";
+
+    str = str.replace("span", "span id='namoswlistspan" + layer.lid + "'");
+
+    if (navigator.appName.indexOf('Netscape', 0) != -1) {
+      layer.document.writeln(str);
+      layer.document.close();
+    } else {
+      layer.innerHTML = str;
+      layer.span = document.all['namoswlistspan'+layer.lid];
+    }
+    if (layer.type == 'list' && layer.list.visible)
+      this.items[i].list.write();
+  }
+  this.made = true;
+}
+
+function namosw_l_show() {
+  var layer;
+  for(var i = 0; i < this.items.length; i++) { 
+    layer = this.items[i];
+    namosw_l_setclip(layer, 0, this.width, 0, this.height-1);
+    if (navigator.appName.indexOf('Netscape', 0) != -1) {
+      if (layer.oBgColor) layer.document.bgColor = layer.oBgColor;
+      else layer.document.bgColor = this.bgColor;
+    } else {
+      if (layer.oBgColor) layer.style.backgroundColor = layer.oBgColor;
+      else layer.style.backgroundColor = this.bgColor;
+    }
+    if (layer.type == 'list' && layer.list.visible)
+      layer.list.show();
+  }
+  this.shown = true;
+}
+
+function namosw_l_update(parent_visible, x, y) {
+  var top = y, layer, list;
+  for(var i = 0; i < this.items.length; i++) { 
+    layer = this.items[i];
+    list  = layer.list;
+    if (this.visible && parent_visible) {
+      if (navigator.appName.indexOf('Netscape', 0) != -1) {
+	layer.visibility = "visible";
+	layer.top = top;
+	layer.left = x;
+      } else {
+	layer.style.visibility = "visible";
+	layer.style.pixelTop   = top;
+	layer.style.pixelLeft  = x;	
+//	if (layer.url) layer.style.cursor = "hand";
+      }
+      top += this.height;
+    } else {
+      if (navigator.appName.indexOf('Netscape', 0) != -1) layer.visibility = "hidden";
+      else layer.style.visibility = "hidden";
+    }
+    if (layer.type == 'list') {
+      if (list.visible) {
+        if (!list.made)  list.write();
+        if (!list.shown) list.show();
+        if (navigator.appName.indexOf('Netscape', 0) != -1) layer.document.images[0].src = "collapsed.gif";
+	else eval('document.images._img'+list.id+'.src = "collapsed.gif"');
+      } else {
+	if (navigator.appName.indexOf('Netscape', 0) != -1) layer.document.images[0].src = "expanded.gif";
+	else eval('document.images._img'+list.id+'.src = "expanded.gif"');
+      }
+      if (list.made)
+        top = list.update(this.visible && parent_visible, x, top);
+    }
+  }
+  return top;
+}
+
+function namosw_l_updateparent(parent_id) {
+  this.parent_id = parent_id;
+  for(var i = 0; i < this.items.length; i++)
+    if (this.items[i].type == 'list')
+      this.items[i].list.updateparent(parent_id);
+}
+
+function namosw_l_expand(i) {
+  document.namosw_lists[i].visible = !document.namosw_lists[i].visible;
+  list = document.namosw_lists[document.namosw_lists[i].parent_id];
+  list.update(true, list.x, list.y);
+}
+
+function namosw_l_make(x, y) {
+  this.updateparent(this.id);
+  this.write();
+  this.show();
+  this.update(true, x, y);
+  this.x = x; 
+  this.y = y;
+}
+
+function namosw_l_additem(text, url, frame) {
+  var layer = null;
+  if (navigator.appName.indexOf('Netscape', 0) != -1 && this.parent)
+    layer = eval('this.parent.document.layers.namoswlistitem'+document.namosw_lists.lid);
+  else
+    layer = eval('document.all.namoswlistitem'+document.namosw_lists.lid);
+  if (layer == null) {
+    if (navigator.appName.indexOf('Netscape', 0) != -1) 
+      layer = this.parent ? new Layer(this.width, this.parent) : new Layer(this.width);
+  }
+  if (layer == null) return;
+
+  if (url)   layer.url   = url;
+  if (frame) {
+    if (frame.indexOf('parent.') != 0)
+      layer.frame = "_" + frame;
+    else
+      layer.frame = frame.substring(7, frame.length);
+  }
+  layer.type = 'item';
+  layer.text = text;
+  layer.lid  = document.namosw_lists.lid;
+  this.items[this.items.length] = layer;
+  layer.hbgColor = this.hbgColor;
+  layer.oBgColor = this.bgColor;
+  layer.fgColor = this.fgColor;
+  layer.hfgColor = this.hfgColor;
+  if (layer.captureEvents)
+    layer.captureEvents(Event.MOUSEOVER|Event.MOUSEOUT|Event.MOUSEUP);
+  layer.onmouseover = namosw_l_onmouseover;
+  layer.onmouseout  = namosw_l_onmouseout;
+//  layer.onmouseup   = namosw_l_onmouseup;
+  document.namosw_lists.lid++;
+}
+
+function namosw_l_addlist(list, text, url, frame) {
+  var layer = null;
+
+  if (navigator.appName.indexOf('Netscape', 0) != -1 && this.parent)
+    layer = eval('this.parent.document.layers.namoswlistitem'+document.namosw_lists.lid);
+  else
+    layer = eval('document.all.namoswlistitem'+document.namosw_lists.lid);
+  if (layer == null) {
+    if (navigator.appName.indexOf('Netscape', 0) != -1) 
+      layer = this.parent ? new Layer(this.width, this.parent) : new Layer(this.width);
+  }
+  if (layer == null) return;
+
+  if (url)   layer.url   = url;
+  if (frame) {
+    if (frame.indexOf('parent.') != 0)
+      layer.frame = "_" + frame;
+    else
+      layer.frame = frame.substring(7, frame.length);
+  }
+  layer.list = list;
+  layer.type = 'list';
+  layer.text = text;
+  layer.lid  = document.namosw_lists.lid;
+  this.items[this.items.length] = layer;
+  list.parent = this;
+  layer.hbgColor = this.hbgColor;
+  layer.oBgColor = this.bgColor;
+  layer.fgColor = this.fgColor;
+  layer.hfgColor = this.hfgColor;
+  if (layer.captureEvents)
+    layer.captureEvents(Event.MOUSEOVER|Event.MOUSEOUT|Event.MOUSEUP);
+  layer.onmouseover = namosw_l_onmouseover;
+  layer.onmouseout  = namosw_l_onmouseout;
+//  layer.onmouseup   = namosw_l_onmouseup;
+  document.namosw_lists.lid++;
+}
+
+function namosw_l_onmouseover()
+{
+  if (navigator.appName.indexOf('Netscape', 0) != -1) {
+    if (this.hbgColor)
+      this.bgColor = this.hbgColor;
+  } else {
+    if (this.hbgColor) this.style.backgroundColor = this.hbgColor;
+    if (this.hfgColor) this.span.style.color = this.hfgColor;
+  }
+  if (this.url) self.status = this.url;
+}
+
+function namosw_l_onmouseout()
+{
+  if (navigator.appName.indexOf('Netscape', 0) != -1) {
+    this.bgColor = this.oBgColor;
+  } else  {
+    this.style.backgroundColor = this.oBgColor;
+    this.span.style.color = this.fgColor;
+  }
+  if (this.url) self.status = '';
+}
+
+function namosw_l_onmouseup()
+{
+  if (this.url) {
+    if (this.frame == 'blank') {
+      window.open(this.url, 'win1');
+    } else {
+      var frame_obj;
+      if ((frame_obj = eval(this.frame)) != null)
+        frame_obj.location = this.url;
+    }
+  }
+}
+
+function namosw_init_list(top_layer)
+{
+  if (parseInt(navigator.appVersion) < 4)
+    return;
+  if (top_layer == '')
+    return;
+
+  document.namosw_lists     = new Array();
+  document.namosw_lists.lid = 0;
+
+  var layer;
+  if (navigator.appName.indexOf('Netscape', 0) != -1)
+    layer = document.layers[top_layer];
+  else
+    layer = document.all[top_layer];
+
+  var string = "";
+  for (i = 0; i < 7; i++) {
+    string = string + "<div id='namoswlistitem" + (document.namosw_lists.lid+i) + "' " +
+                      "style='position: absolute;'></div>";
+  }
+  layer.innerHTML += string;
+
+  l1 = new namosw_list(layer, true, 136, 22, 'Arial', '1', 'black', '#666666', 0, '#999999');
+  l1.additem('News', 'index.html', 'self');
+  l1.additem('Code of Conduct', 'members.htm', 'self');
+  l1.additem('Forums', 'http://ubb.fiveassedmonkey.net/ubbthreads/ubbthreads.php', 'self');
+  l1.additem('Maps', 'http://www.fiveassedmonkey.net/maps/', 'self');
+  l1.additem('Links', 'links.htm', 'self');
+  l1.additem('Contact Us', 'contact.htm', 'self');
+  l1.additem('Members List', 'list.htm', 'self');
+
+  l1.make(0, 14);
+}
+
+function namosw_ns_resize()
+{
+  window.history.go(0);
+}
+
+// -->
+</script>
+</head>
+
+<body bgcolor="black" text="black" link="black" vlink="black" alink="#333333" OnLoad="namosw_init_list('layer1');" OnResize="namosw_ns_resize();">
+<div id="layer1" style="border-width:1px; border-style:none; width:136px; height:391px; position:absolute; left:15px; top:123px; z-index:1;">
+    <p>&nbsp;</p>
+</div>
+<table class="namo-sublist" border="0" width="801">
+    <tr>
+        <td width="163" bgcolor="#666666">
+            <p class="namo-sublist">&nbsp;</p>
+        </td>
+        <td width="628" bgcolor="#666666">            
+            <p align="center"><img src="GH_Banner.jpg" width="650" height="87" border="0"></td>
+    </tr>
+    <tr>
+        <td width="163" valign="top" height="487" bgcolor="#666666">            &nbsp;</td>
+        <td width="628" valign="top" height="487" bgcolor="#666666">
+            <p>&nbsp;</p>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="317" bgcolor="#999999" height="22">
+                        <p><font face="Arial">News and Resource Links</font></p>
+                    </td>
+                    <td width="317" bgcolor="#999999" height="22">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="317" valign="top">
+                        <p align="left"><font face="Arial">&nbsp;</font></p>
+                        <p align="left"><a href="http://eqvault.ign.com"><font face="Arial">EQVault</font></a><font face="Arial">&nbsp;</font></p>
+			<p><a href="http://http://everquest.allakhazam.com/"><font face="Arial">AllaKhazam's Magical Realm</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://eq.castersrealm.com/"><font face="Arial">EverQuest Casters Realm</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.magelo.com/"><font face="Arial">Magelo Powering Communities</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.knightsofthecreed.com/pom/"><font face="Arial">Plane of Mischief Site
+                        </font></a><font face="Arial">&nbsp;</font></p>
+			
+                    </td>
+                    <td width="317" bgcolor="#666666" valign="top">
+                        <p align="left"><font face="Arial">&nbsp;</font></p>
+                        <p align="left"><font face="Arial">News Site</font></p>
+                        <p align="left"><font face="Arial">News and Information 
+                        Site</font></p>
+                        <p align="left"> <font face="Arial">News and Information 
+                        Site</font></p>
+                        <p align="left"> <font face="Arial">Create, Manage 
+                        and Display your Characters Profiles to the World</font></p>
+                        <p align="left"> <font face="Arial">Site Dedicated 
+                        to the Riddles of the Plane of Mischief</font></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="317" bgcolor="#999999">
+                        <p><font face="Arial">Grey Hawke / Karana Links</font></p>
+                    </td>
+                    <td width="317" bgcolor="#999999">
+                        <p><font face="Arial">&nbsp;</font></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="317" valign="top">
+                        <p align="left"><b><font face="Arial">&nbsp;</font></b></p>
+                        <p align="left"><a href="http://cleric.fiveassedmonkey.net"><b><font face="Arial">Grey Hawke's Cleric Site</font></b></a><font face="Arial"><b>&nbsp;</b></font></p>
+			  <p align="left"><a href="http://bard.fiveassedmonkey.net"><b><font face="Arial">Grey Hawke's Bard Site</font></b></a><font face="Arial"><b>&nbsp;</b></font></p>
+			<p align="left"><a href="http://www30.brinkster.com/dinko/"><font face="Arial">Karana Kill Chart</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://vnboards.ign.com/board.asp?brd=5019"><font face="Arial">Karana Forums</font></a><font face="Arial">&nbsp;</font></p>
+                    </td>
+                    <td width="317" bgcolor="#666666" valign="top">
+                        <p><font face="Arial">&nbsp;</font></p>
+                        <p><font face="Arial">&nbsp;Grey Hawke's very own Cleric 
+                        Site</font></p>
+                        <p><font face="Arial">&nbsp;Karana's Best of the Best</font></p>
+                        <p><font face="Arial">VN Karana Board</font></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="317" bgcolor="#999999">
+                        <p><font face="Arial">Karana Guild Links</font></p>
+                    </td>
+                    <td width="317" bgcolor="#999999">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="317" height="240" valign="top">
+                        <p>&nbsp;</p>
+                        <p align="left"><a href="http://www.ashborne.org/"><font face="Arial">Ashborne Alliance</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.bd.wakwak.com/%7Exanth/guild/"><font face="Arial">Fama Volat</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.remus.dti.ne.jp/%7Enash/FortuneKiss.htm"><font face="Arial">Fortune Kiss</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://home.insightbb.com/~nightbane/index2.html"><font face="Arial">Nightbane</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://novae.dhs.org/"><font face="Arial">Novae</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.engtong.com/valoran/"><font face="Arial">Valoran</font></a><font face="Arial">&nbsp;</font></p>
+                    </td>
+                    <td width="317" bgcolor="#666666" height="240" valign="top">
+                        <p>&nbsp;</p>
+                        <p><font face="Arial">Ashborne Alliance Guild Site</font></p>
+                        <p><font face="Arial">Fama Volat Guild Site</font></p>
+                        <p><font face="Arial">Fortune Kiss Guild Site</font></p>
+                        <p><font face="Arial">Nightbane Guild Site</font></p>
+                        <p><font face="Arial">Novae Guild Site</font></p>
+                        <p><font face="Arial">Valoran Guild Site</font></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="317" bgcolor="#999999">
+                        <p><font face="Arial">Non-Karana Guild Links</font></p>
+                    </td>
+                    <td width="317" bgcolor="#999999">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="317" valign="top">
+                        <p><font face="Arial">&nbsp;</font></p>
+                        <p align="left"><a href="http://www.fohguild.org/index.php"><font face="Arial">Fires of Heaven</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.legacyofsteel.net/"><font face="Arial">Lagacy of Steel</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.darkwind-guild.com/"><font face="Arial">Darkwind</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.afterlifeguild.org/"><font face="Arial">Afterlife</font></a><font face="Arial">&nbsp;</font></p>
+                        <ul>
+                            <p align="left" style="line-height:100%; margin-top:0; margin-bottom:0;"><font size="2">If you think your guild has what 
+                            it takes to be up here. &nbsp;Then send an email </font><a href="mailto:sumadan@fiveassedmonkey.net"><font size="2">in</font></a><font size="2"> 
+                            and we will see what you got.</font></p>
+                        </ul>
+                    </td>
+                    <td width="317" bgcolor="#666666" valign="top">
+                        <p>&nbsp;</p>
+                        <p><font face="Arial">Fires of Heaven Guild Site</font></p>
+                        <p><font face="Arial">Legacy of Steel Guild Site</font></p>
+                        <p><font face="Arial">Darkwind Guild Site</font></p>
+                        <p><font face="Arial">Afterlife Guild Site</font></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="317" bgcolor="#999999">
+                        <p><font face="Arial">Class Specific Links</font></p>
+                    </td>
+                    <td width="317" bgcolor="#999999">
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="317" valign="top">
+                        <p>&nbsp;</p>
+                        <p align="left"><a href="http://www.eqclasses.com/"><font face="Arial">EQNecro</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.graffe.com/"><font face="Arial">Graffe's Wizard Compilation</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://pub105.ezboard.com/btheconcerthall.html?"><font face="Arial">The Concert Hall</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.monkly-business.com/"><font face="Arial">Monkly Buisness</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.thesafehouse.org/"><font face="Arial">The Safehouse</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.interealms.com/ranger/"><font face="Arial">The Rangers Glad</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.interealms.com/shaman/"><font face="Arial">The Shamans Crucible</font></a><font face="Arial">&nbsp;</font></p>
+			<p align="left"><a href="http://www.eqdruids.com/"><font face="Arial">EQDruids</font></a><font face="Arial">&nbsp;</font></p>
+                    </td>
+                    <td width="317" valign="top">
+                        <p>&nbsp;</p>
+                        <p><font face="Arial">Necromancers Class Site</font></p>
+                        <p><font face="Arial">Wizards Class Site</font></p>
+                        <p><font face="Arial">Bards Class Site</font></p>
+                        <p><font face="Arial">Monkey Class Site</font></p>
+                        <p><font face="Arial">Rogue Class Site (and much more)</font></p>
+                        <p><font face="Arial">Rangers Class Site</font></p>
+                        <p><font face="Arial">Shamans Class Site</font></p>
+                        <p><font face="Arial">Druids Class Site</font></p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+
+</html>

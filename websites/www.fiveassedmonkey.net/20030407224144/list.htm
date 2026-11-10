@@ -1,0 +1,3564 @@
+<html>
+
+<head>
+<title>Grey Hawke</title>
+<meta name="GENERATOR" content="Namo WebEditor v5.0(Trial)">
+<meta name="description" content="Document with a banner and navigation bars.">
+<script language="JavaScript">
+<!--
+function namosw_list(parent, visible, width, height, font, size, fgColor, bgColor, indent, hbgColor, hfgColor) {
+  this.additem = namosw_l_additem;
+  this.addlist = namosw_l_addlist;
+  this.make    = namosw_l_make;
+  this.write   = namosw_l_write;
+  this.show    = namosw_l_show;
+  this.update  = namosw_l_update;
+  this.updateparent = namosw_l_updateparent;
+  this.items = new Array();
+  this.id = document.namosw_lists.length;
+  this.parent_id = 0;
+  this.x = 0;
+  this.y = 0;
+  this.visible = visible;
+  this.width    = width;
+  this.height   = height;
+  this.parent   = parent;
+  this.indent = indent;
+  this.fgColor = fgColor;
+  this.hfgColor = hfgColor;
+  this.bgColor  = bgColor;
+  this.hbgColor = hbgColor;
+
+  this.font_start = '';
+  this.font_end   = '';
+
+  this.font_start = '<font color=' + fgColor;
+  if (font != '') this.font_start += ' face=\"' + font + '\"';
+  if (size != '' && size.indexOf('pt', 0) == -1) this.font_start += ' size=' + size;
+  this.font_start += '>';
+
+  this.font_start += '<span';
+  if (size.indexOf('pt', 0) != -1)
+    this.font_start += ' style="font-size:' +size+ ';"';
+  this.font_start += '>';
+
+  this.font_end  = '</span>';
+  this.font_end += '</font>';
+
+  this.made     = false;
+  this.shown    = false;
+  document.namosw_lists[document.namosw_lists.length] = this;
+}
+
+function namosw_l_setclip(layer, left, right, top, bottom) {
+  if (navigator.appName.indexOf('Netscape', 0) != -1) {
+    layer.clip.left   = left; 
+    layer.clip.right  = right;
+    layer.clip.top    = top;  
+    layer.clip.bottom = bottom;
+  } else {    
+    layer.style.pixelWidth  = right-left;
+    layer.style.pixelHeight = bottom-top;
+    layer.style.clip  = "rect(" + top + "," + right + "," + bottom + "," + left + ")";
+  }
+}
+
+function namosw_l_write() {
+  var layer, clip, str;
+  for(var i = 0; i < this.items.length; i++) { 
+    layer = this.items[i];
+    if (navigator.appName.indexOf('Netscape', 0) != -1) 
+      layer.visibility = "hidden";
+    else 
+      layer.style.visibility = "hidden";
+    str = "";
+
+    str += "<table width="+this.width+" nowrap border='0' cellpadding='0' cellspacing='0'><tr>";
+    if (0 < this.indent) str += "<td width="+this.indent+" nowrap>&nbsp;</td>";
+    if (layer.type == 'list') {
+      str += "<td width=15  valign='middle' nowrap><a";
+      if (navigator.appName.indexOf('Netscape', 0) != -1) str += " href=\"javascript:void(0);\"";
+      else                                                str += " style=\"cursor:hand;\"";
+      str += " onclick=\"namosw_l_expand("+layer.list.id+");\"><img src=\"collapsed.gif\" name=\"_img"+layer.list.id+"\" border='0'></a></td>";
+    } else {
+      str += "<td width=15 nowrap>&nbsp;</td>";
+    }
+    str += "<td height="+(this.height-3)+" width="+(this.width-15-this.indent)+" valign='middle' align='left'>";
+
+    if (layer.url)       str += "<a href=\"" + layer.url + "\" target=\"" + layer.frame + "\" style=\"text-decoration:none;\">";
+    if (this.font_start) str += this.font_start;
+    str += layer.text;
+    if (this.font_end) str += this.font_end;
+    if (layer.url)       str += "</a>";
+    str += "</td></table>";
+
+    str = str.replace("span", "span id='namoswlistspan" + layer.lid + "'");
+
+    if (navigator.appName.indexOf('Netscape', 0) != -1) {
+      layer.document.writeln(str);
+      layer.document.close();
+    } else {
+      layer.innerHTML = str;
+      layer.span = document.all['namoswlistspan'+layer.lid];
+    }
+    if (layer.type == 'list' && layer.list.visible)
+      this.items[i].list.write();
+  }
+  this.made = true;
+}
+
+function namosw_l_show() {
+  var layer;
+  for(var i = 0; i < this.items.length; i++) { 
+    layer = this.items[i];
+    namosw_l_setclip(layer, 0, this.width, 0, this.height-1);
+    if (navigator.appName.indexOf('Netscape', 0) != -1) {
+      if (layer.oBgColor) layer.document.bgColor = layer.oBgColor;
+      else layer.document.bgColor = this.bgColor;
+    } else {
+      if (layer.oBgColor) layer.style.backgroundColor = layer.oBgColor;
+      else layer.style.backgroundColor = this.bgColor;
+    }
+    if (layer.type == 'list' && layer.list.visible)
+      layer.list.show();
+  }
+  this.shown = true;
+}
+
+function namosw_l_update(parent_visible, x, y) {
+  var top = y, layer, list;
+  for(var i = 0; i < this.items.length; i++) { 
+    layer = this.items[i];
+    list  = layer.list;
+    if (this.visible && parent_visible) {
+      if (navigator.appName.indexOf('Netscape', 0) != -1) {
+	layer.visibility = "visible";
+	layer.top = top;
+	layer.left = x;
+      } else {
+	layer.style.visibility = "visible";
+	layer.style.pixelTop   = top;
+	layer.style.pixelLeft  = x;	
+//	if (layer.url) layer.style.cursor = "hand";
+      }
+      top += this.height;
+    } else {
+      if (navigator.appName.indexOf('Netscape', 0) != -1) layer.visibility = "hidden";
+      else layer.style.visibility = "hidden";
+    }
+    if (layer.type == 'list') {
+      if (list.visible) {
+        if (!list.made)  list.write();
+        if (!list.shown) list.show();
+        if (navigator.appName.indexOf('Netscape', 0) != -1) layer.document.images[0].src = "collapsed.gif";
+	else eval('document.images._img'+list.id+'.src = "collapsed.gif"');
+      } else {
+	if (navigator.appName.indexOf('Netscape', 0) != -1) layer.document.images[0].src = "expanded.gif";
+	else eval('document.images._img'+list.id+'.src = "expanded.gif"');
+      }
+      if (list.made)
+        top = list.update(this.visible && parent_visible, x, top);
+    }
+  }
+  return top;
+}
+
+function namosw_l_updateparent(parent_id) {
+  this.parent_id = parent_id;
+  for(var i = 0; i < this.items.length; i++)
+    if (this.items[i].type == 'list')
+      this.items[i].list.updateparent(parent_id);
+}
+
+function namosw_l_expand(i) {
+  document.namosw_lists[i].visible = !document.namosw_lists[i].visible;
+  list = document.namosw_lists[document.namosw_lists[i].parent_id];
+  list.update(true, list.x, list.y);
+}
+
+function namosw_l_make(x, y) {
+  this.updateparent(this.id);
+  this.write();
+  this.show();
+  this.update(true, x, y);
+  this.x = x; 
+  this.y = y;
+}
+
+function namosw_l_additem(text, url, frame) {
+  var layer = null;
+  if (navigator.appName.indexOf('Netscape', 0) != -1 && this.parent)
+    layer = eval('this.parent.document.layers.namoswlistitem'+document.namosw_lists.lid);
+  else
+    layer = eval('document.all.namoswlistitem'+document.namosw_lists.lid);
+  if (layer == null) {
+    if (navigator.appName.indexOf('Netscape', 0) != -1) 
+      layer = this.parent ? new Layer(this.width, this.parent) : new Layer(this.width);
+  }
+  if (layer == null) return;
+
+  if (url)   layer.url   = url;
+  if (frame) {
+    if (frame.indexOf('parent.') != 0)
+      layer.frame = "_" + frame;
+    else
+      layer.frame = frame.substring(7, frame.length);
+  }
+  layer.type = 'item';
+  layer.text = text;
+  layer.lid  = document.namosw_lists.lid;
+  this.items[this.items.length] = layer;
+  layer.hbgColor = this.hbgColor;
+  layer.oBgColor = this.bgColor;
+  layer.fgColor = this.fgColor;
+  layer.hfgColor = this.hfgColor;
+  if (layer.captureEvents)
+    layer.captureEvents(Event.MOUSEOVER|Event.MOUSEOUT|Event.MOUSEUP);
+  layer.onmouseover = namosw_l_onmouseover;
+  layer.onmouseout  = namosw_l_onmouseout;
+//  layer.onmouseup   = namosw_l_onmouseup;
+  document.namosw_lists.lid++;
+}
+
+function namosw_l_addlist(list, text, url, frame) {
+  var layer = null;
+
+  if (navigator.appName.indexOf('Netscape', 0) != -1 && this.parent)
+    layer = eval('this.parent.document.layers.namoswlistitem'+document.namosw_lists.lid);
+  else
+    layer = eval('document.all.namoswlistitem'+document.namosw_lists.lid);
+  if (layer == null) {
+    if (navigator.appName.indexOf('Netscape', 0) != -1) 
+      layer = this.parent ? new Layer(this.width, this.parent) : new Layer(this.width);
+  }
+  if (layer == null) return;
+
+  if (url)   layer.url   = url;
+  if (frame) {
+    if (frame.indexOf('parent.') != 0)
+      layer.frame = "_" + frame;
+    else
+      layer.frame = frame.substring(7, frame.length);
+  }
+  layer.list = list;
+  layer.type = 'list';
+  layer.text = text;
+  layer.lid  = document.namosw_lists.lid;
+  this.items[this.items.length] = layer;
+  list.parent = this;
+  layer.hbgColor = this.hbgColor;
+  layer.oBgColor = this.bgColor;
+  layer.fgColor = this.fgColor;
+  layer.hfgColor = this.hfgColor;
+  if (layer.captureEvents)
+    layer.captureEvents(Event.MOUSEOVER|Event.MOUSEOUT|Event.MOUSEUP);
+  layer.onmouseover = namosw_l_onmouseover;
+  layer.onmouseout  = namosw_l_onmouseout;
+//  layer.onmouseup   = namosw_l_onmouseup;
+  document.namosw_lists.lid++;
+}
+
+function namosw_l_onmouseover()
+{
+  if (navigator.appName.indexOf('Netscape', 0) != -1) {
+    if (this.hbgColor)
+      this.bgColor = this.hbgColor;
+  } else {
+    if (this.hbgColor) this.style.backgroundColor = this.hbgColor;
+    if (this.hfgColor) this.span.style.color = this.hfgColor;
+  }
+  if (this.url) self.status = this.url;
+}
+
+function namosw_l_onmouseout()
+{
+  if (navigator.appName.indexOf('Netscape', 0) != -1) {
+    this.bgColor = this.oBgColor;
+  } else  {
+    this.style.backgroundColor = this.oBgColor;
+    this.span.style.color = this.fgColor;
+  }
+  if (this.url) self.status = '';
+}
+
+function namosw_l_onmouseup()
+{
+  if (this.url) {
+    if (this.frame == 'blank') {
+      window.open(this.url, 'win1');
+    } else {
+      var frame_obj;
+      if ((frame_obj = eval(this.frame)) != null)
+        frame_obj.location = this.url;
+    }
+  }
+}
+
+function namosw_init_list(top_layer)
+{
+  if (parseInt(navigator.appVersion) < 4)
+    return;
+  if (top_layer == '')
+    return;
+
+  document.namosw_lists     = new Array();
+  document.namosw_lists.lid = 0;
+
+  var layer;
+  if (navigator.appName.indexOf('Netscape', 0) != -1)
+    layer = document.layers[top_layer];
+  else
+    layer = document.all[top_layer];
+
+  var string = "";
+  for (i = 0; i < 7; i++) {
+    string = string + "<div id='namoswlistitem" + (document.namosw_lists.lid+i) + "' " +
+                      "style='position: absolute;'></div>";
+  }
+  layer.innerHTML += string;
+
+  l1 = new namosw_list(layer, true, 136, 22, 'Arial', '1', 'black', '#666666', 0, '#999999');
+  l1.additem('News', 'index.html', 'self');
+  l1.additem('Code of Conduct', 'members.htm', 'self');
+  l1.additem('Forums', 'http://ubb.fiveassedmonkey.net/ubbthreads/ubbthreads.php', 'self');
+  l1.additem('Maps', 'http://www.fiveassedmonkey.net/maps/', 'self');
+  l1.additem('Links', 'links.htm', 'self');
+  l1.additem('Contact Us', 'contact.htm', 'self');
+  l1.additem('Members List', 'list.htm', 'self');
+
+  l1.make(0, 14);
+}
+
+function namosw_ns_resize()
+{
+  window.history.go(0);
+}
+
+// -->
+</script>
+</head>
+
+<body bgcolor="black" text="black" link="black" vlink="black" alink="#333333" OnLoad="namosw_init_list('layer1');" OnResize="namosw_ns_resize();">
+<div id="layer1" style="border-width:1px; border-style:none; width:136px; height:391px; position:absolute; left:15px; top:123px; z-index:1;">
+    <p>&nbsp;</p>
+</div>
+<table class="namo-sublist" border="0" width="801">
+    <tr>
+        <td width="163" bgcolor="#666666">
+            <p class="namo-sublist">&nbsp;</p>
+        </td>
+        <td width="628" bgcolor="#666666">            
+            <p align="center"><img src="GH_Banner.jpg" width="650" height="87" border="0"></td>
+    </tr>
+    <tr>
+        <td width="163" valign="top" height="487" bgcolor="#666666">            &nbsp;</td>
+        <td width="628" height="487" bgcolor="#666666">
+            <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="1" BORDERCOLOR="555555" BGCOLOR="666666" WIDTH="105%">
+<center>	
+<TR BGCOLOR="555555">
+		<TD>
+		<FONT FACE="Verdana" COLOR="ffffff" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<B>NAME</A></B>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="ffffff" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<B>LEVEL</A></B>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="ffffff" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<B>CLASS</B>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="ffffff" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<B>GENDER</B>
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=26"></A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Druid
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=146">Aazlan</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		55
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Wizard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=141">Allianah</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Enchanter
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=118">Ardus</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		58
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Shadow Knight
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=36">Asanti</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Cleric
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=112">Atalakas</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Rouge
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=137">Atma</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Druid
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=62">Baladin Stormbringer</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=122">Baladinn</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=117">Bastage</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Shaman
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=74">Bigjody Gladden</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Shaman
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=60">Biljac Dogfood</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		59
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=147">Borago</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		59
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Enchanter
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=116">Byffen</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Cleric
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=51">Camerone</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Wizard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=77">Catrulis Kantilax</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		59
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=92">Celaborn</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		59
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Paladin
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=44">Chantela</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Enchanter
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=68">Chartler</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		58
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Paladin
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=139">Cutsik Chissel</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Paladin
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=67">Darclon</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		57
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Monk
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=127">Dasmexa</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Mage
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=103">Deano</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=133">Derago</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Mage
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=37">Dinkey</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=97">Draxxon</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		56
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Mage
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=134">Dumonde</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		59
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Necromancer
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=39">Erruin Embercore</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		59
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Wizard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=91">Excalior</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		58
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Shaman
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=46">Fandiwen</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		1
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Enchanter
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=136">Finch</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Bard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=53">Finneus</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Rouge
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=110">Garix</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Monk
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=126">Garixy</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Enchanter
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=19">Hammeron</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Monk
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=128">Hemangioma</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Monk
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=24">Hermana</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Shaman
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=20">HooLooVu</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		56
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Necromancer
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=15">Igag</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		56
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=119">Iqueue</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		59
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Bard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=28">Iseingix</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		55
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Wizard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=166">Jani</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Bard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=49">Jeralt</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Druid
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=109">Kaasa</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		58
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Shaman
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=41">Kallador</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Paladin
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=9">Katerina</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		58
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Druid
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=129">Keithh</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=6">Krieger Gott</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		59
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=125">Kunimitsa</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Enchanter
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=120">Kytra</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Shadow Knight
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=16">Laldaena</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		57
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Shaman
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=27">Larian</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		51
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Ranger
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=57">Logh</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Cleric
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=54">Maira</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Cleric
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=48">Marley Dread</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Cleric
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=113">Merrlen</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Wizard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=63">Metfan</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Monk
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=99">Mondo</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		58
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Monk
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=114">Mookus</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Wizard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=42">Myrath</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Wizard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=179">Myrrdin</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Wizard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=18">Myrta Magnanimous</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		56
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Paladin
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=33">Naldiyan</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		53
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Shadow Knight
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=69">Niliuin</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		55
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Wizard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=131">Nlocnil</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=3">Nxane</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		58
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Druid
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=43">onix</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Mage
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=79">Onnyx</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		56
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Necromancer
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=184">Orniter</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		52
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Necromancer
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=32">Ozmo</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		59
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Paladin
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=145">Parm Vomgrossenhirn</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		55
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Enchanter
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=124">Pickin</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Rouge
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=1">Praefex</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		56
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Druid
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=121">Raile</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Cleric
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=135">Remolas</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		58
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Bard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=98">Rzuk Rock</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=111">Sarcan</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Cleric
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=58">Sarcan</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Cleric
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=14">Senok</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		55
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Bard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=59">Shanelle</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		58
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Cleric
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=107">Shizoku</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		55
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Rouge
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=90">Sindaan</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Necromancer
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=17">Smer</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		54
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Monk
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=95">stellenious</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		56
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Druid
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=123">Stormbeard</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=130">Sumadan</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Wizard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=87">syntoya</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Rouge
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=82">szoron</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Cleric
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=149">Taor The Ranger</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Ranger
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=115">Tatateto</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		59
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Cleric
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=144">tlatoani</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		55
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Enchanter
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=70">Torc</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Monk
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=25">Verex</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		56
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Shaman
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=23">Vinrea</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		59
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Warrior
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=132">Vorrata</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Wizard
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=101">Wenlaya Mystweaver</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		51
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Ranger
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=40">yemen</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Enchanter
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=55">Yerkisk Yoorash</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		58
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Shadow Knight
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Male
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+	<TR>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		<A HREF="index.cfm?content=playeritemlist&uid=108">Yestis</A>
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		60
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Mage
+		</DIV>
+		</FONT>
+		</TD>
+		<TD>
+		<FONT FACE="Verdana" COLOR="BLACK" SIZE="2">
+		<DIV ALIGN="CENTER">
+		Female
+		</DIV>
+		</FONT>
+		</TD>
+		
+	</TR>
+
+</TABLE></center></td>
+    </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+
+</html>
