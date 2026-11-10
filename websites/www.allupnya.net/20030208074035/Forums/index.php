@@ -1,0 +1,341 @@
+<!-- DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" -->
+<!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+ <link rel="top" href="index.php" title="" />
+<link rel="search" href="search.php" title="" />
+<link rel="help" href="faq.php" title="" />
+<link rel="author" href="memberlist.php" title="" />
+
+<title>Team KAAOS -- Index</title>
+<link rel="stylesheet" href="templates/MissionImpossible/MissionImpossible.css" type="text/css">
+<style>
+TD.toprow
+{
+	color: E6C2C2;
+	font-weight: bold;
+	height: 30px;
+	background-image: url(templates/MissionImpossible/images/_cellpic_red.gif);
+}
+TD.catrow
+{
+	color: 272727;
+	font-weight: bold;
+	height: 23px;
+	background-image: url(templates/MissionImpossible/images/_cellpic_yellow.gif);
+}
+
+</style>
+</head>
+<body background="images/bg.gif" text="#FFFFFF" leftmargin="0" topmargin="0">
+
+<br>
+<table width="100%" height="72" border="0" cellpadding="0" cellspacing="0">
+ <tr>
+  <td width="*" background="images/banner-bg.jpg"><a href="index.php"><img src="images/kaaos.jpg" border="0"></a></td>
+  <td width="498" align="right"><img src="images/games.jpg"></td>
+ </tr>
+</table><br>
+
+<table width="350" align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="1">
+ <tr>
+  <td>
+   <table width="100%" bgcolor="#404040" border="0" cellpadding="0" cellspacing="3">
+    <tr>
+     <td align="center"><b>
+      :: <a href="../index.php" class="nav">Home</a>
+      :: <a href="../roster.php" class="nav">Roster</a>
+      :: <a href="http://stats.allupnya.net" target="_blank">Server Stats</a>
+      :: <a href="../Forums/" class="nav">Forums</a> ::</b>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table><br>
+
+    <TD align="right" bgcolor="2C2C2C"><IMG src="templates/MissionImpossible/images/_map_top.gif" width="406" height="24" hspace="5" usemap="#Map" border="0"></TD>
+  </TR>
+  <TR>
+    <TD bgcolor="2C2C2C">
+      <TABLE width="100%" border="0" cellspacing="0" cellpadding="10">
+        <TR>
+          <TD>
+
+
+<table width="98%" border="0" cellspacing="2" cellpadding="2" align="center">
+  <tr>
+    <td align="left" width="50%" valign="middle"><span class="smalltext">
+      <br>
+      The time now is Sat Feb 08, 2003 1:37 am<br>
+      </span></td>
+    <td align="right" width="50%" valign="bottom">
+      <p><a href="index.php?sid=a3adebf71772ab6ea554aea4187090b4" >Team KAAOS Forum Index</a><br>
+      </p>
+      <p><span class="smalltext">Our users have posted a total of <b>11</b> articles<br>
+        We have <b>9</b> registered users</span></p>
+    </td>
+  </tr>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" width="98%" align="center">
+  <tr>
+    <td class="tableborder">
+      <table cellpadding="4" cellspacing="1" border="0" width="100%">
+        <tr align="center">
+          <td class="toprow">&nbsp;</td>
+          <td width="80%" align="left" class="toprow"><b><span class="toprowtext">&nbsp;Forum&nbsp;</span></b></td>
+          <td class="toprow"><b><span class="toprowtext">&nbsp;Posts&nbsp;</span></b></td>
+          <td class="toprow"><b><span class="toprowtext">Threads</span></b></td>
+          <td nowrap class="toprow"><b><span class="toprowtext">&nbsp;Last Post&nbsp;</span></b></td>
+          <td width="20%" class="toprow"><b><span class="toprowtext">&nbsp;Moderator&nbsp;</span></b></td>
+        </tr>
+        <tr>
+          <td colspan="6" class="catrow"><a href="index.php?c=1&amp;sid=a3adebf71772ab6ea554aea4187090b4" class=catlink>General Discussion</a></td>
+        </tr>
+        <tr align="center">
+          <td valign="top" class="row1" align="center"><img src="templates/MissionImpossible/images/folder.gif" alt="No new posts" title="No new posts"></td>
+          <td align="left" class="row2"><a href="viewforum.php?f=1&amp;sid=a3adebf71772ab6ea554aea4187090b4" class="forumlink">General Chit-Chat</a><br>
+            <span class="smalltext"> Shoot the Shit Here,  Any and All Topics<br>
+            </span></td>
+          <td class="row1"><span class="smalltext"><font size="2">6</font></span></td>
+          <td class="row2"><span class="smalltext"><font size="2">5</font></span></td>
+          <td class="row1" align="right" nowrap>
+            <table width="100%">
+              <tr>
+                <td nowrap align="right"> <span class="gensmall">Fri Jan 24, 2003 1:22 am<br /><a href="profile.php?mode=viewprofile&amp;u=2&amp;sid=a3adebf71772ab6ea554aea4187090b4">Blayloc</a> <a href="viewtopic.php?p=10&amp;sid=a3adebf71772ab6ea554aea4187090b4#10"><img src="templates/MissionImpossible/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+              </tr>
+            </table>
+          </td>
+          <td class="row2" nowrap><span class="smalltext"><a href="groupcp.php?g=3&amp;sid=a3adebf71772ab6ea554aea4187090b4">Team KAAOS Member</a></span></td>
+        </tr>
+        <tr align="center">
+          <td valign="top" class="row1" align="center"><img src="templates/MissionImpossible/images/folder.gif" alt="No new posts" title="No new posts"></td>
+          <td align="left" class="row2"><a href="viewforum.php?f=2&amp;sid=a3adebf71772ab6ea554aea4187090b4" class="forumlink">Sig Testing</a><br>
+            <span class="smalltext"> Test your Sig here,.. AND ONLY HERE<br>
+            </span></td>
+          <td class="row1"><span class="smalltext"><font size="2">0</font></span></td>
+          <td class="row2"><span class="smalltext"><font size="2">0</font></span></td>
+          <td class="row1" align="right" nowrap>
+            <table width="100%">
+              <tr>
+                <td nowrap align="right"> <span class="gensmall">No Posts</span></td>
+              </tr>
+            </table>
+          </td>
+          <td class="row2" nowrap><span class="smalltext"><a href="groupcp.php?g=3&amp;sid=a3adebf71772ab6ea554aea4187090b4">Team KAAOS Member</a></span></td>
+        </tr>
+        <tr align="center">
+          <td valign="top" class="row1" align="center"><img src="templates/MissionImpossible/images/folder.gif" alt="No new posts" title="No new posts"></td>
+          <td align="left" class="row2"><a href="viewforum.php?f=8&amp;sid=a3adebf71772ab6ea554aea4187090b4" class="forumlink">Recruiting</a><br>
+            <span class="smalltext"> Recruiting Questions?  Want a Tryout?  Post your info here.<br>
+            </span></td>
+          <td class="row1"><span class="smalltext"><font size="2">1</font></span></td>
+          <td class="row2"><span class="smalltext"><font size="2">1</font></span></td>
+          <td class="row1" align="right" nowrap>
+            <table width="100%">
+              <tr>
+                <td nowrap align="right"> <span class="gensmall">Mon Jan 20, 2003 2:34 pm<br /><a href="profile.php?mode=viewprofile&amp;u=2&amp;sid=a3adebf71772ab6ea554aea4187090b4">Blayloc</a> <a href="viewtopic.php?p=9&amp;sid=a3adebf71772ab6ea554aea4187090b4#9"><img src="templates/MissionImpossible/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+              </tr>
+            </table>
+          </td>
+          <td class="row2" nowrap><span class="smalltext">&nbsp;</span></td>
+        </tr>
+        <tr>
+          <td colspan="6" class="catrow"><a href="index.php?c=2&amp;sid=a3adebf71772ab6ea554aea4187090b4" class=catlink>Server Discussion</a></td>
+        </tr>
+        <tr align="center">
+          <td valign="top" class="row1" align="center"><img src="templates/MissionImpossible/images/folder.gif" alt="No new posts" title="No new posts"></td>
+          <td align="left" class="row2"><a href="viewforum.php?f=3&amp;sid=a3adebf71772ab6ea554aea4187090b4" class="forumlink">Bannings</a><br>
+            <span class="smalltext"> Banned from the Server?  HAHAH!!! You h4xing Lamer!.  SUCK IT!    No... really.. state your case here, PLEASE POST YOUR WONID. We will listen.. no really.. we will!<br>
+            </span></td>
+          <td class="row1"><span class="smalltext"><font size="2">0</font></span></td>
+          <td class="row2"><span class="smalltext"><font size="2">0</font></span></td>
+          <td class="row1" align="right" nowrap>
+            <table width="100%">
+              <tr>
+                <td nowrap align="right"> <span class="gensmall">No Posts</span></td>
+              </tr>
+            </table>
+          </td>
+          <td class="row2" nowrap><span class="smalltext"><a href="groupcp.php?g=3&amp;sid=a3adebf71772ab6ea554aea4187090b4">Team KAAOS Member</a></span></td>
+        </tr>
+        <tr align="center">
+          <td valign="top" class="row1" align="center"><img src="templates/MissionImpossible/images/folder.gif" alt="No new posts" title="No new posts"></td>
+          <td align="left" class="row2"><a href="viewforum.php?f=4&amp;sid=a3adebf71772ab6ea554aea4187090b4" class="forumlink">Maps and Plugins</a><br>
+            <span class="smalltext"> Have a Map or Plugin you would like to see on the Servers?  Post your Suggestions here!<br>
+            </span></td>
+          <td class="row1"><span class="smalltext"><font size="2">0</font></span></td>
+          <td class="row2"><span class="smalltext"><font size="2">0</font></span></td>
+          <td class="row1" align="right" nowrap>
+            <table width="100%">
+              <tr>
+                <td nowrap align="right"> <span class="gensmall">No Posts</span></td>
+              </tr>
+            </table>
+          </td>
+          <td class="row2" nowrap><span class="smalltext"><a href="groupcp.php?g=3&amp;sid=a3adebf71772ab6ea554aea4187090b4">Team KAAOS Member</a></span></td>
+        </tr>
+        <tr>
+          <td colspan="6" class="catrow"><a href="index.php?c=3&amp;sid=a3adebf71772ab6ea554aea4187090b4" class=catlink>Challenge KAAOS</a></td>
+        </tr>
+        <tr align="center">
+          <td valign="top" class="row1" align="center"><img src="templates/MissionImpossible/images/folder.gif" alt="No new posts" title="No new posts"></td>
+          <td align="left" class="row2"><a href="viewforum.php?f=5&amp;sid=a3adebf71772ab6ea554aea4187090b4" class="forumlink">Scrims</a><br>
+            <span class="smalltext"> Would you like a chance to Scrim Team KAAOS?  Set 'em up here!  But be warned.. Crucial has mad Glox h4x!<br>
+            </span></td>
+          <td class="row1"><span class="smalltext"><font size="2">0</font></span></td>
+          <td class="row2"><span class="smalltext"><font size="2">0</font></span></td>
+          <td class="row1" align="right" nowrap>
+            <table width="100%">
+              <tr>
+                <td nowrap align="right"> <span class="gensmall">No Posts</span></td>
+              </tr>
+            </table>
+          </td>
+          <td class="row2" nowrap><span class="smalltext"><a href="groupcp.php?g=3&amp;sid=a3adebf71772ab6ea554aea4187090b4">Team KAAOS Member</a></span></td>
+        </tr>
+        <tr align="center">
+          <td valign="top" class="row1" align="center"><img src="templates/MissionImpossible/images/folder.gif" alt="No new posts" title="No new posts"></td>
+          <td align="left" class="row2"><a href="viewforum.php?f=6&amp;sid=a3adebf71772ab6ea554aea4187090b4" class="forumlink">Matches</a><br>
+            <span class="smalltext"> Need to Schedule a Makeup or Reschedule a Match.  Get in touch with us here.<br>
+            </span></td>
+          <td class="row1"><span class="smalltext"><font size="2">0</font></span></td>
+          <td class="row2"><span class="smalltext"><font size="2">0</font></span></td>
+          <td class="row1" align="right" nowrap>
+            <table width="100%">
+              <tr>
+                <td nowrap align="right"> <span class="gensmall">No Posts</span></td>
+              </tr>
+            </table>
+          </td>
+          <td class="row2" nowrap><span class="smalltext"><a href="groupcp.php?g=3&amp;sid=a3adebf71772ab6ea554aea4187090b4">Team KAAOS Member</a></span></td>
+        </tr>
+        <tr>
+          <td colspan="6" class="catrow"><a href="index.php?c=4&amp;sid=a3adebf71772ab6ea554aea4187090b4" class=catlink>Private Forum</a></td>
+        </tr>
+        <tr align="center">
+          <td valign="top" class="row1" align="center"><img src="templates/MissionImpossible/images/folder.gif" alt="No new posts" title="No new posts"></td>
+          <td align="left" class="row2"><a href="viewforum.php?f=7&amp;sid=a3adebf71772ab6ea554aea4187090b4" class="forumlink">Team KAAOS Forum</a><br>
+            <span class="smalltext"> Team KAAOS Members and Recruits ONLY<br>
+            </span></td>
+          <td class="row1"><span class="smalltext"><font size="2">4</font></span></td>
+          <td class="row2"><span class="smalltext"><font size="2">1</font></span></td>
+          <td class="row1" align="right" nowrap>
+            <table width="100%">
+              <tr>
+                <td nowrap align="right"> <span class="gensmall">Fri Jan 24, 2003 1:22 am<br /><a href="profile.php?mode=viewprofile&amp;u=2&amp;sid=a3adebf71772ab6ea554aea4187090b4">Blayloc</a> <a href="viewtopic.php?p=11&amp;sid=a3adebf71772ab6ea554aea4187090b4#11"><img src="templates/MissionImpossible/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+              </tr>
+            </table>
+          </td>
+          <td class="row2" nowrap><span class="smalltext">&nbsp;</span></td>
+        </tr>
+        <tr >
+          <td colspan="6" class="catrow"><a href="viewonline.php?sid=a3adebf71772ab6ea554aea4187090b4" class="catlink">Who is Online</a></td>
+        </tr>
+        <tr>
+          <td colspan="6" class="row2"> <span class="smalltext">In total there is <b>1</b> user online :: 0 Registered, 0 Hidden and 1 Guest
+            &nbsp; [ <b><span style="color:#90A9B8">Administrator</span></b> ] &nbsp; [ <b><span style="color:#FFBA00">Moderator</span></b>
+            ]<br>
+            Registered Users: None<br>
+            Most users ever online was <b>5</b> on Wed Jan 15, 2003 8:53 pm
+            </span></td>
+        </tr>
+        <tr>
+          <td colspan="6" class="row1"> <span class="smalltext">
+
+            The newest registered user is <b><a href="profile.php?mode=viewprofile&amp;u=10&amp;sid=a3adebf71772ab6ea554aea4187090b4">ninjaxx.</a></b> </span></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="98%" cellspacing="0" border="0" align="center" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.php?mark=forums&amp;sid=a3adebf71772ab6ea554aea4187090b4" >Mark all forums read</a></td>
+    <td align="right" width="50%"><span class="smalltext"> </span><span class="smalltext">
+      <a href="login.php?sid=a3adebf71772ab6ea554aea4187090b4" >Login</a> | All times are GMT - 5 Hours</span></td>
+  </tr>
+  <tr>
+    <td align="center">&nbsp; </td>
+    <td align="right" width="50%">
+      <table border="0" cellpadding="2" cellspacing="0">
+        <form method="post" action="login.php?sid=a3adebf71772ab6ea554aea4187090b4">
+          <tr>
+            <td nowrap><span class="smalltext">Login with username and password:</span></td>
+          </tr>
+          <tr>
+            <td nowrap align="center">
+              <input class="post" type="text" name="username" size="10">
+              <input class="post" type="password" name="password" size="10">
+              <b>Auto Login?</b>
+              <input class="text" type="checkbox" name="autologin" value="ON">
+              <input type="submit"  name="login" value="Login">
+              <br>
+            </td>
+          </tr>
+        </form>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="3" border="0" align="center" cellpadding="0">
+  <tr>
+    <td width="20" align="center"><img src="templates/MissionImpossible/images/folder_new.gif" alt="New posts"/></td>
+    <td><span class="smalltext">New posts</span></td>
+    <td>&nbsp;&nbsp;</td>
+    <td width="20" align="center"><img src="templates/MissionImpossible/images/folder.gif" alt="No new posts"></td>
+    <td><span class="smalltext">No new posts</span></td>
+    <td>&nbsp;&nbsp;</td>
+    <td width="20" align="center"><img src="templates/MissionImpossible/images/folder_lock.gif" alt="Forum is locked"></td>
+    <td><span class="smalltext">A Closed Forum</span></td>
+  </tr>
+</table>
+<p><br>
+</p>
+<div align="center"><br><b></b> <font size="-3"> Powered by phpBB: 2.0.3
+  &copy; 2001 <a href="http://www.phpbb.com/" target="_phpbb" ><b>phpBB
+  Group</b></a><br>
+
+									</TD>
+        </TR>
+      </TABLE>
+    </TD>
+  </TR>
+  <TR>
+    <TD align="left" bgcolor="2C2C2C"><IMG src="templates/MissionImpossible/images/_map_top.gif" width="406" height="24" hspace="5" usemap="#Map" border="0"></TD>
+  </TR>
+  <TR>
+    <TD background="templates/MissionImpossible/images/_foot_bg.gif" height="49" align="right">
+        <!--
+
+        NOTICE TO ANYONE EDITING THIS FILE:
+
+        Please leave some sort of link to my site (http://www.vereor.com) on here.
+        I took the time to make this template and distribute it freely.  Don't take
+        it upon yourself to remove this small unobtrusive link.  Thanks.
+
+        Nick Mahon
+        http://www.vereor.com
+
+
+    A href="http://www.vereor.com/"><IMG src="templates/MissionImpossible/images/_foot_credit.gif" width="161" height="49" border="0"></A -->
+    </TD>
+  </TR>
+</TABLE>
+<MAP name="Map">
+  <AREA shape="rect" coords="3,3,25,21" href="faq.php?sid=a3adebf71772ab6ea554aea4187090b4">
+  <AREA shape="rect" coords="33,3,71,20" href="search.php?sid=a3adebf71772ab6ea554aea4187090b4">
+  <AREA shape="rect" coords="82,4,132,20" href="memberlist.php?sid=a3adebf71772ab6ea554aea4187090b4">
+  <AREA shape="rect" coords="143,4,184,20" href="groupcp.php?sid=a3adebf71772ab6ea554aea4187090b4">
+  <AREA shape="rect" coords="195,4,240,20" href="profile.php?mode=register&amp;sid=a3adebf71772ab6ea554aea4187090b4">
+  <AREA shape="rect" coords="249,4,288,20" href="profile.php?mode=editprofile&amp;sid=a3adebf71772ab6ea554aea4187090b4">
+  <AREA shape="rect" coords="298,2,324,21" href="privmsg.php?folder=inbox&amp;sid=a3adebf71772ab6ea554aea4187090b4">
+  <AREA shape="rect" coords="333,3,404,21" href="login.php?sid=a3adebf71772ab6ea554aea4187090b4">
+</MAP>
+</BODY>
+</HTML>
+
