@@ -1,0 +1,120 @@
+
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en" "http://www.w3.org/tr/html4/loose.dtd" >
+<html>
+	<head>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="CODE_LANGUAGE" content="C#">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<link href="/new_dkp/style.css" rel="stylesheet" />
+<title>Serendipitous Existence's Website - Powered By Guild Wizard Guild Hosting</title>
+
+	</head>
+	<body>
+		<form name="Form1" method="post" action="participants.aspx" id="Form1" style="HEIGHT:100%">
+<input type="hidden" name="__VIEWSTATE" value="dDwtMTIzNjgwODQ2MDt0PDtsPGk8MT47aTwzPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8bDxUZXh0Oz47bDxcPGxpbmsgaHJlZj0iL25ld19ka3Avc3R5bGUuY3NzIiByZWw9InN0eWxlc2hlZXQiIC9cPgpcPHRpdGxlXD5TZXJlbmRpcGl0b3VzIEV4aXN0ZW5jZSdzIFdlYnNpdGUgLSBQb3dlcmVkIEJ5IEd1aWxkIFdpemFyZCBHdWlsZCBIb3N0aW5nXDwvdGl0bGVcPjs+Pjs7Pjs+Pjt0PDtsPGk8MT47aTwzPjtpPDE1PjtpPDE5Pjs+O2w8dDw7bDxpPDM+O2k8NT47PjtsPHQ8cDxsPFZpc2libGU7PjtsPG88Zj47Pj47Oz47dDxwPGw8VmlzaWJsZTs+O2w8bzxmPjs+Pjs7Pjs+Pjt0PDtsPGk8MD47PjtsPHQ8cDxsPHN0eWxlOz47bDx2aXNpYmlsaXR5OmhpZGRlblw7Oz4+Ozs+Oz4+O3Q8QDA8Ozs7Ozs7Ozs7Oz47Oz47dDxAMDxwPHA8bDxEYXRhS2V5cztfIUl0ZW1Db3VudDs+O2w8bDw+O2k8MD47Pj47Pjs7Ozs7Ozs7Pjs7Pjs+Pjs+Pjs+3M+RgyR5qZcCmom6UcApb0SZvCQ=" />
+
+			<div id="container">
+				<div id="top">
+					
+<script language="javascript" type="text/javascript">
+	function ShowAdmin()
+	{
+		document.getElementById('Header2_divAdmin').style.visibility="visible";
+	}
+	function HideAdmin()
+	{
+		document.getElementById('Header2_divAdmin').style.visibility="hidden";
+	}
+</script>
+
+<div id="imgLogo"><img src="/templates/blackYellow/templogo.jpg" alt=""/></div><div id="btnNews"><a href="/index.aspx" target="_parent"><img src="/templates/blackYellow/btnNews.jpg" alt="" border="0" /></a></div><div id="btnRoster"><a href="/player_list.aspx" target="_parent"><img src="/templates/blackYellow/btnRoster.jpg" alt="" border="0" /></a></div><div id="btnRaids"><a href="/raid_view.aspx" target="_parent"><img src="/templates/blackYellow/btnRaids.jpg" alt="" border="0" /></a></div><div id="btnGallery"><a href="/gallery.aspx" target="_parent"><img src="/templates/blackYellow/btnGallery.jpg" alt="" border="0" /></a></div><div id="btnLoot"><a href="/purchase_view.aspx" target="_parent"><img src="/templates/blackYellow/btnLoot.jpg" alt="" border="0" /></a></div><div id="btnItems"><a href="/item_view.aspx" target="_parent"><img src="/templates/blackYellow/btnItems.jpg" alt="" border="0" /></a></div><div id="btnCalendar"><a href="/calendar.aspx" target="_parent"><img src="/templates/blackYellow/btnCalendar.jpg" alt="" border="0" /></a></div><div id="btnForums"><a href="/forums/default.aspx" target="_parent"><img src="/templates/blackYellow/btnForums.jpg" alt="" border="0" /></a></div><div id="btnLogin"><a href="/login.aspx" target="_parent"><img src="/templates/blackYellow/btnLogin.jpg" alt="" border="0" /></a></div>
+
+
+
+				</div>
+				<div id="left1_leftCell" style="visibility:hidden;">
+	
+	
+</div>
+				
+<div id="right1_rightCell">
+<div id="RandomPlayer">
+<h2>Ninen</h2><a href="/player.aspx?pid=9285"><img style="display:block;" width="125" src="/images/gw.jpg" alt="" />Profile--></a></div>
+<div id="VisitsImage"><img src="/templates/blackYellow/visits.jpg" alt=""/></div><div id="Visits">
+44878
+</div><div id="topten"><img src="/templates/blackYellow/topten.jpg" alt=""/></div><table id="TopRaiders">
+<tr>
+<th>Name</th>
+<th>Raids</th>
+</tr><tr>
+<td><a href="/player.aspx?pid=415">Brungo</a></td>
+<td>30</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=421">Klaine</a></td>
+<td>29</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=442">Malina</a></td>
+<td>29</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=427">Morgeal</a></td>
+<td>29</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=440">Keroberos</a></td>
+<td>28</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=450">Grobsmash</a></td>
+<td>26</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=432">Solanor</a></td>
+<td>26</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=416">Koros</a></td>
+<td>25</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=428">Panegvver</a></td>
+<td>25</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=438">Tallismon</a></td>
+<td>24</td>
+</tr></table>
+
+</div>
+
+				<div id="center" style="z-index:99;position:relative;">
+						<table class="topRaidInfo">
+							<tr>
+								<td align="center" colspan="2">
+									<h2>
+									<span id="lblRaidName"></span></h2>
+								</td>
+								<td align="right">&nbsp;</td>
+							</tr>
+							<tr>
+								<td>
+									Raid Date:
+									<span id="lblRaidDate"></span>
+								</td>
+								<td align="right">
+									<span id="Label5">Times Raided: </span>&nbsp;
+									<span id="lblTimesRaided"></span>
+								</td>
+							</tr>
+						</table>
+						</p>
+						<h2>Items:</h2>
+						
+						<h2>Participants:</h2>
+						<span id="lblErr"><font face="Verdana" color="Red" size="1"></font></span>
+						<table id="dl" class="participantList" cellspacing="0" rules="all" border="1">
+	<tr>
+		<td colspan="6" class="participantListHeader" valign="Middle">
+								<p>Participants on Raid:</p>
+							</td>
+	</tr>
+</table>
+					</div>
+			</div>
+		</form>
+	</body>
+</html>
