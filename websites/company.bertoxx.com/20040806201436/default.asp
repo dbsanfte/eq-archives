@@ -1,0 +1,215 @@
+
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+
+<LINK rel="stylesheet" type="text/css" href="/styles.css">
+<base target=_self>
+<script LANGUAGE="JavaScript1.2"></script>
+<script LANGUAGE="JavaScript1.2" SRC="/xb/xbLibrary.js"></script>
+<script LANGUAGE="JavaScript1.2">
+  xblibrary = new xbLibrary('/xb');
+</script>
+<script LANGUAGE="JavaScript" SRC="/xb/xbDOM.js"></script>
+<script LANGUAGE="JavaScript1.2" SRC="/xb/xbStyle.js"></script>
+<script LANGUAGE="JavaScript1.2" SRC="/xb/xbCollapsibleLists.js"></script>
+<META Name="Timezone" Content="">
+
+</HEAD>
+<BODY LANGUAGE=javascript onload="return window_onload()">
+<!-- page header begins -->
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=0 CELLPADDING=0>
+  <TR VALIGN=top>
+    <TD WIDTH=200 HEIGHT=120 NOWRAP>
+<!-- begin logo block -->
+<a target="_top" href="/default.asp"><img border="0" SRC="images/companylogosmall.jpg"></a>
+<!-- end logo block -->
+    </TD>
+    <TD>
+<!-- begin notification block -->
+
+<!-- end notification block -->
+    </TD>
+    <TD ALIGN=RIGHT>
+
+<APPLET code=AcuteScroller.class archive=AcuteScroller.jar width="200" height="120" id=javabanner VIEWASTEXT> 
+  <PARAM name="Message" value="
+<p>
+<h>Recent Kills - Last 10 Days</h>
+(<DATE>6/3/2004 8:31:17 PM</DATE> by Valandil Telperion)<br>Avatar of Mist<br>
+Arch Mage Alchtonion<br>
+Melernil Faal'Armanna<br>
+Calebgrothiel<br>
+Baltador the Cursed X2<br>
+Krziik the Mighty<br>
+Arch Lich Rhag' Zadune<br>
+Rhag 'Mozdezh<br>
+Avatar of Wind<br>
+Pherlondien Clawpike<br>
+
+</P>
+
+  ">  
+  <PARAM name="Style" value="
+<p
+    Section-Header='true'
+    Scroll-Break='full'
+    Scroll-Speed='2'>
+  </p
+    rule-color='888800'
+    rule-width='75'
+    Padding-top='1'
+    Padding-bottom='1'>
+  <h
+    Text-Color='cccc00'
+    Line-Break='True'>
+  </h
+    Line-Break='True'>
+  <link
+    Text-Color='ffff00'
+    Text-Underline='false'>
+  <br
+    Padding-bottom='1'>
+  <default
+   Scroll-Pause     = '5000'
+   background-color='000000'
+    text-color='c0c0c0'>
+
+
+  ">
+  <param name="Domain-Keys" value="15753,15753,14352,4486,5630">
+</APPLET> 
+
+    </TD>
+  </TR>
+	<TR VALIGN=top>
+    <TD BGCOLOR=#404040 WIDTH=1% NOWRAP><DIV style="width:200px;" id=root>&nbsp;</DIV></TD>
+    <TD COLSPAN=2><P class=clsTitle><CAPS><IMG ALIGN=absbottom BORDER=0 ALT='c' SRC='/images/fonts/Walrod/c.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='o' SRC='/images/fonts/Morpheus/o.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='m' SRC='/images/fonts/Morpheus/m.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='p' SRC='/images/fonts/Morpheus/p.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='a' SRC='/images/fonts/Morpheus/a.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='n' SRC='/images/fonts/Morpheus/n.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='y' SRC='/images/fonts/Morpheus/y.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='spc' SRC='/images/fonts/Morpheus/spc.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='n' SRC='/images/fonts/Walrod/n.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='e' SRC='/images/fonts/Morpheus/e.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='w' SRC='/images/fonts/Morpheus/w.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='s' SRC='/images/fonts/Morpheus/s.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='spc' SRC='/images/fonts/Morpheus/spc.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='a' SRC='/images/fonts/Walrod/a.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='n' SRC='/images/fonts/Morpheus/n.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='d' SRC='/images/fonts/Morpheus/d.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='spc' SRC='/images/fonts/Morpheus/spc.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='i' SRC='/images/fonts/Walrod/i.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='n' SRC='/images/fonts/Morpheus/n.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='f' SRC='/images/fonts/Morpheus/f.jpg'><IMG ALIGN=absbottom BORDER=0 ALT='o' SRC='/images/fonts/Morpheus/o.jpg'></CAPS></P>
+<!-- page header ends -->
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=0 CELLPADDING=4>
+<TR>
+  <TD class=fire NOWRAP ALIGN=LEFT>6/3/2004 8:22:03 PM</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT>Entry into Vex Thal - rifts all around!</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT><A HREF="/member.asp?userid=284"><SPAN class=author>Valandil Telperion</SPAN></A></TD>
+</TR>
+<TR>
+<TD COLSPAN=3><ul><BR><img src="/pics/emp.jpg" border=0 align=right hspace=5 alt="Emperor"><A target=_new href="http://eqbeastiary.allakhazam.com/search.shtml?id=7898">Emperor Ssraeshza</A><BR><BR>For the first time The Company killed Emperor Ssraeshza and gained entry into <a href=http://eqbeastiary.allakhazam.com/search.shtml?zone=146 target="_new">Vex Thal</a>. 38 people and 15 mins later he dropped some loot:  <BR><BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=12392">Envenomed Moccasins </A> - Hida<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=13237">Acrylia Handled Broadsword</A> - Juda<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=16300">Torque of the Wyrmlord</A> - Danzignuk<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=12446">Ssraeshzaen Honor Guard Bracer</A> - Debu<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=11878">Imperial Symbol of the Shissar</A> - Buktuan<BR><BR>Valandil Telperion<BR>Officer, The Company<BR></TD>
+</TR>
+<TR>
+  <TD class=fire NOWRAP ALIGN=LEFT>3/26/2004 10:10:59 PM</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT>Elemental Madness</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT><A HREF="/member.asp?userid=3"><SPAN class=author>Jarrington Avendaar</SPAN></A></TD>
+</TR>
+<TR>
+<TD COLSPAN=3><ul><BR><img src="/pics/hydrotha.jpg" border=0 align=right hspace=5 alt="Hydrotha"><A target=_new href="http://eqbeastiary.allakhazam.com/search.shtml?id=11022">Hydrotha</A><BR><BR>Just a small update to tide people over and keep current.  The Company swam with the fishes last night and netted ourselves a few items from Hydrotha and <a target=_new href="http://eqbeastiary.allakhazam.com/search.shtml?id=11017">Grioihin the Wise</A>.<BR><BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17875">Seaweed Woven Leggings</A> - Siarra<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17875">Seaweed Woven Leggings</A> - Irontree<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=21363">Elemental Chain Sleeve Pattern</A> - Kalanar<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=21363">Elemental Chain Sleeve Pattern</A> - Juda<BR><BR>Jarrington Avendaar<BR>Webmaster, Officer<BR>The Company<BR><BR></TD>
+</TR>
+<TR>
+  <TD class=fire NOWRAP ALIGN=LEFT>2/18/2004 7:06:06 AM</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT>Solusek Ro Your Boat</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT><A HREF="/member.asp?userid=3"><SPAN class=author>Jarrington Avendaar</SPAN></A></TD>
+</TR>
+<TR>
+<TD COLSPAN=3><ul><BR><img src="/pics/solro.jpg" border=0 align=right hspace=5 alt="Solusek Ro"><a target=_new href="http://eqbeastiary.allakhazam.com/search.shtml?id=10462">Solusek Ro</A><BR><BR>After weeks of backflagging, we decided it was time to pay Solusek Ro a visit.  It took more time to raid people in than it did to kill him.<BR><BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17758">Gauntlets of the Burning Prince</A> - Jacques<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17209">Raiment of the Fire Son</A> - Dazzlingdawn<BR><BR>Jarrington Avendaar<BR>Webmaster, Officer<BR>The Company<BR><BR></TD>
+</TR>
+<TR>
+  <TD class=fire NOWRAP ALIGN=LEFT>2/13/2004 7:16:56 AM</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT>Rallos Zek The Warlord</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT><A HREF="/member.asp?userid=3"><SPAN class=author>Jarrington Avendaar</SPAN></A></TD>
+</TR>
+<TR>
+<TD COLSPAN=3><ul><BR><img src="/pics/rallos.jpg" border=0 align=right hspace=5 alt="Rallos Zek The Warlord"><a target=_new href="http://eqbeastiary.allakhazam.com/search.shtml?id=10359">Rallos Zek the Warlord</A><BR><BR>Standing on the battleground of the arena, the stench of death and decay filling the room, The Company waited.  The journey to this place and the difficult task ahead weighed heavily on each person there.  At length, the rally was called and the stench of old battles faded as the adrenaline took over.  Out of the looming darkness rose a figure so forbidding as to give us pause and wonder just what insanity had overcome us to believe that we could actually pit ourselves against a god such as Rallos Zek!<BR>The Warlord, master of the Plane of Tactics called forth his minions even as The Company's battle cries rang out amidst the clash of steel on steel.  The battle was pitched, and before long, through the dull red glaring eyes of ultimate evil, we saw desperation.<BR>Rallos Zek called forth even more to his aid, but even as his cries grew louder, we grew stronger.  Finally, in a swirl of magical elements and the wrenching sounds of steel upon bone, The Warlord succumbed to his wounds at the hands of The Company.<BR><BR>We have entered the Elemental Planes.<BR><BR><li><a target=_new href="http://everquest.allakhazam.com/db/searchdb.html?iname=War Charm of Crossed Blades">War Charm of Crossed Blades</A> - Valdaire<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17400">Black Collar of Boundless Might</A> - Blyndem<BR><BR>Jarrington Avendaar<BR>Webmaster, Officer<BR>The Company<BR><BR><BR></TD>
+</TR>
+<TR>
+  <TD class=fire NOWRAP ALIGN=LEFT>1/14/2004 6:11:59 PM</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT>Changes</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT><A HREF="/member.asp?userid=3"><SPAN class=author>Jarrington Avendaar</SPAN></A></TD>
+</TR>
+<TR>
+<TD COLSPAN=3>On January 23rd, 2004 The Company will be changing its recruiting and sponsorship guidelines.  As a family guild, it is important to maintain a balance between new and old players in order to promote the healthy, friendly atmosphere we all enjoy.  We are firmly opposed to imposing level, class and flag restrictions on new recruits, but the new guidelines are designed to stem the flow nonetheless and will be detailed in the <a target=_top href="/recruitpolicy.asp">Recruiting Policy</a> on the 23rd.  Potential recruits should be forewarned that The Company is in the process of backflagging members to enter the Tower of Solusek Ro this month and possibly into the next.  Once this period has passed, we will be making no planned efforts to continue backflagging those entry requirements, which may make it increasingly difficult to raid with us.  This is not to say that we will never be revisiting these backflag targets in the future, merely that our focus will be changing and these targets will become ones of secondary or tertiary importance.<BR><BR>As The Company nears its 5-year anniversary on the Bertoxxulous server, we look forward to continued successes in the game, under the guild tag in which we proudly represent.<BR><BR>Jarrington Avendaar<BR>Webmaster, Officer<BR>The Company, Bertoxxulous<BR><BR></TD>
+</TR>
+<TR>
+  <TD class=fire NOWRAP ALIGN=LEFT>1/13/2004 7:30:09 AM</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT>Expeditions</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT><A HREF="/member.asp?userid=3"><SPAN class=author>Jarrington Avendaar</SPAN></A></TD>
+</TR>
+<TR>
+<TD COLSPAN=3><ul><BR><img src="/pics/xuzljiva.jpg" border=0 align=right hspace=5 alt="Xuzl & Jiva"><BR><BR><a target=_new href="http://eqbeastiary.allakhazam.com/search.shtml?id=11052">Xuzl</A> and <a target=_new href="http://eqbeastiary.allakhazam.com/search.shtml?name=Jiva">Jiva</A><BR><BR>We've been busy the last month or so backflagging the guild to enter the Tower of Solusek Ro, ensuring that everyone has an equal opportunity to join in the fun.  In the meantime, we've made a few preliminary expeditions.<BR><BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17212">Lance of the Flame Knight</A> - Ootoc<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17212">Lance of the Flame Knight</A> - Danzignuk<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17205">Rune Etched Bamboo Bo</A> - Zalern<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17807">Jagged Shard of Frozen Flame</A> - Crizpin<BR><BR>Jarrington Avendaar<BR>Webmaster, Officer<BR>The Company<BR><BR></TD>
+</TR>
+<TR>
+  <TD class=fire NOWRAP ALIGN=LEFT>12/16/2003 7:12:06 AM</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT>Bertoxxulous Dead</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT><A HREF="/member.asp?userid=3"><SPAN class=author>Jarrington Avendaar</SPAN></A></TD>
+</TR>
+<TR>
+<TD COLSPAN=3><ul><BR><img src="/pics/bertoxx.jpg" border=0 align=right hspace=5 alt="Bertoxxulous"><BR><BR><a target=_new href="http://eqbeastiary.allakhazam.com/search.shtml?id=10385">Bertoxxulous</A><BR><BR>The Company finished the Bertoxxulous ring tonight with time to spare.  Solusek Ro was said to be looking decidedly uneasy about TC's pending visit.<BR><BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=18178">Decayed Shoes of the Plaguebringer</A> - Solran<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17385">The Rotting Fist</A> - Sassinak<BR><BR>Jarrington Avendaar<BR>Webmaster, Officer<BR>The Company<BR><BR></TD>
+</TR>
+<TR>
+  <TD class=fire NOWRAP ALIGN=LEFT>12/9/2003 6:31:14 AM</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT>Mithaniel Marr, marred</TD>
+  <TD class=fire NOWRAP ALIGN=LEFT><A HREF="/member.asp?userid=3"><SPAN class=author>Jarrington Avendaar</SPAN></A></TD>
+</TR>
+<TR>
+<TD COLSPAN=3><ul><BR><img src="/pics/mithaniel.jpg" border=0 align=right hspace=5 alt="Mithaniel Marr"><BR><BR><a target=_new href="http://eqbeastiary.allakhazam.com/search.shtml?id=10342">Lord Mithaniel Marr</A><BR><BR>Mithaniel Marr is not a mob to be trifled with.  The Company, a mere 48 strong, entered the Temple of Marr with the unreasonable expectation of victory for our first attempt.  Mithaniel Marr proved to be unable to stifle such sentiment.  Congrats to the loot winners!<BR><BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17143">Blade of the Tempest</A> - Dazzlingdawn<BR><li><a target=_new href="http://everquest.allakhazam.com/db/item.html?item=17087">Dart of Immobility</A> - Kodoku<BR><BR>Jarrington Avendaar<BR>Webmaster, Officer<BR>The Company<BR><BR></TD>
+</TR>
+</TABLE>
+<!-- page footer begins -->
+  </TD>
+  </TR>
+</TABLE>
+</BODY>
+<SCRIPT LANGUAGE=Javascript1.2>
+<!--
+var m_mnuOpen = new Array();
+
+function window_onload()
+{
+  var width;
+  var height;
+  var par;
+  var x;
+  var y;
+  
+  width = 200;
+  height=18;
+  par = new xbStyle(xbGetElementById('root'));
+  x = par.getPageX();
+  y = par.getPageY();
+  rootmenu = new List(true,width,height, '#404040');
+  subList1 = new List(false, width, height, '#202020');
+  subList1.setIndent(5);
+    subList1.addItem('<A HREF=\'/archives.asp\' target=_top><SPAN class=navlink title=\'Toggles Archives\'>Company Archives</SPAN></A>');
+    subList1.addItem('<A HREF=\'/charter.asp\' target=_top><SPAN class=navlink title=\'The Company Charter\'>Charter</SPAN></A>');
+    subList1.addItem('<A HREF=\'/calendar.asp\' target=_top><SPAN class=navlink title=\'Scheduled Events and Raids\'>Guild Calendar</SPAN></A>');
+    subList1.addItem('<A HREF=\'/lootingpolicy.asp\' target=_top><SPAN class=navlink title=\'Company Looting Policy\'>Loot Policy</SPAN></A>');
+    subList1.addItem('<A HREF=\'/characters.asp\' target=_top><SPAN class=navlink title=\'The Company Character List\'>Our Characters</SPAN></A>');
+    subList1.addItem('<A HREF=\'/members.asp\' target=_top><SPAN class=navlink title=\'The Company Members List\'>Our Members</SPAN></A>');
+    subList1.addItem('<A HREF=\'/recruitpolicy.asp\' target=_top><SPAN class=navlink title=\'Company Recruiting Policy\'>Recruiting Policy</SPAN></A>');
+  rootmenu.addList(subList1, '<A HREF=\'javascript:xbcl_expand(1);\'><SPAN class=navlink title=\'Information About The Company\'>Guild Information</SPAN></A>');
+  subList11 = new List(false, width, height, '#202020');
+  subList11.setIndent(5);
+    subList11.addItem('<A HREF=\'http://everquest.allakhazam.com\' target=_top><SPAN class=navlink title=\'Allakhazam\'s Magical Realm\'>Allakhazam\'s</SPAN></A>');
+    subList11.addItem('<A HREF=\'http://www.eqatlas.com/atlas.html\' target=_top><SPAN class=navlink title=\'EverQuest Atlas Guide\'>EQ Atlas</SPAN></A>');
+    subList11.addItem('<A HREF=\'http://www.eqtraders.com\' target=_top><SPAN class=navlink title=\'EQ Traders\'>EQ Traders</SPAN></A>');
+    subList11.addItem('<A HREF=\'http://eq.castersrealm.com\' target=_top><SPAN class=navlink title=\'EverQuest Caster\'s Realm\'>EverQuest Realm</SPAN></A>');
+    subList11.addItem('<A HREF=\'http://www.magelo.com\' target=_top><SPAN class=navlink title=\'\'>Magelo</SPAN></A>');
+  rootmenu.addList(subList11, '<A HREF=\'javascript:xbcl_expand(2);\'><SPAN class=navlink title=\'Our Favorite Sites\'>Links</SPAN></A>');
+  subList9 = new List(false, width, height, '#202020');
+  subList9.setIndent(5);
+    subList9.addItem('<A HREF=\'/webboard.asp?ResourceId=5\'><SPAN class=msgboardnewlink title=\'Company Announcements\'>public.announce (438/438) *</SPAN></A>');
+    subList9.addItem('<A HREF=\'/webboard.asp?ResourceId=22\'><SPAN class=msgboardnewlink title=\'Company Policies\'>public.company.policy (3/3) *</SPAN></A>');
+    subList9.addItem('<A HREF=\'/webboard.asp?ResourceId=47\'><SPAN class=msgboardnewlink title=\'Recruit-related posts\'>public.company.recruits (880/880) *</SPAN></A>');
+    subList9.addItem('<A HREF=\'/webboard.asp?ResourceId=4\'><SPAN class=msgboardnewlink title=\'Company General\'>public.general (425/425) *</SPAN></A>');
+    subList9.addItem('<A HREF=\'/webboard.asp?ResourceId=42\'><SPAN class=msgboardnewlink title=\'Information about the webboard\'>public.webboard.help (8/8) *</SPAN></A>');
+  rootmenu.addList(subList9, '<A HREF=\'javascript:xbcl_expand(3);\'><SPAN class=navlink title=\'The Guild Message Area\'>Message Boards</SPAN></A>');
+
+  subLogin = new List(true,width,175,'#202020');
+  subLogin.setIndent(5);
+  subLogin.addItem('<SPAN class=error></SPAN><FORM method=post name=LoginForm action=\'/default.asp\'>Username<BR><INPUT type=\'text\' name=Handle size=8 maxlength=16 tabindex=1><BR>Password<BR><INPUT type=\'password\' name=Password size=8 maxlength=16 tabindex=2><BR><INPUT type=\'submit\' value=\'Login\' tabindex=3></FORM>');
+  rootmenu.addList(subLogin,'<A HREF=\'javascript:xbcl_expand(4);\'><SPAN class=navlink>Login</SPAN></A>');
+  rootmenu.build(x,y);
+
+}
+//-->
+</SCRIPT>
+
+</HTML>
