@@ -1,0 +1,128 @@
+<HTML>
+<HEAD>
+<TITLE>
+Legerdemain-Home</TITLE>
+</HEAD>
+<BODY border="0" topmargin="1" bottommargin="1"
+        leftmargin="1"  rightmargin="1" padding="0"
+        marginheight="1" marginwidth="1" scroll="auto"
+        text="#FFFFFF" bgcolor="#002D00"
+        link="#F7E015" vlink="#FFCE36" alink="#0115ED"
+        background="http://www.Guild-Legerdemain.com/images/texture4.gif">
+<TABLE cellspacing="0" cellpadding="7" border="0"
+        width="100%">
+<TR><TD colspan="3">
+<TABLE border="0" cellspacing="0" cellpadding="0" width="100%">
+<TR>
+<TD valign="top" align="left">
+  <img src="http://www.Guild-Legerdemain.com/images/legerd.gif">
+
+</TD>
+<TD align="center" valign="center" width="33%">
+  <TABLE border="0" cellspacing="0" cellpadding="1">
+  <TR><TD valign="middle">Help keep this guild on-line!</TD>
+  <TD>
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+  <input type="hidden" name="cmd" value="_xclick">
+  <input type="hidden" name="business" value="keymarad@yahoo.com">
+  <input type="hidden" name="item_name" value="Legerdemain Web Fees">
+  <input type="hidden" name="no_note" value="1">
+  <input type="hidden" name="currency_code" value="USD">
+  <input type="hidden" name="tax" value="0">
+  <input type="hidden" name="no_shipping" value="1">
+  <input type="hidden" name="cancel_return" value="http://www.guild-legerdemain.com">
+  <input type="hidden" name="return" value="http://www.guild-legerdemain.com">
+  <input type="image" src="http://www.Guild-Legerdemain.com/images/pay.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+  </form>
+  </TD></TR>
+  </TABLE>
+
+
+</TD>
+<TD align="center" valign="middle">
+  <TABLE border="0" cellspacing="0" cellpadding="1">
+  <TR><TD>
+    <font size="+1">Welcome, Guest  !</font>
+  </TD></TR>
+  <TR>
+  <TD align="center" valign="top"><font size='+2' color='#DBC713'>- Home -</font>  </TD>
+  </TR>
+  </TABLE>
+</TD>
+</TR>
+</TABLE></TD></TR>
+<TR>
+<TD valign="TOP" border-right="1"
+          >
+<TABLE cellpadding="0" cellspacing="1" border="0">
+<TR><TD></TD><TD></TD><TD></TD></TR>
+
+<TR>
+<TD>
+
+</TD>
+
+<TD>
+
+<TABLE width="100%" cellspacing="0" cellpadding="5" border="1" bordercolor="#000000"
+        background="http://www.Guild-Legerdemain.com/images/texture3.jpg">
+<TR><TD NOWRAP><a href="http://www.Guild-Legerdemain.com/home.php"><tt>Home</tt></a><BR><a href="http://www.Guild-Legerdemain.com/newspages/news.php"><tt>News</tt></a><BR><a href="http://www.Guild-Legerdemain.com/userpages/aboutus.php"><tt>About Us</tt></a><BR><font color='#AAAAFF' size='+1'><B>&#187</B></font><a href='http://www.Guild-Legerdemain.com/userpages/charter.php'><font size='-1'>Charter</font></A><BR><font color='#AAAAFF' size='+1'><B>&#187</B></font><a href='http://www.Guild-Legerdemain.com/userpages/members.php?'><font size='-1'>Members</font></A><BR><font color='#AAAAFF' size='+1'><B>&#187</B></font><a href='http://www.Guild-Legerdemain.com/userpages/statistics.php?'><font size='-1'>Statistics</font></A><BR><a href="http://www.Guild-Legerdemain.com/rules/rules.php"><tt>Rules</tt></a><BR><a href="http://www.Guild-Legerdemain.com/loot/ourLoot.php"><tt>Our Loot</tt></a><BR><a href="http://www.Guild-Legerdemain.com/events/events.php"><tt>Events</tt></a><BR><a href="http://pub50.ezboard.com/blegerdemain"><tt>Forums</tt></a><BR><a href="http://pub50.ezboard.com/flegerdemainfrm22"><tt>Join Us</tt></a><BR></TD></TR></TABLE>
+</TD>
+<TD  background="http://www.Guild-Legerdemain.com/images/brdr.gif">
+</TD></TR>
+<TR></TR>
+<TR><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD></TD>
+<TD>
+
+<TABLE width="100%" cellspacing="0" cellpadding="5" border="1" bordercolor="#000000"
+        background="http://www.Guild-Legerdemain.com/images/texture3.jpg">
+<TR><TD NOWRAP><A href="http://www.Guild-Legerdemain.com/userpages/login.php"><tt>Log In</tt></a><BR><A href="http://www.Guild-Legerdemain.com/userpages/lostpass.php"><tt>Lost Pass</tt></a><BR><A href="http://www.Guild-Legerdemain.com/userpages/register.php"><tt>Register</tt></a><BR></TD></TR></TABLE>
+
+</TD><TD>
+</TD></TR>
+
+
+
+</TABLE></TD>
+<TD valign="TOP"
+        width="100%" background="http://www.Guild-Legerdemain.com/images/texture2.gif">
+<font color="#993322">
+
+<CENTER><B><FONT="+2">30 Days in the News</FONT></B></CENTER>
+
+<BR><TABLE align="center" width="85%" border="0"  margin="0" cellspacing="0" cellpadding="3"><TR><TD ALIGN="center"><IMG SRC="http://www.Guild-Legerdemain.com/images/La.jpg"></TD><TD width="40%" VALIGN="center" bgcolor="#000000">&nbsp;&nbsp;&nbsp;&nbsp;<font face='Impact'>Rules Change Again!</font></TD><TD VALIGN="center" ALIGN="right" bgcolor="#000000"><font size='-1' face='Georgia'>Friday - June 13th 2003</font>&nbsp;&nbsp;&nbsp;&nbsp;</TD></TR></TABLE><TABLE width="85%" align="CENTER" background="http://www.Guild-Legerdemain.com/images/texture3.jpg" cellpadding="15" border="3" bordercolor="#000000" margin="0" cellspacing="0"><TR><TD><font face='comic sans ms'>Our rules have changed. We're off the point system, and our events are not so stickly governed.  Partially, the reason was because we have so many fewer members than before, it's hardly worth the trouble.  Partially because I don't have as much time to regulate such rules as I did before.  Mostly, though, I've grown to the point where I think such strict rules aren't neccessary.<BR>
+<BR>
+I mean that, in the past, I felt I needed some justification for removing someone from our close family. I spent hours upon hours in discussion with various members about our guild's injustices and the like.  I addressed, over and over, issues people developed when they didn't get the phat lewt they wanted.  You see, I felt that I had to deal with each situation.  I felt that, as guild leader, I needed to make sure you understood the mathematics behind 1 piece of loot only being awarded to 1 member of the guild.  I had to explain that there would always be a "last" person to get a certain piece of loot. I felt I had to stick with each person, locked in philosophical debate, until they were comfortable with the disappointment of not getting their phat lewt, or for their one event not being an immediately rousing success, or for not being able to immediately find a group, or for losing an FCFS race, etc.<BR>
+<BR>
+When I discovered that, as our numbers increased, I could no longer keep up with the increasing demands, I created a set of rules to help generally answer a ton of the questions and debates that constantly came to my attention.  The rules were an amazing help.  Almost instantly, the amount of work I had to do each day decreased dramaticly.<BR>
+<BR>
+Now, though, I've grown to the point where I no longer feel that I need to address these kinds of issues; not personally, and not with arbitrary rules.  Mostly, our current members have grown to the point where these things no longer come up, but I've also found that I no longer have a compulsion to address each of these types of concerns.  I can now sit back comfortably and say "You're just gonna have to live with that or move on." or "Yup, life isn't fair and EQ simulates life." or something like that.  I will no longer put-up with people that skirt the rules, or generally make life miserable for other guild members while remaining within them.  I'll simply /guildremove.  I will no longer enumerate the advantages of being in Legerdemain over another guild to disgruntled members.  If you want to leave, go.  If you want to stay, awesome, this is how we do things.  If you can't see why Legerdemain is better than other guilds, then why are you here?<BR>
+<BR>
+I hope we move on into the future, stronger for we have learned much.  I also hope that we enjoy the time we get to spend with our friends on-line because that is what it is for; to be enjoyed.</font><BR><table align="left" width="100%" border="0" cellpadding="0" cellspacing="0"><TR><TD><font size='-2' face='arial'>------submitted by </font><font size='-1' face='arial'><a href=mailto:Terrenoth@yahoo.com>Terrenoth</a></font></TD></TR></TABLE></TD></TR></TABLE><BR><TABLE align="center" width="85%" border="0"  margin="0" cellspacing="0" cellpadding="3"><TR><TD ALIGN="center"><IMG SRC="http://www.Guild-Legerdemain.com/images/La.jpg"></TD><TD width="40%" VALIGN="center" bgcolor="#000000">&nbsp;&nbsp;&nbsp;&nbsp;<font face='Impact'>Customers</font></TD><TD VALIGN="center" ALIGN="right" bgcolor="#000000"><font size='-1' face='Georgia'>Friday - June 13th 2003</font>&nbsp;&nbsp;&nbsp;&nbsp;</TD></TR></TABLE><TABLE width="85%" align="CENTER" background="http://www.Guild-Legerdemain.com/images/texture3.jpg" cellpadding="15" border="3" bordercolor="#000000" margin="0" cellspacing="0"><TR><TD><font face='comic sans ms'>You may have noticed that I stopped posting about some of the more absurd people that I've come across recently.  It's not for lack of them, I assure you.  I just guessed that ya'll wouldn't really want to hear more of it.  As cathartic as it may be for me, I really think you could hardly believe some of the more recent events.  You'd be driven to think I was making it up.<BR>
+<BR>
+I think I'll stick to my horror sticken disbeliefe and continue to walk away from each encounter thinking "I can't believe they let someone like that drive a car."</font><BR><table align="left" width="100%" border="0" cellpadding="0" cellspacing="0"><TR><TD><font size='-2' face='arial'>------submitted by </font><font size='-1' face='arial'><a href=mailto:Terrenoth@yahoo.com>Terrenoth</a></font></TD></TR></TABLE></TD></TR></TABLE><BR><TABLE align="center" width="85%" border="0"  margin="0" cellspacing="0" cellpadding="3"><TR><TD ALIGN="center"><IMG SRC="http://www.Guild-Legerdemain.com/images/La.jpg"></TD><TD width="40%" VALIGN="center" bgcolor="#000000">&nbsp;&nbsp;&nbsp;&nbsp;<font face='Impact'>Anybody else?</font></TD><TD VALIGN="center" ALIGN="right" bgcolor="#000000"><font size='-1' face='Georgia'>Saturday - May 31st 2003</font>&nbsp;&nbsp;&nbsp;&nbsp;</TD></TR></TABLE><TABLE width="85%" align="CENTER" background="http://www.Guild-Legerdemain.com/images/texture3.jpg" cellpadding="15" border="3" bordercolor="#000000" margin="0" cellspacing="0"><TR><TD><font face='comic sans ms'>If you intend to go, you might get while the getting is good :>  We've had several leave the guild recently during our hiatus.  I wish them well and hope that they continue to have fun in EQ.  As for those that remain, and those that will be joining or re-joining soon; Congratulations!!<BR>
+<BR>
+You faced the question of ~what is important to me in EQ?~ and answered that your close friends and the fun you shared with them was what you wanted most when you logged in.  Unfortunately, such jovial time can't be produced every time you log-in, but the closeness we share is worth it when our schedules actually do collide.<BR>
+<BR>
+I hope to be getting on a more regular schedule in the future, but don't have that luxury yet.  I'm sure those of you in similar situations can feel my pain hehe.  I'll see you on-line as much as I can :></font><BR><table align="left" width="100%" border="0" cellpadding="0" cellspacing="0"><TR><TD><font size='-2' face='arial'>------submitted by </font><font size='-1' face='arial'><a href=mailto:Terrenoth@yahoo.com>Terrenoth</a></font></TD></TR></TABLE></TD></TR></TABLE><BR>
+
+
+
+</font>
+</TD>
+<TD  width="5%" valign="TOP">
+</TD></TR>
+<TR>
+<TD colspan="3">
+<BR>
+<CENTER>
+<HR width="75%" color="#773322">
+<FONT SIZE="-1">
+Copyright © 2001, 2002, 2003, Legerdemain. All rights reserved.<BR>
+<a href=mailto:Terrenoth@yahoo.com>Terrenoth</a> is the site author and current Guild Leader<BR>
+</FONT>
+</CENTER></TD></TR>
+</TABLE>
+</BODY>
+</HTML>

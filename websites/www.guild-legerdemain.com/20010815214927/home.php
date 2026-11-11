@@ -1,0 +1,3 @@
+<HTML>
+<HEAD>
+<HTML><HEAD><TITLE>Wrong Browser</TITLE></HEAD><BODY>Sorry, you need to download <a href='http://www.microsoft.com/windows/ie'>Internet Explorer</a> 5.5 or better<BR>I'm parsing the HTTP_USER_AGENT variable.<BR>HTTP_USER_AGENT=ia_archiver<BR>I parse the variable looking for "MSIE"<BR>Then I pull out the version which I show as: 0<BR>If you feel you got this screen in Error, please e-mail <a href="mailto:Terrenoth@yahoo.com">Terrenoth</a><BR>Thank you</BODY></HTML>
