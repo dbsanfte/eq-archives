@@ -1,0 +1,109 @@
+
+
+
+
+
+function setCookie(name, value, expires, path, domain, secure)
+{
+    document.cookie= name + "=" + escape(value) +
+        ((expires) ? "; expires=" + expires.toGMTString() : "") +
+        ((path) ? "; path=" + path : "") +
+        ((domain) ? "; domain=" + domain : "") +
+        ((secure) ? "; secure" : "");
+}
+
+function getCookie(name)
+{
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1)
+    {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    }
+    else
+    {
+        begin += 2;
+    }
+    var end = document.cookie.indexOf(";", begin);
+    if (end == -1)
+    {
+        end = dc.length;
+    }
+    return unescape(dc.substring(begin + prefix.length, end));
+}
+
+function openTestWin()
+{
+    var win = window.open("","MyWindow","location=no,height=1,width=1,toolbar=no,status=no,menubar=no,resizable=no,scrollbars=no,left=5000,top=5000");
+    self.focus();
+    return win;
+}
+
+function closeTestWin(windowRef)
+{
+    var closed = false;
+    try
+    {
+        windowRef.close();
+        closed = true;
+    }
+    catch(e)
+    {
+    }
+
+    return closed;
+}
+
+
+var popup_type = getCookie('BNOKPOP');
+var useCookie = false;
+
+if (popup_type == null)
+{
+    if (closeTestWin(openTestWin()))
+    {
+        popup_type = 0;
+    }
+    else
+    {
+        popup_type = 1;
+    }
+
+    useCookie = true;
+}
+
+var startScript = '<scr' + 'ipt language="javascript" type="text/javascript" src="http://mercury.bravenet.com/rover/a?dbfile=';
+var endScript = '"></scr' + 'ipt>';
+var complete = null;
+
+switch (popup_type)
+{
+
+    case '1':
+    case 1:
+        complete =  startScript;
+        complete += 'BRAVEPAGES_FLOATINGBLOCK_DB';
+        complete += endScript;
+    break;
+
+    case '0':
+    case 0:
+    default:
+        complete =  startScript;
+        complete += 'BRAVEPAGES_POPUP_DB';
+        complete += endScript;
+    break;
+
+}
+
+if (complete != null)
+{
+    document.writeln(complete);
+}
+
+if (useCookie)
+{
+    setCookie('BNOKPOP', popup_type, null, '/', '.bravenet.com');
+}
