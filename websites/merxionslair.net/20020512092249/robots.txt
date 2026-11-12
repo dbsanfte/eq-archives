@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: admin.php
+Disallow: /images
+Disallow: /themes
+Disallow: /manual
