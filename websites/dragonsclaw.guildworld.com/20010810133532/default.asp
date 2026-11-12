@@ -1,0 +1,170 @@
+
+<html>
+<head>
+<title>Dragon's Claw | Guild World</title>
+<link rel="stylesheet" type="text/css" href="/skins/default/default.css">
+</head>
+<body bgcolor="#003366">
+
+<center>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+	<td valign="bottom" align="right" colspan="2">
+	
+		<a href="http://www.guildworld.com/public/"><img src="/skins/default/gwlogo_upperNEW2.gif" border="0" align="left" WIDTH="301" HEIGHT="55"></a>
+<!--
+		<a href="http://www.guildworld.com/public/about/"><img src="/skins/default/mnabout2.gif" border="0" WIDTH="56" HEIGHT="55"></a>
+		<a href="http://www.guildworld.com/public/forums/"><img src="/skins/default/mnforums.gif" border="0" WIDTH="62" HEIGHT="29"></a>
+		<a href="http://www.guildworld.com/public/guilds/"><img src="/skins/default/mnguilds.gif" border="0" WIDTH="56" HEIGHT="29"></a>
+		<a href="http://www.guildworld.com/public/sites/"><img src="/skins/default/mnsites.gif" border="0" WIDTH="41" HEIGHT="29"></a>
+		<a href="http://www.guildworld.com/public/partners/"><img src="/skins/default/mnpartners.gif" border="0" WIDTH="67" HEIGHT="29"></a>
+		<a href="http://www.guildworld.com/public/gameNews.asp"><img src="/skins/default/mnNews2.gif" border="0" alt="Gaming News" WIDTH="56" HEIGHT="29"></a>
+		<a href="http://www.guildworld.com/public/support/"><img src="/skins/default/mnsupport.gif" border="0" WIDTH="68" HEIGHT="29"></a>
+-->
+	</td>
+</tr>
+<tr>
+	<td colspan="2" bgcolor="#FFFFFF"><img src="/skins/default/white.gif" width="640" height="1"></td>
+</tr>
+<tr>
+	<td width="100%" height="60" valign="center"></td>
+	<td valign="center" align="center" bgcolor="#003366" width="230"><img src="http://uploads.guildworld.com/banner.asp?gid=16118422065425200021226             " WIDTH="190" HEIGHT="70"></td>
+</tr>
+<tr>
+	<td colspan="2" bgcolor="#FFFFFF"><img src="/skins/default/white.gif" width="640" height="1"></td>
+</tr>
+<tr>
+	<td valign="top" bgcolor="#FFFFFF" align="right" height="275">
+	
+		<a href="/"><img src="/skins/default/guildhomepagebutton.gif" align="left" WIDTH="106" HEIGHT="14" border="0"></a>
+
+	<img src="/skins/default/white.gif" border="0" WIDTH="1" HEIGHT="14">
+
+	<img src="/skins/default/white.gif" border="0" WIDTH="1" HEIGHT="14">
+
+	<img src="/skins/default/white.gif" border="0" WIDTH="1" HEIGHT="14">
+
+<!--		<a href="javascript:void(null)" onClick="window.open('/help/display.asp?ctid=0','wndHelp','height=400,width=300,top=100,left=300,scrollbars,resize')"><img src="/skins/default/qmark.gif" border="0" WIDTH="20" HEIGHT="20"></a>-->
+		<p align="left">
+
+	<!-- Content Table -->
+<table border="0" width=100%>
+<tr>
+	<td valign="top"><style type="text/css">
+	<!--
+	INPUT {BACKGROUND-COLOR: "mediumblue"; COLOR: "white"; WIDTH: "70px"; cursor: "hand"}	
+	HR {COLOR: "#800000"}
+	P {ALIGN: "left"; COLOR: "#800000"}
+	H1 {FONT-SIZE: "24pt"; COLOR: "#800000"}	
+	-->
+</style>
+
+<hr>
+<table border="0" width="88%">
+    <tr>
+      <td width="7%" valign="top" align="left" rowspan="2"><img title="The proud logo for Dragon's Claw" border="0" src="http://uploads.guildworld.com/image.asp?in=logo.jpg" width="150" height="150">
+</td>
+      <td width="64%" valign="top" align="left">
+        <p align="center"><input type="button" value="Story" name="bStory" title="How Dragon's Claw came to be" onclick="window.navigate('http://dragonsclaw.guildworld.com/default.asp?p=174')"><input type="button" value="Guidelines" name="bGuidelines" title="Guidelines all members in Dragon's Claw must follow" onclick="window.navigate('http://dragonsclaw.guildworld.com/default.asp?p=173')"> 
+        <input type="button" value="Files" name="bFiles" title="Download files such as class guides, zone maps, etc." onclick="window.navigate('http://dragonsclaw.guildworld.com/default.asp?p=176')"><input type="button" value="Links" name="bLinks" title="Links to other popular Everquest sites" onclick="window.navigate('http://dragonsclaw.guildworld.com/default.asp?p=175')"> 
+        <input type="button" value="Feedback" name="bFeedback" title="Provide feedback on this website" onclick="window.navigate('http://dragonsclaw.guildworld.com/default.asp?p=178')"><input type="button" value="Home" name="bHome" title="Jump to the Dragon's Claw Homepage" onclick="window.navigate('http://dragonsclaw.guildworld.com/')"></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="64%" valign="top" align="center">
+        <h1> Homepage</h1>
+      </td>
+    </tr>
+</table>
+
+<hr>
+<p>You have reached the home for Dragon's Claw!  This site was created
+to enhance communication between members of the Guild as well as useful
+information for guests passing through.  Feel free to browse the site and
+utilize any available resources we provide!</p>
+<div align="center">
+  <center>
+  <table border="0" width="43%" style="color: #800000">
+    <tr>
+      <td width="50%">Guild Name:</td>
+      <td width="50%"><b>Dragon's Claw</b></td>
+    </tr>
+    <tr>
+      <td width="50%">Everquest Server:</td>
+      <td width="50%"><b>Xegony</b></td>
+    </tr>
+    <tr>
+      <td width="50%">Guild Leader:</td>
+      <td width="50%"><b><a href="mailto:rneelin@sprint.ca">Xzar Icewind
+        </a></b></td>
+    </tr>    
+  </table>
+  </center>
+</div>
+<hr>
+
+
+	<p>
+
+	<a href="default.asp?p=138">138</a>&nbsp;|&nbsp;
+
+	<a href="default.asp?p=174">174</a>&nbsp;|&nbsp;
+
+	<a href="default.asp?p=173">173</a>&nbsp;|&nbsp;
+
+	<a href="default.asp?p=176">176</a>&nbsp;|&nbsp;
+
+	<a href="default.asp?p=175">175</a>&nbsp;|&nbsp;
+
+	<a href="default.asp?p=178">178</a>&nbsp;|&nbsp;
+</td>
+</tr>
+<tr>
+	<td valign="top"></td>
+</tr>
+</table>
+	<!-- End Content -->
+
+	</td>
+	<td valign="top">
+	<p><br><br>
+
+	<a href="/charter/"><img src="/skins/default/gcharter.gif" hspace="10" border="0" WIDTH="144" HEIGHT="10"></a><br clear="all"><br>
+
+	<a href="/forums/"><img src="/skins/default/gforums.gif" hspace="10" border="0" WIDTH="144" HEIGHT="10"></a><br clear="all"><br>
+
+	<a href="/hierarchy.asp"><img src="/skins/default/ghierarchy.gif" hspace="10" border="0" WIDTH="144" HEIGHT="10"></a><br clear="all"><br>
+	<a href="/browse.asp"><img src="/skins/default/gbrowse.gif" hspace="10" border="0" WIDTH="144" HEIGHT="10"></a><br clear="all"><br>
+	<a href="/join.asp"><img src="/skins/default/gjoin.gif" hspace="10" border="0" WIDTH="144" HEIGHT="10"></a><br clear="all"><br>
+	<br>
+
+	<a href="/members/"><img src="/skins/default/gmembersarea.gif" hspace="10" border="0" WIDTH="144" HEIGHT="10"></a><br clear="all">
+
+	</td>
+</tr>
+<tr>
+	<td colspan="2" bgcolor="#CEBD63"><img src="/skins/default/yellow.gif" width="640" height="1"></td>
+</tr>
+<tr>
+	<td valign="center">
+<img src="/skins/default/news.gif" WIDTH="144" HEIGHT="10"></td>
+	<td valign="center" bgcolor="#FFFFFF"><img src="/skins/default/latest.gif" WIDTH="144" HEIGHT="10"></td>
+</tr>
+<tr>
+	<td colspan="2" bgcolor="#CEBD63"><img src="/skins/default/yellow.gif" width="640" height="1"></td>
+</tr>
+<tr>
+	<td valign="top" bgcolor="#FFFFFF" height="70">
+	
+<font face="Arial, Helvetica" size="2">
+
+</font><br>
+	</td>
+	<td valign="top"><div class=Logon>Neraka - 9:31:35 AM</div><div class=Logon>Xzar - 8:57:38 AM</div><div class=Logon>Jaada - 8:18:08 AM</div><div class=Logon>Dactylus - 7:49:26 AM</div><div class=Logon>Aaldain - 5:35:14 AM</div><div class=Logon>Drungan - 4:06:17 AM</div></td>
+</tr>
+</table>
+</center>
+
+
+</body>
+</html>

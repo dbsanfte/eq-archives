@@ -1,0 +1,5430 @@
+
+<html>
+<head>
+<title>Guild World</title>
+<LINK rel="stylesheet" type="text/css" href="/public/includes/gw.css">
+<META NAME="Keywords" CONTENT="guild world, guild, guilds, clan, clans, homepage,
+membership, guild directory, guild list, clan directory, management, 
+guild management, guild tools">
+
+<SCRIPT language="JavaScript">
+<!--
+// Form Field Validation Function
+// Inputs: Form Element
+// Returns: True or False
+function isEmpty(fld)
+{   	return ((fld.value == null) || (s.length == 0))
+}
+
+function okField(fld)
+{
+	if (fld.value == "" || fld.value == null)
+	{
+		return false;
+	}
+	
+	return true;
+}
+
+function okTextArea(fld)
+{
+	var strTrimed = ltrim(fld.value);
+	fld.value = strTrimed;
+	
+	if (strTrimed.length > 7000)
+	{
+		alert("A mamximum of 7,000 characters are allowed you have entered "+ strTrimed.length +".");
+		return false;
+	}
+		
+	return true;
+}
+
+// Email validation Function
+// Checks for @ and . also validates a 0 string.
+// Inputs: Form Element
+// Returns: True or False
+function okEmail(fld)
+{
+	if (fld.value.indexOf("@") != "-1" &&
+		fld.value.indexOf(".") != "-1" &&
+		fld.value != "")
+	{
+		return true;
+	}
+return false;
+}
+
+// Telephone validation Function
+// Inputs: Form Element
+// Return: True or False
+function okPhone(fld)
+{
+	var fldstr, i
+	fldstr = fld.value + "";
+	
+	if (fldstr == "") return false;
+	for	(i = 0;i < fldstr.length; i++)
+	{
+		if((i < 3 && i > -1) || (i > 3 && i < 7) || (i > 7 && i < 12))
+		{
+			if (fldstr.charAt(i) < "0" || fldstr.charAt(i) > "9")
+			{
+				return false;
+			}
+		}else{
+			if (fldstr.charAt(i) != "-")
+			{
+				return false;
+			}
+		}
+	}
+return true;
+}
+
+// Form Field Validation Function
+// Inputs: Form Element
+// Returns: True or False
+function okPassword(fld, fld2)
+{
+	if (fld.value == fld2.value)
+	{
+		return true;
+	}
+
+return false;
+}
+
+// Form Field Validation Function
+// Inputs: Form Element
+// Returns: True or False
+function okInteger(fld)
+{
+	var fldstr, i
+	fldstr = fld.value + "";
+	
+	if (fldstr == "") return false;
+	for	(i = 0;i < fldstr.length; i++)
+	{
+		if (fldstr.charAt(i) < "0" || fldstr.charAt(i) > "9")
+		{
+			return false;
+		}
+		
+	}
+	return true;
+}
+
+// Form Field Validation Function
+// Inputs: Form Element
+// Returns: True or False
+function okFloat(fld)
+{
+	var fldstr, i
+	fldstr = fld.value + "";
+	
+	if (fldstr == "") return false;
+	for	(i = 0;i < fldstr.length; i++)
+	{
+		if (fldstr.charAt(i) < "0" || fldstr.charAt(i) > "9")
+		{
+			if ( fldstr.charAt(i) != ".")
+			{
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+// Form Field Validation Function
+// Inputs: Form Element
+// Returns: True or False
+function okCredit(fld)
+{
+	var fldstr, i
+	fldstr = fld.value + "";
+	
+	if (fld.value == "" || fld.value == null)
+	{
+		return false;
+	}
+
+	if (fld.value.indexOf("-") == "-1" && fld.value.indexOf(" ") == "-1")
+	{
+		return false;
+	}
+
+	for	(i = 0;i < fldstr.length; i++)
+	{
+		if (fldstr.charAt(i) < "0" || fldstr.charAt(i) > "9")
+		{
+			return false;
+		}
+	}
+	return true;
+}
+// LTrim
+// Inputs: String
+// Returns: string with leading spaces removed
+function ltrim(strString)
+{
+	var fldstr, i, newstr, ipos
+	fldstr = strString + "";
+	newstr = "";
+	
+	if (fldstr == "") return fldstr;
+	
+	for	(i = 0;i < fldstr.length; i++)
+	{
+		if(fldstr.charAt(i)!=" ")
+		{
+			ipos = (fldstr.length - i)+1;
+			newstr = fldstr.substr(i,ipos);
+			return newstr;
+		}
+	}
+	return newstr;
+}
+
+// Confirm Display
+// Inputs: None
+// Returns: True or False
+function okDelete()
+{
+	return confirm('You are about to permanently delete a record. Do you wish to proceed?');
+}
+
+
+// Date Validation
+// Inputs: Form Element
+// Returns: True or False
+function okDate(fld)
+{
+	var fldstr, i
+	fldstr = fld.value + "";
+	
+	if (fldstr == "") return false;
+	for	(i = 0;i < fldstr.length; i++)
+	{
+		if((i < 3 && i > -1) || (i > 3 && i < 6) || (i > 6 && i < 11))
+		{
+			if (fldstr.charAt(i) < 0 || fldstr.charAt(i) > 9)
+			{
+				return false;
+			}
+		}else{
+			if (fldstr.charAt(i) != "/")
+			{
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+// Error Message Display
+// Inputs: Form Element, Message to Display
+// Returns: True or False
+function errDisplay(fld, msg)
+{
+	alert(msg);
+	fld.focus();
+	return true;
+}
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#003366">
+<center>
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+	<td align="right" valign="bottom" colspan="2" height="55">
+		<font face="Arial, Helvetica" color="#CCBE61" size="2">
+		<a href="/public"><img src="/images/gwlogo_upperNEW2.gif" border="0" align="left" WIDTH="301" HEIGHT="55"></a>
+		<a href="/public/about/"><img src="/images/mnabout2.gif" border="0" WIDTH="56" HEIGHT="55"></a>
+		<a href="/public/forums/"><img src="/images/mnforums.gif" border="0" WIDTH="62" HEIGHT="29"></a>
+		<a href="/public/guilds/"><img src="/images/mnguilds.gif" border="0" WIDTH="56" HEIGHT="29"></a>
+		<a href="/public/sites/"><img src="/images/mnsites.gif" border="0" WIDTH="41" HEIGHT="29"></a>
+		<a href="/public/partners/"><img src="/images/mnpartners.gif" border="0" WIDTH="67" HEIGHT="29"></a>
+		<a href="/public/news/"><img src="/images/mnNews2.gif" border="0" alt="Gaming News" WIDTH="56" HEIGHT="29"></a>
+		<a href="/public/support/"><img src="/images/mnsupport.gif" border="0" WIDTH="68" HEIGHT="29"></a>
+		</font>
+	</td>
+</tr>
+<tr><td colspan="2" bgcolor="#ffffff"><img src="/images/white.gif" width="640" height="1"></td></tr>
+<tr>
+	<th width="468" valign="top">
+
+	</th>
+	<td valign="center" align="right"><img src="/images/sponsor.gif" WIDTH="18" HEIGHT="58"></td></tr>
+<tr><td colspan="2" bgcolor="#ffffff"><img src="/images/white.gif" width="640" height="1"></td></tr>
+<tr>
+	<td valign="center" height="39"><font face="Arial, Helvetica" size="4" color="#FF6B00"> &nbsp; &nbsp; &nbsp; G U I L D S </font></td>
+	<td valign="bottom" align="center">&nbsp;</td>
+</tr>
+<tr>
+	<td valign="top" bgcolor="#FFFFFF" height="238" valign="bottom">
+	<table border="0" width="100%" height="100%" cellpadding="5" cellspacing="0">
+	<tr>
+		<td valign="top" rowspan="2" width="55%">
+		<font face="Arial, Helvetica" size="2">
+		<!-- Begin Content -->
+
+			<table cellpadding="4" cellspacing=5 border=0>
+			<tr>
+				<td colspan=6><a href="default.asp"><font face="Arial, Helvetica" size="4" color="#0000FF">Search</font></a> :<font face="Arial, Helvetica" size="4">Results for genre search</font></td>
+			</tr>
+			<tr>
+				<th align="left">Game Genre</th>
+				<th align="left">Game Name</th>
+				<th align="left">Guild Name</th>
+				<th># Members</th>
+			</tr>
+
+			<tr>
+				<td align="left">Roleplaying</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Anarchy Online</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://black-shadow.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Black-Shadow</font></a></td>
+				<td align=center>14</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ecu.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">European Community United</font></a></td>
+				<td align=center>9</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fatalshadows.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fatal Shadows</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cok.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">fuc.kers</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://lostchapter.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Lost Chapter</font></a></td>
+				<td align=center>97</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://test.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mikee's test site</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://newtek.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">NewTeK</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://omnitraders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Omni Traders</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://radis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">RADIS</font></a></td>
+				<td align=center>18</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://stone.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">SToNE</font></a></td>
+				<td align=center>11</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://blackwatch.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Black Watch</font></a></td>
+				<td align=center>40</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theinnercircle.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Inner Circle</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Asheron's Call</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://brs.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Brotherhood of the Rising Sun</font></a></td>
+				<td align=center>46</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wolfbrother.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Brotherhood of the Wolf</font></a></td>
+				<td align=center>7</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Clan Sacre</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://guardiansofthecrystaldawn.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Daniel P. Johnson</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://defenders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Defenders </font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://forcegrey.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">ForceGrey</font></a></td>
+				<td align=center>27</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://immortalz.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Forsaken Immortalz</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://grix.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Grix</font></a></td>
+				<td align=center>50</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://kol.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Kinship of Light</font></a></td>
+				<td align=center>51</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://kod.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights of Dasterdly</font></a></td>
+				<td align=center>146</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://faradhim.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Les Farad'him</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://own.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">O.W.N.</font></a></td>
+				<td align=center>43</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ogd.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Oddyssey of Guardian of Dawn</font></a></td>
+				<td align=center>30</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ovot.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Oldman's Valiants of Thistledown</font></a></td>
+				<td align=center>111</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://rov.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ring of Valor</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://sov.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Scions of Vengeance</font></a></td>
+				<td align=center>31</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thebestofasheroncall.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Best Of Asheron's Call</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thechosen.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Chosen</font></a></td>
+				<td align=center>46</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://morphix.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Morphix XP Chain</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thistledownrangers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Thistledown Rangers</font></a></td>
+				<td align=center>70</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://vesayenbrigade.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Vesayen Brigade</font></a></td>
+				<td align=center>85</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wov.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Warriors of Virtue</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Baldur's Gate 2</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://hieraracgy.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Gathering Forces</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Dark Age of Camelot</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://aflafdreki.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Afl Af Dreki</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://aglegion.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ag Legion</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://aguilasregalis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">aguilas regalis</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://aquilasregalis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Aguilas Regalis</font></a></td>
+				<td align=center>63</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://albionalliance.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Albion Alliance</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://albioneternium.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Albion Eternium</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://albionwarlords.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Albion Warlords</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legendary.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Am Freiceadan Dachaidh</font></a></td>
+				<td align=center>11</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://aquilarsegalis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Aquilas Regalis</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://arcanesteel.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Arcane Steel</font></a></td>
+				<td align=center>5</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://armyofdarkness.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Army of Darkness</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://asylum.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Asylum</font></a></td>
+				<td align=center>5</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://merlinasylum.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Asylum</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://brothers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Band of Brothers</font></a></td>
+				<td align=center>9</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bandofbrothers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Band of Brothers</font></a></td>
+				<td align=center>9</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://battlelords.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Battle Lords</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://blackguard.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Black Guard</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://blackgrd.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Black Guard - Merlin</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://balckknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Black Knights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://blackknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Black Knights</font></a></td>
+				<td align=center>48</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://blackknightz.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Black Knights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bloodguard.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Blood Guard</font></a></td>
+				<td align=center>13</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bounty-hunters.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Bounty Hunters</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://broderskapet.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Broderskapet</font></a></td>
+				<td align=center>15</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://brotherhoodofsteel.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Brotherhood of Steel</font></a></td>
+				<td align=center>11</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cosdaoc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">C0S</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://celestialorder.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Celestial Order</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://celticshadows.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Celtic Shadows</font></a></td>
+				<td align=center>34</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://celticwolves.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Celtic Wolves</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://chaoticbrood.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Chaotic Brood</font></a></td>
+				<td align=center>27</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkmountain.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Clan Dark Mountain</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cohorssuccendo.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Cohors Succendo</font></a></td>
+				<td align=center>15</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://conclave.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Conclave of Uncreation</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://crimsonbrotherhood.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Crimson Brotherhood</font></a></td>
+				<td align=center>91</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://crimsonwind.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Crimsonwind</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://blades.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Crossed Blades</font></a></td>
+				<td align=center>40</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cotf.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Crusaders of the Faith</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thecult.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Cult of Nyarlathotep</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cwnannwn.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Cwn Annwn</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cymbrogi.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Cymbrogi</font></a></td>
+				<td align=center>14</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://daocoholics.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">DAoCoholics</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dark.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dark</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkdeeds.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">darkdeeds</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://norbu.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dazed and confused</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://deceptiovisus.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">deceptio visus</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dom.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Defenders of Midgard</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://defiantknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Defiant Knights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://destinysalliance.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Destiny's Alliance</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://diesirae.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dies Irae</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dionmorthir.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dion Mor-Thir</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thedivinewind.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Divine Wind</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://divinitus.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Divinitus</font></a></td>
+				<td align=center>14</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dorlachsgath.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dorlach Sgath</font></a></td>
+				<td align=center>31</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dragonofthenorth.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dragon of The North</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://north.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dragon of the North</font></a></td>
+				<td align=center>19</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thehidden.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dragon of The North</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dragonsrage.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dragons Rage</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eatersofthedead.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Eaters of the Dead</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://einherjar.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Einherjar</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://emeraldphoenix.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Emerald Phoenix</font></a></td>
+				<td align=center>14</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://enchantedcircledaoc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Enchanted Circle</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eternalbonds.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Eternal Bonds</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ether.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ether</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://etherealfellowship.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ethereal Fellowship</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://etherealflame.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ethereal Flame</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://evilempire.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Evil Empire</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://excalibur.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Excalibur</font></a></td>
+				<td align=center>11</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eofd.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Eye of the Dragon</font></a></td>
+				<td align=center>28</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fairystompers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fairy Stompers</font></a></td>
+				<td align=center>10</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fallenheroes.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fallen Heroes</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fallenlegacy.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fallen Legacy</font></a></td>
+				<td align=center>35</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://daocfatalfury.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fatal Fury</font></a></td>
+				<td align=center>37</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fiannaeireann.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fianna Eireann</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fistofalbion.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fist of Albion</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fistofhibernia.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fist of Hibernia</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fistofmidguard.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fist of Midguard</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://forgottensoldiers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Forgotten Soldiers</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://gaebuaid.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Gae-Buaid</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://geekfest.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Geek Fest</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://goatnutz.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">goatnutz</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://greytowers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Grey Towers</font></a></td>
+				<td align=center>14</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://gohguild.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guardians of Hibernia</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://gov.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guardians of the Veil</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://valhalla.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guardians of Valhalla</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://harbingersoflight.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Harbingers of Light</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thewatch.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Heimdall's Watch</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://helsangels.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Hel's Angels</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://hexe.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">HEXE</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://hibernianempire.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Hibernian Empire Alliance Web Page</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://hotv.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Horde of the Vanir</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://rage.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Icons of Rage</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://illuminati.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Illuminati</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://illuminti.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Illuminti</font></a></td>
+				<td align=center>21</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://invincibledaoc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Invincible</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://justiceleague.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Justice League</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://kindred.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Kindred</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://kindredspirits.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Kindred Spirits</font></a></td>
+				<td align=center>15</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofthedragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knight Hood of the Red Dragon</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knighthoodofthedragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knighthood of the Red Dragon</font></a></td>
+				<td align=center>87</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://kotrd.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knighthood of the Red Dragon</font></a></td>
+				<td align=center>36</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofappocalypse.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights Of Appocalypse</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://shrubbery.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights That Say Ni</font></a></td>
+				<td align=center>12</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knowingtheoaktree.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knowing the Oak Tree</font></a></td>
+				<td align=center>14</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://laochbaerit.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Laochbearit</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://leagueofjustice.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">League of Justice</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legendsofhibernia.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Legends of Hibernia</font></a></td>
+				<td align=center>10</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legionnairs.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">legionnairs</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://arcaneasylum.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">legions of hibernia</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://lionheart.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Lionheart Arcania</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://lionarc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Lionheart Arcania</font></a></td>
+				<td align=center>16</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://losotros.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Los Otros</font></a></td>
+				<td align=center>59</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://realpain.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Los Otros </font></a></td>
+				<td align=center>18</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://machines.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Machines Of God</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://marauders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Marauders</font></a></td>
+				<td align=center>23</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://merchantleague.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Merchant League</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://midgardmarauders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Midgard Marauders</font></a></td>
+				<td align=center>41</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://midgardmayhem.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Midgard Mayhem</font></a></td>
+				<td align=center>12</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://midnightsfall.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Midnight's Fall</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://misguided.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Misguided Guardians</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://murderinc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Murder Inc</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mysticknight.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mystic Knights</font></a></td>
+				<td align=center>20</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://naturairum.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Natura Irum</font></a></td>
+				<td align=center>11</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://newoutriders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">New OutRiders</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://nolimit.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">No Limit</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://nordicfront.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Nordic Front</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://nlights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Northern Lights</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://nytemyst.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">nyte Myst</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://obsidianknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Obsidian Knights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://oa.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order of the Ancients</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://crimson.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order of the Crimson Dragon</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ootd.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order of the Dragon</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://etherthrone.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order of the Ethereal Throne</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://paxbritannia.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Pax Britannia</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://pos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Protectors of Sauvage</font></a></td>
+				<td align=center>60</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://puppies.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Puppies of Death</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://divinity.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Rain of Divinity</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ravenguard.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Raven Guard</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://redbrotherhood.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Red Brotherhood</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://reddragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Red Dragon</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://reihtgarda.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Reiht Garda</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://relentlessascension.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Relentless Ascension</font></a></td>
+				<td align=center>14</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://roh.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Requiem of Honour</font></a></td>
+				<td align=center>20</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://rideomortis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Rideo Mortis</font></a></td>
+				<td align=center>15</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://rite.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Rite</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://rooks.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">RooKs</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://scholarsofalbion.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">scholarsofalbion</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://shades.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Shades of Valour</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://siegeworks.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">SiegeWorks</font></a></td>
+				<td align=center>28</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://silent.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">silent reign</font></a></td>
+				<td align=center>23</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://soulsoflegend.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Souls of Legend</font></a></td>
+				<td align=center>13</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://soulsoftheshadows.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Souls of the Shadows</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bloodmoon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Stalkers of the Bloodmoon</font></a></td>
+				<td align=center>13</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://stormriders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Storm Riders</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://swiftwindraiders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Swiftwind Raiders</font></a></td>
+				<td align=center>5</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://tearfothedragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Tear of the Dragon</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://testdaoc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">test daoc</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://aesir.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Aesir</font></a></td>
+				<td align=center>21</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://arsenal.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Arsenal</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theassociates.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Associates</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theazurelioncompany.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Azure Lion Company</font></a></td>
+				<td align=center>5</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://brigade.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Black Brigade</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://blackhand.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">the Black Hand</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theblackknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">the black knights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theblackknightsofdaoc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Black Knights</font></a></td>
+				<td align=center>28</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theblackrose.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Black Rose</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thebladesoffire.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Blades of Fire</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://tboa.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The BrotherHood of Albion</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://brotherhood.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Brotherhood of Hibernia</font></a></td>
+				<td align=center>40</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://tbom.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The BrotherHood of Midgard</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thedarkbrotherhood.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Dark Brotherhood</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://divinewind.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Divine Wind</font></a></td>
+				<td align=center>12</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dragonlords.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Dragonlords</font></a></td>
+				<td align=center>27</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://enchantedcircle.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Enchanted Circle</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thefallen.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Fallen</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fatalist.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Fatalist</font></a></td>
+				<td align=center>16</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thegreatgivers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Great givers</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theguard.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Guard</font></a></td>
+				<td align=center>101</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theguard-tristan.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Guard</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theguardians.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Guardians</font></a></td>
+				<td align=center>28</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://imperialguard.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Imperial Guard</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://lgminvasion.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Last Great Myth</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mystics.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Mystics of Albion</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theorderofchalicewells.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Order of Chalice Wells</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theorderofthesilverblades.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Order of The Silver Blades</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thepope.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Popes</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://roundtable.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Round Table</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://rbw.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Royal Black Watch </font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thescarletorder.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Scarlet Order</font></a></td>
+				<td align=center>11</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://syndicate.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Syndicate (Gawaine Server)</font></a></td>
+				<td align=center>62</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://twc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The War Council</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://rivenfell.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Thorns of Rivenfell</font></a></td>
+				<td align=center>7</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://disciples.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">True Disciples</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://valkyriur.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Valkyriur</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://vanguard.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Vanguard</font></a></td>
+				<td align=center>5</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://vikingsofthesea.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Vikings of the Sea</font></a></td>
+				<td align=center>5</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://virtuteetarmis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Virtute et Armis</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://vixensofvalorhib.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Vixens of Valor</font></a></td>
+				<td align=center>12</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://daocwarlords.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Warlords</font></a></td>
+				<td align=center>12</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://warriorlegend.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Warriors of Legend</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wildgeese.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Wild Geese</font></a></td>
+				<td align=center>27</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://winterwolves.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Winter Wolves</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wisdom.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Wisdom</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://gladewolves.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Wolves of the Glade</font></a></td>
+				<td align=center>67</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Dark Ages</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bloodravens.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Blood Ravens</font></a></td>
+				<td align=center>20</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://lod.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Bunghole</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://blades2.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Crossed Blades (MIdgard)</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thekingoffighters.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dahaira</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://nihil.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">death shadows</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://goatnuts.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">vattican assasins</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Darkstone</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsoftheroundtable.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">IRONFIST</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Diablo</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://enchantment.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">pod</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Diablo 2</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bio-gods.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Bio-Gods</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://order.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dark Guild</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darklords.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dark Lords</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thecoven.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Coven</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Everquest</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://agos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">A Gathering of Shadows</font></a></td>
+				<td align=center>22</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://adventureseekers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Adventure Seekers</font></a></td>
+				<td align=center>21</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://adventurousknight.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Adventurous Knights</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://aegisofjustice.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Aegis Of Justice</font></a></td>
+				<td align=center>52</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://aegisofunity.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Aegis of Unity</font></a></td>
+				<td align=center>64</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://aegiswolves.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Aegis Wolves</font></a></td>
+				<td align=center>31</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://aos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Alliance of Steel</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mamong.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">ALPHA</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dreamersofthedream.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Altered Dreames </font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://renaycia.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Altered Dreams </font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://altereddreams.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">AlteredDreams</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://altruisticvalorians.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Altruistic Valorians</font></a></td>
+				<td align=center>38</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://amazonstorm.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Amazon Storm</font></a></td>
+				<td align=center>11</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://amicus.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Amicus Concordiam</font></a></td>
+				<td align=center>13</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ancientpath.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ancient Path</font></a></td>
+				<td align=center>17</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://as.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ancient Spirits</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://angels.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Angles</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://anicents.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Anicents</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://antoniusfinest.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Antonius Finest</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://arcane.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Arcane Asylum</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://spirit.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ardent Spirit</font></a></td>
+				<td align=center>69</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ardentspirits.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">ArdentSpirit</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://roxor.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">ardient spir</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://asdf.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">asdf</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://atavis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Atavis</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://awakeneddestiny.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Awakened Destiny</font></a></td>
+				<td align=center>47</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://axismundi.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Axis Mundi</font></a></td>
+				<td align=center>7</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bandoleros.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Bandoleros de la Sierra</font></a></td>
+				<td align=center>50</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bod.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Bane of Darkness</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bardictales.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Bardic Tales</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://barlovento.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Barlovento</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://blackorder.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Black order</font></a></td>
+				<td align=center>26</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eastantonicanforces.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">BladeMasters</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bladesandmagic.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Blades and Magic</font></a></td>
+				<td align=center>18</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bladesofchaos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Blades Of Chaos</font></a></td>
+				<td align=center>29</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bloodredrose.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Blood Red Rose</font></a></td>
+				<td align=center>43</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://angelsofwrath.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Boom</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://brokenparadox.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Broken Paradox</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://brotherhoodofthewolf.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">BROTHERHOOD OF THE WOLF</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://calender.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Calender</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cog.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Champions of Glory</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://champions.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Champions of the Rising Moon</font></a></td>
+				<td align=center>78</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Chaotic Consortium</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://chaotic.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Chaotic Consortium</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://chaotic-harmony.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Chaotic Harmony</font></a></td>
+				<td align=center>83</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://chaotikrage.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Chaotik Rage</font></a></td>
+				<td align=center>11</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://children-ofthemind.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Children of The Mind</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://chosenofchaos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Chosen of Chaos</font></a></td>
+				<td align=center>9</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://chosen.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Chosen of Norrath</font></a></td>
+				<td align=center>56</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cimerii.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Cimerii</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cof.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Circle of Friends</font></a></td>
+				<td align=center>61</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://circleofhexos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Circle of Hexos</font></a></td>
+				<td align=center>57</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://circleoflegends.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Circle of Legends</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://clanchaos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Clan Chaos</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://clanstardragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Clan Stardragon</font></a></td>
+				<td align=center>34</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cww.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Clan Winter Wolf</font></a></td>
+				<td align=center>25</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://clandragonwolfofthecrusaders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">clandragonwolf of the crusaders</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://coeurdedragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Coeur de Dragon</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://coeurethaine.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Coeur et Haine</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ccvz.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Collective Conspiracy</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://collectivec.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Collective Conspiracy</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cov.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Companions of Virtue</font></a></td>
+				<td align=center>28</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://concilio.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Concilio</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://coe.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Conspiracy of Equals</font></a></td>
+				<td align=center>199</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://consumingflame.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Consuming Flame</font></a></td>
+				<td align=center>16</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://councilofantioch.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Council of Antioch</font></a></td>
+				<td align=center>43</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://coh.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Council of Hate</font></a></td>
+				<td align=center>14</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://councildark.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Council of the Dark</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://council.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Council of the Lost Dragon</font></a></td>
+				<td align=center>21</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://crusaders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Crusaders of Power</font></a></td>
+				<td align=center>41</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dabogmen.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Da Bog Men</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkassailants.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dark Assailants</font></a></td>
+				<td align=center>10</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkdefiantwarrior.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dark Defiant Warrior</font></a></td>
+				<td align=center>102</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dfr.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dark Force Rising</font></a></td>
+				<td align=center>14</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dpr.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dark Phoenix Rising</font></a></td>
+				<td align=center>78</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://gpr.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">dark phonix rising</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkvirtue.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dark Virtue</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkbringers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Darkbringers</font></a></td>
+				<td align=center>47</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkbrinders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Darkbringers</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://shadowdark.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Darkest Shadow</font></a></td>
+				<td align=center>54</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkhorse.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Darkhorse Legions</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dawnofnorrath.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dawn of Norrath</font></a></td>
+				<td align=center>52</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://deadlyfustice.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Deadly Justice</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://deadlyjustice.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Deadly Justice</font></a></td>
+				<td align=center>51</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://deathreapers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Death Reapers</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://defiance.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Defiance Of Destiny</font></a></td>
+				<td align=center>70</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dementia.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dementia</font></a></td>
+				<td align=center>16</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://destinyshadow.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Destiny's Shadow</font></a></td>
+				<td align=center>32</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://devout.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Devout</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://diamondphoenix.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Diamond Phoenix</font></a></td>
+				<td align=center>38</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://drinkingdisorderly.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Disorderly</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thedisorderly.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Disorderly</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://divelement.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Divine Elemental</font></a></td>
+				<td align=center>21</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://divineintervention.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Divine Intervention</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://divine.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">DIVINE LOYALTY</font></a></td>
+				<td align=center>24</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dm.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Divine Madness</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dragonlegends.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dragon Legends</font></a></td>
+				<td align=center>31</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dragonrift.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dragon Rift</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dragonsclaw.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dragon's Claw</font></a></td>
+				<td align=center>123</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dragonmist.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dragonmist</font></a></td>
+				<td align=center>7</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dragons.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dragons of the Crescent Moon</font></a></td>
+				<td align=center>20</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dragonsrevolt.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dragons Revolt</font></a></td>
+				<td align=center>82</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dreamsofthefallen.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dreams of the Fallen</font></a></td>
+				<td align=center>84</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://druidsofhell.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Druids of HELL</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://druidsofhellfire.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Druids of hell fire</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://edroh-eht.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Edroh'Eht</font></a></td>
+				<td align=center>81</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://egnimaticrevolution.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Egnimatic Revolution</font></a></td>
+				<td align=center>28</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eig.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Elven Imperial Guard</font></a></td>
+				<td align=center>29</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://elysianheroes.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">elysian heroes</font></a></td>
+				<td align=center>5</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thenewelysianheros.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Elysian Heros</font></a></td>
+				<td align=center>43</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://empire.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Empire of the Forgotten</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://es.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">EnchantedSteel</font></a></td>
+				<td align=center>99</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dawizer.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">enchantersrelam</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://envy.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Envy</font></a></td>
+				<td align=center>23</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://epesi.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Epesi Imara</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://guildepesi.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Epesi Imara</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eqemu.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">EQemu</font></a></td>
+				<td align=center>110</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://essenceoftruth.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Essence of Truth</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://essential.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Essential Dominion</font></a></td>
+				<td align=center>25</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eternaldragoons.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Eternal Dragoons</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eternalsphere.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Eternal Sphere</font></a></td>
+				<td align=center>37</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eternal.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">eternal sphere</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://etherealdestiny.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ethereal Destiny</font></a></td>
+				<td align=center>13</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eveningreign.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Evening Reign</font></a></td>
+				<td align=center>115</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://onlyforeqlovers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">EverQuest Lovers</font></a></td>
+				<td align=center>10</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eversal.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Eversal</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://evolutia.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Evolutia Prime</font></a></td>
+				<td align=center>103</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fallendragoons.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fallen Dragoons</font></a></td>
+				<td align=center>44</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fots.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Farmer of the Stars</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fatalfury.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fatal Fury</font></a></td>
+				<td align=center>151</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fatescircle2.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">fate's circle</font></a></td>
+				<td align=center>24</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://swiftblades.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">faydark's first</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ff.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Faydarks First</font></a></td>
+				<td align=center>7</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://faydarks.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Faydarks First</font></a></td>
+				<td align=center>11</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://faydaarks.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">faydarks first</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fellowship Circle</font></a></td>
+				<td align=center>59</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://foc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fellowship of Commons</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fidesorbis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fides Orbis</font></a></td>
+				<td align=center>5</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fj.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fiery Justice</font></a></td>
+				<td align=center>59</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://finalgenesis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Final Genesis</font></a></td>
+				<td align=center>112</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://finalgensis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Final Genisis</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fireknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fire Knights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fireknight.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fire Knights</font></a></td>
+				<td align=center>13</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ww.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Firn I Guinar</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fig.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Firn I Guinar</font></a></td>
+				<td align=center>53</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fistofgreed.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fist of Greed</font></a></td>
+				<td align=center>33</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fistsoftunare.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fists of Tunare</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fod.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Flight of Dragons</font></a></td>
+				<td align=center>79</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://folloersofconenant.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Followers Of Covenant</font></a></td>
+				<td align=center>11</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://followersoftheconvenant.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">followers of the convenant</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://followersofthecovenant.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Followers of the Covenant</font></a></td>
+				<td align=center>80</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://followersofconvenant.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">followersofconvenant</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fu.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Forged Union</font></a></td>
+				<td align=center>45</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://forsakenfellowship.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Forsaken Fellowship</font></a></td>
+				<td align=center>37</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://forsakebfellowship.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Forsaken Fellowship</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fortitude.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fortitude</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://fortressofsouls.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Fortress of Souls</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://freedomknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">freedomknights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://diamondpheonix.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Gemein</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://genssolaris.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Gens Solaris</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://gironarayo.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Girona&Rayo</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://gap.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Gods Among Peasants</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://goldenwings.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Golden Wings</font></a></td>
+				<td align=center>25</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://gothicwolves.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Gothic Wolves</font></a></td>
+				<td align=center>10</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://gd.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Greater Druids</font></a></td>
+				<td align=center>25</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://gryphonwolf.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Gryphonwolf</font></a></td>
+				<td align=center>9</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://glop.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guardian Lords of Peace</font></a></td>
+				<td align=center>26</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://god.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guardians of Dawn</font></a></td>
+				<td align=center>35</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://gok.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guardians of Knowledge</font></a></td>
+				<td align=center>65</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://eq-gol.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guardians of Lore</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://guardiansofthekeep.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guardians of the Keep</font></a></td>
+				<td align=center>101</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://guardiansofthetraids.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guardians of the Triads</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://guardiansofthewind.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guardians of the Wind</font></a></td>
+				<td align=center>9</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://guidingalliance.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guiding Alliance</font></a></td>
+				<td align=center>40</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://hov.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Heralds of Valdamer</font></a></td>
+				<td align=center>18</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://hereosofdestinedheights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">hereosofdestinedheights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://heroesofdestinedheights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Heroes Of Destined Heights</font></a></td>
+				<td align=center>103</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://heroesofdestined.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Heroes Of Destined Heights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://heroesoftomorrow.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Heroes of Tomorrow</font></a></td>
+				<td align=center>66</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://herosofdestinedheights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Heros of Destined Heights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://holycrusaders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Holy Crusaders</font></a></td>
+				<td align=center>44</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://holyguard.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Holy Guard</font></a></td>
+				<td align=center>7</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://honorablecrusader.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Honorable Crusader</font></a></td>
+				<td align=center>18</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://honorbound.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Honorbound Legion</font></a></td>
+				<td align=center>21</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://horsemen.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Horsemen of Apocalypse</font></a></td>
+				<td align=center>46</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://houseofkarnage.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">House Of Karnage</font></a></td>
+				<td align=center>39</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://hst.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">House Silver Talon</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://huntersoftheundead.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Hunters of the Undead</font></a></td>
+				<td align=center>19</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://immortalissecta.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Immortalis Secta</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://imperialarmy.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Imperial Army</font></a></td>
+				<td align=center>21</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://imperial.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Imperial force of norrath</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wwwimperial.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Imperial Force Of Norrath</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://impossibles.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Impossibles</font></a></td>
+				<td align=center>43</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://incursores-infernales.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Incursores Infernales</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://innoruukchose.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Innoruuks Chosen</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://instigators.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Instigators</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://invincible.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Invincible Crazy Fists</font></a></td>
+				<td align=center>54</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ivoryorder.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ivory Order</font></a></td>
+				<td align=center>56</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://jadeknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Jade Knights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://jesters.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Jesters Club</font></a></td>
+				<td align=center>173</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://jokerswild.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Jokers Wild</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://keeprs.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Keeprs of the Scale</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://kightsofwildfire.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">kights of wildfire </font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://kindredofmyth.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Kindred Of Myth Mnemosyne</font></a></td>
+				<td align=center>53</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofcalibur.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">KNIGHTS OF CALIBUR</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofconsumingfury.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights Of comsuming Fury</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://kocf.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">knights of consuming fury</font></a></td>
+				<td align=center>133</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofeternalchaos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights of Eternal Chaos</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightofwildfire.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights of hell fire</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofshadowfall.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights of Shadowfall</font></a></td>
+				<td align=center>75</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ksh.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights of Skyhaven</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofsteel.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights Of Steel</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofthevioletflame.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights of the Violet Flame</font></a></td>
+				<td align=center>25</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://kotvf2.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">knights of the violet flame</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofvelious.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights of Velious</font></a></td>
+				<td align=center>137</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofwildf.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights Of Wild Fire</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofwildfire.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights of Wildfire</font></a></td>
+				<td align=center>22</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofwildfi.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Knights of Wildfire</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://leagueofthescroll.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">League of the Scroll</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legacyofchaos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Legacy of Chaos</font></a></td>
+				<td align=center>22</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legacyoffriends.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Legacy of Friends</font></a></td>
+				<td align=center>11</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legacyofhate.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Legacy of Hate</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legacyofpain.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Legacy of Pain</font></a></td>
+				<td align=center>39</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legacyoftwilight.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Legacy of Twilight</font></a></td>
+				<td align=center>32</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legends-of-mystic-heroes.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Legends of Mystic Heroes</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legendsreborn.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Legends Reborn</font></a></td>
+				<td align=center>50</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legioinvicta.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Legio invicta</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://legionofobsidianknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Legion of Obsidian Knights</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://lov.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Legion Of Velious</font></a></td>
+				<td align=center>49</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://liberators.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Liberators of Chaos</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://lionhearts.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Lionhearts</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://lordsofdeath.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Lords of Death</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://lodv.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Lords of Dragon Valor</font></a></td>
+				<td align=center>17</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://comandosdeoasis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Los Comandos de Oasis</font></a></td>
+				<td align=center>12</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://luclinwolves.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Luclin Wolves</font></a></td>
+				<td align=center>20</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://lux.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Lux et Veritas</font></a></td>
+				<td align=center>70</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://majestickindred.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Majestic Kindred</font></a></td>
+				<td align=center>107</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://zallia.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Malice Winds</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://manifestationofshadows.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Manifestation of Shadows</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://marenostrum.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mare Nostrum</font></a></td>
+				<td align=center>119</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://medievalbrethren.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">medievalbrethren</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://midnightc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Midnight Coterie</font></a></td>
+				<td align=center>5</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://misplacedspirits.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Misplaced Spirits</font></a></td>
+				<td align=center>70</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://misplacedspirit.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">misplacedspirits</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://monks.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Monksgalore</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wolfmooncrusaders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">moonwolf crusaders</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mortisgladius.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mortis Gladius</font></a></td>
+				<td align=center>21</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mysticdreamz.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mystic Dreams</font></a></td>
+				<td align=center>15</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mysticshadows.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mystic Shadows</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mysticsouls.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mystic Souls</font></a></td>
+				<td align=center>30</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mysticalfires.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mystical Fires</font></a></td>
+				<td align=center>16</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mysticallegacy.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mystical Legacy</font></a></td>
+				<td align=center>47</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mysticalsources.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mystical Sources</font></a></td>
+				<td align=center>13</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mysticalssources.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mystical Sources</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mysticalfire.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">mysticalfire</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mysticalsource.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">MysticalSource</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mythandmagic.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Myth and Magic</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://mythicallegend.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Mythical Legend</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://nefastusdeus.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Nefastus Deus</font></a></td>
+				<td align=center>31</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://nexus.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">NeXuS</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://nightmarecoalition.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Nightmare Coalition</font></a></td>
+				<td align=center>104</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://nobleavengers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Noble Avengers</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://nss.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Norrath Secret Service</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://risen.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Norrath's Risen</font></a></td>
+				<td align=center>92</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://norrathsshadow.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Norrath's Shadow</font></a></td>
+				<td align=center>7</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://hood.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Norrathian Brotherhood</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://toothbringers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Norrathian Collective</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://nc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Norrathian Convergence</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://norrithianguards.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Norrathian Guard</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://norrathianflawless.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Norrathian's Flawless</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://notoriousbloodline.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Notorious Bloodline</font></a></td>
+				<td align=center>10</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://noxmustelae.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Nox Mustelae</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bigbear.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">OB1CANOBE</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://obsolete.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">obsolete</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://odergoldendragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">oder of the golden dragon</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bam.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Of Blades and Magic</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ofsaintsandshadows.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Of Saints and Shadows</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ogresferogres.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ogres Fer Ogres</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://onidracoss.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Onidracoss lair</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://openhand.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Open Hand</font></a></td>
+				<td align=center>25</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://orbisfi.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Orbis Fi</font></a></td>
+				<td align=center>13</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ordained.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ordained</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://odw.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order of Divine Wrath</font></a></td>
+				<td align=center>43</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://orderderathmar.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order of Rathmar</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wwwancientdragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">order of the ancient dragon</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ancientdragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order of the Ancient Dragon</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wwworderancientdragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">order of the ancient dragon</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wwworderancientdragonmainpage.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">order of the ancient dragons</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://orderofthegoldendragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order of the Golden Dragon</font></a></td>
+				<td align=center>108</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://omr.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order of the Midnight Rose</font></a></td>
+				<td align=center>21</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ravenstrear.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order of The Raven's Tear</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ravenstear.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order of The Raven's Tear</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://orderofthesteelrose.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Order Of The Steel Rose</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ordotemplidraconis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ordo Templi Draconis</font></a></td>
+				<td align=center>31</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://phoenixphyre.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Phoenix Phyre</font></a></td>
+				<td align=center>67</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://prophecy.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Prophecy</font></a></td>
+				<td align=center>168</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://poa.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Prophets of Aeolus</font></a></td>
+				<td align=center>26</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://poh.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Protectors of Hope</font></a></td>
+				<td align=center>89</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://protectors.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Protectors Of Light</font></a></td>
+				<td align=center>112</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ultimos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Raddarr</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://radiantcircle.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Radiant Circle</font></a></td>
+				<td align=center>60</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theradiantcircle.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">RadiantCircle</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://raiders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">raiders</font></a></td>
+				<td align=center>76</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://recklessraiders.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Reckless Raiders</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://redsky.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Red Sky</font></a></td>
+				<td align=center>24</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://reignofthedragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Reign of the Dragon</font></a></td>
+				<td align=center>12</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://reveredsouls.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Revered Souls</font></a></td>
+				<td align=center>199</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://reverence.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">reverence</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://reverenttruth.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Reverent Truth</font></a></td>
+				<td align=center>23</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ringofcobalt.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ring of Cobalt</font></a></td>
+				<td align=center>29</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ronincouncil.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ronin Council</font></a></td>
+				<td align=center>5</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ronins.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ronins</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://rottingcorpses.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">RottingCorpses</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://sbow.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Sacred Brotherhood of the Wolf</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://sagecouncil.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Sage Council</font></a></td>
+				<td align=center>19</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://saviorsoftheremaining.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Savior's Of The Remaining</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://protectorsofnothing.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Savior's of the Remaining</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://sod.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Seekers of Darkstone</font></a></td>
+				<td align=center>32</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkness.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Seekers of the Darkness</font></a></td>
+				<td align=center>24</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://seekersofunity.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Seekers Of Unity</font></a></td>
+				<td align=center>19</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://innit.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Seguidores de Girona Asesino</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://shadowdragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Shadowdragon</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://sk-r-us.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">shadowknights-r-us</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://shadows.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Shadows in the Mists</font></a></td>
+				<td align=center>18</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://shadowsofayonae.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Shadows of Ayonae</font></a></td>
+				<td align=center>43</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://son.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Shadows Of Night</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://sictransitgloria.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Sic Transit Gloria</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://siervosdelinfinito.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Siervos del infinito</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://norrath.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Sigils</font></a></td>
+				<td align=center>39</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://signum-fedei.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Signum Fedei</font></a></td>
+				<td align=center>20</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://silentreign.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Silent Reign</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://silentslayers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Silent Slayers</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://slayers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Silent Slayers</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://silverswordsofeq.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Silver Swords</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://silverwings.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Silver Wings</font></a></td>
+				<td align=center>58</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://sirensofthestorm.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Sirens of the Storm</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://slayersoffate.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Slayers of Fate</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://sleeplessknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Sleepless Knights of Norrath</font></a></td>
+				<td align=center>18</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://sleeplessknight.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Sleepless Knights of Norrath</font></a></td>
+				<td align=center>0</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://smallworld.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Small World</font></a></td>
+				<td align=center>15</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://solacekeep.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Solace Keep</font></a></td>
+				<td align=center>63</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://something.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Something</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://souldragons.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Soul Dragons</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://soulsurvivors.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Soul Survivors</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://soulessshadows.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Souless Shadows</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://soulfireknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Soulfire Knights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thesoulfireknights.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Soulfire Knights</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://knightsofsoulfire.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Soulfire Knights</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://starequiaumun.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Stare Quia Unum</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://kos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">steel knights of norrath</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://stormovernorath.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Storm Over Norrath</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://stormonorrath.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Storm over Norrath</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://stormovernorrath.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">STORM over NORRATH</font></a></td>
+				<td align=center>264</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://stormover.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">stormover norrath</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://switch.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Switch Infinity</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://stonedogs.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Temp Dogs</font></a></td>
+				<td align=center>15</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://temperedspirits.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Tempered Spirits</font></a></td>
+				<td align=center>22</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://temp.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">tempral</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://guardiansofthew.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">texa</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theblacktemplars.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Black Templars</font></a></td>
+				<td align=center>40</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thebrethren.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Brethren</font></a></td>
+				<td align=center>82</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://five.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Council of five</font></a></td>
+				<td align=center>52</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thedivinelight.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Divine Light</font></a></td>
+				<td align=center>25</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://tec.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Enchanted Circle</font></a></td>
+				<td align=center>94</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://feydakin.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Feydakin</font></a></td>
+				<td align=center>49</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theforgottenbrotherhood.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Forgotten Brotherhood</font></a></td>
+				<td align=center>20</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://lightguardians.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Light Guardians</font></a></td>
+				<td align=center>37</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkdragon.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Norrathian Dragons of Darkness</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theorderofloki.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Order of Loki</font></a></td>
+				<td align=center>72</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://renegades.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Renegades</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://therenounced.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Renounced</font></a></td>
+				<td align=center>40</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ron.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Revenants of Norrath</font></a></td>
+				<td align=center>127</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ridgerunners.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Ridgerunners of Innoruuk</font></a></td>
+				<td align=center>85</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thesense.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Sense</font></a></td>
+				<td align=center>72</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://tss.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Shattered Sphere</font></a></td>
+				<td align=center>37</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://bramblebush.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Sisterhood of Thorns</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://toilers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Toilers Guild</font></a></td>
+				<td align=center>60</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thesickness.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">thesickness</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thorshammer.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Thor's Hammer</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://tradersunion.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Traders Union</font></a></td>
+				<td align=center>21</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://tribunal.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Tribunal of Antiquity</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://econ.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Tunare's Wrath</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://twilight.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Twilight Defenders</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://twistedspiral.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Twisted Spiral</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ultimointento.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ultimo intento</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://unbounddestiny.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Unbound Destiny</font></a></td>
+				<td align=center>19</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://unionoflostsouls.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Union of Lost Souls</font></a></td>
+				<td align=center>33</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://uomastery.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Union of Mastery</font></a></td>
+				<td align=center>16</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://unitedchaos.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">United Chaos</font></a></td>
+				<td align=center>42</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://uws.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">United We Stand</font></a></td>
+				<td align=center>53</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://unityofthepowers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Unity Of The Powers</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://hiizzhurzz.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Unknown</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://utopianguard.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Utopian Guard</font></a></td>
+				<td align=center>114</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://vaevictis.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Vae Victis</font></a></td>
+				<td align=center>14</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://valor.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Valor and Arms</font></a></td>
+				<td align=center>32</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://vanguardsofexcellence.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Vanguards of Excellence</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://voe.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Vanguards of Excellence</font></a></td>
+				<td align=center>187</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://veeshan.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Veeshan's Conspiritors</font></a></td>
+				<td align=center>33</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://vguild.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Vehement</font></a></td>
+				<td align=center>16</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://velleestposse.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Velle Est Posse</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://venombrood.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Venom Brood</font></a></td>
+				<td align=center>237</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://venombroodooc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Venom Brood - OOC</font></a></td>
+				<td align=center>20</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://venombroodelite.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Venom Brood Elite</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://ventrue.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Ventrue</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://vespers.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Vespers of drinal</font></a></td>
+				<td align=center>5</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://vespersofdrinal.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Vespers of Drinal</font></a></td>
+				<td align=center>30</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://vespersofdinal.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">vespersofdinal </font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://virtuouslegacies.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Virtuous Legacies</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://walkersofthewinds.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Walkers of the Winds</font></a></td>
+				<td align=center>28</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://warlordelites.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Warlord Elites</font></a></td>
+				<td align=center>34</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://warlordeselite.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Warlordes Elite</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://warlordselite.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">warlords elite</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://warpriestsofkunark.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Warpriests of Kunark</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://witchesofannihi.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">witches of annihilation</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://witches.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Witches of Annihilation</font></a></td>
+				<td align=center>61</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wolfpack.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Wolfpack of Norrath</font></a></td>
+				<td align=center>56</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wolfsofthewind.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Wolfs of The Wind</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://wonderland.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">wonderland</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://morty.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Wrecking Crew</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Freeform Roleplaying (FFRPG)</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://argenteusdraco.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Argenteus Draco</font></a></td>
+				<td align=center>8</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thecourtoftheobsidiandragons.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Court Of  The Obsidian Dragons</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://dragonfire.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dragonfire's Lair</font></a></td>
+				<td align=center>3</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkmm.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guild of Darkness</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://horsebarn.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Horse Barn</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://semidarkally.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">KeystoneClass2006</font></a></td>
+				<td align=center>24</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://symphony.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Symphony</font></a></td>
+				<td align=center>6</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Kohan: Immortal Sovereigns</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://majeure.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Force Majeure</font></a></td>
+				<td align=center>19</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Legends of Might and Magic</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://therevelation.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">legit warriors {L_W}</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://rulersofriveldele.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Rulers_Of_Rivendele</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Never Winter Nights</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://swd.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Swift Wings of Death</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://silentblade.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Silent Blades</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Other Game Not Listed</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://castletyr.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Castle Tyr</font></a></td>
+				<td align=center>20</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://corvid.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Corvid</font></a></td>
+				<td align=center>16</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://pugsey.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Honalee</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://labyrinth.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Labyrinth</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://loc.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Lords of Chaos </font></a></td>
+				<td align=center>98</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://northshoreseq.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">North Shores Elders Quorum</font></a></td>
+				<td align=center>21</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://j316spiritman.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">SpiritMan</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theprotectorate.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Protectorate</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://protectorate.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Protectorate</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://silversight.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Silver Sight Inn (FFRPG)</font></a></td>
+				<td align=center>25</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Summoner</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://azrealmage.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Azrael Guild (Summoner)</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://darkdefender.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Dark Defender</font></a></td>
+				<td align=center>19</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://guardiansoflight.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Guardians of Light</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://purelight.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">PureLight</font></a></td>
+				<td align=center>9</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://summoner.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Summoner</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">The 4th Coming</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://jeton2002.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">jeton</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">The Realm</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://stateofmind.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">startofmind</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Ultima Online</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://missionary.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Christian Gamers Association</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://cga.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Christian Gamers Association</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://christian.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Christian Players United</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://druids.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Druid Council for the Arcane Arts</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://elendili.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Elendili</font></a></td>
+				<td align=center>4</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://soldiersofliberty.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Soldiers Of Liberty</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://thirdlegion.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Roman Third Legion</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://preacher.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Young Christian Gamers Association</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">Vampire: Redemption</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://vampirechronicles.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">Xa'tru</font></a></td>
+				<td align=center>1</td>
+			</tr>
+
+			<tr>
+				<th>&nbsp;</th>
+				<td align="left">World Of Warcraft</td>
+				<th align="left">&nbsp;</th>
+				<th align="left">&nbsp;</th>
+			</tr>
+				
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<td><a href="http://theredhand.guildworld.com"><font face="Arial, Helvetica" color="#0000FF">The Band of the Red Hand</font></a></td>
+				<td align=center>2</td>
+			</tr>
+
+			</table>
+		<!-- End Content -->
+		</font>
+		</td>
+	</tr>
+	</table></td>
+	<td valign="top" align="center"><table border="0" width="145">
+<tr>
+	<td valign="center" align="center"><img src="/images/feature.gif" hspace="10" WIDTH="141" HEIGHT="18"></td>
+</tr>
+<tr>
+	<td valign="center" align="center"><a href="http://celticshadows.guildworld.com/"><img src="/public/images/banners/celticshadows.jpg" border="0" WIDTH="144"></a></td>
+</tr>
+<tr>
+	<td valign="top" align="center"><font face="Arial, Helvetica" color="#ffffff" size="1">An <a href="http://www.darkageofcamelot.com/" target="_new"><font color=#6699ff>Dark Age of Camelot </font></a> guild.</td>
+</tr>
+<tr>
+	<td valign="top" align="center"><font face="Arial, Helvetica" color="#ffffff" size="1"><I><I><SPAN style="COLOR: #66cc66; FONT-FAMILY: Arial, Garamond">Our mission is to bring glory and fame to Hibernia ...</I></B> </td>
+</tr>
+</table></td>
+</tr>
+<tr><td colspan="2" bgcolor="#CEBD63"><img src="/images/yellow.gif" width="640" height="1"></td></tr>
+<tr><td valign="center"> <img src="/images/news.gif" WIDTH="144" HEIGHT="10"> </td><td valign="center" bgcolor="#ffffff"> <img src="/images/latest.gif" WIDTH="144" HEIGHT="10"> </td></tr>
+<tr><td colspan="2" bgcolor="#CEBD63"><img src="/images/yellow.gif" width="640" height="1"></td></tr>
+<tr><td valign="top" bgcolor="#ffffff" height="70"> <font face="Arial, Helvetica" size="2">
+	<a href="/public/news/articles.asp?aid=10051" class=News><font color=#FF0000>**</font> Beta Participants Posted <font color=#FF0000>**</font></a> - 1/26/02 1:34:45 PM<br>
+</font><br>&nbsp;</td><td valign="top"><font face="Arial, Helvetica" size="2" color="#ffffff">
+	&nbsp; &nbsp; <a href="http://knightsofeternalchaos.guildworld.com/" class=News><font color="#ffffff">Knights of Eternal Chaos</font></a><br>
+
+	&nbsp; &nbsp; <a href="http://tboa.guildworld.com/" class=News><font color="#ffffff">The BrotherHood of Albion</font></a><br>
+
+	&nbsp; &nbsp; <a href="http://shades.guildworld.com/" class=News><font color="#ffffff">Shades of Valour</font></a><br>
+
+	&nbsp; &nbsp; <a href="http://tbom.guildworld.com/" class=News><font color="#ffffff">The BrotherHood of Midgard</font></a><br>
+
+	&nbsp; &nbsp; <a href="http://thewatch.guildworld.com/" class=News><font color="#ffffff">Heimdall's Watch</font></a><br>
+
+	&nbsp; &nbsp; <a href="http://nytemyst.guildworld.com/" class=News><font color="#ffffff">nyte Myst</font></a><br>
+</td></tr>
+</table>
+</center>
+</body>
+</html>
