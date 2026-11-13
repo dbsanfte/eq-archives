@@ -1,0 +1,535 @@
+<HTML>
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+		<META NAME="Generator" CONTENT="Microsoft Word 97">
+		<TITLE>
+			Author: Richard Werning  
+		</TITLE>
+	</HEAD>
+	<BODY LINK="#0000ff">
+		
+		<FONT SIZE=2>
+			<B>
+				Author: 
+			</B>
+			Richard Werning  
+			<br>
+			<B>
+				Date: 
+			</B>
+			10/9/2000
+			<br>
+			<B>
+				Rev
+			</B>
+			: 11/14/00 – Added instructions to create the demo from scratch, added info on
+			using Multiple RDM’s.
+			<br>
+			<B>
+				Rev
+			</B>
+			: 12/03/00 Update error in the Get_MainDM and Set_MainDM sample code.
+			<br>
+			For questions or comments please send email to: rjw@tiptech.com
+			<P>
+			&nbsp;
+			</P>
+			
+		</FONT>
+		<P>
+		<B>
+			Creating a 3 Tier application, using TDComConnection.
+		</B>
+		</P>
+		<FONT SIZE=2>
+			<P>
+			We’ll need a 3 tier connection to start the demo, so that’s where we’ll start
+			the demo.  For clarity sake I will be naming things as we go along so we can
+			refer to the components by name.  
+			</P>
+			
+			<P>
+			This demo has been written using Delphi 5, Enterprise.  One of the features of
+			Delphi5 is the Project group, which allows you to have multiple projects as
+			part of one project group so that all can be opened and worked with at the same
+			time.  Some modifications to the steps will be needed for Delphi 4.
+			</P>
+			
+			<P>
+			For the sake of this demo, the client and server will both be executed from the
+			same machine.  This demo has been put together on WinNT, there are some issues
+			with using Dcom connection on Win9x, please see Dan Miser’s articles at 
+		</FONT>
+		<A HREF="http://www.distribucon.com/"><FONT SIZE=2>http://www.distribucon.com/</FONT></A>
+		<FONT SIZE=2>
+			 for more information on using Dcom with Win9x. 
+			</P>
+			
+			<P>
+			During the demo we will be using the TSharedConnection component, this can be
+			found in the Midas Essential pack at 
+		</FONT>
+		<A HREF="http://www.openave.net/"><FONT SIZE=2>http://www.openave.net</FONT></A>
+		<FONT SIZE=2>
+			.   Another handy part of the MidasEssential pack is the CDSGrid (Client
+			Dataset Grid) which was written by John Kaster. This Grid connects to a
+			TClientDataset, and allows for sorting by one or more columns on the fly,
+			simply by clicking on the column title. A nice addon component in my opinion.
+			</P>
+			
+			<P>
+			<B>
+				Building the Server
+			</B>
+			</P>
+			<P>
+			 Create a new application ( File | New Application), this will be our server. 
+			Save all, naming the form (frmServer) and the project (SharedDemoServer).  Now
+			we need to add a RemoteDatamodule (File | New | MultiTier – RemoteDatamodule).
+			CoClassName = SharedDemoMain, Instancing = Multi Instance, Threading =
+			Appartment.
+			</P>
+			<UL>
+				<LI>
+				Add a TDatabase to the RDM (RemoteDatamodule), set the Aliasname = DBDemos,
+				DatabaseName = dbSharedDemo.
+				</LI>
+				<LI>
+				Add a TSession to the RDM, set the AutoSession property to True.  Change the
+				SessionName on the TDatabase to be this session, not Default.  The sesssion
+				name will be something like &quot;Session1_1&quot;.
+				</LI>
+				<LI>
+				Add a Tquery to the RDM, change properties so name = qOrders, Database Name =
+				dbSharedDemo, Sql Text = select * from orders.
+				</LI>
+				<LI>
+				Add a TdatasetProvider to the RDM, change properties so name = dspOrders,
+				Dataset = qOrders.
+				</LI>
+			</UL>
+			
+			
+			<P>
+			Check to be sure that the Database Active = False, and Session Active = False. 
+			Save all.
+			</P>
+			<P>
+			Compile the server and run it – this will register the server with your machine.
+			</P>
+			
+			<P>
+			<B>
+				Building the Client
+			</B>
+			</P>
+			<P>
+			If you haven’t worked with a project group before, you’ll get your first demo
+			in its usefulness now.   In the Project Manager ( Project | Project Manager )
+			right click on the ProjectGroup1 and add a new project – (New – Application).
+			Name the newly created form frmClient.  Save all, naming the new project
+			SharedDemoClient.  Looking at the Project Manager, which ever project is bolded
+			is the current active project.  Throughout the rest of this demo, you’ll need
+			to be sure that you’re working on the correct project.   Be sure that the
+			SharedDemoClient project is bolded in the project manager.
+			</P>
+			
+			
+			<UL>
+				<LI>
+				Add a new Datamodule (File | New – Datamodule). On the objectInspector set the
+				Datamodule name = dmMain.
+				</LI>
+				<LI>
+				Add a TdcomConnection to dmMain.  Since client and server will be on the same
+				physical machine, leave the computer name blank.   Set the ServerName =
+				SharedDemoServ.SharedDemoMain (if this isn’t available in the dropdown list,
+				try to compile and run the server again, the server object likely isn’t
+				registered yet).
+				</LI>
+				<LI>
+				Add a TclientDataset to dmMain, in the object inspector set the properties Name
+				= cdsOrders, RemoteServer = DComConnection1, Provider Name = dspOrders.
+				</LI>
+				<LI>
+				Add a Datasource to dmMain.  Name = dsOrders, Dataset = cdsOrders
+				</LI>
+			</UL>
+			
+			<P>
+			My personal preference is to remove all Datamodules and forms form the projects
+			autocreate list and create them myself in the forms OnCreate event.  If you
+			choose to leave the Datamodules in the Autocreate, be sure you move the form to
+			the bottom of the list, creating it after the Datamodule or you will get an
+			AccessViolation when the form tries to open the dataset.
+			</P>
+			
+			<P>
+			On frmClient add a TDbGrid (  or TclientDatasetGrid if you’ve installed it from
+			the MidasEssential Pack).  Add dmMain to frmClient’s uses clause, and connect
+			the grid to dsOrders. In the frmClient’s OnFormCreate event, open cdsOrders (
+			dmMain.cdsOrders.Open). Be sure that the TDatabase  Active = False, then
+			compile the client and run it.    The Client should run, opening up and
+			retrieving data from the server.
+			</P>
+			
+		</FONT>
+		<P>
+		<B>
+			Adding a Second RemoteDatamodule, using TSharedConnection.
+		</B>
+		</P>
+		<FONT SIZE=2>
+			 
+			<P>
+			Normally, if you wanted to use another pair of Datamodule/RemoteDatamodule’s
+			you’d have to assign an additional TCnnection (ie. TDComConnection) to handle
+			the communication.  However, the MidasEssential pack provides a
+			TsharedConnection component which allows us to share an existing connection
+			(hence the name).
+			</P>
+			
+			<P>
+			To show how to use the TShareConnection, we’re going to add another DataModule
+			to the client project and RemoteDataModule to the server project. 
+			</P>
+			
+			<P>
+			<B>
+				Modifying the Server
+			</B>
+			</P>
+			<P>
+			D5 users - Remember to set the SharedDemoServer as the active project in the
+			Project group.
+			</P>
+			
+			<OL>
+				
+				<LI>
+				Add a new RemoteDataModule  ( File | New | Mulitier - RemoteDataModule ),
+				CoClassName = SharedDemoChild1, Instancing = Internal, Threading = Appartment.
+				</LI>
+				<LI>
+				Add TQuery (name=qCustomer) and TDatasetProvider (name=dspCustomer) to the
+				RemoteDatamodule.  Set SQL for the new query ( Select * from customer).  Set
+				the Session = Session1_x, and the DatabaseName to dbSharedDemo.
+				</LI>
+				<LI>
+				In the Interface section of SharedDemoChild1 RDM, add a variable declaration of
+				type TComponentFactory for the Child Type.
+				</LI>
+				<blockquote>
+					<B>
+						var
+					</B>
+					<br>
+					&nbsp;&nbsp;fChild1RDMFactory: TComponentFactory;
+				</blockquote>
+				<LI>
+				Modify the existing Initialization section of the server form.  In the
+				Initialization section add assignment of the variable when creating RDM.  Be
+				sure to the Instancing is set to ciInternal, not ciMultiInstance.
+				</LI>
+				<blockquote>
+					<B>
+						initialization
+					</B>
+					<br>
+					&nbsp;&nbsp;fChild1RDMFactory := TComponentFactory.Create(ComServer,
+					TSharedDemoChild1, Class_SharedDemoChild1, ciInternal, tmApartment);
+				</blockquote>
+				<LI>
+				Open projects Type Library  ( View | Type Library )
+				</LI>
+			</OL>
+			
+			
+			
+			<UL>
+				<LI>
+				Add a new Interface of IBaseRDM to SharedDemoServer.  (Parent Interface =
+				IappServer)
+				</LI>
+				<LI>
+				Add Read/Write property to IBaseRDM for SessionName (type = WideString) 
+				</LI>
+				<LI>
+				Add Read/Write property to IBaseRDM for MainDM (type = ISharedDemoMain)
+				</LI>
+				<LI>
+				Change the Parent Interface type of the ISharedDemoChild1 to IBaseRDM
+				</LI>
+				<LI>
+				Add a new Readonly property to IsharedDemoMain named Child1DM, (type =
+				ISharedDemoChild1)
+				</LI>
+				<img src="typelib.jpg" width="623" height="400" alt="Type library Image">
+				
+				<LI>
+				In the SharedDemoMain function &quot;Get_Child1DM&quot;, add the following code:
+				</LI>
+				<blockquote>
+					<B>
+						function
+					</B>
+					 TSharedDemoMain.Get_Child1DM: ISharedDemoChild1;
+					<br>
+					<b>
+						begin
+					</b>
+					<br>
+					&nbsp;&nbsp;		  Result := fChild1RDMFactory.CreateComObject(nil) as
+					ISharedDemoChild1;
+					<br>
+					&nbsp;&nbsp;		  Result.MainDM := Self;
+					<br>
+					&nbsp;&nbsp;		  Result.SessionName := Session1.SessionName;
+					<br>
+					<b>
+						end
+					</b>
+					;
+				</blockquote>
+				
+				<LI>
+				Add a variable to RDM SharedDemoChild1 Private declaration:
+				</LI>
+				<blockquote>
+					<B>
+						private
+					</B>
+					<br>
+					&nbsp;&nbsp;		{ Private declarations }
+					<br>
+					&nbsp;&nbsp;		FMainDM: ISharedDemoMain; 
+				</blockquote>
+				
+				<LI>
+				Add methods to RDM SharedDemoChild1 Public declaration
+				</LI>
+				<blockquote>
+					<B>
+						public
+					</B>
+					<br>
+					{ Public declarations }
+					<br>
+					&nbsp;&nbsp;
+					<b>
+						function
+					</b>
+					 Get_MainDM: ISharedDemoMain; safecall;
+					<br>
+					&nbsp;&nbsp;
+					<b>
+						procedure
+					</b>
+					 Set_MainDM(const Value: ISharedDemoMain); safecall;
+					<br>
+					&nbsp;&nbsp;
+					<b>
+						function
+					</b>
+					 Get_SessionName: WideString; safecall;
+					<br>
+					&nbsp;&nbsp;
+					<b>
+						procedure
+					</b>
+					 Set_SessionName(const Value: WideString); safecall;
+					  end;
+				</blockquote>
+				
+				<LI>
+				Add the Read/Write procedures for MainDM and SessionName.to RDM SharedDemoChild1
+				</LI>
+				<blockquote>
+					<B>
+						function
+					</B>
+					 TSharedDemoChild1.Get_MainDM: ISharedDemoMain;
+					<br>
+					<b>
+						begin
+					</b>
+					<br>
+					&nbsp;&nbsp;				  Result := FMainDM;
+					<br>
+					<b>
+						end
+					</b>
+					;
+					<br>
+					<Br>
+					<B>
+						procedure
+					</B>
+					 TSharedDemoChild1.Set_MainDM(const Value: ISharedDemoMain);
+					<br>
+					<b>
+						begin
+					</b>
+					<br>
+					&nbsp;&nbsp;				  FMainDM := value;
+					<br>
+					<b>
+						end
+					</b>
+					;
+					<br>
+					<Br>
+					<B>
+						function
+					</B>
+					 TSharedDemoChild1.Get_SessionName: WideString;
+					<br>
+					<b>
+						var
+					</b>
+					<br>
+					&nbsp;&nbsp;				  i: integer;
+					<br>
+					<b>
+						begin
+					</b>
+					<br>
+					&nbsp;&nbsp;				  Result := '';
+					<br>
+					&nbsp;&nbsp;				  if FMainDM &lt;&gt; nil then
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;				with FMainDM do
+					<br>
+					&nbsp;&nbsp;	&nbsp;&nbsp;			for i:=0 to ComponentCount - 1 do
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;				&#9;&#9;if Components[i] is TSession then
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;				&#9;&#9;begin
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;				&#9;&#9;  Result := TSession( Components[i]
+					).SessionName;
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;				&#9;&#9;  break;
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;				&#9;&#9;end;
+					<br>
+					<b>
+						end
+					</b>
+					;
+					<Br>
+					<Br>
+					<B>
+						procedure
+					</B>
+					 TSharedDemoChild1.Set_SessionName(const Value: WideString);
+					<Br>
+					<b>
+						var
+					</b>
+					<br>
+					&nbsp;&nbsp;				  i: integer;
+					<br>
+					<b>
+						begin
+					</b>
+					<br>
+					&nbsp;&nbsp;				  for i:=0 to ComponentCount-1 do
+					<br>
+					&nbsp;&nbsp;				if Components[i] is TDBDataset then
+					<br>
+					&nbsp;&nbsp;				TDBDataset(Components[i]).SessionName := Value;
+					<br>
+					<b>
+						end
+					</b>
+					;
+				</blockquote>
+				
+				<LI>
+				Add unit SharedDemoChild1 to the ShareServMain unit.
+				</LI>
+				<LI>
+				Compile the Server, and run it to Register it.
+				</LI>
+			</UL>
+			
+			
+			<P>
+			<B>
+				Modifying the Client
+			</B>
+			</P>
+			<P>
+			We now will add an additional Datamodule to the Client, add a SharedConnection
+			to use the existing DcomConnection, and connect it to the client form.
+			</P>
+			<OL>
+				<LI>
+				Add new Datamodule.  ( File | New | New | DataModule ), Name = dmChild1
+				</LI>
+				<LI>
+				Add dmMain to dmChild1 uses statement ( File | Use Unit )
+				</LI>
+				<LI>
+				Add a TSharedConnection to your new Child Datamodule, Name = scChidl1, Parent
+				Connection = DCOMConnection1, Object Name = Child1DM.  
+				</LI>
+				<LI>
+				Add a TClientDataset to dmChildl, Name = cdsCustomer, Remote Server = scChild1,
+				Provider Name = dsCustomer
+				</LI>
+				<LI>
+				Add a Tdatasource to dmChild1, Name = dsCustomer, Dataset = cdsCustomer
+				</LI>
+				<LI>
+				Add dmChild1 to the uses clause of the frmClient.
+				</LI>
+			</OL>
+			
+			
+			<P>
+			Be sure that the scChild1 (SharedConnection on dmChild1) has connected property
+			set to false, and DComConnection on dmMain has Connected set to false.   These
+			will often get set to true, as you select providers and remote servers, which
+			causes the server to launch. Compiling and running when they’re active are
+			often a cause of problems when developing C/S applications.
+			</P>
+			
+			<P>
+			If you choose to leave the Datamodules in the projects Autocreate list, be sure
+			you move the
+			form to the bottom of the list, creating it last. 
+			</P>
+			
+			<P>
+			On frmClient add a TDbGrid (  or TclientDatasetGrid if you’ve installed it from
+			the MidasEssential Pack).  Add dmChild1 to frmClient’s uses clause, and connect
+			the new grid to dsCustomers. In the frmClient’s OnFormCreate event, open
+			cdsCustomer ( dmChild1.cdsCustomer.Open). Be sure that the TDatabase  Active =
+			False, then compile the client and run it.    The Client should run, opening up
+			and retrieving data from the server.
+			</P>
+		</FONT>
+		<P>
+		<B>
+			Adding Additional RDM’s to the demo
+		</B>
+		</P>
+		<FONT SIZE=2>
+			<P>
+			Adding additional RemoteDatamodules to the demo is relatively simple.  You add
+			another RemoteDatamodule ( ISharedDemoChild2 ) to the server, the same as you
+			did the first one (SharedDemoChild1).  You will need to modify the Server's
+			Type Library, adding in a Child2DM to ISharedDemoMain and setting the type to
+			ISharedDemoChild2.  You need to set the Parent Interface of ISharedDemoChild2
+			to IBaseRDM, the same as you did for Child1.
+			</P>
+			
+		</FONT>
+		<P>
+		Source code for the demo can be downloaded for 
+		<a href="multiconn.zip">Multiple Connections</a>
+		 here.
+	</BODY>
+</HTML>
