@@ -1,0 +1,1322 @@
+<html>
+
+<head>
+<title>The Companions - Veeshan - Everquest</title>
+<style>
+<!--
+A:Visited {text-decoration: none; color:#808080 }
+A:Link {text-decoration: none; color:#808080 }
+A:Hover {text-decoration:underline ; font-weight: ; color:#808080 }
+-->
+</style>
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script>
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script></head>
+
+<body bgproperties="fixed" bgcolor="#000000" text="#FFFFFF" onload="dynAnimation()">
+
+<table border="0" width="759" height="400" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="749" height="103" colspan="4"><img border="0" src="images/top01.jpg" WIDTH="749" HEIGHT="117"></td>
+    <td width="6"><br>
+    </td>
+  </tr>
+  <tr>
+    <td width="121" height="285" valign="top" bgcolor="#000000"><img border="0" src="images/side02.jpg" WIDTH="117" HEIGHT="89"><br>
+    <a href="home.html"><img border="0" src="images/menu03a.jpg" width="117" height="51" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="images/menu03b.jpg"></a><br>
+    <a href="news.html"><img border="0" src="images/menu04a.jpg" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="images/menu04b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <a href="roster.html"><img border="0" src="images/menu05a.jpg" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="images/menu05b.jpg" WIDTH="117" HEIGHT="35"></a><br>
+    <a href="http://pub9.ezboard.com/bthecompanionsofveeshan"><img alt="Our Message Board - Members Only!" border="0" src="images/menu06a.jpg" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="images/menu06b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <a onmouseover="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;" onmouseout="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln" href="spells.html"><img border="0" src="images/menu08a.jpg" id="fpAnimswapImgFP7" name="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="images/menu08b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <a onmouseover="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;" onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln" href="maps.html"><img border="0" src="images/menu09a.jpg" id="fpAnimswapImgFP8" name="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="images/menu09b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <a href="screenshots.html"><img border="0" src="images/menu11a.jpg" id="fpAnimswapImgFP9" name="fpAnimswapImgFP9" dynamicanimation="fpAnimswapImgFP9" lowsrc="images/menu11b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <a onmouseover="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;" onmouseout="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln" href="mailto:davecan@mindspring.com"><img border="0" src="images/menu07a.jpg" id="fpAnimswapImgFP6" name="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="images/menu07b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sideend01.jpg" WIDTH="117" HEIGHT="48"> </td>
+    <td width="14" height="285"></td>
+    <td width="582" height="285" valign="top"><p align="center">&nbsp;</p>
+    <p align="center"><b><font face="Verdana" size="4">Roster by Name</font></b><font face="Verdana" size="2"> (of Primary Character)</font></p>
+    <p align="center"><b><font face="Verdana" size="3">*Level*</font></b></p>
+    <p align="center"><b><font color="#FFFFFF" face="Verdana" size="3">{</font><font face="Verdana" size="2" color="#008080">1-14</font><font face="Verdana" size="3"><font color="#FFFFFF">}</font> <font color="#FFFFFF">{</font></font><font face="Verdana" size="2" color="#008000">15-24</font><font color="#FFFFFF" face="Verdana" size="3">} {</font><font face="Verdana" size="2" color="#00FF00">25-34</font><font face="Verdana" size="3" color="#FFFFFF">} {</font><font face="Verdana" size="2" color="#FFFF00">35-44</font><font face="Verdana" size="3"><font color="#FFFFFF">} </font>{</font><font face="Verdana" size="2" color="#FF8000">45-49</font><font face="Verdana" size="3"><font color="#FFFFFF">}
+    </font>{</font><font color="#C80000" face="Verdana" size="2">50</font><font face="Verdana" size="2" color="#FF0000">-</font><font face="Verdana" size="2" color="#8080FF">60</font><font color="#FFFFFF" face="Verdana" size="3">}</font></b> </p>
+    <table border="1" width="100%" height="300" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="26%" height="45" align="left"><p align="center"><b>Name<font size="3">*</font></b></td>
+        <td width="11%" height="45" align="center"><p align="center"><b>Race</b></td>
+        <td width="11%" height="45" align="center"><p align="center"><b>Class</b></td>
+        <td width="12%" height="45" align="center"><p align="center"><font color="#FFFFFF"><b>Rank</b></font></td>
+        <td width="10%" height="45" align="center"><b>Status</b></td>
+        <td width="13%" height="45" align="center"><b>Squad/ICQ</b></td>
+      </tr>
+      <tr>
+        <td width="26%" height="20" align="left"><font color="#FF8000"><b>Admiral </b></font></td>
+        <td width="11%" height="20" align="center"><font color="#FF8000">High Elf</font></td>
+        <td width="11%" height="20" align="center"><font color="#FF8000">Enchanter</font></td>
+        <td width="12%" height="20" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="20" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="20" align="center"><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="20" align="left"><font color="#FFFF00">Aethir</font></td>
+        <td width="11%" height="20" align="center"><font color="#FFFF00">Human</font></td>
+        <td width="11%" height="20" align="center"><font color="#FFFF00">Rogue</font></td>
+        <td width="12%" height="20" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="20" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="20" align="center"><img src="images/1tailgold.gif" alt="1tailgold.gif (730 bytes)" WIDTH="65" HEIGHT="62">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="20" align="left"><font color="#FFFF00">Arouet</font></td>
+        <td width="11%" height="20" align="center"><font color="#FFFF00">Human</font></td>
+        <td width="11%" height="20" align="center"><font color="#FFFF00">Cleric</font></td>
+        <td width="12%" height="20" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="20" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="20" align="center"><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="26%" height="20" align="left"><font color="#FF0000">Autum</font></td>
+        <td width="11%" height="20" align="center"><font color="#FF0000">High Elf</font></td>
+        <td width="11%" height="20" align="center"><font color="#FF0000">Enchanter</font></td>
+        <td width="12%" height="20" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="20" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="20" align="center">&nbsp; <img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="20" align="left"><font color="#FF0000">Auyana</font></td>
+        <td width="11%" height="20" align="center"><font color="#FF0000">Dark Elf</font></td>
+        <td width="11%" height="20" align="center"><font color="#FF0000">Cleric</font></td>
+        <td width="12%" height="20" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="20" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="20" align="center">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="20" align="left"><font color="#00FF00">Azeroke</font></td>
+        <td width="11%" height="20" align="center"><font color="#00FF00">Erudite</font></td>
+        <td width="11%" height="20" align="center"><font color="#00FF00">Mage</font></td>
+        <td width="12%" height="20" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="20" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="20" align="center">&nbsp;<img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="20" align="left"><font color="#FF8000">Baam</font></td>
+        <td width="11%" height="20" align="center"><font color="#FF8000">Troll</font></td>
+        <td width="11%" height="20" align="center"><font color="#FF8000">Warrior</font></td>
+        <td width="12%" height="20" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="20" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="20" align="center">&nbsp;<img src="images/1tailwht.gif" alt="1tailwht.gif (605 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Bador Bludfist&nbsp; </b></font><p><font color="#00FF00"><b>Meen</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Human</font><p><font color="#00FF00">Dwarf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Warrior</font><p><font color="#00FF00">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailorange.gif" alt="1tailorange.gif (730 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><p align="left"><font color="#FFFF00">Blail</font></p>
+        <p align="left"><font color="#FF8000">Fedara</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Barbarian</font><p><font color="#FF8000">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Shaman</font><p><font color="#FF8000">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/1tailgold.gif" alt="1tailgold.gif (730 bytes)" WIDTH="65" HEIGHT="62"> </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#8080FF"><b>Balboa</b></font><p><font color="#FF0000"><b>Shagara</b></font></p>
+        <p><font color="#408080"><b>Aoblab</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#8080FF">Halfling</font><p><font color="#FF0000">High Elf</font></p>
+        <p><font color="#408080">Dark Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#8080FF">Druid</font><p><font color="#FF0000">Enchanter</font></p>
+        <p><font color="#408080">Necromancer</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Council</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailred.gif" alt="1tailred.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Banto Crushfoot</b></font><p><font color="#808040"><b>Scrying</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Halfling</font><p><font color="#808040">Dark Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Druid</font><p><font color="#808040">Necromancer</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#00FFFF">Retired</font></td>
+        <td width="13%" height="21" align="center">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00"><b>Centhena D'Cerridwen</b></font><p><font color="#00FF00"><b>Desirata Quaichang</b></font></p>
+        <p><font color="#00FF00"><b>Astartea sol'Lunare</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Human</font><p><font color="#00FF00">Human</font></p>
+        <p><font color="#00FF00">Half Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Cleric</font><p><font color="#00FF00">Monk</font></p>
+        <p><font color="#00FF00">Druid</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;&nbsp; <img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Cerridwen Blackthorn</font></b><p><font color="#FF8000"><b>Evilla</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Wood Elf </font><p><font color="#FF8000">Dark Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Druid</font><p><font color="#FF8000">Necro</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00"><b>Chiparo</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">High Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Enchanter</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><font color="#FFFF80">&nbsp;</font><img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Cricket Goodbug</b>
+        &nbsp; </font><p><font color="#80FF80"><b>Klia</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Barbarian </font><p><font color="#80FF80">Barbarian</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Shaman </font><p><font color="#80FF80">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Council</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/bludrgcrwn.gif" alt="bludrgcrwn.gif (2576 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Cruze</font></b><p><font color="#FF8000"><b>Mcheal</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">High Elf</font><p><font color="#FF8000">Dark Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Magician</font><p><font color="#FF8000">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF00">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000">Cymorg</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Monk</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Council</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/oradragcrwn.gif" alt="oradragcrwn.gif (2336 bytes)" WIDTH="65" HEIGHT="62"> </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Darshu Luche</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Erudite</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Wizard</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Davel</b></font><p><font color="#00FF00"><b>Qurchothorus Pokeyouintheeye</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Erudite</font><p><font color="#00FF00">Dwarf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Enchanter</font><p><font color="#00FF00">Rogue</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/1tailwht.gif" alt="1tailwht.gif (605 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Dolorous</font></b><p><font color="#408080"><b>Heazguard</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">?</font><p><font color="#408080">?</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Wizard</font><p><font color="#408080">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><a href="bio.html#doomgiver"><font color="#FF0000"><b>Doomgiver Hoarfrost</b></font></a><p><font color="#FF0000"><b>Dhoum</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Barbarian</font><p><font color="#FF0000">Halfling</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Shaman</font><p><font color="#FF0000">Rogue</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">High Council</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailred.gif" alt="1tailred.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#808040">Eshap</font><p><font color="#408080">Itzi</font></td>
+        <td width="11%" height="21" align="center"><font color="#808040">Wood Elf</font><p><font color="#408080">Gnome</font></td>
+        <td width="11%" height="21" align="center"><font color="#808040">Druid</font><p><font color="#408080">Necro</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF00">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp; <img src="images/1tailgold.gif" alt="1tailgold.gif (730 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF8000">Estell</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">?</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF00">Active</font></td>
+        <td width="13%" height="21" align="center"><font color="#FFFF80">&nbsp;</font><img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000">Evid</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Dark Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Necro</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FFFF00">Fanallron</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp; <img src="images/1tailgold.gif" alt="1tailgold.gif (730 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00"><b>Filchet Maliaeuctor</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Halfling</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Rogue</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/1tailgold.gif" alt="1tailgold.gif (730 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Flobear</b></font><p><font color="#FFFF00"><b>Cauthonn</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Erudite</font><p><font color="#FFFF00">Halfling</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Enchanter</font><p><font color="#FFFF00">Druid</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00"><b>Furnok Shadowbane</b></font><p><font color="#FFFF00"><b>Elbrynn Starglister</b></font></p>
+        <p><font color="#FFFF00"><b>Arowyn Starglister</b></font></p>
+        <p><font color="#FFFF00"><b>Seefull Goldeneyes</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Human</font><p><font color="#FFFF00">High Elf</font></p>
+        <p><font color="#FFFF00">High Elf</font></p>
+        <p><font color="#008000">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Rogue</font><p><font color="#FFFF00">Wizard</font></p>
+        <p><font color="#FFFF00">Enchanter</font></p>
+        <p><font color="#008000">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Squad Leader</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/glddragcrwn.gif" alt="glddragcrwn.gif (2681 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Gandulf&nbsp;</b></font><p><font color="#408080"><b>Isky</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Erudite</font><p><font color="#408080">Iskar</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Wizard</font><p><font color="#408080">Necro</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;&nbsp;<img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"> </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Gordan</font></b></td>
+        <td width="11%" height="21" align="center"></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><font color="#FFFF80">&nbsp;</font><img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Gortech</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Halfling</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Druid</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Granshara Briarsong</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Gnome</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Wizard</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailorange.gif" alt="1tailorange.gif (730 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Gwell Goodstaff</b></font><p><font color="#00FF00"><b>Briggs Bonemauler</b></font></p>
+        <p><font color="#00FF00"><b>Abiss</b></font></p>
+        <p><font color="#FF0000"><b>Warhowl</b></font></p>
+        <p><font color="#408080"><b>Howler</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">High Elf</font><p><font color="#00FF00">Barbarian</font></p>
+        <p><font color="#00FF00">Half Elf</font></p>
+        <p><font color="#FF0000">Barbarian</font></p>
+        <p><font color="#408080">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Magician</font><p><font color="#00FF00">Shaman</font></p>
+        <p><font color="#00FF00">Druid</font></p>
+        <p><font color="#FF0000">Warrior</font></p>
+        <p><font color="#408080">Monk</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp; <img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF8000">Harlequinn Bladestorm</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Half Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Bard</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><font color="#FFFF80">&nbsp;</font><img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Hawk</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Monk</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp; <img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Hobbwin Halfwolf</font></b><p><font color="#FFFF00"><b>Garrot S'Hadow</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Halfling</font><p><font color="#FFFF00">Halfling</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Druid</font><p><font color="#FFFF00">Rogue</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Jetta Sowless</font><font color="#FF8000">&nbsp; </font></b><p><font color="#808040"><b>Ziyx</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Halfling</font><p><font color="#808040">High Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Druid</font><p><font color="#808040">Magician</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Council</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Kheldin</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Dwarf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailgold.gif" alt="1tailgold.gif (730 bytes)" WIDTH="65" HEIGHT="62">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Kelandra Kindheart</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/1tailred.gif" alt="1tailred.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="41" align="left"><font color="#FF0000"><b>Kenan</b></font></td>
+        <td width="11%" height="41" align="center"><font color="#FF0000">Halfling</font></td>
+        <td width="11%" height="41" align="center"><font color="#FF0000">Druid</font></td>
+        <td width="12%" height="41" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="41" align="center">Active</td>
+        <td width="13%" height="41" align="center">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#008000"><b>Leland</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#008000">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#008000">Bard</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FF0000">MIA</font></td>
+        <td width="13%" height="21" align="center">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF8000">Lilfrost</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Dwarf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF8000">Mediva</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">High Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Wizard</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF8000">Monitor</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Iskar</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Rogue</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Council</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailgold.gif" alt="1tailgold.gif (730 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Morbok</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Ogre</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><font color="#FFFF80">&nbsp;</font><img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000">Morijac</font><p><font color="#FFFF00">Morijan</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Wood Elf</font><p><font color="#FFFF00">Dark Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Ranger</font><p><font color="#FFFF00">Necro</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Squad Leader</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/whidragcrwn.gif" alt="whidragcrwn.gif (2084 bytes)" WIDTH="65" HEIGHT="62">&nbsp;&nbsp;&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#C80000">Moxx</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#C80000">Erudite</font></td>
+        <td width="11%" height="21" align="center"><font color="#C80000">Enchanter</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;&nbsp; <img src="images/1tailred.gif" alt="1tailred.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#C80000"><b>Myfisstow Buffncrushm</b></font><p><font color="#00FF00"><b>Bigheart</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#C80000">Troll</font><p><font color="#00FF00">Dwarf</font></td>
+        <td width="11%" height="21" align="center"><font color="#C80000">Shaman</font><p><font color="#00FF00">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailwht.gif" alt="1tailwht.gif (605 bytes)" WIDTH="65" HEIGHT="62"><p><font color="#FFFF80">1217735</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Nolaren</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Erudite</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Wizard</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><font color="#FFFF80">&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF8000">Nzetzar</font></b><p><font color="#FF8000"><b>Treestump</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Troll</font><p><font color="#FF8000">Gnome</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Warrior</font><p><font color="#FF8000">Mage</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailgold.gif" alt="1tailgold.gif (730 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00"><b>Oberonn&nbsp;</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Dwarf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"><font color="#FFFF80">&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Onyx Deathstalker</font></b><p><b><font color="#FF0000">Stratic Shadowalker</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Human</font><p><font color="#FF0000">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Cleric</font><p><font color="#FF0000">Shadowknight</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><font color="#FFFF80">&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Ooby</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Barbarian</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Shaman</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#00FF00">Panoramics</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#00FF00">Halfling</font></td>
+        <td width="11%" height="21" align="center"><font color="#00FF00">Druid</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00">Qali&nbsp; </font><p><font color="#008000">Qala</font></p>
+        <p><font color="#408080">Qale</font></p>
+        <p><font color="#408080">Qalu</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Dwarf</font><p><font color="#008000">Halfling</font></p>
+        <p><font color="#408080">Human</font></p>
+        <p><font color="#408080">Gnome</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Cleric</font><p><font color="#008000">Druid</font></p>
+        <p><font color="#408080">Necro</font></p>
+        <p><font color="#408080">Enchanter</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00">Qyai</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Monk</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailred.gif" alt="1tailred.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000">Ralak Gnomeflinger</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Troll</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00"><b>Rugar</b>&nbsp; </font><p><font color="#80FF80"><b>Ramus</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Dwarf </font><p><font color="#80FF80">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Paladin </font><p><font color="#80FF80">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp; <img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Semaj</b></font><p><font color="#FF0000"><b>Caldora Mistwolf</b></font></p>
+        <p><font color="#FF8000"><b>Lovelee Chantress</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Half Elf</font><p><font color="#FF0000">Halfling</font></p>
+        <p><font color="#FF8000">High Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Paladin</font><p><font color="#FF0000">Druid</font></p>
+        <p><font color="#FF8000">Enchanter</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><font color="#FFFF80">&nbsp;</font><img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Shaihulud Spicemaker
+        &nbsp; </b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Wood Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Druid</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Squad Leader</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/bludrgcrwn.gif" alt="bludrgcrwn.gif (2576 bytes)" WIDTH="65" HEIGHT="62"><p><font color="#FFFF80">3811740</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Sinari</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">High Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Wizard</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Council</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;&nbsp; <img src="images/whidragcrwn.gif" alt="whidragcrwn.gif (2084 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Silvarel Mistmoon</b></font><p><font color="#00FF00"><b>Healena</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Half Elf</font><p><font color="#00FF00">Dwarf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Druid</font><p><font color="#00FF00">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">High Council</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailred.gif" alt="1tailred.gif (740 bytes)" WIDTH="65" HEIGHT="62"><p><font color="#FFFF80">29390736</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Stad</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailwht.gif" alt="1tailwht.gif (605 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF8000">Tactician</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">?</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Mage</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000">Talinvor Ravenwood</font><p><font color="#FF0000">Toad</font></p>
+        <p><font color="#408080">Nargulok</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Half Elf</font><p><font color="#FF0000">Dwarf</font></p>
+        <p><font color="#408080">Ogre</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Ranger</font><p><font color="#FF0000">Cleric</font></p>
+        <p><font color="#408080">Shaman</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Squad Leader</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/blkdragcrwn.gif" alt="blkdragcrwn.gif (2483 bytes)" WIDTH="64" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF8000">Taleslap Feircely</font><p><font color="#FF0000">Ziljian Darkreign</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Iskar</font><p><font color="#FF0000">Dark Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Monk</font><p><font color="#FF0000">Necro</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/1tailwht.gif" alt="1tailwht.gif (605 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Terrel</b> </font><p><font color="#00FF00">Beor</font></p>
+        <p><font color="#008080">Rannos</font></p>
+        <p><font color="#80FF80"><b>Servos</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Erudite </font><p><font color="#00FF00">?</font></p>
+        <p><font color="#008080">Dark Elf</font></p>
+        <p><font color="#80FF80">Dark Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Wizard </font><p><font color="#00FF00">Warrior</font></p>
+        <p><font color="#008080">Shadow Knight</font></p>
+        <p><font color="#80FF80">Necromancer</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FF0000">MIA</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailgold.gif" alt="1tailgold.gif (730 bytes)" WIDTH="65" HEIGHT="62"><p><font color="#FFFF80">7555360</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Tosari Trueblade</b> </font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Barbarian</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Guildmaster</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/reddragcrwn.gif" alt="reddragcrwn.gif (2559 bytes)" WIDTH="65" HEIGHT="62"><p><font color="#FFFF80">1224289</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00"><b>Tarkas&nbsp; </b></font><p><font color="#FFFF00"><b>Tarkis</b></font></p>
+        <p><font color="#FFFF00"><b>Tarkes</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Dwarf</font><p><font color="#FFFF00">Erudite</font></p>
+        <p><font color="#FFFF00">Halfling</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Cleric</font><p><font color="#FFFF00">Enchanter</font></p>
+        <p><font color="#FFFF00">Druid</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><font color="#FFFF80">&nbsp;</font><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FFFF00">Tycorel D'Cerridwen</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Paladin</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><font color="#FFFF80">&nbsp;</font><img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Valsavis Kindheart</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Paladin</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Council</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailred.gif" alt="1tailred.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FFFF00">Valien Vanguard</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Wood Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Ranger</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Varii Spicemaker&nbsp; </b></font><p><font color="#FF0000"><b>Telenu</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Barbarian</font><p><font color="#FF0000">Dark Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Shaman</font><p><font color="#FF0000">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000">Vinz Clortho</font><p><font color="#FF0000">Deor</font></p>
+        <p><font color="#00FF00">Mielikki Cloudstalker</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Dark Elf</font><p><font color="#FF0000">Dark Elf</font></p>
+        <p><font color="#00FF00">Wood Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Necro</font><p><font color="#FF0000">Cleric</font></p>
+        <p><font color="#00FF00">Bard</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><font color="#FFFF80">&nbsp;</font><img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Vormulag Unsleep</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Monk</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;&nbsp; <img src="images/1tailorange.gif" alt="1tailorange.gif (730 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FFFF00">Walamorm</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Barbarian</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF8000"><b>Winsoc&nbsp;</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Dwarf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"> </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#408080">Wolfestar Sunfyre</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#408080">Wood Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#408080">Druid</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Wylethian Briarsong</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Gnome</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Mage</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailorange.gif" alt="1tailorange.gif (730 bytes)" WIDTH="65" HEIGHT="62">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Yandros Zedd</b></font><p><font color="#408080"><b>Yandrel</b></font></p>
+        <p><font color="#408080"><b>Yandroz</b></font></p>
+        <p><font color="#408080"><b>Yandris</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Half Elf</font><p><font color="#408080">High Elf</font></p>
+        <p><font color="#408080">Gnome</font></p>
+        <p><font color="#408080">High Elf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Paladin</font><p><font color="#408080">Enchanter</font></p>
+        <p><font color="#408080">Necromancer</font></p>
+        <p><font color="#408080">Cleric</font></td>
+        <td width="12%" height="21" align="center"><font color="#FF0000">Squad Leader</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;&nbsp;<img src="images/oradragcrwn.gif" alt="oradragcrwn.gif (2336 bytes)" WIDTH="65" HEIGHT="62">&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FF0000">Zanthus AngelSlayer</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Troll</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Shaman</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">MIA</font></td>
+        <td width="13%" height="21" align="center"><img src="images/1tailblack.gif" alt="1tailblack.gif (739 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><b><font color="#FFFF00">Zaran</font></b></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">High Elf </font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Mage</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00">Zadin</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Dwarf</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp; <img src="images/1tailgold.gif" alt="1tailgold.gif (730 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00"><b>Zerek Thunderpunch</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Human</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Monk</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;&nbsp; <img src="images/1tailwht.gif" alt="1tailwht.gif (605 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000"><b>Zoose Theprotector
+        &nbsp; </b></font><p><font color="#FF0000"><b>Orte Lionheart</b></font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Barbarian</font><p><font color="#FF0000">Barbarian</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Shaman</font><p><font color="#FF0000">Warrior</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+        <td width="13%" height="21" align="center">&nbsp;<img src="images/1tailblue.gif" alt="1tailblue.gif (740 bytes)" WIDTH="65" HEIGHT="62"></td>
+      </tr>
+    </table>
+    <p align="center">&nbsp; </p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><b><font color="#FFFFFF" face="Verdana" size="3">{</font><font face="Verdana" size="2" color="#008080">1-14</font><font face="Verdana" size="3"><font color="#FFFFFF">}</font> <font color="#FFFFFF">{</font></font><font face="Verdana" size="2" color="#008000">15-24</font><font color="#FFFFFF" face="Verdana" size="3">} {</font><font face="Verdana" size="2" color="#00FF00">25-34</font><font color="#FFFFFF" face="Verdana" size="3">} {</font><font face="Verdana" size="2" color="#FFFF00">35-44</font><font face="Verdana" size="3"><font color="#FFFFFF">} </font>{</font><font face="Verdana" size="2" color="#FF8000">45-49</font><font face="Verdana" size="3"><font color="#FFFFFF">}
+    </font>{</font><font color="#FF0000"><font face="Verdana" size="2">50</font><font face="Verdana" size="3">-</font></font><font face="Verdana" size="2" color="#8080FF">60</font><font color="#FFFFFF" face="Verdana" size="3">}</font></b> </td>
+    <td width="26" height="285" valign="top"></td>
+  </tr>
+</table>
+</body>
+</html>

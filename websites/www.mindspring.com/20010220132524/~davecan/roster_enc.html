@@ -1,0 +1,637 @@
+<html>
+
+<head>
+<title>The Companions - Veeshan - Everquest</title>
+<style>
+<!--
+A:Visited {text-decoration: none; color:#808080 }
+A:Link {text-decoration: none; color:#808080 }
+A:Hover {text-decoration:underline ; font-weight: ; color:#808080 }
+-->
+</style>
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script>
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script></head>
+
+<body bgproperties="fixed" bgcolor="#000000" text="#FFFFFF" onload="dynAnimation()">
+
+<table border="0" width="759" height="400" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="749" height="103" colspan="4"><img border="0" src="images/top01.jpg" WIDTH="749" HEIGHT="117"></td>
+    <td width="6"><br>
+    </td>
+  </tr>
+  <tr>
+    <td width="121" height="285" valign="top" bgcolor="#000000"><img border="0" src="images/side02.jpg" WIDTH="117" HEIGHT="89"><br>
+    <a href="home.html"><img border="0" src="images/menu03a.jpg" width="117" height="51" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="images/menu03b.jpg"></a><br>
+    <a href="news.html"><img border="0" src="images/menu04a.jpg" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="images/menu04b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <a href="roster.html"><img border="0" src="images/menu05a.jpg" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="images/menu05b.jpg" WIDTH="117" HEIGHT="35"></a><br>
+    <a href="http://pub9.ezboard.com/bthecompanionsofveeshan"><img alt="Our Message Board - Members Only!" border="0" src="images/menu06a.jpg" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="images/menu06b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <a onmouseover="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;" onmouseout="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln" href="spells.html"><img border="0" src="images/menu08a.jpg" id="fpAnimswapImgFP7" name="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="images/menu08b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <a onmouseover="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;" onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln" href="maps.html"><img border="0" src="images/menu09a.jpg" id="fpAnimswapImgFP8" name="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="images/menu09b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <a href="screenshots.html"><img border="0" src="images/menu11a.jpg" id="fpAnimswapImgFP9" name="fpAnimswapImgFP9" dynamicanimation="fpAnimswapImgFP9" lowsrc="images/menu11b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <a onmouseover="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;" onmouseout="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln" href="mailto:davecan@mindspring.com"><img border="0" src="images/menu07a.jpg" id="fpAnimswapImgFP6" name="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="images/menu07b.jpg" WIDTH="117" HEIGHT="50"></a><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sidefill01.jpg" WIDTH="117" HEIGHT="128"><br>
+    <img border="0" src="images/sideend01.jpg" WIDTH="117" HEIGHT="48"> </td>
+    <td width="14" height="285"></td>
+    <td width="582" height="285" valign="top"><p align="center">&nbsp;</p>
+    <dl>
+      <dd><p align="center"><font size="7" face="Brush Script MT">Enchanter's</font></p>
+      </dd>
+    </dl>
+    <p align="center"><font face="Verdana" size="3"><b>*Level*</b></font></p>
+    <p align="center"><b><font color="#FFFFFF" face="Verdana" size="3">{</font><font face="Verdana" size="2" color="#00FF00">25-34</font><font color="#FFFFFF" face="Verdana" size="3">} {</font><font face="Verdana" size="2" color="#FFFF00">35-44</font><font face="Verdana" size="3"><font color="#FFFFFF">} </font>{</font><font face="Verdana" size="2" color="#FF8000">45-49</font><font face="Verdana" size="3"><font color="#FFFFFF">}
+    </font>{</font><font color="#FF0000" face="Verdana" size="2">50-</font><font face="Verdana" size="2" color="#8080FF">60</font><font color="#FFFFFF" face="Verdana" size="3">}</font></b> </p>
+    <p align="center">&nbsp; </p>
+    <table border="1" width="100%" height="300" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="26%" height="45" align="left"><p align="center"><b>Name<font size="3">*</font></b></td>
+        <td width="11%" height="45" align="center"><p align="center"><b>Race</b></td>
+        <td width="12%" height="45" align="center"><p align="center"><b>Rank</b></td>
+        <td width="10%" height="45" align="center"><b>Status</b></td>
+      </tr>
+      <tr>
+        <td width="26%" height="1" align="left"><font color="#FFFF00">Admrial</font></td>
+        <td width="11%" height="1" align="center"><font color="#FFFF00">High Elf</font></td>
+        <td width="12%" height="1" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="1" align="center"><font color="#FFFF80">Active</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF8000">Autum Illusion</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF8000">Erudite</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00">Arowyn Starglister</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">High Elf</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00">Chiparo</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">High Elf</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000">Davel Luesan</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Erudite</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000">Flobear</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">Erudite</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FF0000">Moxx</font></td>
+        <td width="11%" height="21" align="center"><font color="#FF0000">High Elf</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+      </tr>
+      <tr>
+        <td width="26%" height="21" align="left"><font color="#FFFF00">Tarkis</font></td>
+        <td width="11%" height="21" align="center"><font color="#FFFF00">Erudite</font></td>
+        <td width="12%" height="21" align="center"><font color="#FFFF80">Companion</font></td>
+        <td width="10%" height="21" align="center"><font color="#FFFF80">Active</font></td>
+      </tr>
+    </table>
+    <p align="center">&nbsp; </p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><b><font color="#FFFFFF" face="Verdana" size="3">{</font><font face="Verdana" size="2" color="#00FF00">25-34</font><font color="#FFFFFF" face="Verdana" size="3">} {</font><font face="Verdana" size="2" color="#FFFF00">35-44</font><font face="Verdana" size="3"><font color="#FFFFFF">} </font>{</font><font face="Verdana" size="2" color="#FF8000">45-49</font><font face="Verdana" size="3"><font color="#FFFFFF">}
+    </font>{</font><font color="#FF0000" face="Verdana" size="2">50-</font><font face="Verdana" size="2" color="#8080FF">60</font><font color="#FFFFFF" face="Verdana" size="3">}</font></b> </td>
+    <td width="26" height="285" valign="top"></td>
+  </tr>
+</table>
+</body>
+</html>
