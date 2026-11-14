@@ -1,0 +1,288 @@
+<HTML>
+<HEAD><TITLE>The Council Message Board - powered by the Ultimate Bulletin Board</title>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+var noNewLogin = "false";
+var dc = document.cookie;
+var sessionLogin = escape("");
+var sessionLoginDT = escape("");
+
+if (document.cookie) {
+var DaysPrune = getCookie("DaysPrune");
+	if (DaysPrune == null) {
+		var DaysPrune = "20";
+	}
+} else {
+var DaysPrune = "20";
+}
+
+expireDate = new Date;
+if (expireDate.getYear() < 100) {
+expireDate.setYear(expireDate.getYear() + 1900 + 1);
+} else {
+expireDate.setYear(expireDate.getYear()+1);
+}
+
+if (noNewLogin != "true") {
+
+if (document.cookie != "") {
+	thisCookie = document.cookie.split(";");
+	expireDate2 = new Date;
+	expireDate2.setYear(expireDate2.getYear()-1);
+	
+	for (i=0; i<thisCookie.length; i++) {
+	
+		cookieName = thisCookie[i].split("=")[0];
+		if ((cookieName == "lastLogin") || (cookieName == "LastLoginDT") || (cookieName == "sessionLogin") || (cookieName == "sessionLoginDT")) {
+		document.cookie = cookieName + "=;expires=" + expireDate2.toGMTString() + ";domain=www.bloodwolf.org;path=/~awood/cgi-bin/council;";
+		}
+	}
+}
+
+
+var CookieLogin = escape("2452560.1035");
+var CookieLoginDT = escape("10-12-2002 10:35 AM");
+
+	  document.cookie = "lastLogin=" + CookieLogin + ";expires=" + expireDate.toGMTString() + ";domain=www.bloodwolf.org;path=/~awood/cgi-bin/council;";
+  document.cookie = "LastLoginDT=" + CookieLoginDT + ";expires=" + expireDate.toGMTString() + ";domain=www.bloodwolf.org;path=/~awood/cgi-bin/council;";
+	  document.cookie = "sessionLogin=" + sessionLogin + ";domain=www.bloodwolf.org;path=/~awood/cgi-bin/council;";
+document.cookie = "sessionLoginDT=" + sessionLoginDT + ";domain=www.bloodwolf.org;path=/~awood/cgi-bin/council;";
+}
+
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+</head>
+ <BODY bgcolor="#000000"   text="#ffff00" link="#00ffff" alink="#9f9f5f" vlink="#ff00ff">
+<FONT FACE="Verdana, Arial" SIZE="2">
+
+<center>
+<table border=0 width=95%>
+<tr>
+<TD>
+<CENTER>
+<A HREF="Ultimate.cgi"><IMG SRC="http://www.bloodwolf.org/~awood/council/NonCGI/bbtitle5.jpg"  BORDER=0></A>
+</CENTER>
+</td>
+<td>
+<CENTER>
+<B><FONT SIZE="3" FACE="Verdana, Arial" COLOR="#ffff00">The Council Message Board</FONT></B>
+<br><FONT SIZE="1" FACE="Verdana, Arial">
+<A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/ubbmisc.cgi?action=editbio&Browser=&DaysPrune=20&LastLogin="><ACRONYM TITLE="Click here to edit your profile.">profile</ACRONYM></A> | <A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/Ultimate.cgi?action=agree"><ACRONYM TITLE="Registration is free!">register</ACRONYM></A> | <A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/ubbmisc.cgi?action=setprefs"><ACRONYM TITLE="Set your preferences.">preferences</ACRONYM></A> | <A HREF="http://www.bloodwolf.org/~awood/council/NonCGI/faq.html" target=_blank><ACRONYM TITLE="Frequently Asked Questions">faq</ACRONYM></A> | <A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/search.cgi?action=intro"><ACRONYM TITLE="Perform a search by keyword, date, or name.">search</ACRONYM></A> 
+
+</FONT>
+</CENTER>
+</td></TR>
+</table>
+</center><FONT SIZE="1" FACE="Verdana, Arial"><A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/search.cgi?action=getdaily">Click Here To View Today's Active Topics (all public forums)</A></FONT>
+<BR>
+<center>
+<table cellpadding=0 border=0 width="95%">
+<TR>
+<td valign=bottom align=left>
+<FONT SIZE="1" FACE="Verdana, Arial"></font>
+</td>
+<td valign=bottom align=right><FONT SIZE="1" FACE="Verdana, Arial">Registered Members: <B>172</B></font></td></tr>
+</table>
+
+
+
+<table cellpadding=4 cellspacing=1 border=0 width="95%">
+<tr bgcolor="#2f2f4f">
+<TD>&nbsp;</TD>
+<td valign=bottom>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#ffff00"><B>Forum</B></FONT>
+</td>
+<td NOWRAP valign=bottom align=center>
+<b><FONT SIZE="1" FACE="Verdana, Arial" COLOR="#ffff00">Posts</FONT></B>
+</td>
+<td NOWRAP valign=bottom align=center>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#ffff00"><B>Last Post</B></FONT>
+</td>
+<td valign=bottom>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#ffff00"><B>Moderator</B></FONT>
+</td></tr>
+<TR bgcolor="#F1DBD6"><TD colspan=5>
+<FONT SIZE="2" FACE="Verdana, Arial" Color="#000000"><B> Open Forums</B></FONT>
+</td></tr>
+<TR>
+<TD bgcolor="#000000" valign=top>&nbsp;</td>
+<TD bgcolor="#500050" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/forumdisplay.cgi?action=topics&forum=Events&number=2&DaysPrune=20&LastLogin=">Events</A></B></FONT><BR>
+<FONT SIZE="2" FACE="Verdana, Arial">
+This is where we talk about guild events for the Council. Suggestions are welcome
+</FONT>
+</td>
+<td bgcolor="#371f38" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">3777</FONT>
+</td><td bgcolor="#500050" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">09-12-2002 <FONT COLOR="#E6E8fA" SIZE="2" FACE="Verdana, Arial">12:26 PM</FONT>
+</td><td bgcolor="#371f38" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#000000" valign=top>&nbsp;</td>
+<TD bgcolor="#500050" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/forumdisplay.cgi?action=topics&forum=Suggestions&number=5&DaysPrune=20&LastLogin=">Suggestions</A></B></FONT><BR>
+<FONT SIZE="2" FACE="Verdana, Arial">
+Here you can post suggestions about how to make the guild better
+</FONT>
+</td>
+<td bgcolor="#371f38" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">600</FONT>
+</td><td bgcolor="#500050" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">03-23-2001 <FONT COLOR="#E6E8fA" SIZE="2" FACE="Verdana, Arial">02:16 PM</FONT>
+</td><td bgcolor="#371f38" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#000000" valign=top>&nbsp;</td>
+<TD bgcolor="#500050" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/forumdisplay.cgi?action=topics&forum=The+Library&number=6&DaysPrune=20&LastLogin=">The Library</A></B></FONT><BR>
+<FONT SIZE="2" FACE="Verdana, Arial">
+Here you can ask questions or post information you think would be useful to other guild members
+</FONT>
+</td>
+<td bgcolor="#371f38" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">567</FONT>
+</td><td bgcolor="#500050" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">03-15-2001 <FONT COLOR="#E6E8fA" SIZE="2" FACE="Verdana, Arial">03:59 AM</FONT>
+</td><td bgcolor="#371f38" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#000000" valign=top>&nbsp;</td>
+<TD bgcolor="#500050" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/forumdisplay.cgi?action=topics&forum=The+Marketplace&number=1&DaysPrune=20&LastLogin=">The Marketplace</A></B></FONT><BR>
+<FONT SIZE="2" FACE="Verdana, Arial">
+You need to buy, sell, trade an item, or you need help camping for it? Talk about it here
+</FONT>
+</td>
+<td bgcolor="#371f38" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">658</FONT>
+</td><td bgcolor="#500050" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">03-23-2001 <FONT COLOR="#E6E8fA" SIZE="2" FACE="Verdana, Arial">02:30 PM</FONT>
+</td><td bgcolor="#371f38" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#000000" valign=top>&nbsp;</td>
+<TD bgcolor="#500050" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/forumdisplay.cgi?action=topics&forum=The+Tavern&number=7&DaysPrune=20&LastLogin=">The Tavern</A></B></FONT><BR>
+<FONT SIZE="2" FACE="Verdana, Arial">
+Here you can post stories about your character, or just chat away. Watch out for the crazy bard though!
+</FONT>
+</td>
+<td bgcolor="#371f38" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">2387</FONT>
+</td><td bgcolor="#500050" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">09-07-2002 <FONT COLOR="#E6E8fA" SIZE="2" FACE="Verdana, Arial">12:51 AM</FONT>
+</td><td bgcolor="#371f38" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR bgcolor="#F1DBD6"><TD colspan=5>
+<FONT SIZE="2" FACE="Verdana, Arial" Color="#000000"><B> Private Forums</B></FONT>
+</td></tr>
+<TR>
+<TD bgcolor="#000000" valign=top>&nbsp;</td>
+<TD bgcolor="#500050" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/forumdisplay.cgi?action=topics&forum=Friends+and+Foes&number=8&DaysPrune=20&LastLogin=">Friends and Foes</A></B></FONT><BR>
+<FONT SIZE="2" FACE="Verdana, Arial">
+Here we talk about those we like and those we don't
+</FONT>
+</td>
+<td bgcolor="#371f38" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">431</FONT>
+</td><td bgcolor="#500050" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">03-18-2001 <FONT COLOR="#E6E8fA" SIZE="2" FACE="Verdana, Arial">11:22 PM</FONT>
+</td><td bgcolor="#371f38" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#000000" valign=top>&nbsp;</td>
+<TD bgcolor="#500050" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/forumdisplay.cgi?action=topics&forum=Officer|APO|s+Forum&number=3&DaysPrune=20&LastLogin=">Officer's Forum</A></B></FONT><BR>
+<FONT SIZE="2" FACE="Verdana, Arial">
+Here meet the officers to discuss guild strategy
+</FONT>
+</td>
+<td bgcolor="#371f38" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">4</FONT>
+</td><td bgcolor="#500050" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">03-22-2001 <FONT COLOR="#E6E8fA" SIZE="2" FACE="Verdana, Arial">10:05 AM</FONT>
+</td><td bgcolor="#371f38" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#000000" valign=top>&nbsp;</td>
+<TD bgcolor="#500050" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/forumdisplay.cgi?action=topics&forum=Rants+|AMP|+Raves&number=13&DaysPrune=20&LastLogin=">Rants & Raves</A></B></FONT><BR>
+<FONT SIZE="2" FACE="Verdana, Arial">
+This forum is used to discuss guild issues privately. Wearing fire resistance gear is advised.
+</FONT>
+</td>
+<td bgcolor="#371f38" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">587</FONT>
+</td><td bgcolor="#500050" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">03-23-2001 <FONT COLOR="#E6E8fA" SIZE="2" FACE="Verdana, Arial">04:42 PM</FONT>
+</td><td bgcolor="#371f38" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#000000" valign=top>&nbsp;</td>
+<TD bgcolor="#500050" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/forumdisplay.cgi?action=topics&forum=Strategies+|AMP|+Epic+Quests&number=10&DaysPrune=20&LastLogin=">Strategies & Epic Quests</A></B></FONT><BR>
+<FONT SIZE="2" FACE="Verdana, Arial">
+Post information and plans regarding epic quests here.
+</FONT>
+</td>
+<td bgcolor="#371f38" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">384</FONT>
+</td><td bgcolor="#500050" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">03-13-2001 <FONT COLOR="#E6E8fA" SIZE="2" FACE="Verdana, Arial">01:50 PM</FONT>
+</td><td bgcolor="#371f38" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#000000" valign=top>&nbsp;</td>
+<TD bgcolor="#500050" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.bloodwolf.org/~awood/cgi-bin/council/forumdisplay.cgi?action=topics&forum=The+Treasury&number=12&DaysPrune=20&LastLogin=">The Treasury</A></B></FONT><BR>
+<FONT SIZE="2" FACE="Verdana, Arial">
+This forum is used to keep track of the contents of the guild treasury
+</FONT>
+</td>
+<td bgcolor="#371f38" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">121</FONT>
+</td><td bgcolor="#500050" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">03-19-2001 <FONT COLOR="#E6E8fA" SIZE="2" FACE="Verdana, Arial">06:34 PM</FONT>
+</td><td bgcolor="#371f38" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+</table>
+
+<P>
+<table border=0 width=95%>
+<TR>
+<td valign=top align=left>
+<FONT SIZE="1" FACE="Verdana, Arial"></font>
+</td><TD valign=top align=left>
+<FONT SIZE="1" FACE="Verdana, Arial">All times are ET (US).</font></td></tr></table>
+</center>
+<P><FONT SIZE="1" FACE="Verdana, Arial">
+<P>&nbsp;</font><P><center>
+<B><FONT SIZE="2" FACE="Verdana, Arial">
+<A HREF="mailto:">Contact Us</A> | <A HREF="http://www.bloodwolf.org/~rulnak/Council.html" target=_top>The Council</A>
+</B></FONT>
+<P>
+<FONT COLOR="#dedfdf" size="1" FACE="Verdana, Arial">
+<P>
+Powered by: 
+Ultimate Bulletin Board, Version 5.38d<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998-1999.
+<br><br>
+</FONT>
+</CENTER></font>
+
+</body></html>
