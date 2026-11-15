@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /cgi-bin
+Disallow: admin.php
+Disallow: /images
+Disallow: /admin
+Disallow: /graphics
+Disallow: /themes
+Disallow: /manual

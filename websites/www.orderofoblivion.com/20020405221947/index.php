@@ -1,0 +1,563 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<title>Order of Oblivion :: 1 2 3 Banana!</title>
+<META NAME="KEYWORDS" CONTENT="">
+<META NAME="DESCRIPTION" CONTENT="1 2 3 Banana!">
+<META NAME="ROBOTS" CONTENT="INDEX,FOLLOW">
+<META NAME="resource-type" CONTENT="document">
+<META HTTP-EQUIV="expires" CONTENT="0">
+<META NAME="AUTHOR" CONTENT="Order of Oblivion">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) 2001 by Order of Oblivion">
+<META NAME="revisit-after" content="1 days">
+<META NAME="distribution" content="Global">
+<META NAME="GENERATOR" CONTENT="Post-Nuke 0.7.0.3 - http://postnuke.com">
+
+
+<META NAME="rating" content="General">
+<LINK REL="StyleSheet" HREF="themes/deviantNuke/style/styleNN.css" TYPE="text/css">
+
+
+<style type="text/css">@import url("themes/deviantNuke/style/style.css"); </style><SCRIPT type="text/javascript" SRC="javascript/showimages.php"></SCRIPT>
+
+<SCRIPT type="text/javascript" SRC="javascript/openwindow.php?hlpfile="></SCRIPT>
+
+<body bgcolor="#738278" text="#000000" link="#363636" vlink="#363636" alink="#d5ae83">
+<br>
+<!----- Logo Area ----->
+<table width="750" cellpadding="1" cellspacing="0" border="0" bgcolor="#374646" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" bgcolor="#96A096" align="center">
+<tr><td width="100%" bgcolor="#96A096" align="center" valign="top"><img src="themes/deviantNuke/images/logo.jpg"></td></tr>
+</table></td></tr></table><BR>
+
+<!----- Begin of Main Content Table ----->
+<table width="750" cellpadding="1" cellspacing="0" border="0" bgcolor="#374646" align="center">
+<tr valign="top">
+<td valign="top">
+<table width="100%" cellpadding="3" cellspacing="0" border="0" bgcolor="#96A096" align="center">
+<tr valign="top">
+<td width="150" valign="top">
+<!-----  Side Box ----->
+<table width="150" cellpadding="1" cellspacing="0" border="0" bgcolor="#374646" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" bgcolor="#96A096" align="center">
+<tr>
+<td bgcolor="#cfcfbb" align="left">
+<font class="content" color="#363636">Main Menu</font>
+</td>
+</tr>
+<tr valign="top">
+<td bgcolor="#96A096">
+<strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="index.php" title="Back to the home page.">Home</a><br><br><b>Message Board</b><br><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="phpBB/index.php" title="OoO Message Board">Main</a><br><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="phpBB/viewforum.php?forum=3&0" title="OoO Members">Members</a><br><br><b>Modules</b><br><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index" title="Latest News on this site.">News</a><br><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="chat.php" title="Chat with Java IRC Client">Chat</a><br><br><b>History</b><br><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="history.php" title="History of Order of Oblivion">History</a><br><br><b>About...</b><br><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="charter.php" title="Charter of Order of Oblivion">Charter</a><br><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="policy.php" title="Policies of Order of Oblivion">Policies</a><br>
+</td>
+</tr>
+</table>
+</td></tr></table>
+<br>
+
+
+</td><td width="100%" align="center" valign="top">
+<table bgcolor="#374646" border="0" cellpadding="1" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#96A096" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#374646" width="100%">
+<tr>
+<td>
+
+<!----- Story Box Title ----->
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#cfcfbb" width="100%">
+<tr>
+<td align="center">
+<font class="option" color="#363636"><b>Sexy Beast!</b></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!----- Story Box Content ----->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<font class="content" color="#505050">GM Tilol has fun with a Big Fat Ogre : <br /><br /><A HREF="tempimages/EQ1.jpg" TARGET="_blank"><img src="tempimages/EQ1.jpg" WIDTH="400" BORDER=1></A><br />(Click for Larger Version)<br /><br />I don't think this needs Extended Text.</font>
+...</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td align="center">
+-----------------------------------------------<br>
+<font size="1">Posted by <a href="http://">Charoth</a> on Friday, March 15, 2002 - 11:09 AM EST  (0 Reads)<br></font>
+<font class="content"> <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=11"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend" width="15" height="11"></a> <a class="pn-normal" href="print.php?sid=11"><img src="images/global/print.gif" border="0" alt="Printer friendly page" width="15" height="11"></a></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+
+
+<table bgcolor="#374646" border="0" cellpadding="1" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#96A096" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#374646" width="100%">
+<tr>
+<td>
+
+<!----- Story Box Title ----->
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#cfcfbb" width="100%">
+<tr>
+<td align="center">
+<font class="option" color="#363636"><b>POW! Straight to the moon, Alice!</b></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!----- Story Box Content ----->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<font class="content" color="#505050">The Caller in Fungus Grove was calling us out Saturday, saying things like "You can't do this on easy mode!" and "You're down faster then a .." well, you get the idea. So we got 2 groups up, and started out the quest on easy, then harder and finally the hardest, and it was still kind of boring and not enough killing. So we had the idea of starting up two different callers at the same time and fighting upwards of 6+ mobs at anyone time (more if we killed slow).</font>
+...</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td align="center">
+-----------------------------------------------<br>
+<font size="1">Posted by <a href="http://">Charoth</a> on Monday, March 11, 2002 - 02:04 PM EST  (70 Reads)<br></font>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=10&amp;mode=thread&amp;order=0">Read more...</a> (1062 bytes more)  <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=10"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend" width="15" height="11"></a> <a class="pn-normal" href="print.php?sid=10"><img src="images/global/print.gif" border="0" alt="Printer friendly page" width="15" height="11"></a></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+
+
+<table bgcolor="#374646" border="0" cellpadding="1" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#96A096" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#374646" width="100%">
+<tr>
+<td>
+
+<!----- Story Box Title ----->
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#cfcfbb" width="100%">
+<tr>
+<td align="center">
+<font class="option" color="#363636"><b>Big Red Dragon</b></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!----- Story Box Content ----->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<font class="content" color="#505050"><IMG SRC="tempimages/telkorenar.jpg"><br /><br />We're coming for you!<br /><br />However, thanks to our good friends at Project Eon/Anavon, Telk was slain the next day :) Next time I guess, but now we do have a nice armor farming spot for the next 3 days or so, and good West Wing spots are nice.</font>
+...</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td align="center">
+-----------------------------------------------<br>
+<font size="1">Posted by <a href="http://">Charoth</a> on Sunday, March 03, 2002 - 06:25 PM EST  (56 Reads)<br></font>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=9&amp;mode=thread&amp;order=0">Read more...</a> (739 bytes more)  <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=9"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend" width="15" height="11"></a> <a class="pn-normal" href="print.php?sid=9"><img src="images/global/print.gif" border="0" alt="Printer friendly page" width="15" height="11"></a></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+
+
+<table bgcolor="#374646" border="0" cellpadding="1" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#96A096" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#374646" width="100%">
+<tr>
+<td>
+
+<!----- Story Box Title ----->
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#cfcfbb" width="100%">
+<tr>
+<td align="center">
+<font class="option" color="#363636"><b>Pre-Weekend Fun</b></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!----- Story Box Content ----->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<font class="content" color="#505050">I think I'm slowly driving the guild insane each time I'm forced to play my chanter on raids, my plan is falling into place perfectly, but more on that later.<br /><br />Kind of a slow week, big raid wise, but Monday was a lot of fun in the Hole, a 1 team exp group went down and when your halfling cleric deems he has too much mana, get ready for crowd control. Having about 10 mobs in camp at anyone time is interesting, when they're all light blue hitting for nothing. (read to learn the fate of the gello)</font>
+...</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td align="center">
+-----------------------------------------------<br>
+<font size="1">Posted by <a href="http://">Charoth</a> on Thursday, February 28, 2002 - 11:26 AM EST  (62 Reads)<br></font>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=8&amp;mode=thread&amp;order=0">Read more...</a> (1398 bytes more)  <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=8"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend" width="15" height="11"></a> <a class="pn-normal" href="print.php?sid=8"><img src="images/global/print.gif" border="0" alt="Printer friendly page" width="15" height="11"></a></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+
+
+<table bgcolor="#374646" border="0" cellpadding="1" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#96A096" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#374646" width="100%">
+<tr>
+<td>
+
+<!----- Story Box Title ----->
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#cfcfbb" width="100%">
+<tr>
+<td align="center">
+<font class="option" color="#363636"><b>Lets forget this week</b></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!----- Story Box Content ----->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<font class="content" color="#505050">Much death .. but so goes the learning experience of the West Wing. No fancy screenshots today for we didn't really kill much of importance, kind of a bland week if you ask me. We put in a good showing for TelkenIhateyourguts dragon boy of the West Wing, pre-buff he'd have gone down, post buff, thanks for all that HP. Though Perma rooted mobs do chance up the strategies a bit, which we'll have to get used to. (Not much, but READ MORE!!)</font>
+...</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td align="center">
+-----------------------------------------------<br>
+<font size="1">Posted by <a href="http://">Charoth</a> on Monday, February 25, 2002 - 11:44 AM EST  (51 Reads)<br></font>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=7&amp;mode=thread&amp;order=0">Read more...</a> (481 bytes more)  <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=7"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend" width="15" height="11"></a> <a class="pn-normal" href="print.php?sid=7"><img src="images/global/print.gif" border="0" alt="Printer friendly page" width="15" height="11"></a></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+
+
+<table bgcolor="#374646" border="0" cellpadding="1" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#96A096" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#374646" width="100%">
+<tr>
+<td>
+
+<!----- Story Box Title ----->
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#cfcfbb" width="100%">
+<tr>
+<td align="center">
+<font class="option" color="#363636"><b>A weekend of Misadventure</b></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!----- Story Box Content ----->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<font class="content" color="#505050">Friday ..  The start of a weekend of fun, excitement and joy for all, or so we thought! One can never tell what the EQ Gods have in store you you, but we thought that getting Ragefire after only a small 6 hour camp was a sign, an omen for the good that was sure to come. Uuudar, the sexy Dark Elf Cleric was the proud receiver of this Ragefire since he was one of the few on the server to get lucky on the "new and improved" Sol B Ragefire. (omg more)</font>
+...</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td align="center">
+-----------------------------------------------<br>
+<font size="1">Posted by <a href="http://">Charoth</a> on Monday, February 18, 2002 - 02:23 PM EST  (116 Reads)<br></font>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=6&amp;mode=thread&amp;order=0">Read more...</a> (2955 bytes more)  <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=6"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend" width="15" height="11"></a> <a class="pn-normal" href="print.php?sid=6"><img src="images/global/print.gif" border="0" alt="Printer friendly page" width="15" height="11"></a></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+
+
+<table bgcolor="#374646" border="0" cellpadding="1" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#96A096" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#374646" width="100%">
+<tr>
+<td>
+
+<!----- Story Box Title ----->
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#cfcfbb" width="100%">
+<tr>
+<td align="center">
+<font class="option" color="#363636"><b>Die Dragons DIE!</b></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!----- Story Box Content ----->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<font class="content" color="#505050">Courtesy of Eloine, the cleric with Newscaster tendencies ...<br /><br />I had fun today. When I got on, the guild was killing WW dragons. When I finally arrived, someone mentioned that the wilsapper rat was up in DN, so we killed him and gave the Willsapper to Slashem. During the clearing, I became a Baroness! (Read More)</font>
+...</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td align="center">
+-----------------------------------------------<br>
+<font size="1">Posted by <a href="http://">Charoth</a> on Friday, February 15, 2002 - 10:28 AM EST  (64 Reads)<br></font>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=5&amp;mode=thread&amp;order=0">Read more...</a> (1183 bytes more)  <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=5"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend" width="15" height="11"></a> <a class="pn-normal" href="print.php?sid=5"><img src="images/global/print.gif" border="0" alt="Printer friendly page" width="15" height="11"></a></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+
+
+<table bgcolor="#374646" border="0" cellpadding="1" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#96A096" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#374646" width="100%">
+<tr>
+<td>
+
+<!----- Story Box Title ----->
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#cfcfbb" width="100%">
+<tr>
+<td align="center">
+<font class="option" color="#363636"><b>How to make Fear and Hate Fun</b></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!----- Story Box Content ----->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<font class="content" color="#505050">Thats right, Fear and Hate, the planes we all aspired for once, spent days in, not hours and if you didn't die at least 5 times, it wasn't a real raid. We strolled into Fear Tuesday, to take out what we could take out, but upon zoning in the plane was empty, hmm, that would kind of put a damper on things, so we had a GM repop the zone while our little force was in the safe spot (Read More)</font>
+...</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td align="center">
+-----------------------------------------------<br>
+<font size="1">Posted by <a href="http://">Charoth</a> on Thursday, February 14, 2002 - 10:47 AM EST  (72 Reads)<br></font>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=4&amp;mode=thread&amp;order=0">Read more...</a> (1479 bytes more)  <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=4"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend" width="15" height="11"></a> <a class="pn-normal" href="print.php?sid=4"><img src="images/global/print.gif" border="0" alt="Printer friendly page" width="15" height="11"></a></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+
+
+<table bgcolor="#374646" border="0" cellpadding="1" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#96A096" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#374646" width="100%">
+<tr>
+<td>
+
+<!----- Story Box Title ----->
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#cfcfbb" width="100%">
+<tr>
+<td align="center">
+<font class="option" color="#363636"><b>New Order of Oblivion Site</b></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!----- Story Box Content ----->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<font class="content" color="#505050">Welcome to the new site, its alot more stream lined then the old site, since I actually know how to program in php (cough) and this postNuke stuff is fairly easy to use. This is pretty much the bare minimum the site needs, probably a few tweaks here and there, theme wise and colors maybe, but I prefer a flashless and dhtmlless site for speed and ease of use. (Read more)</font>
+...</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td>
+<table border="0" cellpadding="3" cellspacing="0" width="100%" bgcolor="#96A096">
+<tr>
+<td align="center">
+-----------------------------------------------<br>
+<font size="1">Posted by <a href="http://">Charoth</a> on Monday, February 11, 2002 - 11:40 AM EST  (134 Reads)<br></font>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=3&amp;mode=thread&amp;order=0">Read more...</a> (903 bytes more)  <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=3"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend" width="15" height="11"></a> <a class="pn-normal" href="print.php?sid=3"><img src="images/global/print.gif" border="0" alt="Printer friendly page" width="15" height="11"></a></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+
+
+</td><!--<td valign="top" width="150">
+</td>
+--></tr>
+</table>
+</td>
+</tr>
+</table><BR>
+<table width="750" cellpadding="1" cellspacing="0" border="0" bgcolor="#374646" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" bgcolor="#96A096" align="center">
+<tr align="center">
+<td width="100%" colspan="3">
+
+
+	<font class="pn-sub">
+
+    <br>
+
+	</font>
+
+
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+    </body>
+
+    </html>
