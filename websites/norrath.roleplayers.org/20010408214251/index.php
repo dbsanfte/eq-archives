@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>Norrath Militia</TITLE>
+<STYLE> BODY {font-family: Arial, Helvetica;font-size: 10pt;}
+  TD {font-family: Arial, Helvetica;font-size: 10pt;}
+  INPUT {font-family: Arial, Helvetica;font-size: 10pt;}
+  TEXTAREA {font-family: Arial, Helvetica;font-size: 10pt;width: 500px;}
+  .forum_title {font-family: Arial, Helvetica;font-size: large;}
+  .forum {
+ 	font-family: Arial, Helvetica;
+ 	font-size: medium;
+ }
+  .nav {font-family: MS Sans Serif,Geneva,sans-serif;font-size: 8pt;}</STYLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#0000FF" ALINK="#FF0000" VLINK="#330000" leftmargin=0 topmargin=0>
+<table cellpadding=0 cellspacing=0 border=0 width=100%>
+<tr><td colspan=2><A href=/index.php><IMG SRC="/images/NorrathMilitia_01.jpg" WIDTH=680 HEIGHT=102 border=0></a></td></tr>
+<tr><td width=132 background=/images/NorrathMilitia_04.gif valign=top>
+<IMG SRC="/images/NorrathMilitia_02.gif" WIDTH=132 HEIGHT=7><br clear=all>
+<table cellpadding=0 cellspacing=0 border=0 width=122>
+<tr><td><a href=/login.php><img src='/images/login.gif' width='49' height='21' border=0></a></td></tr>
+<tr><td><font face="verdana,helvetica" size="-2">&nbsp;&nbsp;<a href="lostpass.php">lose your password?</a></font></td></tr>
+<tr><td><font face="verdana,helvetica" size="-2">&nbsp;&nbsp;<a href=newmember.php>New Member?</a></font></td></tr>
+</table>
+<table cellpadding=0 cellspacing=0 border=0 width=122>
+
+<tr bgcolor=#000000><td></td></tr>
+<tr bgcolor=#a9c393><td><font size=2 face=verdana>Norrath Militia</font></td></tr>
+<tr bgcolor=#000000><td></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=/charter.php>Guild Charter</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=/shownews.php?area=member>Guild News</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=/forum/>Forums</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=/members.php?showalts=0>Member List</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=/laston.php>Past 24 hours</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=/listnewmembers.php>Newest Members</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=/calendar/showCalendarMonth.php>Event Calendar</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=/directory.php?dir=/>Screenshots</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=/forum/list.php?f=12>Suggestion Box</a></font></td></tr> 
+<tr bgcolor=#000000><td></td></tr>
+<tr bgcolor=#a9c393><td><font size=2 face=verdana>Cazic Thule</font></td></tr>
+<tr bgcolor=#000000><td></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=http://www.planeteverquest.com/cazicthule/>Cazic-Thule Corner</a></font></td></tr>
+<tr bgcolor=#000000><td></td></tr>
+<tr bgcolor=#a9c393><td><font size=2 face=verdana>Everquest</font></td></tr>
+<tr bgcolor=#000000><td></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=http://everquest.allakhazam.com/ target=allakhazam>Allakhazam</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=http://www.everlore.com target=everlore>Everlore</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=http://eqbeastiary.allakhazam.com/ target=ilia>Ilia's EQ Bestiary</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=http://eq.castersrealm.com target=castersrealm>EQ-CastersRealm</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=http://www.eqdruids.com target=eqdruids>EQ-Druids</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=http://eqloot.gamez.com target=eqloot>EQ-Loot</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=http://www.eqmaps.com target=eqmaps>EQ-Maps</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=http://www.eqprices.com target=eqprices>EQ-Prices</a></font></td></tr>
+<tr bgcolor=#e6f1dd><td>&nbsp;&nbsp;&nbsp;<font size=1 face=verdana><a href=http://www.eqtraders.com target=eqtraders>EQ-Traders</a></font></td></tr>
+
+<tr bgcolor=#000000><td></td></tr>
+</table>
+</td>
+<td valign=top width=100%>
+<p>
+<font size=3 face=verdana><b>Latest Member News</b></font><font size=1 face=verdana>[<a href=/shownews.php?area=member>..more</a>]<br>
+<table cellpadding=0 cellspacing=0 border=0>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>
+
+<table cellpadding=2 cellspacing=1 border=0 width=100%><tr bgcolor=#336699><td><font size=2 face=verdana
+color=gold><b>Web Server Moving</b></font> - <font size=1 face=verdana
+color=white><a href=/showmember.php?name=Jiggles>Jiggles</a> on
+<font color=#ffff00>Wed March 28th, 2001 7:18pm</font></font></td></tr><tr bgcolor=#ddddff><td><ul><font size=1 face=verdana>I am moving my web server to a friend's DSL line while I move.  things will disappear for a little while, most likely tomorrow.  It should be back up by the end of the weekend.<p>-Jiggles
+</font></ul></td></tr></table><table cellpadding=2 cellspacing=1 border=0 width=100%><tr bgcolor=#336699><td><font size=2 face=verdana
+color=gold><b>HTML Tips</b></font> - <font size=1 face=verdana
+color=white><a href=/showmember.php?name=Eldaronmyth>Eldaronmyth</a> on
+<font color=#ffff00>Wed March 28th, 2001 3:46pm</font></font></td></tr><tr bgcolor=#ddddff><td><ul><font size=1 face=verdana>When you post background Info on your Character or on some of the chat forums here are a couple of things to keep in mind. <p>If you want to break a paragraph then use < P ><p>If you want a single Break use <  BR ><p>if you want to learn some basic Html go to <a href=http://www.htmlgoodies.com>www.htmlgoodies.com</a><br>It is a good source for learning the basics.  <p>~ El ~
+</font></ul></td></tr></table>
+</td></tr></table>
+<font size=3 face=verdana><b>New Forum Posts</b></font><br>
+&nbsp;&nbsp;<a href=/forum/list.php?f=1>General Chat</a> has (@ 163) unread messages<br>
+&nbsp;&nbsp;<a href=/forum/list.php?f=2>Guild Events</a> has (@ 94) unread messages<br>
+&nbsp;&nbsp;<a href=/forum/list.php?f=5>Smithing</a> has (@ 6) unread messages<br>
+&nbsp;&nbsp;<a href=/forum/list.php?f=6>Tailoring</a> has (@ 6) unread messages<br>
+&nbsp;&nbsp;<a href=/forum/list.php?f=8>Jewel Craft</a> has (@ 2) unread messages<br>
+&nbsp;&nbsp;<a href=/forum/list.php?f=9>Fletching</a> has (@ 5) unread messages<br>
+&nbsp;&nbsp;<a href=/forum/list.php?f=12>Suggestion Box</a> has (@ 12) unread messages<br>
+<p>
+</font><font size=3 face=verdana><b>Events over the Next 7 Days</b></font><br>
+<table width=100%><tr><td>&nbsp;</td><td>
+<TABLE border=0 cellspacing=0 width=100%>
+
+</TABLE></td></tr></table>
+
+<p>
+</td></tr>
+<tr><td colspan=2><img src="/images/NorrathMilitia_05.gif" width=132 height=50></td></tr>
+</table>
+<hr><font size=1 face=verdana>Copyright 2001 &copy;, <a
+href=http://www.ravenscrest.com>Ravenscrest Design.</a>
+<a href=mailto:raven@ravenscrest.com>Contact Us</a> for
+more information or web design assistance.  All Rights
+Reserved.</font><br>
+</body> </html>
