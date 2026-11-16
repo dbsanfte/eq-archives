@@ -1,0 +1,210 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title>Circle of Valor</title>
+		<meta content="Microsoft Visual Studio.NET 7.0" name="GENERATOR">
+		<meta content="Visual Basic 7.0" name="CODE_LANGUAGE">
+		<meta content="JavaScript" name="vs_defaultClientScript">
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		<LINK href="/Styles.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<body>
+		<form name="Form1" method="post" action="default.aspx" id="Form1">
+<input type="hidden" name="__VIEWSTATE" value="dDwtNDMxMzc1NjQ4O3Q8O2w8aTwxPjs+O2w8dDw7bDxpPDE+O2k8Mz47aTw0Pjs+O2w8dDw7bDxpPDA+Oz47bDx0PDtsPGk8ND47PjtsPHQ8O2w8aTwyPjs+O2w8dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEd1ZXN0Oz4+Oz47Oz47Pj47Pj47Pj47Pj47dDw7bDxpPDA+Oz47bDx0PDtsPGk8MD47PjtsPHQ8O2w8aTwxPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFw8aDFcPk5ld3NcPC9IMVw+Oz4+Oz47Oz47Pj47Pj47Pj47Pj47dDxwPGw8XyFJdGVtQ291bnQ7PjtsPGk8Mz47Pj47bDxpPDA+O2k8MT47aTwyPjs+O2w8dDw7bDxpPDA+Oz47bDx0PEA8U3VuZGF5LCBNYXJjaCAxNCwgMjAwNDtQbGFuZSBvZiBFYXJ0aCBFeHBsb3JhdGlvbjtSZW55O1w8cCBhbGlnbj0ibGVmdCJcPiZuYnNwXDtcPC9wXD4NClw8cCBhbGlnbj0ibGVmdCJcPg0KVGhyb3VnaCBtdWNrLCBkdXN0IGFuZCB2aW5lcyB3ZSBoYXZlIGJlZW4gZXhwbG9yaW5nIHRoZSBQbGFuZSBvZiBFYXJ0aC4gIEFsb25nIHRoZSB3YXkgd2UgbWV0IGEgbnVtYmVyIG9mIGNoYWxsZW5nZXMuICBEb3duIHdlbnQgdGhlIFN0b25lLCBNdWQsIFZpbmUgcmluZ3MuICBDb25ncmF0cyB0byBLcmlzY29yZSBvbiBcPGEgaHJlZj0naHR0cDovL3d3dy5tYWdlbG8uY29tL2VxX2l0ZW1faW5mby5odG1sP251bT0xOTQ0OSdcPlR5cmRhbidzIEJvb3RzIG9mIHRoZSBWYWxpYW50XDwvYVw+IE9zbGVyIG9uIFw8YSBocmVmPSdodHRwOi8vd3d3Lm1hZ2Vsby5jb20vZXFfaXRlbV9pbmZvLmh0bWw/bnVtPTIwNDU0J1w+U3RvbmUgRXRjaGVkIE1hbGxldFw8L2FcPiBhbmQgVXVsZGFyZSBvbiBcPGEgaHJlZj0naHR0cDovL3d3dy5tYWdlbG8uY29tL2VxX2l0ZW1faW5mby5odG1sP251bT0xMTEzOCdcPlJhZXgncyBCcmFjZXIgb2YgRGVzdHJ1Y3Rpb25cPC9hXD5cPC9wXD4NClw8cCBhbGlnbj0ibGVmdCJcPiZuYnNwXDtcPC9wXD4NClw8cCBhbGlnbj0iQ2VudGVyIlw+RGVydWdvYWsgRGllcyBhIEhhcHB5IFBsYW50XDwvcFw+DQpcPGEgaHJlZj0naHR0cDovL3d3dy5jaXJjbGVvZnZhbG9yLm5ldC9TY3JlZW5zaG90cy92aW5lcmluZy5KUEcnXD5cPGltZyBoZWlnaHQ9JzYwMCcgd2lkdGg9JzgwMCcgYm9yZGVyPScwJyBzcmM9J2h0dHA6Ly93d3cuY2lyY2xlb2Z2YWxvci5uZXQvU2NyZWVuc2hvdHMvdmluZXJpbmcuSlBHJ1w+XDwvYVw+Oz47Oz47Pj47dDw7bDxpPDA+Oz47bDx0PEA8VHVlc2RheSwgTWFyY2ggMDksIDIwMDQ7V2UncmUgQmFjayE7UmVueTtcPHAgYWxpZ249ImxlZnQiXD4mbmJzcFw7XDwvcFw+DQpcPHAgYWxpZ249ImxlZnQiXD4NCkl0cyBiZWVuIGEgYnVzeSBtb250aCBmb3IgdXMuICBXZSBub3cgaGF2ZSBhIGNvdXBsZSBSYWxsb3MgWmVrIHRoZSBXYXJsb3JkIGtpbGxzIHVuZGVyIG91ciBiZWx0IGFuZCBTb2wgUm8gaGFzIG1ldCB0aGUgZmxvb3IgbWFya2luZyBvdXIgc2Vjb25kIGNvbWluZyB0byB0aGUgRWxlbWVudGFsIFBsYW5lcy4gIFdlJ3ZlIHdhcm1lZCB1cCBvbiBDaGFybWJpcmRzLCBHZW5lcmFsIERydWF2IEZsYW1lc2luZ2VyIGFuZCBhIFBsYW5lIG9mIEFpciBNaW5pIGNsZWFyaW5nLiAgV2UgbG9vayBmb3J3YXJkIHRvIGdlYXJpbmcgdXAgb24gbW9sZCBkcm9wcGVycyBhbmQgY29udGludWluZyBvbndhcmQuDQpcPC9wXD4NClw8cCBhbGlnbj0ibGVmdCJcPiZuYnNwXDtcPC9wXD4NClw8cCBhbGlnbj0iQ2VudGVyIlw+R2VuZXJhbCBEcnVhdlw8L3BcPg0KXDxhIGhyZWY9J2h0dHA6Ly9jaXJjbGVvZnZhbG9yLm5ldC9zY3JlZW5zaG90cy9CaXJkc2VjdC5qcGcnXD5cPGltZyBoZWlnaHQ9JzYwMCcgd2lkdGg9JzgwMCcgYm9yZGVyPScwJyBzcmM9J2h0dHA6Ly9jaXJjbGVvZnZhbG9yLm5ldC9zY3JlZW5zaG90cy9CaXJkc2VjdC5qcGcnXD5cPC9hXD47Pjs7Pjs+Pjt0PDtsPGk8MD47PjtsPHQ8QDxXZWRuZXNkYXksIEZlYnJ1YXJ5IDA0LCAyMDA0O1RoZSBTcGFua2luZyBvZiB0aGUgU3Rvcm0gbG9yZDtLbmV2aWw7XDxwIGFsaWduPSJsZWZ0Ilw+XDxmb250IHNpemU9IjQiXD5BXDwvZm9udFw+ZnRlciBhIGxvbmcgd2FpdCBmb3IgcGVvcGxlIHRvIGdldCB0b2dldGhlciwgDQogIHdlIHRvb2sgZG93biBBZ25hcnIgdGhlIFN0b3JtIExvcmQgaW4gYSBmbGF3bGVzcyBiYXR0bGUuIFRoaXMgRm9sbG93cyBvbiBhIHdlZWsgDQogIG9mIFRvd2VycyByYWlkcyBhbmQgVlQuIFdlJ3JlIGdvaW5nIHRvIGJlIGZvY3VzaW5nIGEgYml0IG9uIFBvUCBzdHVmZiB0aGlzIHdlZWsgDQogIGFuZCBnZXQgaW4gc29tZSBWVCB3aGVuIHdlIGNhbi4gV2UgYXJlIGhhdmluZyBzb21lIGZ1biBpbiBMRG9OJ3MgYW5kIGFyZSBhbHNvIA0KICBsb29raW5nIGZvcndhcmQgdG8gdGhlIEdvRCByZWxlYXNlIHRvIGNvbWUuIEJvdGggSW1teSBhbmQgQ29WIGFyZSB3b3JraW5nIHdlbGwgDQogIHRvZ2V0aGVyIGFuZCB3ZSdyZSBsb29raW5nIGZvcndhcmQgdG8gb3VyIFJadFdMIGtpbGxcPC9wXD4NClw8cCBhbGlnbj0ibGVmdCJcPmhlcmUgYXJlIHNvbWUgbmV3IHNob3RzIG9mIHRoZSBhY3Rpb24uXDwvcFw+DQpcPHAgYWxpZ249ImxlZnQiXD4mbmJzcFw7XDwvcFw+DQpcPHAgYWxpZ249ImNlbnRlciJcPlV1bGRhcmUgdGFrZXMgb24gQWduYXJyXDxiclw+DQpcPC9wXD4NClw8cFw+XDxpbWcgc3JjPSJodHRwOi8vY2lyY2xlb2Z2YWxvci5uZXQvc2NyZWVuc2hvdHMvQWduYXJyVXUuanBnIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCJcPlw8L3BcPg0KXDxiclw+DQpcPHAgYWxpZ249ImNlbnRlciJcPlRodW5kZXJDbGFwIHRoZSBTbyBEZWFkXDwvcFw+DQpcPHBcPlw8aW1nIHNyYz0iaHR0cDovL2NpcmNsZW9mdmFsb3IubmV0L3NjcmVlbnNob3RzL1RodW5kZXJjbGFwLmpwZyIgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiXD5cPC9wXD5cPGJyXD4NClw8cCBhbGlnbj0iY2VudGVyIlw+Q3ljbG9uZSBsb29rcyBpbiB0cm91YmxlXDwvcFw+DQpcPHBcPlw8aW1nIHNyYz0iaHR0cDovL2NpcmNsZW9mdmFsb3IubmV0L3NjcmVlbnNob3RzL0N5Y2xvbmUuanBnIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCJcPlw8YnJcPg0KICBcPGJyXD4NClw8L3BcPg0KXDxwIGFsaWduPSJjZW50ZXIiXD5UaGUgQUUnaW5nIG9mIFZUIHRyYXNoXDwvcFw+DQpcPHBcPlw8aW1nIHNyYz0iaHR0cDovL2NpcmNsZW9mdmFsb3IubmV0L3NjcmVlbnNob3RzL1ZUQUUuanBnIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCJcPlw8L3BcPg0KXDxiclw+DQpcPHAgYWxpZ249ImNlbnRlciJcPkF0ZW4gUmEgLSBJIHRoaW5rIHNoZSBkaWQgYSBKYW5ldCBKYWNrc29uIHRoZXJlXDwvcFw+DQpcPHBcPlw8aW1nIHNyYz0iaHR0cDovL2NpcmNsZW9mdmFsb3IubmV0L3NjcmVlbnNob3RzL0F0ZW5SYS5qcGciIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIlw+XDwvcFw+DQpcPGJyXD4NClw8cFw+Jm5ic3BcO1w8L3BcPjs+Ozs+Oz4+Oz4+Oz4+Oz4+Oz6hMAFwUnnLYntrWa3zmJHOtVtJFg==" />
+
+			<table id="CoVPageHeader1_PageHeader" cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tr>
+		<td colspan="5" bgcolor="Black" height="10"></td>
+	</tr><tr>
+		<td bgcolor="Black" height="63" width="10"></td><td valign="Top" rowspan="2"><img id="CoVPageHeader1_crest" src="./images/crest.gif" border="0" height="126" width="126" /></td><td valign="Middle" rowspan="2" height="63"><a href="/default.aspx">
+			<img id="CoVPageHeader1_Image1" src="./images/Title.gif" border="0" /></a>
+		</td><td align="Right" valign="Top" height="63"><img id="CoVPageHeader1_Image2" src="./images/top_right.gif" border="0" /></td><td bgcolor="Black" height="63" width="10"></td>
+	</tr><tr>
+		<td bgcolor="Black" height="63" width="10"></td><td align="Right" valign="Bottom" height="63"><img id="CoVPageHeader1_Image3" src="./images/bottom_right.gif" border="0" /></td><td bgcolor="Black" height="63"></td>
+	</tr><tr>
+		<td colspan="5" bgcolor="Black" height="34"></td>
+	</tr><tr>
+		<td bgcolor="Black" width="10"></td><td valign="Top"><img id="CoVPageHeader1_Image4" src="./images/top_left.gif" border="0" /></td><td align="Right" valign="Middle"><span id="CoVPageHeader1_lblUserTxt">Logged in as: </span><span id="CoVPageHeader1_lblUsername"><b>Guest</b></span></td><td align="Right" valign="Top"><img id="CoVPageHeader1_Image5" src="./images/top_right.gif" border="0" /></td><td bgcolor="Black" width="10"></td>
+	</tr>
+</table>
+
+<script language="JavaScript" src="/menu/menu_array.js" type="text/javascript"></script>
+<script language="JavaScript" src="/menu/mmenu.js" type="text/javascript"></script>
+
+<table id="CoVBodyHeader1_BodyHeader" cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tr>
+		<td bgcolor="Black" width="10"></td><td align="Center"><span id="CoVBodyHeader1_lblBodyTitle"><h1>News</H1></span></td><td bgcolor="Black" width="10"></td>
+	</tr>
+</table>
+
+					<Table CellPadding="0" CellSpacing="0" width="100%">
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="left"><span class="NewsDate" id="NewsDate">Sunday, March 14, 2004</span>
+							</td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="left"><span class="NewsTitle" id="NewsTitle">Plane of Earth Exploration</span>
+							</td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="left"><span class="NewsAuthor" id="NewsAuthor">By
+									Reny
+								</span>
+							</td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td colspan="2" height="10"></td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="center"><p align="left">&nbsp;</p>
+<p align="left">
+Through muck, dust and vines we have been exploring the Plane of Earth.  Along the way we met a number of challenges.  Down went the Stone, Mud, Vine rings.  Congrats to Kriscore on <a href='http://www.magelo.com/eq_item_info.html?num=19449'>Tyrdan's Boots of the Valiant</a> Osler on <a href='http://www.magelo.com/eq_item_info.html?num=20454'>Stone Etched Mallet</a> and Uuldare on <a href='http://www.magelo.com/eq_item_info.html?num=11138'>Raex's Bracer of Destruction</a></p>
+<p align="left">&nbsp;</p>
+<p align="Center">Derugoak Dies a Happy Plant</p>
+<a href='http://www.circleofvalor.net/Screenshots/vinering.JPG'><img height='600' width='800' border='0' src='http://www.circleofvalor.net/Screenshots/vinering.JPG'></a></td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td colspan="2" height="20" align="center" valign="middle"><IMG SRC="/images/alayrule.gif" width="600" height="10"></td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+					</Table>
+				
+					<Table CellPadding="0" CellSpacing="0" width="100%">
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="left"><span class="NewsDate" id="NewsDate">Tuesday, March 09, 2004</span>
+							</td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="left"><span class="NewsTitle" id="NewsTitle">We're Back!</span>
+							</td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="left"><span class="NewsAuthor" id="NewsAuthor">By
+									Reny
+								</span>
+							</td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td colspan="2" height="10"></td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="center"><p align="left">&nbsp;</p>
+<p align="left">
+Its been a busy month for us.  We now have a couple Rallos Zek the Warlord kills under our belt and Sol Ro has met the floor marking our second coming to the Elemental Planes.  We've warmed up on Charmbirds, General Druav Flamesinger and a Plane of Air Mini clearing.  We look forward to gearing up on mold droppers and continuing onward.
+</p>
+<p align="left">&nbsp;</p>
+<p align="Center">General Druav</p>
+<a href='http://circleofvalor.net/screenshots/Birdsect.jpg'><img height='600' width='800' border='0' src='http://circleofvalor.net/screenshots/Birdsect.jpg'></a></td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td colspan="2" height="20" align="center" valign="middle"><IMG SRC="/images/alayrule.gif" width="600" height="10"></td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+					</Table>
+				
+					<Table CellPadding="0" CellSpacing="0" width="100%">
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="left"><span class="NewsDate" id="NewsDate">Wednesday, February 04, 2004</span>
+							</td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="left"><span class="NewsTitle" id="NewsTitle">The Spanking of the Storm lord</span>
+							</td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="left"><span class="NewsAuthor" id="NewsAuthor">By
+									Knevil
+								</span>
+							</td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td colspan="2" height="10"></td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td Width="10"></td>
+							<td align="center"><p align="left"><font size="4">A</font>fter a long wait for people to get together, 
+  we took down Agnarr the Storm Lord in a flawless battle. This Follows on a week 
+  of Towers raids and VT. We're going to be focusing a bit on PoP stuff this week 
+  and get in some VT when we can. We are having some fun in LDoN's and are also 
+  looking forward to the GoD release to come. Both Immy and CoV are working well 
+  together and we're looking forward to our RZtWL kill</p>
+<p align="left">here are some new shots of the action.</p>
+<p align="left">&nbsp;</p>
+<p align="center">Uuldare takes on Agnarr<br>
+</p>
+<p><img src="http://circleofvalor.net/screenshots/AgnarrUu.jpg" width="800" height="600"></p>
+<br>
+<p align="center">ThunderClap the So Dead</p>
+<p><img src="http://circleofvalor.net/screenshots/Thunderclap.jpg" width="800" height="600"></p><br>
+<p align="center">Cyclone looks in trouble</p>
+<p><img src="http://circleofvalor.net/screenshots/Cyclone.jpg" width="800" height="600"><br>
+  <br>
+</p>
+<p align="center">The AE'ing of VT trash</p>
+<p><img src="http://circleofvalor.net/screenshots/VTAE.jpg" width="800" height="600"></p>
+<br>
+<p align="center">Aten Ra - I think she did a Janet Jackson there</p>
+<p><img src="http://circleofvalor.net/screenshots/AtenRa.jpg" width="800" height="600"></p>
+<br>
+<p>&nbsp;</p></td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+						<tr>
+							<td Width="10" bgcolor="black"></td>
+							<td colspan="2" height="20" align="center" valign="middle"><IMG SRC="/images/alayrule.gif" width="600" height="10"></td>
+							<td Width="10" bgcolor="black"></td>
+						</tr>
+					</Table>
+				<table id="CoVPageFooter1_tblFooter" cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tr>
+		<td bgcolor="Black" width="10"></td><td align="Left" valign="Bottom"><img id="CoVPageFooter1_Image3" src="./images/bottom_left.gif" border="0" /></td><td></td><td align="Right" valign="Bottom"><img id="CoVPageFooter1_Image4" src="./images/bottom_right.gif" border="0" /></td><td bgcolor="Black" width="10"></td>
+	</tr><tr>
+		<td colspan="5" bgcolor="Black" height="10"></td>
+	</tr>
+</table>
+</form>
+	</body>
+</HTML>
