@@ -1,0 +1,144 @@
+<HTML><HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=x-sjis">
+<META NAME="KeyWord" CONTENT="FlasH BBS Pro">
+<TITLE>Laghaim BBS [一覧表示]</TITLE>
+</HEAD>
+<BODY TEXT=#000000 LINK=#0000FF ALINK=#FF0000 VLINK=#773333 BGCOLOR=#FFFFCC BACKGROUND=aprj02.gif>
+<BASEFONT SIZE=3 FACE="ＭＳ ゴシック"><TT>
+<CENTER><FONT SIZE=+3 COLOR="navy"><B><I>
+Laghaim BBS
+</I></B></FONT></CENTER><P>
+
+<CENTER>
+[
+<A HREF="http://sailer.pos.to/laghaim/laghaim_main">トップへ</A> / <A HREF="./flashbbs.htm">利用方法</A> / <A HREF="flashbbs.cgi?id=">一覧表示</A> / <A HREF="flashbbs.cgi?id=&md=num">最新記事</A> / <A HREF="flashbbs.cgi?id=&md=new">新規投稿</A> / <A HREF="fbeditor.cgi?id=">管理用</A>
+]
+</CENTER><P>
+<CENTER>Laghaimに関する話題のBBSです。
+お気軽にご利用ください。</CENTER>
+
+<P>
+
+<CENTER>
+<TABLE>
+<FORM ACTION="./flashbbs.cgi">
+<INPUT TYPE="hidden" NAME="id" VALUE="">
+<INPUT TYPE="hidden" NAME="md" VALUE="new">
+<TH><INPUT TYPE="submit" VALUE="新規投稿">　</TH>
+</FORM>
+<FORM ACTION="./flashbbs.cgi" METHOD="post">
+<INPUT TYPE="hidden" NAME="id" VALUE="">
+<TH>
+<SELECT NAME="font">
+<OPTION VALUE="0" SELECTED>標準文字の
+<OPTION VALUE="1">拡大文字の
+</SELECT>
+</TH><TH>
+<SELECT NAME="sort">
+<OPTION VALUE="0" SELECTED>レス順で
+<OPTION VALUE="1">登録順で
+</SELECT>
+</TH><TH>
+<SELECT NAME="tree">
+ <OPTION VALUE="0" SELECTED>1 ページを
+ <OPTION VALUE="15">2 ページを
+</SELECT>
+</TH><TH>
+<INPUT TYPE="submit" VALUE="表示する">
+</TH>
+</FORM>
+</TABLE>
+</CENTER>
+<PRE>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1804"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1804&tn=1804"><IMG SRC="new_news.gif" WIDTH=20 HEIGHT=14 BORDER=0>ぐふふ、だめだめなったりして・・</A> : Mayung <FONT COLOR="#FF0000">(02/5/25 23:15)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1805&tn=1804"><IMG SRC="new_news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:ぐふふ、だめだめなったりして・・</A> : ＦＯＲＣＥ <FONT COLOR="#FF0000">(02/5/26 20:35)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1806&tn=1804"><IMG SRC="new_news.gif" WIDTH=20 HEIGHT=14 BORDER=0>復活</A> : ＦＯＲＣＥ <FONT COLOR="#FF0000">(02/5/26 20:56)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1807&tn=1804"><IMG SRC="new_news.gif" WIDTH=20 HEIGHT=14 BORDER=0>復活</A> : ＦＯＲＣＥ <FONT COLOR="#FF0000">(02/5/27 00:11)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1808&tn=1804"><IMG SRC="new_news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:復活</A> : 最近ギャンブルに目覚めたブル <FONT COLOR="#FF0000">(02/5/27 01:25)</FONT>
+<IMG SRC="space.gif" WIDTH=140 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1810&tn=1804"><IMG SRC="new_news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:復活</A> : Mayung <FONT COLOR="#FF0000">(02/5/27 18:49)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1801"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1801&tn=1801"><IMG SRC="new_news.gif" WIDTH=20 HEIGHT=14 BORDER=0>日記</A> : 実は亡国の王子様だったブル <FONT COLOR="#FF0000">(02/5/21 21:34)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1802&tn=1801"><IMG SRC="new_news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:日記</A> : Mayung <FONT COLOR="#FF0000">(02/5/23 01:21)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1803&tn=1801"><IMG SRC="new_news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:日記</A> : 最近ギャンブルに目覚めたブル <FONT COLOR="#FF0000">(02/5/25 21:37)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1809&tn=1801"><IMG SRC="new_news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[3]:日記</A> : Mayung <FONT COLOR="#FF0000">(02/5/27 18:49)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1798"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1798&tn=1798"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>マナシールドの考察のトコ</A> : 棺桶に片足突っ込んだカイリプトン <FONT COLOR="#FF0000">(02/5/20 17:02)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1799&tn=1798"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:あら？</A> : Mayung <FONT COLOR="#FF0000">(02/5/20 17:42)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1800&tn=1798"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:防御力20％</A> : Mayung <FONT COLOR="#FF0000">(02/5/21 00:34)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1796"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1796&tn=1796"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>アステカさん引退、成田さんとこ閉鎖</A> : HULK <FONT COLOR="#FF0000">(02/5/20 14:30)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1797&tn=1796"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:アステカさん引退、成田さんとこ閉鎖</A> : Mayung <FONT COLOR="#FF0000">(02/5/20 16:41)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1785"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1785&tn=1785"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>宝石</A> : どこかで見たことのあるブル <FONT COLOR="#FF0000">(02/5/18 23:26)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1786&tn=1785"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>訂正</A> : どこかで見たことのあるブル <FONT COLOR="#FF0000">(02/5/18 23:29)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1787&tn=1785"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>もしかして、適正価格販売店さん？</A> : HULK <FONT COLOR="#FF0000">(02/5/19 00:49)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1788&tn=1785"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:もしかして、適正価格販売店さん？</A> : どこかで見たことのあるブル <FONT COLOR="#FF0000">(02/5/19 10:52)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1791&tn=1785"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:+4は</A> : Mayung <FONT COLOR="#FF0000">(02/5/20 00:24)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1789&tn=1785"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:訂正</A> : Mayung <FONT COLOR="#FF0000">(02/5/19 19:32)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1790&tn=1785"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:訂正</A> : どこかで見たことのあるブル  <FONT COLOR="#FF0000">(02/5/19 23:37)</FONT>
+<IMG SRC="space.gif" WIDTH=140 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1792&tn=1785"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[3]:訂正</A> : Mayung <FONT COLOR="#FF0000">(02/5/20 00:26)</FONT>
+<IMG SRC="space.gif" WIDTH=170 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1795&tn=1785"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[4]:訂正</A> : どこかで見たことのあるブル <FONT COLOR="#FF0000">(02/5/20 08:05)</FONT>
+<IMG SRC="space.gif" WIDTH=140 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1793&tn=1785"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[3]:訂正</A> : nekop <FONT COLOR="#FF0000">(02/5/20 00:35)</FONT>
+<IMG SRC="space.gif" WIDTH=170 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1794&tn=1785"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[4]:訂正</A> : どこかで見たことのあるブル <FONT COLOR="#FF0000">(02/5/20 07:48)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1778"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1778&tn=1778"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>魔石</A> : nekop <FONT COLOR="#FF0000">(02/5/11 19:35)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1779&tn=1778"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:魔石</A> : ＦＯＲＣＥ <FONT COLOR="#FF0000">(02/5/12 03:11)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1780&tn=1778"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:魔石</A> : nekop <FONT COLOR="#FF0000">(02/5/12 09:30)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1781&tn=1778"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[3]:魔石</A> : ＦＯＲＣＥ <FONT COLOR="#FF0000">(02/5/14 02:13)</FONT>
+<IMG SRC="space.gif" WIDTH=140 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1782&tn=1778"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[4]:魔石</A> : Mayung <FONT COLOR="#FF0000">(02/5/14 12:13)</FONT>
+<IMG SRC="space.gif" WIDTH=170 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1783&tn=1778"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>魔石による攻撃力上昇について</A> : 通りすがりのLv190overカイリヨリ <FONT COLOR="#FF0000">(02/5/17 04:00)</FONT>
+<IMG SRC="space.gif" WIDTH=200 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1784&tn=1778"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:魔石による攻撃力上昇について</A> : Mayung <FONT COLOR="#FF0000">(02/5/17 17:00)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1717"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1717&tn=1717"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>('-'*)</A> : nekop <FONT COLOR="#FF0000">(02/3/18 23:02)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1718&tn=1717"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:こんにちわ</A> : Mayung <FONT COLOR="#FF0000">(02/3/19 13:31)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1719&tn=1717"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:こんにちわ</A> : 雪のレイラ <FONT COLOR="#FF0000">(02/3/19 16:13)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1720&tn=1717"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[3]:こんにちわ</A> : nekop <FONT COLOR="#FF0000">(02/3/19 23:32)</FONT>
+<IMG SRC="space.gif" WIDTH=140 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1721&tn=1717"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[4]:こんにちわ</A> : 雪のレイラ <FONT COLOR="#FF0000">(02/3/20 13:41)</FONT>
+<IMG SRC="space.gif" WIDTH=170 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1726&tn=1717"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[5]:こんにちわ</A> : nekop <FONT COLOR="#FF0000">(02/3/20 18:24)</FONT>
+<IMG SRC="space.gif" WIDTH=200 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1727&tn=1717"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[6]:こんにちわ</A> : ミリちゃん <FONT COLOR="#FF0000">(02/3/21 00:38)</FONT>
+<IMG SRC="space.gif" WIDTH=230 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1732&tn=1717"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>関係ないけど重要（ｗ</A> : Mayung <FONT COLOR="#FF0000">(02/3/26 12:34)</FONT>
+<IMG SRC="space.gif" WIDTH=260 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1733&tn=1717"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:関係ないけど重要（ｗ</A> : nekop <FONT COLOR="#FF0000">(02/3/26 18:13)</FONT>
+<IMG SRC="space.gif" WIDTH=140 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1724&tn=1717"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[4]:こんにちわ</A> : Mayung <FONT COLOR="#FF0000">(02/3/20 16:54)</FONT>
+<IMG SRC="space.gif" WIDTH=170 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1777&tn=1717"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[5]:こんにちわ</A> : レベル１３０火炎カイリ <FONT COLOR="#FF0000">(02/5/8 05:52)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1769"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1769&tn=1769"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>ども、こんにちわ～　ＧＡＭＥ探し中　＾＾；</A> : ＦＯＲＣＥ <FONT COLOR="#FF0000">(02/5/5 19:25)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1770&tn=1769"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:ども、こんにちわ～　ＧＡＭＥ探し中　＾＾；</A> : ＦＯＲＣＥ <FONT COLOR="#FF0000">(02/5/5 21:49)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1771&tn=1769"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>ゲームやってみた感想</A> : ＦＯＲＣＥ <FONT COLOR="#FF0000">(02/5/6 00:26)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1772&tn=1769"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:私の場合</A> : Mayung <FONT COLOR="#FF0000">(02/5/6 01:14)</FONT>
+<IMG SRC="space.gif" WIDTH=140 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1773&tn=1769"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>あれって</A> : HULK <FONT COLOR="#FF0000">(02/5/6 13:45)</FONT>
+<IMG SRC="space.gif" WIDTH=170 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1774&tn=1769"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:あれって</A> : Mayung <FONT COLOR="#FF0000">(02/5/6 15:27)</FONT>
+<IMG SRC="space.gif" WIDTH=200 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1775&tn=1769"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:あらあら…</A> : はるか＠Lv５５ <FONT COLOR="#FF0000">(02/5/7 00:29)</FONT>
+<IMG SRC="space.gif" WIDTH=230 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1776&tn=1769"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[3]:えっと</A> : Mayung <FONT COLOR="#FF0000">(02/5/7 01:32)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1759"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1759&tn=1759"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>どーも</A> : Guppon <FONT COLOR="#FF0000">(02/4/26 09:57)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1761&tn=1759"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:どーも</A> : Mayung <FONT COLOR="#FF0000">(02/4/26 16:04)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1768&tn=1759"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:どーも</A> : Guppon <FONT COLOR="#FF0000">(02/5/2 13:26)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1763"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1763&tn=1763"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>ん？</A> : 月々 <FONT COLOR="#FF0000">(02/4/28 05:03)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1764&tn=1763"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:ルールについて</A> : Mayung <FONT COLOR="#FF0000">(02/4/28 12:27)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1765&tn=1763"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>(　´_ゝ`)フーン</A> : 通りすがり <FONT COLOR="#FF0000">(02/4/28 13:43)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1766&tn=1763"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:なにやら…</A> : はるか＠Lv４４ <FONT COLOR="#FF0000">(02/4/28 16:13)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1767&tn=1763"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:ルールについて</A> : Dr.crow <FONT COLOR="#FF0000">(02/4/30 03:04)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1756"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1756&tn=1756"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>カンとガチンコ</A> : Mayung <FONT COLOR="#FF0000">(02/4/25 01:12)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1757&tn=1756"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:メイジでデビュー</A> : はるか <FONT COLOR="#FF0000">(02/4/25 17:51)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1758&tn=1756"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:メイジでデビュー</A> : 月々 <FONT COLOR="#FF0000">(02/4/25 19:42)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1760&tn=1756"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:メイジでデビュー</A> : Mayung <FONT COLOR="#FF0000">(02/4/26 16:03)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1762&tn=1756"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[3]:メイジでデビュー</A> : はるか＠Lv３８ <FONT COLOR="#FF0000">(02/4/27 00:30)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1748"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1748&tn=1748"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>さみしい・・</A> : Mayung <FONT COLOR="#FF0000">(02/4/23 02:01)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1749&tn=1748"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:さみしい・・</A> : はるか <FONT COLOR="#FF0000">(02/4/23 06:26)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1751&tn=1748"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:さみしい・・</A> : 月々 <FONT COLOR="#FF0000">(02/4/23 07:59)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1752&tn=1748"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[3]:さみしい・・</A> : はるか <FONT COLOR="#FF0000">(02/4/23 12:21)</FONT>
+<IMG SRC="space.gif" WIDTH=140 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1754&tn=1748"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[4]:無断Linkですが</A> : Mayung <FONT COLOR="#FF0000">(02/4/24 17:38)</FONT>
+<IMG SRC="space.gif" WIDTH=170 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1755&tn=1748"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[5]:ヘルブレス</A> : はるか <FONT COLOR="#FF0000">(02/4/24 19:31)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1750&tn=1748"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:さみしい・・</A> : ガウディ <FONT COLOR="#FF0000">(02/4/23 07:53)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1753&tn=1748"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:こんにちわ～</A> : Mayung <FONT COLOR="#FF0000">(02/4/24 17:36)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1746"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1746&tn=1746"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>こんにちわ</A> : Guppon <FONT COLOR="#FF0000">(02/4/10 07:55)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1747&tn=1746"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:こんにちわ</A> : Mayung <FONT COLOR="#FF0000">(02/4/10 13:08)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1744"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1744&tn=1744"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>カイリなのに大赤字</A> : 雪のレイラ <FONT COLOR="#FF0000">(02/4/4 17:26)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1745&tn=1744"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:あらら</A> : Mayung <FONT COLOR="#FF0000">(02/4/5 18:09)</FONT>
+<HR SIZE=1><A HREF="flashbbs.cgi?id=&md=set&tn=1738"><IMG SRC="all_news.gif" WIDTH=20 HEIGHT=14 BORDER=0></A><A HREF="flashbbs.cgi?id=&md=viw&no=1738&tn=1738"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>こんにちわー</A> : Guppon <FONT COLOR="#FF0000">(02/4/1 09:57)</FONT>
+<IMG SRC="space.gif" WIDTH=50 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1740&tn=1738"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re:こんにちわー</A> : Mayung <FONT COLOR="#FF0000">(02/4/1 14:04)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1741&tn=1738"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0><I>[投稿者削除]</I></A> : Guppon <FONT COLOR="#FF0000">(02/4/1 14:24)</FONT>
+<IMG SRC="space.gif" WIDTH=80 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1742&tn=1738"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[2]:こんにちわー</A> : Guppon <FONT COLOR="#FF0000">(02/4/1 14:30)</FONT>
+<IMG SRC="space.gif" WIDTH=110 HEIGHT=14><A HREF="flashbbs.cgi?id=&md=viw&no=1743&tn=1738"><IMG SRC="news.gif" WIDTH=20 HEIGHT=14 BORDER=0>Re[3]:こんにちわー</A> : Mayung <FONT COLOR="#FF0000">(02/4/1 20:32)</FONT>
+</PRE>
+<HR SIZE=1>
+<DIV ALIGN="right"><TT>
+<!-- 管理者表示 -->
+掲示板管理者 <A HREF="mailto:sailer@bc4.so-net.ne.jp">sailer</A> :
+<!-- 著作権表示 （必ず表示してください。） -->
+FlasH BBS Pro v1.41 [<A HREF="http://www7.big.or.jp/~jawa/">Shigeto Nakazawa</A>]
+</TT></DIV>
+</TT></BASEFONT>
+</BODY></HTML>
