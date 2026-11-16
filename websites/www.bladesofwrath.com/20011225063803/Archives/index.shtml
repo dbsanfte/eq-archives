@@ -1,0 +1,352 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 6.0::19990601::extensions to HTML 4.0//EN" "hmpro6.dtd">
+<HTML> 
+  <HEAD>
+
+<TITLE>Blades Of Wrath</TITLE>
+ <BODY BGCOLOR="#393939" TEXT="white" BACKGROUND="Webgrfx/BG.gif"
+	TOPMARGIN="5" VLINK="#d0d0d0" LINK="white" 
+  ALINK="#003366">
+
+<SCRIPT language="JavaScript"><!--
+
+function do_date(date_stamp) {
+today = new Date()
+nextEVENT = new Date(date_stamp)
+msPerDay = 24 * 60 * 60 * 1000 ; // Number of milliseconds per day
+daysLeft = (nextEVENT.getTime() - today.getTime()) / msPerDay;
+days = Math.round(daysLeft);
+if (today.getHours() > 12) {
+  days = days + 1 }
+  if (days < 0)
+      return "PAST"
+     else
+    if (days == 0)
+      return "TODAY"
+     else
+    {
+      if (days == 1)
+        return "TOMORROW"
+      else
+        daystext = days + " Days"
+  	return daystext;
+     }
+}  
+
+// --></SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+// -->
+</script>
+
+<script language="JavaScript1.2">
+
+var message= new Array()
+
+message[0]="Sontalak(1)|Once owned |http://www.bladesofwrath.com/Sont"
+message[1]="Eashen of the Sky(3)|http://www.bladesofwrath.com/"
+message[2]="Lendiniara the Keeper|http://www.bladesofwrath.com/"
+message[3]="Cazic-Thule|http://www.bladesofwrath.com/"
+message[4]="Zlandicar|http://www.bladesofwrath.com/"
+message[5]="Yelinak|http://www.bladesofwrath.com/"
+
+// The height of the scrollerbox (pixels)
+var scrollerheight=140
+
+// The width of the scrollerbox (pixels)
+var scrollerwidth=160
+
+// The distance to the top border of the window (pixels)
+var scrollertop=30
+
+// The distance to the left border of the window (pixels)
+var scrollerleft=900
+
+// The padding between the scrollerbox and the text (pixels)
+var scrollerpadding=13
+
+// The width of the scrollerbox-border (pixels)
+var backgroundborder=1
+
+// The background-colour of the scrollerbox
+var scrollerbgcolor="CCCCCC"
+
+// Font attributes of the title
+var font_titleface="tahoma,comic sans ms,arial"
+var font_titlecolor="660000"
+var font_titlesize=2
+
+// Font attributes of the copytext
+var font_copyface="tahoma,comic sans ms,arial"
+var font_copycolor="#003366"
+var font_copysize=1
+
+// standstill between the messages (milliseconds)
+var standstillfix=0
+
+// Do not edit below this line
+var cliptop=0
+var clipbottom=scrollerheight-2*scrollerpadding
+var clipleft=0
+var clipright=scrollerheight
+
+var i_message=0
+var mes_joined
+var mes_split
+var contenttext
+var contentbg
+
+var totalheight=scrollerheight*(message.length)
+var i_height=0
+var step=1
+var pause=20
+
+var standstillflex=0
+
+function initiate(){
+	contenttext="<table cellpadding=0 cellspacing=0 border=0 width="+(scrollerwidth-2*scrollerpadding)+">"
+	contenttext+="<tr valign='top'><td height='"+scrollerheight+"'><br></td></tr>"
+	for (i=0;i<=message.length-1;i++) {
+		mes_joined=message[i]
+		mes_split=mes_joined.split("|")
+		contenttext+="<tr valign='top'><td height='"+scrollerheight+"'><a href='"+mes_split[2]+"'><font face='"+font_titleface+"' color='"+font_titlecolor+"' size='"+font_titlesize+"'>"+mes_split[0]+"</font></a><br><font face='"+font_copyface+"' color='"+font_copycolor+"' size='"+font_copysize+"'>"+mes_split[1]+"</font></td></tr>"
+	}
+	contenttext+="</table>"
+	
+	contentbg="<table cellpadding=0 cellspacing=0 border="+backgroundborder+" width='"+scrollerwidth+"'><tr><td height='"+scrollerheight+"' bgcolor="+scrollerbgcolor+">&nbsp;</td></tr></table>"
+	
+	if (document.all) {
+		scrollertext.innerHTML=contenttext
+		scrollerbg.innerHTML=contentbg
+		document.all.scrollertext.style.posTop=scrollertop
+		document.all.scrollertext.style.posLeft=scrollerleft
+		document.all.scrollerbg.style.posTop=scrollertop-scrollerpadding
+		document.all.scrollerbg.style.posLeft=scrollerleft-scrollerpadding
+		document.all.scrollertext.style.clip="rect("+cliptop+" "+clipright+" "+clipbottom+" "+clipleft+")"
+	}
+	if (document.layers) {
+		document.scrollertext.document.write(contenttext)
+		document.scrollertext.document.close()
+		document.scrollerbg.document.write(contentbg)
+		document.scrollerbg.document.close()
+		document.scrollertext.top=scrollertop
+		document.scrollertext.left=scrollerleft
+		document.scrollerbg.top=scrollertop-scrollerpadding
+		document.scrollerbg.left=scrollerleft-scrollerpadding	
+		document.scrollertext.clip.left=clipleft
+        document.scrollertext.clip.right=clipright
+        document.scrollertext.clip.top=cliptop
+        document.scrollertext.clip.bottom=clipbottom
+	}
+	scroll()
+}
+
+function scroll(){
+	standstillflex=standstillfix
+	if (document.all){
+		if (i_height<scrollerheight) {
+			i_height+=step
+			cliptop+=step
+			clipbottom+=step
+			document.all.scrollertext.style.clip="rect("+cliptop+" "+clipright+" "+clipbottom+" "+clipleft+")"
+			document.all.scrollertext.style.posTop-=step
+			var timer=setTimeout("scroll()",pause)
+		}
+
+		else {
+			if (document.all.scrollertext.style.posTop<=-(totalheight)) {
+				document.all.scrollertext.style.posTop=scrollertop
+				cliptop=0
+				clipbottom=scrollerheight-2*scrollerpadding
+				document.all.scrollertext.style.clip="rect("+cliptop+" "+clipright+" "+clipbottom+" "+clipleft+")"
+				standstillflex=0
+			}
+			i_height=0
+			clearTimeout(timer)
+			var timer=setTimeout("scroll()",standstillflex)
+		}
+	}
+	
+		if (document.layers){
+			if (i_height<scrollerheight) {
+				i_height+=step
+				cliptop+=step
+				clipbottom+=step
+				document.scrollertext.clip.left=clipleft
+        		document.scrollertext.clip.right=clipright
+        		document.scrollertext.clip.top=cliptop
+        		document.scrollertext.clip.bottom=clipbottom
+				document.scrollertext.top-=step
+				var timer=setTimeout("scroll()",pause)
+			}
+
+		else {
+			if (document.scrollertext.top<=-(totalheight)) {
+				document.scrollertext.top=scrollertop
+				cliptop=0
+				clipbottom=scrollerheight-2*scrollerpadding
+				document.scrollertext.clip.left=clipleft
+        		document.scrollertext.clip.right=clipright
+        		document.scrollertext.clip.top=cliptop
+        		document.scrollertext.clip.bottom=clipbottom
+				standstillflex=0
+			}
+			i_height=0
+			clearTimeout(timer)
+			var timer=setTimeout("scroll()",standstillflex)
+		}
+	}
+}
+
+</script>
+
+<style>
+
+A {
+color:AA0000;
+}
+
+A:Hover {
+color:FF0000;
+}
+
+</style>
+
+
+<div id="scrollerbg" style="position:absolute;top:-1000px">&nbsp;</div>
+<div id="scrollertext" style="position:absolute;top:-1000px">&nbsp;</div>
+ 
+	 <CENTER>
+  <IMG HEIGHT="91" SRC="../title.jpg" WIDTH="531"><BR>
+  <BR> 
+		<TABLE WIDTH="600" BGCOLOR="black"> 
+		  <TR> 
+			 <TD WIDTH="90" CLASS="menu" ONMOUSEDOWN="this.innerText='WTF'"
+			  STYLE="COLOR: #d00000" ONCLICK="location.href='../index.shtml'"
+			  ONMOUSEOVER="this.style.backgroundColor='#a00000';this.style.color='white'"
+			  ONMOUSEOUT="this.style.backgroundColor='#500000';this.style.color='#d00000'">News</TD>
+			 
+			 <TD WIDTH="90" CLASS="menu" ONMOUSEDOWN="this.innerText='OMG'"
+			  STYLE="COLOR: #d00000" ONCLICK="location.href='../faq.htm'"
+			  ONMOUSEOVER="this.style.backgroundColor='#a00000';this.style.color='white'"
+			  ONMOUSEOUT="this.style.backgroundColor='#500000';this.style.color='#d00000'">F.A.Q.</TD>
+			 
+			 <TD WIDTH="90" CLASS="menu"
+			  ONMOUSEDOWN="this.innerText='HGS plz thx~'" STYLE="COLOR: #d00000"
+			  ONCLICK="location.href='../roster.shtml'"
+			  ONMOUSEOVER="this.style.backgroundColor='#a00000';this.style.color='white'"
+			  ONMOUSEOUT="this.style.backgroundColor='#500000';this.style.color='#d00000'">Roster</TD>
+			 
+			 <TD WIDTH="120" CLASS="menu"
+			  ONMOUSEDOWN="this.innerText='For Great Justice'"
+			  STYLE="COLOR: #d00000" ONCLICK="location.href='../Calendar.htm'"
+			  ONMOUSEOVER="this.style.backgroundColor='#a00000';this.style.color='white'"
+			  ONMOUSEOUT="this.style.backgroundColor='#500000';this.style.color='#d00000'">Calendar</TD>
+			 
+			 <TD WIDTH="120" CLASS="menu"
+			  ONMOUSEDOWN="this.innerText='What you say?'" STYLE="COLOR: #d00000"
+			  ONCLICK="location.href='http://pub30.ezboard.com/bbladesofwrath'"
+			  ONMOUSEOVER="this.style.backgroundColor='#a00000';this.style.color='white'"
+			  ONMOUSEOUT="this.style.backgroundColor='#500000';this.style.color='#d00000'">Message
+				Board</TD> 
+			 <TD WIDTH="90" CLASS="menu" ONMOUSEDOWN="this.innerText='Old BoWnage'"
+			  STYLE="COLOR: #d00000"
+			  ONCLICK="location.href='index.shtml'"
+			  ONMOUSEOVER="this.style.backgroundColor='#a00000';this.style.color='white'"
+			  ONMOUSEOUT="this.style.backgroundColor='#500000';this.style.color='#d00000'">Archives</TD>
+			 
+		  </TR> 
+		</TABLE> <BR> </CENTER> 
+	 <TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="98%" ID="main"
+	  BGCOLOR="black"> 
+		<TR> 
+		  <TD>
+		  
+<!-- Begin day -->
+		  </TD> 
+		</TR> 
+	 </TABLE> <BR> <BR> 
+	 <!-- End day -->
+<!-- Begin day -->
+	 
+	 <TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="98%" ID="main2"
+	  BGCOLOR="black"> 
+		<TR> 
+		  <TD> 
+			 <TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%" CLASS="content"
+			  BGCOLOR="black"> 
+				<TR> 
+				  
+          <TD> 
+            <p>&nbsp;</p>
+            <table cellpadding="0" cellspacing="0" width="100%"
+						 class="content">
+              <tr> 
+                <td class="title" bgcolor="#800000" height="43"><b><font size="4">Were 
+                  you stuck in the Warrens and missed an update? Find them here!</font></b></td>
+                <td class="spacer" height="43">&nbsp;<a name="#af"></a></td>
+              </tr>
+            </table>
+            <div align="left"> 
+              <center>
+                <div align="left">
+                  <p>&nbsp;</p>
+                </div>
+              </center>
+              <table border="0" cellspacing="0" width="100%">
+                
+                <tr> 
+                  <td colspan="2" align="left" height="451"> 
+                    <div align="center"><img src="rokar.jpg" width="435"
+							 height="581" border="0" alt=" "> </div>
+                  </td>
+                </tr>
+              </table>
+              
+            </div>
+            <!--End Content-->
+				  </TD> 
+				  
+				</TR> 
+			 </TABLE> 
+      <p><a href="../index.shtml" target="_blank">Current</a> (All firsts) Zexlax ,Lady 
+        Nevederia,Jorlleag, and Cekenar, Honoria does this update in Kilogramm's abscence <BR>
+        <a href="../july29-aug4.shtml" target="_blank">july29-aug4</a> First Pom, 
+        First Aaryonar, Dagarn, Lord Feshlak<BR>
+        <a href="../july24-july29.shtml" target="_blank">july24-july29</a> <BR>
+        <a href="../july20-july24.shtml" target="_blank">july20-july24</a><BR>
+        <a href="../july9-july19.shtml" target="_blank">july9-july19</a><BR>
+        <a href="../july9-june30.shtml" target="_blank">june30-july9</a><BR>
+        <a href="../June30-july04.shtml" target="_blank">June30-july04</a><BR>
+        <a href="../june22-june29.shtml" target="_blank">june22-june29</a><BR>
+        <a href="../june12-june22.shtml" target="_blank">june12-june22</a><BR>
+        <a href="../june2-june11.shtml" target="_blank">june2-june11</a><BR>
+        <a href="../may28-june1.shtml" target="_blank">may28-june1</a><BR>
+        <a href="../may19-may27.shtml" target="_blank">may19-may27</a><BR>
+        <a href="../may16-may18.shtml" target="_blank">may16-may18</a><BR>
+        <a href="../may08-may15.shtml" target="_blank">may08-may15</a><BR>
+        <a href="../may07.shtml" target="_blank">may07</a><BR>
+        <a href="../may04-may07.shtml" target="_blank">may04-may07</a><BR>
+        <a href="../apr25-may03.shtml" target="_blank">apr25-may03</a><BR>
+      </p>
+      <TABLE> 
+				<TR> 
+				  <TD> 
+					 <DIV ALIGN="center"> 
+						<P>
+						  <FONT FACE="Arial, Helvetica, sans-serif" SIZE="1" COLOR="white"> <B>Blades of
+						  Wrath &copy; 2001<BR>Question or comments? Email me:
+						  <A HREF="mailto:jburton@ciber.com">kilogramm</A><BR> This site is best viewed
+						  in 800x600 (or above) resolution with high color mode.<BR> Designed for use
+						  with the latest versions of <A
+						  HREF="http://www.microsoft.com/windows/ie/">Microsoft Internet Explorer</A> and
+						  <A HREF="http://www.netscape.com">Netscape Navigator</A>.</B> </FONT></P></DIV>
+					 </TD> 
+				</TR> 
+			 </TABLE> 
+			 <P><FONT COLOR="gray" SIZE="1">Last
+				updated: Sunday, August  5, 2001
+				</FONT> </P> </TD> 
+		</TR> 
+	 </TABLE> </BODY>
+</HTML>

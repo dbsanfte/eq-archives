@@ -1,0 +1,887 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>NetChatter.com &#8212; Your Source for What's Hot on the Internet</title>
+<meta name="description" content="" />
+<meta name="keywords" content="Buzz, Hot Topics, What People Are Talking About, Newsworthy Items, Trends Online, Hot Topics on the Internet, The Latest" />
+<link rel="stylesheet" href="styles.css" />
+<script language="JavaScript1.2" src="/mbox.js"></script>
+<script>
+// Make this your homepage only works on Windows IE
+var detect = navigator.userAgent.toLowerCase();
+var OS,browser,version,total,thestring;
+
+function checkIt(string) {
+	place = detect.indexOf(string) + 1;
+	thestring = string;
+	return place;
+}
+
+function doHomepage() {
+	if (checkIt('msie') && checkIt('win')) {
+		document.write("<span class=\"topRightLinks\" onClick=\"this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.seeq.com')\">Make This My Homepage</span><br />");
+	}	
+}		
+</script>
+
+<script>
+// Make this your homepage only works on Windows IE
+var detect = navigator.userAgent.toLowerCase();
+var OS,browser,version,total,thestring;
+
+function checkIt(string) {
+	place = detect.indexOf(string) + 1;
+	thestring = string;
+	return place;
+}
+
+function addFooterLinks() { // adds links to make homepage and bookmark page
+	if (checkIt('msie') && checkIt('win')) {
+		document.write("&nbsp;&nbsp;|&nbsp;&nbsp;<span class=\"footerLink\" style=\"text-decoration:none;cursor:pointer\" onClick=\"this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.bladesofwrath.com')\">Make This My Homepage</span>&nbsp;&nbsp;|&nbsp;&nbsp;<a class=\"footerLink\" href=\"javascript:void window.external.AddFavorite('http://www.bladesofwrath.com', 'bladesofwrath.com')\">Bookmark This Page</a>");
+	}	
+}
+
+function addD2RLinks() { // adds links to make homepage and bookmark page
+	if (checkIt('msie') && checkIt('win')) {
+		document.write("<span class=\"topLeftLinks\" onClick=\"this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.bladesofwrath.com')\">Make This My Homepage</span>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"javascript:void window.external.AddFavorite('http://www.bladesofwrath.com', 'bladesofwrath.com')\">Bookmark This Page</a>");
+	}	
+}
+</script>
+</head>
+
+<body>
+
+
+
+
+
+<script language="javascript" src="/cookies.js"></script>
+
+
+
+<script>
+    <!--
+    // record pageview
+    var img_p = new Image;
+    img_p.src = "/servlet/ImageTracker?type=pageview&page=/netchatter/index.jsp&domain=bladesofwrath.com&timestamp=1146985772096";
+
+
+        if (getCookie("hasSession") != "true")
+        {
+	        setCookie("hasSession", "true");
+
+
+
+	        var img_v = new Image;
+	        img_v.src = "/servlet/ImageTracker?referrer=&provider=overture&domain=bladesofwrath.com&timestamp=1146985772096";
+        } // if hasSession = true
+
+
+
+    // control popunders
+    var extraParams = "&od=bladesofwrath.com&op=174&popunder=true";  //for frameless debugging
+    var need_open1 = 0;
+    var need_open2 = 0;
+    var need_openbd = 0;
+
+    function openSeeqPopunders(method)
+    {
+        if (need_open1)
+        {
+            need_open1 = 0;
+            open1(extraParams + "&mth="+ method);
+        }
+
+        if (need_open2)
+        {
+            need_open2 = 0;
+            open2(extraParams + "&mth="+ method);
+        }
+    }
+
+    function openBuyDomainsPopunders(method)
+    {
+        if (need_openbd)
+        {
+            need_openbd = 0;
+            openbd(extraParams + "&mth="+ method)
+        }
+    }
+
+    function handleTimeout15000(){
+        openSeeqPopunders("onTimeout15000");
+        openBuyDomainsPopunders("onTimeout15000");
+    }
+
+    function handleOnUnload()
+    {
+        openSeeqPopunders("onUnload");
+        openBuyDomainsPopunders("onUnload");
+    }
+
+    function cancel_pops()
+    {
+	    need_open1 = 0;
+	    need_open2 = 0;
+	    need_openbd = 0;
+    }
+
+        if (getCookie("hasPops") != "true")
+        {
+            setCookie("hasPops", "true");
+
+            setTimeout("handleTimeout15000();", 15000);
+            window.onunload = handleOnUnload;
+        } //hasPops=true
+
+    // -->
+</script>
+
+
+            
+
+<script language="javascript">
+<!--
+    need_open1 = 1;
+
+    function open1(extraParams)
+    {
+	var x = window.open("/seeq/directory.jsp?domain=seeq-int.com&pop=false&" + extraParams,"popunder3a","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=490,height=545,left=10,top=10,marginwidth=0,marginheight=0");
+
+	if (x)
+	    x.blur();
+
+	window.focus();
+    }
+// -->
+</script>
+
+
+            
+
+<script language="javascript">
+<!--
+    need_open2 = 1;
+	var intWidth = 490;
+	var intHeight = 545;
+    function open2(extraParams)
+    {
+	// to center pop-under, use xTop & yTop
+	// var xTop = screen.width/2 - (intWidth/2);
+ 	// var yTop = screen.height/2 - (intHeight/2);
+	// to push to bottom right corner
+	var xTop = screen.width - (intWidth + 20);
+ 	var yTop = screen.height - (intHeight + 90);
+	var y = window.open("/travelchoices/directory.jsp?domain=travelchoices-int.com&pop=false&keyword=Vacations&"  + extraParams,"popunder3b","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=" + intWidth + ",height=" + intHeight + ",left=" + xTop + ",top=" + yTop + ",marginwidth=0,marginheight=0");
+
+	if (y)
+	    y.blur();
+
+	window.focus();
+    }
+// -->
+</script>
+
+
+            <script language="javascript">
+            <!--
+                need_openbd = 1;
+
+                function openbd()
+                {
+                    // open it
+                    popW = 850;
+                    popH = 525;
+                    str = "width=" + popW + ",height=" + popH + ",scrollbars,toolbar,resizable,location,menubar,top=0,screenY=0,left=0,screenX=0";
+                    var x = window.open('http://www.buydomains.com/index.jsp?domain=bladesofwrath.com&pop=false&cm_mmc=buydomains-_-entry-_-seeqpopunder-_-0','pop_buydomains',str);
+
+                    // popunder
+                    x.blur();
+                }
+            //-->
+            </script>
+
+
+<!-- BEGIN COREMETRICS SUPPORT -->
+<script language="javascript1.1"
+ type="text/javascript">
+<!--
+var cmJv="1.1";
+//-->
+</script>
+<script language="javascript1.2"
+ type="text/javascript">
+<!--
+var cmJv="1.2";
+//-->
+</script>
+<script language="javascript1.3"
+ type="text/javascript">
+<!--
+var cmJv="1.3";
+//-->
+</script>
+<script language="javascript1.4"
+ type="text/javascript">
+<!--
+var cmJv="1.4";
+//-->
+</script>
+<script language="javascript1.5"
+ type="text/javascript">
+<!--
+var cmJv="1.5";
+//-->
+</script>
+<script language="javascript1.1"
+ type="text/javascript">
+ <!--
+     var cm_ClientID="90065742";
+ //-->
+ </script>
+<script language="javascript1.1"
+ src="/coremetrics/v40/eluminate.js"
+ type="text/javascript">
+</script>
+<script language="javascript1.1"
+ src="/coremetrics/cmdatatagutils.js"
+ type="text/javascript">
+</script>
+<script language="javascript1.1"
+ src="/coremetrics/v40/techprops.js"
+ type="text/javascript">
+</script>
+
+
+<script language="javascript1.1" type="text/javascript">
+
+<!--
+    function seeqShop9(productId, categoryId, revenue, url, keyword, position)
+    {
+        if (parent.bookmark != null){
+	        parent.bookmark.cancel_pops(); }
+	    else{
+	        cancel_pops();}
+
+
+    cmCreateShopAction9Tag(productId, productId, '1', revenue, '9QL4QLSG5DOZLQFGPOQ9B8N2VMQWUMOP', '9QL4QLSG5DOZLQFGPOQ9B8N2VMQWUMOP', revenue, categoryId);
+    cmDisplayShop9s();
+    cmCreateOrderTag('9QL4QLSG5DOZLQFGPOQ9B8N2VMQWUMOP', revenue, '0.00', '9QL4QLSG5DOZLQFGPOQ9B8N2VMQWUMOP', null, null, null);
+
+
+
+	    return true;
+
+
+    }
+
+
+        cmSetProduction();
+
+        cmCreatePageviewTag("/netchatter/index.jsp", null, null, null);
+
+        setPermCookie("UID", "QD60WWT45OG5VJDK93TE2K8A56TXOY9E", "/", ".seeq.com", null);
+
+        setCookie("SID", "PLOL9R4J4EG650XAI54GSHAXQ3165541", null, "/", ".netchatter.com", null);
+
+
+    // load an image with sid and uid tacked on the end
+    var img_v2 = new Image;
+    img_v2.src = '/images/blank.gif?page=/netchatter/index.jsp&sid=' + getCookie("SID") + '&uid=' + getCookie("UID");
+
+//-->
+</script>
+<!-- END COREMETRICS -->
+
+
+
+<table cellspacing="0" cellpadding="0" border="0" align="center" id="topLinks">
+<tr>
+	<!-- logo title -->
+	<td id="logoTitle"><img src="images/nc_logotitle.gif" width="207" height="41" border="0" alt="NetChatter.com" /></td>
+	<!-- tag line -->
+	<td id="tag"><img src="images/nc_tag.gif" width="242" height="41" border="0" alt="Your Source for What's Hot on the Internet" /></td>
+	<!-- dynamic domain name for sale -->
+	<td id="forSale">
+
+
+
+
+
+
+    <a href="http://www.buydomains.com?domain=bladesofwrath.com&pop=false&cm_mmc=BuyDomains-_-entry-_-tdfs-_-top" target="_top"><b>BladesOfWrath.com</b> is for sale.</a>
+	<div><a href="http://www.buydomains.com?domain=bladesofwrath.com&pop=false&cm_mmc=BuyDomains-_-entry-_-tdfs-_-top" target="_top">Buy this name.</a> Call <b>1-866-866-2700</b></div>
+
+	</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0" border="0" align="center" id="main">
+<tr>
+	<!-- topnav -->
+	<td colspan="3" id="topNav">
+	<table cellspacing="0" cellpadding="0" border="0" style="width:100%">
+	<tr>
+	
+		<td class="topNavLink"><a href="/techbuyer/index_d2r.jsp?keyword=Technology&name=topnav_0">Technology</a></td>
+	
+		<td class="topNavUnit"></td>
+	
+		<td class="topNavLink"><a href="/greatdate/index_d2r.jsp?keyword=Dating&name=topnav_1">Dating</a></td>
+	
+		<td class="topNavUnit"></td>
+	
+		<td class="topNavLink"><a href="/travelchoices/index_d2r.jsp?keyword=Travel&name=topnav_2">Travel</a></td>
+	
+		<td class="topNavUnit"></td>
+	
+		<td class="topNavLink"><a href="/educationcentral/index_d2r.jsp?keyword=Education&name=topnav_3">Education</a></td>
+	
+		<td class="topNavUnit"></td>
+	
+		<td class="topNavLink"><a href="/automotivecenter/index_d2r.jsp?keyword=Automotive&name=topnav_4">Automotive</a></td>
+	
+		<td class="topNavUnit"></td>
+	
+		<td class="topNavLink"><a href="/purebusiness/index.jsp?keyword=Business&name=topnav_5">Business</a></td>
+	
+		<td class="topNavUnit"></td>
+	
+		<td class="topNavLink"><a href="/shoparound/index_d2r.jsp?keyword=Shopping&name=topnav_6">Shopping</a></td>
+	
+		<td class="topNavUnit"></td>
+	
+		<td class="topNavLink"><a href="/jobfinder/index_d2r.jsp?keyword=Jobs&name=topnav_7">Jobs</a></td>
+	
+		<td class="topNavUnit"></td>
+	
+		<td class="topNavLink"><a href="/photoconnection/index_d2r.jsp?keyword=Photography&name=topnav_8">Photography</a></td>
+	
+	</tr>
+	</table>
+	</td>
+	<!-- end topnav -->
+</tr>
+<tr>
+	<!-- big blurbs -->
+	<td id="bigBlurbs"><div class="sectionHeader">Top Picks</div>
+	<!-- blurb 1 ** has top margin ** -->
+	<table cellspacing="0" cellpadding="0" border="0" style="margin-top:10px;">
+	<tr>
+		<td class="bigBlurbHeader"><a href="/lander.jsp?domain=wellnessprograms.com&referrer=&name=big1">WELLNESS</a><br />
+		Diet Programs</td>
+	</tr>
+	<tr>
+		<td style="padding-top:10px"><a href="http://www.wellnessprograms.com/wellnessprograms/article.jsp?keyword=diet+programs+&title=Diet+Programs%3A+Always+Consult+Your+Doctor+First&aid=he_16&domain=wellnessprograms.com&portal_id=146&name=big1image"><img src="images/nc_pic_diet.gif" width="130" height="75" border="0" alt="Diet Programs" class="bigBlurbPic" align="left" /></a>An estimated 70 million Americans will probably enter <a href="http://www.wellnessprograms.com/wellnessprograms/article.jsp?keyword=diet+programs+&title=Diet+Programs%3A+Always+Consult+Your+Doctor+First&aid=he_16&domain=wellnessprograms.com&portal_id=146&name=big1b">diet programs</a> this year. And while some will succeed in taking the weight off, very few &#8212; perhaps as low as 5 percent &#8212; will manage to keep all of it off in the long run. One reason for the low success rate is that many people look for quick and easy diet programs to solve all of their weight problems. Read on for some ideas that could help you be truly successful in losing weight.
+		<ul>
+			<li><a href="http://www.wellnessprograms.com/wellnessprograms/article.jsp?keyword=diet+programs+&title=Diet+Programs%3A+Always+Consult+Your+Doctor+First&aid=he_16&domain=wellnessprograms.com&portal_id=146&name=big1c">Read More About Diet Programs</a></li>
+			<li><a href="http://www.wellnessprograms.com/wellnessprograms/article.jsp?keyword=fitness+trainers&title=What+To+Look+For+In+Fitness+Trainers&aid=he_4&domain=wellnessprograms.com&portal_id=146&name=big1d">Fitness Trainers: Would You Benefit From One?</a></li>
+		</ul></td>
+	</tr>
+	</table>
+	<div class="bigBlurbHorBar"><img src="images/blank.gif" width="1" height="1" border="0" /></div>
+	<!-- blurb 2 -->
+	<table cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td class="bigBlurbHeader"><a href="/lander.jsp?domain=educationcentral.com&referrer=&name=big2">EDUCATION</a><br />
+		Student Loan Programs</td>
+	</tr>
+	<tr>
+		<td style="padding-top:10px"><a href="http://www.educationcentral.com/educationcentral/article.jsp?keyword=student+loan+programs&title=Student+Loan+Programs%3A+Steps+to+a+Higher+Education&aid=ed_10&domain=educationcentral.com&portal_id=126&name=big2image"><img src="images/nc_pic_student.gif" width="130" height="75" border="0" alt="Student Loan Programs" class="bigBlurbPic" align="left" /></a>For students who want a higher education, but who didn't win a scholarship or a Pell Grant, <a href="http://www.educationcentral.com/educationcentral/article.jsp?keyword=student+loan+programs&title=Student+Loan+Programs%3A+Steps+to+a+Higher+Education&aid=ed_10&domain=educationcentral.com&portal_id=126&name=big2b">student loan programs</a> are a way to get to their favorite university or college. With so many options in student loan programs, it might seem too confusing to navigate. The best place to start is your financial aid office at your college or university but read on for some student loan programs to consider.
+		<ul>
+			<li><a href="http://www.educationcentral.com/educationcentral/article.jsp?keyword=student+loan+programs&title=Student+Loan+Programs%3A+Steps+to+a+Higher+Education&aid=ed_10&domain=educationcentral.com&portal_id=126&name=big2c">Learn More About Student Loan Programs</a></li>
+			<li><a href="http://www.educationcentral.com/educationcentral/article.jsp?keyword=student+loan+consolidation&title=Student+Loan+Consolidation+Benefits&aid=ed_9&domain=educationcentral.com&portal_id=126&name=big2d">Already Have Student Loans? Tips on Consolidating Them</a></li>
+		</ul></td>
+	</tr>
+	</table>
+	<div class="bigBlurbHorBar"><img src="images/blank.gif" width="1" height="1" border="0" /></div>
+	<!-- blurb 3 -->
+	<table cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td class="bigBlurbHeader"><a href="/lander.jsp?domain=e-taxes.com&referrer=&name=big3">TAXES</a><br />
+		Tax Return Tips</td>
+	</tr>
+	<tr>
+		<td style="padding-top:10px"><a href="http://www.e-taxes.com/e-taxes/article.jsp?keyword=tax+return&title=Tax+Return+Tips+to+Know&aid=ta_4&domain=e-taxes.com&portal_id=252&name=big3image"><img src="images/nc_pic_taxes.gif" width="130" height="75" border="0" alt="Tax Return Tips" class="bigBlurbPic" align="left" /></a>Some people do their own <a href="http://www.e-taxes.com/e-taxes/article.jsp?keyword=tax+return&title=Tax+Return+Tips+to+Know&aid=ta_4&domain=e-taxes.com&portal_id=252&name=big3b">tax returns</a>, while others choose to hire a professional for the job. The IRS stresses that, "If you pay someone to prepare your tax return, choose that preparer wisely. Taxpayers are legally responsible for what's on their own tax return even if prepared by someone else." What that means is even if someone else made the error on a tax return, you're the one who's going to pay for the mistake. So here are some tips on where to go for help.
+		<ul>
+			<li><a href="http://www.e-taxes.com/e-taxes/article.jsp?keyword=tax+return&title=Tax+Return+Tips+to+Know&aid=ta_4&domain=e-taxes.com&portal_id=252&name=big3c">Learn More About Tax Return Tips</a></li>
+			<li><a href="http://www.e-taxes.com/e-taxes/article.jsp?keyword=irs+tax+problems&title=Avoiding+IRS+Tax+Problems&aid=ta_1&domain=e-taxes.com&portal_id=252&name=big3d">Avoiding IRS Tax Problems</a></li>
+		</ul></td>
+	</tr>
+	</table>
+	</td>
+	<!-- end big blurbs -->
+	<!-- small blurbs -->
+	<td id="smallBlurbs"><div class="sectionHeader">Tidbits</div>
+	<!-- blurb 1 ** needs to be inside div tag for padding reasons ** -->
+	<div style="padding-top:10px;"><span class="smallBlurbHeader"><a href="/lander.jsp?referrer=&domain=mortgageapprovals.com&name=small1">MORTGAGES</a><br />
+	Get a Great Rate</span><br />
+	Get help finding the mortgage company that best fits your needs. <a href="/lander.jsp?referrer=&domain=mortgageapprovals.com&name=small1a">More</a> <b style="color:#ff0000">&#187;</b></div>
+	<!-- blurb 2 -->
+	<p><span class="smallBlurbHeader"><a href="/lander.jsp?referrer=&domain=travelchoices.com&name=small2">TRAVEL</a><br />
+	Bring the Kids</span><br />
+	Take that trip you've always wanted to, with the kids, without the stress. <a href="http://www.travelchoices.com/travelchoices/article.jsp?keyword=family+travel&title=Family+Travel%3A+Making+It+Stress-Free&aid=tr_13&domain=travelchoices.com&portal_id=134&name=small2a">More</a> <b style="color:#ff0000">&#187;</b></p>
+	<!-- blurb 3 -->
+	<p><span class="smallBlurbHeader"><a href="/lander.jsp?referrer=&domain=techshopping.com&name=small3">TECH SHOPPING</a><br />
+	Expand the Horizons</span><br />
+	Want to move beyond your old television? Find out what satellite TV can offer. <a href="http://www.techshopping.com/techshopping/ /article.jsp/?keyword=satellite+television&title=Satellite+Television%3A+Seeing+the+World+From+Space&aid=te_9&domain=techshopping.com&portal_id=162&name=small3a">More</a> <b style="color:#ff0000">&#187;</b></p>
+	<!-- blurb 4 -->
+	<p><span class="smallBlurbHeader"><a href="/lander.jsp?referrer=&domain=careerguide.com&name=small4">CAREERS</a><br />
+	Resume Help</span><br />
+	Need guidance on how to make your resume stand out from the pack? <a href="http://www.careerguide.com/careerguide/article.jsp/?keyword=resume+examples&title=Resume+Examples%3A+Tips+From+Those+Who+Have+Been+There&aid=ca_2&domain=careerguide.com&portal_id=159&name=small4a">More</a> <b style="color:#ff0000">&#187;</b></p>
+	<!-- blurb 5 -->
+	<p><span class="smallBlurbHeader"><a href="/lander.jsp?referrer=&domain=photoconnection.com&name=small5">PHOTOS</a><br />
+	Digital Photography</span><br />
+	You don't have to be an expert to get top-notch photos. Check out these tips. <a href="http://www.photoconnection.com/photoconnection/article.jsp/?keyword=digital+photos&title=Digital+Photos%3A+You+Really+Don%27t+Have+To+Be+An+Expert&aid=ph_4&domain=photoconnection.com&portal_id=81&name=small5a">More</a> <b style="color:#ff0000">&#187;</b></p>
+	<!-- blurb 6 -->
+	<p><span class="smallBlurbHeader"><a href="/lander.jsp?referrer=&domain=moviecity.com&name=small6">MOVIES</a><br />
+	Rent DVDs Online</span><br />
+	Get to see all of your favorite movies without even leaving the house. <a href="http://www.moviecity.com/moviecity/article.jsp/?keyword=rent+dvds+online&title=Rent+DVDs+Online+Quickly+and+Easily&aid=mo_6&domain=moviecity.com&portal_id=213&name=small6a">More</a> <b style="color:#ff0000">&#187;</b></p>
+	<!-- blurb 7 -->
+	<p><span class="smallBlurbHeader"><a href="/lander.jsp?referrer=&domain=musicmania.com&name=small7">MUSIC</a><br />
+	Online Radio</span><br />
+	Find all the music you could want just by using your computer. <a href="http://www.musicmania.com/musicmania/article.jsp/?keyword=online+radio&title=Online+Radio%3A+Growing+in+Leaps+and+Bounds&aid=mu_3&domain=musicmania.com&portal_id=2&name=small7a">More</a> <b style="color:#ff0000">&#187;</b></p>
+	</td>
+	<!-- end small blurbs -->
+	<!-- sites & search -->
+	<td rowspan="2" id="siteSearch"><b>MORE SEEQ<br />NETWORK SITES:</b><br />
+	Visit some of our other great sites. They can help you find the stuff you're looking for.<br /><br />
+	
+	<a href="/lander.jsp?referrer=&domain=techbuyer.com&name=sites_0">TechBuyer.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=musicmania.com&name=sites_1">MusicMania.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=medicalsource.com&name=sites_2">MedicalSource.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=fashionsource.com&name=sites_3">FashionSource.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=sportsunlimited.com&name=sites_4">SportsUnlimited.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=localrealestate.com&name=sites_5">LocalRealEstate.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=careerguide.com&name=sites_6">CareerGuide.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=wellnessprograms.com&name=sites_7">WellnessPrograms.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=petparty.com&name=sites_8">PetParty.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=homeanswers.com&name=sites_9">HomeAnswers.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=approvals.com&name=sites_10">Approvals.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=e-taxes.com&name=sites_11">e-Taxes.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=gamingsource.com&name=sites_12">GamingSource.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=moviecity.com&name=sites_13">MovieCity.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=tvchannel.com&name=sites_14">TVChannel.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=investmentzone.com&name=sites_15">InvestmentZone.com</a>
+	
+		<br />
+	
+	<a href="/lander.jsp?referrer=&domain=voipcalls.com&name=sites_16">VOIPCalls.com</a>
+	
+	<div class="siteSearchHorBar"><img src="images/blank.gif" width="1" height="1" border="0" /></div>
+	<b>SEARCH:</b>
+	<table cellspacing="0" cellpadding="0" border="0">
+	<form name="search" action="results.jsp">
+		<input type="hidden" name="portal_id" id="portal_id" value="174" />
+		<input type="hidden" name="domain" id="domain" value="bladesofwrath.com" />
+		<input type="hidden" name="tag" id="tag" value="typedseeq" />
+	<tr>
+		<td valign="middle" style="padding:0 6px 0 0"><input type="text" name="keyword" id="keyword" style="width:110px" /></td>
+		<td valign="middle"><input type="image" src="images/go_button_green.gif" alt="Go" /></td>
+	</tr>
+	</form>
+	</table>
+	<div class="siteSearchHorBar"><img src="images/blank.gif" width="1" height="1" border="0" /></div>
+	<b>PETS SEARCHES</b><br /><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Dog+Training&name=searches_0">Dog Training</a><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Bird+Feeder&name=searches_1">Bird Feeder</a><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Pet+Training&name=searches_2">Pet Training</a><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Pet+Health&name=searches_3">Pet Health</a><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Dog+Toys&name=searches_4">Dog Toys</a><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Dog+Obedience+School&name=searches_5">Dog Obedience School</a><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Animal+Magazine&name=searches_6">Animal Magazine</a><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Dog+Beds&name=searches_7">Dog Beds</a><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Electronic+Dog+Collar&name=searches_8">Electronic Dog Collar</a><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Bird+Bath&name=searches_9">Bird Bath</a><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Pet+Health+Care&name=searches_10">Pet Health Care</a><br />
+	
+	<a href="http://www.petparty.com/petparty/results.jsp?portal_id=216&domain=petparty.com&tag=related&keyword=Bird+Cage&name=searches_11">Bird Cage</a><br />
+	
+	</td>
+</tr>
+<tr>
+	<td colspan="2" id="directory">
+	<table cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td style="padding-bottom:10px"><b>SEEQ DIRECTORY</b></td>
+	</tr>
+	<tr>
+		<!-- category 1 -->
+		<td><a href="/lander.jsp?referrer=&domain=shoparound.com&name=CatA" class="directoryCategory">Shopping</a><br />
+		
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Online+Shopping&name=catA_0">Online Shopping</a>, 
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Online+Auctions&name=catA_1">Online Auctions</a>, 
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Discount+Shopping&name=catA_2">Discount Shopping</a>, 
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Wholesale+Clubs&name=catA_3">Wholesale Clubs</a>, 
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Gift+Ideas&name=catA_4">Gift Ideas</a>, 
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Wedding+Gifts&name=catA_5">Wedding Gifts</a>, 
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Computers&name=catA_6">Computers</a>, 
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Laptops&name=catA_7">Laptops</a>, 
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Digital+Cameras&name=catA_8">Digital Cameras</a>, 
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Televisions&name=catA_9">Televisions</a>, 
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Cell+Phones&name=catA_10">Cell Phones</a>, 
+		<a href="http://www.shoparound.com/shoparound/results.jsp?portal_id=124&domain=shoparound.com&tag=related&keyword=Women%27s+Apparel&name=catA_11">Women's Apparel</a>
+		</td>
+		<!-- category 2 -->
+		<td><a href="/lander.jsp?referrer=&domain=localrealestate.com&name=CatB" class="directoryCategory">Real Estate</a><br />
+		
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=Home+Equity+Loan&name=catB_0">Home Equity Loan</a>, 
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=Foreclosures&name=catB_1">Foreclosures</a>, 
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=For+Sale+By+Owner&name=catB_2">For Sale By Owner</a>, 
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=Credit+Report&name=catB_3">Credit Report</a>, 
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=Remodeling&name=catB_4">Remodeling</a>, 
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=Home+Decor&name=catB_5">Home Decor</a>, 
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=Condos&name=catB_6">Condos</a>, 
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=Home+Finance&name=catB_7">Home Finance</a>, 
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=Second+Mortgage&name=catB_8">Second Mortgage</a>, 
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=Home+Insurance+&name=catB_9">Home Insurance </a>, 
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=Refinance+Loans&name=catB_10">Refinance Loans</a>, 
+		<a href="http://www.localrealestate.com/localrealestate/results.jsp?portal_id=140&domain=localrealestate.com&tag=related&keyword=Mortgage+Companies&name=catB_11">Mortgage Companies</a>
+		</td>
+	</tr>
+	<tr>
+		<!-- category 3 -->
+		<td><a href="/lander.jsp?referrer=&domain=careerguide.com&name=CatC" class="directoryCategory">Careers</a><br />
+		
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=Radiology+Jobs&name=catC_0">Radiology Jobs</a>, 
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=Online+University+Degrees&name=catC_1">Online University Degrees</a>, 
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=IT+Careers&name=catC_2">IT Careers</a>, 
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=Online+Bachelor+Degrees&name=catC_3">Online Bachelor Degrees</a>, 
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=Online+Degrees&name=catC_4">Online Degrees</a>, 
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=Career+Education&name=catC_5">Career Education</a>, 
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=Master%27s+Degree&name=catC_6">Master's Degree</a>, 
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=Career+Training&name=catC_7">Career Training</a>, 
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=Background+Checks&name=catC_8">Background Checks</a>, 
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=Physical+Therapy+Jobs&name=catC_9">Physical Therapy Jobs</a>, 
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=Resume+Services&name=catC_10">Resume Services</a>, 
+		<a href="http://www.careerguide.com/careerguide/results.jsp?portal_id=159&domain=careerguide.com&tag=related&keyword=Medical+Careers&name=catC_11">Medical Careers</a>
+		</td>
+		<!-- category 4 -->
+		<td><a href="/lander.jsp?referrer=&domain=purebusiness.com&name=CatD" class="directoryCategory">Business</a><br />
+		
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Bankruptcy&name=catD_0">Bankruptcy</a>, 
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Domain+Name+Registration&name=catD_1">Domain Name Registration</a>, 
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Business+Loans&name=catD_2">Business Loans</a>, 
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Incorporate+Your+Business&name=catD_3">Incorporate Your Business</a>, 
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Business+Degree&name=catD_4">Business Degree</a>, 
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Business+Rules&name=catD_5">Business Rules</a>, 
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Incorporation+Forms&name=catD_6">Incorporation Forms</a>, 
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Brochure+Printing&name=catD_7">Brochure Printing</a>, 
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Office+Telephones&name=catD_8">Office Telephones</a>, 
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Business+Cards&name=catD_9">Business Cards</a>, 
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Home+Office&name=catD_10">Home Office</a>, 
+		<a href="http://www.purebusiness.com/purebusiness/results.jsp?portal_id=77&domain=purebusiness.com&tag=related&keyword=Web+Hosting&name=catD_11">Web Hosting</a>
+		</td>
+	</tr>
+	</table>
+	</td>
+</tr>
+</table>
+<!-- search categories -->
+
+
+<table cellspacing="0" cellpadding="0" border="0" align="center" id="portals">
+<tr>
+	<td align="left" style="line-height:16px;"><b>Other Categories:</b>&nbsp;
+	
+		<a href="/purebusiness/results.jsp?keyword=Advertising&tag=directory">Advertising</a>
+	
+		|
+	
+		<a href="/automotivecenter/results.jsp?keyword=Automotive&tag=directory">Automotive</a>
+	
+		|
+	
+		<a href="/travelchoices/results.jsp?keyword=Aviation&tag=directory">Aviation</a>
+	
+		|
+	
+		<a href="/beautyguide/results.jsp?keyword=Beauty&tag=directory">Beauty</a>
+	
+		|
+	
+		<a href="/sportsunlimited/results.jsp?keyword=Boating&tag=directory">Boating</a>
+	
+		|
+	
+		<a href="/shop4cameras/results.jsp?keyword=Cameras&tag=directory">Cameras</a>
+	
+		|
+	
+		<a href="/cash4you/results.jsp?keyword=Cash&tag=directory">Cash</a>
+	
+		|
+	
+		<a href="/christiancircles/results.jsp?keyword=Christian+Community&tag=directory">Christian Community</a>
+	
+		|
+	
+		<a href="/shop4computers/results.jsp?keyword=Computers&tag=directory">Computers</a>
+	
+		|
+	
+		<a href="/homeanswers/results.jsp?keyword=Crafts&tag=directory">Crafts</a>
+	
+		|
+	
+		<a href="/creditcardclub/results.jsp?keyword=Credit+Cards&tag=directory">Credit Cards</a>
+	
+		|
+	
+		<a href="/greatdate/results.jsp?keyword=Dating&tag=directory">Dating</a>
+	
+		|
+	
+		<a href="/consolidateyourdebts/results.jsp?keyword=Debt+Consolidation&tag=directory">Debt Consolidation</a>
+	
+		|
+	
+		<a href="/educationnow/results.jsp?keyword=Education&tag=directory">Education</a>
+	
+		|
+	
+		<a href="/techshopping/results.jsp?keyword=Electronics&tag=directory">Electronics</a>
+	
+		|
+	
+		<a href="/careerguide/results.jsp?keyword=Employment&tag=directory">Employment</a>
+	
+		|
+	
+		<a href="/moviecity/results.jsp?keyword=Entertainment&tag=directory">Entertainment</a>
+	
+		|
+	
+		<a href="/babyfriendly/results.jsp?keyword=Family&tag=directory">Family</a>
+	
+		|
+	
+		<a href="/sportsunlimited/results.jsp?keyword=Fantasy+Sports&tag=directory">Fantasy Sports</a>
+	
+		|
+	
+		<a href="/fashionsource/results.jsp?keyword=Fashion&tag=directory">Fashion</a>
+	
+		|
+	
+		<a href="/rightloan/results.jsp?keyword=Finance&tag=directory">Finance</a>
+	
+		|
+	
+		<a href="/wellnessprograms/results.jsp?keyword=Fitness&tag=directory">Fitness</a>
+	
+		|
+	
+		<a href="/shop4flowers/results.jsp?keyword=Flowers&tag=directory">Flowers</a>
+	
+		|
+	
+		<a href="/foodplanet/results.jsp?keyword=Food&tag=directory">Food</a>
+	
+		|
+	
+		<a href="/homeanswers/results.jsp?keyword=Furniture&tag=directory">Furniture</a>
+	
+		|
+	
+		<a href="/gamingsource/results.jsp?keyword=Games&tag=directory">Games</a>
+	
+		|
+	
+		<a href="/homeanswers/results.jsp?keyword=Gardening&tag=directory">Gardening</a>
+	
+		|
+	
+		<a href="/shoparound/results.jsp?keyword=Gifts&tag=directory">Gifts</a>
+	
+		|
+	
+		<a href="/medicalsource/results.jsp?keyword=Health&tag=directory">Health</a>
+	
+		|
+	
+		<a href="/educationcentral/results.jsp?keyword=History&tag=directory">History</a>
+	
+		|
+	
+		<a href="/gamingsource/results.jsp?keyword=Hobbies&tag=directory">Hobbies</a>
+	
+		|
+	
+		<a href="/homeanswers/results.jsp?keyword=Home+Improvement&tag=directory">Home Improvement</a>
+	
+		|
+	
+		<a href="/insuranceproviders/results.jsp?keyword=Insurance&tag=directory">Insurance</a>
+	
+		|
+	
+		<a href="/shop4jewelry/results.jsp?keyword=Jewelry&tag=directory">Jewelry</a>
+	
+		|
+	
+		<a href="/latinconnections/results.jsp?keyword=Latin+Community&tag=directory">Latin Community</a>
+	
+		|
+	
+		<a href="/legalonline/results.jsp?keyword=Legal&tag=directory">Legal</a>
+	
+		|
+	
+		<a href="/rightloan/results.jsp?keyword=Loans&tag=directory">Loans</a>
+	
+		|
+	
+		<a href="/mortgageapprovals/results.jsp?keyword=Mortgages&tag=directory">Mortgages</a>
+	
+		|
+	
+		<a href="/moviecity/results.jsp?keyword=Movies&tag=directory">Movies</a>
+	
+		|
+	
+		<a href="/musicmania/results.jsp?keyword=Music&tag=directory">Music</a>
+	
+		|
+	
+		<a href="/shoparound/results.jsp?keyword=Online+Shopping&tag=directory">Online Shopping</a>
+	
+		|
+	
+		<a href="/petparty/results.jsp?keyword=Pets&tag=directory">Pets</a>
+	
+		|
+	
+		<a href="/photoconnection/results.jsp?keyword=Photography&tag=directory">Photography</a>
+	
+		|
+	
+		<a href="/onlinepolitics/results.jsp?keyword=Politics&tag=directory">Politics</a>
+	
+		|
+	
+		<a href="/localrealestate/results.jsp?keyword=Real+Estate&tag=directory">Real Estate</a>
+	
+		|
+	
+		<a href="/educationcentral/results.jsp?keyword=Science&tag=directory">Science</a>
+	
+		|
+	
+		<a href="/shoparound/results.jsp?keyword=Shopping&tag=directory">Shopping</a>
+	
+		|
+	
+		<a href="/purebusiness/results.jsp?keyword=Small+Business&tag=directory">Small Business</a>
+	
+		|
+	
+		<a href="/sportsunlimited/results.jsp?keyword=Sports&tag=directory">Sports</a>
+	
+		|
+	
+		<a href="/e-taxes/results.jsp?keyword=Taxes&tag=directory">Taxes</a>
+	
+		|
+	
+		<a href="/techbuyer/results.jsp?keyword=Technology&tag=directory">Technology</a>
+	
+		|
+	
+		<a href="/ticketscentral/results.jsp?keyword=Tickets&tag=directory">Tickets</a>
+	
+		|
+	
+		<a href="/travelchoices/results.jsp?keyword=Travel&tag=directory">Travel</a>
+	
+		|
+	
+		<a href="/wonderfulweddings/results.jsp?keyword=Weddings&tag=directory">Weddings</a>
+	
+		|
+	
+		<a href="/wellnessprograms/results.jsp?keyword=Wellness&tag=directory">Wellness</a>
+	
+	 </td>
+</tr>
+</table>
+
+<!-- footer -->
+
+
+<table cellspacing="0" cellpadding="0" border="0" align="center" id="footer">
+<tr>
+    <!-- footer -->
+	<td align="center">&#169; 2006 YesDirect, Inc.&#8482;&nbsp;&nbsp;<a href="/about.jsp?portal_id=1&amp;domain=seeq.com" class="footerLink">About</a>&nbsp;|&nbsp;<a href="/seeq/index.jsp?portal_id=1&amp;domain=seeq.com" class="footerLink">Home</a>&nbsp;|&nbsp;<a href="/privacy.jsp" class="footerLink">Privacy Policy</a>&nbsp;|&nbsp;<a href="http://www.buydomains.com/info/terms_of_use.jsp" class="footerLink">Terms of Use</a><script>addFooterLinks()</script>
+	
+	<br /><br />
+	<a href="http://www.grassroots.org" target="_blank"><img src="/library/images/grassroots_logo.gif" width="154" height="48" border="0" alt="Grassroots.org" /></a></td>
+</tr>
+</table>
+</body>
+</html>
