@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Elite Guardians</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=">
+<META NAME="AUTHOR" CONTENT="Elite Guardians">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) 2001 by Elite Guardians">
+<META NAME="KEYWORDS" CONTENT="News, news, New, New, Technology, technology, Headlines, headlines, Nuke, nuke, PHP-Nuke, phpnuke, php-nuke, Geek, geek, Geeks, geeks, Hacker, hacker, Hackers, hackers, Linux, linux, Windows, windows, Software, software, Download, download, Downloads, downloads, Free, FREE, free, Community, community, MP3, mp3, Forum, forum, Forums, forums, Bulletin, bulletin, Board, board, Boards, boards, PHP, php, Survey, survey, Kernel, kernel, Comment, comment, Comments, comments, Portal, portal, ODP, odp, Open, open, Open Source, OpenSource, Opensource, opensource, open source, Free Software, FreeSoftware, Freesoftware, free software, GNU, gnu, GPL, gpl, License, license, Unix, UNIX, *nix, unix, MySQL, mysql, SQL, sql, Database, DataBase, database, Mandrake, mandrake, Red Hat, RedHat, red hat, Slackware, slackware, SUSE, SuSE, suse, Debian, debian, Gnome, GNOME, gnome, Kde, KDE, kde, Enlightenment, enlightenment, Intercative, interactive, Programming, programming, Extreme, extreme, Game, game, Games, games, Web Site, web site, Weblog, WebLog, weblog, Guru, GURU, guru">
+<META NAME="DESCRIPTION" CONTENT="<big><B>W</B></big>e will conquer the eternal corruption which plagues our land. - Blum Soulharvester  (EG Leader)">
+<META NAME="GENERATOR" CONTENT="PHP-Nuke  - http://phpnuke.org">
+
+
+<style type="text/css">
+<!--
+.textbox { background: transparent; background-color: White; color: #000000; font-family: Comic Sans MS, Comic Sans,Verdana,Arial,Helvetica; font-size: x-small; text-align: left; scrollbar-face-color: #CCCCCC; scrollbar-shadow-color: #FFFFFF; scrollbar-highlight-color: #FFFFFF; scrollbar-3dlight-color: #FFFFFF; scrollbar-darkshadow-color: #FFFFFF; scrollbar-track-color: #FFFFFF; scrollbar-arrow-color: #000000 }
+TD {font-family: Comic Sans MS, Comic Sans,Verdana,Arial,Helvetica}
+DIV {font-family: Comic Sans MS, Comic Sans,Verdana,Arial,Helvetica}
+BODY {font-size: 10pt; font-family: Comic Sans MS, Comic Sans,Verdana,Arial,Helvetica}
+P {color: white}
+B {color: white}
+A {text-decoration: none}
+A:link {color: #FFFFCC}
+A:visited {color: #FFFFCC}
+A:hover {color: red; text-decoration: underline}
+-->
+</style>
+<SCRIPT type="text/javascript">
+<!--
+
+function showimage() {
+if (!document.images)
+return
+document.images.avatar.src=
+'/images/forum/avatar/' + document.Register.user_avatar.options[document.Register.user_avatar.selectedIndex].value
+}
+
+//-->
+</SCRIPT>
+<SCRIPT type="text/javascript">
+<!--
+
+function openwindow(){
+	window.open ("","Help","toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=600,height=400");
+}
+
+//-->
+</SCRIPT>
+<SCRIPT type="text/javascript">
+
+function init() {
+
+}
+</SCRIPT>
+</head>
+
+
+<body onload=init() bgcolor=#000000 text=#E6E8FA link=#D3BE75 alink=#E6E8FA vlink=#D3BE75 topmargin=5 leftmargin=0 rightmargin=0 marginheight=5>
+<br><br>
+<table border=0 cellpadding=4 cellspacing=0 width=100% align=center><tr><td>
+<table border=0 cellspacing=0 cellpadding=1 width=100% bgcolor=000000><tr><td>
+<table border=0 cellspacing=0 cellpadding=3 width=100% bgcolor=000000><tr><td>
+<a href=><img src=themes/eg/images/logo.gif Alt="Welcome to Elite Guardians" border=0></a>
+</td><td align=right>
+    <form action=search.php method=post><font size=2 color=ffffff>
+    Search
+    <input type=text name=query>
+    </form>
+</tr>
+<tr bgcolor=96293F>
+<td colspan=2 bgcolor=96293F background=themes/eg/images/egbar.gif>
+<font size=2 color=D3BE75><big><B>W</B></big>e will conquer the eternal corruption which plagues our land. - Blum Soulharvester  (EG Leader)
+</td>
+</tr>
+<tr bgcolor=cc0000>
+<td colspan=2 bgcolor=000000>
+<font size=3 color=000000>.
+</td>
+</tr>
+</table></td></tr></table></td></tr><tr><td valign=top width=100%>
+<table border=0 cellspacing=0 cellpadding=2 width=100%><tr><td valign=top width=150>
+    <table border=0 cellspacing=0 cellpadding=0 width=165 bgcolor=96293F><tr><td>
+    <table width=100% border=0 cellspacing=1 cellpadding=3><tr><td colspan=1 bgcolor=96293F background=themes/eg/images/egbar.gif> 
+    <font size=2>Main Menu</td></tr><tr><td bgcolor=000000>
+    <font size=2><li><a href=index.php>Home</a><br>
+<br>
+<big><b>Elite Guardians</b></big><br>
+&nbsp;&nbsp;&nbsp;<a href=charter.php>Guild Charter</a><br>
+&nbsp;&nbsp;&nbsp;<a href=joining.php>Joining EG</a><br>
+&nbsp;&nbsp;&nbsp;<a href=raids.php>Raid Guidlines</a><br>
+&nbsp;&nbsp;&nbsp;<a href=roster.php>Roster</a><br>
+&nbsp;&nbsp;&nbsp;<a href=update.php>Roster Update</a><br>
+<br>
+<big><b>Calendars</b></big><br>
+&nbsp;&nbsp;&nbsp;<A href="http://www.calsnet.com/eliteguardians/">Elite Guardians</a><br>
+&nbsp;&nbsp;&nbsp;Genesis<br>
+&nbsp;&nbsp;&nbsp;<a href="http://www.smartcal.com/calendar/1101707">Prexus</a><br>
+<br>
+<big><b>Forums</b></big><br>
+&nbsp;&nbsp;&nbsp;<A href="http://server5.ezboard.com/beliteguardiansguild17184.html">Elite Guardians</a><br>
+&nbsp;&nbsp;&nbsp;<a href="http://pub32.ezboard.com/bgenesis33041">Genesis</a><br>
+&nbsp;&nbsp;&nbsp;<a href=http://pub13.ezboard.com/bprexus95980>Prexus</a><br>
+<br>
+<big><b>Homepages</b></big><br>
+&nbsp;&nbsp;&nbsp;<a href=index.php>Elite Guardians</a><br>
+&nbsp;&nbsp;&nbsp;<a href="http://www.prexus.com">Prexus</a><br>
+<br>
+&nbsp;&nbsp;&nbsp;<a href=download.php>Downloads</a><br>
+&nbsp;&nbsp;&nbsp;<a href=faq.php>FAQ</a><br>
+&nbsp;&nbsp;&nbsp;<a href=links.php>Links</a><br>
+&nbsp;&nbsp;&nbsp;<a href=friend.php>Recommend Us</a><br>
+&nbsp;&nbsp;&nbsp;<a href=stats.php>Stats</a><br>
+&nbsp;&nbsp;&nbsp;<a href=submit.php>Submit News</a><br>
+&nbsp;&nbsp;&nbsp;<a href=top.php>Top 10</a><br>
+&nbsp;&nbsp;&nbsp;<a href=user.php>Your Account</a><br>
+<br>
+<!--<li><a href=topics.php>Topics</a><br>
+<li><a href=forum.php>Forums</a><br>
+<li><a href=sections.php>Sections</a><br>
+<li><a href=reviews.php>Reviews</a>--><br>
+<!--<li><a href=memberslist.php>Members List</a>--></td></tr></table></td></tr></table><br>
+    <table border=0 cellspacing=0 cellpadding=0 width=165 bgcolor=96293F><tr><td>
+    <table width=100% border=0 cellspacing=1 cellpadding=3><tr><td colspan=1 bgcolor=96293F background=themes/eg/images/egbar.gif> 
+    <font size=2>Who's Online</td></tr><tr><td bgcolor=000000>
+    <font size=2><CENTER>There are currently, 1 guest(s) and 0 member(s) that are online.<br><br>You are Anonymous user. You can register for free by clicking <a href="user.php">here</a>.</center></td></tr></table></td></tr></table><br><img src=images/pix.gif border=0 width=150 height=1></td><td width=100% valign=top>
+    <table border=0 cellpadding=0 cellspacing=0 align=center bgcolor=000000 width=100%>
+<tr><td>
+    <table border=0 cellpadding=3 cellspacing=1 width=100%><tr><td bgcolor=96293F background=themes/eg/images/egbar.gif>
+    <b><a href="categories.php?op=newindex&catid=3">EG Discussions</a>: Spell Exchange Web Application</b>
+    </td></tr><tr><td bgcolor=000000><font size=2>
+    Posted by  <b><a href="http://www.eliteguardians.2y.net">Lucan</a>
+    </b>on Wednesday, April 04 @ 23:44:08 EDT  (51 reads)
+</font>
+    <br>
+    </td></tr>
+    <tr>
+<td bgcolor=000000>
+    <a href="search.php?query=&topic=30&author="><img src=images/topics/egsheild.gif border=0 Alt="News Articles" align=left hspace=10 vspace=10></a>
+<FONT size=2>I'm currently working on an idea I had for the website, and I want to throw it out here for discussion.<br>
+<br>
+</FONT>
+    </td></tr><tr><td bgcolor=000000 align=right>
+    <font size=2>( <a href="article.php?sid=7&mode=thread&order=0"><b>Read More...</b></a> | 752 bytes more | <a href="article.php?sid=7&mode=thread&order=0&thold=0">4 comments</a> | <a href="print.php?sid=7"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width=15 height=11></a>&nbsp; <a href="friend.php?op=FriendSend&sid=7"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width=15 height=11></a> | <a href=categories.php?op=newindex&catid=3>EG Discussions</a>)
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+    <br>
+    
+
+    <table border=0 cellpadding=0 cellspacing=0 align=center bgcolor=000000 width=100%>
+<tr><td>
+    <table border=0 cellpadding=3 cellspacing=1 width=100%><tr><td bgcolor=96293F background=themes/eg/images/egbar.gif>
+    <b><a href="categories.php?op=newindex&catid=1">News</a>: Register for your own Login at the Elite Guardians Website</b>
+    </td></tr><tr><td bgcolor=000000><font size=2>
+    Posted by  <b><a href="http://www.eliteguardians.2y.net">kelvanan</a>
+    </b>on Wednesday, April 04 @ 11:31:30 EDT  (9 reads)
+</font>
+    <br>
+    </td></tr>
+    <tr>
+<td bgcolor=000000>
+    <a href="search.php?query=&topic=30&author="><img src=images/topics/egsheild.gif border=0 Alt="News Articles" align=left hspace=10 vspace=10></a>
+<FONT size=2>You can have your own login name on the EG Website.  We currently have a module for the website in the works that will use your user name to determine content to show you.  I personally recomend that you register with your character name (not your Sony Account name) to receive the full benefits of what we are planning.  Also the new website allows you to submit news to be posted to the website by the webmasters, so now you can submit news that you think is important to the guild not just what we feel is important.
+Go <a href=http://www.eliteguardians.2y.net/user.php> Here</a> to get your own user name.</FONT>
+    </td></tr><tr><td bgcolor=000000 align=right>
+    <font size=2>( <a href="article.php?sid=6&mode=thread&order=0&thold=0">comments?</a> | <a href="print.php?sid=6"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width=15 height=11></a>&nbsp; <a href="friend.php?op=FriendSend&sid=6"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width=15 height=11></a> | <a href=categories.php?op=newindex&catid=1>News</a> )
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+    <br>
+    
+
+    <table border=0 cellpadding=0 cellspacing=0 align=center bgcolor=000000 width=100%>
+<tr><td>
+    <table border=0 cellpadding=3 cellspacing=1 width=100%><tr><td bgcolor=96293F background=themes/eg/images/egbar.gif>
+    <b><a href="categories.php?op=newindex&catid=2">Patch Messages</a>: Patch Message</b>
+    </td></tr><tr><td bgcolor=000000><font size=2>
+    Posted by  <b><a href="http://www.eliteguardians.2y.net">kelvanan</a>
+    </b>on Wednesday, April 04 @ 10:21:27 EDT  (33 reads)
+</font>
+    <br>
+    </td></tr>
+    <tr>
+<td bgcolor=000000>
+    <a href="search.php?query=&topic=30&author="><img src=images/topics/egsheild.gif border=0 Alt="News Articles" align=left hspace=10 vspace=10></a>
+<FONT size=2>Here is today's Patch Message!!!!</FONT>
+    </td></tr><tr><td bgcolor=000000 align=right>
+    <font size=2>( <a href="article.php?sid=5&mode=thread&order=0"><b>Read More...</b></a> | 3844 bytes more | <a href="article.php?sid=5&mode=thread&order=0&thold=0">comments?</a> | <a href="print.php?sid=5"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width=15 height=11></a>&nbsp; <a href="friend.php?op=FriendSend&sid=5"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width=15 height=11></a> | <a href=categories.php?op=newindex&catid=2>Patch Messages</a> )
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+    <br>
+    
+
+    <table border=0 cellpadding=0 cellspacing=0 align=center bgcolor=000000 width=100%>
+<tr><td>
+    <table border=0 cellpadding=3 cellspacing=1 width=100%><tr><td bgcolor=96293F background=themes/eg/images/egbar.gif>
+    <b><a href="categories.php?op=newindex&catid=1">News</a>: Welcome to Elite Guardians</b>
+    </td></tr><tr><td bgcolor=000000><font size=2>
+    Posted by  <b><a href="http://www.eliteguardians.2y.net">kelvanan</a>
+    </b>on Tuesday, March 27 @ 14:41:49 EST  (55 reads)
+</font>
+    <br>
+    </td></tr>
+    <tr>
+<td bgcolor=000000>
+    <a href="search.php?query=&topic=30&author="><img src=images/topics/egsheild.gif border=0 Alt="News Articles" align=left hspace=10 vspace=10></a>
+<FONT size=2>Welcome to the new Elite Guardians Website.  There may be a few bugs here and there but for the most part the site is perfectly functional.  Register yourself for a username today and start posting comments on the news that is out here.</FONT>
+    </td></tr><tr><td bgcolor=000000 align=right>
+    <font size=2>( <a href="article.php?sid=2&mode=thread&order=0&thold=0"><b>Read More...</b></a> | <a href="article.php?sid=2&mode=thread&order=0&thold=0">2 comments</a> | <a href="print.php?sid=2"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width=15 height=11></a>&nbsp; <a href="friend.php?op=FriendSend&sid=2"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width=15 height=11></a> | <a href=categories.php?op=newindex&catid=1>News</a>)
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+    <br>
+    
+<td>&nbsp;</td><td valign="top">
+    <table border=0 cellspacing=0 cellpadding=0 width=165 bgcolor=96293F><tr><td>
+    <table width=100% border=0 cellspacing=1 cellpadding=3><tr><td colspan=1 bgcolor=96293F background=themes/eg/images/egbar.gif> 
+    <font size=2>Categories</td></tr><tr><td bgcolor=000000>
+    <font size=2><li><a href="categories.php?op=newindex&catid=3">EG Discussions</a> <font size=1>(04/04)</font><li><a href="categories.php?op=newindex&catid=1">News</a> <font size=1>(04/04)</font><li><a href="categories.php?op=newindex&catid=2">Patch Messages</a> <font size=1>(04/04)</font></td></tr></table></td></tr></table><br>
+    <table border=0 cellspacing=0 cellpadding=0 width=165 bgcolor=96293F><tr><td>
+    <table width=100% border=0 cellspacing=1 cellpadding=3><tr><td colspan=1 bgcolor=96293F background=themes/eg/images/egbar.gif> 
+    <font size=2>Survey</td></tr><tr><td bgcolor=000000>
+    <font size=2><form action="pollBooth.php" method="post"><input type="hidden" name="pollID" value="2"><input type="hidden" name="forwarder" value="pollBooth.php?op=results&pollID=2"><font size=2><b>What do you think of the new website design?</b></font><br><br>
+<input type="radio" name="voteID" value="1"> Ummmm, not bad. <br>
+<input type="radio" name="voteID" value="2"> Cool <br>
+<input type="radio" name="voteID" value="3"> Terrific <br>
+<input type="radio" name="voteID" value="4"> What the hell is this!!! <br>
+<br><center><table cellspacing=0 cellpadding=5 border=0 width=111><tr><td align=center> <input type=image src=images/menu/english/vote.gif border=0></td><td align=center>
+<a href="pollBooth.php?op=results&pollID=2&mode=&order=&thold="><img src=images/menu/english/result.gif border=0></a></td></tr></table></form><font size=1><b><a href="pollBooth.php">Past Surveys</a></b></font><br><br>Votes: <b>17</b> | comments:  <b>4</b>
+</center>
+
+</td></tr></table></td></tr></table><br>
+    <table border=0 cellspacing=0 cellpadding=0 width=165 bgcolor=96293F><tr><td>
+    <table width=100% border=0 cellspacing=1 cellpadding=3><tr><td colspan=1 bgcolor=96293F background=themes/eg/images/egbar.gif> 
+    <font size=2>Today's Big Story</td></tr><tr><td bgcolor=000000>
+    <font size=2><center>There isn't a Biggest Story for Today, yet.</center></td></tr></table></td></tr></table><br>
+    <table border=0 cellspacing=0 cellpadding=0 width=165 bgcolor=96293F><tr><td>
+    <table width=100% border=0 cellspacing=1 cellpadding=3><tr><td colspan=1 bgcolor=96293F background=themes/eg/images/egbar.gif> 
+    <font size=2> Login</td></tr><tr><td bgcolor=000000>
+    <font size=2><form action=user.php method=post><font size=1><center>Nickname<br><input type=text name=uname size=12 maxlength=25><br>Password<br><input type=password name=pass size=12 maxlength=20><br><input type=hidden name=op value=login><input type=submit value=Login></form>Don't have an account yet? You can <a href=user.php>create one</a>. As registered user you have some advantages like theme manager, comments configuration and post comments with your name.</center></td></tr></table></td></tr></table><br>
+    <table border=0 cellspacing=0 cellpadding=0 width=165 bgcolor=96293F><tr><td>
+    <table width=100% border=0 cellspacing=1 cellpadding=3><tr><td colspan=1 bgcolor=96293F background=themes/eg/images/egbar.gif> 
+    <font size=2>Past Articles</td></tr><tr><td bgcolor=000000>
+    <font size=2></td></tr></table></td></tr></table><br></td></td></tr></table></td></tr></table>
+    <center><font size=1>
+
+    <br>
+
+    All logos and trademarks in this site are property of their respective owner. The comments are property of their posters, all the rest © 2000 by me<br>
+
+    <br>
+
+    You can syndicate our news using the file <a href=backend.php>backend.php</a> or <a href=ultramode.txt>ultramode.txt</a><br>
+
+    </font></center>
+
+    
+    </body>
+
+    </html>
