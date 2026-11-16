@@ -1,0 +1,250 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>The Hessians of Morell Thule</title>
+<style fprolloverstyle>A:hover {color: #CD5C5C}
+</style>
+</head>
+
+<body stylesrc="standart.asp" bgcolor="#2E6992" text="#FFFFFF" link="#CCCCCC" vlink="#CCCCCC" alink="#CD5C5C">
+
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+  <tr>
+    <td bgcolor="#17354A">&nbsp;</td>
+    <td bgcolor="#17354A"></td>
+    <td nowrap bgcolor="#17354A">
+      <p align="center"><font size="6" color="#A0B0E0">The Hessians of Morell
+      Thule</font></p>
+      <p align="center"><font color="#FFFFFF" size="2">Motto: Life is short,
+      live it so.</font></p>
+    </td>
+    <td bgcolor="#17354A"></td>
+    <td bgcolor="#17354A"></td>
+  </tr>
+  <tr>
+    <td valign="top" width="16%" bgcolor="#17354A" rowspan="2">
+    
+  <font size="2" color="#FFFFFF">
+      <strong>GENERAL STUFF</strong></font><font size="3"><br>
+      </font><font size="2">
+
+      <a href="index.asp">Main</a><br>
+      <a href="Pictures.asp">Pictures</a><br>
+      <a href="http://pub49.ezboard.com/bthehessiansofmorellthule" target="_blank">Message board</a><br>
+      <a href="http://eq.guildmagic.com/guild_characters.cfm?ID=106" target="_blank">Guild Members</a><br>
+      <a href="http://www.smartcal.com/calendar/1544480?view=Monthly" target="_blank">Event Calendar</a><br>
+
+     </font>
+      <p>
+      &nbsp;
+      <font color="#FFFFFF"><font size="2"><strong>HESSIAN PAGES</strong></font><br>
+      </font><font size="2">
+
+      <a href="Charter.asp">Charter</a><br>
+      <a href="Membership.asp">Wanna be a member?</a><br>
+      <a href="OpenContracts.asp">Open contracts</a><br>
+      <a href="ClosedContracts.asp">Closed contracts</a>
+
+      </font></p>
+      <p>
+      <font color="#FFFFFF">
+      <font size="2" color="#FFFFFF"><strong>GAME INFO</strong></font><font size="3"><br>
+      </font><font size="2">
+
+      <a href="http://www.graffe.com/" target="_blank">Gräffe's Wizard Page</a><br>
+      <a href="http://everquest.allakhazam.com/" target="_blank">Allakhazam's Realm</a><br>
+      <a href="http://eq.castersrealm.com/" target="_blank">Castersrealm</a><br>
+      <a href="http://www.eqtraders.com/" target="_blank">Traders Corner</a><br>
+      <a href="http://www.everlore.com/" target="_blank">Everlore</a><br>
+      <a href="http://kikyara.tripod.com/" target="_blank">Kiky's Poison pages</a><br>
+      <a href="http://www.eqforge.com/" target="_blank">EQ Forge</a><br>
+      <a href="http://www.eqatlas.com/" target="_blank">EQ Atlas</a><br>
+      <a href="http://gucomics.everlore.com/" target="_blank">GuComics</a><br>
+      <a href="http://www.morellthule.com/" target="_blank">Morellthule</a>
+
+      </font>
+      </font></p>
+      <p>
+      <font color="#FFFFFF">
+      <font size="2"><strong>GUILD LINKS</strong></font><font size="3"><br>
+      </font><font size="2">
+
+      <a href="http://www.draconians.com/" target="_blank">Mark of Draconians</a><br>
+      <a href="http://www.geocities.com/otwh/" target="_blank">The Order</a>
+
+      </font>
+      </font>
+      </p>
+      <p>
+      &nbsp;
+      </p>
+      <p>
+      &nbsp;
+      </p>
+      <p>
+      &nbsp;
+      </p>
+
+    </td>
+    <td width="8" bgcolor="#96B3C8" rowspan="3"></td>
+    <td valign="top" width="54%">
+      <p align="center"><b><font color="#FFFFFF" size="4">News</b>
+      <hr>
+      </font>
+      <p align="center"><font color="#FFFFFF" size="2"><b><a href="http://pub49.ezboard.com/fthehessiansofmorellthulefrm6.showMessage?topicID=97.topic">First Real HESSIAN
+      GUILD MEETING...Be Afraid!</a></b>
+      <br>Here's the plan...<br>
+      <br>
+      DATE: Saturday, May 19th<br>
+      <br>
+      TIME: 10am PST/ 12noon CST/ 1pm EST/ ~approximately 7pm for Nen, Splat and
+      our Danish guys <!--EZCODE EMOTICON START :) -->
+      <img alt=":)" src="http://www.ezboard.com/intl/aenglish/images/emoticons/smile.gif"><!--EZCODE EMOTICON END-->
+      <br>
+      <br>
+      PLACE: Base of the wizzy spires by the lake in West Commonlands<br>
+      <br>
+      BYOB<br>
+      <br>
+      Please respond on whether or not you can make it...and anything you wish
+      to add to the agenda.<br>
+      <br>
+      Be thinking of things or items in specific areas that we can raid as a
+      guild (the term 'raid' being used very loosely here) and try to retreive
+      for ya.<br>
+      <br>
+      At the meeting, we'll be discussing setting up a few dates for raids,
+      inter- and intra-guild rp, and how often and when we want to have future
+      guild meetings.
+      </font>
+      </p>
+      <p align="center"><font size="2">Anae A.K.A. Stinky<br>
+      Hessian Commander<br>
+      </font><font size="1">&quot;If ignorance is bliss, darlin'...you must be
+      orgasmic.&quot;</font>
+      </p>
+      <hr>
+      <p align="center"><font size="2">
+      <b><font color="#FFFFFF">
+      Runnyeye Guild Raid on 4/28</font>
+      </b>
+      <br>
+      Dalemyaddayaddablahblah (I never get your
+      name right<!--EZCODE EMOTICON START :b -->
+      <img alt=":b" src="http://www.ezboard.com/intl/aenglish/images/emoticons/tongue.gif"><!--EZCODE EMOTICON END-->
+      ) has proposed a guild raid on Runnyeye! Due to the cancellation of the
+      wedding guild event on the 29th I think a raid where we get to kill lots
+      of stuff would be a perfect replacement.<br>
+      <br>
+      Dalem is working on her blacksmithing skills and the ores that drop in
+      Runnyeye will assist her in that pursuit. Not to mention giving us an
+      opportunity as a guild to fight, drink and die together.<br>
+      <br>
+      I'm looking at starting the raid on Saturday, April 28th at about 9am
+      PST/11am CST/12pm EST/~6pm for Nenael and Splat <!--EZCODE EMOTICON START :) -->
+      <img alt=":)" src="http://www.ezboard.com/intl/aenglish/images/emoticons/smile.gif"><!--EZCODE EMOTICON END-->
+      <br>
+      <br>
+      Please reply to this post as to whether or not you can make it!<br>
+      <br>
+      Anae<br>
+      A.K.A. Stinky<br>
+      Hessian Commander<br>
+      </font><font size="1">
+      &quot;Oh! You want a REAL pull, do ya?&quot;</font></p>
+      <font color="#FFFFFF" size="4"><b><hr>
+      </b>
+      <p align="center"><font size="2"><b>Permafrost 4/21</b>
+      <br>
+      Note this is a server Roleplaying raid on
+      Permafrost.<b><br>
+      </b>
+      </font><font size="2">
+      This is open to people of all levels (getting to Perma will be tricky to
+      folks under about 10th level but can be done. Please be aware that the
+      last time the RP Guilds did there there were up to 110 people in MM. I
+      hope to have more for Perma as it's a fairly empty zone I also hope to see
+      more zone wide roleplaying.
+      <br>
+      <br>
+      The link to the RP Prestpective of CdL is;<br>
+      <a href="http://pub17.ezboard.com/fmorellthule8494frm31.showMessage?topicID=78.topic">pub17.ezboard.com/fmorell...D=78.topic</a><!--EZCODE LINK END-->
+      <br>
+      <br>
+      The out of character post is here;<br>
+      <a href="http://pub17.ezboard.com/fmorellthule8494roleplaying.showMessage?topicID=258.topic">pub17.ezboard.com/fmorell...=258.topic</a><!--EZCODE LINK END-->
+      <br>
+      <br>
+      For questions please contact me.<br>
+      <br>
+      Mallo Artanos</font><hr>
+      </font>
+      <p align="center"><font color="#FFFFFF" size="2"><b>Get your picture taken</b><br>
+      If anyone wants to, I can &quot;host&quot; you image for the message board.
+      I too used the facelink thing but it seems broken to me. So if you want
+      the picture here on the page send it to me at <a href="mailto:Ngobo@Baadz.com"><b>Ngobo@Baadz.com</b></a> and I'll send you the link.</font>
+      <hr>
+      <p align="center"><font color="#FFFFFF" size="2"><b>New Contract pages</b><br>
+      As some may have noticed, I have put our new&nbsp; <a href="OpenContracts.asp">contract</a>
+      up here on the homepage, the finished ones are <a href="ClosedContracts.asp">here</a>.
+      I think it is an easy way to check if there has been any changes to a
+      contract. And it also gives me more to put up here :)</font>
+      <hr>
+      <p align="center"><font color="#FFFFFF" size="2"><b>For the Casters</b>
+      <br>
+      </font><font SIZE="2">Crimson Scholars on Morell-Thule will be hosting a
+      research component trade in East Commonlands at 9 p.m. EST on Saturday,
+      March 17th.</font> <font SIZE="2"><br>
+      This is for all casting classes, please feel free to join us and get those runes, words, and pages needed for
+      those hard to get spells.<br><br>
+      -Lenadayna Stardew [Crimson Scholars]<br>Wizard of the 36th Circle, Morell-Thule<hr>
+      </font>
+      <p align="center"><font size="2"><font color="#FFFFFF"><b>The first suggestions are in</b>
+      <br>
+      Already the first suggestions for our logo are in. Go to the <a href="Pictures.asp">pictures</a>,
+      page to look them over, and let me know what you think.<hr></font></font>
+      <p align="center"><font size="2"><font color="#FFFFFF">
+      <b>Logo</b>
+      <br>
+      We need a logo for our page. Don't you think so? Send a proposal to
+      </font><a href="mailto:Ngobo@Baadz.com"><b>Ngobo@Baadz.com</b></a> <font color="#FFFFFF">
+      I will then put the suggestions here on the page for you to choose
+      between.<hr></font></font>
+      <p align="center"><font color="#FFFFFF" size="2">
+      <b>Finally</b>
+      <br>
+      This is the new website for the Hessians. A lot of changes will happen
+      over the next few months, as it is still being improved.</font>
+    </td>
+    <td width="8" bgcolor="#96B3C8" rowspan="3"></td>
+    <td valign="top" width="18%" bgcolor="#17354A" rowspan="3">
+    
+        <p align="center"><img src="../images/Anae.jpg" alt="Picture by Stephanie Law"><br>
+      <em><font color="#FFFFFF" size="2"><strong>Anae of the Hessians<br>
+      </strong>Behold our Gorgeous and
+      brilliant leader.</font><font color="#FFFFFF" size="3"><br>
+      </font></em></p>
+      <p align="center"><em><font color="#FFFFFF" size="2"><strong><img src="../images/Ngobo.jpg" alt="All will succumb to true power"><br>
+      The Traitor of the hand<br>
+      </strong>Ngobo M'gawe, former
+      wizard of the Order&nbsp; reflects over his actions.</font></em></p>
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td valign="bottom" width="54%">
+      <p align="center"><font color="#FFFFFF" size="2">We need to collect everyone's e-mail addresses please send an
+      e-mail to <a href="mailto:Ngobo@Baadz.com"><b>Ngobo@Baadz.com</b></a> with your e-mail
+      address and character details.</font></p>
+    </td>
+  </tr>
+    
+</table>
+
+</body>
+
+</html>
