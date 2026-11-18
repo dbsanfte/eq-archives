@@ -1,0 +1,90 @@
+ document.write('<html>\n<body>\n<!-- use this when the url is not embedded in the movie -->\n'); 
+<!--
+
+var winName="UGOPlayer";
+var winWidth="300";
+var winHeight="250";
+var winTitle="UGOPlayer";
+var swfSrc="http://image.ugo.com/UGOPromotions/ugoplayer_300X250.swf";
+var defSrc="http://image.ugo.com/UGOPromotions/ugoplayer_300X250.jpg";
+var clientUrl="http://www.ugoplayer.com/";
+var clickVar = "clickTAG";  //this value must match the value embedded in the flash movie.  As of flash 7 it is case-sensitive.  This is usually clickTag
+var flaVer="7";
+
+//*****************************************************************************************************************************************************************
+//***********DO NOT EDIT BELOW HERE*******************DO NOT EDIT BELOW HERE*************************DO NOT EDIT BELOW HERE******************************
+//*****************************************************************************************************************************************************************
+
+
+var clicky = "http://mediamgr.ugo.com/event.ng/Type=click&FlightID=78293&AdID=112544&TargetID=24504&Segments=&Targets=&Values=34,46,51,63,77,85,100,110,150,194,197,212,531,547,557,596,638,708,736,739,742,743,1583,1655,1862,1996,2138,2231,2629,2637,2658,2699,2702,3386,3401,3403,3404&RawValues=&Redirect=" + clientUrl;
+var clickThru=escape(clicky);
+
+
+var f2i = f3i = f4i = f5i = f6i = f7i = false;
+var actV = 0;
+
+// write vbscript detection if we're not on mac.
+var isIE = (navigator.appVersion.indexOf("MSIE") != -1) ? true : false;
+var isWin = (navigator.appVersion.indexOf("Windows") != -1) ? true : false;
+if(isIE && isWin){  // don't write vbscript tags on anything but ie win
+	var vb = '= (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash';
+	document.write('<SCR' + 'IPT LANGUAGE=VBScript\> \n');
+	document.write('on error resume next \n');
+	document.write('f2i '+vb+'.2"))) \n');
+	document.write('f3i '+vb+'.3"))) \n');
+	document.write('f4i '+vb+'.4"))) \n');
+	document.write('f5i '+vb+'.5"))) \n');
+	document.write('f6i '+vb+'.6"))) \n');
+	document.write('f7i '+vb+'.7"))) \n');
+	document.write('</SCR' + 'IPT\> \n');
+}
+if (navigator.plugins){
+	if (navigator.plugins["Shockwave Flash 2.0"] || navigator.plugins["Shockwave Flash"]){
+		var isV2 = navigator.plugins["Shockwave Flash 2.0"] ? " 2.0" : "";
+		var fDes = navigator.plugins["Shockwave Flash" + isV2].description;
+		var fVer = parseInt(fDes.charAt(fDes.indexOf(".") - 1));
+		f2i = fVer == 2;
+		f3i = fVer == 3;
+		f4i = fVer == 4;
+		f5i = fVer == 5;
+		f6i = fVer == 6;
+		f7i = fVer == 7;
+	}
+}
+
+// loop through all versions we're checking, and set actualVersion to highest detected version
+for (var i = 2; i <= 7; i++) {
+    if (eval("f" + i + "i") == true) actV = i;
+}
+
+// special cases follow below...
+// if we're on webtv, the version supported is 2 (pre-summer2000, or 3, post-summer2000)
+// note
+if(navigator.userAgent.indexOf("WebTV") != -1) actV = 2;
+// aol5/mac fix - ie4 for aol5 is not responding correctly to 'navigator.plugins' queries - but we know that AOL5/Mac always comes with Flash 3
+if ( (navigator.userAgent.indexOf("Mac") != -1) && (navigator.userAgent.indexOf("AOL 5") != -1) )  actV = 3;
+
+if (actV>= flaVer) {
+  var newPopup=window.open('',winName,'scrollbars="no",width=' + winWidth + ',height=' + winHeight);
+  var popContent=('<html><title>'+ winTitle +'</title></head><body style="margin-top:0px;margin-left:0px;margin-bottom:0px;">');
+        	popContent+=('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="popupAd" width='+ winWidth + ' height='+ winHeight + '>');
+		popContent+=('<param name="movie" value="' + swfSrc + '?' + clickVar + '='+ clickThru + '"><param name=quality value=high>');
+		popContent+=('<embed name="popupAd" src="' + swfSrc + '?' + clickVar + '='+ clickThru + '" quality="high" swLiveConnect="false" width='+ winWidth + '  height='+ winHeight + ' type="application/x-shockwave-flash" pluginspace="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">');
+		popContent+=('</embed>');
+		popContent+=('</object>');
+		popContent+=('</body></html>');
+        newPopup.document.write(popContent);
+        newPopup.document.close();
+        newPopup.focus();
+}else{
+          var newPopup=window.open("",winName,"scrollbars=no,width=" + winWidth + ",height=" + winHeight);
+          var popContent=('<html><title>'+ winTitle +'</title></head><body style="margin-top:0px;margin-left:0px;margin-bottom:0px;">');
+				popContent+=('<a href=clickThru target="_new"><img src=' + defSrc + ' width=' + winWidth + ' height=' + winHeight + ' style="border:0px;"></a>');
+				popContent+=('</body></html>');
+			    newPopup.document.write(popContent);
+				newPopup.document.close();
+                newPopup.focus();
+ }
+
+//-->
+ ; document.write('\n </body>\n</html>'); 
