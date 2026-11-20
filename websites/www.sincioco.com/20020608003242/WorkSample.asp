@@ -1,0 +1,76 @@
+
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<META HTTP-EQUIV="Keywords" CONTENT="Louiery, Sincioco, Louiery R. Sincioco, Louiery Sincioco, Louiery Reyes Sincioco, LRS">
+<META HTTP-EQUIV="Reply-to" CONTENT="louiery@sincioco.com">
+<META HTTP-EQUIV="Description" CONTENT="Visit Sincioco.com where you will find my resume.">
+<TITLE>Louiery R. Sincioco - Home</TITLE>
+<Link rel="stylesheet" type="text/css" href="Includes/General.css">
+<Script Language=JavaScript src="Includes/Common.js"></script>
+</HEAD>
+<BODY border=0 leftmargin=0 rightmargin=0 topmargin=0 bottommargin=0 background="Images/Structure/Background.gif">
+
+<Table border=0 cellspacing=0 cellpadding=0>
+	<tr height=79>
+		<td colspan=3><img src="Images/Structure/Header.gif" height=79 width=800></td>
+	</tr>
+	<tr height=100%>
+		<td width=132 valign=top class=clsNavText>
+			<img src="Images/Structure/TransDot.gif" width=132 height=10 border=0><br>
+			<Table border=0 cellspacing=0 cellpadding=0>
+				<tr>
+					<td><a href="http://www.sincioco.com/" onMouseOver="Image_Over('imgHome');" onMouseDown="Image_Down('imgHome');" onMouseOut="Image_Up('imgHome')"> <img name=imgHome src="Images/Structure/Home_Up.gif" width=131 height=19 border=0></a></td>
+				</tr>
+				<tr>
+					<td><a href="http://www.sincioco.com/Resume.asp" onMouseOver="Image_Over('imgResume');" onMouseDown="Image_Down('imgResume');" onMouseOut="Image_Up('imgResume')"> <img name=imgResume src="Images/Structure/Resume_Up.gif" width=131 height=19 border=0></a></td>
+				</tr>
+				<tr>
+					<td><a href="http://www.sincioco.com/WorkSample.asp"><img name=imgWorkSample src="Images/Structure/WorkSample_Down.gif" width=131 height=19 border=0></a></td>
+				</tr>
+				<tr>
+					<td><a href="http://www.sincioco.com/rmt/" onMouseOver="Image_Over('imgRMT');" onMouseDown="Image_Down('imgRMT');" onMouseOut="Image_Up('imgRMT')"> <img name=imgRMT src="Images/Structure/RMT_Up.gif" width=131 height=19 border=0></a></td>
+				</tr>
+				<tr>
+					<td><a href="http://www.bstonetech.com/" onMouseOver="Image_Over('imgBlackstone');" onMouseDown="Image_Down('imgBlackstone');" onMouseOut="Image_Up('imgBlackstone')"> <img name=imgBlackstone src="Images/Structure/Blackstone_Up.gif" width=131 height=19 border=0></a></td>
+				</tr>
+				<tr>
+					<td><a href="http://www.kamakuracatering.com/" onMouseOver="Image_Over('imgKamakura');" onMouseDown="Image_Down('imgKamakura');" onMouseOut="Image_Up('imgKamakura')"> <img name=imgKamakura src="Images/Structure/Kamakura_Up.gif" width=131 height=19 border=0></a></td>
+				</tr>
+			</Table>
+		</td>
+		<td width=10 valign=top><img src="Images/Structure/TransDot.gif" width=10 height=1></td>
+		<td width=658 valign=top>
+			<img src="Images/Structure/Motto.gif" width=658 height=68 border=0><br>
+			<Table border=0 cellspacing=0 cellpadding=0 width=100%>
+				<tr>
+					<td class=clsText valign=top>
+						Most of my work have been on Intranet and Extranet projects especializing exclusively on Microsoft products.&nbsp;&nbsp;Although I can't actually show you the corporate work I do, below are three samples of work I did for others that I can show over the internet.
+						<br>
+						<ul>
+							<li><a href="http://www.sincioco.com/rmt/">RMT</a> - I programmed the application being featured here as well as designed/created the web site.
+							<li><a href="http://www.bstonetech.com/">Blackstone</a> - A traditional corporate web site.
+							<li><a href="http://www.kamakuracatering.com/">Kamakura</a> - Demonstrates my e-commerce experience expertise (it faxes orders to the restaurant).
+						</ul>
+					</td>
+				</tr>
+				<tr height=30>
+					<td colspan=2 valign=bottom width=658><img src="Images/Structure/GreyDot.gif" width=658 height=1 border=0></td>
+				</tr>
+				<tr>
+					<td class=clsCopyright colspan=2 valign=top>
+						This material was produced for the exclusive use of Louiery R. Sincioco, and may not be relied upon in whole or
+						in part.&nbsp;&nbsp;The information herein is not intended to be a complete analysis of every material fact
+						respecting any subject matter discussed.&nbsp;&nbsp;No part of this material may be reproduced or transmitted
+						in any form or by any means, electronic, mechanical or otherwise, without permission from Louiery&nbsp;R.&nbsp;Sincioco.					</td>
+				</tr>
+				<tr>
+					<td class=clsCopyright colspan=2 valign=top align=center>
+						<br>						Copyright © 2002.  South San Francisco, California.					</td>
+				</tr>
+			</Table>
+		</td>
+	</tr>
+</Table>
+</BODY>
+</HTML>
