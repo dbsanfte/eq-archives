@@ -1,0 +1,586 @@
+<html> 
+<head>
+<title>T-MO.WS -- get your .ws "website" address for life.</title>
+<!-- Meta tags -->
+<meta HTTP-EQUIV="content-type" CONTENT="text/html;charset=iso-8859-1">
+<meta NAME="keywords" CONTENT="domain registration, web name, register domain,  web site, internet domain,  WebSite.ws, register web site, your internet address for life,t-mo.ws, WebSite.ws, address registration, web site registration, internet address, registry, domain, .ws,t-mo.ws, Network Solutions, cc domains, Internic, net names, get a domain, internet technology services, Internic, .com, .net, .org, .ws, Internic, Network Solutions, .com, .net, .org, .ws, t-mo.ws">
+<meta NAME="Description" CONTENT="Visit WebSite.WS, your internet address for life, and get the domain name that you really want!">
+<!-- Stylesheet -->
+<link REL="stylesheet" HREF="/styles/ws-style.css" TYPE="text/css">
+
+<script LANGUAGE="JavaScript"><!--
+bName = navigator.appName;
+bVer = parseInt(navigator.appVersion);
+if ((bName == "Netscape" && bVer >= 3) ||
+        (bName == "Microsoft Internet Explorer" && bVer >= 4)) br = "n3";
+else br = "n2";
+if (br== "n3") {
+
+img2on = new Image();
+img2on.src = "/images/t_account_on.gif";
+img3on = new Image();
+img3on.src = "/images/t_search_on.gif";
+img4on = new Image();
+img4on.src = "/images/t_services_on.gif";
+
+img7on = new Image();
+img7on.src = "/images/meet2_on.gif";
+img8on = new Image();
+img8on.src = "/images/news_on.gif";
+img9on = new Image();
+img9on.src = "/images/b_question_on.gif";
+img10on = new Image();
+img10on.src = "/images/b_directory_on.gif";
+img11on = new Image();
+img11on.src = "/images/b_sitemap_on.gif";
+img12on = new Image();
+img12on.src = "/images/b_affiliate_on.gif";
+img13on = new Image();
+img13on.src = "/images/b_send_on.gif";
+img19on = new Image();
+img19on.src = "/images/b_partners_on.gif";
+img20on = new Image();
+img20on.src = "/images/flash_web_on.gif";
+img21on = new Image();
+img21on.src = "/images/realmovie_on.gif";
+img22on = new Image();
+img22on.src = "/images/news_on.gif";
+
+img2off = new Image();
+img2off.src = "/images/t_account_off.gif";
+img3off = new Image();
+img3off.src = "/images/t_search_off.gif";
+img4off = new Image();
+img4off.src = "/images/t_services_off.gif";
+
+img7off = new Image();
+img7off.src = "/images/meet2_off.gif";
+img8off = new Image();
+img8off.src = "/images/news_off.gif";
+img9off = new Image();
+img9off.src = "/images/b_question_off.gif";
+img10off = new Image();
+img10off.src = "/images/b_directory_off.gif";
+img11off = new Image();
+img11off.src = "/images/b_sitemap_off.gif";
+img12off = new Image();
+img12off.src = "/images/b_affiliate_off.gif";
+img13off = new Image();
+img13off.src = "/images/b_send_off.gif";
+img19off = new Image();
+img19off.src = "/images/b_partners_off.gif";
+img20off = new Image();
+img20off.src = "/images/flash_web_off.gif";
+img21off = new Image();
+img21off.src = "/images/realmovie_off.gif";
+img22off = new Image();
+img22off.src = "/images/news_off.gif";
+}
+
+function imgAct(imgName) {
+    if (br == "n3") {
+    document[imgName].src = eval(imgName + "on.src");
+    }
+}
+
+function imgInact(imgName) {
+    if (br == "n3") {
+    document[imgName].src = eval(imgName + "off.src");
+    }
+}
+function OpenHelp(url){
+open(url, "_blank", "width=400,height=400,toolbar=no,directories=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no")
+}
+// -->
+</script>
+<script language="JavaScript">
+<!--
+// The Array Function
+function makeArray(len) {
+    for (var i = 0; i < len; i++) this[i] = null;
+this.length = len;
+}
+
+// Array of Images
+pics = new makeArray(4);
+pics[3] = "<img src=images/whole_people_1.jpg WIDTH='80' HEIGHT='209'>";
+pics[2] = "<img src=images/whole_people_2.jpg WIDTH='80' HEIGHT='209'>"
+pics[1] = "<img src=images/whole_people_3.jpg WIDTH='80' HEIGHT='209'>"
+pics[0] = "<img src=images/whole_people_4.jpg WIDTH='80' HEIGHT='209'>"
+
+mess = new makeArray(5);
+mess[0] = "<img src=images/people-message_1web.gif WIDTH='205' HEIGHT='78'>";
+mess[1] = "<img src=images/people-message_2web.gif WIDTH='205' HEIGHT='78'>";
+mess[2] = "<img src=images/people-message_3web.gif WIDTH='205' HEIGHT='78'>";
+mess[3] = "<img src=images/people-message_4web.gif WIDTH='205' HEIGHT='78'>";
+mess[4] = "<img src=images/people-message_5.gif WIDTH='205' HEIGHT='78'>";
+
+var now = new Date()
+var seed = now.getTime() % 0xffffffff
+seed = (0x015a4e35 * seed) % 0x7fffffff;
+pics.length = (seed >> 16) % 4;
+
+// --></script>
+
+</head><body bgcolor='#FFFFFF' leftmargin=0 topmargin=0 marginwidth=0 marginheight=0 onLoad="MM_preloadImages('/images/btn_mac_over.gif','/images/btn_rnw_over.gif','/images/btn_prc_over.gif','/images/btn_who_over.gif','/images/btn_faq_over.gif','/images/btn_log_over.gif','/images/btn_hom_over.gif')">
+                     <!-- <div align="center"><center>--> <table border="0" bordercolor=blue cellpadding="0" cellspacing="0" width="100%">
+               <tr>  
+                <td colspan=2>
+                  <table border="0" bordercolor=green cellspacing="0" cellpadding="0" height="97">
+                  <tr> 
+                  <td width=280 height="77"> 
+                     <div align="left"><a href="http://website.ws/index.dhtml">
+                           <img src="/images/main_logo.gif" width="264" height="77" border="0" alt="&lt; Return to Home">
+                     </a></div>
+                  </td>
+                   <td height="77" valign="bottom" > 
+                   <div align="left" ><a href="http://t-mo.ws/index.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('lefttab','','/images/btn_hom_over.gif',1)"><img src="/images/btn_hom_up.gif" alt="HOME" name="lefttab" border="0"></a></div>
+                   </td> 
+
+                   <td height="77" valign="bottom"> 
+                      <div align="left"><a href="http://www.website.ws/login/index.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('myacct','','/images/btn_mac_over.gif',1)"><img src="/images/btn_mac_up.gif" alt="My Account" name="myacct" border="0"></a></div>
+                   </td>
+                   <td height="77" valign="bottom"> 
+                      <div align="left"><a href="http://t-mo.ws/utilities/renewal.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Renew','','/images/btn_rnw_over.gif',1)"><img src="/images/btn_rnw_up.gif" alt="Renew Domain Names" name="Renew"  border="0"></a></div>
+                   </td>
+                   <td height="77" valign="bottom"> 
+                      <div align="left"><a href="http://t-mo.ws/faq/pricing.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('pricing','','/images/btn_prc_over.gif',1)"><img src="/images/btn_prc_up.gif" alt="Pricing" name="pricing" border="0"></a></div>
+                   </td>
+                   <td height="77" valign="bottom"> 
+                   <div align="left"><a href="http://t-mo.ws/faq/index.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('faq','','/images/btn_faq_over.gif',1)"><img src="/images/btn_faq_up.gif" alt="FAQ's" name="faq" border="0"></a></div>
+                   </td>
+                   <td height="77" valign="bottom"> 
+                     <div align="left"><a href="http://t-mo.ws/utilities/lookup.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('whois','','/images/btn_who_over.gif',1)"><img src="/images/btn_who_up.gif" alt="Whois" name="whois" border="0"></a></div>
+                   </td>
+                   <td width="100%" height="77" valign="bottom"> 
+                     &nbsp;
+                   </td>
+                   </tr>
+                     <tr> 
+                        <td colspan="8" height="15" bgcolor="#33CC33" class="menuleft">&nbsp; &nbsp; &nbsp; &nbsp; </td>
+                   </tr>
+                     <tr> 
+                        <td colspan="8" height="3" bgcolor="#2C4C7C"></td>
+                   </tr>
+                   </table>
+                </td></tr><tr><td valign="top"> 
+                            <table cellspacing=0 cellpadding=10><tr><td>
+                            <table width="181" border="0" bordercolor=pink cellspacing="0" cellpadding="0">
+                            <tr> 
+                             <td colspan="3"><img src="/images/leftnavtop.gif" width="181" height="13"></td>
+                            </tr>
+                            <tr> 
+                              <td width="1" bgcolor="#000000"><img src="/images/px.gif" width="1" height="1"></td>
+                              <td width="179" align="center"> 
+                                <table width="330%" border="0" bordercolor=orange cellspacing="1" cellpadding="3">				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/contact.dhtml" class="leftnavsub">Support</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/resell/index.dhtml" class="leftnavsub">Affiliates</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/resell/registrar.dhtml" class="leftnavsub">Registrars</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/about.dhtml" class="leftnavsub">About Us</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/news.dhtml" class="leftnavsub">News</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/partners.dhtml" class="leftnavsub">Partners</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/legal/index.dhtml?url=website.ws" class="leftnavsub">Policies</a></td></tr>
+
+                                </table>
+                                <p><a href="http://t-mo.ws/article.dhtml?article=inc500"><img src="/images/37_ad.gif" border="0" alt="Ranked #37 - Inc 500"></a></p>
+                                <p><img src="/images/black_px.gif" width="150" height="1"></p>
+                                <p><a href="http://www.ims.ws"><img src="/images/imslogo.gif" border="0" alt="Internet Marketing Strategy"></a></p>
+                                <p><img src="/images/black_px.gif" width="150" height="1"></p>
+                                <p><a href="http://www.bbbonline.org/cks.asp?id=102041719113522996" target="_blank"><img src="/images/bbb.gif" border="0"></a><br>
+                                <br>
+                                <!--<img src="/images/black_px.gif" width="150" height="1"></p>
+                                <p><a href="http://www.123merchants.com/" target="_blank"><img src="/images/ccp120x60.gif" border="0" width="120" height="60"></a></p>-->
+                              </td>
+                              <td width="1" bgcolor="#000000"><img src="/images/px.gif" width="1" height="1"></td>
+                            </tr>
+                            <tr> 
+                             <td colspan="3"><img src="/images/leftnavbottom.gif" width="181" height="13"></td>
+                            </tr>
+                            </table></td>
+                            </td></tr></table>
+
+                            <td valign="top" align="left" bgcolor="#FFFFFF">
+                              <table border="0" bordercolor=yellow cellpadding="10" cellspacing="0" width="90%">
+                              <tr>
+                               <td width="45%" valign="top" align="left" bgcolor="#FFFFFF">
+                            
+ 
+ 
+
+<!-- showWhois Start -->
+
+<form method=post action=http://whois.WebSite.ws/whois.dhtml>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="5"><img src="/images/search_top.gif"></td>
+  </tr>
+  <tr>
+    <td width="1" align="center" bgcolor="#000000"><img src="/images/black_px.gif" width="1" height="1"></td>
+    <td width="505" align="center">
+       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="center">
+              <table cellpadding=0 border=0 width="326">
+                 <tbody>
+                 <tr>
+                   <td align=right width="15%" height="43">
+                      <span><b><font face="Verdana, Arial, Helvetica, sans-serif" color="#000000" size="2"> 
+                        WWW.</font></b></span>
+                   </td>
+                   <td align=middle width="44%" height="43">
+                     <input size=10 name=domain>
+                   </td>
+                   <td align=left width="19%" height="43">
+                      <span><font face="Verdana, Arial, Helvetica, sans-serif" color="#000000" size="2"><b>
+                         <input type=hidden value=WS name=tld>
+                         .<input type=hidden name=tld value="WS">WS</b></font></span>
+                   </td>
+                   <td align=left width="22%" height="43">
+                     <div align="right"><span><b> 
+                        <input type=image alt=go! src="/images/go_btn.gif" border=0 name="image"></b>
+                      </span></div>
+                   </td>
+                 </tr>
+                 </tbody>
+              </table>
+              <img src="/images/search_text.gif">
+            </td>
+            <td align="right" width="176"><img src="/images/ws_chick1.gif" width="176" height="142"></td>
+          </tr>
+       </table>
+    </td>
+    <td width="1" align="center" bgcolor="#000000"><img src="/images/black_px.gif" width="1" height="1"></td>
+  </tr>
+  <tr>
+    <td colspan="5"><img src="/images/search_bottom.gif" border="0" usemap="#MapB" ></td>
+  </tr>
+</table>
+<map name="MapB">
+  <area shape="rect" coords="2,4,330,38" href="/utilities/renewal.dhtml">
+</map>
+            </form>
+	    </center></div>
+<!-- showWhois End -->
+
+<h1 align="center"><font face="Arial, Helvetica" color="#000080">Domain T-MO.WS Available</font></h1><CENTER><FONT FACE="Arial,Helvetica,Sans serif" SIZE=3><P>The domain <b>T-MO.WS</b> is currently available to be registered.  If you would like to register it, please click the button below.<br><form method=get action=http://WebSite.ws/register><input type=hidden name=domain value=t-mo.ws><input type=submit value="Register T-MO.WS"></form></P><center><a href="http://my.ws/my0000001"><img src="http://website.ws/images/myws_468_60_6.gif" width="468" height="60" border="1" alt="Make Money"></a><br><br><a href="http://trafficboost.ws" target=_blank><img src="/images/tb_logo.gif" border="1" alt="Traffic Boost" width="396" height="63"></a><br><br></center>
+</td>
+      </tr>
+    </table></center></div></td>
+  </tr>
+  <tr>
+    <td valign="top" align="center" bgcolor="#FFFFFF">&nbsp;
+    </td>
+    <td valign="bottom" align="right" bgcolor="#FFFFFF">
+      <table width="100%" border="0" cellspacing="0" cellpadding="15">
+      <tr>
+        <td width="100%" align="left" valign="middle">
+<BR><BR><BR>
+	<small class="copyright">Copyright &copy;2000,2001,2002,2003 by WebSite.ws.  All Rights Reserved. All domain registrations are subject
+        to <a href="./legal/index.dhtml?url=t-mo.ws">our policies</a>. Read our <a href="javascript:OpenHelp('/glossary/disclaimer.html')">legal disclaimer</a>.&nbsp;&nbsp;WebSite.ws observes a strict <a href="javascript:OpenHelp('/glossary/privacy.dhtml')">privacy policy</a>.  Notice:  The functions, services, agreements, documents, terms of use, policies and guidelines contained on this site and applicable to your use of the services provided on this site are subject to change at the discretion of WebSite.ws.  Please review this site and these items periodically. &nbsp;&nbsp; For information on careers at WebSite.ws, click <a href="./careers.dhtml">here</a>.</small><BR><BR><BR></td>
+      </tr>
+      <tr>
+        <td width="100%"></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+</body>
+</html>
+HTTP/1.1 200 OK
+Date: Fri, 30 May 2003 03:31:54 GMT
+Server: Apache/1.3.12 (Unix) mod_perl/1.24
+Connection: close
+Content-Type: text/html
+
+<html> 
+<head>
+<title>T-MO.WS -- get your .ws "website" address for life.</title>
+<!-- Meta tags -->
+<meta HTTP-EQUIV="content-type" CONTENT="text/html;charset=iso-8859-1">
+<meta NAME="keywords" CONTENT="domain registration, web name, register domain,  web site, internet domain,  WebSite.ws, register web site, your internet address for life,t-mo.ws, WebSite.ws, address registration, web site registration, internet address, registry, domain, .ws,t-mo.ws, Network Solutions, cc domains, Internic, net names, get a domain, internet technology services, Internic, .com, .net, .org, .ws, Internic, Network Solutions, .com, .net, .org, .ws, t-mo.ws">
+<meta NAME="Description" CONTENT="Visit WebSite.WS, your internet address for life, and get the domain name that you really want!">
+<!-- Stylesheet -->
+<link REL="stylesheet" HREF="/styles/ws-style.css" TYPE="text/css">
+
+<script LANGUAGE="JavaScript"><!--
+bName = navigator.appName;
+bVer = parseInt(navigator.appVersion);
+if ((bName == "Netscape" && bVer >= 3) ||
+        (bName == "Microsoft Internet Explorer" && bVer >= 4)) br = "n3";
+else br = "n2";
+if (br== "n3") {
+
+img2on = new Image();
+img2on.src = "/images/t_account_on.gif";
+img3on = new Image();
+img3on.src = "/images/t_search_on.gif";
+img4on = new Image();
+img4on.src = "/images/t_services_on.gif";
+
+img7on = new Image();
+img7on.src = "/images/meet2_on.gif";
+img8on = new Image();
+img8on.src = "/images/news_on.gif";
+img9on = new Image();
+img9on.src = "/images/b_question_on.gif";
+img10on = new Image();
+img10on.src = "/images/b_directory_on.gif";
+img11on = new Image();
+img11on.src = "/images/b_sitemap_on.gif";
+img12on = new Image();
+img12on.src = "/images/b_affiliate_on.gif";
+img13on = new Image();
+img13on.src = "/images/b_send_on.gif";
+img19on = new Image();
+img19on.src = "/images/b_partners_on.gif";
+img20on = new Image();
+img20on.src = "/images/flash_web_on.gif";
+img21on = new Image();
+img21on.src = "/images/realmovie_on.gif";
+img22on = new Image();
+img22on.src = "/images/news_on.gif";
+
+img2off = new Image();
+img2off.src = "/images/t_account_off.gif";
+img3off = new Image();
+img3off.src = "/images/t_search_off.gif";
+img4off = new Image();
+img4off.src = "/images/t_services_off.gif";
+
+img7off = new Image();
+img7off.src = "/images/meet2_off.gif";
+img8off = new Image();
+img8off.src = "/images/news_off.gif";
+img9off = new Image();
+img9off.src = "/images/b_question_off.gif";
+img10off = new Image();
+img10off.src = "/images/b_directory_off.gif";
+img11off = new Image();
+img11off.src = "/images/b_sitemap_off.gif";
+img12off = new Image();
+img12off.src = "/images/b_affiliate_off.gif";
+img13off = new Image();
+img13off.src = "/images/b_send_off.gif";
+img19off = new Image();
+img19off.src = "/images/b_partners_off.gif";
+img20off = new Image();
+img20off.src = "/images/flash_web_off.gif";
+img21off = new Image();
+img21off.src = "/images/realmovie_off.gif";
+img22off = new Image();
+img22off.src = "/images/news_off.gif";
+}
+
+function imgAct(imgName) {
+    if (br == "n3") {
+    document[imgName].src = eval(imgName + "on.src");
+    }
+}
+
+function imgInact(imgName) {
+    if (br == "n3") {
+    document[imgName].src = eval(imgName + "off.src");
+    }
+}
+function OpenHelp(url){
+open(url, "_blank", "width=400,height=400,toolbar=no,directories=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no")
+}
+// -->
+</script>
+<script language="JavaScript">
+<!--
+// The Array Function
+function makeArray(len) {
+    for (var i = 0; i < len; i++) this[i] = null;
+this.length = len;
+}
+
+// Array of Images
+pics = new makeArray(4);
+pics[3] = "<img src=images/whole_people_1.jpg WIDTH='80' HEIGHT='209'>";
+pics[2] = "<img src=images/whole_people_2.jpg WIDTH='80' HEIGHT='209'>"
+pics[1] = "<img src=images/whole_people_3.jpg WIDTH='80' HEIGHT='209'>"
+pics[0] = "<img src=images/whole_people_4.jpg WIDTH='80' HEIGHT='209'>"
+
+mess = new makeArray(5);
+mess[0] = "<img src=images/people-message_1web.gif WIDTH='205' HEIGHT='78'>";
+mess[1] = "<img src=images/people-message_2web.gif WIDTH='205' HEIGHT='78'>";
+mess[2] = "<img src=images/people-message_3web.gif WIDTH='205' HEIGHT='78'>";
+mess[3] = "<img src=images/people-message_4web.gif WIDTH='205' HEIGHT='78'>";
+mess[4] = "<img src=images/people-message_5.gif WIDTH='205' HEIGHT='78'>";
+
+var now = new Date()
+var seed = now.getTime() % 0xffffffff
+seed = (0x015a4e35 * seed) % 0x7fffffff;
+pics.length = (seed >> 16) % 4;
+
+// --></script>
+
+</head><body bgcolor='#FFFFFF' leftmargin=0 topmargin=0 marginwidth=0 marginheight=0 onLoad="MM_preloadImages('/images/btn_mac_over.gif','/images/btn_rnw_over.gif','/images/btn_prc_over.gif','/images/btn_who_over.gif','/images/btn_faq_over.gif','/images/btn_log_over.gif','/images/btn_hom_over.gif')">
+                     <!-- <div align="center"><center>--> <table border="0" bordercolor=blue cellpadding="0" cellspacing="0" width="100%">
+               <tr>  
+                <td colspan=2>
+                  <table border="0" bordercolor=green cellspacing="0" cellpadding="0" height="97">
+                  <tr> 
+                  <td width=280 height="77"> 
+                     <div align="left"><a href="http://website.ws/index.dhtml">
+                           <img src="/images/main_logo.gif" width="264" height="77" border="0" alt="&lt; Return to Home">
+                     </a></div>
+                  </td>
+                   <td height="77" valign="bottom" > 
+                   <div align="left" ><a href="http://t-mo.ws/index.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('lefttab','','/images/btn_hom_over.gif',1)"><img src="/images/btn_hom_up.gif" alt="HOME" name="lefttab" border="0"></a></div>
+                   </td> 
+
+                   <td height="77" valign="bottom"> 
+                      <div align="left"><a href="http://www.website.ws/login/index.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('myacct','','/images/btn_mac_over.gif',1)"><img src="/images/btn_mac_up.gif" alt="My Account" name="myacct" border="0"></a></div>
+                   </td>
+                   <td height="77" valign="bottom"> 
+                      <div align="left"><a href="http://t-mo.ws/utilities/renewal.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Renew','','/images/btn_rnw_over.gif',1)"><img src="/images/btn_rnw_up.gif" alt="Renew Domain Names" name="Renew"  border="0"></a></div>
+                   </td>
+                   <td height="77" valign="bottom"> 
+                      <div align="left"><a href="http://t-mo.ws/faq/pricing.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('pricing','','/images/btn_prc_over.gif',1)"><img src="/images/btn_prc_up.gif" alt="Pricing" name="pricing" border="0"></a></div>
+                   </td>
+                   <td height="77" valign="bottom"> 
+                   <div align="left"><a href="http://t-mo.ws/faq/index.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('faq','','/images/btn_faq_over.gif',1)"><img src="/images/btn_faq_up.gif" alt="FAQ's" name="faq" border="0"></a></div>
+                   </td>
+                   <td height="77" valign="bottom"> 
+                     <div align="left"><a href="http://t-mo.ws/utilities/lookup.dhtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('whois','','/images/btn_who_over.gif',1)"><img src="/images/btn_who_up.gif" alt="Whois" name="whois" border="0"></a></div>
+                   </td>
+                   <td width="100%" height="77" valign="bottom"> 
+                     &nbsp;
+                   </td>
+                   </tr>
+                     <tr> 
+                        <td colspan="8" height="15" bgcolor="#33CC33" class="menuleft">&nbsp; &nbsp; &nbsp; &nbsp; </td>
+                   </tr>
+                     <tr> 
+                        <td colspan="8" height="3" bgcolor="#2C4C7C"></td>
+                   </tr>
+                   </table>
+                </td></tr><tr><td valign="top"> 
+                            <table cellspacing=0 cellpadding=10><tr><td>
+                            <table width="181" border="0" bordercolor=pink cellspacing="0" cellpadding="0">
+                            <tr> 
+                             <td colspan="3"><img src="/images/leftnavtop.gif" width="181" height="13"></td>
+                            </tr>
+                            <tr> 
+                              <td width="1" bgcolor="#000000"><img src="/images/px.gif" width="1" height="1"></td>
+                              <td width="179" align="center"> 
+                                <table width="330%" border="0" bordercolor=orange cellspacing="1" cellpadding="3">				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/contact.dhtml" class="leftnavsub">Support</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/resell/index.dhtml" class="leftnavsub">Affiliates</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/resell/registrar.dhtml" class="leftnavsub">Registrars</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/about.dhtml" class="leftnavsub">About Us</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/news.dhtml" class="leftnavsub">News</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/partners.dhtml" class="leftnavsub">Partners</a></td></tr>
+				<tr><td class="menuleft" onMouseOver="className='menuleftrollover'" onMouseOut="className='menuleft'"><img src="/images/px.gif" width="20" height="5"><a href="http://t-mo.ws/legal/index.dhtml?url=website.ws" class="leftnavsub">Policies</a></td></tr>
+
+                                </table>
+                                <p><a href="http://t-mo.ws/article.dhtml?article=inc500"><img src="/images/37_ad.gif" border="0" alt="Ranked #37 - Inc 500"></a></p>
+                                <p><img src="/images/black_px.gif" width="150" height="1"></p>
+                                <p><a href="http://www.ims.ws"><img src="/images/imslogo.gif" border="0" alt="Internet Marketing Strategy"></a></p>
+                                <p><img src="/images/black_px.gif" width="150" height="1"></p>
+                                <p><a href="http://www.bbbonline.org/cks.asp?id=102041719113522996" target="_blank"><img src="/images/bbb.gif" border="0"></a><br>
+                                <br>
+                                <!--<img src="/images/black_px.gif" width="150" height="1"></p>
+                                <p><a href="http://www.123merchants.com/" target="_blank"><img src="/images/ccp120x60.gif" border="0" width="120" height="60"></a></p>-->
+                              </td>
+                              <td width="1" bgcolor="#000000"><img src="/images/px.gif" width="1" height="1"></td>
+                            </tr>
+                            <tr> 
+                             <td colspan="3"><img src="/images/leftnavbottom.gif" width="181" height="13"></td>
+                            </tr>
+                            </table></td>
+                            </td></tr></table>
+
+                            <td valign="top" align="left" bgcolor="#FFFFFF">
+                              <table border="0" bordercolor=yellow cellpadding="10" cellspacing="0" width="90%">
+                              <tr>
+                               <td width="45%" valign="top" align="left" bgcolor="#FFFFFF">
+                            
+ 
+ 
+
+<!-- showWhois Start -->
+
+<form method=post action=http://whois.WebSite.ws/whois.dhtml>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="5"><img src="/images/search_top.gif"></td>
+  </tr>
+  <tr>
+    <td width="1" align="center" bgcolor="#000000"><img src="/images/black_px.gif" width="1" height="1"></td>
+    <td width="505" align="center">
+       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="center">
+              <table cellpadding=0 border=0 width="326">
+                 <tbody>
+                 <tr>
+                   <td align=right width="15%" height="43">
+                      <span><b><font face="Verdana, Arial, Helvetica, sans-serif" color="#000000" size="2"> 
+                        WWW.</font></b></span>
+                   </td>
+                   <td align=middle width="44%" height="43">
+                     <input size=10 name=domain>
+                   </td>
+                   <td align=left width="19%" height="43">
+                      <span><font face="Verdana, Arial, Helvetica, sans-serif" color="#000000" size="2"><b>
+                         <input type=hidden value=WS name=tld>
+                         .<input type=hidden name=tld value="WS">WS</b></font></span>
+                   </td>
+                   <td align=left width="22%" height="43">
+                     <div align="right"><span><b> 
+                        <input type=image alt=go! src="/images/go_btn.gif" border=0 name="image"></b>
+                      </span></div>
+                   </td>
+                 </tr>
+                 </tbody>
+              </table>
+              <img src="/images/search_text.gif">
+            </td>
+            <td align="right" width="176"><img src="/images/ws_chick1.gif" width="176" height="142"></td>
+          </tr>
+       </table>
+    </td>
+    <td width="1" align="center" bgcolor="#000000"><img src="/images/black_px.gif" width="1" height="1"></td>
+  </tr>
+  <tr>
+    <td colspan="5"><img src="/images/search_bottom.gif" border="0" usemap="#MapB" ></td>
+  </tr>
+</table>
+<map name="MapB">
+  <area shape="rect" coords="2,4,330,38" href="/utilities/renewal.dhtml">
+</map>
+            </form>
+	    </center></div>
+<!-- showWhois End -->
+
+<h1 align="center"><font face="Arial, Helvetica" color="#000080">Domain T-MO.WS Available</font></h1><CENTER><FONT FACE="Arial,Helvetica,Sans serif" SIZE=3><P>The domain <b>T-MO.WS</b> is currently available to be registered.  If you would like to register it, please click the button below.<br><form method=get action=http://WebSite.ws/register><input type=hidden name=domain value=t-mo.ws><input type=submit value="Register T-MO.WS"></form></P><center><a href="http://my.ws/my0000001"><img src="http://website.ws/images/myws_468_60_6.gif" width="468" height="60" border="1" alt="Make Money"></a><br><br><a href="http://trafficboost.ws" target=_blank><img src="/images/tb_logo.gif" border="1" alt="Traffic Boost" width="396" height="63"></a><br><br></center>
+</td>
+      </tr>
+    </table></center></div></td>
+  </tr>
+  <tr>
+    <td valign="top" align="center" bgcolor="#FFFFFF">&nbsp;
+    </td>
+    <td valign="bottom" align="right" bgcolor="#FFFFFF">
+      <table width="100%" border="0" cellspacing="0" cellpadding="15">
+      <tr>
+        <td width="100%" align="left" valign="middle">
+<BR><BR><BR>
+	<small class="copyright">Copyright &copy;2000,2001,2002,2003 by WebSite.ws.  All Rights Reserved. All domain registrations are subject
+        to <a href="./legal/index.dhtml?url=t-mo.ws">our policies</a>. Read our <a href="javascript:OpenHelp('/glossary/disclaimer.html')">legal disclaimer</a>.&nbsp;&nbsp;WebSite.ws observes a strict <a href="javascript:OpenHelp('/glossary/privacy.dhtml')">privacy policy</a>.  Notice:  The functions, services, agreements, documents, terms of use, policies and guidelines contained on this site and applicable to your use of the services provided on this site are subject to change at the discretion of WebSite.ws.  Please review this site and these items periodically. &nbsp;&nbsp; For information on careers at WebSite.ws, click <a href="./careers.dhtml">here</a>.</small><BR><BR><BR></td>
+      </tr>
+      <tr>
+        <td width="100%"></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+</body>
+</html>
