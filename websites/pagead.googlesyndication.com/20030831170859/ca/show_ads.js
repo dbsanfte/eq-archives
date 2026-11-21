@@ -1,0 +1,71 @@
+google_ad_url = '';
+google_org_error_handler = window.onerror;
+
+function google_show_ad() {
+  var w = window;
+  w.onerror = w.google_org_error_handler;
+  w.google_ad_url = 'http://pagead2.googlesyndication.com/pagead/ads?' +
+                    'client=ca-' + escape(w.google_ad_client.toLowerCase()) +
+                    '&format=' + escape(w.google_ad_format.toLowerCase()) +
+                    '&random=' + (new Date()).getTime() +
+		    '&redirect=true' +
+                    '&hl=' + w.google_language;
+
+  if (w.google_hints) {
+    w.google_ad_url = w.google_ad_url + '&hints=' +
+                      escape(w.google_hints);
+  }
+  
+  if (w.google_encoding) {
+    w.google_ad_url = w.google_ad_url + '&oe=' + w.google_encoding;
+  }
+
+  w.google_ad_url = w.google_ad_url + '&url=' + escape(w.google_page_url);
+  w.google_ad_url = w.google_ad_url.substring(0, 1000);
+  w.google_ad_url = w.google_ad_url.replace(/%\w?$/, '');
+
+  document.write('<ifr' + 'ame' +
+                 ' width=' + w.google_ad_width +
+                 ' height=' + w.google_ad_height +
+                 ' frameborder=' + w.google_ad_frameborder +
+                 ' src=' + w.google_ad_url +
+                 ' marginwidth=0' +
+                 ' marginheight=0' +
+                 ' vspace=0' +
+                 ' hspace=0' +
+                 ' allowtransparency=true' +
+                 ' scrolling=no></ifr' + 'ame>');
+  w.google_ad_frameborder = null;
+  w.google_ad_format = null;
+  w.google_page_url = null;
+  w.google_language = null;
+  w.google_hints = null;
+  w.google_encoding = null;
+}
+
+function google_error_handler(message, url, line) {
+  google_show_ad();
+  return true;
+}
+
+window.onerror = google_error_handler;
+
+if (window.google_ad_frameborder == null) {
+  google_ad_frameborder = 0;
+}
+
+if (window.google_ad_format == null) {
+  google_ad_format = google_ad_width + 'x' + google_ad_height;
+}
+
+if (window.google_language == null) {
+  google_language = 'en';
+}
+
+if (window.google_page_url == null) {
+  google_page_url = document.referrer;
+  if (window.top.location == document.location) {
+    google_page_url = document.location;
+  }
+}
+google_show_ad();
