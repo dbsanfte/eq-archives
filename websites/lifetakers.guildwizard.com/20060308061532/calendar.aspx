@@ -1,0 +1,496 @@
+
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en" "http://www.w3.org/tr/html4/loose.dtd" >
+<html>
+	<head>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="CODE_LANGUAGE" content="C#">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<link href="/new_dkp/style.css" rel="stylesheet" />
+<title>Storm Rider Rebellion's Website - Powered By Guild Wizard Guild Hosting</title>
+
+	</head>
+	<body>
+		<form name="Form1" method="post" action="calendar.aspx" id="Form1" style="HEIGHT:100%">
+<input type="hidden" name="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" value="dDwtNzM4OTMzNTA5O3Q8O2w8aTwxPjtpPDM+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDxsPFRleHQ7PjtsPFw8bGluayBocmVmPSIvbmV3X2RrcC9zdHlsZS5jc3MiIHJlbD0ic3R5bGVzaGVldCIgL1w+Clw8dGl0bGVcPlN0b3JtIFJpZGVyIFJlYmVsbGlvbidzIFdlYnNpdGUgLSBQb3dlcmVkIEJ5IEd1aWxkIFdpemFyZCBHdWlsZCBIb3N0aW5nXDwvdGl0bGVcPjs+Pjs7Pjs+Pjt0PDtsPGk8MT47aTwzPjtpPDc+O2k8OT47aTwxMT47PjtsPHQ8O2w8aTwzPjtpPDU+Oz47bDx0PHA8bDxWaXNpYmxlOz47bDxvPGY+Oz4+Ozs+O3Q8cDxsPFZpc2libGU7PjtsPG88Zj47Pj47Oz47Pj47dDw7bDxpPDA+Oz47bDx0PHA8bDxzdHlsZTs+O2w8dmlzaWJpbGl0eTp2aXNpYmxlXDs7Pj47Oz47Pj47dDxwPGw8VmlzaWJsZTs+O2w8bzxmPjs+PjtsPGk8MD47PjtsPHQ8O2w8aTwxPjs+O2w8dDw7bDxpPDE+Oz47bDx0PHQ8OztsPGk8MD47Pj47Oz47Pj47Pj47Pj47dDxAMDxwPHA8bDxTRDs+O2w8bDxTeXN0ZW0uRGF0ZVRpbWUsIG1zY29ybGliLCBWZXJzaW9uPTEuMC41MDAwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OTwyMDA2LTAzLTA4Pjs+Oz4+Oz47Ozs7Ozs7Ozs7Pjs7Pjt0PHA8bDxUZXh0Oz47bDxcZTs+Pjs7Pjs+Pjs+Pjs+iKNVOGZsEBCbLwzNNiE2jCBRWWQ=" />
+
+<script language="javascript" type="text/javascript">
+<!--
+	function __doPostBack(eventTarget, eventArgument) {
+		var theform;
+		if (window.navigator.appName.toLowerCase().indexOf("microsoft") > -1) {
+			theform = document.Form1;
+		}
+		else {
+			theform = document.forms["Form1"];
+		}
+		theform.__EVENTTARGET.value = eventTarget.split("$").join(":");
+		theform.__EVENTARGUMENT.value = eventArgument;
+		theform.submit();
+	}
+// -->
+</script>
+
+			<div id="container">
+				<div id="top">
+					
+
+                                                                                                                                                                                                                                                               
+<!-- START OF SDC Advanced Tracking Code -->
+<!-- Copyright (c) 1996-2005 WebTrends Inc.  All rights reserved. -->
+<!-- V7.5 -->
+<!-- $DateTime: 2005/11/08 18:22:54 $ -->
+<SCRIPT LANGUAGE="Javascript"><!--
+var gService = true;
+var gTimeZone = -8;
+// Code section for Enable First-Party Cookie Tracking
+function dcsCookie(){
+	if (typeof(dcsOther)=="function"){
+		dcsOther();
+	}
+	else if (typeof(dcsPlugin)=="function"){
+		dcsPlugin();
+	}
+	else if (typeof(dcsFPC)=="function"){
+		dcsFPC(gTimeZone);
+	}
+}
+function dcsGetCookie(name){
+	var pos=document.cookie.indexOf(name+"=");
+	if (pos!=-1){
+		var start=pos+name.length+1;
+		var end=document.cookie.indexOf(";",start);
+		if (end==-1){
+			end=document.cookie.length;
+		}
+		return unescape(document.cookie.substring(start,end));
+	}
+	return null;
+}
+function dcsGetCrumb(name,crumb){
+	var aCookie=dcsGetCookie(name).split(":");
+	for (var i=0;i<aCookie.length;i++){
+		var aCrumb=aCookie[i].split("=");
+		if (crumb==aCrumb[0]){
+			return aCrumb[1];
+		}
+	}
+	return null;
+}
+function dcsGetIdCrumb(name,crumb){
+	var cookie=dcsGetCookie(name);
+	var id=cookie.substring(0,cookie.indexOf(":lv="));
+	var aCrumb=id.split("=");
+	for (var i=0;i<aCrumb.length;i++){
+		if (crumb==aCrumb[0]){
+			return aCrumb[1];
+		}
+	}
+	return null;
+}
+function dcsFPC(offset){
+	if (typeof(offset)=="undefined"){
+		return;
+	}
+	var name=gFpc;
+	var dCur=new Date();
+	dCur.setTime(dCur.getTime()+(dCur.getTimezoneOffset()*60000)+(offset*3600000));
+	var dExp=new Date(dCur.getTime()+315360000000);
+	var dSes=new Date(dCur.getTime());
+	if (document.cookie.indexOf(name+"=")!=-1){
+		var id=dcsGetIdCrumb(name,"id");
+		var lv=parseInt(dcsGetCrumb(name,"lv"));
+		var ss=parseInt(dcsGetCrumb(name,"ss"));
+		if ((id==null)||(id=="null")||isNaN(lv)||isNaN(ss)){
+			return;
+		}
+		WT.co_f=id;
+		var dLst=new Date(lv);
+		dSes.setTime(ss);
+		if ((dCur.getTime()>(dLst.getTime()+1800000))||(dCur.getTime()>(dSes.getTime()+28800000))){
+			dSes.setTime(dCur.getTime());
+			WT.vt_f_s="1";
+		}
+		if ((dCur.getDay()!=dLst.getDay())||(dCur.getMonth()!=dLst.getMonth())||(dCur.getYear()!=dLst.getYear())){
+			WT.vt_f_d="1";
+		}
+	}
+	else{
+		var tmpname=name+"_TMP=";
+		document.cookie=tmpname+"1";
+		if (document.cookie.indexOf(tmpname)!=-1){
+			document.cookie=tmpname+"; expires=Thu, 01-Jan-1970 00:00:01 GMT";
+			if ((typeof(gWtId)!="undefined")&&(gWtId!="")){
+				WT.co_f=gWtId;
+			}
+			else if ((typeof(gTempWtId)!="undefined")&&(gTempWtId!="")){
+				WT.co_f=gTempWtId;
+				WT.vt_f="1";
+			}
+			else{
+				WT.co_f="2";
+				var cur=dCur.getTime().toString();
+				for (var i=2;i<=(32-cur.length);i++){
+					WT.co_f+=Math.floor(Math.random()*16.0).toString(16);
+				}
+				WT.co_f+=cur;
+				WT.vt_f="1";
+			}
+			if (typeof(gWtAccountRollup)=="undefined"){
+				WT.vt_f_a="1";
+			}
+			WT.vt_f_s="1";
+			WT.vt_f_d="1";
+		}
+		else{
+			WT.vt_f="2";
+			WT.vt_f_a="2";
+			return;
+		}
+	}
+	WT.co_f=escape(WT.co_f);
+	WT.vt_sid=WT.co_f+"."+dSes.getTime();
+	var expiry="; expires="+dExp.toGMTString();
+	document.cookie=name+"="+"id="+WT.co_f+":lv="+dCur.getTime().toString()+":ss="+dSes.getTime().toString()+expiry+"; path=/"+(((typeof(gFpcDom)!="undefined")&&(gFpcDom!=""))?("; domain="+gFpcDom):(""));
+}
+
+// Code section for Use the new first-party cookie generated with this tag.
+var gFpc="WT_FPC";
+var gConvert=true;
+
+function dcsAdv(){
+	dcsFunc("dcsET");
+	dcsFunc("dcsCookie");
+	dcsFunc("dcsAdSearch");
+	dcsFunc("dcsTP");
+}
+
+//-->
+</SCRIPT>
+<!-- END OF SDC Advanced Tracking Code -->
+
+<!-- START OF SmartSource Data Collector TAG -->
+<!-- Copyright (c) 1996-2005 WebTrends Inc.  All rights reserved. -->
+<!-- V7.5 -->
+<!-- $DateTime: 2005/11/10 16:02:43 $ -->
+<SCRIPT LANGUAGE="Javascript"><!--
+gVersion="1.0";
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript1.1"><!--
+gVersion="1.1";
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript1.2"><!--
+gVersion="1.2";
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript1.3"><!--
+gVersion="1.3";
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript1.4"><!--
+gVersion="1.4";
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript1.5"><!--
+gVersion="1.5";
+//-->
+</SCRIPT>
+<SCRIPT TYPE="text/javascript"><!--
+var gImages=new Array;
+var gIndex=0;
+var DCS=new Object();
+var WT=new Object();
+var DCSext=new Object();
+var gQP=new Array();
+if (window.RegExp){
+	var RE={"%09":/\t/g,"%20":/ /g,"%23":/\#/g,"%26":/\&/g,"%2B":/\+/g,"%3F":/\?/g,"%5C":/\\/g};
+}
+
+var gDomain="statse.webtrendslive.com";
+var gDcsId="dcshv9x7510000ct6ytn3a8ez_4g1u";
+
+if ((typeof(gConvert)!="undefined")&&gConvert&&(document.cookie.indexOf(gFpc+"=")==-1)){
+	document.write("<SCR"+"IPT TYPE='text/javascript' SRC='"+"http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+"/"+gDcsId+"/wtid.js"+"'><\/SCR"+"IPT>");
+}
+//-->
+</SCRIPT>
+<SCRIPT TYPE="text/javascript"><!--
+function dcsVar(){
+	var dCurrent=new Date();
+	WT.tz=dCurrent.getTimezoneOffset()/60*-1;
+	if (WT.tz==0){
+		WT.tz="0";
+	}
+	WT.bh=dCurrent.getHours();
+	WT.ul=navigator.appName=="Netscape"?navigator.language:navigator.userLanguage;
+	if (typeof(screen)=="object"){
+		WT.cd=navigator.appName=="Netscape"?screen.pixelDepth:screen.colorDepth;
+		WT.sr=screen.width+"x"+screen.height;
+	}
+	if (typeof(navigator.javaEnabled())=="boolean"){
+		WT.jo=navigator.javaEnabled()?"Yes":"No";
+	}
+	if (document.title){
+		WT.ti=document.title;
+	}
+	WT.js="Yes";
+	if (typeof(gVersion)!="undefined"){
+		WT.jv=gVersion;
+	}
+	if (document.body&&document.body.addBehavior){
+		document.body.addBehavior("#default#clientCaps");
+		if (document.body.connectionType){
+			WT.ct=document.body.connectionType;
+		}
+		document.body.addBehavior("#default#homePage");
+		WT.hp=document.body.isHomePage(location.href)?"1":"0";
+	}
+	if (parseInt(navigator.appVersion)>3){
+		if ((navigator.appName=="Microsoft Internet Explorer")&&document.body){
+			WT.bs=document.body.offsetWidth+"x"+document.body.offsetHeight;
+		}
+		else if (navigator.appName=="Netscape"){
+			WT.bs=window.innerWidth+"x"+window.innerHeight;
+		}
+	}
+	WT.fi="No";
+	if (window.ActiveXObject){
+		for(var i=9;i>0;i--){
+			try{
+				var flash = new ActiveXObject("ShockwaveFlash.ShockwaveFlash."+i);
+				WT.fi="Yes";
+				WT.fv=i+".0";
+				break;
+			}
+			catch(e){
+			}
+		}
+	}
+	else if (navigator.plugins&&navigator.plugins.length){
+		for (var i=0;i<navigator.plugins.length;i++){
+			if (navigator.plugins[i].name.indexOf('Shockwave Flash')!=-1){
+				WT.fi="Yes";
+				WT.fv=navigator.plugins[i].description.split(" ")[2];
+				break;
+			}
+		}
+	}
+	WT.sp="@@SPLITVALUE@@";
+	DCS.dcsdat=dCurrent.getTime();
+	DCS.dcssip=window.location.hostname;
+	DCS.dcsuri=window.location.pathname;
+	if (window.location.search){
+		DCS.dcsqry=window.location.search;
+		if (gQP.length>0){
+			for (var i=0;i<gQP.length;i++){
+				var pos=DCS.dcsqry.indexOf(gQP[i]);
+				if (pos!=-1){
+					var front=DCS.dcsqry.substring(0,pos);
+					var end=DCS.dcsqry.substring(pos+gQP[i].length,DCS.dcsqry.length);
+					DCS.dcsqry=front+end;
+				}
+			}
+		}
+	}
+	if ((window.document.referrer!="")&&(window.document.referrer!="-")){
+		if (!(navigator.appName=="Microsoft Internet Explorer"&&parseInt(navigator.appVersion)<4)){
+			DCS.dcsref=window.document.referrer;
+		}
+	}
+}
+
+function A(N,V){
+	return "&"+N+"="+dcsEscape(V);
+}
+
+function dcsEscape(S){
+	if (typeof(RE)!="undefined"){
+		var retStr = new String(S);
+		for (R in RE){
+			retStr = retStr.replace(RE[R],R);
+		}
+		return retStr;
+	}
+	else{
+		return escape(S);
+	}
+}
+
+function dcsCreateImage(dcsSrc){
+	if (document.images){
+		gImages[gIndex]=new Image;
+		if ((typeof(gHref)!="undefined")&&(gHref.length>0)){
+			gImages[gIndex].onload=gImages[gIndex].onerror=dcsLoadHref;
+		}
+		gImages[gIndex].src=dcsSrc;
+		gIndex++;
+	}
+	else{
+		document.write('<IMG ALT="" BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="'+dcsSrc+'">');
+	}
+}
+
+function dcsMeta(){
+	var elems;
+	if (document.all){
+		elems=document.all.tags("meta");
+	}
+	else if (document.documentElement){
+		elems=document.getElementsByTagName("meta");
+	}
+	if (typeof(elems)!="undefined"){
+		for (var i=1;i<=elems.length;i++){
+			var meta=elems.item(i-1);
+			if (meta.name){
+				if (meta.name.indexOf('WT.')==0){
+					WT[meta.name.substring(3)]=meta.content;
+				}
+				else if (meta.name.indexOf('DCSext.')==0){
+					DCSext[meta.name.substring(7)]=meta.content;
+				}
+				else if (meta.name.indexOf('DCS.')==0){
+					DCS[meta.name.substring(4)]=meta.content;
+				}
+			}
+		}
+	}
+}
+
+function dcsTag(){
+	var P="http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+(gDcsId==""?'':'/'+gDcsId)+"/dcs.gif?";
+	for (N in DCS){
+		if (DCS[N]) {
+			P+=A(N,DCS[N]);
+		}
+	}
+	for (N in WT){
+		if (WT[N]) {
+			P+=A("WT."+N,WT[N]);
+		}
+	}
+	for (N in DCSext){
+		if (DCSext[N]) {
+			P+=A(N,DCSext[N]);
+		}
+	}
+	if (P.length>2048&&navigator.userAgent.indexOf('MSIE')>=0){
+		P=P.substring(0,2040)+"&WT.tu=1";
+	}
+	dcsCreateImage(P);
+}
+
+function dcsFunc(func){
+	if (typeof(window[func])=="function"){
+		window[func]();
+	}
+}
+
+dcsVar();
+dcsMeta();
+dcsFunc("dcsAdv");
+dcsTag();
+//-->
+</SCRIPT>
+
+<NOSCRIPT>
+<IMG ALT="" BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="http://statse.webtrendslive.com/dcshv9x7510000ct6ytn3a8ez_4g1u/njs.gif?dcsuri=/nojavascript&amp;WT.js=No">
+</NOSCRIPT>
+<!-- END OF SmartSource Data Collector  TAG -->	
+
+
+
+
+<script language="javascript" type="text/javascript">
+	function ShowAdmin()
+	{
+		document.getElementById('Header2_divAdmin').style.visibility="visible";
+	}
+	function HideAdmin()
+	{
+		document.getElementById('Header2_divAdmin').style.visibility="hidden";
+	}
+</script>
+
+<div id="Header"><table cellspacing="0" cellpadding="0" width="800" border="0"> <tbody> <tr> <td> <p><img height="61" src="/pics/2112/SRRBanblack.jpg" width="800" /></p></td></tr> <tr> <td valign="top"><a href="/index.aspx"><img height="31" src="/pics/2112/MBaHome.jpg" width="54" border="0" /></a><a href="/application.aspx"><img height="31" src="/pics/2112/JoinSRR.jpg" width="86" border="0" /></a><a href="/gallery.aspx"><img height="31" src="/pics/2112/MBaImages.jpg" width="70" border="0" /></a><a href="/custom.aspx?pid=1703"><img height="31" src="/pics/2112/MBaMission.jpg" width="73" border="0" /></a><a href="/player_list.aspx"><img height="31" src="/pics/2112/MBaRoster.jpg" width="70" border="0" /></a><a href="/forums/default.aspx"><img height="31" src="/pics/2112/MBAForums.jpg" width="72" border="0" /></a><a href="/calendar.aspx"><img height="31" src="/pics/2112/MBaCalendar.jpg" width="82" border="0" /></a><a href="/raid_view.aspx"><img height="31" src="/pics/2112/MBaRaids.jpg" width="56" border="0" /></a><a href="/custom.aspx?pid=2353"><img height="31" src="/pics/2112/MBaChat.jpg" width="78" border="0" /></a><a href="/custom.aspx?pid=1700"><img height="31" src="/pics/2112/MBaLinks.jpg" width="57" border="0" /></a><a href="/custom.aspx?pid=2054"><img height="31" src="/pics/2112/MBaBank.jpg" width="48" border="0" /></a><a href="/login.aspx"><img height="31" src="/pics/2112/MbaLogin.jpg" width="54" border="0" /></a></td></tr></tbody></table></div>
+
+
+
+				</div>
+				<div id="left1_leftCell" style="visibility:visible;">
+	
+	<div id="TVisits"><img src="/pics/2112/Total Visits.JPG" alt=""/></div><div id="Visitors">
+52277
+</div><div id="Links"><p align="left"><font face="Arial" color="#99ccff" size="2"><strong>General Info:<br /></strong></font>&nbsp;&nbsp; <a href="http://everquest.allakhazam.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">Allakhazam</font></a><br />&nbsp;&nbsp; <a href="http://eq.crgaming.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">Caster's Realm</font></a><br />&nbsp;&nbsp; <a href="http://eq.stratics.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">EQ Stratics</font></a><br />&nbsp;&nbsp; <a href="http://www.eqrankings.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">EQ Ranking</font></a><br />&nbsp;&nbsp; <a href="http://www.station.sony.com/en/" target="_blank"><font face="Arial" color="#ccccff" size="2">Sony Station</font> </a><br /><font face="Arial"><font color="#99ccff" size="2"><strong>Reference:</strong></font><br /></font>&nbsp;&nbsp; <a href="http://www.eqtraders.com/articles/news_page.php" target="_blank"><font face="Arial" color="#ccccff" size="2">EQ Traders</font></a><br />&nbsp;&nbsp; <a href="http://www.eqatlas.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">EQAtlas</font></a><br />&nbsp;&nbsp; <a href="http://www.eqprices.com/scripts/showitems.asp" target="_blank"><font face="Arial" color="#ccccff" size="2">EQPrices</font></a><br />&nbsp;&nbsp; <a href="http://www.rpgexpert.com/330.html" target="_blank"><font face="Arial" color="#ccccff" size="2">RPG LDON List&nbsp;</font></a> <br />&nbsp;&nbsp; <a href="http://plurpage.com/everquest/don.php" target="blank"><font face="Arial" color="#ccccff" size="2">DoN Merchant&nbsp;</font> </a><br /><a><font face="Arial" color="#99ccff" size="2"><strong>Tools:</strong><br /></strong></font>&nbsp;&nbsp; &nbsp;<a href="http://eq.mapfiend.net/downloads.php?cat=2" target="_blank"><font face="Arial" color="#ccccff" size="2">Mapfiend</a><br />&nbsp;&nbsp;&nbsp; <a href="http://www.eqinterface.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">EQInterface</a><br />&nbsp;&nbsp;&nbsp; <a href="http://www.magelo.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">Magelo</a>&nbsp;<br />&nbsp;&nbsp;&nbsp; <a href="http://www.goteamspeak.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">TeamSpeak</font> </a><br /><font color="#99ccff" size="2"><strong>Class Related:<br /></strong>&nbsp;&nbsp;&nbsp; </font><font color="#99ccff" size="2"><a href="http://www.eqcleric.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">EQCleric</font></a><br />&nbsp;&nbsp;&nbsp; <a href="http://www.eqdiva.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">EQDiva</a></font><br />&nbsp;&nbsp;&nbsp; <a href="http://www.eqdruids.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">EQDruids</font></a><br />&nbsp;&nbsp;&nbsp; <a href="http://www.beastlords.org/" target="_blank"><font face="Arial" color="#ccccff" size="2">Beastlord's Den</font></a><br /></font>&nbsp;&nbsp;&nbsp; <a href="http://www.thesteelwarrior.org/" target="_blank"><font face="Arial" color="#ccccff" size="2">The Steel Warrior</font></a><br />&nbsp;&nbsp;&nbsp; <a href="http://eqshaman.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">EQ Shamans</a></font></font></font><font face="Arial"><font size="2"><font color="#ccccff"><br />&nbsp;&nbsp;&nbsp; <a href="http://www.graffe.com/" target="_blank"><font face="Arial" color="#ccccff" size="2">Graffe's Wizard</a><br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.eqoutrider.net/"><font face="Arial" color="#ccccff" size="2">Outriders<br /></a>&nbsp;&nbsp;&nbsp; <a href="http://www.therunes.net/" target="_blank"><font face="Arial" color="#ccccff" size="2">The Runes</a></font></font></font></font></font></font></p></font></font></div>
+</div>
+				
+<div id="right1_rightCell">
+<div id="Top10Raiders"><img src="/pics/2112/Top10Raiders.jpg" alt=""/></div><table id="TopRaiders">
+<tr>
+<th>Name</th>
+<th>Raids</th>
+</tr><tr>
+<td><a href="/player.aspx?pid=88248">Kelee</a></td>
+<td>105</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=88601">Case</a></td>
+<td>86</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=88251">Lerata</a></td>
+<td>73</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=92486">Torgen</a></td>
+<td>71</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=106708">Erronis</a></td>
+<td>70</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=88246">Hafgun</a></td>
+<td>49</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=155246">Sckarrab</a></td>
+<td>43</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=89356">Dubyenya</a></td>
+<td>42</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=99916">Dalgin</a></td>
+<td>41</td>
+</tr><tr>
+<td><a href="/player.aspx?pid=88234">Bgmama</a></td>
+<td>40</td>
+</tr></table>
+<div id="boxRaidInfo"><p align="center"><font face="Tahoma" color="#ffff00" size="4"><strong>New to our website?&nbsp; Click the link below</strong></font></p> <p align="center"><font color="#f5f5dc"><strong><font face="Tahoma" size="4"><a href="/custom.aspx?pid=2557">START HERE</a></font></strong></font></p> <p align="center"><strong><font face="Tahoma" color="#f5f5dc"><img src="/pics/2112/world2.gif" /></font></strong></p> <p align="right"><strong><font face="Tahoma" color="#f5f5dc"></font></strong>&nbsp;</p> <p align="right"><strong><font face="Tahoma" color="#ff0000"></font></strong>&nbsp;</p></div>
+</div>
+
+				<div id="center" style="z-index:99;position:relative;">
+						<table id="Table1" height="100%" width="100%">
+							<tr>
+								<td style="HEIGHT: 22px" colspan="2">
+									<p align="center"><font face="Verdana" size="1"></font></p>
+									<p align="center"><font face="Verdana" size="3"><strong><u>Guild Calendar</u></strong></font></p>
+									<p align="center"><font face="Verdana" size="2"><strong> Dates with events will have a 
+												short description in that date box.&nbsp; Click the date to see a longer 
+												description of the event.</strong></font></p>
+									
+								</td>
+							</tr>
+							<tr>
+								<td valign="top">
+									<table id="cal" class="calendarDay" cellspacing="0" cellpadding="2" border="0" height="100%" width="100%">
+	<tr><td colspan="7" bgcolor="Silver"><table class="calendarHeader" cellspacing="0" border="0" width="100%">
+		<tr><td width="15%"><a href="javascript:__doPostBack('cal','V2223')" style="color:Black">&lt;</a></td><td align="Center" width="70%">March 2006</td><td align="Right" width="15%"><a href="javascript:__doPostBack('cal','V2282')" style="color:Black">&gt;</a></td></tr>
+	</table></td></tr><tr><td align="Center">Sun</td><td align="Center">Mon</td><td align="Center">Tue</td><td align="Center">Wed</td><td align="Center">Thu</td><td align="Center">Fri</td><td align="Center">Sat</td></tr><tr><td class="calendarOtherMonth" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2248')" style="color:Black">26</a><div style="width:75px;">&nbsp</div></td><td class="calendarOtherMonth" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2249')" style="color:Black">27</a><div style="width:75px;">&nbsp</div></td><td class="calendarOtherMonth" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2250')" style="color:Black">28</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2251')" style="color:Black">1</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2252')" style="color:Black">2</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2253')" style="color:Black">3</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2254')" style="color:Black">4</a><div style="width:75px;">&nbsp</div></td></tr><tr><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2255')" style="color:Black">5</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2256')" style="color:Black">6</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2257')" style="color:Black">7</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" bgcolor="Silver" width="14%"><font color="White"><a href="javascript:__doPostBack('cal','2258')" style="color:White">8</a><div style="width:75px;">&nbsp</div></font></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2259')" style="color:Black">9</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2260')" style="color:Black">10</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2261')" style="color:Black">11</a><div style="width:75px;">&nbsp</div></td></tr><tr><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2262')" style="color:Black">12</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2263')" style="color:Black">13</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2264')" style="color:Black">14</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2265')" style="color:Black">15</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2266')" style="color:Black">16</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2267')" style="color:Black">17</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2268')" style="color:Black">18</a><div style="width:75px;">&nbsp</div></td></tr><tr><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2269')" style="color:Black">19</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2270')" style="color:Black">20</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2271')" style="color:Black">21</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2272')" style="color:Black">22</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2273')" style="color:Black">23</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2274')" style="color:Black">24</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2275')" style="color:Black">25</a><div style="width:75px;">&nbsp</div></td></tr><tr><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2276')" style="color:Black">26</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2277')" style="color:Black">27</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2278')" style="color:Black">28</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2279')" style="color:Black">29</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2280')" style="color:Black">30</a><div style="width:75px;">&nbsp</div></td><td class="calendarDay" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2281')" style="color:Black">31</a><div style="width:75px;">&nbsp</div></td><td class="calendarOtherMonth" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2282')" style="color:Black">1</a><div style="width:75px;">&nbsp</div></td></tr><tr><td class="calendarOtherMonth" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2283')" style="color:Black">2</a><div style="width:75px;">&nbsp</div></td><td class="calendarOtherMonth" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2284')" style="color:Black">3</a><div style="width:75px;">&nbsp</div></td><td class="calendarOtherMonth" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2285')" style="color:Black">4</a><div style="width:75px;">&nbsp</div></td><td class="calendarOtherMonth" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2286')" style="color:Black">5</a><div style="width:75px;">&nbsp</div></td><td class="calendarOtherMonth" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2287')" style="color:Black">6</a><div style="width:75px;">&nbsp</div></td><td class="calendarOtherMonth" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2288')" style="color:Black">7</a><div style="width:75px;">&nbsp</div></td><td class="calendarOtherMonth" align="Center" width="14%"><a href="javascript:__doPostBack('cal','2289')" style="color:Black">8</a><div style="width:75px;">&nbsp</div></td></tr>
+</table>
+									
+								</td>
+							</tr>
+						</table>
+						</div>
+			</div>
+		</form>
+	</body>
+</html>
