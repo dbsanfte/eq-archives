@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Camp Check - Index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style type="text/css">
+<!--
+/* General layout */
+A:link        { font-weight: normal; text-decoration: none; color: #005177; }
+A:visited     { text-decoration: none; color: #005177; font-weight: normal; }
+A:hover       { text-decoration: none; color: #CC3333; }
+BODY          { scrollbar-face-color: #AFC6DB; scrollbar-shadow-color: #000000; scrollbar-highlight-color: #DEE7EF;
+                scrollbar-3dlight-color: #FFFFFF; scrollbar-darkshadow-color: #AFC6DB;
+                scrollbar-track-color: #F5F5F5; scrollbar-arrow-color: ##DEE7EF; font-family: Verdana, Helvetica, Arial; 
+                font-size:12px; margin-top: 0; margin-left: 0; margin-right: 0; padding-top: 0; padding-left: 0; 
+                padding-right: 0; }
+text          { font-family: Verdana, Helvetica, Arial; font-size: 11px; }
+TD            { font-family: Verdana, Helvetica, Arial; color: #000000; font-size: 11px; }
+input         { background-color: #DEE7EF; font-family: Verdana, Helvetica, Arial; font-size: 9pt; color: #000000; }
+textarea      { background-color: #DEE7EF; font-family: Verdana, Helvetica, Arial; font-size: 9pt; color: #000000; }
+select        { background-color: #AFC6DB; font-family: Verdana, Helvetica, Arial; font-size: 7pt; color: #000000; }
+.copyright    { font-family: Verdana, Helvetica, Arial; font-size: 10px; }
+
+/* YaBB navigation links */
+a.nav          { font-size: 10px; text-decoration: none; color: #000000; }
+a.nav:link     { font-size: 10px; text-decoration: none; color: #000000; }
+a.nav:visited  { font-size: 10px; text-decoration: none; color: #000000; }
+a.nav:hover    { font-size: 10px; text-decoration: none; color: #6394BD; font-weight: bold; text-decoration: underline; }
+
+/* YaBB alternating bgcolors */
+.windowbg     { background-color: #AFC6DB; font-size: 11px; font-family: Verdana; color: #000000; }
+.windowbg2    { background-color: #F8F8F8; font-size: 11px; font-family: Verdana; color: #000000; }
+.windowbg3    { background-color: #6394BD; font-size: 11px; font-family: Verdana; color: #000000; }
+
+/* Misc./title/category colors */
+.hr           { color: #6394BD; }
+.titlebg      { background-color: #6E94B7; color: #FFFFFF; }
+.text1        { font-style: normal; font-weight: bold; font-size: 12px; color: #FFFFFF; }
+.catbg        { background-color: #DEE7EF; color: #000000; font-weight: bold; font-size: 13px; }
+.bordercolor  { background-color: #6394BD; }
+
+/* Image fonts */
+.imgbg        { font-style: normal; font-size: 10px; color: #005177; }
+.imgcatbg     { font-style: normal; font-size: 10px; color: #005177; font-weight: bold; }
+.imgtitlebg   { font-style: normal; font-size: 10px; color: #FFFFFF;  font-weight: bold; }
+.imgwindowbg  { font-style: normal; font-size: 9px; color: #005177; }
+.imgmenu      { font-style: normal; font-size: 11px; color: #D4AD00; font-weight: bold; letter-spacing: 0.1em; }
+
+/* Post quote/code colors */
+.quote        { font-size: 10px; font-family: Verdana, Helvetica, Arial; color: #000000; background-color: #DEE7EF; }
+.code         { font-size: 10px; font-family: Courier New; color: #000000; background-color: #CCCCCC; }
+-->
+</style>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+if ((navigator.appVersion.substring(0,1) == "5" && navigator.userAgent.indexOf('Gecko') != -1) || navigator.userAgent.search(/Opera/) != -1) {
+   document.write('<META HTTP-EQUIV="pragma" CONTENT="no-cache">');
+}
+// -->
+</script>
+</head>
+
+<body text="#000000" bgcolor="#F5F5F5" link="#0033FF">
+<br>
+<table width="92%" cellspacing="1" cellpadding="0" border="0" align="CENTER" class="bordercolor">
+  <tr> 
+    <td class="bordercolor" width="100%"> 
+      <table bgcolor="#FFFFFF" width="100%" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+              <tr> 
+                <td bgcolor="#FFFFFF" height="50"><img src="http://www.papasody.com/YaBBImages/cc.gif" alt="Camp Check"></td>
+                <td bgcolor="#FFFFFF"> 
+                <p><font size="2">
+                Welcome, Guest. Please <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=;action=login">Login</a> or <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=;action=register">Register</a>. <BR>
+                Aug 1<sup>st</sup>, 2003, 2:54am
+                </font><BR></p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr><tr> 
+    <td class="bordercolor" align="center"> 
+      <table bgcolor="#AFC6DB" width="100%" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="100%" align="center"> 
+            <table border="0" width="100%" cellpadding="3" cellspacing="0" bgcolor="#AFC6DB" align="center">
+              <tr> 
+                <td valign="middle" bgcolor="#DEE7EF" align="center"><font size="1"><a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl"><img src="http://www.papasody.com/YaBBImages/home.gif" alt="Home" border="0"> <font size="1" class="imgmenu">Home</font></a> <a href="http://www.papasody.com/YaBBHelp/index.html" target="_blank" style="cursor:help;"><img src="http://www.papasody.com/YaBBImages/help.gif" alt="Help" border="0"> <font size="1" class="imgmenu">Help</font></a> <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=;action=search"><img src="http://www.papasody.com/YaBBImages/search.gif" alt="Search" border="0"> <font size="1" class="imgmenu">Search</font></a> <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?action=mlall"><img src="http://www.papasody.com/YaBBImages/guest.gif" alt="Members" border="0"> <font size="1" class="imgmenu">Members</font></a> <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?action=login"><img src="http://www.papasody.com/YaBBImages/login.gif" alt="Login" border="0"> <font size="1" class="imgmenu">Login</font></a> <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=;action=register"><img src="http://www.papasody.com/YaBBImages/register.gif" alt="Register" border="0"> <font size="1" class="imgmenu">Register</font></a></font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr><tr> 
+    <td class="bordercolor" align="center"> 
+      <table bgcolor="#FFFFFF" width="100%" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="100%" align="center"> 
+            <table border="0" width="100%" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF" align="center">
+              <tr> 
+                <td valign="middle" bgcolor="#FFFFFF" align="center">
+                <font size="2" color="#6E94B7"><B>Camp Check</B>  « Index »</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<BR>
+<center>
+<!--#echo banner=""-->
+<BR>
+<table width="92%" align="center" border="0">
+  <tr>
+    <td><font size="2">
+    
+<P align="left"><font size="2" class="nav"><IMG SRC="http://www.papasody.com/YaBBImages/open.gif" BORDER="0" alt=""> <b>Camp Check</b></font>
+<table border=0 width="100%" cellspacing="0" cellpadding="0" bgcolor="#6394BD" class="bordercolor">
+  <tr>
+    <td>
+    <table cellpadding="4" cellspacing="1" border="0" width="100%">
+      <tr>
+        <td bgcolor="#6E94B7" class="titlebg" align="center"><font class="text1" color="#FFFFFF" size="2"><b>News</b></font></td>
+      </tr><tr>
+        <td bgcolor="#F8F8F8" class="windowbg2" valign="middle" align="center" height="60">
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+var delay = 1000
+var bcolor = "#F8F8F8"
+var tcolor = "#D4AD00"
+var fcontent = new Array()
+begintag = '<font size="2"><B>'
+fcontent[0] = "<font color=#6394BD>Members, please see the thread on proposed recruitment policy changes!</font>"
+fcontent[1] = "<font color=#8000ff>You have to sign in and then be granted access to see the member forums.</font>"
+fcontent[2] = "<font color=#0080c0>Hello to guests! It is nice of you to drop by</font>"
+fcontent[3] = "<font color=#808000>If you are interested in joining this guild, please post here or drop Dikmer a tell in game.</font>"
+fcontent[4] = ""
+closetag = '</b></font>'
+// -->
+</script>
+<script language="JavaScript1.2" type="text/javascript" src="http://www.papasody.com/fader.js"></script>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+if (navigator.appVersion.substring(0,1) < 5 && navigator.appName == "Netscape") {
+   var fwidth = screen.availWidth / 2;
+   var bwidth = screen.availWidth / 4;
+   document.write('<ilayer id="fscrollerns" width='+fwidth+' height=35 left='+bwidth+' top=0><layer id="fscrollerns_sub" width='+fwidth+' height=35 left=0 top=0></layer></ilayer>');
+   window.onload = fade;
+}
+else if (navigator.userAgent.search(/Opera/) != -1 || (navigator.platform != "Win32" && navigator.userAgent.indexOf('Gecko') == -1)) {
+   document.open();
+   document.write('<div id="fscroller" style="width:90%; height:15px; padding:2px">');
+   for(i=0; i < fcontent.length; ++i) {
+      document.write(begintag+fcontent[i]+closetag+'<br>');
+   }
+   document.write('</div>');
+   document.close();
+   window.onload = fade;
+}
+else {
+   document.write('<div id="fscroller" style="width:90% height:15px; padding:2px"></div>');
+   window.onload = fade;
+}
+// -->
+</script>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<table border=0 width="100%" cellspacing="0" cellpadding="0" bgcolor="#6394BD" class="bordercolor">
+  <tr>
+    <td>
+    <table cellpadding="4" cellspacing="1" border="0" width="100%">
+      <tr>
+        <td class="titlebg" bgcolor="#6E94B7" colspan="2"><font class="text1" color="#FFFFFF" size="2"><b>Forum name</b></font></td>
+        <td class="titlebg" bgcolor="#6E94B7" width="1%" align="center"><font class="text1" color="#FFFFFF" size="2"><b>Topics</b></font></td>
+        <td class="titlebg" bgcolor="#6E94B7" width="1%" align="center"><font class="text1" color="#FFFFFF" size="2"><b>Posts</b></font></td>
+        <td class="titlebg" bgcolor="#6E94B7" width="24%" align="center"><font class="text1" color="#FFFFFF" size="2"><b>Last post</b></font></td>
+      </tr><tr>
+        <td colspan="5" class="catbg" bgcolor="#DEE7EF" height="18"><a name="general_cat"> <font size=2><b>General</b></font></a></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#AFC6DB" width="8%" align="center" valign="top"><img src="http://www.papasody.com/YaBBImages/off.gif" alt="No New Posts" border="0"></td>
+        <td class="windowbg2" bgcolor="#F8F8F8" align="left" width="66%">
+        <font size="2"><a name="news" href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=news"><b>Announcements</b></a></font>
+        <br><font size="1">News and Announcements<BR>
+        <i>Moderator: <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=admin">Forum Admin</a></i></font></td>
+        <td class="windowbg" bgcolor="#AFC6DB" valign="middle" align="center" width="1%"><font size="2">5</font></td>
+        <td class="windowbg" bgcolor="#AFC6DB" valign="middle" align="center" width="1%"><font size="2">12</font></td>
+        <td class="windowbg2" bgcolor="#F8F8F8" valign="middle" width="24%"><font size="1">Jul 25<sup>th</sup>, 2003, 1:40pm<BR>by <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=Silli">Silli</a></font></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#AFC6DB" width="8%" align="center" valign="top"><img src="http://www.papasody.com/YaBBImages/off.gif" alt="No New Posts" border="0"></td>
+        <td class="windowbg2" bgcolor="#F8F8F8" align="left" width="66%">
+        <font size="2"><a name="chatter" href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=chatter"><b>Chatter</b></a></font>
+        <br><font size="1">General public conversation<BR>
+        <i>Moderator: N/A</i></font></td>
+        <td class="windowbg" bgcolor="#AFC6DB" valign="middle" align="center" width="1%"><font size="2">13</font></td>
+        <td class="windowbg" bgcolor="#AFC6DB" valign="middle" align="center" width="1%"><font size="2">43</font></td>
+        <td class="windowbg2" bgcolor="#F8F8F8" valign="middle" width="24%"><font size="1">Jul 29<sup>th</sup>, 2003, 10:19am<BR>by <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=Silli">Silli</a></font></td>
+      </tr><tr>
+        <td colspan="5" class="catbg" bgcolor="#DEE7EF" height="18"><a name="other"> <font size=2><b>Other Stuff</b></font></a></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#AFC6DB" width="8%" align="center" valign="top"><img src="http://www.papasody.com/YaBBImages/off.gif" alt="No New Posts" border="0"></td>
+        <td class="windowbg2" bgcolor="#F8F8F8" align="left" width="66%">
+        <font size="2"><a name="rant" href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=rant"><b>Screaming At The Walls</b></a></font>
+        <br><font size="1">Ranting and Raving Like A Lunatic... <BR>
+        <i>Moderator: <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=Kensha">Kensha</a></i></font></td>
+        <td class="windowbg" bgcolor="#AFC6DB" valign="middle" align="center" width="1%"><font size="2">6</font></td>
+        <td class="windowbg" bgcolor="#AFC6DB" valign="middle" align="center" width="1%"><font size="2">9</font></td>
+        <td class="windowbg2" bgcolor="#F8F8F8" valign="middle" width="24%"><font size="1">Jul 30<sup>th</sup>, 2003, 10:18am<BR>by <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=Silli">Silli</a></font></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#AFC6DB" width="8%" align="center" valign="top"><img src="http://www.papasody.com/YaBBImages/off.gif" alt="No New Posts" border="0"></td>
+        <td class="windowbg2" bgcolor="#F8F8F8" align="left" width="66%">
+        <font size="2"><a name="OT" href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=OT"><b>Off Topic</b></a></font>
+        <br><font size="1">When you can't make yourself not say random crap.<BR>
+        <i>Moderator: N/A</i></font></td>
+        <td class="windowbg" bgcolor="#AFC6DB" valign="middle" align="center" width="1%"><font size="2">2</font></td>
+        <td class="windowbg" bgcolor="#AFC6DB" valign="middle" align="center" width="1%"><font size="2">4</font></td>
+        <td class="windowbg2" bgcolor="#F8F8F8" valign="middle" width="24%"><font size="1">Jul 29<sup>th</sup>, 2003, 3:21pm<BR>by <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=Kensha">Kensha</a></font></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+<BR><BR>
+<table border=0 width="100%" cellspacing="0" cellpadding="0" bgcolor="#6394BD" class="bordercolor">
+  <tr>
+    <td>
+    <table cellpadding="4" cellspacing="1" border="0" width="100%">
+      <tr>
+        <td bgcolor="#6E94B7" class="titlebg" align="center" colspan="2">
+        <font class="text1" color="#FFFFFF" size="2"><b>Info Center</b></font></td>
+      </tr><tr>
+        <td class="catbg" bgcolor="#DEE7EF" colspan="2"> <font size="2" class="catbg"><b>Forum Statistics</b></font></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#AFC6DB" width="20" valign="middle" align="center"><img src="http://www.papasody.com/YaBBImages/info.gif" border="0" alt=""></td>
+        <td class="windowbg2" bgcolor="#F8F8F8" valign="top" align="center"><font size="1">
+        <table width="98%" cellpadding="3" align="center">
+          <tr>
+            <td valign="top" align="left" width="60%"><font size="1">
+            Total Topics: <B>26</B> &nbsp; - &nbsp; Total Posts: <B>68</B>
+	    <br>Last Updated Topic: <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=rant;action=display;num=1057162482;start=1#1"><b>Pointless Ranting for Fun and Profit</b></a> (Jul 30<sup>th</sup>, 2003, 10:18am)<br>View the <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?action=recent">10 most recent posts</a> of this forum.
+	    </font></td>
+	    <td valign="top" align="left" width="40%"><font size="1">
+	    Total Members: <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?action=mlall"><B>12</B></a>
+	    <BR>Newest Member: <a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=Casinobrat"><b>Casinobrat</b></a>
+	    
+	    </font></td>
+	  </tr>
+	</table>
+	</font></td>
+      </tr><tr>
+        <td class="catbg" bgcolor="#DEE7EF" colspan="2"> <font size="2" class="catbg"><b>Users online</b></font></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#AFC6DB" width="20" valign="middle" align="center"><img src="http://www.papasody.com/YaBBImages/online.gif" border="0" alt=""></td>
+        <td class="windowbg2" bgcolor="#F8F8F8"><font size=1>
+        <table width="98%" cellpadding="3" align="center">
+          <tr>
+            <td valign="top" align="left"><font size="1">
+            1 Guests, 0 Users<BR>
+            </font></td>
+          </tr>
+        </table>
+        </font></td>
+      </tr><tr><td class="catbg" bgcolor="#DEE7EF" colspan="2"><font size="2" class="catbg"><b>Login <small><a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=;action=reminder">(Forgot password?)</a></small></b></font></td></tr><tr>
+        <td class="windowbg" bgcolor="#AFC6DB" width="20" valign=middle align=center><img src="http://www.papasody.com/YaBBImages/login.gif" border="0" alt=""></td>
+        <td class="windowbg2" bgcolor="#F8F8F8" valign="middle"><BR>
+        <form action="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=;action=login2" method="POST">
+        <table border="0" cellpadding="2" cellspacing="0" valign="middle" align="center" width="90%">
+          <tr>
+            <td valign="middle" align="left"><font size=2><b>Username:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=text name="username" size="15" tabindex="1"></font></td>
+            <td valign="middle" align="left"><font size=2><b>Minutes to stay logged in:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=text name="cookielength" size="7" maxlength="4" value="360" tabindex="3"> </font></td>
+          </tr><tr>
+            <td valign="middle" align="left"><font size=2><b>Password:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=password name="passwrd" size="15" tabindex="2"></font></td>
+            <td valign="middle" align="left"><font size=2><b>Always stay logged in:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=checkbox name="cookieneverexp" tabindex="4" checked>&nbsp;&nbsp;</font> <input type=submit value="Login" tabindex="5" accesskey="l"></font></td>
+            <td valign="middle" align="left"><a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl?board=;action=reminder"><font size="1">Forgot password?</font></a></td>
+          </tr>
+        </table>
+        </form>
+       </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+    </font></td>
+  </tr>
+</table>
+<BR>
+<font class="copyright"><a href="http://www.papasody.com/cgi-bin/yabb/YaBB.pl"><font size="1">Camp Check</font></a> &#187; <font size="1">Powered by</font> <a href="http://www.yabbforum.com"><font size="1">YaBB 1 Gold - SP 1.3.1</font></a><font size="1">!<BR>
+<a href="http://www.yabbforum.com">YaBB</a> © 2000-2003. All Rights Reserved.</font></font>
+</center>
+<BR>
+<a TARGET="_top"
+href="http://www.flamingtext.com/"><img
+width=88 height=31 src="http://linkus.flamingtext.com/button1.gif"
+alt="Create FREE graphics at FlamingText.com" border=0></a>
+</body>
+</html>
