@@ -1,0 +1,209 @@
+		<html>
+		<head>
+			<title>Guildsay.com - News Archives (December 2003)</title>
+			<link rel="stylesheet" href="/style.css">
+		</head>
+
+		<body marginwidth="0" marginheight="0" topmargin="0" leftmargin="0">
+			<div align="center">
+			
+			<table width="800" height="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td class="borderback" width="482" height="95" align="center" valign="bottom">
+					<br>
+					<img src="http://www.guildsay.com/images/dot.gif" width="1" height="7" border="0" alt="spacer"><br>
+					<img src="http://www.guildsay.com/images/guheader.gif" width="482" height="5" border="0" alt="Spacer"><br>
+				</td>
+				<td class="borderback" width="318" height="95">
+					<a href="http://www.guildsay.com"><img src="http://www.guildsay.com/images/gulogo_top.gif" width="318" height="95" border="0" alt="Guildsay.com Logo"></a><br>
+				</td>
+			</tr>
+			<tr>
+				<td width="482" class="textback" height="42" valign="top">&nbsp;</td>
+				<td width="318" class="textback" height="42" valign="top">
+					<a href="http://www.guildsay.com"><img src="http://www.guildsay.com/images/gulogo_bot.gif" width="318" height="42" border="0" alt="Guildsay.com Logo"></a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+					<tr>
+						<td width="170" class="textback" align="center" valign="top">
+														<table width="142" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td colspan="3"><img src="http://www.guildsay.com/images/nav.gif" width="142" height="37" border="0" alt="Navigation Pane"></td>
+							</tr>
+							<tr>
+								<td width="2" class="border"><img src="http://www.guildsay.com/images/dot.gif" width="2" height="131" border="0" alt="spacer"></td>
+								<td width="138" class="body" align="center">
+								<a href="http://www.guildsay.com/">Home</a><br>
+<a href="http://www.guildsay.com/guilds/view_server.php">Guilds</a><br>
+<a href="http://www.guildsay.com/events/view_server_calendar.php">Events</a><br>
+<span class="disabled">Articles</span><br>
+<a href="http://www.guildsay.com/boards/view_boards.php?type=s">Message Boards</a><br>
+<a href="http://www.guildsay.com/about.php">About Us</a><br>
+<a href="http://www.guildsay.com/faq.php">FAQ</a><br>
+								</td>
+								<td width="2" class="border"><img src="http://www.guildsay.com/images/dot.gif" width="2" height="131" border="0" alt="spacer"></td>
+							</tr>
+							<tr>
+								<td colspan="3" class="border"><img src="http://www.guildsay.com/images/dot.gif" width="142" height="2" border="0" alt="spacer"></td>
+							</tr>
+							<tr>
+								<td colspan="3">&nbsp;</td>
+							</tr>
+														<tr>
+								<td width="2" class="textback"><img src="http://www.guildsay.com/images/dot.gif" width="2" height="7" border="0" alt="spacer"></td>
+								<td width="138" class="textback"><img src="http://www.guildsay.com/images/dot.gif" width="138" height="7" border="0" alt="spacer"></td>
+								<td width="2" class="textback"><img src="http://www.guildsay.com/images/dot.gif" width="2" height="7" border="0" alt="spacer"></td>
+							</tr>
+														<tr>
+								<td colspan="3"><img src="http://www.guildsay.com/images/login.gif" width="142" height="54" border="0" alt="Login Pane"></td>
+							</tr>
+							<tr>
+								<td width="2" class="border"><img src="http://www.guildsay.com/images/dot.gif" width="2" height="1" border="0" alt="spacer"></td>
+								<td width="138" class="body"><img src="http://www.guildsay.com/images/dot.gif" width="138" height="1" border="0" alt="spacer"></td>
+								<td width="2" class="border"><img src="http://www.guildsay.com/images/dot.gif" width="2" height="1" border="0" alt="spacer"></td>
+							</tr>
+							<tr>
+								<td width="2" class="border"><img src="http://www.guildsay.com/images/dot.gif" width="2" height="134" border="0" alt="spacer"></td>
+								<td width="138" class="body" align="center">
+																		<form action="/news_archive.php" method="post"><input type="hidden" name="sid" value="d9293cf1aab7c63408072832b189c996" />
+									<input type="hidden" name="login_submitted" value="1">
+									<div class="small" align="left">&nbsp;User:</div>
+									<input type="text" name="login" size="18" maxlength="20" value=""><br>
+									<div class="small" align="left">&nbsp;Password:</div>
+									<input type="password" name="password" size="18"><br>
+									<center>
+										<br>
+										<input type="submit" value="Login">
+										<br>
+										<span class="small">(<a href="http://www.guildsay.com/create/create_user.php">Create a User</a>)</span><br>
+										<span class="small">(<a href="http://www.guildsay.com/user/forgot_password.php">Forgot Password?</a>)</span>
+										<p>
+									</center>
+									</form>
+																	</td>
+								<td width="2" class="border"><img src="http://www.guildsay.com/images/dot.gif" width="2" height="134" border="0" alt="spacer"></td>
+							</tr>
+							<tr>
+								<td colspan="3" class="border"><img src="http://www.guildsay.com/images/dot.gif" width="142" height="2" border="0" alt="spacer"></td>
+							</tr>
+							<tr>
+								<td colspan="3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="3"><img src="http://www.guildsay.com/images/poll.gif" width="142" height="40" border="0" alt="Poll Pane"></td>
+							</tr>
+							<tr>
+								<td width="2" class="border"><img src="http://www.guildsay.com/images/dot.gif" width="2" height="131" border="0" alt="spacer"></td>
+								<td width="138" class="body" align="left" valign="center">
+									<span class="small">
+																											<table width="100%" cellspacing="0" cellpadding="0" border="0">
+									<tr>
+										<td width="99%" align="center" valign="center">
+											No poll today...
+										</td>
+										<td width="1%">
+											<img src="http://www.guildsay.com/images/dot.gif" width="1" height="131" border="0" alt="spacer">										</td>
+									</tr>
+									</table>
+																		</span>
+								</td>
+								<td width="2" class="border"><img src="http://www.guildsay.com/images/dot.gif" width="2" height="131" border="0" alt="spacer"></td>
+							</tr>
+							<tr>
+								<td colspan="3" class="border"><img src="http://www.guildsay.com/images/dot.gif" width="142" height="2" border="0" alt="spacer"></td>
+							</tr>
+							<tr>
+								<td colspan="3" class="textback"><img src="http://www.guildsay.com/images/dot.gif" width="1" height="500" border="0" alt="spacer"></td>
+							</tr>
+							</table>
+						</td>
+						<td width="630" class="textback" align="center" valign="top">
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td width="70%" align="center" valign="top">
+											</td>
+		<td width="30%" align="center" valign="top">
+			<table width="85%" cellspacing="0" cellpadding="2" class="border" border="0">
+			<tr>
+				<td width="100%">
+					<table width="100%" cellspacing="0" cellpadding="2" border="0">
+					<tr>
+						<td class="title">
+							Months
+						</td>
+					</tr>
+					<tr>
+						<td class="body">
+						<a href="/news_archive.php?month=12&year=2000&sid=d9293cf1aab7c63408072832b189c996">December 2000</a><br>
+<a href="/news_archive.php?month=1&year=2001&sid=d9293cf1aab7c63408072832b189c996">January 2001</a><br>
+<a href="/news_archive.php?month=2&year=2001&sid=d9293cf1aab7c63408072832b189c996">February 2001</a><br>
+<a href="/news_archive.php?month=3&year=2001&sid=d9293cf1aab7c63408072832b189c996">March 2001</a><br>
+<a href="/news_archive.php?month=4&year=2001&sid=d9293cf1aab7c63408072832b189c996">April 2001</a><br>
+<a href="/news_archive.php?month=5&year=2001&sid=d9293cf1aab7c63408072832b189c996">May 2001</a><br>
+<a href="/news_archive.php?month=6&year=2001&sid=d9293cf1aab7c63408072832b189c996">June 2001</a><br>
+<a href="/news_archive.php?month=7&year=2001&sid=d9293cf1aab7c63408072832b189c996">July 2001</a><br>
+<a href="/news_archive.php?month=8&year=2001&sid=d9293cf1aab7c63408072832b189c996">August 2001</a><br>
+<a href="/news_archive.php?month=9&year=2001&sid=d9293cf1aab7c63408072832b189c996">September 2001</a><br>
+<a href="/news_archive.php?month=10&year=2001&sid=d9293cf1aab7c63408072832b189c996">October 2001</a><br>
+<a href="/news_archive.php?month=11&year=2001&sid=d9293cf1aab7c63408072832b189c996">November 2001</a><br>
+<a href="/news_archive.php?month=12&year=2001&sid=d9293cf1aab7c63408072832b189c996">December 2001</a><br>
+<a href="/news_archive.php?month=1&year=2002&sid=d9293cf1aab7c63408072832b189c996">January 2002</a><br>
+<a href="/news_archive.php?month=2&year=2002&sid=d9293cf1aab7c63408072832b189c996">February 2002</a><br>
+<a href="/news_archive.php?month=3&year=2002&sid=d9293cf1aab7c63408072832b189c996">March 2002</a><br>
+<a href="/news_archive.php?month=4&year=2002&sid=d9293cf1aab7c63408072832b189c996">April 2002</a><br>
+<a href="/news_archive.php?month=5&year=2002&sid=d9293cf1aab7c63408072832b189c996">May 2002</a><br>
+<a href="/news_archive.php?month=6&year=2002&sid=d9293cf1aab7c63408072832b189c996">June 2002</a><br>
+<a href="/news_archive.php?month=7&year=2002&sid=d9293cf1aab7c63408072832b189c996">July 2002</a><br>
+<a href="/news_archive.php?month=8&year=2002&sid=d9293cf1aab7c63408072832b189c996">August 2002</a><br>
+<a href="/news_archive.php?month=9&year=2002&sid=d9293cf1aab7c63408072832b189c996">September 2002</a><br>
+<a href="/news_archive.php?month=10&year=2002&sid=d9293cf1aab7c63408072832b189c996">October 2002</a><br>
+<a href="/news_archive.php?month=11&year=2002&sid=d9293cf1aab7c63408072832b189c996">November 2002</a><br>
+<a href="/news_archive.php?month=12&year=2002&sid=d9293cf1aab7c63408072832b189c996">December 2002</a><br>
+<a href="/news_archive.php?month=1&year=2003&sid=d9293cf1aab7c63408072832b189c996">January 2003</a><br>
+<a href="/news_archive.php?month=2&year=2003&sid=d9293cf1aab7c63408072832b189c996">February 2003</a><br>
+<a href="/news_archive.php?month=3&year=2003&sid=d9293cf1aab7c63408072832b189c996">March 2003</a><br>
+<a href="/news_archive.php?month=4&year=2003&sid=d9293cf1aab7c63408072832b189c996">April 2003</a><br>
+<a href="/news_archive.php?month=5&year=2003&sid=d9293cf1aab7c63408072832b189c996">May 2003</a><br>
+<a href="/news_archive.php?month=6&year=2003&sid=d9293cf1aab7c63408072832b189c996">June 2003</a><br>
+<a href="/news_archive.php?month=7&year=2003&sid=d9293cf1aab7c63408072832b189c996">July 2003</a><br>
+<a href="/news_archive.php?month=8&year=2003&sid=d9293cf1aab7c63408072832b189c996">August 2003</a><br>
+<a href="/news_archive.php?month=9&year=2003&sid=d9293cf1aab7c63408072832b189c996">September 2003</a><br>
+<a href="/news_archive.php?month=10&year=2003&sid=d9293cf1aab7c63408072832b189c996">October 2003</a><br>
+<a href="/news_archive.php?month=11&year=2003&sid=d9293cf1aab7c63408072832b189c996">November 2003</a><br>
+December 2003<br>
+						</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>			
+		</td>
+	</tr>
+	</table>
+	<p>
+						</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="borderback" width="800" height="34" colspan="2" align="center" valign="top">
+					<img src="http://www.guildsay.com/images/gufooter.gif" width="800" height="10"><br>
+					<font face="arial" size="1" color="#CCCC99">
+					<small>
+					<a href="http://www.guildsay.com/privacy.php">Privacy Policy</a>
+					<br>Guildsay.com is Copyright 2000&copy; <a href="http://www.thirty4.com">thirty4 interactive LLC</a>.<br>
+					Guildsay.com and <a href="http://www.thirty4.com">thirty4 interactive LLC</a> are in no way affiliated with Verant Interactive Inc.<br>
+					EverQuest is a trademark of Sony Computer Entertainment America Inc.
+					</small>
+				</td>
+			</tr>
+			</table>
+			</div>	
+		</body>
+
+		</html>
+	

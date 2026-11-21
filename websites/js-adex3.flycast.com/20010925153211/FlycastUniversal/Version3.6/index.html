@@ -1,0 +1,136 @@
+// Copyright 1999, 2000 Flycast Communications. All rights reserved.
+// Patent Pending
+// Version 3.6.12
+
+FlycastLoaded		= true;
+FlycastRandom		= 0;
+FlycastClickTarget	= "_top";
+FlycastUnicastPage	= "";
+//FlycastUnicastPage	= "interstitial";
+
+FlycastFoundMSIE	= navigator.userAgent.indexOf("MSIE") >= 0;
+FlycastFoundMSIE2	= navigator.userAgent.indexOf("MSIE2") >= 0 || navigator.userAgent.indexOf("MSIE 2") >= 0;
+FlycastFoundMSIE3	= navigator.userAgent.indexOf("MSIE 3") >= 0;
+FlycastFoundNN	= navigator.userAgent.indexOf("Mozilla/") >= 0 && !FlycastFoundMSIE;
+FlycastFoundNN2	= navigator.userAgent.indexOf("Mozilla/2.") >= 0 && !FlycastFoundMSIE;
+FlycastFoundNN3	= navigator.userAgent.indexOf("Mozilla/3.") >= 0 && !FlycastFoundMSIE;
+//FlycastFoundMac	= navigator.userAgent.indexOf("Macintosh") >= 0 || navigator.userAgent.indexOf("Mac_") >= 0;
+//FlycastFoundMacAndIE3	= FlycastFoundMac && FlycastFoundMSIE3;
+FlycastModernJS	= !(FlycastFoundNN3 || FlycastFoundMSIE3);
+
+function FlycastReplace(str, chr, replacement)
+{	//more universally supported than str.replace(chr, replacement)
+	var	x	= str.split(chr);
+	var	y	= x[0];
+	for (i = 1; i < x.length; i++)
+	{
+		y	+= replacement;
+		y	+= x[i];
+	}
+	return	y;
+}
+
+function FlycastSuppressError() {
+	window.location.reload();
+	return true;
+}
+if (FlycastFoundNN3) {
+	window.onerror	= FlycastSuppressError;
+}
+
+function FlycastDeliverAd ()
+{
+	FlycastAdServer	= "http://ad-adex3.flycast.com/server";
+	FlycastSiteInfo	= FlycastSite + "/" + FlycastPage + "/";
+	FlycastDataTag1	= "";
+	FlycastDataTag2	= "";
+	FlycastQuery	= "";
+
+	if (FlycastNewAd)
+	{	//set FlycastRandom
+		FlycastNow		= new Date();
+		FlycastRandom	= FlycastNow.getTime();
+		FlycastRandom	= FlycastRandom % 10000000;
+		if (FlycastModernJS)
+		{
+			FlycastRandom	+= Math.floor(Math.random() * 100);
+		}
+	}
+
+	var	httpHeader			= "http://";
+	var	httpReferrerIndex	= location.href.indexOf(httpHeader);
+	if ((httpReferrerIndex >= 0) && FlycastModernJS)
+	{	//set FlycastDataTag1
+		httpReferrerIndex	+= httpHeader.length;
+		httpReferrer	= location.href.substr(httpReferrerIndex);
+		//first, truncate queryString
+		httpReferrer	= httpReferrer.split('?')[0];
+		//substitute ascii for potentially unparseable characters
+		httpReferrer	= FlycastReplace(httpReferrer, ";", "\%3b");	//replace (globally) ';' with "%3b"
+		httpReferrer	= FlycastReplace(httpReferrer, "=", "\%3d");	//replace (globally) '=' with "%3d"
+		httpReferrer	= FlycastReplace(httpReferrer, "/", "\%2f");	//replace (globally) '/' with "%2f"
+		FlycastDataTag1	= "referrer=" + httpReferrer;
+	}
+
+	if (FlycastVersion >= 3.6)
+	{	//set FlycastDataTag2, FlycastQuery, FlycastClickTarget (used by media)
+		if (FlycastEnableTargetWindow)
+		{	//append fcd to indicate using child clickthrough window
+			FlycastDataTag2		= "targetType=_blank";
+			FlycastClickTarget	= "_blank";
+		}
+		if (FlycastKeyword.length > 0)
+		{	//create query string with keyword
+			FlycastQuery	= "?" + FlycastKeyword;
+		}
+	}
+
+	if ((FlycastDataTag1.length > 0) || (FlycastDataTag2.length > 0))
+	{	//append DataTags
+		FlycastSiteInfo	+= ";";
+		if (FlycastDataTag1.length > 0)
+		{
+			FlycastSiteInfo	+= FlycastDataTag1 + ";";
+		}
+		if (FlycastDataTag2.length > 0)
+		{
+			FlycastSiteInfo	+= FlycastDataTag2 + ";";
+		}
+		FlycastSiteInfo	+= "/";
+	}
+
+	//append random number and possibly keyword
+	FlycastSiteInfo	+= FlycastRandom + FlycastQuery;
+
+	if (FlycastFoundMSIE2 || FlycastFoundNN3)
+	{
+		document.write("<A target=" + FlycastClickTarget + " HREF=\"" + FlycastAdServer + "/click/" +  FlycastSiteInfo + "\"><IMG WIDTH=" + FlycastWidth + " HEIGHT=" + FlycastHeight + " SRC=\"" + FlycastAdServer + "/ad/" +  FlycastSiteInfo + "\"></A>");
+	}
+	else if (FlycastFoundMSIE)
+	{
+		document.write("<IFRAME SRC=\"" + FlycastAdServer + "/iframe/" +  FlycastSiteInfo + "\" scrolling='no' marginwidth=0 marginheight=0 frameborder=0 vspace=0 hspace=0 width=" + FlycastWidth + " height=" + FlycastHeight + "></IFRAME>");
+	}
+	else
+	{
+		document.write("<S" + "CRIPT SRC=\"" + FlycastAdServer + "/js/" +  FlycastSiteInfo + "\" LANGUAGE=JAVASCRIPT></SCRIPT>");
+	}
+	if (FlycastUnicastPage.length > 0)
+	{
+		FlycastUnicastSiteInfo	= FlycastSite + "/" + FlycastUnicastPage + "/" + FlycastRandom;
+		document.write("<S" + "CRIPT SRC=\"" + FlycastAdServer + "/js/" +  FlycastUnicastSiteInfo + "\" LANGUAGE=JAVASCRIPT></SCRIPT>");
+	}
+}
+
+if (FlycastPrintTag)
+{
+	if (FlycastVersion > 3.5)
+	{
+		FlycastDeliverAd();
+	}
+	else if (FlycastFoundNN3)
+	{
+		FlycastLoaded	= false;
+		FlycastDeliverAd();
+//	document.write("<A target=" + FlycastClickTarget + " HREF=\"" + FlycastAdServer + "/click/" +  FlycastSiteInfo + "\"><IMG WIDTH=" + FlycastWidth + " HEIGHT=" + FlycastHeight + " SRC=\"" + FlycastAdServer + "/ad/" +  FlycastSiteInfo + "\"></A>");
+	}
+}
