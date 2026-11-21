@@ -1,0 +1,914 @@
+
+
+
+		   
+		   
+
+<script language="JavaScript"><!--
+// Browser Detection
+isMac = (navigator.appVersion.indexOf("Mac")!=-1) ? true : false;
+NS4 = (document.layers) ? true : false;
+IEmac = ((document.all)&&(isMac)) ? true : false;
+IE4plus = (document.all) ? true : false;
+IE4 = ((document.all)&&(navigator.appVersion.indexOf("MSIE 4.")!=-1)) ? true : false;
+IE5 = ((document.all)&&(navigator.appVersion.indexOf("MSIE 5.")!=-1)) ? true : false;
+ver4 = (NS4 || IE4plus) ? true : false;
+NS6 = (!document.layers) && (navigator.userAgent.indexOf('Netscape')!=-1)?true:false;
+
+// Body onload utility (supports multiple onload functions)
+var gSafeOnload = new Array();
+function SafeAddOnload(f)
+{
+	if (IEmac && IE4)  // IE 4.5 blows out on testing window.onload
+	{
+		window.onload = SafeOnload;
+		gSafeOnload[gSafeOnload.length] = f;
+	}
+	else if  (window.onload)
+	{
+		if (window.onload != SafeOnload)
+		{
+			gSafeOnload[0] = window.onload;
+			window.onload = SafeOnload;
+		}		
+		gSafeOnload[gSafeOnload.length] = f;
+	}
+	else
+		window.onload = f;
+}
+function SafeOnload()
+{
+	for (var i=0;i<gSafeOnload.length;i++)
+		gSafeOnload[i]();
+}
+
+// Call the following with your function as the argument
+//SafeAddOnload(yourfunctioname);
+
+
+
+//<redirect>
+function Redirect(contentonly,module,submodule,subcontent,site,user,session,url)
+{
+	if (url)
+		url = "&" + url;
+	else
+		url = "";
+	
+		self.content.location.href="/dynaweb/1001057/ei.cfm?M="+module+"&SM="+submodule+"&SC="+subcontent+"&W=C&P=N&S="+site+"&U="+user+"&SS="+session+url;
+		if (contentonly=="N")
+		   {
+		   self.title.location.href="/dynaweb/1001057/ei.cfm?M="+module+"&SM="+submodule+"&SC="+subcontent+"&W=T&P=N&S="+site+"&U="+user+"&SS="+session+url;
+		   self.nav.location.href="/dynaweb/1001057/ei.cfm?M="+module+"&SM="+submodule+"&SC="+subcontent+"&W=N&P=N&S="+site+"&U="+user+"&SS="+session+url;
+		   
+		   }
+		
+}
+//</redirect>
+
+
+
+	
+	
+function StoreRedirect(navframe,actionsframe,meterframe,nav,subnav,contenttype,page,order,site,user,session,canreset,sturl)
+{
+//alert(arguments.length);
+
+
+	if(!sturl)
+		sturl = '';
+	/*if (!modify)
+		modify=0;
+	if (!item)
+		item=0;
+	if (!quantity)
+		var currquantity ="";
+	else
+		var currquantity ="&quantity="+quantity;
+	if (!options)
+	*/	options=0;
+		
+	var stProtocol = location.protocol.toUpperCase();	
+	if (stProtocol=="HTTP:"){
+		var stLoc = top.document.location.toString();
+		var stPaths = stLoc.substring(7).split('/');
+		var stDomain = stPaths[0];
+		top.location.href="https://www.dynasite.net/dynaweb/1001057/explore.cfm?STORE=Y&N="+nav+"&SN="+subnav+"&CT="+contenttype+"&PG="+page+"&O="+order+"&W=STORE&P=N&S="+site+"&U="+user+"&SS="+session+"&CR="+canreset+sturl;
+		
+	}else{
+		
+		self.content.location="/dynaweb/1001057/ei.cfm?STORE=Y&N="+nav+"&SN="+subnav+"&CT="+contenttype+"&PG="+page+"&O="+order+"&W=STC&P=N&S="+site+"&U="+user+"&SS="+session+"&CR="+canreset+sturl;
+		self.title.location="/dynaweb/1001057/ei.cfm?STORE=Y&N="+nav+"&SN="+subnav+"&CT="+contenttype+"&PG="+page+"&O="+order+"&W=STT&P=N&S="+site+"&U="+user+"&SS="+session+"&CR="+canreset+sturl;
+		if (navframe=="Y")
+		   {
+		   self.nav.location="/dynaweb/1001057/ei.cfm?STORE=Y&N="+nav+"&SN="+subnav+"&CT="+contenttype+"&PG="+page+"&O="+order+"&W=STN&P=N&S="+site+"&U="+user+"&SS="+session+"&CR="+canreset+sturl;
+		   }
+		//if (actionsframe=="Y")
+		  // {
+		  // self.storeactions.location="/dynaweb/1001057/ei.cfm?STORE=Y&N="+nav+"&SN="+subnav+"&CT="+contenttype+"&PG="+page+"&O="+order+"&W=STA&P=N&S="+site+"&U="+user+"&SS="+session+"&CR="+canreset;
+		  // }
+		
+	}
+	
+	
+}
+
+
+
+
+function SiteImgRep(page,image,file,obj)
+{
+
+
+   
+	self[page].document[image].src=file;
+   
+   
+
+
+}
+
+function OpenWindow(url,name,options,canfocus)
+{
+if (name=='preview')
+   {
+   /* if(!preview || preview.closed){ */
+   	 preview=window.open(url,'preview');
+   /* } */
+   preview.focus();
+   }
+else if (name=='eihome')
+   {
+   window.open(url,'eihome');
+   }
+else
+   {
+   window.open(url,name,options);
+   }
+}
+
+function NoBlankForm(form)
+{
+	layout = form.Layout.value;
+	msg = "The following information on your form needs to be corrected:\n\n";
+	alertflag = "N";
+	if (layout == "101" || layout == "102" || layout == "103" || layout == "105")
+	{
+		if (form.ema_fname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * First Name is blank\n";
+		}
+		if (form.ema_lname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Last Name is blank\n";
+		}
+		if (form.ema_email.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Email is blank\n";
+		}
+	}
+	else if (layout == "104")
+	{
+		if (form.ema_fname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * First Name is blank\n";
+		}
+		if (form.ema_lname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Last Name is blank\n";
+		}
+		if (form.ema_addr1.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Address is blank\n";
+		}
+		if (form.ema_city.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * City is blank\n";
+		}
+		if (form.ema_state.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * State is blank\n";
+		}
+		if (form.ema_zip.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Zip is blank\n";
+		}
+		if (form.ema_phone.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Phone is blank\n";
+		}
+		if (form.ema_email.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Email is blank\n";
+		}
+		if (form.ema_amount.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Amount is blank\n";
+		}
+		if (isNaN(form.ema_amount.value))
+		{
+			alertflag = "Y";
+			msg = msg + "  * Amount is not a valid amount\n";
+		}
+		if (form.ema_ccnumb.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Credit Card is blank\n";
+		}
+		if (form.ema_ccfname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * First Name on Credit Card is blank\n";
+		}
+		if (form.ema_cclname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Last Name on Credit Card is blank\n";
+		}
+		if (form.ema_baddr1.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing Address is blank\n";
+		}
+		if (form.ema_bcity.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing City is blank\n";
+		}
+		if (form.ema_bstate.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing State is blank\n";
+		}
+		if (form.ema_bzip.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing Zip is blank\n";
+		}
+	}
+	if (alertflag == "Y"){
+		   msg = msg + "\nPlease make these corrections and try again";
+		   alert(msg);
+		   return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function NoBlankEnhancedForm(form)
+{
+	layout = form.Layout.value;
+	msg = "The following information on your form needs to be corrected:\n\n";
+	alertflag = "N";
+	if (layout == "101")
+	{
+		if (form.ema_fname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Primary Contact First Name is blank\n";
+		}
+		if (form.ema_lname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Primary Contact Last Name is blank\n";
+		}
+		if (form.ema_email.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Primary Contact Email is blank\n";
+		}
+	}
+	else if (layout == "102")
+	{
+		if (form.ema_fname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * First Name is blank\n";
+		}
+		if (form.ema_lname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Last Name is blank\n";
+		}
+		if (form.ema_addr1.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Address is blank\n";
+		}
+		if (form.ema_city.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * City is blank\n";
+		}
+		if (form.ema_state.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * State is blank\n";
+		}
+		if (form.ema_zip.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Zip is blank\n";
+		}
+		if (form.ema_phone.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Phone is blank\n";
+		}
+		if (form.ema_email.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Email is blank\n";
+		}
+		if (form.ema_url.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Web Site Address is blank\n";
+		}
+		if (!(form.ema_performance[0].checked) && !(form.ema_performance[1].checked))
+		{
+			alertflag = "Y";
+			msg = msg + "  * You did not indicate if the performance is private or public\n";
+		}
+		if (!(form.ema_sound[0].checked) && !(form.ema_sound[1].checked))
+		{
+			alertflag = "Y";
+			msg = msg + "  * You did not indicate if sound and lights are provided\n";
+		}
+	}
+	else if (layout == "103")
+	{
+		if (form.ema_fname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * First Name is blank\n";
+		}
+		if (form.ema_lname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Last Name is blank\n";
+		}
+		if (form.ema_addr1.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Address is blank\n";
+		}
+		if (form.ema_city.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * City is blank\n";
+		}
+		if (form.ema_state.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * State is blank\n";
+		}
+		if (form.ema_zip.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Zip is blank\n";
+		}
+		if (form.ema_phone.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Phone is blank\n";
+		}
+		if (form.ema_email.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Email is blank\n";
+		}
+	}
+	else if (layout == "104")
+	{
+		if (form.ema_ccompan.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Company Name is blank\n";
+		}
+		if (form.ema_fname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Primary Contact First Name is blank\n";
+		}
+		if (form.ema_lname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Primary Contact Last Name is blank\n";
+		}
+		if (form.ema_email.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Primary Contact Email is blank\n";
+		}
+	}	
+	else if (layout == "105")
+	{
+		if (form.ema_fname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * First Name is blank\n";
+		}
+		if (form.ema_lname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Last Name is blank\n";
+		}
+		if (form.ema_addr1.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Address is blank\n";
+		}
+		if (form.ema_city.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * City is blank\n";
+		}
+		if (form.ema_state.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * State is blank\n";
+		}
+		if (form.ema_zip.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Zip is blank\n";
+		}
+		if (form.ema_phone.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Phone is blank\n";
+		}
+		if (form.ema_email.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Email is blank\n";
+		}
+		if (form.ema_amount.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Amount is blank\n";
+		}
+		if (isNaN(form.ema_amount.value))
+		{
+			alertflag = "Y";
+			msg = msg + "  * Amount is not a valid amount\n";
+		}
+		if (form.ema_howmany.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * How Many is blank\n";
+		}
+		if (isNaN(form.ema_howmany.value))
+		{
+			alertflag = "Y";
+			msg = msg + "  * How Many is not a valid number\n";
+		}
+		if (form.ema_ccnumb.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Credit Card is blank\n";
+		}
+		if (form.ema_ccfname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * First Name on Credit Card is blank\n";
+		}
+		if (form.ema_cclname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Last Name on Credit Card is blank\n";
+		}
+		if (form.ema_baddr1.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing Address is blank\n";
+		}
+		if (form.ema_bcity.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing City is blank\n";
+		}
+		if (form.ema_bstate.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing State is blank\n";
+		}
+		if (form.ema_bzip.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing Zip is blank\n";
+		}
+		if (form.DeliveryMethod.value != "Mail")
+		{
+			if (!(form.DeliveryMethod[0].checked) && !(form.DeliveryMethod[1].checked))
+			{
+				alertflag = "Y";
+				msg = msg + "  * You did not indicate if you would like to Print the certificates or have them Mailed.\n";
+			}
+		}
+	}	
+	else
+	{
+		return true;
+	}
+	if (alertflag == "Y"){
+		   msg = msg + "\nPlease make these corrections and try again";
+		   alert(msg);
+		   return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function NoBlankCompanyProfile(form)
+{
+	layout = form.Layout.value;
+	msg = "The following information on your form needs to be corrected:\n\n";
+	alertflag = "N";
+	if (form.ema_ccompan.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Company Name is blank\n";
+	}
+	if (!(form.ema_womenown[0].checked) && !(form.ema_womenown[1].checked))
+	{
+		alertflag = "Y";
+		msg = msg + "  * You did not indicate if the company was minority/women owned\n"
+	}
+	if (form.ema_fname.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Primary Contact First Name is blank\n";
+	}
+	if (form.ema_lname.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Primary Contact Last Name is blank\n";
+	}
+	if (form.ema_email.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Primary Contact Email is blank\n";
+	}
+	if (alertflag == "Y"){
+		   msg = msg + "\nPlease make these corrections and try again";
+		   alert(msg);
+		   return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function NoBlankRFP(form)
+{
+	layout = form.Layout.value;
+	msg = "The following information on your form needs to be corrected:\n\n";
+	alertflag = "N";
+	if (form.fee_coname.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Company Name is blank\n";
+	}
+	if (form.ema_email.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Email is blank\n";
+	}
+	if (form.use_name.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Logon is blank\n";
+	}
+	if (form.use_password.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Password is blank\n";
+	}
+	if ((form.fee_text.value=="") && (form.DocumentUpload.value=="") && (form.HasFile.value==""))
+	{
+		alertflag = "Y";
+		msg = msg + "  * Please enter RFP text or upload a RFP document\n";
+	}
+	
+	if (alertflag == "Y"){
+		   msg = msg + "\nPlease make these corrections and try again";
+		   alert(msg);
+		   return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function CloseRFP(smod, submod, site, url, feeCode, dataSource)
+{
+	var blnConfirm;
+	blnConfirm = confirm('Are you sure you want to close this RFP?');
+	if (blnConfirm)
+	{
+		top.blank.location.href = "/dynaengine/CloseRFP.cfm?code=" + feeCode + "&dataSource=" + dataSource + "&site=" + site;
+		Redirect('Y', smod, submod,'100000', site,'1','1', url);
+	}
+}
+function NoBlankRFPProposal(form)
+{
+	layout = form.Layout.value;
+	msg = "The following information on your form needs to be corrected:\n\n";
+	alertflag = "N";
+	if (form.fee_fname.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * First Name is blank\n";
+	}
+	if (form.fee_fname.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Last Name is blank\n";
+	}
+	if (form.fee_coname.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Company Name is blank\n";
+	}
+	if (form.fee_phone.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Phone number is blank\n";
+	}
+	if (form.fee_email.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Email is blank\n";
+	}
+	if (form.fee_proposal.value=="")
+	{
+		alertflag = "Y";
+		msg = msg + "  * Proposal is blank\n";
+	}
+	
+
+	if (alertflag == "Y")
+	{
+		   msg = msg + "\nPlease make these corrections and try again";
+		   alert(msg);
+		   return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+
+
+//--></script>
+
+			
+				
+
+<script language="JavaScript"><!--
+
+x=new Image;x.src="/dynaimages/x.gif";
+function PreloadTgraphic(){
+x=1;
+x=new Image;x.src="/dynatemplates/100299/c104/bgbot.gif";
+x=new Image;x.src="/dynatemplates/100299/c104/bgnav.gif";
+x=new Image;x.src="/dynatemplates/100299/c104/bgtop.gif";
+x=new Image;x.src="/dynatemplates/100299/c104/dslinka.gif";
+x=new Image;x.src="/dynatemplates/100299/c104/dslinkb.gif";
+x=new Image;x.src="/dynatemplates/100299/c104/logo_h.gif";
+}
+function PreloadNav()
+{
+x=new Image;x.src="/dynaweb/1001057/1001057Nt101.gif";
+n101b=new Image;n101b.src="/dynaweb/1001057/1001057Nn101b.gif";
+n126a=new Image;n126a.src="/dynaweb/1001057/1001057Nn126a.gif";
+n129a=new Image;n129a.src="/dynaweb/1001057/1001057Nn129a.gif";
+n130a=new Image;n130a.src="/dynaweb/1001057/1001057Nn130a.gif";
+n131a=new Image;n131a.src="/dynaweb/1001057/1001057Nn131a.gif";
+}
+function PreloadNavc()
+{
+n101c=new Image;n101c.src="/dynaweb/1001057/1001057Nn101c.gif";
+n126c=new Image;n126c.src="/dynaweb/1001057/1001057Nn126c.gif";
+n129c=new Image;n129c.src="/dynaweb/1001057/1001057Nn129c.gif";
+n130c=new Image;n130c.src="/dynaweb/1001057/1001057Nn130c.gif";
+n131c=new Image;n131c.src="/dynaweb/1001057/1001057Nn131c.gif";
+
+}
+function PreloadImages()
+{
+x=new Image;x.src="/dynatemplates/100299/c104/subtitlefill.gif";
+x=new Image;x.src="/dynatemplates/100299/c104/subnavfill.gif";
+x=new Image;x.src="/dynatemplates/100299/c104/infospacer.gif";
+x=new Image;x.src="/dynatemplates/100299/c104/navspacer.gif";
+x=new Image;x.src="/dynatemplates/100299/c104/subnavspacer.gif";
+
+PreloadNavc();
+PreloadNav();
+
+}
+SafeAddOnload(PreloadImages);
+function NoBlankForm(form)
+{
+	layout = form.Layout.value;
+	msg = "The following information on your form needs to be corrected:\n\n";
+	alertflag = "N";
+	if (layout == "101" || layout == "102" || layout == "103" || layout == "105")
+	{
+		if (form.ema_fname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * First Name is blank\n";
+		}
+		if (form.ema_lname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Last Name is blank\n";
+		}
+		if (form.ema_email.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Email is blank\n";
+		}
+	}
+	else if (layout == "104")
+	{
+		if (form.ema_fname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * First Name is blank\n";
+		}
+		if (form.ema_lname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Last Name is blank\n";
+		}
+		if (form.ema_addr1.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Address is blank\n";
+		}
+		if (form.ema_city.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * City is blank\n";
+		}
+		if (form.ema_state.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * State is blank\n";
+		}
+		if (form.ema_zip.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Zip is blank\n";
+		}
+		if (form.ema_phone.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Phone is blank\n";
+		}
+		if (form.ema_email.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Email is blank\n";
+		}
+		if (form.ema_amount.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Amount is blank\n";
+		}
+		if (isNaN(form.ema_amount.value))
+		{
+			alertflag = "Y";
+			msg = msg + "  * Amount is not a valid amount\n";
+		}
+		if (form.ema_ccnumb.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Credit Card is blank\n";
+		}
+		if (form.ema_ccfname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * First Name on Credit Card is blank\n";
+		}
+		if (form.ema_cclname.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Last Name on Credit Card is blank\n";
+		}
+		if (form.ema_baddr1.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing Address is blank\n";
+		}
+		if (form.ema_bcity.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing City is blank\n";
+		}
+		if (form.ema_bstate.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing State is blank\n";
+		}
+		if (form.ema_bzip.value=="")
+		{
+			alertflag = "Y";
+			msg = msg + "  * Billing Zip is blank\n";
+		}
+	}
+	if (alertflag == "Y"){
+		   msg = msg + "\nPlease make these corrections and try again";
+		   alert(msg);
+		   return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+//--></script>
+
+
+			
+		   	
+<html>
+<head>
+<script language="javascript">
+function lib_bwcheck(){ //Browsercheck (needed)
+		this.ver=navigator.appVersion; this.agent=navigator.userAgent
+		this.dom=document.getElementById?1:0
+		this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0;
+		this.ie6=(this.ver.indexOf("MSIE 6")>-1 && this.dom)?1:0;
+		this.ie4=(document.all && !this.dom)?1:0;
+		this.ie=this.ie4||this.ie5||this.ie6
+		this.mac=this.agent.indexOf("Mac")>-1
+		this.opera5=this.agent.indexOf("Opera 5")>-1
+		this.ns6=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+		this.ns4=(document.layers && !this.dom)?1:0;
+		this.bw=(this.ie6 || this.ie5 || this.ie4 || this.ns4 || this.ns6 || this.opera5 || this.dom)
+		return this
+	}
+	var bw=new lib_bwcheck() 
+
+// Testing for Netscape
+  if (bw.ns4) // If Netscape
+   {
+   document.write('<frameset rows="14,73,1,*,14" border=0 frameborder=0 framespacing=0>');
+     document.write('<frame name="top" src="/dynatemplates/100299/top_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" margniwidth=0 marginheight=0 noresize>');
+     document.write('<frame name="logo" src="/dynatemplates/100299/logo_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" margniwidth=0 marginheight=0 noresize>');
+     document.write('<frame name="extra" src="/dynatemplates/100299/extra_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" margniwidth=0 marginheight=0 noresize>');
+        document.write('<frameset cols="143,*,1" border=0 frameborder=0 framespacing=0>');
+	    document.write('<frame name="nav" src="/dynatemplates/100299/nav_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" marginwidth=0 marginheight=0 noresize>');
+        document.write('<frame name="content" src="/dynatemplates/100299/content_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" border=0 frameborder="no" marginwidth=0 marginheight=0 noresize>');
+        document.write('<frame name="title" src="/dynatemplates/100299/title_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" margniwidth=0 marginheight=0 noresize>');
+        document.write('</frameset>');
+     document.write('<frame name="bot" src="/dynatemplates/100299/bottom_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" margniwidth=0 marginheight=0 noresize>');
+   document.write('</frameset>');
+   }
+   else // If any other browser
+   {
+   document.write('<frameset rows="12,73,1,*,12" border=0 frameborder=0 framespacing=0>');
+     document.write('<frame name="top" src="/dynatemplates/100299/top_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" margniwidth=0 marginheight=0 noresize>');
+     document.write('<frame name="logo" src="/dynatemplates/100299/logo_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" margniwidth=0 marginheight=0 noresize>');
+     document.write('<frame name="extra" src="/dynatemplates/100299/extra_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" margniwidth=0 marginheight=0 noresize>');
+        document.write('<frameset cols="143,*,1" border=0 frameborder=0 framespacing=0>');
+	    document.write('<frame name="nav" src="/dynatemplates/100299/nav_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" marginwidth=0 marginheight=0 noresize>');
+        document.write('<frame name="content" src="/dynatemplates/100299/content_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" border=0 frameborder="no" marginwidth=0 marginheight=0 noresize>');
+        document.write('<frame name="title" src="/dynatemplates/100299/title_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" margniwidth=0 marginheight=0 noresize>');
+        document.write('</frameset>');
+     document.write('<frame name="bot" src="/dynatemplates/100299/bottom_h.cfm?S=1001057&SP=/dynaweb/1001057&M=101&SM=100&SC=100000&P=N&U=1&SS=1&Ver=0" scrolling="no" border=0 frameborder="no" margniwidth=0 marginheight=0 noresize>');
+   document.write('</frameset>');
+   }
+</script>
+</head>
+</html>
+
+			
+
+
+
