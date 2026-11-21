@@ -1,0 +1,22 @@
+_hva=0;_hvb=0;_hvc="na";_hvd="na";_hve="";_hvf="";_hvh=13;_hvi=eval("window._ptc");_hval=0;function _hfa(a,b,c){return false;}function _hfb(a,b,c){if((_rf=="undefined")||(_rf=="")){_rf="bookmark";};if(_hva==1){window.onerror=_hvj;}else{window.onerror=_hfa;};_hvb=2;_hvk+=_rf+"&ec=1";_hbfb=_hvk;return true;};if(navigator.userAgent.indexOf('Mac')!=0){if(window.onerror){_hvj=window.onerror;_hva=1;};};window.onerror=_hfb;if((_bn=="MSIE")&&(_bv>=400)){_hve=navigator.userLanguage;};if(_bn=="Netscape"){if(_bv>=401)_hve=navigator.language;if(_bv>300)for(var _i=0;_i<navigator.plugins.length;_i++)_hvf+=navigator.plugins[_i].name+":"};if(window.screen){_hvh=12;_hvc=screen.width+'*'+screen.height;_hvd=(_bn=="MSIE")?screen.colorDepth:screen.pixelDepth;if(_hvd=="undefined"){_hvd="na";}}_hvg=new Array();if(_hvg.toSource){_hvh=13;};if((_bn=="MSIE")&&(_hvg.shift)){_hvh=13;};_hcv=(typeof _hcv=="undefined")?61:_hcv;if(_hcv<62){_gn="ehg.hitbox.com"};_hvk=_lp+_gn+"/HG?hc="+_mn+"&hb="+escape(_acct)+"&cd=1&bt=2&n="+escape(_pn)+"&bn="+escape(_bn)+"&bv="+_bv+"&ss="+_hvc+"&sc="+_hvd+"&dt="+(new Date()).getHours()+"&sv="+_hvh+"&lm="+Date.parse(document.lastModified)+"&ja="+(navigator.javaEnabled()==true?"y":"n")+"&ln="+_hve+"&pl="+escape(_hvf);if(_hvi){_hvk+="&pt="+_hvi};_hvk+="&rf=";if(navigator.userAgent.indexOf('MSIE 5')>=0){eval("try {_rf=top.document.referrer+\"\";}catch(_e){_rf=document.referrer+\"\";}");}else{if(top.document){_rf=top.document.referrer+"";}};if((_rf=="undefined")||(_rf=="")){_rf="bookmark";};_hvk+=escape(_rf);
+function _alSetUnique(){var _alexpd=new Date();_alexpd.setTime(_alexpd.getTime()+(86400000));document.cookie="hbpoped=1; expires="+_alexpd.toGMTString()+"; path=/";};
+function _alCheckCookie(){return(document.cookie.indexOf("hbpoped")!=-1)?1:0};var _alWINPARMS="width=1,height=1,left=10000,top=10000";var _alRANDOM=Math.floor(Math.random()*30000);var _alONUN=0;
+function _alPopIt(){if(_alONUN){document.frames.onunload=_alpopit;}else{_alpopit();};};
+function _alpopit(){void window.open("http://adserv.internetfuel.com/cgi-bin/omnidirect.cgi?SID=84&PID=1&LID=3",_alRANDOM,_alWINPARMS);};
+function _alPopIt1(){if(_alONUN){document.frames.onunload=_alpopit1;}else{_alpopit1();};};
+function _alpopit1(){void window.open("http://adserv.internetfuel.com/cgi-bin/omnidirect.cgi?SID=84&PID=1&LID=6",_alRANDOM,_alWINPARMS);};
+var _hvct=(_acct.length<12)?'':_acct.substring(12,14);var _hvbs=(_acct.length<17)?0:_acct.charAt(_acct.length-1);
+if(_hvct=='RL'){_hval=1;if(!(_alCheckCookie())){_alSetUnique();if(_alCheckCookie())_alPopIt();}};
+if(_hvct=='BF'){_hval=1;_alONUN=1;if(!(_alCheckCookie())){_alSetUnique();if(_alCheckCookie())_alPopIt1();}};
+var _hvmasa="125_125";var _hvmasb="468_60";var _hvmab='&Site=116&palette=';
+function _hfma(s){(new Image()).src=_hvk;_hbfb='<span></span>';_hvb=1;_hbfa='';_hbfc='';document.write('<script language="javascript" src="http://serve.m-ave.net/merchandisingavenue.aspx?Size='+s+'"></script>')};
+if(_hvct=='06'||_hvct=='05'||_hvct=='17'||_hvct=='49'||_hvct=='54'||_hvct=='84'){if(_hvbs=='2'||_hvbs=='8'){_hfma(_hvmasb+_hvmab+"Arts_and_Literature")}}
+else if(_hvct=='11'||_hvct=='18'||_hvct=='59'||_hvct=='87'||_hvct=='VC'){if(_hvbs=='7'){_hfma(_hvmasa+_hvmab+'Finance_and_Investing')}else if(_hvbs=='2'||_hvbs=='8'){_hfma(_hvmasb+_hvmab+'Finance_and_Investing')}}
+else if(_hvct=='07'||_hvct=='45'||_hvct=='50'||_hvct=='66'||_hvct=='73'||_hvct=='80'||_hvct=='OT'||_hvct=='89'){
+if(_hvbs=='7'){_hfma(_hvmasa+_hvmab+"Society_and_Culture")}}
+else if(_hvct=='33'||_hvct=='35'||_hvct=='36'||_hvct=='47'||_hvct=='48'||_hvct=='72'){if(_hvbs=='7'){_hfma(_hvmasa+_hvmab+'Health_and_Fitness')}else if(_hvbs=='2'||_hvbs=='8'){_hfma(_hvmasb+_hvmab+'Health_and_Fitness')}}
+else if(_hvct=='04'||_hvct=='10'||_hvct=='14'||_hvct=='63'||_hvct=='69'||_hvct=='44'||_hvct=='58'||_hvct=='93'||_hvct=='99'){
+if(_hvbs=='7'){_hfma(_hvmasa+_hvmab+'Shopping')}}
+else if(_hvct=='38'){if(_hvbs=='2'||_hvbs=='8'){_hfma(_hvmasb+_hvmab+'Entertainment')}}
+else if(_hvct=='03'||_hvct=='12'||_hvct=='13'||_hvct=='24'||_hvct=='31'||_hvct=='53'||_hvct=='75'||_hvct=='91'||_hvct=='98'){if(_hvbs=='2'||_hvbs=='8'){_hfma(_hvmasb+_hvmab+'Travel')}}
+if(!_hvb){if(_hva){window.onerror=_hfa;}else{window.onerror=_hfa;};_hbfb=_hvk};
