@@ -1,0 +1,495 @@
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////
+//
+// localendar.com - Common.js
+//
+///////////////////////////////////////////////////////
+var ppcIE	=((navigator.appName == "Microsoft Internet Explorer") || ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion)==5)));
+var ppcNN6	=((navigator.appName == "Netscape") && (parseInt(navigator.appVersion)==5));
+var ppcNN	=((navigator.appName == "Netscape")&&(document.layers));
+var posX	= 4;
+var posY	= 4;
+
+function getPos(atImg)
+{
+	if ( ppcIE )
+	{
+		posX = getOffsetLeft(document.images[atImg]);
+		posY = getOffsetTop(document.images[atImg]) + document.images[atImg].height;
+    	}
+    	else if (ppcNN)
+    	{
+    		posX = document.images[atImg].x;
+	       	posY = document.images[atImg].y + document.images[atImg].height;
+    	}
+}
+
+
+function fn_chg_color(lcfield,pcolor){
+	fn_chk_color(lcfield,pcolor);
+}
+
+function fn_chk_color(lcfield,pcolor){
+	var numStr = "0123456789ABCDEFabcdef";
+	if (pcolor.length==0) return true;
+	for (i = 0; i < pcolor.length; i++) {
+		thisChar = pcolor.charAt(i);
+		if (numStr.indexOf(thisChar) == -1){
+			alert("Please enter a valid six character hexidecimal color value.");			
+			lcfield.value = ''; 
+			return false;
+		}
+	}
+	if (pcolor.length!=6){
+		alert("Please enter a valid six character hexidecimal color value.");			
+		lcfield.value = '';
+		return false;
+	}
+	lcfield.value = pcolor;
+
+	return true;
+}
+
+function validateNewUser(lcform){   
+	if (( !isEmail(lcform)) || (! checkZip(lcform)) ||  (! isName(lcform)) || (! checkPassword(lcform)) || (! checkAgree(lcform)))
+	return false;
+	return true;
+}
+
+function checkSelect(lcform){
+	var w = eval("document." + lcform.name + ".event_category");
+	
+	var count = 0;
+	for (var x = 0; x < w.length; x++) 
+	{
+		if (lcform.event_category[x].checked)
+			{ count++ }
+	}
+	if (count == 0 ) 
+	{
+		alert("\No categories selected.\n\nPlease select at least one category.")      
+		lcform.event_category[0].focus();
+		return false;     
+	}
+	return true;     
+}
+
+function category_check(lcform,pvalue){
+	var w = eval("document." + lcform.name + ".event_category");
+	
+	for (var x = 0; x < w.length; x++) {
+		if (pvalue == 'all'){
+			w[x].checked = true;
+		}else {
+			w[x].checked = false;
+		}
+	}
+}
+
+function popup(info){
+	var view_window;
+	var lcf;
+	info=info.toUpperCase();
+	if (info=="HELP") lcf="FAQ";
+	if (info=="LEGAL") lcf="Legal";
+	if (info=="A1CLEGAL") lcf="A1CLEGAL";
+	if (info=="PRIVACY") lcf="Privacy";
+	if (info=="A1CPRIVACY") lcf="A1CPRIVACY";
+//	if (info=="PRINTCAL") lcf="PrintableCalendar";
+	view_window = window.open("/elsie?JSP="+lcf+"&context=None", "localendar", "width=500,height=500,scrollbars=yes,resizable=yes");
+	view_window.focus();
+}
+
+function popupPrintableCalendar()
+{
+	var view_window = window.open("/elsie?JSP=PrintableCalendar&context=None", "printablelocalendar", "toolbar=yes,menubar=yes,width=700,height=600,scrollbars=yes,resizable=yes");
+	view_window.focus();
+}
+
+function lc_navjump(p_direction,p_menutype,p_startdate){
+	window.location.href="/elsie?JSP=Calendar&mode=MONTH_"+p_direction+"&menu_type="+p_menutype+"&start_date="+p_startdate;
+}
+function lc_dayjump(p_menutype,p_date){
+	window.location.href="/elsie?JSP=Calendar&menu_type=D0&start_date="+p_date;
+}
+
+function lc_weekjump(p_menutype,p_date){
+	window.location.href="/elsie?JSP=Calendar&menu_type=W0&start_date="+p_date;
+}
+
+function lc_monthjump(p_menutype,p_date){
+	window.location.href="/elsie?JSP=Calendar&menu_type=M0&start_date="+p_date;
+}
+
+function lc_publishjump(p_menutype,p_date,p_calendarid){
+	window.location.href="/elsie?JSP=PublishedCalendar&mode=PUBLISH_PUBLIC&search_type="+p_menutype+"&start_date="+p_date+"&calendar_id="+p_calendarid;
+}
+
+function lc_searchjump(p_zip,p_radius,p_date,p_type){
+	window.location.href="/elsie?JSP=SearchResults&mode=ADVSEARCH&zip="+p_zip+"&radius="+p_radius+"&start_date="+p_date+"&search_type="+p_type;
+}
+
+function lc_pubsearchjump(p_zip,p_radius,p_date,p_type){
+	window.location.href="/elsie?JSP=PublishedSearch&mode=PUBSEARCH&zip="+p_zip+"&radius="+p_radius+"&start_date="+p_date+"&search_type="+p_type;
+}
+
+function HelpWindow(vers){
+	var view_window;
+	view_window = window.open("/elsie?JSP="+vers+"FAQ&context=None", vers+"FAQ","width=500,height=500,scrollbars=yes,resizable=yes");
+	view_window.title = "FAQ";
+	view_window.focus();
+}
+
+function AddEvent(){
+	window.location.href="/elsie?DAM=EventEditor"
+}
+
+function Preferences(){
+	window.location.href="/elsie?JSP=PreferencesGeneral"
+}
+
+function Search(){
+	window.location.href="/elsie?JSP=Search"
+}
+
+
+function PublicEventDetail(calendar_id, event_id, more_info)  
+{
+	var detail_window = window.open("http://www.localendar.com/elsie?DAM=PublishedEvent&event_id="+event_id+"&calendar_id="+calendar_id+"&more_info="+more_info, "previewevent","width=360,height=280,scrollbars=yes,resizable=yes");	
+	detail_window.focus();
+}
+
+function zipSearchSubmit(lcform)
+{
+	var c = lcform.city.value;		
+	if (c.length < 3)
+	{
+		alert ("Please enter at least the first 3 characters of the city");
+		return false;
+	}
+
+	return true;
+}
+
+function checkAdvSearch(lcform)
+{
+	if ((! checkZip(lcform)) || (! checkSelect(lcform)))
+		return false;
+	else
+		return true;
+}
+
+function prefsEventsSubmit(lcform) 
+{
+	if (checkZip(lcform))
+		return true;
+	else
+		return false;
+}
+
+function prefsGeneralSubmit(lcform) 
+{
+	if (checkDayViewRange(lcform))
+		return true;
+	else
+		return false;
+}
+
+function isNumber(data) 
+{
+	var numStr = "0123456789";
+	for (i = 0; i < data.length; i++) 
+	{
+		thisChar = data.charAt(i);
+		if (numStr.indexOf(thisChar) == -1)
+			return false;
+	}
+	return true;
+}
+
+function checkZip(lcform)
+{
+	var zipcode = lcform.zip.value;
+	if ((!isNumber(zipcode)) || zipcode == "" || zipcode.length != 5) 
+	{
+		alert ("You must enter a valid 5 digit zipcode.");
+		lcform.zip.focus();
+		return false;
+	}
+	return true;
+}
+
+function checkDayViewRange(lcform)
+{
+	var dayStart	= lcform.dayStart.selectedIndex+1;
+	var dayEnd 	= lcform.dayEnd.selectedIndex+1;
+	if (dayEnd<=dayStart)
+	{
+		alert ("Please make sure the day-view 'To:' hour is later than the 'From:' hour.");
+		lcform.dayStart.focus();
+		return false;
+	}
+	return true;
+}
+
+// if you put one space in then it passes
+function checkSubject(lcform) 
+{
+	var subject = lcform.event_title.value;
+	if (subject == "") 
+	{
+		alert ("To schedule an event, you must enter an event title.");
+		lcform.event_title.select();
+		return false;
+	}
+	return true;
+}
+
+function isName(lcform)
+{   
+	var str = lcform.username.value;   
+	// Return false if name field is blank.   
+	if (str == "")
+	{      
+		alert("\nThe Member Name is blank.\n\nPlease enter your member name.")      
+		lcform.username.focus();      
+		return false;      
+	}   
+	
+	// Return false if characters are not a-z, A-Z, or 1-9.   
+	for (var i = 0; i < str.length; i++)
+        {      
+		var ch = str.substring(i, i + 1);      
+		if (((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch < "0" || "9" < ch)) || ch ==' '  && ch != '.')
+		{         
+			if (ch!='_' && ch!='-')
+			{
+				alert("\nThe Member Name only accepts letters & numbers.\n\nPlease re-enter your member name.");         
+				lcform.username.select();         
+				lcform.username.focus();         
+				return false;
+			}
+		}
+	}   
+	return true;   
+}
+
+function isEmail(lcform)
+{   
+	// Return false if e-mail field is blank.   
+	var str = lcform.email.value;
+	if (str == "")
+	{      
+		alert("\nThe Email Address is blank.\n\nPlease enter your email address.")      
+		lcform.email.focus();      
+		return false;       
+	}   
+	// Return false if e-mail field does not contain a '@' and '.' .   
+	if (str.indexOf ('@',0) == -1 || str.indexOf ('.',0) == -1){      
+		alert("\nPlease enter a valid Email Address.")      
+		lcform.email.select();      
+		lcform.email.focus();      
+		return false;      
+	}   
+
+	return true;      
+}
+function checkPassword(lcform)
+{   
+	var pw1 = lcform.password.value;   
+	var pw2 = lcform.confirmpw.value;   
+
+	// Return false if pw don't match.   
+	if (lcform.password.value == "")
+	{      
+		alert("\nThe Password is blank.\n\nPlease enter your Password.")      
+		lcform.password.focus();      
+		return false;
+	}  
+	if (lcform.confirmpw.value == "")
+	{      
+		alert("\nThe Re-Enter Password field is blank.\n\nPlease re-enter your password.")      
+		lcform.confirmpw.focus();      
+		return false;       
+	}  
+	if (pw1 != pw2)
+	{         
+		alert("\nPasswords don't match.\n\nPlease check your password.");  
+		lcform.password.select();             
+		lcform.password.focus();         
+		return false;         
+	}   
+	// Return false if characters are not '0-9' or '.' .    
+	for (var i = 0; i < pw1.length; i++)
+	{      
+		var ch = pw1.substring(i, i + 1);      
+		if (((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch < "0" || "9" < ch)) || ch ==' '  && ch != '.')
+		{
+			if (ch!='_' && ch!='-')
+			{         
+				alert("\nThe Password field only accepts letters & numbers.\n\nPlease change your password.");
+				lcform.password.select();         
+				lcform.password.focus();         
+				return false;         
+			}      
+		}
+	}   
+
+	return true;   
+}	
+
+function checkChangePassword(lcform)
+{   
+	var old_pw  = lcform.password.value;   
+	var new_pw1 = lcform.newpassword.value;   
+	var new_pw2 = lcform.confirmpassword.value;   
+
+	if (old_pw == "")
+	{      
+		alert("\nThe Password is blank.\n\nPlease enter your Password.")      
+		lcform.password.focus();      
+		return false;
+	}  
+	if (new_pw2 == "")
+	{      
+		alert("\nThe Confirm Password field is blank.\n\nPlease re-enter your password.")      
+		lcform.confirmpassword.focus();      
+		return false;       
+	}  
+	if (new_pw1 != new_pw2)
+	{         
+		alert("\nNew passwords don't match.\n\nPlease check your password.");  
+		lcform.newpassword.select();             
+		lcform.newpassword.focus();         
+		return false;         
+	}   
+	// Return false if characters are not '0-9' or '.' .    
+	for (var i = 0; i < new_pw1.length; i++)
+	{      
+		var ch = new_pw1.substring(i, i + 1);      
+		if (((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch < "0" || "9" < ch)) || ch ==' '  && ch != '.')
+		{
+			if (ch!='_' && ch!='-')
+			{         
+				alert("\nThe Password field only accepts letters & numbers.\n\nPlease change your password.");
+				lcform.newpassword.select();         
+				lcform.newpassword.focus();         
+				return false;         
+			}      
+		}
+	}   
+
+	return true;   
+}	
+
+function checkAgree(lcform)
+{
+	if (!lcform.agree.checked)
+ 	{
+		alert("Please indicate that you accept the Terms of Service");
+		lcform.agree.focus();
+		return false;
+	}
+
+	return true;
+}
+
+function EditEvent(event_id,event_public)
+{
+	window.location.href="/elsie?DAM=EventEditor&event_id="+event_id+"&public_event="+event_public;
+}
+
+
+function getRestaurants(zipcode)
+{ 
+	var view_window;
+	view_window = window.open("http://www.usrg.com/script/nearzip.asp?ZIP="+zipcode,"localendar","width=800,height=500,scrollbars=yes,resizable=yes"); 
+	view_window.focus();
+}
+
+function trim(strValue)
+{
+	var intLoop=0;
+
+	for(intLoop=0; intLoop<strValue.length; )
+	{
+		if(strValue.charAt(intLoop)==" ")
+			strValue=strValue.substring(intLoop+1, strValue.length);
+		else
+			break;
+	}
+
+	for(intLoop=strValue.length-1; intLoop>=0; intLoop=strValue.length-1)
+	{
+		if(strValue.charAt(intLoop)==" ")
+			strValue=strValue.substring(0,intLoop);
+		else
+			break;
+	}
+	return strValue;
+}
+
+
+//
+// Task-related functions
+//
+
+
+function addTask()
+{
+	window.location.href="/elsie?DAM=EventEditor"
+}
+
+function deleteTask(index)
+{
+	if (confirm("Are you sure you want to delete entry\n\""+taskList[index].title+"\" ?"))
+		window.location.href="/elsie?DAM=TaskEditor&task_id="+taskList[index].tId+"&action=D";	
+}
+
+function editTask(task_id)
+{
+	window.location.href="/elsie?DAM=TaskEditor&task_id="+task_id;
+}
+
+
+document.write("<table width='100%'  bgcolor='E0E3E4'   background='http://www.localendar.com/images/glass.gif' > <tr><td>");
+document.write("<table width='100%'><tr><td bgcolor='666666'><FONT face='Arial' color='FFFFFF'><B>Today...</B></FONT></td></tr></table>")
+document.write("")
+document.write("<table width='100%'><tr><td bgcolor='666666'><FONT face='Arial' color='FFFFFF'><B>Happening Soon...</B></FONT></td></tr></table>")
+document.write("")
+document.write("")
+document.write("<table border='0' cellpadding='0' cellspacing='0' width='100%'><tr><td align='left' width='1%'><FONT face='Arial' size='-1'>07/28/03&nbsp;</FONT></td><td width='100%' valign='center' align='left'><a href='javascript:PublicEventDetail(72634,20,\"N\")'><FONT face='Arial' size='-1' color='000000'>Guild RP Night with Dariana (9:30 PM - 12:30 AM&nbsp;EST)</font></a></td></tr></table>")
+document.write("")
+document.write("")
+document.write("")
+document.write("")
+document.write("")
+document.write("")
+document.write("")
+document.write("")
+document.write("")
+
+
+
+
+document.write("</td></tr></table>");
+document.write("<br>");
+document.write("<table border='0' width='212' background='http://www.localendar.com/images/pb_bg.gif' height='40' cellspacing='0' cellpadding='0'>");
+document.write("  <tr>");
+document.write("    <td width='100%' align='center'>");
+document.write("    <p><a href='http://www.localendar.com' target=_blank><img border='0' src='http://www.localendar.com/images/pb_logo.gif' alt='web calendar by localendar.com'></A>");
+document.write("    <a href='http://www.localendar.com' target=_blank class='black'><font face='MS Sans Serif,Arial' size='-2'>Click here to get the web's best calendar!</font></A></p>");
+document.write("    </td>");
+document.write("  </tr>");
+document.write("</table>");
+
+
+
+
