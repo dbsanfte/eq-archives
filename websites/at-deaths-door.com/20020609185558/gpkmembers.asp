@@ -1,0 +1,241 @@
+<html>
+<head>
+   
+	<title>At Deaths Door</title>
+	<meta NAME="Author" CONTENT="Mike Clemmons">
+	<meta NAME="Keywords" CONTENT="guild, everquest, at deaths door, gargand, lenyen, quest, role playing">
+
+	<script language=javascript>
+		function sortcatalog(form,sortval) {
+			
+			var sortQS	= "sort="+sortval;
+			if (sortval.length > 0) {
+				form.action = location.pathname+qmark+amp+sortQS;
+				form.submit(); }
+		}
+	</script>						
+
+</head>
+<link rel="stylesheet" type="text/css" href="Style.css">
+<body background="images/addback.jpg" bottomMargin="0" leftMargin="0" topMargin="0">
+
+<table border="0" cellPadding="0" cellSpacing="0" width="100%" height=91%>
+  <tr>
+    <td style="WIDTH: 15px" width="15"><br><img height="1" src="images/spacer.gif" width="15"></td>
+    <td style="WIDTH: 145px" width="145"><br><img height="1" src="images/spacer.gif" width="145"></td>
+    <td style="WIDTH: 15px" width="15"><br><img height="1" src="images/spacer.gif" width="15"></td>
+    <td class="header" align="middle" bgcolor="#000000"><br><img height="1" src="images/spacer.gif" width="400"></td>
+    <td style="WIDTH: 15px" width="15" bgcolor="#000000"><br><img height="1" src="images/spacer.gif" width="15"></td>
+  </tr>
+  <tr>
+    <td style="WIDTH: 15px" width="15"><img height="1" src="images/spacer.gif" width="15"></td>
+    <td style="WIDTH: 145px" width="145"><img height="1" src="images/spacer.gif" width="145"></td>
+    <td style="WIDTH: 15px" width="15"><img height="1" src="images/spacer.gif" width="15"></td>
+    <td class="header" align="middle" bgcolor="#000000"><img SRC="images/addlogo.jpg" WIDTH="400" HEIGHT="109"></td>
+    <td style="WIDTH: 15px" width="15" bgcolor="#000000"><img height="1" src="images/spacer.gif" width="15"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#000000" align="middle">&nbsp;</td>
+    <td bgcolor="#000000">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td valign="top" align="left"
+		<!-- Contents on the left side -->
+				<table border="0" width="145" cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>Guild Info.</font>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="default.asp">News (Home)</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="Calendar.asp">Events (Calendar)</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="conduct.asp">Guild Rules</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="mailto:feadorn@clemmonsconsulting.com">Contact Us</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="contents" valign="center">
+					<br>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>Community</font>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<a href="message.asp">Message Board</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="screens.asp">Screen Shots</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="eqlinks.asp">EQ Links</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="chat.asp" target="_top">ADD Chat</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>Guild Mates</font>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="members.asp">Member List</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="application.asp">Application</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>GPK System</font>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="gpkrules.asp">Rules</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="gpkvalues.asp">Mob Values</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="gpkmembers.asp">Member Values</a>
+				</td>
+			</tr>
+		</table>
+
+
+    </td>
+    <td>&nbsp;</td>
+    <td align="middle" vAlign="top" bgcolor="#000000">&nbsp;
+		<table align="middle" border="0" cellPadding="1" cellSpacing="1" width="100%" bgcolor="#000000">
+        
+			<tr>
+				<td style="WIDTH: 15px" width="15"></td>
+				<td align="middle" class="TextMain">
+					<center><h2>GPK Member Values</h2></center>
+					<center><h4>Last Updated: 4/11/2002</h4></center>
+					<table border=1 cellpadding=0 cellspacing=0 width = 90% align="middle">
+					<tr>
+						<td class="TextMain">
+							<h3>Member</h3>
+						</td>
+						<td class="TextMain" align=middle>
+							<h3>Total Credits<h3>
+						</td>
+						<td class="TextMain" align=middle>
+							<h3>Total Debits<h3>
+						</td>
+						<td class="TextMain" align=middle>
+							<h3>Avaliable To Spend<h3>
+						</td>
+					</tr>
+					
+					<tr>   <td class=TextMain><a href=gpkmember.asp?id=545&Name=Aildyar>Aildyar</a>   </td>   <td class=TextMain align=middle>18&nbsp;   </td>   <td class=TextMain align=middle>0&nbsp;   </td>   <td class=TextMain align=middle>18&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=546&Name=Ailen>Ailen</a>   </td>   <td class=TextMain align=middle>52&nbsp;   </td>   <td class=TextMain align=middle>1&nbsp;   </td>   <td class=TextMain align=middle>51&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=99&Name=Aknonde>Aknonde</a>   </td>   <td class=TextMain align=middle>82&nbsp;   </td>   <td class=TextMain align=middle>8&nbsp;   </td>   <td class=TextMain align=middle>74&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=366&Name=Akuei>Akuei</a>   </td>   <td class=TextMain align=middle>353&nbsp;   </td>   <td class=TextMain align=middle>164&nbsp;   </td>   <td class=TextMain align=middle>189&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=19&Name=Alegre Malfeitor>Alegre Malfeitor</a>   </td>   <td class=TextMain align=middle>156&nbsp;   </td>   <td class=TextMain align=middle>37&nbsp;   </td>   <td class=TextMain align=middle>119&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=2&Name=Altrax Deadsoul>Altrax Deadsoul</a>   </td>   <td class=TextMain align=middle>256&nbsp;   </td>   <td class=TextMain align=middle>48&nbsp;   </td>   <td class=TextMain align=middle>208&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=525&Name=Apoil Stormrunner>Apoil Stormrunner</a>   </td>   <td class=TextMain align=middle>186&nbsp;   </td>   <td class=TextMain align=middle>27&nbsp;   </td>   <td class=TextMain align=middle>159&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=473&Name=Arcanis>Arcanis</a>   </td>   <td class=TextMain align=middle>196&nbsp;   </td>   <td class=TextMain align=middle>52&nbsp;   </td>   <td class=TextMain align=middle>144&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=210&Name=Argille>Argille</a>   </td>   <td class=TextMain align=middle>599&nbsp;   </td>   <td class=TextMain align=middle>381&nbsp;   </td>   <td class=TextMain align=middle>218&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=307&Name=Awesum>Awesum</a>   </td>   <td class=TextMain align=middle>51&nbsp;   </td>   <td class=TextMain align=middle>5&nbsp;   </td>   <td class=TextMain align=middle>46&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=28&Name=Banelion Soulsaver>Banelion Soulsaver</a>   </td>   <td class=TextMain align=middle>484&nbsp;   </td>   <td class=TextMain align=middle>207&nbsp;   </td>   <td class=TextMain align=middle>277&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=460&Name=Blal>Blal</a>   </td>   <td class=TextMain align=middle>340&nbsp;   </td>   <td class=TextMain align=middle>204&nbsp;   </td>   <td class=TextMain align=middle>136&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=553&Name=Blessin>Blessin</a>   </td>   <td class=TextMain align=middle>2&nbsp;   </td>   <td class=TextMain align=middle>0&nbsp;   </td>   <td class=TextMain align=middle>2&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=520&Name=Buffsong>Buffsong</a>   </td>   <td class=TextMain align=middle>214&nbsp;   </td>   <td class=TextMain align=middle>181&nbsp;   </td>   <td class=TextMain align=middle>33&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=483&Name=Bukem Riding>Bukem Riding</a>   </td>   <td class=TextMain align=middle>148&nbsp;   </td>   <td class=TextMain align=middle>26&nbsp;   </td>   <td class=TextMain align=middle>122&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=422&Name=Calidin Moonhollow>Calidin Moonhollow</a>   </td>   <td class=TextMain align=middle>402&nbsp;   </td>   <td class=TextMain align=middle>300&nbsp;   </td>   <td class=TextMain align=middle>102&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=524&Name=Cheryled>Cheryled</a>   </td>   <td class=TextMain align=middle>308&nbsp;   </td>   <td class=TextMain align=middle>205&nbsp;   </td>   <td class=TextMain align=middle>103&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=540&Name=Civic>Civic</a>   </td>   <td class=TextMain align=middle>30&nbsp;   </td>   <td class=TextMain align=middle>0&nbsp;   </td>   <td class=TextMain align=middle>30&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=549&Name=Cobak Datank>Cobak Datank</a>   </td>   <td class=TextMain align=middle>77&nbsp;   </td>   <td class=TextMain align=middle>19&nbsp;   </td>   <td class=TextMain align=middle>58&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=499&Name=Crunkk>Crunkk</a>   </td>   <td class=TextMain align=middle>358&nbsp;   </td>   <td class=TextMain align=middle>120&nbsp;   </td>   <td class=TextMain align=middle>238&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=194&Name=Curaga>Curaga</a>   </td>   <td class=TextMain align=middle>395&nbsp;   </td>   <td class=TextMain align=middle>180&nbsp;   </td>   <td class=TextMain align=middle>215&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=293&Name=Cyrilla>Cyrilla</a>   </td>   <td class=TextMain align=middle>22&nbsp;   </td>   <td class=TextMain align=middle>0&nbsp;   </td>   <td class=TextMain align=middle>22&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=533&Name=Daillon>Daillon</a>   </td>   <td class=TextMain align=middle>110&nbsp;   </td>   <td class=TextMain align=middle>8&nbsp;   </td>   <td class=TextMain align=middle>102&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=355&Name=Divo>Divo</a>   </td>   <td class=TextMain align=middle>285&nbsp;   </td>   <td class=TextMain align=middle>122&nbsp;   </td>   <td class=TextMain align=middle>163&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=503&Name=Douja Ambrouja>Douja Ambrouja</a>   </td>   <td class=TextMain align=middle>31&nbsp;   </td>   <td class=TextMain align=middle>11&nbsp;   </td>   <td class=TextMain align=middle>20&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=364&Name=Draconus Darksavour>Draconus Darksavour</a>   </td>   <td class=TextMain align=middle>642&nbsp;   </td>   <td class=TextMain align=middle>440&nbsp;   </td>   <td class=TextMain align=middle>202&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=118&Name=Droog Doombunnie>Droog Doombunnie</a>   </td>   <td class=TextMain align=middle>262&nbsp;   </td>   <td class=TextMain align=middle>45&nbsp;   </td>   <td class=TextMain align=middle>217&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=23&Name=Emandar>Emandar</a>   </td>   <td class=TextMain align=middle>264&nbsp;   </td>   <td class=TextMain align=middle>126&nbsp;   </td>   <td class=TextMain align=middle>138&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=358&Name=Faedid Alldae>Faedid Alldae</a>   </td>   <td class=TextMain align=middle>32&nbsp;   </td>   <td class=TextMain align=middle>0&nbsp;   </td>   <td class=TextMain align=middle>32&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=1&Name=Feadorn Lifegiver>Feadorn Lifegiver</a>   </td>   <td class=TextMain align=middle>225&nbsp;   </td>   <td class=TextMain align=middle>206&nbsp;   </td>   <td class=TextMain align=middle>19&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=477&Name=Fennri>Fennri</a>   </td>   <td class=TextMain align=middle>185&nbsp;   </td>   <td class=TextMain align=middle>62&nbsp;   </td>   <td class=TextMain align=middle>123&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=305&Name=Fenoorn>Fenoorn</a>   </td>   <td class=TextMain align=middle>404&nbsp;   </td>   <td class=TextMain align=middle>349&nbsp;   </td>   <td class=TextMain align=middle>55&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=508&Name=Feyr>Feyr</a>   </td>   <td class=TextMain align=middle>35&nbsp;   </td>   <td class=TextMain align=middle>2&nbsp;   </td>   <td class=TextMain align=middle>33&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=526&Name=Fritzlee>Fritzlee</a>   </td>   <td class=TextMain align=middle>56&nbsp;   </td>   <td class=TextMain align=middle>20&nbsp;   </td>   <td class=TextMain align=middle>36&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=510&Name=Gaeandor Odyessus>Gaeandor Odyessus</a>   </td>   <td class=TextMain align=middle>152&nbsp;   </td>   <td class=TextMain align=middle>77&nbsp;   </td>   <td class=TextMain align=middle>75&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=18&Name=Garaddor Ghoulbane>Garaddor Ghoulbane</a>   </td>   <td class=TextMain align=middle>532&nbsp;   </td>   <td class=TextMain align=middle>224&nbsp;   </td>   <td class=TextMain align=middle>308&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=490&Name=Gingerr Ale>Gingerr Ale</a>   </td>   <td class=TextMain align=middle>133&nbsp;   </td>   <td class=TextMain align=middle>43&nbsp;   </td>   <td class=TextMain align=middle>90&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=529&Name=Grimsoar>Grimsoar</a>   </td>   <td class=TextMain align=middle>191&nbsp;   </td>   <td class=TextMain align=middle>38&nbsp;   </td>   <td class=TextMain align=middle>153&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=461&Name=Guyver Trueshot>Guyver Trueshot</a>   </td>   <td class=TextMain align=middle>206&nbsp;   </td>   <td class=TextMain align=middle>124&nbsp;   </td>   <td class=TextMain align=middle>82&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=538&Name=Halanmar Steeleheart>Halanmar Steeleheart</a>   </td>   <td class=TextMain align=middle>117&nbsp;   </td>   <td class=TextMain align=middle>70&nbsp;   </td>   <td class=TextMain align=middle>47&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=554&Name=Healot>Healot</a>   </td>   <td class=TextMain align=middle>10&nbsp;   </td>   <td class=TextMain align=middle>1&nbsp;   </td>   <td class=TextMain align=middle>9&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=550&Name=Herendil>Herendil</a>   </td>   <td class=TextMain align=middle>32&nbsp;   </td>   <td class=TextMain align=middle>0&nbsp;   </td>   <td class=TextMain align=middle>32&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=317&Name=Jakobb>Jakobb</a>   </td>   <td class=TextMain align=middle>451&nbsp;   </td>   <td class=TextMain align=middle>296&nbsp;   </td>   <td class=TextMain align=middle>155&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=306&Name=Jojobear Dasuicideable>Jojobear Dasuicideable</a>   </td>   <td class=TextMain align=middle>106&nbsp;   </td>   <td class=TextMain align=middle>54&nbsp;   </td>   <td class=TextMain align=middle>52&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=438&Name=Kaastle Speedmetal>Kaastle Speedmetal</a>   </td>   <td class=TextMain align=middle>245&nbsp;   </td>   <td class=TextMain align=middle>160&nbsp;   </td>   <td class=TextMain align=middle>85&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=421&Name=Karakka Smoofytrull>Karakka Smoofytrull</a>   </td>   <td class=TextMain align=middle>80&nbsp;   </td>   <td class=TextMain align=middle>19&nbsp;   </td>   <td class=TextMain align=middle>61&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=496&Name=Karraway>Karraway</a>   </td>   <td class=TextMain align=middle>217&nbsp;   </td>   <td class=TextMain align=middle>122&nbsp;   </td>   <td class=TextMain align=middle>95&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=352&Name=Kasik Inferno>Kasik Inferno</a>   </td>   <td class=TextMain align=middle>507&nbsp;   </td>   <td class=TextMain align=middle>253&nbsp;   </td>   <td class=TextMain align=middle>254&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=5&Name=Kataar Stormseeker>Kataar Stormseeker</a>   </td>   <td class=TextMain align=middle>299&nbsp;   </td>   <td class=TextMain align=middle>248&nbsp;   </td>   <td class=TextMain align=middle>51&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=541&Name=Kefkah Kaos>Kefkah Kaos</a>   </td>   <td class=TextMain align=middle>159&nbsp;   </td>   <td class=TextMain align=middle>13&nbsp;   </td>   <td class=TextMain align=middle>146&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=45&Name=Keldoreth Strongoak>Keldoreth Strongoak</a>   </td>   <td class=TextMain align=middle>259&nbsp;   </td>   <td class=TextMain align=middle>5&nbsp;   </td>   <td class=TextMain align=middle>254&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=518&Name=Kossaxel Sinoth>Kossaxel Sinoth</a>   </td>   <td class=TextMain align=middle>133&nbsp;   </td>   <td class=TextMain align=middle>25&nbsp;   </td>   <td class=TextMain align=middle>108&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=498&Name=Kosten Swiftsteel>Kosten Swiftsteel</a>   </td>   <td class=TextMain align=middle>98&nbsp;   </td>   <td class=TextMain align=middle>39&nbsp;   </td>   <td class=TextMain align=middle>59&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=426&Name=Krellith>Krellith</a>   </td>   <td class=TextMain align=middle>200&nbsp;   </td>   <td class=TextMain align=middle>31&nbsp;   </td>   <td class=TextMain align=middle>169&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=555&Name=Kriztobal Ramirez>Kriztobal Ramirez</a>   </td>   <td class=TextMain align=middle>1&nbsp;   </td>   <td class=TextMain align=middle>0&nbsp;   </td>   <td class=TextMain align=middle>1&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=301&Name=Larsen>Larsen</a>   </td>   <td class=TextMain align=middle>277&nbsp;   </td>   <td class=TextMain align=middle>155&nbsp;   </td>   <td class=TextMain align=middle>122&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=3&Name=Legelis>Legelis</a>   </td>   <td class=TextMain align=middle>542&nbsp;   </td>   <td class=TextMain align=middle>356&nbsp;   </td>   <td class=TextMain align=middle>186&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=417&Name=Lyrel Mandragoran>Lyrel Mandragoran</a>   </td>   <td class=TextMain align=middle>364&nbsp;   </td>   <td class=TextMain align=middle>172&nbsp;   </td>   <td class=TextMain align=middle>192&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=164&Name=Marcone Holyking>Marcone Holyking</a>   </td>   <td class=TextMain align=middle>192&nbsp;   </td>   <td class=TextMain align=middle>136&nbsp;   </td>   <td class=TextMain align=middle>56&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=462&Name=Mclare Theshort>Mclare Theshort</a>   </td>   <td class=TextMain align=middle>95&nbsp;   </td>   <td class=TextMain align=middle>47&nbsp;   </td>   <td class=TextMain align=middle>48&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=134&Name=Mitsy Soulsaver>Mitsy Soulsaver</a>   </td>   <td class=TextMain align=middle>491&nbsp;   </td>   <td class=TextMain align=middle>435&nbsp;   </td>   <td class=TextMain align=middle>56&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=466&Name=Mlain Dreamthief>Mlain Dreamthief</a>   </td>   <td class=TextMain align=middle>124&nbsp;   </td>   <td class=TextMain align=middle>89&nbsp;   </td>   <td class=TextMain align=middle>35&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=488&Name=Montie Unholyfate>Montie Unholyfate</a>   </td>   <td class=TextMain align=middle>23&nbsp;   </td>   <td class=TextMain align=middle>13&nbsp;   </td>   <td class=TextMain align=middle>10&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=479&Name=Mooska Acidleaf>Mooska Acidleaf</a>   </td>   <td class=TextMain align=middle>34&nbsp;   </td>   <td class=TextMain align=middle>0&nbsp;   </td>   <td class=TextMain align=middle>34&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=527&Name=Mordos>Mordos</a>   </td>   <td class=TextMain align=middle>37&nbsp;   </td>   <td class=TextMain align=middle>1&nbsp;   </td>   <td class=TextMain align=middle>36&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=354&Name=Neoo Dreamchasers>Neoo Dreamchasers</a>   </td>   <td class=TextMain align=middle>39&nbsp;   </td>   <td class=TextMain align=middle>0&nbsp;   </td>   <td class=TextMain align=middle>39&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=432&Name=Newkimer>Newkimer</a>   </td>   <td class=TextMain align=middle>436&nbsp;   </td>   <td class=TextMain align=middle>291&nbsp;   </td>   <td class=TextMain align=middle>145&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=536&Name=Penimon>Penimon</a>   </td>   <td class=TextMain align=middle>128&nbsp;   </td>   <td class=TextMain align=middle>57&nbsp;   </td>   <td class=TextMain align=middle>71&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=456&Name=Phaedraus Verndari>Phaedraus Verndari</a>   </td>   <td class=TextMain align=middle>88&nbsp;   </td>   <td class=TextMain align=middle>54&nbsp;   </td>   <td class=TextMain align=middle>34&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=370&Name=Pishoque Telluric>Pishoque Telluric</a>   </td>   <td class=TextMain align=middle>53&nbsp;   </td>   <td class=TextMain align=middle>0&nbsp;   </td>   <td class=TextMain align=middle>53&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=532&Name=Pixil Stormwind>Pixil Stormwind</a>   </td>   <td class=TextMain align=middle>30&nbsp;   </td>   <td class=TextMain align=middle>0&nbsp;   </td>   <td class=TextMain align=middle>30&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=404&Name=Poometok Stargazer>Poometok Stargazer</a>   </td>   <td class=TextMain align=middle>&nbsp;   </td>   <td class=TextMain align=middle>&nbsp;   </td>   <td class=TextMain align=middle>&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=334&Name=Rakle Darkcast>Rakle Darkcast</a>   </td>   <td class=TextMain align=middle>438&nbsp;   </td>   <td class=TextMain align=middle>92&nbsp;   </td>   <td class=TextMain align=middle>346&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=523&Name=Revndave>Revndave</a>   </td>   <td class=TextMain align=middle>228&nbsp;   </td>   <td class=TextMain align=middle>128&nbsp;   </td>   <td class=TextMain align=middle>100&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=410&Name=Rezenor Soulbleeder>Rezenor Soulbleeder</a>   </td>   <td class=TextMain align=middle>185&nbsp;   </td>   <td class=TextMain align=middle>112&nbsp;   </td>   <td class=TextMain align=middle>73&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=487&Name=Robman Rob>Robman Rob</a>   </td>   <td class=TextMain align=middle>329&nbsp;   </td>   <td class=TextMain align=middle>87&nbsp;   </td>   <td class=TextMain align=middle>242&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=391&Name=Rowann>Rowann</a>   </td>   <td class=TextMain align=middle>362&nbsp;   </td>   <td class=TextMain align=middle>261&nbsp;   </td>   <td class=TextMain align=middle>101&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=271&Name=Sapper>Sapper</a>   </td>   <td class=TextMain align=middle>91&nbsp;   </td>   <td class=TextMain align=middle>50&nbsp;   </td>   <td class=TextMain align=middle>41&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=420&Name=Sawteevah>Sawteevah</a>   </td>   <td class=TextMain align=middle>207&nbsp;   </td>   <td class=TextMain align=middle>126&nbsp;   </td>   <td class=TextMain align=middle>81&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=15&Name=Sendaen Soulslinger>Sendaen Soulslinger</a>   </td>   <td class=TextMain align=middle>466&nbsp;   </td>   <td class=TextMain align=middle>157&nbsp;   </td>   <td class=TextMain align=middle>309&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=150&Name=Snipper>Snipper</a>   </td>   <td class=TextMain align=middle>177&nbsp;   </td>   <td class=TextMain align=middle>93&nbsp;   </td>   <td class=TextMain align=middle>84&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=501&Name=Steeltael Tragonon>Steeltael Tragonon</a>   </td>   <td class=TextMain align=middle>97&nbsp;   </td>   <td class=TextMain align=middle>55&nbsp;   </td>   <td class=TextMain align=middle>42&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=478&Name=Taasi Silverhawke>Taasi Silverhawke</a>   </td>   <td class=TextMain align=middle>36&nbsp;   </td>   <td class=TextMain align=middle>2&nbsp;   </td>   <td class=TextMain align=middle>34&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=344&Name=Taraan>Taraan</a>   </td>   <td class=TextMain align=middle>46&nbsp;   </td>   <td class=TextMain align=middle>29&nbsp;   </td>   <td class=TextMain align=middle>17&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=505&Name=Terk>Terk</a>   </td>   <td class=TextMain align=middle>51&nbsp;   </td>   <td class=TextMain align=middle>20&nbsp;   </td>   <td class=TextMain align=middle>31&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=431&Name=Thorongil Elessar>Thorongil Elessar</a>   </td>   <td class=TextMain align=middle>354&nbsp;   </td>   <td class=TextMain align=middle>216&nbsp;   </td>   <td class=TextMain align=middle>138&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=509&Name=Trayzen Dubrazen>Trayzen Dubrazen</a>   </td>   <td class=TextMain align=middle>30&nbsp;   </td>   <td class=TextMain align=middle>3&nbsp;   </td>   <td class=TextMain align=middle>27&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=4&Name=Treelan Shadowhawk>Treelan Shadowhawk</a>   </td>   <td class=TextMain align=middle>201&nbsp;   </td>   <td class=TextMain align=middle>103&nbsp;   </td>   <td class=TextMain align=middle>98&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=414&Name=Trice>Trice</a>   </td>   <td class=TextMain align=middle>170&nbsp;   </td>   <td class=TextMain align=middle>54&nbsp;   </td>   <td class=TextMain align=middle>116&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=197&Name=Uglii>Uglii</a>   </td>   <td class=TextMain align=middle>458&nbsp;   </td>   <td class=TextMain align=middle>226&nbsp;   </td>   <td class=TextMain align=middle>232&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=557&Name=Unsung Evercast>Unsung Evercast</a>   </td>   <td class=TextMain align=middle>&nbsp;   </td>   <td class=TextMain align=middle>&nbsp;   </td>   <td class=TextMain align=middle>&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=455&Name=Valimora>Valimora</a>   </td>   <td class=TextMain align=middle>68&nbsp;   </td>   <td class=TextMain align=middle>25&nbsp;   </td>   <td class=TextMain align=middle>43&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=378&Name=Varro>Varro</a>   </td>   <td class=TextMain align=middle>239&nbsp;   </td>   <td class=TextMain align=middle>75&nbsp;   </td>   <td class=TextMain align=middle>164&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=374&Name=Verbo>Verbo</a>   </td>   <td class=TextMain align=middle>605&nbsp;   </td>   <td class=TextMain align=middle>374&nbsp;   </td>   <td class=TextMain align=middle>231&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=388&Name=Weel>Weel</a>   </td>   <td class=TextMain align=middle>508&nbsp;   </td>   <td class=TextMain align=middle>394&nbsp;   </td>   <td class=TextMain align=middle>114&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=436&Name=Yalilea Holysoul>Yalilea Holysoul</a>   </td>   <td class=TextMain align=middle>117&nbsp;   </td>   <td class=TextMain align=middle>71&nbsp;   </td>   <td class=TextMain align=middle>46&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=450&Name=Zakalwe>Zakalwe</a>   </td>   <td class=TextMain align=middle>167&nbsp;   </td>   <td class=TextMain align=middle>91&nbsp;   </td>   <td class=TextMain align=middle>76&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=121&Name=Zanyinj>Zanyinj</a>   </td>   <td class=TextMain align=middle>71&nbsp;   </td>   <td class=TextMain align=middle>3&nbsp;   </td>   <td class=TextMain align=middle>68&nbsp;   </td></tr><tr>   <td class=TextMain><a href=gpkmember.asp?id=230&Name=Zordac Skyblade>Zordac Skyblade</a>   </td>   <td class=TextMain align=middle>468&nbsp;   </td>   <td class=TextMain align=middle>403&nbsp;   </td>   <td class=TextMain align=middle>65&nbsp;   </td></tr>
+
+					</table>
+					<BR><BR><br>
+				</td>
+				<td style="WIDTH: 15px" width="15" bgcolor="#000000"></td></tr>
+			<tr>
+				<td></td>
+				<td bgcolor="#000000"></td>
+				<td bgcolor="#000000"></td>
+			</tr>
+		</table>
+	</td>
+    <td bgcolor="#000000">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td align="middle" bgcolor="#000000">&nbsp;</td>
+    <td bgcolor="#000000">&nbsp;</td>
+  </tr>
+</table>
+
+<!-- Footer Info --><table border="0" cellPadding="0" cellSpacing="0" width="100%">
+  <tr>
+    <td style="WIDTH: 15px" width="15"><br><IMG height=1 src="images/spacer.gif" width=15></td>
+    <td style="WIDTH: 145px" width="145"><br><IMG height=1 src="images/spacer.gif" width=145></td>
+    <td style="WIDTH: 15px" width="15"><br><IMG height=1 src="images/spacer.gif" width=15></td>
+    <td class="copyright" align="middle" bgcolor="#000000">
+		<br>
+		<STRONG>All Materials are Copyright of At Deaths Door.
+		<BR>"EverQuest" is a Registered Trademark of Sony Entertainment Corp.
+		<BR>EverQuest and Related Materials are Copyright Sony Entertainment Corp.<BR></STRONG>
+		<IMG height=1 src="images/spacer.gif" width=400>
+	</td>
+    <td style="WIDTH: 15px" width="15" bgcolor="#000000"><br><IMG height=1 src="images/spacer.gif" width=15></td>
+  </tr>
+</table>
+
+
+
+
+</body>
+</html>

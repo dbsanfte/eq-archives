@@ -1,0 +1,401 @@
+
+<html>
+<head>
+   
+	<title>At Deaths Door</title>
+	<meta NAME="Author" CONTENT="D Hauck">
+	<meta NAME="Keywords" CONTENT="guild, everquest, at deaths door, gargand, lenyen, quest, role playing">
+
+	<script LANGUAGE="javascript">
+		function Event (name) {
+			
+			winRelease = window.open("","nrRelease","scrollbars=yes,Resizeable=yes,width=500,height=450");
+			winRelease.location.href =name;
+			winRelease.focus();
+		}
+	</script>
+
+</head>
+
+
+<link rel="stylesheet" type="text/css" href="Style.css">
+<body background="images/addback.jpg" bottomMargin="0" leftMargin="0" topMargin="0">
+
+<table border="0" cellPadding="0" cellSpacing="0" width="100%">
+  <tr>
+    <td style="WIDTH: 15px" width="15"><img height="1" src="images/spacer.gif" width="15"></td>
+    <td style="WIDTH: 145px" width="145"><img height="1" src="images/spacer.gif" width="145"></td>
+    <td style="WIDTH: 15px" width="15"><img height="1" src="images/spacer.gif" width="15"></td>
+    <td class="header" align="middle" bgcolor="#000000"><img SRC="images/addlogo.jpg" WIDTH="400" HEIGHT="109"></td>
+    <td style="WIDTH: 15px" width="15" bgcolor="#000000"><img height="1" src="images/spacer.gif" width="15"></td>
+  </tr>
+  <tr>
+    <td style="WIDTH: 15px" width="15"><img height="1" src="images/spacer.gif" width="15"></td>
+    <td style="WIDTH: 145px" width="145"><img height="1" src="images/spacer.gif" width="145"></td>
+    <td style="WIDTH: 15px" width="15"><img height="1" src="images/spacer.gif" width="15"></td>
+    <td class="header" align="middle" bgcolor="black">Calendar Of Events For October 2001</td>
+    <td style="WIDTH: 15px" width="15" bgcolor="black"><img height="1" src="images/spacer.gif" width="15"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bgcolor="black">&nbsp;</td>
+    <td bgcolor="black">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bgcolor="black">
+		<Table border=0 cellpadding=0 cellspacing=0 width=100%>
+			<tr>
+				<td align=left bgcolor=black>
+					<Font Color=#ffffff>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Calendar.asp?month=9&amp;year=2001">Previous Month</a></Font>
+				</td>
+				<td align=Middle bgcolor=black>
+					<Font Color=#ffffff><a href="addevent.asp">Add Event</a></Font>
+				</td>
+				<td align=right bgcolor=black>
+					<Font Color=#ffffff><a href="Calendar.asp?month=11&amp;year=2001">Next Month</a>&nbsp;&nbsp;&nbsp;&nbsp;</Font>
+				</td>
+			</tr>
+		</table>
+	</td>
+    <td bgcolor="black">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td valign="top" align="left">
+		<!-- Contents on the left side -->
+				<table border="0" width="145" cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>Guild Info.</font>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="default.asp">News (Home)</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="Calendar.asp">Events (Calendar)</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="conduct.asp">Guild Rules</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="mailto:feadorn@clemmonsconsulting.com">Contact Us</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="contents" valign="center">
+					<br>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>Community</font>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<a href="message.asp">Message Board</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="screens.asp">Screen Shots</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="eqlinks.asp">EQ Links</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>Guild Mates</font>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="members.asp">Member List</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="application.asp">Application</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>GPK System</font>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="gpkrules.asp">Rules</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="gpkvalues.asp">Mob Values</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="gpkmembers.asp">Member Values</a>
+				</td>
+			</tr>
+		</table>
+
+    </td>
+    <td>&nbsp;</td>
+    <td align="middle" vAlign="top" bgcolor=black>
+		<table align="center" border="0" cellPadding="1" cellSpacing="1" width="100%">
+        
+			<tr>
+				<td style="WIDTH: 15px" width="15"></td>
+				<td class="TextMain" align="middle" bgcolor=black>
+						<table class="MonthViewMonthTable" BORDER="1" CELLPADDING="5" CELLSPACING="1" WIDTH="100%"> 
+							<tr>
+								<td width="14%" class="MonthViewDayHeader" ALIGN="middle">Sun</td>
+								<td width="14%" class="MonthViewDayHeader" ALIGN="middle">Mon</td>
+								<td width="14%" class="MonthViewDayHeader" ALIGN="middle">Tue</td>
+								<td width="14%" class="MonthViewDayHeader" ALIGN="middle">Wed</td>
+								<td width="14%" class="MonthViewDayHeader" ALIGN="middle">Thu</td>
+								<td width="14%" class="MonthViewDayHeader" ALIGN="middle">Fri</td>
+								<td width="14%" class="MonthViewDayHeader" ALIGN="middle">Sat</td> 
+							</tr>
+							
+							
+<TR>
+
+							   		<td class="MonthViewExtraDay" VALIGN="top">30<br><br><br><br><br></td> 
+							   			
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>1<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>2<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>3<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>4<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>5<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>6<br>
+							   				
+							   				</td>
+							   				</TR>
+<TR>
+	
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>7<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>8<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>9<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>10<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>11<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>12<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>13<br>
+							   				
+							   				</td>
+							   				</TR>
+<TR>
+	
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>14<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>15<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>16<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>17<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>18<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>19<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>20<br>
+							   				
+							   				</td>
+							   				</TR>
+<TR>
+	
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>21<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>22<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>23<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>24<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>25<br>
+							   				<a href="javascript:Event('Event.asp?EventID=38')"><Font color=white size=1>CoM Raid</font></a><br>
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>26<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>27<br>
+							   				<a href="javascript:Event('Event.asp?EventID=39')"><Font color=white size=1>Kael Arena Raid</font></a><br>
+							   				</td>
+							   				</TR>
+<TR>
+	
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>28<br>
+							   				<a href="javascript:Event('Event.asp?EventID=40')"><Font color=white size=1>Kael Arena Raid</font></a><br>
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>29<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>30<br>
+							   				
+							   				</td>
+							   					
+							   				<td class="WeekViewReservationCell" VALIGN="top" height=125>31<br>
+							   				
+							   				</td>
+							   				
+							   			<td class="MonthViewExtraDay" VALIGN="top">1<br><br><br><br><br></td>
+							   			
+							   			<td class="MonthViewExtraDay" VALIGN="top">2<br><br><br><br><br></td>
+							   			
+							   			<td class="MonthViewExtraDay" VALIGN="top">3<br><br><br><br><br></td>
+							   			</TR>
+
+							
+							<tr>
+								<td class="MonthViewDayHeader" ALIGN="middle">Sun</td>
+								<td class="MonthViewDayHeader" ALIGN="middle">Mon</td>
+								<td class="MonthViewDayHeader" ALIGN="middle">Tue</td>
+								<td class="MonthViewDayHeader" ALIGN="middle">Wed</td>
+								<td class="MonthViewDayHeader" ALIGN="middle">Thu</td>
+								<td class="MonthViewDayHeader" ALIGN="middle">Fri</td>
+								<td class="MonthViewDayHeader" ALIGN="middle">Sat</td>
+							</tr>
+					</table>
+				</td>
+		        <td style="WIDTH: 15px" width="15" bgcolor=black></td>
+		    </tr>
+	        <tr>
+				<td></td>
+			    <td align="middle" vAlign="top"></td>
+			    <td></td>
+			</tr>
+	        <tr>
+				<td></td>
+				<td class="TextMain" align="middle">
+				
+				</td>
+				<td></td>
+			</tr>
+		</table>
+	</td>
+    <td bgcolor=black>&nbsp;</td>
+  </tr>
+</table>
+
+<!-- Footer Info -->
+<table border="0" cellPadding="0" cellSpacing="0" width="100%">
+  <tr>
+    <td style="WIDTH: 15px" width="15"><br><IMG height=1 src="images/spacer.gif" width=15></td>
+    <td style="WIDTH: 145px" width="145"><br><IMG height=1 src="images/spacer.gif" width=145></td>
+    <td style="WIDTH: 15px" width="15"><br><IMG height=1 src="images/spacer.gif" width=15></td>
+    <td class="copyright" align="middle" bgcolor="#000000">
+		<br>
+		<STRONG>All Materials are Copyright of At Deaths Door.
+		<BR>"EverQuest" is a Registered Trademark of Sony Entertainment Corp.
+		<BR>EverQuest and Related Materials are Copyright Sony Entertainment Corp.<BR></STRONG>
+		<IMG height=1 src="images/spacer.gif" width=400>
+	</td>
+    <td style="WIDTH: 15px" width="15" bgcolor="#000000"><br><IMG height=1 src="images/spacer.gif" width=15></td>
+  </tr>
+</table>
+
+
+</body>
+</html>

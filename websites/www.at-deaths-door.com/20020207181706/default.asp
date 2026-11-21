@@ -1,0 +1,614 @@
+<html>
+<head>
+   
+	<title>At Deaths Door</title>
+	<meta NAME="Author" CONTENT="Mike Clemmons">
+	<meta NAME="Keywords" CONTENT="guild, everquest, at deaths door, gargand, lenyen, quest, role playing">
+
+	<script language=javascript>
+		function sortcatalog(form,sortval) {
+			
+			var sortQS	= "sort="+sortval;
+			if (sortval.length > 0) {
+				form.action = location.pathname+qmark+amp+sortQS;
+				form.submit(); }
+		}
+	</script>						
+
+</head>
+<link rel="stylesheet" type="text/css" href="Style.css">
+<body background="images/addback.jpg" bottomMargin="0" leftMargin="0" topMargin="0">
+
+<table border="0" cellPadding="0" cellSpacing="0" width="100%" height=91%>
+  <tr>
+    <td style="WIDTH: 15px" width="15"><br><img height="1" src="images/spacer.gif" width="15"></td>
+    <td style="WIDTH: 145px" width="145"><br><img height="1" src="images/spacer.gif" width="145"></td>
+    <td style="WIDTH: 15px" width="15"><br><img height="1" src="images/spacer.gif" width="15"></td>
+    <td class="header" align="middle" bgcolor="#000000"><br><img height="1" src="images/spacer.gif" width="400"></td>
+    <td style="WIDTH: 15px" width="15" bgcolor="#000000"><br><img height="1" src="images/spacer.gif" width="15"></td>
+  </tr>
+  <tr>
+    <td style="WIDTH: 15px" width="15"><img height="1" src="images/spacer.gif" width="15"></td>
+    <td style="WIDTH: 145px" width="145"><img height="1" src="images/spacer.gif" width="145"></td>
+    <td style="WIDTH: 15px" width="15"><img height="1" src="images/spacer.gif" width="15"></td>
+    <td class="header" align="middle" bgcolor="#000000"><img SRC="images/addlogo.jpg" WIDTH="400" HEIGHT="109"></td>
+    <td style="WIDTH: 15px" width="15" bgcolor="#000000"><img height="1" src="images/spacer.gif" width="15"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#000000" align="middle">&nbsp;</td>
+    <td bgcolor="#000000">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td valign="top" align="left"
+		<!-- Contents on the left side -->
+				<table border="0" width="145" cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>Guild Info.</font>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="default.asp">News (Home)</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="Calendar.asp">Events (Calendar)</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="conduct.asp">Guild Rules</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="mailto:feadorn@clemmonsconsulting.com">Contact Us</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="contents" valign="center">
+					<br>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>Community</font>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<a href="message.asp">Message Board</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="screens.asp">Screen Shots</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="eqlinks.asp">EQ Links</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="chat.asp" target="_top">ADD Chat</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>Guild Mates</font>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="members.asp">Member List</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="application.asp">Application</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contentheader" valign="center">
+					<Font size=2>GPK System</font>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="gpkrules.asp">Rules</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="gpkvalues.asp">Mob Values</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="contents" valign="center">
+					<IMG SRC="images/spacer.gif" width=10 height=1>
+					<A href="gpkmembers.asp">Member Values</a>
+				</td>
+			</tr>
+		</table>
+
+    </td>
+    <td>&nbsp;</td>
+    <td align="middle" vAlign="top" bgcolor="#000000">
+
+
+
+		<table align="left" border="0" cellPadding="1" cellSpacing="1" bgcolor="#000000" width="100%">
+        
+			<tr>
+				<td style="WIDTH: 15px" width="15"></td>
+				<td class="TextMain" align="left" vAlign="top" bgcolor="#000000">
+					<table border="0" cellPadding="1" cellSpacing="1" width="100%">
+						<tr>
+							<td class="RowHeading" vAlign="top">
+				
+								<table border="0" cellPadding="1" cellSpacing="1" width="100%">
+									<tr>
+									   <td vAlign="top">
+											<table border=0 cellpadding=1 cellspacing=1 width=100%>
+												<tr>
+													<td class="RowHeading" align="left">
+														 News
+													</td>
+													<td class="TextMain" align="right">
+														Total Members (main characters): 113
+													</td>
+												</tr>
+											</table>
+									     
+									   </td>
+									<tr>
+										<td class="TextMain" background="images/redline.gif" height="4">
+											
+										</td>
+									</tr>
+									</tr>
+									<!--Insert Here -->
+									<tr><td class=NewsHeading><a HREF="#92"><font COLOR=#FFFFFF>1/31/02&nbsp;-&nbsp;ADD conquers Island 7 in PoA!</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#89"><font COLOR=#FFFFFF>1/22/02&nbsp;-&nbsp;Temple of Veeshan</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#88"><font COLOR=#FFFFFF>1/10/02&nbsp;-&nbsp;Elfpat Gets Epic!</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#87"><font COLOR=#FFFFFF>12/20/01&nbsp;-&nbsp;Patch Message - 12/20/01</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#86"><font COLOR=#FFFFFF>12/10/01&nbsp;-&nbsp;Banelion Weds Mitsy Miniheals</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#85"><font COLOR=#FFFFFF>12/10/01&nbsp;-&nbsp;Patch Day, Today</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#84"><font COLOR=#FFFFFF>12/7/01&nbsp;-&nbsp;Patch Message, December 7th</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#83"><font COLOR=#FFFFFF>12/4/01&nbsp;-&nbsp;Think your ready for Luclin? Here's some info.</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#82"><font COLOR=#FFFFFF>11/28/01&nbsp;-&nbsp;** Server Outage for Shadows of Luclin Launch **</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#81"><font COLOR=#FFFFFF>11/19/01&nbsp;-&nbsp;Lucin Expansion Skills</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#80"><font COLOR=#FFFFFF>11/8/01&nbsp;-&nbsp;Emergency Patch</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#77"><font COLOR=#FFFFFF>10/31/01&nbsp;-&nbsp;Patch Day</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#76"><font COLOR=#FFFFFF>10/24/01&nbsp;-&nbsp;EZ Boards Are Down</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#75"><font COLOR=#FFFFFF>10/23/01&nbsp;-&nbsp;Patch Day</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#74"><font COLOR=#FFFFFF>10/15/01&nbsp;-&nbsp;You should start planning to update to DirectX 8 </a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#73"><font COLOR=#FFFFFF>10/15/01&nbsp;-&nbsp;Patch Scheduled for October 23rd </a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#72"><font COLOR=#FFFFFF>10/10/01&nbsp;-&nbsp;Plane of Hate Raid</a></font><br></td></tr><tr><td class=NewsHeading><a HREF="#71"><font COLOR=#FFFFFF>10/8/01&nbsp;-&nbsp;New Melee and Magic</a></font><br></td></tr>
+									<tr>
+										<td class="TextMain" background="images/redline.gif" height="4">
+											
+										</td>
+									</tr>
+							
+									<!-- End Insert Here -->
+								    <tr>
+									    <td class="NewsHeading">
+											<img SRC="images/spacer.gif" width="360" height="1">
+										</td>
+									</tr>
+									<tr>
+										<td class="TextMain" align="middle">
+											<a href="addnews.asp"><b>Do you have news? Click here to post!</b></a>
+										</td>
+									</tr>
+									<tr>
+										<td class="TextMain"> <!--test begining-->
+											<table border="0" cellPadding="1" cellSpacing="1" width="100%">
+											                        
+												<!--Insert News here -->
+												<tr><td class=RowHeading align=middle>January 31, 2002</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="92"><strong>ADD conquers Island 7 in PoA!</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="pbrown@ii-vi.com"><font COLOR=#FF0000 SIZE=2>Firius</font></a></td></tr><tr><td class=NewsText>ADD reached a new plateau last night by fighting to island 8 in PoA and doing it 100% guild only.  The much-anticipated fight against the bees on island 7 went very well.  ADD defeated the island boss bee Bazzt Zzzt and company in a nearly flawless battle. Tonight ADD will start clearing island 8 for mage epic crowns and other drops. Epic drops so far include Rakle on the necro epic item from Keeper of Souls, Kazama and Thorongil on the ranger swirling spheres, Draconus on the SK epic blade, Zordac, Fenoorn, Droog, Kaastle and Calidin on the warrior blades from the Spiroc Lord.  We have also looted numerous quest items, haste belts, spells, etc.  Grats to all members that have advanced in their epic quests and grats to ADD for a great raid thus far.
+</td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>January 22, 2002</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="89"><strong>Temple of Veeshan</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="Nighthawk1485@hotmail.com"><font COLOR=#FF0000 SIZE=2>Rakle</font></a></td></tr><tr><td class=NewsText><table bgcolor=black border=0 cellpadding=0 cellspacing=0 width=100%>
+	<TR>
+		<TD>
+			<font color=#ffffff>
+		Temple of Veeshan didnt see it coming. After a planned raid on the 12th 
+and 13th 		the raid was extended two more days. Hardly anyone can say they 
+didnt benifit 			from this with the overwelming success of drops. After 
+finding free time to go 			back on the 19th we set in for another camp of 
+the Halls of Testing. Drops out of 		the 5 days in ToV totaled high people 
+started loosing count...<br><br>
+
+			<P align=center>
+				<a href="images/screenshots/ToV1.jpg" target=new>
+				<img src="images/screenshots/ToV1.jpg" WIDTH=168 HEIGHT=128 
+border=0></a> &nbsp;
+				<a href="images/screenshots/ToV2.jpg" target=new>
+				<img src="images/screenshots/ToV2.jpg" WIDTH=168 HEIGHT=128 
+border=0></a>
+			</p>
+			<font color=#ffffff>
+		<h4>Noteable Drops</h4>
+		<ul>
+		<li>2 Leather bps (grats Kasik, and Hrvatstix)
+		<li>2 Plate helms to be customized (grats Slepnir and Argille)
+		</ul>
+		ToV is not safe untill everyone is satisfied with their armor... untill 
+then 			those wurms drakes and etc better hide from At-Deaths-Door.
+
+
+			<br><br>
+
+Have more news? <A HREF="Mailto:Nighthawk1485@hotmail.com">E-Mail us</A>
+
+		</font>
+		</TD>
+	</TR>
+</table></td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>January 10, 2002</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="88"><strong>Elfpat Gets Epic!</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="Nighthawk1485@hotmail.com"><font COLOR=#FF0000 SIZE=2>Rakle</font></a></td></tr><tr><td class=NewsText><TABLE WIDTH=100% BORDER=0 CELLSPACING=1 CELLPADDING=1 bgcolor=black>
+	<TR>
+		<TD>
+			<H3><font color=#ffffff>Elfpat Get's Epic!</font></H3>
+			<P align=center>
+				<a href="images/screenshots/elfpat.jpg" target=new>
+				<img src="images/screenshots/elfpat.jpg" WIDTH=168 HEIGHT=128 border=0></a> &nbsp;
+				<a href="images/screenshots/faycorpse.jpg" target=new>
+				<img src="images/screenshots/faycorpse.jpg" WIDTH=168 HEIGHT=128 border=0></a>
+			</p>
+			<font color=#ffffff>
+		On the night of Friday, January 04, 2002, Elfpat -- Druid of the 56th recieved 			
+		epic. Once word was called At-Deaths-Door flocked to kill the over sized guppy. 		
+		ONE death was suffored due to lack of healers in one group but other then that 			
+		flawless! 
+
+		
+
+		Grats Elf!
+
+			<br><br>
+		
+Have more news?? <A HREF="Mailto:RakleDarkcast@hotmail.com">E-Mail us</A>
+
+		</font>
+		</TD>
+	</TR>
+</TABLE></td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>December 20, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="87"><strong>Patch Message - 12/20/01</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting.com"><font COLOR=#FF0000 SIZE=2>Feadorn</font></a></td></tr><tr><td class=NewsText>December 20th, 3:00am<br>
+------------------------------<br>
+<br><br>
+* Bug Fixes *
+<br><br>
+- Fixed a bug with sleeves not showing properly when wearing robes
+<br><br><br>
+* Item Changes *
+<br><br>
+- Aqualung charges should now work properly
+<br><br><br>
+* Trade Skill Changes *
+<br><br>
+- Regular, medium quality, high quality, mithril, brellium and adamantite rings, as well as their enchanted versions are now stackable.<br>
+- Added a few trade skill vendors to Ak'Anon<br>
+- Added ore, clay, pottery sketch, baking, and brewing vendors to Felwithe to round out the tradeskill supplies available in Felwithe and Kelethin.<br>
+- Crafted fishing flies, special fishing poles and special baits now add a fishing skill bonus.<br>
+- Made all Bait and flies equipable in the Ammo slot.<br>
+- Added clay, ore and brewing supply vendors to Halas.<br>
+- Added several trade skill vendors to Oggok.
+<br>
+<br><br>
+* Localization Information
+<br><br>
+Localization on the EverQuest login/chat server has been fixed so that users can once again select French and German. Japanese and Korean have also been added.
+<br><br>
+To obtain the text files which enable a language, go to the Advanced Options screen in the patcher and click on the appropriate language box before clicking on "Download".
+<br><br><br>
+*  Soulbinders *
+<br><br>
+A new group has appeared in Norrath (and on Luclin as well).  Rumor has it that these 'Soulbinders' have dedicated themselves to research on the power and essence of our inner being.  Some call them fanatics, as they claim that knowledge of the spirit that dwells within will lead them to an understanding of the whole of existence.  Citizens often treat them with the same respect and distance that they treat the Priests of Discord.  However, these Soulbinders  have dedicated themselves to public service, and for them that service falls along their lines of specialty...
+<br><br>
+The next time you find yourself far away from home, you might seek the services of a Soulbinder.
+<br><br>
+/ooc: We've added these "Soulbinder" NPCs to all cities that player characters can start in, as well as Shadowhaven and Iceclad at the request of players.  It is our hope that these new NPCs will help players by reducing the time it takes to find a bind from another player character.
+</td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>December 10, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="86"><strong>Banelion Weds Mitsy Miniheals</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting.com"><font COLOR=#FF0000 SIZE=2>Feadorn</font></a></td></tr><tr><td class=NewsText><TABLE WIDTH=100% BORDER=0 CELLSPACING=1 CELLPADDING=1 bgcolor=black>
+	<TR>
+		<TD>
+		<H3><font color=#ffffff>Banelion and Mitsy's Wedding</font></H3>
+		<P align=center><a href="images/screenshots/kiss.jpg" target=new><img src="images/screenshots/kiss.jpg" WIDTH=210 HEIGHT=160 border=0></a></p>
+		<font color=#ffffff>
+		On November 30th, 2001 Banelion and Mitsy were married in a wonderful
+		ceremony set against the setting sun on Lake Rathetear.  Kataar was the
+		master of ceremonies and when he asked if the couple had anything to 
+		express to each other, Banelion shouted to the world the following:
+		<blockquote>
+			I wish to say that my sun and stars brought joy to me for many seasons 
+			and today.  I will take her for my wife i will be true to her and love 
+			her with all my heart.  I will tank for her as a good husband should and 
+			prevent her getting hit by bad mobs.  My heart sings at this great and happy day.
+		</blockquote>
+		
+		This statement brought great cheers from the crowd of on lookers.  Most who pray one
+		day to be as noble as Banelion is now.  Mitsy then stepped forward to proclaim her
+		love for Banelion with the following:
+		
+		<blockquote>
+			I searched for somehting that was missing for a long time and was blessed when 
+			you walked into my life I fell for you when I first laid eyes upon you.  
+			I promise to follow you everywhere you lead and to stand beside you and heal 
+			you when things come at you I vow to honor you from this day forth.
+		</blockquote>
+		
+		This brought more than a tear to all that heard this proclaimation.  This is a date
+		that will live in the memories of all that attened.<br><br>
+		
+		<a href="screens6.asp">Please Click Here for More Pictures</a>
+		
+		</font>
+		</TD>
+	</TR>
+</TABLE></td></tr><tr><td>&nbsp;</td></tr><tr><td class=NewsSubHead><a name="85"><strong>Patch Day, Today</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting.com"><font COLOR=#FF0000 SIZE=2>Feadorn</font></a></td></tr><tr><td class=NewsText>Here is the patch message:
+<blockquote>
+*Patch Changes*
+<ul>
+<li>Fixed a problem that resulted in excessive swapping for people with particles turned off.<br>
+<li>Fear spells should again be working correctly.</li>
+<li>AoE fear spells will no longer work versus players on PvP Servers.</li>
+<li>Fixed a crash caused by a familiar dying.<br>
+<li>Fixed a bug with the "Alternate Advancement" system.  An artifact from the removal of the class-based experience penalty several months ago resulted in hybrids gaining AAXP much faster than they should, and warriors and rogues gaining it slower.  AA-point cost was designed to be the same regardless of class.</li>
+<li>Increased the experience cost per AA-point overall after analysis of point accruals accross the game.</li>
+<li>Corrected several zone-crashes.  Also implemented a workaround to prevent the Hollowshade crash while we investigate the problem further.</li>
+<li>Fixed several miscellaneous bugs that were causing crashes or had the potential to cause crashes on varied systems.</li>
+<li>Fixed a bug that caused some people to crash when reentering the game after exiting.</li>
+<li>Addressed a good number of content-related issues (quest problems, bad items, etc).</li>
+</ul>
+<br><br>
+*Luclin Install*
+<br><br>
+We found that the default install directory for Luclin may be wrong for some people, specifically those who have copied their EverQuest files into a directory different from their initial installation.  
+<br><br>
+Also, we've received a number of calls from Luclin subscribers who've tried logging in to their character on a friends computer that does not have an install of Luclin on it.  This will not work as the files necessary for you to view Luclin content are not present unless Luclin has been installed. 
+<br><br>
+We've added code to point out both of these cases in the future.
+<br><br>
+*Continued Plans*
+<br><br>
+As we wrap up the technology-related issues over the course of this week, making sure that everyone who wants to play EverQuest can play EverQuest, the programming team will shift their focus to aesthetic issues such as animation speed/timing, armor tinting, face-picker operation, etc.  We do indeed plan on getting to all of these issues in the very short term.
+<br><br>
+The content-team, however, is hard at work on content-related issues right now, and stands ready to address any broken quests, items, encounter-imbalances, etc., that you may run across in your adventures.  Please feel free to visit our forums off of www.everquestlive.com and submit a comment through the Developer's Corner.
+<br><br>
+Thank you for your patronage,
+<br><br>
+-The EverQuest Team
+</blockquote></td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>December 7, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="84"><strong>Patch Message, December 7th</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting.com"><font COLOR=#FF0000 SIZE=2>Feadorn</font></a></td></tr><tr><td class=NewsText><B>Fixes</B>
+<ul>
+<li>Shaved 10 seconds of zoning for every subscriber.</li> 
+<li>Made it so familiars don't get agroed on.</li>
+<li>Fixed several zone crash bugs</li>
+<li>Changed a paladin spell - a design error in the spell trivialized several aspects of the high-end game.</li>
+<li>Fixed several item and content problems.</li>
+<li>Fixed several faction issues - some faction information released with Luclin deviated from norm. </li>
+</ul>
+- The EverQuest Team
+</td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>December 4, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="83"><strong>Think your ready for Luclin? Here's some info.</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="EranaDragonfire@hotmail.com"><font COLOR=#FF0000 SIZE=2>Erana Dragonfire</font></a></td></tr><tr><td class=NewsText>Offical Sony information about Luclin and how to set it up, along with troubleshooting guides.
+
+<a href="http://everquest.station.sony.com/support/luclin/index.jsp">Sony Luclin Info</a>
+
+</td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>November 28, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="82"><strong>** Server Outage for Shadows of Luclin Launch **</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting.com"><font COLOR=#FF0000 SIZE=2>Feadorn Lifegiver</font></a></td></tr><tr><td class=NewsText>In order to update our server for the launch of EverQuest: Shadows of Luclin, all servers will be taken down starting at noon on Monday, December 3rd.  They will be brought back up again on Tuesday, December 4th at 8 am (Pacific Time - which is -8:00 GMT).
+<BR><BR>
+We regret the down time that setting up the new expansion requires.  Shadows of Luclin offers some exciting new content as well as a fantastic new graphics engine.  We hope that you'll agree with us that Shadows of Luclin is well worth the extended patch time.
+<BR><BR>
+Thanks for your patience.
+<BR><BR><BR>
+** DirectX 8.0 or higher Required for EverQuest **
+<BR><BR>
+When we update the servers on December 3rd for Shadows of Luclin, we will also be updating a lot of the code for the existing game.  This code is written specifically for use with DirectX 8.0 and higher, and should provide better performance to most of our customers.  The improvement will be most noticeable for people using newer hardware.
+<BR><BR>
+This will require that all EverQuest players update their DirectX to version 8.0 or better to play EverQuest.  We will be providing an instructional page to help people with this upgrade in the very near future at www.everquestlive.com. If you want to test your DirectX 8 configuration and drivers sooner rather than later, you can do so by running "TestEverQuest.exe" in your EverQuest directory and logging on to the Test Server.  Please view the patch message there for information should you have any problems logging in.
+<BR><BR>
+- The EverQuest Team
+</td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>November 19, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="81"><strong>Lucin Expansion Skills</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="Nighthawk1485@hotmail.com"><font COLOR=#FF0000 SIZE=2>Rakle Darkcast</font></a></td></tr><tr><td class=NewsText>Lucin skills have been released, while not being guaranteed these are a good source at whats to come in the new expansion to the land of EverQuest.
+
+http://eq.castersrealm.com/viewarticle.asp?Article=3895</td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>November 8, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="80"><strong>Emergency Patch</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting.com"><font COLOR=#FF0000 SIZE=2>Feadorn</font></a></td></tr><tr><td class=NewsText>Emergency Patch Thursday November 8th Thursday, November 08 2001 03:07 PST 
+<br><br>
+All servers are currently down for an emergency patch. The estimated downtime is 6 hours. 
+<br><br>
+- The EverQuest Operations Team 
+
+</td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>October 31, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="77"><strong>Patch Day</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting"><font COLOR=#FF0000 SIZE=2>Feadorn</font></a></td></tr><tr><td class=NewsText>I think the karanas that they are talking about is east karana, this was one of the files that was in the update.  Here is the patch message:
+
+<blockquote>
+October 31th, 3:00 am<br>
+------------------------------<br>
+<br><br>
+*By the pricking of my thumbs*
+<br><br>
+- A con man in The Temple of Solusek Ro has been warned by the gods not to tease people about special weapons.<br>
+- Forest Barley can be found now, if you like that sort of thing.<br>
+- There are fewer blind frogloks in Guk.<br>
+- Small trees will fall more frequently in one of the Karanas<br>
+- Be careful in your travels over the next few days.  Something is amiss on Norrath.
+<br><br>
+Trick or treat!
+<br><br>
+- The EverQuest Team
+</blockquote></td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>October 24, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="76"><strong>EZ Boards Are Down</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting.com"><font COLOR=#FF0000 SIZE=2>Feadorn</font></a></td></tr><tr><td class=NewsText>Here is the message from ezboard:
+<blockquote>
+ALL SERVERS DOWN AND ACCOUNTS WILL NOT WORK UNTIL ABOUT 2:30 PM (PST). THANK YOU. 
+</blockquote></td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>October 23, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="75"><strong>Patch Day</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting.com"><font COLOR=#FF0000 SIZE=2>Feadorn</font></a></td></tr><tr><td class=NewsText>*Patch Day*
+<br><br>
+This patch primarily addresses item fixes in regard to the Chardok revamp, as well as some minor other quest and item fixes.  There's also been some talk of something called the Green Mist.
+<br><br>
+- The EverQuest Team
+
+</td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>October 15, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="74"><strong>You should start planning to update to DirectX 8 </strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting.com"><font COLOR=#FF0000 SIZE=2>Feadorn</font></a></td></tr><tr><td class=NewsText>Varient is moving the game to use DirectX 8.  Please read the article at the link below and then do the upgrade.
+
+<BR><BR>
+<a target=_new href="http://boards.station.sony.com/ubb/everquest/Forum1/HTML/000348.html">http://boards.station.sony.com/ubb/everquest/Forum1/HTML/000348.html</a></td></tr><tr><td>&nbsp;</td></tr><tr><td class=NewsSubHead><a name="73"><strong>Patch Scheduled for October 23rd </strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting.com"><font COLOR=#FF0000 SIZE=2>Feadorn</font></a></td></tr><tr><td class=NewsText>On Tuesday, October 23rd at 3AM PDT, (10AM GMT), all servers will be brought down for a scheduled patch. The estimated downtime is 6 hours.<br><br>
+- The EverQuest Operations Team
+
+</td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>October 10, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="72"><strong>Plane of Hate Raid</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="feadorn@clemmonsconsulting.com"><font COLOR=#FF0000 SIZE=2>Feadorn</font></a></td></tr><tr><td class=NewsText>Please check the msg board for the upcoming PoH raid.  If you are going, please sign up.</td></tr><tr><td>&nbsp;</td></tr><tr><td class=RowHeading align=middle>October 8, 2001</td></tr><tr><td background="images/redline.gif" height=4></td></tr><tr><td class=NewsSubHead><a name="71"><strong>New Melee and Magic</strong><br><font SIZE=2>Submitted by:&nbsp;</font><a href="bobafett1@ignmail.com"><font COLOR=#FF0000 SIZE=2>Cartmean Woundbind</font></a></td></tr><tr><td class=NewsText>all the things they are testing are coming live woot all new magic and melee systems!
+<a href="http://eq.castersrealm.com/viewarticle.asp?Article=3829">http://eq.castersrealm.com/viewarticle.asp?Article=3829</a></td></tr><tr><td>&nbsp;</td></tr>	
+
+												<!-- End Insert Here -->
+												
+											</table>
+											
+										</td><!--test end-->
+									</tr>
+								</table>
+							</td>
+							<td style="WIDTH: 210px" width="210" vAlign="top" align="left">
+								<table border="0" cellPadding="0" cellSpacing="0" width="100%">
+									<tr>
+										<td align="middle">
+		        
+											<table border="0" cellPadding="3" cellSpacing="3" width="100%">
+												<tr>
+													<td class="RightLI">
+														<font size="2">
+														Guild Login
+														</font>
+													</td>
+												</tr>
+												<tr>
+													<td class="TextMain" align="Left">
+													    <form method="post" action="additem.asp?mode=login" id=form1 name=form1>
+														<table border="0" cellpadding="0" cellspacing="0" width="100%">
+														
+															<tr>	
+																<td class="TextMain" width=50>
+																	
+																	Login:
+																</td>
+																<td class="TextMain">
+																	<INPUT type="text" id=text1 name=UserName size=15>
+																</td>
+															</tr>		
+															<tr>	
+																<td class="TextMain">
+																	Password:
+																</td>
+																<td class="TextMain">
+																	<INPUT type="password" id=password1 name=Password size=15>
+																</td>
+															</tr>		
+															<tr>
+																<td colspan=2 align=middle>
+																	<br><INPUT type="submit" value="Submit" id=submit1 name=submit1>
+																</td>
+															</tr>
+															
+														</table>
+														</form>
+													</td>
+												</tr><!--
+												<tr>
+													<td class="RightGM">
+														<font size="2">Guildie Of The Month </font>
+													</td>
+												</tr>
+												<tr>
+													<td class="TextMain" align="Left">
+														<table border="0" cellpadding="0" cellspacing="0" width="100%">
+															<tr>
+																
+																<td class="TextMain">
+																	<img SRC="images/gotm/GronglSm1.jpg" WIDTH="105" HEIGHT="126">
+																</td>
+																<td valign="top"><font Color="#ffffff" size="2">
+																	<b>Name: </b>Grongl<br>
+																	<b>Class: </b>Warrior<br>
+																	<b>Race: </b>Troll<br>
+																	<b>Level: </b>53<br>
+																	 For going above and beyond the call of duty on every occasion.</b> 
+																	</font>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+												-->
+												<tr>
+													<td class="RightSS">
+														<font size="2">Random Screen Shot</font>
+													</td>
+												</tr>
+												<tr>
+													<td class="TextMain" align="middle">
+														
+														<a href=images/screenshots/eq013.jpg target=new><img src=images/screenshots/eq013.jpg WIDTH=210 HEIGHT=160 border=0></a>
+														<a href="mailto:feadorn@clemmonsconsulting.com"><font size=2px color=white>Submit a Screen Shot</font></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="RightQD">
+														<font size="2">Random Quote</font>
+													</td>
+												</tr>
+												<tr>
+													<td class="TextMain" align="middle">
+														<font Color="#ffffff" size="2">
+														<i>
+															He who can destroy a thing, can control a thing. 
+<br><br> Frank Herbert <br><br>
+															
+														</i></font>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+							
+						</tr>
+
+					</table>
+				</td>
+		    </tr>
+		</table>
+
+
+
+
+	</td>
+    <td bgcolor="#000000">&nbsp;</td>
+  </tr>
+</table>
+
+<!-- Footer Info -->
+<table border="0" cellPadding="0" cellSpacing="0" width="100%">
+  <tr>
+    <td style="WIDTH: 15px" width="15"><br><IMG height=1 src="images/spacer.gif" width=15></td>
+    <td style="WIDTH: 145px" width="145"><br><IMG height=1 src="images/spacer.gif" width=145></td>
+    <td style="WIDTH: 15px" width="15"><br><IMG height=1 src="images/spacer.gif" width=15></td>
+    <td class="copyright" align="middle" bgcolor="#000000">
+		<br>
+		<STRONG>All Materials are Copyright of At Deaths Door.
+		<BR>"EverQuest" is a Registered Trademark of Sony Entertainment Corp.
+		<BR>EverQuest and Related Materials are Copyright Sony Entertainment Corp.<BR></STRONG>
+		<IMG height=1 src="images/spacer.gif" width=400>
+	</td>
+    <td style="WIDTH: 15px" width="15" bgcolor="#000000"><br><IMG height=1 src="images/spacer.gif" width=15></td>
+  </tr>
+</table>
+
+
+</body>
+</html>
