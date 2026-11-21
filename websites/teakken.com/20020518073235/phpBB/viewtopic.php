@@ -1,0 +1,1 @@
+<font size=+1>An Error Occured</font><hr>Could not connect to the forums database.

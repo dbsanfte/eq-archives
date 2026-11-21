@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Teakken's Forums - Preferences</TITLE>
+</HEAD>
+<BODY BGCOLOR="#394a08" TEXT="#70DB93" LINK="#70DB93" VLINK="#70DB93">
+<font face="sans-serif">
+<TABLE BORDER=0 WIDTH="95%" CELLPADDING="5" ALIGN="CENTER">
+<TR>                    
+        <TD ALIGN="CENTER" WIDTH="50%" ROWSPAN="2"><a href="/phpBB/index.php"><IMG SRC="images/clear.gif" border="0"></a></TD>
+	<TD ALIGN="CENTER">
+		<FONT FACE="sans-serif" SIZE="+1" COLOR="#70DB93">Teakken's Forums</font>
+	</TD>
+</TR>
+<TR>
+	<TD ALIGN="CENTER">
+		<FONT FACE="sans-serif" SIZE="0" COLOR="#70DB93">
+		[<a href="/phpBB/bb_register.php?mode=agreement">Register</a>]&nbsp;
+		[<a href="/phpBB/bb_profile.php?mode=edit">Edit Profile</a>]&nbsp;
+		[<a href="/phpBB/prefs.php">Edit Your Preferences</a>]&nbsp;
+		[<a href="/phpBB/search.php">Search</a>]<br>
+		
+		[<a href="/phpBB/viewpmsg.php">Private Messages</a>]&nbsp;
+		[<a href="/phpBB/bb_memberlist.php">Memberslist</a>]&nbsp;
+		[<a href="/phpBB/faq.php">FAQ</a>]&nbsp;
+		[<a href="/phpBB/login.php">Login</a>]
+		
+		
+		</font>
+	</TD>
+</TR>
+<TR>
+	<TD COLSPAN="2" ALIGN="RIGHT">
+		<FONT FACE="sans-serif" SIZE="0" COLOR="#70DB93">
+		Our users have posted a total of -290- Messages.<br>
+We have -24- Registered Users.<br>
+The newest Registered User is -<a href="/phpBB/bb_profile.php?mode=view&user=24">Gilen MoonBlade</a>-.<br>
+-1- user is <a href="/phpBB/whosonline.php">currently browsing</a> the forums.<br><b>Not logged in. <a href="/phpBB/login.php">Login.</a></b><br>
+		</font>
+	</TD>
+</TR>
+</TABLE>
+<FORM ACTION="/phpBB/prefs.php" METHOD="POST">
+<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP">
+<TR><TD BGCOLOR="#628c00">
+<TABLE BORDER="0" CELLPADDING="10" CELLSPACING="1" WIDTH="100%">
+	<TR BGCOLOR="#394a08" ALIGN="CENTER">
+  		<TD COLSPAN="2">
+			<FONT FACE="sans-serif" SIZE="2" COLOR="#70DB93">
+  			<b>Please enter your username and password.</b>
+			</FONT>
+			<br>
+		</TD>
+	</TR><TR BGCOLOR="#394a08">
+		<TD>
+			<FONT FACE="sans-serif" SIZE="2" COLOR="#70DB93">
+			<b>Username: &nbsp;</b></font>
+			</FONT>
+		</TD>
+		<TD>
+			<INPUT TYPE="TEXT" NAME="user" SIZE="25" MAXLENGTH="40" VALUE="">
+		</TD>
+	</TR><TR BGCOLOR="#394a08">
+		<TD>
+			<FONT FACE="sans-serif" SIZE="2" COLOR="#70DB93">
+			<b>Password: </b>
+			</FONT>
+		</TD><TD>
+			<INPUT TYPE="PASSWORD" NAME="passwd" SIZE="25" MAXLENGTH="25">
+		</TD>
+	</TR><TR BGCOLOR="#394a08">
+		<TD COLSPAN="2" ALIGN="CENTER">
+			<FONT FACE="sans-serif" SIZE="2" COLOR="#70DB93">
+			<a href="sendpassword.php">I forgot my password!</a><br><br>
+			</FONT>
+									<INPUT TYPE="SUBMIT" NAME="submit" VALUE="Submit">
+		</TD>
+	</TR>
+</TABLE>
+</TD></TR>
+</TABLE>
+</FORM>
+
+
+<FONT FACE="sans-serif" SIZE="-2" COLOR="#70DB93">
+<CENTER>Powered by <a href="http://www.phpbb.com/" target="_blank">phpBB</a> Version 1.2.1<BR>
+Copyright &copy; 2000 - 2001 <a href="http://www.phpbb.com/credits.php" target="_blank">The phpBB Group</a>
+</CENTER>
+</font><BR>
+
+
+</FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,412 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Teakken </title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="EXPIRES" CONTENT="0">
+<META NAME="RESOURCE-TYPE" CONTENT="DOCUMENT">
+<META NAME="DISTRIBUTION" CONTENT="GLOBAL">
+<META NAME="AUTHOR" CONTENT="Teakken">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) 2003 by Teakken">
+<META NAME="KEYWORDS" CONTENT="News, news, New, new, Technology, technology, Headlines, headlines, Nuke, nuke, PHP-Nuke, phpnuke, php-nuke, Geek, geek, Geeks, geeks, Hacker, hacker, Hackers, hackers, Linux, linux, Windows, windows, Software, software, Download, download, Downloads, downloads, Free, FREE, free, Community, community, MP3, mp3, Forum, forum, Forums, forums, Bulletin, bulletin, Board, board, Boards, boards, PHP, php, Survey, survey, Kernel, kernel, Comment, comment, Comments, comments, Portal, portal, ODP, odp, Open, open, Open Source, OpenSource, Opensource, opensource, open source, Free Software, FreeSoftware, Freesoftware, free software, GNU, gnu, GPL, gpl, License, license, Unix, UNIX, *nix, unix, MySQL, mysql, SQL, sql, Database, DataBase, Blogs, blogs, Blog, blog, database, Mandrake, mandrake, Red Hat, RedHat, red hat, Slackware, slackware, SUSE, SuSE, suse, Debian, debian, Gnome, GNOME, gnome, Kde, KDE, kde, Enlightenment, enlightenment, Interactive, interactive, Programming, programming, Extreme, extreme, Game, game, Games, games, Web Site, web site, Weblog, WebLog, weblog, Guru, GURU, guru, Oracle, oracle, db2, DB2, odbc, ODBC, plugin, plugins, Plugin, Plugins">
+<META NAME="DESCRIPTION" CONTENT="">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<META NAME="REVISIT-AFTER" CONTENT="1 DAYS">
+<META NAME="RATING" CONTENT="GENERAL">
+<META NAME="GENERATOR" CONTENT="PHP-Nuke 6.9 - Copyright 2003 by http://phpnuke.org">
+<LINK REL="StyleSheet" HREF="themes/fiblue3d/style/style.css" TYPE="text/css">
+
+
+
+
+
+
+
+
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" leftmargin="1" topmargin="1" marginwidth="1" marginheight="1"><table class="bodyline" width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td align="center" valign="top">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/fiblue3d/forums/images/tnav_tl.gif" width="14" height="23" alt="" /></td>
+<td width="100%" class="tbltop">&nbsp;</td>
+<td><img src="themes/fiblue3d/forums/images/tnav_tr.gif" width="15" height="23" alt="" /></td>
+</tr>
+<tr>
+<td class="tblleft">&nbsp;</td>
+<td align="center" class="topbkg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="60%" height="120"><a href="index.php"><img src="themes/fiblue3d/forums/images/logo.jpg" border="0" alt="Teakken"></a></td>
+<td width="40% height="120"> &nbsp;</td>
+</tr>
+</table>
+</td>
+<td class="tblright">&nbsp;</td>
+</tr>
+<tr>
+<td><img src="themes/fiblue3d/forums/images/tnav_bl.gif" width="14" height="26" alt="" /></td>
+<td class="tblbot">&nbsp;</td>
+<td><img src="themes/fiblue3d/forums/images/tnav_br.gif" width="15" height="26" alt="" /></td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="2" class="topnav">
+<tr>
+<td width="165" nowrap><div align="center"><font class="content">&nbsp;&nbsp;<a href="modules.php?name=Your_Account&op=new_user">Create an account</font></div></td>
+<td nowrap><div align="center"><font class="content">&#8226; &nbsp;<a href="index.php">Home</a> <!-- &nbsp;&#8226; &nbsp;<a href="modules.php?name=Downloads">Downloads</a>--> &nbsp;&#8226; &nbsp;<a href="modules.php?name=Your_Account">Your Account</a> &nbsp;&#8226; &nbsp;<a href="modules.php?name=Forums">Forums</a> &nbsp;&#8226;</font></div></td>
+<td width="165" nowrap><div align="center"><font class="content"><script type="text/javascript">
+<!--   // Array ofmonth Names
+var monthNames = new Array( "January","February","March","April","May","June","July","August","September","October","November","December");
+var now = new Date();
+thisYear = now.getYear();
+if(thisYear < 1900) {thisYear += 1900}; // corrections if Y2K display problem
+document.write(monthNames[now.getMonth()] + " " + now.getDate() + ", " + thisYear);
+// -->
+</script>
+</font></div></td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/fiblue3d/forums/images/tnav_tl.gif" width="14" height="23" alt="" /></td>
+<td width="100%" class="tbltop">&nbsp;</td>
+<td><img src="themes/fiblue3d/forums/images/tnav_tr.gif" width="15" height="23" alt="" /></td>
+</tr>
+<tr>
+<td class="tblleft">&nbsp;</td>
+<td>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+      <tr valign="top">
+        <td><img src="themes/fiblue3d/forums/images/pixel.gif" width="1" height="1" border="0" alt=""></td>
+</tr></table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr valign="top">
+  <td valign="top" width="7" background="themes/fiblue3d/forums/images/pixel.gif">
+<table width="155" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="row1" width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td><center><font class="block-title"><strong>Menu</strong></font></center></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td class="row2"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                 <td><font class="content"><strong><big>&middot;</big></strong>&nbsp;<a href="index.php">Home</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Forums">Forums</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=coppermine">Gallery</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Web_Links">Web Links</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Your_Account">Your Account</a><br>
+</font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+
+<table width="155" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="row1" width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td><center><font class="block-title"><strong>User Info</strong></font></center></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td class="row2"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                 <td><font class="content"><form action="modules.php?name=Your_Account" method="post"><center><img src="images/blocks/group-4.gif" height="14" width="17"> Welcome, <b>Anonymous</b>
+<hr>Nickname<br><input type="text" name="username" size="10" maxlength="25"><br>Password<br><input type="password" name="user_password" size="10" maxlength="20"><br><input type="hidden" name="op" value="login"><input type="submit" value="Login">
+ (<a href="modules.php?name=Your_Account&amp;op=new_user">Register</a>)</center><hr><img src="images/blocks/group-2.gif" height="14" width="17"> <b><u>Membership:</u></b><br>
+<img src="images/blocks/ur-moderator.gif" height="14" width="17"> Latest: <A HREF="modules.php?name=Your_Account&amp;op=userinfo&amp;username=Dominator"><b>Dominator</b></a><br>
+<img src="images/blocks/ur-author.gif" height="14" width="17"> New Today: <b>0</b><br>
+<img src="images/blocks/ur-admin.gif" height="14" width="17"> New Yesterday: <b>0</b><br>
+<img src="images/blocks/ur-guest.gif" height="14" width="17"> Overall: <b>19</b><br>
+<hr>
+<img src="images/blocks/group-3.gif" height="14" width="17"> <b><u>People Online:</u></b>
+<br>
+<img src="images/blocks/ur-anony.gif" height="14" width="17"> Visitors: <b>1</b><br>
+<img src="images/blocks/ur-member.gif" height="14" width="17"> Members: <b>0</b><br>
+<img src="images/blocks/ur-registered.gif" height="14" width="17"> Total: <b>1</b><br>
+</form></font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+
+</td><td valign="top" width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="1" cellpadding="1" border="0">
+        <tr>
+          <td bgcolor="#005A88"><table width="100%" border="0" cellpadding="1" cellspacing="0">
+              <tr>
+                <td><table width="100%" border="0" cellspacing="0" cellpadding="1">
+                    <tr>
+                      <td bgcolor="#000000"><table width="100%" border="0" cellspacing="1" cellpadding="0">
+                          
+                          <tr>
+                            <td><table width="100%" border="0" cellspacing="0" cellpadding="1">
+                                <tr>
+                                  <td bgcolor="#000000"><table width="100%" border="0" cellspacing="0" cellpadding="4">
+                                      <tr>
+                                        <td><center><font class="option" color="#CCCCCC"><b>Welcome to Teakken.com</b></font></center><br>
+<font class="content">Teakken.com is the virtual home for me, Matthew Jones. The website is named after Teakken Oakwind, a druid character I started for EverQuest in November of '99. I used to chronicle his adventures for my own amusement so I could have a diary of this "wonderful new game" I had started playing. I don't have much about the original EQ on this site anymore. Nowadays I use this site for testing HTML ideas (I like doing HTML, PHP, MySQL for hobby), but visitors will usually never see my HTML experimentation.
+
+<br><br>
+Since creating the "Teakken" persona, I have taken it to other games, MMORPG as well as FPS and other types. My gamer friends now just refer to me as "Teak".
+
+<br><br>
+I intend to begin recording my adventures in EQII and World of Warcraft here soon. Check in the forums for updated "diaries". And drop me a note in there to say hello.</font></td>
+                                      </tr>
+                                    </table></td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                          
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table><br><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><table width="100%" border="0" cellspacing="0" cellpadding="">
+<tr>
+<td class="row1" ><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td nowrap><div align="left"><font class="storytitle"><b>EverQuest II Released!</b></font><br>
+<font class="content">Wednesday, November 10 @ 15:36:00 EST  (11 reads)</font></div></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="row2"><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><a href="modules.php?name=News&amp;new_topic=3"><img src="images/topics/eq2_red.gif" border="0" alt="EverQuest II" title="EverQuest II" align="right" hspace="10" vspace="10"></a><font class="storycontent">Well, EverQuest II has now been released! YAY!
+
+<br><br>
+You can find me on the Unrest server as usually either Teak or Teakken. Or, you can join my chat channel where I wait very lonely for people to come talk to me. 
+
+<br><br>
+/join Teak:friends
+
+<br><br>
+CYA in Norrath+500yrs!
+</font></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="spacerow" colspan="2" height="6"><img src="themes/fiblue3d/forums/images/spacer.gif" alt="" width="1" height="1" /></td>
+</tr>
+<tr>
+<td class="cat2" ><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><font class="storycontent">(<a href="modules.php?name=News&amp;file=article&amp;sid=5"><b>Read More...</b></a> | Score: 0)</font></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><table width="100%" border="0" cellspacing="0" cellpadding="">
+<tr>
+<td class="row1" ><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td nowrap><div align="left"><font class="storytitle"><b>Yet another Theme!</b></font><br>
+<font class="content">Wednesday, October 08 @ 20:32:34 EDT  (75 reads)</font></div></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="row2"><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><a href="modules.php?name=News&amp;new_topic=2"><img src="images/topics/phpnuke.gif" border="0" alt="Site News" title="Site News" align="right" hspace="10" vspace="10"></a><font class="storycontent"><a href="modules.php?name=Your_Account&amp;op=userinfo&amp;username=Teak">Teak</a> writes:<br><br><div width=90%>I found this excellent theme '<b>fiblue3d</b>' today. It includes matching themes for the forums. I like it so much I made it the <b>NEW</b> default theme... atleast for now.
+<br><br />
+Still playing. </div>
+</font></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="spacerow" colspan="2" height="6"><img src="themes/fiblue3d/forums/images/spacer.gif" alt="" width="1" height="1" /></td>
+</tr>
+<tr>
+<td class="cat2" ><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><font class="storycontent">(<a href="modules.php?name=News&amp;file=article&amp;sid=4">comments?</a> | Score: 0)</font></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><table width="100%" border="0" cellspacing="0" cellpadding="">
+<tr>
+<td class="row1" ><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td nowrap><div align="left"><font class="storytitle"><b>New Themes, blocks, and modules</b></font><br>
+<font class="content">Tuesday, October 07 @ 17:40:06 EDT  (26 reads)</font></div></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="row2"><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><a href="modules.php?name=News&amp;new_topic=1"><img src="images/topics/phpnuke.gif" border="0" alt="PHP-Nuke" title="PHP-Nuke" align="right" hspace="10" vspace="10"></a><font class="storycontent"><a href="modules.php?name=Your_Account&amp;op=userinfo&amp;username=Teak">Teak</a> writes:<br><br><div width=90%>I'm adding a few more themes to try to find a few that I like. Currently the default theme is Red-White-Blue. <br />
+<br />
+I'm looking thru for more interesting Blocks (i.e. Did You Know, Who-is-Where) and Modules (i.e. Forums, Reviews, Surveys). Keep in mind I'm still only playing with this. This news post itself is just so I can see how multiple news stories work.<br />
+<br />
+Also, I want to get a real handle on the phpBB forums. I'm used to vBulletin, but want to learn these as they are free! =) </div>
+</font></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="spacerow" colspan="2" height="6"><img src="themes/fiblue3d/forums/images/spacer.gif" alt="" width="1" height="1" /></td>
+</tr>
+<tr>
+<td class="cat2" ><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><font class="storycontent">(<a href="modules.php?name=News&amp;file=article&amp;sid=2">comments?</a> | Score: 0)</font></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><table width="100%" border="0" cellspacing="0" cellpadding="">
+<tr>
+<td class="row1" ><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td nowrap><div align="left"><font class="storytitle"><b>New Website!</b></font><br>
+<font class="content">Saturday, October 04 @ 03:02:35 EDT  (28 reads)</font></div></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="row2"><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><a href="modules.php?name=News&amp;new_topic=2"><img src="images/topics/phpnuke.gif" border="0" alt="Site News" title="Site News" align="right" hspace="10" vspace="10"></a><font class="storycontent"><a href="modules.php?name=Your_Account&amp;op=userinfo&amp;username=Teak">Teak</a> writes:<br><br><div width=90%>Well the DNS entries switched over to the new server and I'm now playing around with how to set up this phpNuke portal. It includes new phpBB forums also. </div>
+</font></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="spacerow" colspan="2" height="6"><img src="themes/fiblue3d/forums/images/spacer.gif" alt="" width="1" height="1" /></td>
+</tr>
+<tr>
+<td class="cat2" ><table width="100%" border="0" cellspacing="0" cellpadding="4">
+<tr>
+<td><font class="storycontent">(<a href="modules.php?name=News&amp;file=article&amp;sid=1">comments?</a> | Score: 5)</font></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td><td valign="top" width="165"><table width="155" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="row1" width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td><center><font class="block-title"><strong>The Teakken</strong></font></center></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td class="row2"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                 <td><font class="content">
+<SCRIPT type="text/javascript">
+function BOT(BOT) { var MainWindow = window.open (BOT, "_blank","width=198,height=300,toolbar=no,location=no,menubar=no,scrollbars=no,resizeable=no,status=no");}
+</script>
+<CENTER>
+<font class="tiny" color="#C0C0C0">
+<IMG SRC="blocks/images/bot.gif" ALT="The Teakken">
+<BR><BR>
+<I>The Teakken</I>: Hi there!<BR><BR>
+<a href="javascript:BOT('http://www.pandorabots.com/pandora/talk?botid=e5cf49c5fe34f92d')">
+<B>talk to me</B>
+</a>
+<BR><BR>
+</CENTER>
+</font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+
+<table width="155" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="row1" width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td><center><font class="block-title"><strong>DidYouKnow</strong></font></center></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td class="row2"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                 <td><font class="content"><div align="justify"><font size="1">The US flag displays 13 stripes - for the original 13 states.</div><hr><br>From : DidYouKnow.Cd</font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+
+</td></tr></table>
+</td>
+<td class="tblright">&nbsp;</td>
+</tr>
+<tr>
+<td class="tblleft">&nbsp;</td>
+<td><div align="center"><font class="small">
+<font class="footmsg">
+<!-- <a href="http://phpnuke.org" target="blank"><img src="images/powered/nuke.gif" border="0" Alt="Web site powered by PHP-Nuke" hspace="10"></a><br> --><br>
+All logos and trademarks in this site are property of their respective owner. The comments are property of their posters, all the rest © 2003 by me<br>
+<!-- You can syndicate our news using the file <a href="backend.php"><font class="footmsg_l">backend.php</font></a> or <a href="ultramode.txt"><font class="footmsg_l">ultramode.txt</font></a> --><br>
+Web site engine's code is Copyright &copy; 2003 by <a href="http://phpnuke.org"><font class="footmsg_l">PHP-Nuke</font></a>. All Rights Reserved. PHP-Nuke is Free Software released under the <a href="http://www.gnu.org"><font class="footmsg_l">GNU/GPL license</font></a>.<br>Page Generation: 1.637 Seconds<br>
+</font>
+</font></div></td>
+<td class="tblright">&nbsp;</td>
+</tr>
+<tr>
+<td class="tblleft">&nbsp;</td>
+<td><div align="center"><font class="small">:: fiblue3d phpbb2 style by <a href="http://www.forumimages.com/">Daz</a> :: PHP-Nuke theme by <a href="http://www.nukemods.com">www.nukemods.com</a> ::</font></div></td>
+<td class="tblright">&nbsp;</td>
+</tr>
+<tr>
+<td class="tblleft">&nbsp;</td>
+<td>&nbsp;</td>
+<td class="tblright">&nbsp;</td>
+</tr>
+<tr>
+<td><img src="themes/fiblue3d/forums/images/tnav_bl.gif" width="14" height="26" alt="" /></td>
+<td class="tblbot">&nbsp;</td>
+<td><img src="themes/fiblue3d/forums/images/tnav_br.gif" width="15" height="26" alt="" /></td>
+</tr>
+</table>
+</body>
+</html>
