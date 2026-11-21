@@ -1,0 +1,333 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" -->
+<head>
+<title>The Elitists and Vagrants</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<SCRIPT language=JavaScript>
+<!--
+
+  document.onmouseover = doDocumentOnMouseOver ;
+  document.onmouseout = doDocumentOnMouseOut ;
+
+  function doDocumentOnMouseOver() {
+    var eSrc = window.event.srcElement ;
+    if (eSrc.className == "item") {
+      window.event.srcElement.className = "highlight"; // change class
+    }
+  }
+
+  function doDocumentOnMouseOut() {
+    var eSrc = window.event.srcElement ;
+    if (eSrc.className == "highlight") {
+      window.event.srcElement.className = "item"; // change class
+    }
+  }
+
+var bV=parseInt(navigator.appVersion);
+NS4=(document.layers) ? true : false;
+IE4=((document.all)&&(bV>=4))?true:false;
+ver4 = (NS4 || IE4) ? true : false;
+
+function expandIt(){return}
+function expandAll(){return}
+//-->
+</SCRIPT>
+
+<SCRIPT language=JavaScript1.2>
+<!--
+isExpanded = false;
+function getIndex(el) {
+	ind = null;
+	for (i=0; i<document.layers.length; i++) {
+		whichEl = document.layers[i];
+		if (whichEl.id == el) {
+			ind = i;
+			break;
+		}
+	}
+	return ind;
+}
+
+function arrange() {
+	nextY = document.layers[firstInd].pageY + document.layers[firstInd].document.height;
+	for (i=firstInd+1; i<document.layers.length; i++) {
+		whichEl = document.layers[i];
+		if (whichEl.visibility != "hide") {
+			whichEl.pageY = nextY;
+			nextY += whichEl.document.height;
+		}
+	}
+}
+
+function initIt(){
+	if (NS4) {
+		for (i=0; i<document.layers.length; i++) {
+			whichEl = document.layers[i];
+			if (whichEl.id.indexOf("Child") != -1) whichEl.visibility = "hide";
+		}
+		arrange();
+	}
+	else {
+		tempColl = document.all.tags("DIV");
+		for (i=0; i<tempColl.length; i++) {
+			if (tempColl(i).className == "child") tempColl(i).style.display = "none";
+		}
+	}
+}
+
+function expandIt(el) {
+	if (!ver4) return;
+	if (IE4) {expandIE(el)} else {expandNS(el)}
+}
+
+function expandIE(el) { 
+	whichEl = eval(el + "Child");
+	whichIm = event.srcElement;
+
+	if (whichEl.style.display == "none") {
+		whichEl.style.display = "block";
+		whichIm.src = "images/minus.gif";		
+	}
+
+	else {
+
+		whichEl.style.display = "none";
+
+		whichIm.src = "images/plus.gif";
+
+	}
+
+    window.event.cancelBubble = true ;
+
+}
+
+
+
+function expandNS(el) {
+
+	whichEl = eval("document." + el + "Child");
+
+	whichIm = eval("document." + el + "Parent.document.images['imEx']");
+
+	if (whichEl.visibility == "hide") {
+
+		whichEl.visibility = "show";
+
+		whichIm.src = "images/minus.gif";
+
+	}
+
+	else {
+
+		whichEl.visibility = "hide";
+
+		whichIm.src = "images/plus.gif";
+
+	}
+
+	arrange();
+
+}
+
+
+
+function showAll() {
+
+	for (i=firstInd; i<document.layers.length; i++) {
+
+		whichEl = document.layers[i];
+
+		whichEl.visibility = "show";
+
+	}
+
+}
+
+
+
+function expandAll(isBot) {
+
+	newSrc = (isExpanded) ? "minus.gif" : "plus.gif";
+
+
+
+	if (NS4) {
+
+        document.images["imEx"].src = newSrc;
+
+		for (i=firstInd; i<document.layers.length; i++) {
+
+			whichEl = document.layers[i];
+
+			if (whichEl.id.indexOf("Parent") != -1) {
+
+				whichEl.document.images["imEx"].src = newSrc;
+
+			}
+
+			if (whichEl.id.indexOf("Child") != -1) {
+
+				whichEl.visibility = (isExpanded) ? "hide" : "show";
+
+			}
+
+		}
+
+
+
+		arrange();
+
+		if (isBot && isExpanded) scrollTo(0,document.layers[firstInd].pageY);
+
+	}
+
+	else {
+
+		divColl = document.all.tags("DIV");
+
+		for (i=0; i<divColl.length; i++) {
+
+			if (divColl(i).className == "child") {
+
+				divColl(i).style.display = (isExpanded) ? "none" : "block";
+
+			}
+
+		}
+
+		imColl = document.images.item("imEx");
+
+		for (i=0; i<imColl.length; i++) {
+
+			imColl(i).src = newSrc;
+
+		}
+
+	}
+
+
+
+	isExpanded = !isExpanded;
+
+}
+
+
+
+with (document) {
+	write("<STYLE TYPE='text/css'>");
+	if (NS4) {
+		write(".parent {font-size:9pt; line-height:10pt; color:white; text-decoration:none; margin-top: 5px; margin-bottom: 5px; position:absolute; visibility:hidden; color: white;}");
+		write(".child {text-decoration:none; font-size:9pt; line-height:10pt; position:absolute; visibility:hidden}");
+        write(".item { color: #A69E8C; text-decoration:none;}");
+		write(".regular {position:absolute; visibility:hidden}");
+        write("DIV { color:white; }")
+	}
+	else {
+		write(".child {font:12px/13px Verdana; display:none}");
+		write(".parent {font:12px/13px Verdana; color:white; font-weight:bold; text-decoration:none; margin-top: 5px; margin-bottom: 5px; color: white;}");
+        write(".item { color: #A69E8C; text-decoration:none;}");
+        write(".highlight { color: #A69E8C}");
+        write(".heada { font: 12px/13px; Verdana}");
+        write("DIV { color:white; }")
+	}
+	write("</STYLE>");
+}
+
+
+
+onload = initIt;
+
+
+
+//-->
+
+</SCRIPT>
+<!-- #BeginEditable "java" --> <!-- #EndEditable -->
+<link rel="stylesheet" href="colorscheme.css" type="text/css">
+<base target="_self">
+</head>
+
+<body bgcolor="#948C77" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr valign="top" align="left"> 
+    <td width="175"> 
+      <table width="175" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td valign="top" background="side1.jpg"> 
+            <div class=parent id=elOneParent> <a class="item" onClick="expandIt('elOne'); return false" href="#blank"> 
+              </a>
+              <table width="100%" border="0" cellspacing="0" cellpadding="10">
+                <tr> 
+                  <td class="menu"> 
+                    <div class=parent id=elOneParent><a class="item" onClick="expandIt('elOne'); return false" href="#blank">
+					<font color="#CCCCCC">General</font></a> 
+                    </div>
+                    <div class=child id=elOneChild><span class="menu"> &nbsp;&nbsp;&nbsp;<a class="menu" href="news/news.txt" target="main">News</a><br>
+                      &nbsp;&nbsp;&nbsp;<a class="menu" href="mailto:mojak@evguild.org">Send E-Mail</a></span></div>	
+                    <div class=parent id=elTwoParent><a class="item" onClick="expandIt('elTwo'); return false" href="#blank"> 
+                      <font color="#CCCCCC">Message Boards</font></a>
+					   </div>
+                    <div class=child id=elTwoChild><span class="menu">
+					  &nbsp;&nbsp;&nbsp;<a class="menu" href="http://pub8.ezboard.com/btheelitists" target="_blank">Elitists and Vagrants</a><br>
+                      &nbsp;&nbsp;&nbsp;<a class="menu" target=TribBoard href="http://pub101.ezboard.com/bthetribunaldotorg" target="_blank">The Tribunal</a></span></div>
+                    <div class=parent id=elFifteenParent><a class="item" onClick="expandIt('elFifteen'); return false" href="#blank">
+                      <font color="#CCCCCC">Members</font></a>
+					  </div>
+                    <div class=child id=elFifteenChild><span class="menu">
+					  &nbsp;&nbsp;&nbsp;<a class="menu" href="members/roster.txt" target="main">Roster</a><br>
+                      &nbsp;&nbsp;&nbsp;<a class="menu" href="members/new.txt" target="main">New Members</a></span></div>
+                    <div class=parent id=elThreeParent><a class="item" onClick="expandIt('elThree'); return false" href="#blank"> 
+                      <font color="#CCCCCC">Recruitment</font></a></div>
+                    <div class=child id=elThreeChild><span class="menu">
+					  &nbsp;&nbsp;&nbsp;<a class="menu" target="main" href="http://www.evguild.org/members/recruitment.htm">Requirements</a></span></div>
+                    <div class=parent id=elFourteenParent><a class="item" onClick="expandIt('elFourteen'); return false" href="#blank"> 
+                      <font color="#CCCCCC">Screenshots</font></a>
+					  </div>
+                    <div class=child id=elFourteenChild><span class="menu">
+                      &nbsp;&nbsp;&nbsp;<a class="menu" href="screenshots/mobfights.txt" target="main">Mob Fights</a><br>
+                      &nbsp;&nbsp;&nbsp;<a class="menu" target="main" href="quotes/quotes.html">Random Quotes</a></span></div>
+                    <div class=parent id=elSixParent><a class="item" onClick="expandIt('elSix'); return false" href="#blank"> 
+                      <font color="#CCCCCC">Links</font></a>
+					  </div>
+                    <div class=child id=elSixChild><span class="menu">
+					  &nbsp;&nbsp;&nbsp;<a class="menu" target=Links href="http://www.everquest.com" target="_blank">Everquest.com</a><br>
+                      &nbsp;&nbsp;&nbsp;<a class="menu" target=Links href="http://eq.castersrealm.com" target="_blank">EQ Caster's Realm</a><br>
+                      &nbsp;&nbsp;&nbsp;<a class="menu" target=Links href="http://www.eqatlas.com" target="_blank">EQ Atlas</a><br>
+                      &nbsp;&nbsp;&nbsp;<a class="menu" target=Links href="http://eq.stratics.com" target="_blank">EQ Stratics</a><br>
+                      &nbsp;&nbsp;&nbsp;<a class="menu" target=Links href="http://www.eqvault.com" target="_blank">EQ Vault</a><br>
+                      &nbsp;&nbsp;&nbsp;<a class="menu" target=SafeHouse href="http://pub13.ezboard.com/bthesafehouse" target="_blank">The Safehouse</a></span></div>
+                  </td>
+                </tr>
+              </table>
+              <a class="item" onClick="expandIt('elOne'); return false" href="#blank"> 
+              </a><br>
+            </div>
+            <br>
+            <br>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top"> <img src="side2.jpg" border="0" width="175" height="60"> 
+          </td>
+        </tr>
+      </table>
+       
+      <script language=JavaScript1.2>
+
+<!--
+if (NS4) {
+	firstEl = "elOneParent";
+	firstInd = getIndex(firstEl);
+	showAll();
+	arrange();
+}
+//-->
+      </script>
+       </td>
+      </table>
+<table>
+  <tr valign="top" align="left"> 
+    <td width="175">&nbsp;</td>
+    <td width="95%">&nbsp;</td>
+  </tr>
+</body>
+<!-- #EndTemplate -->
