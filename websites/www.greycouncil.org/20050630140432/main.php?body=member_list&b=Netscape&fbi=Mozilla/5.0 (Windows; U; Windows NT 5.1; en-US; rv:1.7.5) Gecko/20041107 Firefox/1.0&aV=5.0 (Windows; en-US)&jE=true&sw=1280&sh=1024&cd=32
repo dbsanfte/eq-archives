@@ -1,0 +1,327 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>www.greycouncil.org</title>
+<META NAME="keywords" CONTENT="Grey, Uk, Education, Tourism">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link href="/style/dc.css" rel="stylesheet" type="text/css">
+<script>
+<!--
+function focusit(){document.searchfield.Keywords.focus();}
+// -->
+</script>
+<script>
+<!--
+if (window!= top)
+top.location.href=location.href
+// -->
+</script>
+</head>
+<body leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+     <tr bgcolor="#990000"> 
+          <td width="100%"><a href="/click.php?clickfraud=1"><img src="/img/default/s.gif" height=1 width=1 border=0></a><a href="http://www.domaincontender.com/"><img src="/img/dc/logo.gif" width="190" height="60" border=0></a></td>
+          <td width="350" valign="top">&nbsp; </td>
+     </tr>
+	<form method=get action="/result.php">
+	<input type="hidden" name="original" class="textfield" value="">
+	<input type="hidden" name="host" value="www.greycouncil.org">
+	<input type="hidden" name="search" value="Y">
+     
+     <tr valign="top" background="/img/dc/bgnav.gif"> 
+          <td height="25" background="/img/dc/bgnav.gif"> <div align="right"> </div>
+               <div align="right"> <img src="/img/dc/search.gif" width="58" height="25" hspace="5"> 
+               </div></td>
+          <td height="25" background="/img/dc/bgnav.gif"> <div align="right"> 
+                  
+				  
+				    <table width="100%%" border="0" cellspacing="0" cellpadding="0">
+                         <tr> 
+                              <td><input type="text" name="Keywords" class="textfield" value="">&nbsp;</td>
+                              <td><input type="submit" name="Submit" value="Search" class="submit"></td>
+                         </tr>
+                    </table>
+               </div></td>
+     </tr> </form>
+</table>
+<table width="90%" border="0" align="center" cellpadding="0" cellspacing="10">
+     <tr> 
+          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                         <td><table width="100%%" border="0" cellspacing="0" cellpadding="0">
+                                   <tr> 
+                                        <td width="30"><img src="/img/dc/box_ul.gif" width="30" height="25"></td>
+                                        <td background="/img/dc/box_bgt.gif">&nbsp;</td>
+                                        <td width="10"><img src="/img/dc/box_ur.gif" width="10" height="25"></td>
+                                   </tr>
+                              </table></td>
+                    </tr>
+                    <tr> 
+                         <td class="tdboxes"> <ul>
+                         <li><a href="/result.php?Keywords=grey&host=www.greycouncil.org&cat=1">Grey</a></li>
+						 <li><a href="/result.php?Keywords=tourism&host=www.greycouncil.org&cat=1">Tourism</a></li>
+						 <li><a href="/result.php?Keywords=development&host=www.greycouncil.org&cat=1">Development</a></li>
+						 <li><a href="/result.php?Keywords=owen+sound&host=www.greycouncil.org&cat=1">Owen Sound</a></li>
+
+                              </ul></td>
+                    </tr>
+                    <tr> 
+                         <td height="10" bgcolor="#990000"><img src="/img/dc/box_ll.gif" width="30" height="10"></td>
+                    </tr>
+               </table></td>
+          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                         <td><table width="100%%" border="0" cellspacing="0" cellpadding="0">
+                                   <tr> 
+                                        <td width="30"><img src="/img/dc/box_ul.gif" width="30" height="25"></td>
+                                        <td background="/img/dc/box_bgt.gif">&nbsp;</td>
+                                        <td width="10"><img src="/img/dc/box_ur.gif" width="10" height="25"></td>
+                                   </tr>
+                              </table></td>
+                    </tr>
+                    <tr> 
+                         <td class="tdboxes"> <ul>
+				<li><a href="/result.php?Keywords=uk&host=www.greycouncil.org&cat=1">Uk</a></li>
+				<li><a href="/result.php?Keywords=parrots&host=www.greycouncil.org&cat=1">Parrots</a></li>
+				<li><a href="/result.php?Keywords=council+bluffs&host=www.greycouncil.org&cat=1">Council Bluffs</a></li>
+				<li><a href="/result.php?Keywords=community&host=www.greycouncil.org&cat=1">Community</a></li>
+				</ul></td>
+                    </tr>
+                    <tr> 
+                         <td height="10" bgcolor="#990000"><img src="/img/dc/box_ll.gif" width="30" height="10"></td>
+                    </tr>
+               </table></td>
+          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                         <td><table width="100%%" border="0" cellspacing="0" cellpadding="0">
+                                   <tr> 
+                                        <td width="30"><img src="/img/dc/box_ul.gif" width="30" height="25"></td>
+                                        <td background="/img/dc/box_bgt.gif">&nbsp;</td>
+                                        <td width="10"><img src="/img/dc/box_ur.gif" width="10" height="25"></td>
+                                   </tr>
+                              </table></td>
+                    </tr>
+                    <tr> 
+                         <td class="tdboxes"> <ul>
+			<li><a href="/result.php?Keywords=education&host=www.greycouncil.org&cat=1">Education</a></li>
+			<li><a href="/result.php?Keywords=services&host=www.greycouncil.org&cat=1">Services</a></li>
+			<li><a href="/result.php?Keywords=parrot&host=www.greycouncil.org&cat=1">Parrot</a></li>
+			<li><a href="/result.php?Keywords=government&host=www.greycouncil.org&cat=1">Government</a></li>
+                              </ul></td>
+                    </tr>
+                    <tr> 
+                         <td height="10" bgcolor="#990000"><img src="/img/dc/box_ll.gif" width="30" height="10"></td>
+                    </tr>
+               </table></td>
+     </tr>
+     <tr> 
+          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                         <td><table width="100%%" border="0" cellspacing="0" cellpadding="0">
+                                   <tr> 
+                                        <td width="30"><img src="/img/dc/box_ul.gif" width="30" height="25"></td>
+                                        <td background="/img/dc/box_bgt.gif">&nbsp;</td>
+                                        <td width="10"><img src="/img/dc/box_ur.gif" width="10" height="25"></td>
+                                   </tr>
+                              </table></td>
+                    </tr>
+                    <tr> 
+                         <td class="tdboxes"> <ul>
+			<li><a href="/result.php?Keywords=city&host=www.greycouncil.org&cat=1">City</a></li>
+			<li><a href="/result.php?Keywords=african+grey+parrot&host=www.greycouncil.org&cat=1">African Grey Parrot</a></li>
+			<li><a href="/result.php?Keywords=zane+grey&host=www.greycouncil.org&cat=1">Zane Grey</a></li>
+			<li><a href="/result.php?Keywords=mayor&host=www.greycouncil.org&cat=1">Mayor</a></li>
+                              </ul></td>
+                    </tr>
+                    <tr> 
+                         <td height="10" bgcolor="#990000"><img src="/img/dc/box_ll.gif" width="30" height="10"></td>
+                    </tr>
+               </table></td>
+          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                         <td><table width="100%%" border="0" cellspacing="0" cellpadding="0">
+                                   <tr> 
+                                        <td width="30"><img src="/img/dc/box_ul.gif" width="30" height="25"></td>
+                                        <td background="/img/dc/box_bgt.gif">&nbsp;</td>
+                                        <td width="10"><img src="/img/dc/box_ur.gif" width="10" height="25"></td>
+                                   </tr>
+                              </table></td>
+                    </tr>
+                    <tr> 
+                         <td class="tdboxes"> <ul>
+			<li><a href="/result.php?Keywords=town&host=www.greycouncil.org&cat=1">Town</a></li>
+			<li><a href="/result.php?Keywords=grey+wolf&host=www.greycouncil.org&cat=1">Grey Wolf</a></li>
+			<li><a href="/result.php?Keywords=grey+bruce&host=www.greycouncil.org&cat=1">Grey Bruce</a></li>
+			<li><a href="/result.php?Keywords=local&host=www.greycouncil.org&cat=1">Local</a></li>
+                              </ul></td>
+                    </tr>
+                    <tr> 
+                         <td height="10" bgcolor="#990000"><img src="/img/dc/box_ll.gif" width="30" height="10"></td>
+                    </tr>
+               </table></td>
+          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                         <td><table width="100%%" border="0" cellspacing="0" cellpadding="0">
+                                   <tr> 
+                                        <td width="30"><img src="/img/dc/box_ul.gif" width="30" height="25"></td>
+                                        <td background="/img/dc/box_bgt.gif">&nbsp;</td>
+                                        <td width="10"><img src="/img/dc/box_ur.gif" width="10" height="25"></td>
+                                   </tr>
+                              </table></td>
+                    </tr>
+                    <tr> 
+                         <td class="tdboxes"> <ul>
+			<li><a href="/result.php?Keywords=african+grey&host=www.greycouncil.org&cat=1">African Grey</a></li>
+			<li><a href="/result.php?Keywords=dir+en+grey&host=www.greycouncil.org&cat=1">Dir En Grey</a></li>
+			<li><a href="/result.php?Keywords=columbus&host=www.greycouncil.org&cat=1">Columbus</a></li>
+			<li><a href="/result.php?Keywords=american&host=www.greycouncil.org&cat=1">American</a></li>
+                              </ul></td>
+                    </tr>
+                    <tr> 
+                         <td height="10" bgcolor="#990000"><img src="/img/dc/box_ll.gif" width="30" height="10"></td>
+                    </tr>
+               </table></td>
+     </tr>
+     <tr> 
+          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                         <td><table width="100%%" border="0" cellspacing="0" cellpadding="0">
+                                   <tr> 
+                                        <td width="30"><img src="/img/dc/box_ul.gif" width="30" height="25"></td>
+                                        <td background="/img/dc/box_bgt.gif">&nbsp;</td>
+                                        <td width="10"><img src="/img/dc/box_ur.gif" width="10" height="25"></td>
+                                   </tr>
+                              </table></td>
+                    </tr>
+                    <tr> 
+                         <td class="tdboxes"> <ul>
+			<li><a href="/result.php?Keywords=safety&host=www.greycouncil.org&cat=1">Safety</a></li>
+			<li><a href="/result.php?Keywords=metropolitan&host=www.greycouncil.org&cat=1">Metropolitan</a></li>
+			<li><a href="/result.php?Keywords=iron&host=www.greycouncil.org&cat=1">Iron</a></li>
+			<li><a href="/result.php?Keywords=united&host=www.greycouncil.org&cat=1">United</a></li>
+                              </ul></td>
+                    </tr>
+                    <tr> 
+                         <td height="10" bgcolor="#990000"><img src="/img/dc/box_ll.gif" width="30" height="10"></td>
+                    </tr>
+               </table></td>
+          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                         <td><table width="100%%" border="0" cellspacing="0" cellpadding="0">
+                                   <tr> 
+                                        <td width="30"><img src="/img/dc/box_ul.gif" width="30" height="25"></td>
+                                        <td background="/img/dc/box_bgt.gif">&nbsp;</td>
+                                        <td width="10"><img src="/img/dc/box_ur.gif" width="10" height="25"></td>
+                                   </tr>
+                              </table></td>
+                    </tr>
+                    <tr> 
+                         <td class="tdboxes"> <ul>
+			<li><a href="/result.php?Keywords=california&host=www.greycouncil.org&cat=1">California</a></li>
+			<li><a href="/result.php?Keywords=tax&host=www.greycouncil.org&cat=1">Tax</a></li>
+			<li><a href="/result.php?Keywords=security&host=www.greycouncil.org&cat=1">Security</a></li>
+			<li><a href="/result.php?Keywords=program&host=www.greycouncil.org&cat=1">Program</a></li>
+                              </ul></td>
+                    </tr>
+                    <tr> 
+                         <td height="10" bgcolor="#990000"><img src="/img/dc/box_ll.gif" width="30" height="10"></td>
+                    </tr>
+               </table></td>
+          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                         <td><table width="100%%" border="0" cellspacing="0" cellpadding="0">
+                                   <tr> 
+                                        <td width="30"><img src="/img/dc/box_ul.gif" width="30" height="25"></td>
+                                        <td background="/img/dc/box_bgt.gif">&nbsp;</td>
+                                        <td width="10"><img src="/img/dc/box_ur.gif" width="10" height="25"></td>
+                                   </tr>
+                              </table></td>
+                    </tr>
+                    <tr> 
+                         <td class="tdboxes"> <ul>
+			<li><a href="/result.php?Keywords=planning&host=www.greycouncil.org&cat=1">Planning</a></li>
+			<li><a href="/result.php?Keywords=funding&host=www.greycouncil.org&cat=1">Funding</a></li>
+			<li><a href="/result.php?Keywords=environmental&host=www.greycouncil.org&cat=1">Environmental</a></li>
+			<li><a href="/result.php?Keywords=non+profit&host=www.greycouncil.org&cat=1">Non Profit</a></li>
+                              </ul></td>
+                    </tr>
+                    <tr> 
+                         <td height="10" bgcolor="#990000"><img src="/img/dc/box_ll.gif" width="30" height="10"></td>
+                    </tr>
+               </table></td>
+     </tr>
+</table>
+  <!-- Tracking -->
+<script language="Javascript">
+
+// do not make any changes to anything past this point or tracking script will not work
+var data;
+
+if (location.host) {
+	var domain_name = '&d=' + location.host;
+} else {
+	var domain_name = '&d=unknown';
+}
+
+if (document.referrer) {
+	var referrer_website = '&r=' + document.referrer;
+} else {
+	var referrer_website = '&r=unknown';
+}
+
+if (navigator.appName) {
+	var browser_name = '&b=' + escape(navigator.appName);
+} else {
+	var browser_name = '&b=unknown';
+}
+
+if (navigator.userAgent) {
+	var full_browser_info = '&fbi=' + escape(navigator.userAgent);
+} else {
+	var full_browser_info = '&fbi=unknown';
+}
+
+if (navigator.appVersion) {
+	var app_version = '&aV=' + escape(navigator.appVersion);
+} else {
+	var app_version = '&aV=unknown';
+}
+
+if (navigator.javaEnabled()) {
+	var java_enabled = '&jE=' + navigator.javaEnabled();
+} else {
+	var java_enabled = '&jE=unknown';
+}
+
+if (screen.width) {
+	var screen_width = '&sw=' + screen.width;
+} else {
+	var screen_width = '&sw=unknown';
+}
+
+if (screen.height) {
+	var screen_height = '&sh=' + screen.height;
+} else {
+	var screen_height = '&sh=unknown';
+}
+
+if (screen.colorDepth) {
+	var color_depth = '&cd=' + screen.colorDepth;
+} else {
+	var color_depth = '&cd=unknown';
+}
+
+data = 'a=track' + domain_name + referrer_website + browser_name + full_browser_info + app_version;
+data = data + java_enabled + screen_width + screen_height + color_depth;
+
+document.write('<img border=0 hspace=0 vspace=0 src="http://stats.directnic.com/tracker.php?' + data + '">');
+</script>
+
+<noscript>
+<img border=0 hspace=0 vspace=0 src="http://stats.directnic.com/tracker.php?a=noscript">
+</noscript>
+<img border=0 hspace=0 vspace=0 src="/space.php">
+<!-- Tracking 0423 -->
+</body>
+</html>
