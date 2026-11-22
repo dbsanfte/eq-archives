@@ -1,0 +1,8 @@
+<HTML>
+<HEAD>
+<TITLE>mail1.cgi 8/26</TITLE>
+</HEAD>
+<BODY BGCOLOR=#FFFFCC>
+NO ACCESS!!<br>
+</BODY>
+</HTML>

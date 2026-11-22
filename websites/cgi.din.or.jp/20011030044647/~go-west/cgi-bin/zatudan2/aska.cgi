@@ -1,0 +1,90 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<STYLE TYPE="text/css">
+<!--
+body, tr, td { font-size: 10pt }
+a:hover      { font-size: 10pt; text-decoration: underline; color: #DD0000; }
+span         { font-size: 18pt }
+small        { font-size: 9pt }
+-->
+</STYLE>
+<title>待ち合わせ掲示板</title></head>
+<body bgcolor="#F5F5F5" text="#000000" link="#0000FF" vlink="#800080">
+<center>
+<font color="#008080" face="ＭＳ Ｐゴシック" size=5><SPAN>待ち合わせ掲示板</SPAN></font>
+<hr width="90%">
+[<a href="http://www.din.or.jp/~go-west/" target="_top">トップに戻る</a>]
+[<a href="aska.cgi?mode=howto">使い方</a>]
+[<a href="aska.cgi?mode=find">ワード検索</a>]
+[<a href="aska.cgi?mode=admin">管理用</a>]
+<hr width="90%">
+</center>
+<blockquote>
+<form action="aska.cgi" method="POST">
+<input type=hidden name=mode value="regist">
+<table cellpadding=1 cellspacing=1>
+<tr>
+  <td><b>おなまえ</b></td>
+  <td><input type=text name=name size="20" value=""></td>
+</tr>
+<tr>
+  <td><b>Ｅメール</b></td>
+  <td><input type=text name=email size="20" value=""></td>
+</tr>
+<tr>
+  <td><b>題　　名</b></td>
+  <td>
+    <input type=text name=sub size="25" value="">
+    <input type=submit value="送信する"><input type=reset value="リセット">
+  </td>
+</tr>
+<tr>
+  <td colspan=2>
+    <b>メッセージ</b><br>
+    <textarea name=com cols="55" rows="7" wrap=soft></textarea>
+  </td>
+</tr>
+<tr>
+  <td><b>ＵＲＬ</b></td>
+  <td><input type=text name=url size="45" value="http://"></td>
+</tr>
+<tr>
+  <td><b>削除キー</b></td>
+  <td>
+    <input type=password name=pwd size=8 maxlength=8 value="">
+    <small>(記事の削除用。英数字で8文字以内)</small>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <input type=checkbox name=cook value="on" checked>
+    <small>クッキー情報を保存</small>
+  </td>
+</tr>
+</table>
+</form>
+</blockquote>
+<hr>
+[3] <font color="#DD0000"><b>おや</b></font>&#32投稿者：<b>ご～たん</b> <small>投稿日：2000/04/28(Fri) 16:43</small>&#32[<a href="aska.cgi?mode=resmsg&no=3">返信</a>]<br>
+<blockquote>おねえとユウヒ昨日来てたのかぁ。<br>半角はだめかもしんないから、ユウヒの名前は全角でよろしく～<br><br>あと携帯用にもうちっとｃｇｉ加工してみるね～<br><P></blockquote><hr>
+[2] <font color="#DD0000"><b>テストです</b></font>&#32投稿者：<b>携帯テスト</b> <small>投稿日：2000/04/28(Fri) 02:06</small>&#32[<a href="aska.cgi?mode=resmsg&no=2">返信</a>]<br>
+<blockquote>てすとｰ<P></blockquote><hr>
+[1] <font color="#DD0000"><b>てすとです</b></font>&#32投稿者：<b>管理人</b> <small>投稿日：2000/04/28(Fri) 02:00</small>&#32[<a href="aska.cgi?mode=resmsg&no=1">返信</a>]<br>
+<blockquote>てすと～<P></blockquote><hr>
+<table align=left><tr>
+</tr></table>
+<table align=right><tr>
+<td nowrap align=center><form action="aska.cgi" method="POST">
+<input type=hidden name=mode value="usrdel">
+【記事削除フォーム】<br>
+記事No<input type=text name=no size=3>
+削除キー<input type=password name=pwd size=4 maxlength=8>
+<input type=submit value="削除">
+</form></td>
+</tr></table><br clear=all>
+<center><small><!-- Aska v1.2 -->
+- <a href="http://www.kent-web.com/" target='_top'>Aska BBS</a> -
+</small></center>
+</body></html>
