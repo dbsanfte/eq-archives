@@ -1,0 +1,1192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+<!-- no cache headers -->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta name="keywords" content="vbportal,portal,cms,content,phpportals,content management" />
+<meta name="description" content="This is a CMS powered by vbPortal. To find out about vbPortal, go to http://www.vbportal.com/ ." />
+<meta name="author" content="vbPortal" />
+<meta name="copyright" content="Copyright (c) 2005 by vbPortal" />
+<meta name="rating" content="general" />
+<meta name="generator" content="vbPortal - Copyright 2005" />
+<!-- end no cache headers -->
+
+<title>vbPortal - Mapfiend</title>
+
+<link rel="stylesheet" href="vbportal_demo.css" type="text/css" />
+
+<!-- CSS Stylesheet -->
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'Default Style' (styleid: 1) */
+body
+{
+	background-color: #e1e1e2;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+a:link
+{
+	color: #22229c;
+	text-decoration: underline;
+}
+a:visited
+{
+	color: #22229c;
+	text-decoration: underline;
+}
+a:hover, a:active
+{
+	color: #ff4400;
+	text-decoration: underline;
+}
+.page
+{
+	background-color: #ffffff;
+	color: #000000;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background-color: #d1d1e1;
+	color: #000000;
+	border: 1px solid #0b198c;
+}
+.tcat
+{
+	background: #869bbf url(/forums/images/gradients/gradient_tcat.gif) repeat-x top left;
+	color: #ffffff;
+	font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tcat a:link
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tcat a:visited
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active
+{
+	color: #fff788;
+	text-decoration: underline;
+}
+.thead
+{
+	background: #5c7099 url(/forums/images/gradients/gradient_thead.gif) repeat-x top left;
+	color: #ffffff;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link
+{
+	color: #ffffff;
+}
+.thead a:visited
+{
+	color: #ffffff;
+}
+.thead a:hover, .thead a:active
+{
+	color: #ffff00;
+}
+.tfoot
+{
+	background-color: #3e5c92;
+	color: #e0e0f6;
+}
+.tfoot a:link
+{
+	color: #e0e0f6;
+}
+.tfoot a:visited
+{
+	color: #e0e0f6;
+}
+.tfoot a:hover, .tfoot a:active
+{
+	color: #ffff66;
+}
+.alt1, .alt1Active
+{
+	background-color: #e1e4f2;
+	color: #000000;
+}
+.alt2, .alt2Active
+{
+	background-color: #f5f5ff;
+	color: #000000;
+}
+.wysiwyg
+{
+	background-color: #f5f5ff;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #666686;
+}
+.navbar
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.highlight
+{
+	color: #ff0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background-color: #3e5c92;
+	color: #e0e0f6;
+}
+.fjdpth0
+{
+	background-color: #f7f7f7;
+	color: #000000;
+}
+.panel
+{
+	background: #e4e7f5 url(/forums/images/gradients/gradient_panel.gif) repeat-x top left;
+	color: #000000;
+	padding: 10px;
+	border: outset 2px;
+}
+.panelsurround
+{
+	background: #d5d8e5 url(/forums/images/gradients/gradient_panelsurround.gif) repeat-x top left;
+	color: #000000;
+}
+legend
+{
+	color: #22229c;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background-color: #738fbf;
+	color: #ffffff;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.vbmenu_control a:visited
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active
+{
+	color: #ffffff;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background-color: #ffffff;
+	color: #000000;
+	border: solid 1px #0b198c;
+	text-align: left;
+}
+.vbmenu_option
+{
+	background-color: #bbc7ce;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: hand;
+}
+.vbmenu_option a:link
+{
+	color: #22229c;
+	text-decoration: none;
+}
+.vbmenu_option a:visited
+{
+	color: #22229c;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background-color: #8a949e;
+	color: #ffffff;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: hand;
+}
+.vbmenu_hilite a:link
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+-->
+</style>
+<!-- / CSS Stylesheet -->
+
+<style type="text/css">
+#footer {
+visibility: hidden;
+}
+</style>
+
+
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;";
+var IMGDIR_MISC = "/forums/images/misc";
+// -->
+</script>
+
+
+
+<script type="text/javascript">
+<!--
+function openwho(threadid) {
+	return openWindow("/forums/misc.php?" + SESSIONURL + "do=whoposted&threadid=" + threadid, 230, 300);
+}
+// -->
+</script>
+
+<script type="text/javascript" src="/forums/clientscript/vbulletin_global.js"></script>
+<script type="text/javascript" src="/forums/clientscript/vbulletin_menu.js"></script>
+
+<script src="/x.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+function adjustLayout() {
+// Get natural heights
+var cHeight = xHeight("contentcontent");
+var lHeight = xHeight("leftcontent");
+var rHeight = xHeight("rightcontent");
+
+// Find the maximum height
+var maxHeight =
+Math.max(cHeight, Math.max(lHeight, rHeight));
+
+// Assign maximum height to all columns
+xHeight("content", maxHeight);
+xHeight("left", maxHeight);
+xHeight("right", maxHeight);
+
+// Show the footer
+xShow("footer");
+}
+
+window.onload = function() {
+xAddEventListener(window, "resize", adjustLayout, false);
+adjustLayout();
+
+}
+//-->
+</script>
+
+</head>
+<body>
+<div id="header"><table border="0" width="100%" cellpadding="0" cellspacing="0" style="text-align:center">
+<tr valign="middle">
+	<td class="headbg"><a name="top"></a><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Jig"><img src="/forums/images/misc/vbPortal_logo.gif" border="0" alt="RPG-Toolbox and Mapfiend" /></a></td>
+	<td class="headbg" style="text-align:right" nowrap="nowrap" valign="middle"><div align="center"></div>
+	</td>
+</tr>
+</table></div>
+<div id="left"><div id="leftcontent"><div class="block">
+	
+		<div class="blockheader">
+		
+			Main Menu
+		
+		</div>
+	
+	
+		<div class="blockcontent"><div class="urlrow"><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Jig">RPG-Toolbox and Mapfiend</a><br />
+<a href="/forums/index.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;">Forums</a><br />
+<br />
+</div>
+<div class="boxform" style="padding: 2px">
+<form class="blockform" name="modulejump" action="/modules.php" method="get">
+<input type="hidden" name="s" value="5fde2f4790d9e20aaa8af26231d2b4a2" />
+<input type="hidden" name="mop" value="modload" />
+<input type="hidden" name="file" value="index" />
+<div class="smallfont"><strong>Module Jump:</strong>
+<select name="name" onchange="this.form.submit();">
+<optgroup label="Modules">
+	<option value="-1" selected="selected">---------------</option>
+	
+				<option value="Active_Topics" class="fjdpth" >Active Threads</option>
+				
+				<option value="Topics" class="fjdpth" >Module Topics</option>
+				
+				<option value="News" class="fjdpth" >News</option>
+				
+				<option value="AvantGo" class="fjdpth" >AvantGo</option>
+				
+				<option value="Content" class="fjdpth" >Content</option>
+				
+				<option value="Sections" class="fjdpth" >Sections</option>
+				
+				<option value="Encyclopedia" class="fjdpth" >Encyclopedia</option>
+				
+				<option value="Links" class="fjdpth" >Links</option>
+				
+				<option value="Reviews" class="fjdpth" >Reviews</option>
+				
+				<option value="Recommend_Us" class="fjdpth" >Recommend Us</option>
+				
+				<option value="Feedback" class="fjdpth" >Feedback</option>
+				
+				<option value="FAQ" class="fjdpth" >FAQ</option>
+				
+				<option value="More_Polls" class="fjdpth" >More Polls</option>
+				
+				<option value="Search" class="fjdpth" >Search</option>
+				
+				<option value="Top_Referers" class="fjdpth" >Top Referers</option>
+				
+				<option value="Top" class="fjdpth" >Top</option>
+				
+				<option value="Statistics" class="fjdpth" >Statistics</option>
+				
+				<option value="Newsletter" class="fjdpth" >Newsletter</option>
+				
+</optgroup>
+</select><!-- go button -->
+<input type="submit" class="button" value="Go"  />
+</div>
+</form>
+</div></div>
+	
+	
+</div><div class="block">
+	
+		<div class="blockheader">
+		
+			Mini Stats
+		
+		</div>
+	
+	
+		<div class="altblockcontent"><table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td class="alt2">
+<table cellpadding="1" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt1"><a href="/forums/memberlist.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;"><img src="/images/stats/authors.gif" alt="Users" title="Members" border="0" /></a></td>
+		<td class="alt1"><span class="smallfont">41,281</span></td>
+		<td><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Sections"><img src="/images/stats/comments.gif" alt="Articles" title="Articles" border="0" /></a></td>
+		<td class="smallfont">0</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="alt1" style="text-align:center"><span class="smallfont">Users</span></td>
+		<td colspan="2" class="smallfont" style="text-align:center">Articles</td>
+	</tr>
+	<tr>
+		<td><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Active_Topics"><img src="/images/stats/news.gif" alt="Threads" title="Threads" border="0" /></a></td>
+		<td class="smallfont">113</td>
+		<td class="alt1"><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Reviews"><img src="/images/stats/articles.gif" alt="Reviews" title="Reviews" border="0" /></a></td>
+		<td class="alt1"><span class="smallfont">0</span></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="smallfont" style="text-align:center">Threads</td>
+		<td colspan="2" class="alt1" style="text-align:center"><span class="smallfont">Reviews</span></td>
+	</tr>
+	<tr>
+		<td class="alt1"><img src="/images/stats/users.gif" alt="Posts" title="Posts" /></td>
+		<td class="alt1"><span class="smallfont">318</span></td>
+		<td><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=More_Polls"><img src="/images/stats/question.gif" alt="Polls" title="Polls" border="0" /></a></td>
+		<td class="smallfont">0</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="alt1" style="text-align:center"><span class="smallfont">Posts</span></td>
+		<td colspan="2" class="smallfont" style="text-align:center">Polls</td>
+	</tr>
+	<tr>
+		<td><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Content"><img src="/images/stats/sections.gif" alt="Content" title="Content" border="0" /></a></td>
+		<td class="smallfont">0</td>
+		<td class="alt1"><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Downloads"><img src="/images/stats/topics.gif" alt="Files" title="Files" border="0" /></a></td>
+		<td class="alt1"><span class="smallfont">0</span></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="smallfont" style="text-align:center">Content</td>
+		<td colspan="2" class="alt1" style="text-align:center"><span class="smallfont">Files</span></td>
+	</tr>
+	<tr>
+		<td class="alt1"><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Links"><img src="/images/stats/explorer.gif" alt="Links" title="Links" border="0" /></a></td>
+		<td class="alt1"><span class="smallfont">0</span></td>
+		<td><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Classified"><img src="/images/stats/waiting.gif" alt="Ads" title="Ads" border="0" /></a></td>
+		<td class="smallfont">0</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="alt1" style="text-align:center"><span class="smallfont">Links</span></td>
+		<td colspan="2" class="smallfont" style="text-align:center">Ads</td>
+	</tr>
+</table>
+</td></tr></table>
+</div>
+	
+	
+		<div class="blockfooter"><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Statistics" title="More Mini Stats">More...</a></div>
+	
+</div><div class="block">
+	
+		<div class="blockheader">
+		
+			<a href="/forums/calendar.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;" title="This month's calendar">February 2005</a>
+		
+		</div>
+	
+	
+		<div class="altblockcontent"><table border="0" cellspacing="0" cellpadding="0" class="tborder" width="100%" align="center"><tr><td>
+<table cellpadding="2" cellspacing="1" border="0" width="100%">
+	<tr align="center">
+	<td class="thead">S</td>
+<td class="thead">M</td>
+<td class="thead">T</td>
+<td class="thead">W</td>
+<td class="thead">T</td>
+<td class="thead">F</td>
+<td class="thead">S</td>
+
+	</tr>
+	<tr align="center">
+	
+			<td class="page">&nbsp;</td>
+			
+			<td class="page">&nbsp;</td>
+			
+			<td class="alt2" style="font-size:10px">1</td>
+			
+			<td class="alt2" style="font-size:10px">2</td>
+			
+			<td class="alt2" style="font-size:10px">3</td>
+			
+			<td class="alt2" style="font-size:10px">4</td>
+			
+			<td class="alt2" style="font-size:10px">5</td>
+			
+				</tr>
+				<tr align="center">
+				
+			<td class="alt1" style="font-size:10px;font-weight:bold;border:solid 1px red"><a href="/forums/calendar.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;do=getinfo&amp;day=2005-2-6" style="text-decoration: none" title="Today's Calendar">6</a></td>
+			
+			<td class="alt2" style="font-size:10px">7</td>
+			
+			<td class="alt2" style="font-size:10px">8</td>
+			
+			<td class="alt2" style="font-size:10px">9</td>
+			
+			<td class="alt2" style="font-size:10px">10</td>
+			
+			<td class="alt2" style="font-size:10px">11</td>
+			
+			<td class="alt2" style="font-size:10px">12</td>
+			
+				</tr>
+				<tr align="center">
+				
+			<td class="alt2" style="font-size:10px">13</td>
+			
+			<td class="alt2" style="font-size:10px">14</td>
+			
+			<td class="alt2" style="font-size:10px">15</td>
+			
+			<td class="alt2" style="font-size:10px">16</td>
+			
+			<td class="alt2" style="font-size:10px">17</td>
+			
+			<td class="alt2" style="font-size:10px">18</td>
+			
+			<td class="alt2" style="font-size:10px">19</td>
+			
+				</tr>
+				<tr align="center">
+				
+			<td class="alt2" style="font-size:10px">20</td>
+			
+			<td class="alt2" style="font-size:10px">21</td>
+			
+			<td class="alt2" style="font-size:10px">22</td>
+			
+			<td class="alt2" style="font-size:10px">23</td>
+			
+			<td class="alt2" style="font-size:10px">24</td>
+			
+			<td class="alt2" style="font-size:10px">25</td>
+			
+			<td class="alt2" style="font-size:10px">26</td>
+			
+				</tr>
+				<tr align="center">
+				
+			<td class="alt2" style="font-size:10px">27</td>
+			
+			<td class="alt2" style="font-size:10px">28</td>
+			
+					<td class="page">&nbsp;</td>
+					
+					<td class="page">&nbsp;</td>
+					
+					<td class="page">&nbsp;</td>
+					
+					<td class="page">&nbsp;</td>
+					
+					<td class="page">&nbsp;</td>
+					
+	</tr>
+</table>
+</td></tr></table>
+</div>
+	
+	
+</div>
+</div></div>
+<div id="content"><div id="contentcontent"><script type="text/javascript">
+<!--
+function log_out()
+{
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+	if (confirm('Are you sure you want to log out?'))
+	{
+		return true;
+	}
+	else
+	{
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+//-->
+</script>
+
+<!-- breadcrumb, login, pm info -->
+<div class="block">
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="alt1" width="100%">
+		
+			<div class="navbar" style="font-size:10pt"><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Jig" accesskey="1"><img class="inlineimg" src="/forums/images/misc/navbits_start.gif" alt="" border="0" /></a> <strong>Mapfiend</strong></div>
+		
+	</td>
+
+	
+
+		<td class="alt2" nowrap="nowrap" style="padding:0px">
+
+		<!-- login form -->
+		<form action="/forums/login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password,vb_login_md5password_utf)">
+		<script type="text/javascript" src="/forums/clientscript/vbulletin_md5.js"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tr>
+			<td class="smallfont">Username</td>
+			<td><input type="text" class="button" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="1" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" /></td>
+			<td class="smallfont" colspan="2"><label for="cb_cookieuser_navbar" style="white-space:nowrap"><input type="checkbox" name="cookieuser" value="1" tabindex="3" id="cb_cookieuser_navbar" accesskey="c" checked="checked" />Remember Me?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont">Password</td>
+			<td><input type="password" class="button" name="vb_login_password" size="10" accesskey="p" tabindex="2" /></td>
+			<td><input type="submit" class="button" value="Log in" tabindex="4" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" /></td>
+		</tr>
+		</table>
+		<input type="hidden" name="s" value="5fde2f4790d9e20aaa8af26231d2b4a2" />
+		<input type="hidden" name="do" value="login" />
+		<input type="hidden" name="forceredirect" value="1" />
+		<input type="hidden" name="vb_login_md5password" />
+		<input type="hidden" name="vb_login_md5password_utf" />
+		</form>
+		<!-- / login form -->
+
+		</td>
+
+	
+
+</tr>
+</table>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<div align="center">
+	<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center" style="border-top-width:0px">
+	<tr align="center">
+		<td class="vbmenu_control"><a href="http://dev.mapfiend.net/index.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;">Forums</a></td>
+
+		
+		
+			<td class="vbmenu_control"><a href="/forums/register.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;">Register</a></td>
+			<td class="vbmenu_control"><a href="/forums/login.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;do=lostpw">Forgotten Password</a></td>
+		
+		<td class="vbmenu_control"><a href="/forums/faq.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;">FAQ</a></td>
+		<td class="vbmenu_control"><a href="/forums/calendar.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;">Calendar</a></td>
+		
+			
+			
+		
+		
+	</tr>
+	</table>
+</div>
+<!-- / nav buttons bar -->
+
+
+<!-- NAVBAR POPUP MENUS -->
+
+	
+
+	<!-- user cp tools menu -->
+	<div class="vbmenu_popup" id="usercptools_menu" style="display:none;position:relative;z-index:1">
+		<table cellpadding="4" cellspacing="1" border="0">
+
+		<tr><td class="thead">Quick Links</td></tr>
+		<tr><td class="vbmenu_option"><a href="/forums/search.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;do=getnew">New posts</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;do=markread">Mark Forums Read</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="/forums/memberlist.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;">Members List</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="#" onclick="window.open('/forums/misc.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;do=buddylist&amp;focus=1','buddylist','statusbar=no,menubar=no,toolbar=no,scrollbars=yes,resizable=yes,width=180,height=300'); return false;">Open Buddy List</a></td></tr>
+
+		<tr><td class="thead"><a href="/forums/usercp.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;">User Control Panel</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="/forums/profile.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;do=editsignature">Edit Signature</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="/forums/profile.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;do=editavatar">Edit Avatar</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="/forums/profile.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;do=editprofile">Edit Profile</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="/forums/profile.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;do=editoptions">Edit Options</a></td></tr>
+
+		<tr><td class="thead">Miscellaneous</td></tr>
+		<tr><td class="vbmenu_option"><a href="/forums/private.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;">Private Messages</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="/forums/subscription.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;">Subscribed Threads</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=0">My Profile</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="/forums/online.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;">Who's Online</a></td></tr>
+
+		</table>
+	</div>
+	<!-- / user cp tools menu -->
+
+<!-- / NAVBAR POPUP MENUS -->
+
+</div>
+<div class="block">
+	
+		<div class="blockheader">
+		
+			System Messages
+		
+		</div>
+	
+	
+		<div class="blockcontent"><div class="textrow"><strong>New Web Site.. again</strong><br />
+		Once again we are changing the site. hopefully this will be a little easier for most folks to use. <br />
+<br />
+If you experience any issues, let us know.
+		</div></div>
+	
+	
+</div><div class="block">
+	
+		<div class="blockheader">
+		
+			Active Threads From The Forums
+		
+		</div>
+	
+	
+		<div class="altblockcontent"><table border="0" cellspacing="0" cellpadding="0" class="tborder" width="100%" align="center">
+<tr>
+	<td>
+	<table cellpadding="3" cellspacing="1" border="0" width="100%">
+		<tr align="center">
+		<td class="thead" colspan="2">&nbsp;</td>
+		<td width="100%" class="thead" align="left"><span style="float:right">Rate</span>Thread/Forum</td>
+		<td width="110" class="thead">Last Post</td>
+		<td class="thead">Posts</td>
+		<td class="thead">Started By</td>
+		<td class="thead">Views</td>
+		</tr>
+		  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread_hot.gif" alt="thread_hot.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread100" title="Color of lines on latest maps">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=100" title="Color of lines on latest maps">Color of lines on latest maps</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=12')">Mapping</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				12-07-2004 <span class="time">07:11 AM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=Barkonan" title="Profile">Barkonan</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=100"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(100); return false;">2</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=40656" title="Started On 11-10-2004" target="_blank">Drudge</a></td>
+		<td align="center" class="alt1">184</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread.gif" alt="thread.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread113" title="MPG map, well the top half ne way.">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=113" title="MPG map, well the top half ne way.">MPG map, well the top half ne way.</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=12')">Mapping</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				12-07-2004 <span class="time">06:08 AM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=Barkonan" title="Profile">Barkonan</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=113"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(113); return false;">0</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=15845" title="Started On 12-07-2004" target="_blank">Barkonan</a></td>
+		<td align="center" class="alt1">29</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread.gif" alt="thread.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread112" title="Downloads.">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=112" title="Downloads.">Downloads.</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=17')">Suggestions</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				12-06-2004 <span class="time">08:15 PM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=floppie7th" title="Profile">floppie7th</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=112"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(112); return false;">1</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=25860" title="Started On 12-06-2004" target="_blank">floppie7th</a></td>
+		<td align="center" class="alt1">20</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread_hot.gif" alt="thread_hot.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread50" title="ZIP error when downloading maps?">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=50" title="ZIP error when downloading maps?">ZIP error when downloading maps?</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=12')">Mapping</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				12-05-2004 <span class="time">06:13 AM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=WileeCastusmaximas" title="Profile">WileeCastusmaximas</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=50"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(50); return false;">3</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=34126" title="Started On 08-26-2004" target="_blank">philosopherott</a></td>
+		<td align="center" class="alt1">567</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread.gif" alt="thread.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread110" title="Cannot open file">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=110" title="Cannot open file">Cannot open file</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=12')">Mapping</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				12-05-2004 <span class="time">06:05 AM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=WileeCastusmaximas" title="Profile">WileeCastusmaximas</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=110"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(110); return false;">1</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=41135" title="Started On 11-30-2004" target="_blank">Etien</a></td>
+		<td align="center" class="alt1">39</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread_hot.gif" alt="thread_hot.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread82" title="Grid lines for OOW?">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=82" title="Grid lines for OOW?">Grid lines for OOW?</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=12')">Mapping</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				12-03-2004 <span class="time">08:00 PM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=Wyora" title="Profile">Wyora</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=82"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(82); return false;">5</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=2911" title="Started On 10-05-2004" target="_blank">Askyn</a></td>
+		<td align="center" class="alt1">419</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread.gif" alt="thread.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread109" title="Email Privacy">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=109" title="Email Privacy">Email Privacy</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=8')">General Discussion</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				12-02-2004 <span class="time">04:50 AM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=Ramsus" title="Profile">Ramsus</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=109"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(109); return false;">1</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=27173" title="Started On 11-30-2004" target="_blank">Helper</a></td>
+		<td align="center" class="alt1">38</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread.gif" alt="thread.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread111" title="can't start the process of downloading maps............">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=111" title="can't start the process of downloading maps............">can't start the process of downloading maps............</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=8')">General Discussion</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				12-01-2004 <span class="time">08:14 AM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=rockingeq" title="Profile">rockingeq</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=111"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(111); return false;">0</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=41146" title="Started On 12-01-2004" target="_blank">rockingeq</a></td>
+		<td align="center" class="alt1">33</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread.gif" alt="thread.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread102" title="Question">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=102" title="Question">Question</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=21')">General discussion</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				11-30-2004 <span class="time">09:25 PM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=Anonymous" title="Profile">Anonymous</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=102"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(102); return false;">1</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=40660" title="Started On 11-10-2004" target="_blank">&lt;HERO&gt; Sabuu</a></td>
+		<td align="center" class="alt1">106</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread_hot.gif" alt="thread_hot.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread99" title="Elemental Planes Maps?">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=99" title="Elemental Planes Maps?">Elemental Planes Maps?</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=12')">Mapping</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				11-30-2004 <span class="time">07:47 PM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=floppie7th" title="Profile">floppie7th</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=99"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(99); return false;">1</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=40588" title="Started On 11-07-2004" target="_blank">Saparri</a></td>
+		<td align="center" class="alt1">192</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread.gif" alt="thread.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread108" title="Suggestion for all maps pack">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=108" title="Suggestion for all maps pack">Suggestion for all maps pack</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=18')">Suggestions</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				11-30-2004 <span class="time">03:11 AM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=Darkmatil" title="Profile">Darkmatil</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=108"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(108); return false;">0</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=36342" title="Started On 11-30-2004" target="_blank">Darkmatil</a></td>
+		<td align="center" class="alt1">36</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread_hot.gif" alt="thread_hot.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread91" title="Riftseekers &amp; SEQ format">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=91" title="Riftseekers &amp; SEQ format">Riftseekers &amp; SEQ format</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=12')">Mapping</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				11-25-2004 <span class="time">01:54 AM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=monster69" title="Profile">monster69</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=91"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(91); return false;">5</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=9943" title="Started On 10-23-2004" target="_blank">Azerael</a></td>
+		<td align="center" class="alt1">428</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread.gif" alt="thread.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread107" title="not sure where to find the map downloads lol , new to site">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=107" title="not sure where to find the map downloads lol , new to site">not sure where to find the map downloads lol , new to site</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=12')">Mapping</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				11-24-2004 <span class="time">08:29 PM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=Ramsus" title="Profile">Ramsus</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=107"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(107); return false;">1</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=41031" title="Started On 11-24-2004" target="_blank">Shawga</a></td>
+		<td align="center" class="alt1">103</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread.gif" alt="thread.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread104" title="Giveaway, Giveaway, Giveaway!!!!">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=104" title="Giveaway, Giveaway, Giveaway!!!!">Giveaway, Giveaway, Giveaway!!!!</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=16')">Announcements</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				11-23-2004 <span class="time">02:01 AM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=Mapfiend" title="Profile">Mapfiend</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=104"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(104); return false;">2</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=13111" title="Started On 11-12-2004" target="_blank">Mapfiend</a></td>
+		<td align="center" class="alt1">141</td>
+	</tr>  <tr>
+		<td class="alt1"><img src="/forums/images/statusicon/thread_hot.gif" alt="thread_hot.gif" title="" border="0" /></td>
+		<td class="alt2"><img src="/forums/images/icons/icon1.gif" alt="0" title="" border="0" /></td>
+		<td class="alt1" align="left" valign="middle" id="thread106" title="First.. Tragic...But True!">
+			<a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=106" title="First.. Tragic...But True!">First.. Tragic...But True!</a>
+			<div class="smallfont">
+				<span style="float:right">
+					
+					
+				<img src="/images/clear_dot.gif" alt="0" title="Rate Article: 0 Votes, Average: 0" style="margin:0px;padding:2px 2px 0px;" />
+				
+				</span>
+				<span style="cursor:pointer" onclick="window.location.replace('/forums/forumdisplay.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;f=11')">General Discussion</span>
+			</div>
+		</td>
+		<td class="alt2" nowrap="nowrap">
+			<div class="smallfont" style="text-align:right; white-space:nowrap">
+				11-18-2004 <span class="time">08:44 PM</span><br />
+				by <a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;action=getinfo&amp;username=stekarn_vz" title="Profile">stekarn_vz</a>  <a href="/forums/showthread.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;goto=newpost&amp;threadid=106"><img class="inlineimg" src="/forums/images/buttons/lastpost.gif" alt="" title="View Last Reply" border="0" /></a>
+			</div>
+		</td>
+		<td align="center" class="alt1"><a href="#" onclick="openwho(106); return false;">0</a></td>
+		<td class="alt2"><a href="/forums/member.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;u=34513" title="Started On 11-18-2004" target="_blank">stekarn_vz</a></td>
+		<td align="center" class="alt1">207</td>
+	</tr>
+	</table>
+	</td>
+</tr>
+</table></div>
+	
+	
+		<div class="blockfooter"><a href="/modules.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;name=Active_Topics" title="More Active Threads From The Forums">More...</a></div>
+	
+</div><div id="b48">
+<div style="margin-left:auto;margin-right:auto;padding-bottom:10px;border:0px;max-width:300px;width:300px">
+<div class="blockheader">Latest News From Freshmeat</div>
+<div class="blockcontent">
+			could not open RSS for input
+			</div>
+</div>
+</div></div></div>
+<div id="right"><div id="rightcontent"><div class="block">
+	
+		<div class="blockheader">
+		
+			Who's Online
+		
+		</div>
+	
+	
+		<div class="blockcontent"><div class="alt2" align="center" style="padding:2px"><strong><a href="/forums/online.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;">Currently Active: 0</a></strong></div>
+
+<div class="alt1" style="padding:2px;border-top:1px solid #d1d1e1">There are currently 0 members and 0 guests on-line. Most users ever online was 1 on 01-30-2005 at 08:08 PM.<br />
+
+</div></div>
+	
+	
+</div>
+
+</div></div>
+<div id="footer"><strong>&lt; <a href="#top">Page Top</a> - <a href="/forums/sendmessage.php">Contact Us</a> - <a href="http://dev.mapfiend.net/index.php">Forums</a>   - <a href="/forums/archive/index.php">Archive</a>
+<!-- - <a href="">Privacy Statement</a> --> &gt;</strong><br />
+<br />
+
+<div class="smallfont"><!-- Do not remove this copyright notice -->
+
+Portal By vbPortal Version 3.0.0<br />
+Copyright &copy;2000-2005, <a href="http://www.vbportal.com/modules.php?name=Credits" target="_blank">phpPortals</a>. All Rights Reserved.
+
+<!-- Do not remove <img src="/forums/cron.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;rand=232486" alt="" width="1" height="1" border="0" /> or your scheduled tasks will stop -->
+<img src="/forums/cron.php?s=5fde2f4790d9e20aaa8af26231d2b4a2&amp;rand=232486" alt="" width="1" height="1" border="0" />
+</div>
+
+
+
+<!-- Your copyright notice -->
+<!--  -->
+
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script></div>
+</body>
+</html>
