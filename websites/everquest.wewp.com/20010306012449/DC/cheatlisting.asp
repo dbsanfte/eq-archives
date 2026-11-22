@@ -1,0 +1,185 @@
+
+<html>
+<head>
+<meta http-equiv="pragma" content="no-cache">
+<meta HTTP-EQUIV="Expires" CONTENT="2/23/99 4:06:38 PM">
+<meta name="DESCRIPTION" content="Wewp! Entertainment strives to be every computer gamer's source of unbiased, factual computer gaming news.">
+<meta name="KEYWORDS" content="Dreamcast, Sega, Reviews, Previews, Forum, News, Cheats, game, games, gaming, computer games, action, strategy, rts, real time strategy, rpg, roll playing games, shooter, simulation, adventure games, first person, console games, playstation, N64, Nintendo, console reviews, game reviews,  review, preview, cheats, interviews, editorial, press, press releases, press news, chatzone, forums, chat rooms, chat, forum, multplayer, online, virtual world, controller, joystick, sound card, CPU, 3dfx, voodoo, voodoo 2, directx, pentium, amd, cyrix, designer, game designer, entertainment, everquest, quake, half-life, ultima online, wewp, wewp!">
+<title>Dreamcast, Sega, Reviews, Previews, Forum, News, Cheats</title>
+<style>
+		.NV1			{color:black;text-decoration:none};
+		.NV1:link		{color:black;text-decoration:none};
+		.NV1:visited	{color:black;text-decoration:none};
+		.NV1:hover		{color:#0099ff;text-decoration:underline};
+
+		.NV2			{color:black;};
+		.NV2:link		{color:black;};
+		.NV2:visited	{color:black;};
+		.NV2:hover		{color:#0099ff;};
+
+		.NV3			{color:#660000;};
+		.NV3:link		{color:#660000;};
+		.NV3:visited	{color:silver;};
+		.NV3:hover		{color:#0099ff;};
+</style>
+</head>
+
+	<body bgcolor="#ffffff" text="#000000" link="#660000" vlink="#330000" alink="#FFFFFF" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+
+<A NAME="Top">
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td rowspan="2" bgcolor="#003366"><img src="/DC/images/layout_left.gif"></td>
+	<td valign="top" align="right" bgcolor="#003366"><img src="/DC/images/layout_top.gif"></td>
+	<td rowspan="2" bgcolor="#003366"><img src="/DC/images/layout_right.gif"></td>
+</tr>
+<tr>
+	<td bgcolor="#003366"><!-- BEGIN RICH-MEDIA BURST! CODE --> 
+<script language="JavaScript"> 
+<!-- /* © 1997-1999 BURST! Media, LLC. All Rights Reserved.*/ 
+var TheAdcode = 'ad4476a'; 
+var bN = navigator.appName; 
+var bV = parseInt(navigator.appVersion); 
+var base='http://www.burstnet.com/'; 
+var Tv=''; 
+var agt=navigator.userAgent.toLowerCase(); 
+if (bV>=4) 
+  {ts=window.location.pathname+window.location.search; 
+   i=0; Tv=0; while (i< ts.length) 
+      { Tv=Tv+ts.charCodeAt(i); i=i+1; } Tv="/"+Tv;} 
+  else   {Tv=escape(window.location.pathname); 
+   if( Tv.charAt(0)!='/' ) Tv="/"+Tv; 
+          else if (Tv.charAt(1)=="/")Tv=""; 
+  if( Tv.charAt(Tv.length-1) == "/") 
+    Tv = Tv + "_";} 
+if (bN=='Netscape'){ 
+     if ((bV>=4)&&(agt.indexOf("mac")==-1))
+{  document.write('<s'+'cript src="'+ 
+      base+'cgi-bin/ads/'+TheAdcode+'.cgi/RETURN-CODE/JS' 
+      +Tv+'">'); 
+     document.write('</'+'script>');    } 
+     else if (bV>=3) {document.write('<'+'a href="'+base+'ads/'+ 
+        TheAdcode+'-map.cgi'+Tv+'"target=_top>'); 
+        document.write('<img src="' + base + 'cgi-bin/ads/' + 
+        TheAdcode + '.cgi' + Tv + '" ismap width=468 height=60 align=right' + 
+        ' border=0 alt="Click Here"></a>');} 
+ } 
+if (bN=='Microsoft Internet Explorer') 
+ document.write('<ifr'+'ame id=BURST src="'+base+'cgi-bin/ads/'+ 
+  TheAdcode + '.cgi' + Tv + '/RETURN-CODE" width=468 height=60' + 
+  'marginwidth=0 marginheight=0 hspace=0 vspace=0 ' + 
+  'frameborder=0 scrolling=no></ifr'+'ame>'); 
+// --> 
+</script> 
+<noscript><a href="http://www.burstnet.com/ads/ad4476a-map.cgi" target=_top> 
+<img src="http://www.burstnet.com/cgi-bin/ads/ad4476a.cgi" 
+ width=468 height=60 border=0 alt="Click Here" align="right"></a> 
+</noscript> 
+<!-- END BURST CODE --> </td>
+<tr>
+	<td colspan="3" align="right"><img src="/DC/images/Title_Bar/bar_Cheats.gif" USEMAP="#topnav" border="0"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" valign="bottom">
+<tr>
+	<td valign="top" align="left" background="/DC/images/layout_table_background.gif">
+		<a href="/DC/default.asp"><img src="/DC/images/buttons/bnt_news.gif" border="0"></a><BR>
+		<a href="/DC/reviews.asp"><img src="/DC/images/buttons/btn_reviews.gif" border="0"></a><BR>
+		<a href="/DC/Forum/"><img src="/DC/images/buttons/btn_forums.gif" border="0"></a><BR>
+		<a href="/DC/cheatlisting.asp"><img src="/DC/images/buttons/btn_cheats.gif" border="0"></a><BR>
+		<img src="/DC/images/layout_dreamcast.gif"><BR>
+		<P>&nbsp;<A HREF="http://www.wewp.com"><IMG SRC="http://www.wewp.com/images/wewp_button.gif" BORDER="0" WIDTH="90" HEIGHT="30" ALT="Wewp! Entertainment"></A>
+		
+	</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td valign="top" width="475">
+
+			<P><BR><font face='verdana,arial,helvetica' size='2'>
+<font face="verdana,arial,helvetica" size="2">Submit your cheats <a href="mailto:SGardner@Wewp.com">here</a>.</font><P>
+<table cellpadding='0' cellspacing='0' border='0' width='470'>
+	<tr>
+		<td>
+			<font face="verdana,arial,helvetica" size="2">
+			
+				<a href="cheatshow.asp?PID=858" class="NV1">4 Wheel Thunder</a><BR>
+			
+				<a href="cheatshow.asp?PID=1540" class="NV1">Blue Stinger</a><BR>
+			
+				<a href="cheatshow.asp?PID=815" class="NV1">Dynamite Cop</a><BR>
+			
+				<a href="cheatshow.asp?PID=903" class="NV1">ECW: Hardcore Revolution</a><BR>
+			
+				<a href="cheatshow.asp?PID=760" class="NV1">Get Bass Sega Bass Fishing</a><BR>
+			
+				<a href="cheatshow.asp?PID=742" class="NV1">Hydro Thunder</a><BR>
+			
+				<a href="cheatshow.asp?PID=829" class="NV1">King of Fighters Dream Match '99</a><BR>
+			
+				<a href="cheatshow.asp?PID=752" class="NV1">Marvel vs. Capcom</a><BR>
+			
+				<a href="cheatshow.asp?PID=776" class="NV1">NBA 2K</a><BR>
+			
+				<a href="cheatshow.asp?PID=784" class="NV1">NBA Showtime: NBA on NBC</a><BR>
+			
+				<a href="cheatshow.asp?PID=732" class="NV1">NFL 2K</a><BR>
+			
+				<a href="cheatshow.asp?PID=738" class="NV1">NFL Blitz 2000</a><BR>
+			
+				<a href="cheatshow.asp?PID=1050" class="NV1">Phantasy Star Online</a><BR>
+			
+				<a href="cheatshow.asp?PID=756" class="NV1">Power Stone</a><BR>
+			
+				<a href="cheatshow.asp?PID=731" class="NV1">Ready 2 Rumble</a><BR>
+			
+				<a href="cheatshow.asp?PID=783" class="NV1">Rippin' Riders</a><BR>
+			
+				<a href="cheatshow.asp?PID=799" class="NV1">Roadsters</a><BR>
+			
+				<a href="cheatshow.asp?PID=1135" class="NV1">Samba De Amigo</a><BR>
+			
+				<a href="cheatshow.asp?PID=1033" class="NV1">San Francisco Rush 2049</a><BR>
+			
+				<a href="cheatshow.asp?PID=1136" class="NV1">Sega Marine Fishing</a><BR>
+			
+				<a href="cheatshow.asp?PID=811" class="NV1">Sega Rally 2</a><BR>
+			
+				<a href="cheatshow.asp?PID=871" class="NV1">Shadowman</a><BR>
+			
+				<a href="cheatshow.asp?PID=798" class="NV1">Slave Zero</a><BR>
+			
+				<a href="cheatshow.asp?PID=775" class="NV1">Sonic Adventure</a><BR>
+			
+				<a href="cheatshow.asp?PID=739" class="NV1">Soul Calibur </a><BR>
+			
+				<a href="cheatshow.asp?PID=761" class="NV1">Soul Fighter</a><BR>
+			
+				<a href="cheatshow.asp?PID=856" class="NV1">South Park Chef's Luv Shack</a><BR>
+			
+				<a href="cheatshow.asp?PID=762" class="NV1">Speed Devils</a><BR>
+			
+				<a href="cheatshow.asp?PID=896" class="NV1">Tee-Off</a><BR>
+			
+				<a href="cheatshow.asp?PID=789" class="NV1">Test Drive 6</a><BR>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+
+
+</table>
+
+<!-------Wewp! 468 x 60 Ad Spot/AdFlight Ad Server 2.5.2 Begin Code--------><p><IFRAME src="http://ads.adflight.com/ad_iframe.asp?pid=5223&sid=5066&asid=15435" width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no noresize><a href="http://ads.adflight.com/go_static.asp?asid=15435" target="_top"><img width=468 height=60 border=0 alt="Advertisement" src="http://ads.adflight.com/ad_static.asp?pid=5223&sid=5066&asid=15435"></a></IFRAME></p><!-------Wewp! 468 x 60 Ad Spot/AdFlight Ad Server 2.5.2 End Code--------------->
+<center><!-- BEGIN BURST! CODE --><iframe SRC="http://www.burstnet.com/cgi-bin/ads/bt4476a.cgi/RETURN-CODE/if/1/" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" width="120" height="60"><A target="_top" HREF="http://www.burstnet.com/ads/bt4476a-map.cgi/1"><IMG SRC="http://www.burstnet.com/cgi-bin/ads/bt4476a.cgi/1" border="0" width="120" height="60" alt="Please support our sponsor."></A></iframe><!-- END BURST! CODE --> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-------Wewp! 120 x 60 Ad Spot/AdFlight Ad Server 2.5.2 Begin Code--------><IFRAME src="http://ads.adflight.com/ad_iframe.asp?pid=5223&sid=5066&asid=15436" width=120 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no noresize><a href="http://ads.adflight.com/go_static.asp?asid=15436" target="_top"><img width=120 height=60 border=0 alt="Advertisement" src="http://ads.adflight.com/ad_static.asp?pid=5223&sid=5066&asid=15436"></a></IFRAME></p><!-------Wewp! 120 x 60 Ad Spot/AdFlight Ad Server 2.5.2 End Code---------------></center>
+</td>
+</tr>
+</table>
+<MAP NAME="bottomnav">
+ <AREA SHAPE=RECT COORDS="120,20,200,40" HREF="http://www.wewp.com/terms.asp">
+ <AREA SHAPE=RECT COORDS="475,20,525,40" HREF="/DC/">
+ <AREA SHAPE=RECT COORDS="530,20,575,40" HREF="#Top">
+</MAP>
+<IMG SRC="/DC/images/layout_bottom.gif" USEMAP="#bottomnav" border="0"></body></html>

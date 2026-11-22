@@ -1,0 +1,553 @@
+
+<html>
+<head>
+<title>games, xbox, ps2, pc, gamecube, n64, gameboy advance, psx, console, console games, pc games, cheats, reviews , wewp</title>
+<META NAME="keywords" CONTENT="games, xbox, ps2, pc, pc games, gamecube, n64, gameboy advance, psx, console, cheats, reviews , wewp">
+<meta name="description" content="Wewp!, games">
+<meta name="robots" content="all follow"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<LINK REL=StyleSheet HREF="/includes/style.css" TYPE="text/css">
+</head>
+<body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0">
+<table width="80%" border="0" cellpadding="0" cellspacing="0" align="center">
+	<tr>
+		<td align="left" class="tdTitle">&nbsp;&nbsp;&nbsp;<a class="menu" href="/whatsnew.asp">What's New?</a></td><td nowrap align="right" class="tdTitle">select a platform --> <a class="menu" href="/platform/pc">PC</a> | <a class="menu" href="/platform/xbox">XBox</a> | <a class="menu" href="/platform/ps2">PS2</a> | <a class="menu" href="/platform/gc">GameCube</a> | <a class="menu" href="/platform/GBA">GBA</a> | <a class="menu" href="/platform/psx">PSX</a> | <a class="menu" href="/platform/n64">N64</a> | <a class="menu" href="/platform/dc">DC</a>&nbsp;</td>
+	</tr>
+
+	<tr>
+		<td colspan="2" class="tdSeperator2"><img src="/images/1_spacer.gif" height="2" width="780" ALT=""></td>
+	</tr>
+	<tr>
+		<td align="left" class="tdSeperator"><a href="/"><img src="/images/wewp_logo_blue2.jpg" border="0" ALT="Home"></a></td>
+		<td class="tdSeperator" align="right"><img src="/images/left_banner.jpg" ALT=""><img src="/images/middle_banner.gif" ALT=""><img src="/images/right_banner.jpg" ALT=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="tdSeperator2"><img src="/images/1_spacer.gif" height="2" width="1" ALT=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="tdSeperator" height="70" align="center">
+<table border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td><!-- BEGIN RICH-MEDIA BURST! CODE --> 
+<script language="JavaScript"> 
+<!-- /* © 1997-2001 BURST! Media, LLC. All Rights Reserved.*/ 
+function ShowBurstAd(adcode, width, height) {
+ var bN = navigator.appName;
+ var bV = parseInt(navigator.appVersion);   
+ var base='http://www.burstnet.com/';   
+ var Tv='';   
+ var agt=navigator.userAgent.toLowerCase();   
+ if (bV>=4)  
+ {ts=window.location.pathname+window.location.search;
+  i=0; Tv=0; while (i< ts.length)
+    { Tv=Tv+ts.charCodeAt(i); i=i+1; } Tv="/"+Tv;}
+  else   {Tv=escape(window.location.pathname);
+  if( Tv.charAt(0)!='/' ) Tv="/"+Tv; 
+    else if (Tv.charAt(1)=="/")
+ Tv="";     
+ if( Tv.charAt(Tv.length-1) == "/")
+   Tv = Tv + "_";}   
+ if (bN=='Netscape'){        
+  if ((bV>=4)&&(agt.indexOf("mac")==-1))  
+ { document.write('<s'+'cript src="'+ 
+  base+'cgi-bin/ads/'+adcode+'.cgi/RETURN-CODE/JS' 
+  +Tv+'">'); 
+  document.write('</'+'script>');
+ }
+   else if (bV>=3) {document.write('<'+'a href="'+base+'ads/' + 
+  adcode + '-map.cgi'+Tv+'"target=_top>');
+  document.write('<img src="' + base + 'cgi-bin/ads/' +
+  adcode + '.cgi' + Tv + '" width="' + width + '" height="' + height + '"' +
+  ' border="0" alt="Click Here"></a>');}   
+}
+if (bN=='Microsoft Internet Explorer')    
+document.write('<ifr'+'ame id="BURST" src="'+base+'cgi-bin/ads/'  
++     
+adcode + '.cgi' + Tv + '/RETURN-CODE" width="' + width + '" height="' + height + '"' +     
+'marginwidth="0" marginheight="0" hspace="0" vspace="0" ' +     
+'frameborder="0" scrolling="no"></ifr'+'ame>');  
+}
+//-->
+</script>
+<!-- END BURST CODE -->
+<!-- BEGIN RICH-MEDIA BURST! CODE --> 
+<script language="JavaScript">
+<!--
+ShowBurstAd('ad4476a','468','60');
+// --></script>
+<noscript><a href="http://www.burstnet.com/ads/ad4476a-
+map.cgi/ns" target="_top"><img src="http://www.burstnet.com/cgi-
+bin/ads/ad4476a.cgi/ns" width="468" height="60" 
+border="0" alt="Click Here"></a> 
+</noscript>
+<!-- END BURST CODE -->
+</td>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td><a target="_new" href="http://click.linksynergy.com/fs-bin/click?id=ppr5OBoNECM&offerid=29744.10000150&subid=0&type=4"><IMG border="0"  width="120" height="60"   alt="Great Promotions from Dell Home Systems!" src="http://ad.linksynergy.com/fs-bin/show?id=ppr5OBoNECM&bids=29744.10000150&subid=0&type=4"></a></td>
+	</tr>
+</table>
+
+
+</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="tdSeperator2"><img src="/images/1_spacer.gif" height="2" width="1" ALT=""></td>
+	</tr>
+		<form action="/search.asp" method="post">
+	<tr>
+		<td width="100%" colspan="2">
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td class="tdTitle" height="20" nowrap>&nbsp;<a class="menu" href="/platform/pc/demos.asp">Demos</a> | <a class="menu" href="/reviews">Reviews</a> | <a class="menu" href="/cheats">Cheats</a> | <a class="menu" href="http://www.chatarea.com/wewp">Forums</a></td>
+					<td class="tdTitle" height="20" align="right">&nbsp;Search: <input style="FONT-SIZE: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;" type="text" name="searchbox">&nbsp;</td>
+				</tr>
+			</table>
+		</tr>
+	</tr>
+	</form>
+	<tr>
+		<td colspan="2" class="tdSeperator2"><img src="/images/1_spacer.gif" height="2" width="1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="tdSeperator">&nbsp;<a href="http://www.wewp.com">Wewp!</a> : Home</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="tdSeperator2"><img src="/images/1_spacer.gif" height="2" width="1" ALT=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="tdSeperator" align="center">
+			<p><br>
+			<webdog>
+			<table width="95%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="100%" valign="top">
+						<table width="100%" border="1" bordercolor="black" cellpadding="0" cellspacing="0">
+							<tr>
+								<td class="tdTitle" colspan="2">Wewp! Articles:</td>
+							</tr>
+							<tr>
+								<td width="100%" align="right">
+									<center>
+									<table width="100%" border="0" cellpadding="0" cellspacing="2">
+										<td width="33%" class="tdSeperator" valign="top" align="center">
+											<a class="demomenu2" href="platform/PS2/3266/Reviews/481">
+											<img src='/images/frontpage/3266_frontpage.jpg' border='0'><BR>Sky Gunner
+											</a>
+										</td>
+										<td width="33%" class="tdSeperator" valign="top" align="center">
+											<a class="demomenu2" href="platform/pc/2140/Reviews/480">
+											<img src='/images/frontpage/2140_frontpage.jpg' border='0'><BR>Warcraft III: Reign of Chaos
+											</a>
+										</td>
+										<td width="33%" class="tdSeperator" valign="top" align="center">
+											<a class="demomenu2" href="platform/GC/3335/Reviews/479">
+											<img src='/images/frontpage/3335_frontpage.jpg' border='0'><BR>MX SuperFly
+											</a>
+										</td>
+									</table>
+									</center>
+									<br>
+									<a href="http://www.wewp.com/reviews">More Articles!</a>&nbsp;
+								</td>
+							</tr>
+						</table>
+						<P>
+						<table width="100%" border="0" bordercolor="black" cellpadding="0" cellspacing="0">
+							<tr>
+								<td valign="top">
+									<table width="100%" border="1" bordercolor="black" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="tdTitle">Reviews:</td>
+										</tr>
+										<tr>
+											<td>
+												<table height="123" border="0" cellpadding="0" cellspacing="2">
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/XBox"><img src="/images/xbox_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+															<a class="demomenu2" href="/platform/XBox/3462/reviews.asp">Sega Soccer Slam</a> <font color="red">NEW</font>
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/PS2"><img src="/images/psx2_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+															<a class="demomenu2" href="/platform/PS2/3398/reviews.asp">The Thing</a> 
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/XBox"><img src="/images/xbox_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+															<a class="demomenu2" href="/platform/XBox/3314/reviews.asp">Star Wars: Jedi Starfighter</a> 
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/PS2"><img src="/images/psx2_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+															<a class="demomenu2" href="/platform/PS2/3327/reviews.asp">Stuntman</a> 
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/XBox"><img src="/images/xbox_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+															<a class="demomenu2" href="/platform/XBox/3023/reviews.asp">Buffy the Vampire Slayer</a> 
+														</td>
+													</tr>
+													
+												</table>
+											</td>
+										</tr>
+									</table>
+
+									<br>
+
+									<table width="100%" border="1" bordercolor="black" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="tdTitle">Misc News & Press Releases:</td>
+										</tr>
+										<tr>
+											<td>
+												<table height="123" border="0" cellpadding="0" cellspacing="2">
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/PC"><img src="/images/win_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+														
+															<a class="demomenu2" href="/platform/PC/2966/miscnews.asp">Black Moon Chronicles</a> <font color="red">NEW</font>
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/PC"><img src="/images/win_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+														
+															<a class="demomenu2" href="/platform/PC/3500/miscnews.asp">Dark Age of Camelot: Shrouded Isles</a> <font color="red">NEW</font>
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/PC"><img src="/images/win_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+														 
+															<a class="demomenu2" href="/platform/PC/3454/pressrelease.asp">Timekeepers</a> 
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/PC"><img src="/images/win_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+														
+															<a class="demomenu2" href="/platform/PC/3447/miscnews.asp">Prince of Qin</a> 
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/PC"><img src="/images/win_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+														
+															<a class="demomenu2" href="/platform/PC/2966/miscnews.asp">Black Moon Chronicles</a> 
+														</td>
+													</tr>
+													
+												</table>
+											</td>
+										</tr>
+									</table>
+
+									<br>
+
+
+									<table width="100%" border="1" bordercolor="black" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="tdTitle" colspan="2">Cheat Codes:</td>
+										</tr>
+										<tr>
+											<td>
+												<table height="123" border="0" cellpadding="0" cellspacing="2">
+												
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/XBox"><img src="/images/xbox_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall"><a class="demomenu2" href="/platform/XBox/3232/cheats.asp">NFL Fever 2003</a>  </td>
+													</tr>
+														
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/XBox"><img src="/images/xbox_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall"><a class="demomenu2" href="/platform/XBox/3232/cheats.asp">NFL Fever 2003</a>  </td>
+													</tr>
+														
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/GC"><img src="/images/gc_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall"><a class="demomenu2" href="/platform/GC/3490/cheats.asp">Beach Spikers</a>  </td>
+													</tr>
+														
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/PS2"><img src="/images/psx2_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall"><a class="demomenu2" href="/platform/PS2/3327/cheats.asp">Stuntman</a>  </td>
+													</tr>
+														
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/XBox"><img src="/images/xbox_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall"><a class="demomenu2" href="/platform/XBox/3569/cheats.asp">Enclave</a>  </td>
+													</tr>
+														
+												</table>
+											</td>
+										</tr>
+									</table>
+
+
+								</td>
+
+								<td>&nbsp;</td>
+
+								<td width="50%" valign="top">
+									<table width="100%" border="1" bordercolor="black" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="tdTitle">Previews:</td>
+										</tr>
+										<tr>
+											<td>
+												<table height="123" border="0" cellpadding="0" cellspacing="2">
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/GC"><img src="/images/gc_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+															<a class="demomenu2" href="/platform/GC/3489/previews.asp">Animal Crossing</a> <font color="red">NEW</font>
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/PC"><img src="/images/win_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+															<a class="demomenu2" href="/platform/PC/3563/previews.asp">Iron Storm</a> <font color="red">NEW</font>
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/PS2"><img src="/images/psx2_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+															<a class="demomenu2" href="/platform/PS2/3681/previews.asp">Auto Modellista</a> <font color="red">NEW</font>
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/GC"><img src="/images/gc_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+															<a class="demomenu2" href="/platform/GC/3761/previews.asp">Godzilla: Destroy All Monsters Melee</a> 
+														</td>
+													</tr>
+													
+													<tr>
+														<td valign="middle" class="tdBoxsmall">
+														<a href="platform/PC"><img src="/images/win_small.gif" border=0></a>
+														</td>
+														<td valign="middle" class="tdBoxsmall">
+															<a class="demomenu2" href="/platform/PC/3146/previews.asp">Haegemonia</a> 
+														</td>
+													</tr>
+													
+												</table>
+											</td>
+										</tr>
+									</table>
+
+									<br>
+									<table width="100%" border="1" bordercolor="black" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="tdTitle">PC Demos & Patches:</td>
+										</tr>
+										<tr>
+											<td>
+												<table height="123" border="0" cellpadding="0" cellspacing="2">
+													
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top">1. </td>
+														<td class="tdBoxsmall" valign="top"><a class="demomenu2" href="platform/pc/2924/demo.asp">Battlefield 1942</a> <font color="red">NEW</font></td>
+													</tr>
+													
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top">2. </td>
+														<td class="tdBoxsmall" valign="top"><a class="demomenu2" href="platform/pc/3567/demo.asp">Big Scale Racing</a> <font color="red">NEW</font></td>
+													</tr>
+													
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top">3. </td>
+														<td class="tdBoxsmall" valign="top"><a class="demomenu2" href="platform/pc/2496/demo.asp">Neocron</a> </td>
+													</tr>
+													
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top">4. </td>
+														<td class="tdBoxsmall" valign="top"><a class="demomenu2" href="platform/pc/3757/demo.asp">Zabugorie: the Fairy Planet</a> </td>
+													</tr>
+													
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top">5. </td>
+														<td class="tdBoxsmall" valign="top"><a class="demomenu2" href="platform/pc/3424/demo.asp">Celtic Kings: Rage of War</a> </td>
+													</tr>
+													
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top">6. </td>
+														<td class="tdBoxsmall" valign="top"><a class="demomenu2" href="platform/pc/3675/demo.asp">Dungeon Odyssey</a> </td>
+													</tr>
+													
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top">7. </td>
+														<td class="tdBoxsmall" valign="top"><a class="demomenu2" href="platform/pc/3524/demo.asp">Stronghold Crusader</a> </td>
+													</tr>
+													
+												</table>
+											</td>
+										</tr>
+									</table>
+
+									<br>
+
+									<table width="100%" border="1" bordercolor="black" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="tdTitle" colspan="2">Screen Shots:</td>
+										</tr>
+										<tr>
+											<td>
+												<table height="123" border="0" cellpadding="0" cellspacing="2">
+												
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top"><a href="platform/PC"><img src="/images/win_small.gif" border=0></a></td>
+														<td valign="top" class="tdBoxsmall"><a class="demomenu2" href="/platform/PC/198">Diablo II</a>  </td>
+													</tr>
+													
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top"><a href="platform/PC"><img src="/images/win_small.gif" border=0></a></td>
+														<td valign="top" class="tdBoxsmall"><a class="demomenu2" href="/platform/PC/1452">Anarchy Online</a>  </td>
+													</tr>
+													
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top"><a href="platform/GC"><img src="/images/gc_small.gif" border=0></a></td>
+														<td valign="top" class="tdBoxsmall"><a class="demomenu2" href="/platform/GC/3335">MX SuperFly</a>  </td>
+													</tr>
+													
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top"><a href="platform/PC"><img src="/images/win_small.gif" border=0></a></td>
+														<td valign="top" class="tdBoxsmall"><a class="demomenu2" href="/platform/PC/3560">Chessmaster 9000</a>  </td>
+													</tr>
+													
+													<tr>
+														<td width="10" class="tdBoxsmall" valign="top"><a href="platform/PC"><img src="/images/win_small.gif" border=0></a></td>
+														<td valign="top" class="tdBoxsmall"><a class="demomenu2" href="/platform/PC/3424">Celtic Kings: Rage of War</a>  </td>
+													</tr>
+													
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td><img src="/images/1_spacer.gif" width="10"></td>
+					<td class="tdSeperator" width="190" valign="top" rowspan="6">
+						<P>
+						
+<table width="160" border="1" bordercolor="black" cellpadding="2" cellspacing="0">
+	<tr>
+		<td class="tdSponser" colspan="2"> Sponsor:</td>
+	</tr>
+	<tr>
+		<td>
+			<table width="160" border="0" cellpadding="0" cellspacing="2">
+				<tr>
+					<td valign="top" class="tdBoxsmall" align="center">
+						<a target="_new" href="http://click.linksynergy.com/fs-bin/click?id=ppr5OBoNECM&offerid=13850.10000067&type=4&subid=0"><IMG  width="120" height="240" alt="MultiPlayerOnline" border="0" src="http://www.ebgames.com/ebx/ads/affiliates/banners/MMObanner-120x240.gif"></a><IMG border="0" width="1" height="1" src="http://ad.linksynergy.com/fs-bin/show?id=ppr5OBoNECM&bids=13850.10000067&type=4&subid=0">
+<p>
+<a target="_new" href="http://click.linksynergy.com/fs-bin/click?id=ppr5OBoNECM&offerid=13850.10000064&type=4&subid=0"><IMG alt="MaddenNcaa2003" border="0" src="http://www.ebgames.com/ebx/ads/affiliates/banners/MaddenNcaa2003EA.jpg"></a><IMG border="0" width="1" height="1" src="http://ad.linksynergy.com/fs-bin/show?id=ppr5OBoNECM&bids=13850.10000064&type=4&subid=0">
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+						<P>
+						
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3"><BR></td>
+					<td><BR></td>
+				</tr>
+			</table>
+			</webdog>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="tdSeperator2"><img src="/images/1_spacer.gif" height="2" width="780" ALT=""></td>
+	</tr>
+	
+	<tr>
+		<td colspan="2" align="right" class="tdTitle" height="20"><a class="menu" href="/aboutus.asp#HelpWanted">Help Wanted</a> | <a class="menu" href="/aboutus.asp">About Us</a> | <a class="menu" href="/advertising/">advertising</a> | <a class="menu" href="mailto:news@wewp.com">submit news</a>&nbsp;</td>
+	</tr>
+
+</table>
+<p>
+
+<P>
+<center>
+<!-- BEGIN RICH-MEDIA BURST! CODE --> 
+<script language="JavaScript">
+<!--
+ShowBurstAd('ba4476a','468','60');
+// --></script>
+<noscript><a href="http://www.burstnet.com/ads/ba4476a-map.cgi/ns" target="_top">
+<img src="http://www.burstnet.com/cgi-bin/ads/ba4476a.cgi/ns" 
+width="468" height="60" border="0" alt="Click Here"></a> 
+</noscript>
+<!-- END BURST CODE -->
+<P>
+<font face="verdana,arial,helvetica" size="2" color="white"><p><b>Copyright © 1999-2001 Wewp!. All rights reserved. <a href="/terms.asp"><font color="white">Terms of Use</font></a><br></font>
+</center>
+<br><br>
+<BR><BR>
+</body>
+</html>
