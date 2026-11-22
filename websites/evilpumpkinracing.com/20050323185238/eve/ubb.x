@@ -1,0 +1,580 @@
+<html>
+<head>
+<title>Forums - Powered by Infopop</title>
+<meta content="Infopop XSLT" name="GENERATOR">
+    <!-- servlet eve1da022 Eve 1.2.6  build 0  using  standard XSL for board_categories_and_forums -->
+    
+  <script id="ev_site_globals" type="text/javascript">
+        // set globals localised for site  
+        var site_oid = '479108'; //  this page's module oid /page/info/replace-me/DOC/PLATFORM/SITE_OID
+        var eve_oid = '328108'; // eve module oid 
+        var platform_oid = '228108'; // overall platform oid 
+        var forum_oid = ''; // forum oid if any
+        var servlet_url = 'http://evilpumpkinracing.com/eve'; 
+        var server_url = 'http://evilpumpkinracing.com'; 
+        var site_id_cookie = 'site_228108'; // this is the unique site login info cookie
+        var month_names = new Array('January','February','March','April','May','June','July','August','September','October','November','December','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+        var day_names = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+        var site_timezone_offset = '2'; // be sure to localise from XML
+        var server_gmt_offset = '0800';
+        var default_site_date_format ='dd MMMM yyyy' + ' ' + 'hh:mm a';
+       	var wait_message = 'Please Wait. Your request is being processed...';
+        var new_content_msg = 'New Content';
+        var isOneCommunityEnabled = false;
+       
+        ev_avatar_image_h = 48;
+       
+       ev_avatar_image_w = 48;
+       
+     
+     
+        function doBodyOnload(){// run body onload code from admin
+          
+          return true;
+        }// end fn
+   </script>
+   
+  <link rel="shortcut icon" href="http://evilpumpkinracing.com/infopop/favicon.ico" type="image/x-icon">
+<link rel="icon" href="http://evilpumpkinracing.com/infopop/favicon.ico" type="image/x-icon">
+  
+  <script id="ev_constructor" type="text/javascript" src="http://evilpumpkinracing.com/infopop/jscript/eve_constructor.js"></script>
+
+  <script type="text/javascript">
+
+         function showLoginMenu(anchor_id, nudgeX, nudgeY){
+        	var position = getAnchorPosition(anchor_id);
+
+        	clearMenus();
+        	if(nudgeX==null){nudgeX=0};
+        	if(nudgeY==null){nudgeY=0};
+
+        menusOpen['gs_login_menu'] = true;// track open menu ids
+          	moveObject('gs_login_menu', position.x + nudgeX, position.y + nudgeY);
+         changeObjectVisibility('gs_login_menu','visible');
+
+        }// end fn
+
+        function showLogoutMenu(anchor_id, nudgeX, nudgeY){
+        	var position = getAnchorPosition(anchor_id);
+
+        	clearMenus();
+        	if(nudgeX==null){nudgeX=0};
+        	if(nudgeY==null){nudgeY=0};
+
+        menusOpen['gs_logout_menu'] = true;// track open menu ids
+          	moveObject('gs_logout_menu', position.x + nudgeX, position.y + nudgeY);
+         changeObjectVisibility('gs_logout_menu','visible');
+
+        }// end fn
+    </script><script type="text/javascript">window.name="parentwindow";</script>
+    <script type="text/javascript">
+        if (eve_cookie.user_oid && eve_cookie.user_oid !='' && !isNaN(eve_cookie.user_oid) ){
+          
+          if (eve_cookie.pref_datetime  && eve_cookie.pref_datetime !='') {
+            
+            guprefsurl = '<scri' + 'pt id="uprefs_js" type="text/javascript" src="http://evilpumpkinracing.com/eve/,a,guprefs,u,';
+            guprefsurl += eve_cookie.user_oid;
+            guprefsurl += '/';
+            guprefsurl += eve_cookie.pref_datetime;
+            guprefsurl += 'xxx.js"></scr' + 'ipt>';
+            document.write(guprefsurl);
+          }
+        }
+    </script>
+
+<script type="text/javascript">if(window.userIsLoggedIn!=true){document.write('<style>.gs_user_not_logged_in{display:none}</style>')};</script> 
+  <link rel="STYLESHEET" type="text/css" href="http://evilpumpkinracing.com/eve/,a,gcss,ss,420100461,ssm,IP_PLATFORM,sslm,1110192359000.css"> 
+  <link rel="STYLESHEET" type="text/css" href="http://evilpumpkinracing.com/eve/ubb.x/,a,gcss,ss,420100461,ssm,IP_UBBX,sslm,1110192359000.css"> 
+  </head>
+<body onClick="clearMenus()" onload="doBodyOnload()" style="visibility: hidden;">
+<div id="ev_common_master_div1">
+<div id="ev_common_master_div2">
+<div id="ev_portal_title_graphic_div">
+<a href="http://evilpumpkinracing.com/eve"><img id="eve_portal_title_graphic" class="eve_title" src="http://evilpumpkinracing.com/infopop/blank.gif"></a>
+</div>
+<script type="text/javascript"><!--
+          function doProfilePopup(userOID, displayName, obj) { // this maps v 2 values to 3 functions as required
+            window.activemenu=true;
+            show_member_menu(obj, 'gs_user_contact_menu', displayName, userOID);
+            window.activemenu=false;
+          }
+      //--></script>
+<br>
+<div id="gs_online_now_list" onClick="event.cancelBubble=true">
+<table class="ev_container" cellspacing="0">
+<tr>
+<th>Online Now: 1</th><td class="ev_tr_corner">&nbsp;</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td class="ev_onlinenow_table"><span class="ev_text_small">There are currently 0 member(s) and 1 guest(s) on the forums.<br></span></td>
+</tr>
+</table>
+</div>
+<br>
+<div class="ev_background_txt" id="eve_bc_top">
+<a href="http://evilpumpkinracing.com">Evil Pumpkin Racing</a>&nbsp;&nbsp;<img src="http://evilpumpkinracing.com/infopop/blank.gif" class="eve_bread_tier1" align="absmiddle" alt="" title="">&nbsp;&nbsp;<a href="http://evilpumpkinracing.com/eve">evilpumpkinracing.com</a>&nbsp;&nbsp;<img src="http://evilpumpkinracing.com/infopop/blank.gif" class="eve_ubbx_icon" align="absmiddle" alt="" title="">&nbsp;&nbsp;Forums</div>
+<table class="ev_tab_table_top" cellspacing="0" cellpadding="0" onclick="window.activemenu=true;event.cancelBubble=true">
+<tr>
+<td class="eve_tab" id="gs_tab_go" onclick="window.activemenu=true;eveMenu(this.id,1);" onmouseover="eveMenu(this.id,1);" onmouseout="resetMenuButtonColors(this.id);">
+<div id="gs_tab_go_border" class="ev_tab">Go <img class="eve_go" src="http://evilpumpkinracing.com/infopop/blank.gif" align="middle"></div>
+</td><td class="eve_tab" id="gs_tab_new" onclick="window.activemenu=true;eveMenu(this.id);" onmouseover="eveMenu(this.id);" onmouseout="resetMenuButtonColors(this.id);">
+<div id="gs_tab_new_border" class="ev_tab">New <img class="eve_new" src="http://evilpumpkinracing.com/infopop/blank.gif" align="middle"></div>
+</td><td class="eve_tab" id="gs_tab_find" onclick="window.activemenu=true;eveMenu(this.id);document.searchlite.reqWords.focus();" onmouseover="eveMenu(this.id);" onmouseout="resetMenuButtonColors(this.id);">
+<div id="gs_tab_find_border" class="ev_tab">Find <img class="eve_find" src="http://evilpumpkinracing.com/infopop/blank.gif" align="middle"></div>
+</td><td class="eve_tab" id="gs_tab_tools" onclick="window.activemenu=true;eveMenu(this.id);" onmouseover="eveMenu(this.id);" onmouseout="resetMenuButtonColors(this.id);">
+<div id="gs_tab_tools_border" class="ev_tab">Tools <img class="eve_tools" src="http://evilpumpkinracing.com/infopop/blank.gif" align="middle"></div>
+</td><td class="eve_tab" id="ev_display_admin" onclick="window.activemenu=true;eveMenu(this.id);" onmouseover="eveMenu(this.id);" onmouseout="resetMenuButtonColors(this.id);" style="display:none;">
+<div id="ev_display_admin_border" class="ev_tab">Admin <img class="eve_admin" src="http://evilpumpkinracing.com/infopop/blank.gif" align="middle"></div>
+</td><td class="eve_tab" id="ev_pm_indicator" onclick="window.location.href='http://evilpumpkinracing.com/eve?a=ugtpc'" onmouseover="eveMenu(this.id);" onmouseout="resetMenuButtonColors(this.id);" style="display:none;">
+<div id="gs_tab_private_border" class="ev_tab">New PM! <img class="eve_new_pm_alert" src="http://evilpumpkinracing.com/infopop/blank.gif" align="middle"></div>
+</td>
+</tr>
+</table>
+<div class="eve_tab_menu" id="gs_tab_go_menu" style="position:absolute; left:200px; top:200px;visibility:hidden; height:100px; z-index:5" onclick="exemptClearMenus(this.id);">
+<table class="ev_layer_table" cellspacing="0">
+<tr onmouseover="this.className='ev_menu_on';changeObjectVisibility('gs_hopto_menu','hidden');window.activemenu=true;eveMenu('gs_tab_myspace_sub',10,0,true);" onmouseout="this.className='';" id="gs_tab_go_menu_myspace">
+<td><a href="http://evilpumpkinracing.com/eve/myspace" onclick="clearMenus(); getObjById('gs_msg_dynamic_content').innerHTML = wait_message; positionDiv('gs_msg_dynamic','left','top',320,270,220,65);" rel="nofollow">My Space</a></td><td class="ev_menu_raquo"><a id="gs_tab_myspace_sub">&raquo;</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';changeObjectVisibility('gs_hopto_menu','hidden');changeObjectVisibility('gs_tab_myspace_sub_menu','hidden');setHoptoArray(479108);showHoptoMenu(this,'go_menu_all',0);event.cancelBubble=true;" onmouseout="this.className='';" id="gs_tab_go_menu_ubbx_479108">
+<td><a href="http://evilpumpkinracing.com/eve/ubb.x">Forums</a></td><td class="ev_menu_raquo">&raquo;</td>
+</tr>
+</table>
+</div>
+<div class="eve_tab_menu" id="gs_tab_myspace_sub_menu" style="position:absolute; left:200px; top:200px;visibility:hidden; height:100px; z-index:5" onclick="exemptClearMenus(this.id);">
+<table class="ev_layer_table" cellspacing="0">
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/myspace?x_myspace_page=profile">Profile</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/myspace?x_myspace_page=buddies" rel="nofollow">Buddies</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/myspace?x_myspace_page=groups" rel="nofollow">Groups</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/myspace?x_myspace_page=permissions" rel="nofollow">Permissions</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve?a=ugtpc" rel="nofollow">Private Messaging</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/myspace?x_myspace_page=subscriptions" rel="nofollow">Notifications</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/myspace?x_myspace_page=karma" rel="nofollow">Karma</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/myspace?x_myspace_page=uprefs" rel="nofollow">Preferences</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/myspace?x_myspace_page=ufav&amp;x_myspace_module=ubb.x" rel="nofollow">Favorites</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/myspace?x_myspace_page=profile" rel="nofollow">More...</a></td>
+</tr>
+</table>
+</div>
+<div class="eve_tab_menu" id="gs_tab_new_menu" style="position:absolute; left:200px; top:200px;visibility:hidden; height:100px; z-index:5" onclick="event.cancelBubble=true;">
+<table class="ev_layer_table" cellspacing="0">
+<tr onmouseover="this.className='ev_menu_on';setHoptoArray(window.site_oid,'ubbx','post_to_topic');showHoptoMenu(this,'post_to_topic',0);" onmouseout="this.className='';" id="gs_tab_new_menu_topic">
+<td>Discussion</td><td class="ev_menu_raquo">&raquo;</td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';setHoptoArray(window.site_oid,'ubbx','post_to_poll');showHoptoMenu(this,'post_to_poll',0);" onmouseout="this.className='';" id="gs_tab_new_menu_poll">
+<td>Poll</td><td class="ev_menu_raquo">&raquo;</td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td colspan="2"><a href="javascript:void(0);" id="gs_tab_new_menu_priv_topic" onclick="if(!window.userIsLoggedIn){alert(&quot;You are not logged in.&quot;);return false;}sizePopup('topic', 'http://evilpumpkinracing.com/eve?a=gtmgmt&amp;x_popup=Y', 'open');">Private Message</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';setHoptoArray(window.site_oid,'ubbx','post_to_album');showHoptoMenu(this,'post_to_album',0);" onmouseout="this.className='';" id="gs_tab_new_menu_album">
+<td>Photo Album</td><td class="ev_menu_raquo">&raquo;</td>
+</tr>
+</table>
+</div>
+<div class="eve_tab_menu" id="gs_tab_find_menu" style="position:absolute; left:200px; top:200px;visibility:hidden; height:100px; z-index:5" onclick="exemptClearMenus(this.id);">
+<form method="get" action="http://evilpumpkinracing.com/eve/ubb.x?a=search" name="searchlite">
+<table class="ev_layer_table" cellspacing="0">
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><b>Keyword Search</b>
+<br>
+<input type="hidden" name="a" value="search"><input type="text" name="reqWords" size="20">&nbsp;&nbsp;<input class="ev_input" type="submit" value="GO"></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/ubb.x?a=srchf" rel="nofollow">Advanced Search</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/ubb.x?a=nslv" onclick="clearMenus();getObjById('gs_msg_dynamic_content').innerHTML = wait_message;positionDiv('gs_msg_dynamic','left','top',320,270,220,65);" rel="nofollow">New Since your Last Visit</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="http://evilpumpkinracing.com/eve/ubb.x?a=tat" id="" onclick="clearMenus();getObjById('gs_msg_dynamic_content').innerHTML = wait_message;positionDiv('gs_msg_dynamic','left','top',320,270,220,65);" rel="nofollow">Today's Active Topics</a></td>
+</tr>
+</table>
+</form>
+</div>
+<div class="eve_tab_menu" id="gs_tab_tools_menu" style="position:absolute; left:200px; top:200px;visibility:hidden; height:100px; z-index:5" onclick="exemptClearMenus(this.id);">
+<table class="ev_layer_table" cellspacing="0">
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';" class="gs_user_not_logged_in">
+<td><a href="javascript:void(0);" onclick="savePrefsHandler('cfrm');">Save Category Layout</a>
+<div id="gs_message" style="position:absolute; visibility:hidden; width:200;height:100;">
+<table align="center" cellpadding="5" class="ev_layer_table" cellspacing="0">
+<tr>
+<td align="center"><img class="eve_save" src="http://evilpumpkinracing.com/infopop/blank.gif"></td><td><span id="gs_message_text" class="ev_text_small"><span class="ev_text_container_color">Your page preferences have been saved.</span></span></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';">
+<td><a href="javascript:void(0);" onclick="sizePopup('help','http://evilpumpkinracing.com/eve?a=faq&amp;x_frameset=Y&amp;x_context=ubb.x','open'); clearMenus();" rel="nofollow">Help</a></td>
+</tr>
+</table>
+</div>
+<div class="eve_tab_menu" id="ev_display_admin_menu" style="position:absolute; left:200px; top:200px;visibility:hidden; height:100px; z-index:5" onclick="exemptClearMenus(this.id);">
+<table class="ev_layer_table" cellspacing="0">
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';" id="ev_forum_settings">
+<td><a href="http://evilpumpkinracing.com/eve/cp?x_show_template_page=cfrmmain&amp;x_show_template_module=ubb.x&amp;x_show_template_module_oid=479108" onclick="clearMenus();" target="_blank" rel="nofollow">Forum Settings</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';" id="ev_manmems_link" style="display:none;">
+<td><a href="http://evilpumpkinracing.com/eve/cp?x_show_template_page=ammgmt&amp;x_show_template_module_oid=328108" onclick="clearMenus();" target="_blank" rel="nofollow">Manage Members</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';" id="ev_onow_link" style="display:none;">
+<td><a href="http://evilpumpkinracing.com/eve/cp?x_show_template_page=aolnow&amp;x_show_template_module_oid=328108" onclick="clearMenus();" target="_blank" rel="nofollow">Online Now</a></td>
+</tr>
+<tr onmouseover="this.className='ev_menu_on';" onmouseout="this.className='';" id="ev_cp_link" style="display:none;">
+<td><a href="http://evilpumpkinracing.com/eve/cp" onclick="clearMenus();" target="_blank" rel="nofollow">Control Panel</a></td>
+</tr>
+</table>
+</div>
+<div class="eve_tab_menu" id="gs_tab_private_menu" style="position:absolute; left:200px; top:200px;visibility:hidden; height:100px; z-index:5" onclick="exemptClearMenus(this.id);">
+<table class="ev_layer_table" cellspacing="0">
+</table>
+</div>
+<div id="gs_menu_y_baseline">
+<table class="ev_container" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td>Welcome!&nbsp;</td><td class="ev_container_right_td"><span id="gs_login_text">&nbsp;<a id="ev_login_text" href="http://evilpumpkinracing.com/eve/login" rel="nofollow">Login/Join</a><span id="ev_logout_text" style="display:none">Welcome, <script>
+        if(eve_cookie.parsed && eve_cookie.u && eve_cookie.u!='' && eve_cookie.u!=null && eve_cookie.user_oid!=''  && eve_cookie.user_oid!=null  ){
+              document.write(eve_cookie.u.replace(/\+/g," "));
+              }
+       </script> [<a href="http://evilpumpkinracing.com/eve/logout" rel="nofollow">Logout</a>]&nbsp; </span></span></td><td id="login_menu_anchor" class="ev_tr_corner">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript"><!--
+        if(eve_cookie.parsed && eve_cookie.u && eve_cookie.u!='' && eve_cookie.u!=null && eve_cookie.user_oid!=''  && eve_cookie.user_oid!=null  ){
+          showLoginMsg();
+        }
+      function showLoginMsg(){
+         // var msg = 'Welcome,  ' + eve_cookie.u.replace(/\+/g," ") + ' [<a href="" rel="nofollow"  >Logout</a>] ' ;
+         // getObjById('gs_login_text').innerHTML = msg;
+
+          showElement('ev_logout_text');
+          hideElement('groupee_off');
+
+          showElement('groupee_on');
+          hideElement('ev_login_text');
+
+
+      }// end fn
+      --></script>
+</div>
+<table class="ubbx_cfrm_cat_tbl" cellspacing="0" id="gs_frm_id_889108">
+<tr>
+<td class="ubbx_cfrm_cat_icon"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="ubb_cat_content" onclick="javascript:toggleView('gs_desc_forum_list_889108', 'gs_cat_desc_889108');toggleClass('gs_desc_forum_list_889108_plus', 'ubb_cat_plus' , 'ubb_cat_minus')" onload="newContentCheck(this, 'Thu, 10 Mar 2005 08:29:04 GMT-0800')"><span class="ubbx_cfrm_cat_icon_plus"><img id="gs_desc_forum_list_889108_plus" class="ubb_cat_minus" src="http://evilpumpkinracing.com/infopop/blank.gif" onclick="javascript:toggleView('gs_desc_forum_list_889108');toggleClass('gs_desc_forum_list_889108_plus', 'ubb_cat_plus' , 'ubb_cat_minus')"></span></td><td><a class="ubbx_cfrm_com_title_link" href="http://evilpumpkinracing.com/eve/ubb.x/a/cfrm/f/889108">Racing</a>
+<div class="ubbx_cfrm_com_desc" id="gs_cat_desc_889108">Welcome to the Evil Pumpkin Racing Web Site!  If you like motorcycle roadracing then you are in the right place.  So...kick back, take your shoes off and stay awhile.  There's plenty to read, see & enjoy!</div>
+</td><td class="ubbx_cfrm_cat_info">Latest Post: <b><span class="ev_text_timecolor"><script>document.write('<nobr>'+ myTimeZone('Thu, 10 Mar 2005 08:29:04 GMT-0800', '10 March 2005 <nobr>10:29 AM</nobr>')+'</nobr>');</script>
+<noscript>10 March 2005 <nobr>10:29 AM</nobr>
+</noscript>
+</span></b></td>
+</tr>
+</table>
+<table cellspacing="0" class="ev_com_tbl" id="gs_desc_forum_list_889108">
+<tr>
+<th class="ev_forum_td_icon">&nbsp;</th><th class="ev_forum_td_title">Forum</th><th class="ev_cfrm_topic_count">Topics</th><th class="ev_cfrm_post_count">Posts</th><th class="ev_forum_td_lastreply">Last Post</th>
+</tr>
+<tr id="gs_frm_id_399108">
+<td class="ev_forum_td_icon"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="ubb_forum_content" onload="newContentCheck(this, 'Thu, 03 Mar 2005 07:28:23 GMT-0800');"></td><td class="ev_forum_td_title"><a class="ubbx_cfrm_com_title_link" href="http://evilpumpkinracing.com/eve/ubb.x/a/frm/f/399108">General Chatter</a></td><td class="ev_cfrm_topic_count">11</td><td class="ev_cfrm_post_count">25</td><td class="ev_forum_td_lastreply"><img class="ubb_post_icon1" src="http://evilpumpkinracing.com/infopop/blank.gif" style="margin:2px 5px 15px;float:left;align:left"><div class="ev_cfrm_lp_info">
+<b><a href="http://evilpumpkinracing.com/eve/ubb.x/a/tpc/f/399108/m/9490086913/r/4740003023#4740003023">Re: Whazzzup...</a> (Hi-Side)</b>
+<br>
+<span class="ev_text_timecolor"><script>document.write('<nobr>'+ myTimeZone('Thu, 03 Mar 2005 07:28:23 GMT-0800', '03 March 2005 <nobr>09:28 AM</nobr>')+'</nobr>');</script>
+<noscript>03 March 2005 <nobr>09:28 AM</nobr>
+</noscript>
+</span>
+</div>
+</td>
+</tr>
+<tr id="gs_frm_id_599108">
+<td class="ev_forum_td_icon"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="ubb_forum_content" onload="newContentCheck(this, 'Thu, 10 Mar 2005 08:29:04 GMT-0800');"></td><td class="ev_forum_td_title"><a class="ubbx_cfrm_com_title_link" href="http://evilpumpkinracing.com/eve/ubb.x/a/frm/f/599108">Race Reports</a></td><td class="ev_cfrm_topic_count">25</td><td class="ev_cfrm_post_count">42</td><td class="ev_forum_td_lastreply"><img class="ubb_post_icon1" src="http://evilpumpkinracing.com/infopop/blank.gif" style="margin:2px 5px 15px;float:left;align:left"><div class="ev_cfrm_lp_info">
+<b><a href="http://evilpumpkinracing.com/eve/ubb.x/a/tpc/f/599108/m/4560056123/r/4310056223#4310056223">Re: First Race of the Season... Ye...</a> (epr194)</b>
+<br>
+<span class="ev_text_timecolor"><script>document.write('<nobr>'+ myTimeZone('Thu, 10 Mar 2005 08:29:04 GMT-0800', '10 March 2005 <nobr>10:29 AM</nobr>')+'</nobr>');</script>
+<noscript>10 March 2005 <nobr>10:29 AM</nobr>
+</noscript>
+</span>
+</div>
+</td>
+</tr>
+<tr id="gs_frm_id_4131001">
+<td class="ev_forum_td_icon"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="ubb_forum_content" onload="newContentCheck(this, 'Mon, 02 Aug 2004 09:10:43 GMT-0700');"></td><td class="ev_forum_td_title"><a class="ubbx_cfrm_com_title_link" href="http://evilpumpkinracing.com/eve/ubb.x/a/frm/f/4131001">JenSpeed</a>
+<div class="ubbx_cfrm_com_desc">JenSpeed HQ - Private Forum</div>
+</td><td class="ev_cfrm_topic_count">3</td><td class="ev_cfrm_post_count">15</td><td class="ev_forum_td_lastreply">
+<div class="ev_cfrm_lp_info">
+<span class="ev_text_timecolor"><script>document.write('<nobr>'+ myTimeZone('Mon, 02 Aug 2004 09:10:43 GMT-0700', '02 August 2004 <nobr>11:10 AM</nobr>')+'</nobr>');</script>
+<noscript>02 August 2004 <nobr>11:10 AM</nobr>
+</noscript>
+</span>
+</div>
+</td>
+</tr>
+</table>
+<table class="ubbx_cfrm_cat_tbl" cellspacing="0" id="gs_frm_id_199108">
+<tr>
+<td class="ubbx_cfrm_cat_icon"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="ubb_cat_content" onclick="javascript:toggleView('gs_desc_forum_list_199108', 'gs_cat_desc_199108');toggleClass('gs_desc_forum_list_199108_plus', 'ubb_cat_plus' , 'ubb_cat_minus')" onload="newContentCheck(this, 'Fri, 18 Mar 2005 09:20:47 GMT-0800')"><span class="ubbx_cfrm_cat_icon_plus"><img id="gs_desc_forum_list_199108_plus" class="ubb_cat_minus" src="http://evilpumpkinracing.com/infopop/blank.gif" onclick="javascript:toggleView('gs_desc_forum_list_199108');toggleClass('gs_desc_forum_list_199108_plus', 'ubb_cat_plus' , 'ubb_cat_minus')"></span></td><td><a class="ubbx_cfrm_com_title_link" href="http://evilpumpkinracing.com/eve/ubb.x/a/cfrm/f/199108">Books</a></td><td class="ubbx_cfrm_cat_info">Latest Post: <b><span class="ev_text_timecolor"><script>document.write('<nobr>'+ myTimeZone('Fri, 18 Mar 2005 09:20:47 GMT-0800', '18 March 2005 <nobr>11:20 AM</nobr>')+'</nobr>');</script>
+<noscript>18 March 2005 <nobr>11:20 AM</nobr>
+</noscript>
+</span></b></td>
+</tr>
+</table>
+<table cellspacing="0" class="ev_com_tbl" id="gs_desc_forum_list_199108">
+<tr>
+<th class="ev_forum_td_icon">&nbsp;</th><th class="ev_forum_td_title">Forum</th><th class="ev_cfrm_topic_count">Topics</th><th class="ev_cfrm_post_count">Posts</th><th class="ev_forum_td_lastreply">Last Post</th>
+</tr>
+<tr id="gs_frm_id_999108">
+<td class="ev_forum_td_icon"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="ubb_forum_content" onload="newContentCheck(this, 'Fri, 18 Mar 2005 09:20:47 GMT-0800');"></td><td class="ev_forum_td_title"><a class="ubbx_cfrm_com_title_link" href="http://evilpumpkinracing.com/eve/ubb.x/a/frm/f/999108">Margie's Book Lair</a>
+<div class="ubbx_cfrm_com_desc">Forum for Brainstorming Margie's book stuff.  Access is by invitation only.</div>
+</td><td class="ev_cfrm_topic_count">35</td><td class="ev_cfrm_post_count">239</td><td class="ev_forum_td_lastreply">
+<div class="ev_cfrm_lp_info">
+<span class="ev_text_timecolor"><script>document.write('<nobr>'+ myTimeZone('Fri, 18 Mar 2005 09:20:47 GMT-0800', '18 March 2005 <nobr>11:20 AM</nobr>')+'</nobr>');</script>
+<noscript>18 March 2005 <nobr>11:20 AM</nobr>
+</noscript>
+</span>
+</div>
+</td>
+</tr>
+</table>
+<table class="ubbx_cfrm_cat_tbl" cellspacing="0" id="gs_frm_id_7131001">
+<tr>
+<td class="ubbx_cfrm_cat_icon"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="ubb_cat_content" onclick="javascript:toggleView('gs_desc_forum_list_7131001', 'gs_cat_desc_7131001');toggleClass('gs_desc_forum_list_7131001_plus', 'ubb_cat_plus' , 'ubb_cat_minus')" onload="newContentCheck(this, 'Tue, 22 Mar 2005 20:49:52 GMT-0800')"><span class="ubbx_cfrm_cat_icon_plus"><img id="gs_desc_forum_list_7131001_plus" class="ubb_cat_minus" src="http://evilpumpkinracing.com/infopop/blank.gif" onclick="javascript:toggleView('gs_desc_forum_list_7131001');toggleClass('gs_desc_forum_list_7131001_plus', 'ubb_cat_plus' , 'ubb_cat_minus')"></span></td><td><a class="ubbx_cfrm_com_title_link" href="http://evilpumpkinracing.com/eve/ubb.x/a/cfrm/f/7131001">Video Games</a>
+<div class="ubbx_cfrm_com_desc" id="gs_cat_desc_7131001">Mostly MMORPG  Related</div>
+</td><td class="ubbx_cfrm_cat_info">Latest Post: <b><span class="ev_text_timecolor"><script>document.write('<nobr>'+ myTimeZone('Tue, 22 Mar 2005 20:49:52 GMT-0800', '22 March 2005 <nobr>10:49 PM</nobr>')+'</nobr>');</script>
+<noscript>22 March 2005 <nobr>10:49 PM</nobr>
+</noscript>
+</span></b></td>
+</tr>
+</table>
+<table cellspacing="0" class="ev_com_tbl" id="gs_desc_forum_list_7131001">
+<tr>
+<th class="ev_forum_td_icon">&nbsp;</th><th class="ev_forum_td_title">Forum</th><th class="ev_cfrm_topic_count">Topics</th><th class="ev_cfrm_post_count">Posts</th><th class="ev_forum_td_lastreply">Last Post</th>
+</tr>
+<tr id="gs_frm_id_9131001">
+<td class="ev_forum_td_icon"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="ubb_forum_content" onload="newContentCheck(this, 'Thu, 16 Dec 2004 10:37:37 GMT-0800');"></td><td class="ev_forum_td_title"><a class="ubbx_cfrm_com_title_link" href="http://evilpumpkinracing.com/eve/ubb.x/a/frm/f/9131001">Division 13 CoH</a>
+<div class="ubbx_cfrm_com_desc">Forum for the CoH Super Group - Division 13.</div>
+</td><td class="ev_cfrm_topic_count">15</td><td class="ev_cfrm_post_count">62</td><td class="ev_forum_td_lastreply"><img class="ubb_post_icon1" src="http://evilpumpkinracing.com/infopop/blank.gif" style="margin:2px 5px 15px;float:left;align:left"><div class="ev_cfrm_lp_info">
+<b><a href="http://evilpumpkinracing.com/eve/ubb.x/a/tpc/f/9131001/m/1350022292/r/8390041592#8390041592">Re: WoW Must Be That Good</a> (magpye)</b>
+<br>
+<span class="ev_text_timecolor"><script>document.write('<nobr>'+ myTimeZone('Thu, 16 Dec 2004 10:37:37 GMT-0800', '16 December 2004 <nobr>12:37 PM</nobr>')+'</nobr>');</script>
+<noscript>16 December 2004 <nobr>12:37 PM</nobr>
+</noscript>
+</span>
+</div>
+</td>
+</tr>
+<tr id="gs_frm_id_9010000882">
+<td class="ev_forum_td_icon"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="ubb_forum_content" onload="newContentCheck(this, 'Tue, 22 Mar 2005 20:49:52 GMT-0800');"></td><td class="ev_forum_td_title"><a class="ubbx_cfrm_com_title_link" href="http://evilpumpkinracing.com/eve/ubb.x/a/frm/f/9010000882">Division 13 WoW</a>
+<div class="ubbx_cfrm_com_desc">Forum for the Worlds of Warcraft Guild - Division 13.</div>
+</td><td class="ev_cfrm_topic_count">44</td><td class="ev_cfrm_post_count">267</td><td class="ev_forum_td_lastreply"><img class="ubb_post_icon1" src="http://evilpumpkinracing.com/infopop/blank.gif" style="margin:2px 5px 15px;float:left;align:left"><div class="ev_cfrm_lp_info">
+<b><a href="http://evilpumpkinracing.com/eve/ubb.x/a/tpc/f/9010000882/m/4790074623/r/2090036623#2090036623">Re: MX0</a> (Kobutah)</b>
+<br>
+<span class="ev_text_timecolor"><script>document.write('<nobr>'+ myTimeZone('Tue, 22 Mar 2005 20:49:52 GMT-0800', '22 March 2005 <nobr>10:49 PM</nobr>')+'</nobr>');</script>
+<noscript>22 March 2005 <nobr>10:49 PM</nobr>
+</noscript>
+</span>
+</div>
+</td>
+</tr>
+</table>
+<table class="ev_container_bottom" cellspacing="0">
+<tr>
+<td class="ev_bl_corner">&nbsp;</td><td class="ev_container_left">&nbsp;</td><td class="ev_poweredby"><a class="ev_text_poweredby" href="http://www.infopop.com/landing/goto.php?a=eve" target="_blank">i n f o p o p</a>&nbsp;&nbsp;<img src="http://evilpumpkinracing.com/infopop/powered_by_bulb.gif" align="absmiddle">&nbsp;&nbsp;<a id="ev_powered_by" class="ev_text_poweredby" href="javascript:void(0)" onclick="positionDiv('ev_powered_by_menu','center','bottom');">e v e</a></td><td class="ev_container_right_td">&nbsp;</td><td class="ev_br_corner">&nbsp;</td>
+</tr>
+</table>
+<div id="eve_wait_message" style="position:absolute;top:55px;left:66px;z-index:75;visibility:hidden">
+<table align="center" cellpadding="5">
+<tr>
+<td><img src="http://evilpumpkinracing.com/infopop/eve/loading.gif" width="40" height="36"></td><td style="font-family:verdana, arial;font-size:75%;border-left:1px solid #cccccc;">&nbsp;Please Wait. Your request is being processed...</td>
+</tr>
+</table>
+</div>
+<div id="ev_powered_by_menu" style="position:absolute;visibility:hidden;bottom:200px;left:330px;width:400px; height:100px; z-index:5">
+<table align="center" cellpadding="0" cellspacing="4" width="255" bgcolor="#FFFFCC" style="border:1px solid #000000;">
+<tr>
+<td nowrap colspan="2">
+<table width="100%" padding="0" cellspacing="0">
+<tr>
+<td><span class="ev_text_small" style="color:#000000;"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="eve_eve_icon">&nbsp;<b><a style="color:#000000;" href="http://www.infopop.com/landing/goto.php?a=eve" target="_blank">Eve Platform Status</a></b></span></td><td width="22" onclick="document.getElementById('ev_powered_by_menu').style.visibility='hidden'" align="right"><span class="ev_text_small" style="cursor:pointer;color:#000000;">[x]</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><span class="ev_text_small" style="color:#000000;">Site</span></td><td><span class="ev_text_small" style="color:#000000;">evilpumpkinracing.com</span></td>
+</tr>
+<tr>
+<td><span class="ev_text_small" style="color:#000000;">Servlet</span></td><td><span class="ev_text_small" style="color:#000000;">eve1da022</span></td>
+</tr>
+<tr>
+<td><span class="ev_text_small" style="color:#000000;">Version</span></td><td><span class="ev_text_small" style="color:#000000;">Eve 1.2.6&nbsp;build 0</span></td>
+</tr>
+<tr>
+<td><span class="ev_text_small" style="color:#000000;">Module</span></td><td colspan="2"><span class="ev_text_small" style="color:#000000;">UBB.x 4.0.3</span></td>
+</tr>
+<tr>
+<td><span class="ev_text_small" style="color:#000000;">Stylesheet</span></td><td nowrap><span class="ev_text_small" style="color:#000000;"> "Eve"</span></td>
+</tr>
+<tr>
+<td><span class="ev_text_small" style="color:#000000;">Wordlet Set</span></td><td nowrap><span class="ev_text_small" style="color:#000000;"> "Default Wordlet Set"</span></td>
+</tr>
+</table>
+</div>
+<div id="gs_logout_menu" style="visibility:hidden;position:absolute" onclick="exemptClearMenus(this.id);" class="ev_menu_logout">
+<a href="http://evilpumpkinracing.com/eve/logout">Logout: evilpumpkinracing.com</a>
+<br>
+<a href="" target="_blank">Update Groupee Account </a>
+</div>
+<div id="ubbx_cfrm_reg_member_count" class="ev_background_txt">Registered Members: 35</div>
+<br>
+<div class="ev_background_txt" id="eve_bc_bottom">
+<a href="http://evilpumpkinracing.com">Evil Pumpkin Racing</a>&nbsp;&nbsp;<img src="http://evilpumpkinracing.com/infopop/blank.gif" class="eve_bread_tier1" align="absmiddle" alt="" title="">&nbsp;&nbsp;<a href="http://evilpumpkinracing.com/eve">evilpumpkinracing.com</a>&nbsp;&nbsp;<img src="http://evilpumpkinracing.com/infopop/blank.gif" class="eve_ubbx_icon" align="absmiddle" alt="" title="">&nbsp;&nbsp;Forums</div>
+</div>
+<br>
+<div id="ev_contact_links" class="ev_background_txt">
+<a href="mailto:rwn194@evilpumpkinracing.com">Contact Us</a> | <a href="http://evilpumpkinracing.com" target="_top">Evil Pumpkin Racing</a> | <a href="javascript:void(0);" onclick="window.open('http://evilpumpkinracing.com/eve/tos','','width=400,height=425,toolbar=no, location=no,directories=no,status=yes,menubar=no,scrollbars=yes,copyhistory=yes, resizable=yes');">Terms of Service</a>
+</div>
+</div>
+<div id="gs_user_contact_menu" onclick="exemptClearMenus(this.id)" style="position:absolute; top:50px; left:50px; visibility:hidden; width:250px;height:100px;">
+<table cellspacing="0" class="ev_layer_table">
+<tr>
+<td class="ev_menu_img"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="eve_profile" alt=""></td><td><a href="http://evilpumpkinracing.com/eve/myspace?x_myspace_page=profile&amp;u=$GS_USER_OID" target="_top"> View $GS_USERNAME's Public Profile</a></td>
+</tr>
+<tr class="gs_user_not_logged_in">
+<td class="ev_menu_img"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="eve_buddies" alt=""></td><td><a href="javascript:void(0)" onclick="{sizePopup('conf', 'http://evilpumpkinracing.com/eve?a=ADD_MEMBERS_TO_CONTACTS&amp;MEMBER_OID_$GS_USER_OID=Y&amp;x_popup=Y&amp;x_simple=Y','open');document.getElementById('gs_user_contact_menu').style.visibility='hidden'}">Add $GS_USERNAME to my Buddies</a></td>
+</tr>
+<tr class="gs_user_not_logged_in">
+<td class="ev_menu_img"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="eve_priv_msg" alt=""></td><td><a href="javascript:void(0);" onclick="sizePopup('topic','http://evilpumpkinracing.com/eve?a=ptpc&amp;u=$GS_USER_OID&amp;x_popup=Y','open');" id="gs_user_contact_menu_name2">Invite $GS_USERNAME to a Private Topic</a></td>
+</tr>
+<tr>
+<td class="ev_menu_img"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="eve_user_posts_new" alt=""></td><td><a href="http://evilpumpkinracing.com/eve/ubb.x?a=search&amp;sortType=1&amp;u=$GS_USER_OID" id="gs_user_contact_menu_name3" target="_top" rel="nofollow">View Recent Posts by $GS_USERNAME</a></td>
+</tr>
+<tr class="gs_user_not_logged_in">
+<td class="ev_menu_img"><img src="http://evilpumpkinracing.com/infopop/blank.gif" class="eve_notify" alt=""></td><td><a href="javascript:void(0);" id="gs_user_contact_menu_name4" onclick="window.open('http://evilpumpkinracing.com/eve?a=scfrm&amp;type=M&amp;content=$GS_USER_OID&amp;smod=479108&amp;x_popup=Y','','width=450,height=425,toolbar=no, location=no,directories=no,status=yes,menubar=no,scrollbars=no,copyhistory=yes, resizable=yes');">Notify me of New Posts by $GS_USERNAME</a></td>
+</tr>
+</table>
+</div>
+<script id="setDisplayJS" type="text/javascript">
+         // check to see if there is a pref for this
+         if((window.pref)&&(pref[window.site_oid])&&(pref[window.site_oid].cfrm_hide)){
+           hideList = makeList(pref[window.site_oid].cfrm_hide);
+           setDisplayByArray(hideList,'none');
+            for(i in hideList) {// sync plus/minus images
+              if(document.getElementById(hideList[i]+'_plus')) { document.getElementById(hideList[i]+'_plus').className ="ubb_cat_plus"};
+            }
+          }
+      </script><script type="text/javascript">
+      document.body.style.visibility="visible";
+    </script>
+<div id="gs_prefs_form" style="position:absolute;top:60px;left:60px;z-index:3;visibility:hidden">
+<form id="update_prefs_id" name="REGISTER" method="post" action="http://evilpumpkinracing.com/eve/ubb.x">
+<input type="hidden" name="a" value="UPDATE_USER_PREFERENCES"><input type="hidden" name="useroptid,$GS_USER_OID,$GS_USEROPT_NAME" value="Y"><input type="hidden" name="useropt,$GS_USER_OID,$GS_USEROPT_NAME" value="$GS_USEROPT_VALUE">
+</form>
+</div>
+<div id="gs_msg_iframe_wrapper" style="position:absolute; left:-500px; top:0px; visibility:hidden:z-index:-55">
+<iframe name="gs_msg_iframe" src=""></iframe>
+</div>
+<div id="gs_msg_dynamic" style="position:absolute; left:400px; top:100px; visibility:hidden; width:250px;height:250px;" onClick="event.cancelBubble=true">
+<table class="ev_message_alert" width="100%" align="center" cellpadding="2" cellspacing="0">
+<tr onmousedown="startDrag(event,'gs_msg_dynamic')" style="cursor:pointer;">
+<td align="right" class="ev_grab_bar" style="padding-right:5px;"><input onclick="document.getElementById('gs_msg_dynamic').style.visibility='hidden'" class="ev_input_normal" type="button" value=" X "></td>
+</tr>
+<tr>
+<td style="font-size:83%" class="ev_content" id="gs_msg_dynamic_content">
+<br>
+<br>
+</td>
+</tr>
+</table>
+</div>
+<div id="gs_hopto_menu" style="position:absolute;top:40px; width:235px; left:50px; visibility:hidden; z-index:999" onclick="exemptClearMenus(this.id)">
+<table align="left" border="0" id="hopto_table" class="ev_hopto_table" cellpadding="0" cellspacing="0" width="235">
+<tbody>
+</tbody>
+</table>
+</div>
+<div id="hopto_images" style="position:absolute; top:40px; left:40px; visibility:hidden;">
+<img class="ubb_arr_up" src="http://evilpumpkinracing.com/infopop/blank.gif"><img class="ubb_arr_down" src="http://evilpumpkinracing.com/infopop/blank.gif"></div>
+<script src="http://evilpumpkinracing.com/eve/a/pjs/1111522230.js"></script>
+<div id="gs_global_menu" style="position:absolute; top:40px; left:40px; visibility:hidden;">
+<table border="0" class="ev_layer_table" cellpadding="0" cellspacing="0">
+<tr>
+<td class="ev_layer_hopto_td" onmouseover="this.className='ev_layer_table_hover';" onmouseout="this.className='ev_layer_hopto_td'"><a title="View posts since your last visit" href="http://evilpumpkinracing.com/eve/ubb.x?a=nslv" class="ev_text_containercolor" onclick="clearMenus();getObjById('gs_msg_dynamic_content').innerHTML = wait_message;positionDiv('gs_msg_dynamic','left','top',320,270,220,65);" rel="nofollow">
+            New Since your Last Visit</a></td>
+</tr>
+<tr>
+<td class="ev_layer_hopto_td" onmouseover="this.className='ev_layer_table_hover';" onmouseout="this.className='ev_layer_hopto_td'"><a title="View todays active topics" href="http://evilpumpkinracing.com/eve/ubb.x?a=tat" class="ev_text_containercolor" onclick="clearMenus();getObjById('gs_msg_dynamic_content').innerHTML = wait_message;positionDiv('gs_msg_dynamic','left','top',320,270,220,65);" rel="nofollow">
+          Today's Active Topics</a></td>
+</tr>
+</table>
+</div>
+
+
+<script id="ev_perms_lib" type="text/javascript" src="http://evilpumpkinracing.com/infopop/jscript/eve_perms_lib.js"></script>
+<script id="ev_guest_perms" type="text/javascript" src="http://evilpumpkinracing.com/eve/a/permjs/u/guests/001103553552501.js"></script>
+<script id="ev_user_perms" type="text/javascript">
+            if (window.userIsLoggedIn && window.constructorFileLoaded) {
+                 
+                 document.write('<scri' + 'pt id="ev_allreg_perms" type="text/javascri' + 'pt" src="' + 'http://evilpumpkinracing.com/eve/a/permjs/u/regusers/001100796740638.js' + '"></scri' + 'pt>');
+                 
+                 document.write('<scri' + 'pt id="ev_user_perms_specific" type="text/javascri' + 'pt" src="' + 'http://evilpumpkinracing.com/eve'+ '/a/permjs/00'+ eve_cookie.perms_datetime + '.js"></scri' + 'pt>');
+            }
+    </script>
+
+
+
+<script type="text/javascript">
+    
+
+     res_oid = new Object();
+     res_oid.eve = '328108';
+
+     if(hasPerm(res_oid.eve,eveadmin.superadmin)){ // master level override
+         hasPerm.all_perms=true;  
+     }
+
+    
+
+     if (hasPerm(res_oid.eve, eveadmin.moduleadmin)){showElement('ev_display_admin','ev_cp_link','ev_onow_link','ev_manmems_link');};
+     if (hasPerm(res_oid.eve, eveadmin.cpa)){showElement('ev_display_admin','ev_cp_link')};
+     if (hasPerm(res_oid.eve, eveadmin.manmem)){showElement('ev_display_admin','ev_manmems_link');};
+      
+    
+      res_oid.ubbx ='479108';   
+      res_oid.ubbx_forum ='';
+      
+      if(hasPerm(res_oid.ubbx,ubbxadmin.moduleadmin)){ 
+           hasPerm.all_perms=true; // set override so that EVERY test returns true 
+      }
+
+      if (hasPerm(res_oid.ubbx, ubbxadmin.cpa)){ showElement('ev_display_admin','ev_cp_link');};
+       
+      
+    // Page-specific permissions code for Categories and Forums page
+    if(hasPerm(res_oid.ubbx, ubbxadmin.manage_forum_setting)){showElement('ev_display_admin','ev_forum_settings');};
+  
+    page_permissions_loaded = true;
+
+     
+    showPmIndicator();// check for new PM
+
+
+    </script>
+</body>
+</html>

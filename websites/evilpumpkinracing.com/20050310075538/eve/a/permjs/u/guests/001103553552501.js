@@ -1,0 +1,34 @@
+res_328108_PERM_PLATFORM_1007 = true;
+res_889108_PERM_UBBX_3012 = true;
+res_199108_PERM_UBBX_3012 = true;
+res_399108_PERM_UBBX_3012 = true;
+res_599108_PERM_UBBX_3012 = true;
+res_799108_PERM_UBBX_3012 = true;
+res_479108_PERM_UBBX_1023 = true;
+res_889108_PERM_UBBX_3000 = true;
+res_199108_PERM_UBBX_3000 = true;
+res_399108_PERM_UBBX_3000 = true;
+res_599108_PERM_UBBX_3000 = true;
+res_799108_PERM_UBBX_3000 = true;
+res_479108_PERM_UBBX_1006 = true;
+res_479108_PERM_UBBX_1001 = true;
+res_479108_PERM_UBBX_1015 = true;
+res_479108_PERM_UBBX_1000 = true;
+res_479108_PERM_UBBX_1007 = true;
+res_479108_PERM_UBBX_1004 = true;
+res_479108_PERM_UBBX_1002 = true;
+res_479108_PERM_UBBX_1009 = true;
+res_6001011_PERM_CHIM_1000 = true;
+res_6001011_PERM_CHIM_1001 = true;
+res_9010000882_PERM_UBBX_3012 = true;
+res_9131001_PERM_UBBX_3000 = true;
+res_9131001_PERM_UBBX_3012 = true;
+res_9010000882_PERM_UBBX_3000 = true;
+res_479108_PERM_UBBX_1030 = true;
+res_599108_PERM_UBBX_3006 = true;
+res_399108_PERM_UBBX_3006 = true;
+
+
+permissions_lib_loaded = true;
+
+  
