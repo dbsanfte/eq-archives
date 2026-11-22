@@ -1,0 +1,457 @@
+<html>
+ <head>
+  <title>FenninRo.com - New Player Profile</title>
+  <style type="text/css">
+  <!--
+    A {text-decoration: none; font-size: 10pt;}
+    A:hover{text-decoration: underline;}
+   BODY {font-size: 10pt;}
+   PRE {font-size: 10pt;}
+   TD {font-size: 10pt;}
+  -->
+  </style>
+ </head>
+ <body text=ffffff bgcolor=000000 link=ccdd88 alink=ccdd88 vlink=ccdd88 topmargin=0 leftmargin=0>
+ <basefont face=Verdana, Arial, Helvetica, Sans-Serif>
+
+  <center>
+   <table border=0 cellpadding=0 cellspacing=0 width=600>
+
+
+    <tr><td><img src="/images/corner.jpg"></td><td  colspan=3 background="/images/lr.jpg"><img src="/images/dot.gif"></td><td><img src="/images/corner.jpg"></td></tr>
+	<tr><td background="/images/updn.jpg"><img src="/images/dot.gif"></td><td colspan=3><center><img src="/images/ba_lg_main_02.jpg"></td><td background="/images/updn.jpg"><img src="/images/dot.gif"></td></tr>
+    <tr><td><img src="/images/corner.jpg"></td><td background="/images/lr.jpg"><img src="/images/dot.gif"></td><td><img src="/images/corner.jpg"></td><td background="/images/lr.jpg"><img src="/images/dot.gif"></td><td><img src="/images/corner.jpg"></td></tr>
+
+	<tr>
+	  <td background="/images/updn.jpg"><img src="/images/dot.gif"></td>
+      <td bgcolor=331111 background="/images/bg1.gif">
+	    <center>
+        <a href="http://www.ugo.com/"><img src="/images/UGOaffiliate_blk.gif" border=0></a>
+	  </td>
+	  <td background="/images/updn.jpg"><img src="/images/dot.gif"></td>
+      <td bgcolor=331111 background="/images/bg1.gif"><center>
+
+<!-- AdSpace size=468x60 affiliate=prexus channel=games subchannel=rpg Network=affiliates
+rating=pg13 --> <iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no
+src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=prexus&channel=games&subchannel=rpg&Network=affiliates&rating=pg13"><script language="javascript1.1"
+src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=prexus&channel=games&subchannel=rpg&Network=affiliates&rating=pg13"></script><noscript><a
+href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=prexus&channel=games&subchannel=rpg&Network=affiliates&rating=pg13"><img
+src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=prexus&channel=games&subchannel=rpg&Network=affiliates&rating=pg13"
+border=0></a></noscript></iframe><!-- /AdSpace --> 
+
+
+ 	    
+      </td>
+	  <td background="/images/updn.jpg"><img src="/images/dot.gif"></td>
+    </tr>
+	
+    <tr><td><img src="/images/corner.jpg"></td><td background="/images/lr.jpg"><img src="/images/dot.gif"></td><td><img src="/images/corner.jpg"></td><td background="/images/lr.jpg"><img src="/images/dot.gif"></td><td><img src="/images/corner.jpg"></td></tr>
+
+    <tr>
+	 <td background="/images/updn.jpg"><img src="/images/dot.gif"></td>
+	 
+     <td valign=top bgcolor=331111 background="/images/bg1.gif">
+      <table border=0 cellpadding=3 cellspacing=0 width=114>
+
+
+
+
+       <tr>
+        <td bgcolor=331111 background="/images/bg1.gif">
+         <font color=ffffff size=2>
+		  <a href="/">News</a><br>
+		  <a href="http://pub5.ezboard.com/bfenninro.html">Message Boards</a><br>
+		  <a href="/cgi-bin/artindex.pl">Art Gallery</a><br>
+		  <a href="/cgi-bin/stories.pl">Stories</a><br>
+		  <a href="/cgi-bin/guilds.pl">Guilds</a><br>
+	      <a href="/cgi-bin/websitehosting.pl">Guild Webspace</a><br>
+		  <a href="/cgi-bin/email.pl">Free Email</a><br>
+ 		  <a href="/cgi-bin/exp_calculator.pl">Exp Calculator</a><br>
+		  <a href="/cgi-bin/addevent.pl">Submit Event</a><br>
+		  <a href="/cgi-bin/addarticle.pl">Submit News</a><br>
+		  <a href="mailto:story@FenninRo.com">Submit Story</a><br>
+		  <a href="mailto:art@FenninRo.com">Submit Art</a><br>
+		  <a href="/cgi-bin/addguild.pl">Submit Guild Info</a><br>
+		  <a href="mailto:Twygg@FenninRo.com">Contact Us</a><br>
+          <br>
+		  <font color="00dd00">Player Profiles</font><br>
+		  <a href="/cgi-bin/addprofile.pl">Add New Profile</a><br>
+		  <a href="/cgi-bin/playersearch.pl">Player Search</a><br>
+		  <a href="/cgi-bin/profile_utilities.pl">Utilities</a><br>
+		  <br>
+		  <font color="00dd00">Marketplace</font><br>
+		  <a href="/cgi-bin/top_traders.pl?traders=10">Top 10 Traders</a><br>
+		  <a href="/cgi-bin/total_inventory_view.pl?searchtype=have">Complete Have List</a><br>
+		  <a href="/cgi-bin/total_inventory_view.pl?searchtype=want">Complete Want List</a><br>
+		  <a href="/cgi-bin/profile_utilities.pl">Utilities</a><br>
+		  <br>
+		  <font color="00dd00">Network</font><br>
+		  <a href="http://www.luclin.com">Luclin.com</a> <br>
+		  <a href="http://www.prexus.com">Prexus.com</a><br>
+		  <a href="http://www.Torvonnilous.net">Torvonnilous.net</a><br>
+		  <a href="http://www.tunare.com">Tunare.com</a> <br>
+          <br>
+		  <a href="http://www.sok.org/fenninro/">Collective of Old Fennin</a> <br>
+		 <br>
+         </font>
+        </td>
+       </tr>
+
+
+
+
+
+
+
+
+
+
+
+       <font></font>
+
+       </table>
+     </td>
+ 	 <td background="/images/updn.jpg"><img src="/images/dot.gif"></td>
+
+                                                                         
+                                                                         
+                                                                         
+                                                                         
+																		 
+     <td valign=top width=470>                                                              
+
+      <center>
+      <table border=0 cellpadding=3 cellspacing=0 width=475>
+	    <tr>
+         <td style="font-weight: bold; font-size: 10pt;" background="/images/bg_heading_blue_01.jpg"><center><b>New Player Profile</td>
+		</tr>
+		<tr>
+		 <td>                            
+	                                   
+
+      <center>
+        <form action="/cgi-bin/addprofile2.pl" method="post">
+      <table border=0 cellspacing=3 cellpadding=0>
+        <tr><td>Character's First Name</td>    <td><input type="text" name="firstname" size="40"></td></tr>
+        <tr><td>Character's Last Name</td>     <td><input type="text" name="lastname" size="40"></td></tr>
+        <tr><td>Email*</td>            <td><input type="text" name="email" size="40"></td></tr>
+		<tr><td>Password(used for editing your profile)</td>          <td><input type="password" name="password" size="40"></td></tr>
+		<tr><td>Verify Password</td>          <td><input type="password" name="verifypassword" size="40"></td></tr>
+        <tr><td>Class</td>
+		    <td><select name="class">
+             <option>Bard
+             <option>Cleric
+             <option>Druid
+             <option>Enchanter
+             <option>Magician
+             <option>Monk
+             <option>Necromancer
+             <option>Paladin
+             <option>Ranger
+             <option>Rogue
+             <option>Shadowknight
+             <option>Shaman
+             <option>Warrior
+             <option>Wizard
+				</select>
+			</td>
+		</tr>
+		
+        <tr><td>Race</td>
+		    <td><select name="race">
+             <option>Barbarian
+             <option>Dark Elf
+             <option>Dwarf
+             <option>Erudite
+             <option>Gnome
+             <option>Half Elf
+             <option>Halfling
+             <option>High Elf
+             <option>Human
+             <option>Iksar
+             <option>Ogre
+             <option>Troll
+             <option>Wood Elf
+				</select>
+			</td>
+		</tr>
+
+        <tr><td>Level</td>
+		    <td><select name="level">
+         <option>1
+         <option>2
+         <option>3
+         <option>4
+         <option>5
+         <option>6
+         <option>7
+         <option>8
+         <option>9
+         <option>10
+         <option>11
+         <option>12
+         <option>13
+         <option>14
+         <option>15
+         <option>16
+         <option>17
+         <option>18
+         <option>19
+         <option>20
+         <option>21
+         <option>22
+         <option>23
+         <option>24
+         <option>25
+         <option>26
+         <option>27
+         <option>28
+         <option>29
+         <option>30
+         <option>31
+         <option>32
+         <option>33
+         <option>34
+         <option>35
+         <option>36
+         <option>37
+         <option>38
+         <option>39
+         <option>40
+         <option>41
+         <option>42
+         <option>43
+         <option>44
+         <option>45
+         <option>46
+         <option>47
+         <option>48
+         <option>49
+         <option>50
+         <option>51
+         <option>52
+         <option>53
+         <option>54
+         <option>55
+         <option>56
+         <option>57
+         <option>58
+         <option>59
+         <option>60
+				</select>
+			</td>
+		</tr>
+
+		
+		<tr>
+		   <td colspan=2>
+		     <br>
+			 <center>Trade Skills (enter number for current skill level, 0-250)<br>
+			 <table>
+			   <tr>
+				 <td>Alchemy</td><td><input type="text" size="3" name="alchemy"></td>
+				 <td>Baking</td><td><input type="text" size="3" name="baking"></td>
+				 <td>Blacksmithing</td><td><input type="text" size="3" name="blacksmithing"></td>
+			   </tr>
+			   
+			   <tr>
+				 <td>Brewing</td><td><input type="text" size="3" name="brewing"></td>
+				 <td>Fletching</td><td><input type="text" size="3" name="fletching"></td>
+				 <td>Jewelry</td><td><input type="text" size="3" name="jewelry"></td>
+			   </tr>
+			    
+			   <tr>
+				 <td>Pottery</td><td><input type="text" size="3" name="pottery"></td>
+				 <td>Tailoring</td><td><input type="text" size="3" name="tailoring"></td>
+				 <td>Tinkering</td><td><input type="text" size="3" name="tinkering"></td>
+			   </tr>
+			   <tr>
+				 <td>Research</td><td><input type="text" size="3" name="research"></td>
+			   </tr>
+		     </table>
+			 <br>
+		   </td>
+		</tr>
+		
+		
+		
+        <tr><td>Guild**</td>
+		    <td><select name="guild">
+			    <option value="">Select your guild, if you are in one
+				<option value="">I'm not in a guild
+		   	 <option>-Knights Of The Ancient Code
+		   	 <option>Abyssal Warriors Of Chaos
+		   	 <option>Allied Fools
+		   	 <option>Arias'Tama Of Fennin Ro
+		   	 <option>Atani
+		   	 <option>Bane Sidhe
+		   	 <option>Blodhemn
+		   	 <option>Blood Of Honor
+		   	 <option>Blue Dragons
+		   	 <option>Blue Dragons
+		   	 <option>Bringers Of Clarity
+		   	 <option>Bringers Of The Storm
+		   	 <option>Britannic Knights
+		   	 <option>Brown Dragon Clan
+		   	 <option>Champions Of Light
+		   	 <option>Changing Tide
+		   	 <option>Chaotic Rebel
+		   	 <option>Chaotic Rebel
+		   	 <option>Circle Of The Smitten Blades
+		   	 <option>Circle Of The Smitten Blades
+		   	 <option>Circleofthesmittenblades
+		   	 <option>Coalition Of Fists
+		   	 <option>Conquest Of Norrath
+		   	 <option>Core Of Legends
+		   	 <option>Court Of Jesters
+		   	 <option>Crimson Dragons
+		   	 <option>Crusaders Of Drunken Might
+		   	 <option>DeVir
+		   	 <option>Defenders Of Ak'Anon
+		   	 <option>Defenders Of Erudin
+		   	 <option>Die Wolusus Optimus
+		   	 <option>Draco Nobilis
+		   	 <option>Dragonriders Of Norath
+		   	 <option>Dragonriders Of Norrath
+		   	 <option>Drunken Wrath
+		   	 <option>Drunken Wrath
+		   	 <option>Edroh'Eht
+		   	 <option>Elder Lords
+		   	 <option>Emancipation
+		   	 <option>Emancipation
+		   	 <option>Everlasting Honour
+		   	 <option>Exalted Dragons
+		   	 <option>Fagbringers Of Despair
+		   	 <option>Fallen Lords Of Kunark
+		   	 <option>Fallen Lords Of Kunark
+		   	 <option>Forbidden Union
+		   	 <option>Forsaken Spirit
+		   	 <option>Golden Knights Of Valor
+		   	 <option>Golden Obsidian Knights1
+		   	 <option>Harbringers Of Despair
+		   	 <option>Harbringers Of Despair
+		   	 <option>Harvesters Of Doom
+		   	 <option>Heirs Of Wisdom
+		   	 <option>Honorable Knights Of Norrath
+		   	 <option>Honos Bonitas
+		   	 <option>House Of Chop
+		   	 <option>House Of Chop
+		   	 <option>House Of Kindred
+		   	 <option>House Of Swiftjustice
+		   	 <option>House Of Swiftjustice
+		   	 <option>Immortal Lost Souls
+		   	 <option>Inner Peace Fellowship
+		   	 <option>Keeper Of Eternal Shadows
+		   	 <option>Keepers Of Kithicor
+		   	 <option>Keepers Of Kithicor
+		   	 <option>Khazi Traveling Circus
+		   	 <option>Kindred Of The Rock
+		   	 <option>La Familia
+		   	 <option>Lost Dragons
+		   	 <option>Lost Soldiers Of Darkness
+		   	 <option>Mayhem
+		   	 <option>Meta
+		   	 <option>Midnight Hour
+		   	 <option>Midnight Odyssey
+		   	 <option>Midnight Sun
+		   	 <option>Midnight Sun
+		   	 <option>Militant Order Of Ultraviolence (New)
+		   	 <option>Militant Order Of Ultraviolence
+		   	 <option>Mysterious Awakening
+		   	 <option>Mysterious Awakening
+		   	 <option>Mystical Prophecy
+		   	 <option>Mythic Synergy
+		   	 <option>Nameless Vengeance
+		   	 <option>Night Predators
+		   	 <option>Nobles
+		   	 <option>Norrath'S Elite Guard
+		   	 <option>Nox Secuutus
+		   	 <option>Order Of Draconious
+		   	 <option>Order Of Misfortune
+		   	 <option>Order Of The Sword And Staff
+		   	 <option>Patron Saints
+		   	 <option>Patron Saints
+		   	 <option>Platinum Circle
+		   	 <option>Platinum Dragons
+		   	 <option>Prestige
+		   	 <option>Pryzmatic Synergy
+		   	 <option>Quo Amicitia
+		   	 <option>Quo Amicitia
+		   	 <option>Ruis Saille
+		   	 <option>Sacred Illusion
+		   	 <option>Shadowed Champions
+		   	 <option>Silvan Rangers
+		   	 <option>Skorchers
+		   	 <option>Sleepless Knights
+		   	 <option>Soldiers Of Light
+		   	 <option>Sterling Order Of Knights
+		   	 <option>Syfts Scimitars
+		   	 <option>TMO
+		   	 <option>TMhOmo
+		   	 <option>TMhOmo
+		   	 <option>TMhOmo
+		   	 <option>T`Kagi Ro
+		   	 <option>Takara Kei
+		   	 <option>The Forgotten Order
+		   	 <option>The Heirs Of Wisdom
+		   	 <option>The Nine Chambers
+		   	 <option>Thirteenth Gate
+		   	 <option>Tiger Empire
+		   	 <option>Tu`Jol Phlith
+		   	 <option>Twice Smitten
+		   	 <option>Underfoot Nation
+		   	 <option>Universal Alliance
+		   	 <option>Unlimited Oasis [UO]
+		   	 <option>Unlimited Oasis
+		   	 <option>Valilnore
+		   	 <option>Veturi
+		   	 <option>Veturi
+		   	 <option>Veturi
+		   	 <option>Veturi
+		   	 <option>Zenith Sage
+		   	 <option>Zenith Sage
+				</select>
+		    </td>
+        </tr>
+		
+		<tr><td></td><td>If your guild is not listed here, please <a href="/cgi-bin/addguild.pl">Add it</a></td></tr>
+		
+        <tr><td>Guild Position**</td> 
+		    <td><select name="guildposition">
+			    <option>
+				<option>Guildmaster
+				<option>Officer
+				<option>Member
+				</select>
+		    </td>
+	    </tr>
+
+		
+		
+
+		
+        <tr><td colspan=2><center>Description of your character, playing style, etc.</center><textarea name="description" cols=50 rows=10></textarea></td></tr>
+        <tr><td>Picture Url</td>    <td><input type="text" name="pictureurl" size="40"></td></tr>
+		<tr><td colspan=2>If you have a picture of your character on the internet, cut and paste the url of the image in the space above.  Pictures will be re-sized to 200 pixels wide to fit the web site, so for best appearance, your image should also be 200 pixels wide.  If you do not have a picture, do not enter anything in the field above.</td></tr>
+        <tr><td colspan=2><center><input type="submit" value="submit"><input type="reset"></td></tr>
+
+      </table>
+        </form>
+		</center>
+        * Email address is required.  Providing an email address will allow other players to get in contact with you through this website, without actually giving them your email address.  Every effort will be made to keep your email address private.  Your profile can not be added to the website if a valid email address is not provided.<br>
+		<br>
+		** Guild and Guild Position are optional.  If you are not a member of a guild, leave these fields blank.<br>
+	
+          </td>
+		 </tr>
+		</table>
+
+
+     </td>
+	 <td background="/images/updn.jpg"><img src="/images/dot.gif"></td>
+    </tr>
+    <tr><td><img src="/images/corner.jpg"></td><td colspan=3 background="/images/lr.jpg"><img src="/images/dot.gif"></td><td><img src="/images/corner.jpg"></td></tr>
+   </table>
+
+</body>
+</html>
