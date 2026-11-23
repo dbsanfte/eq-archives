@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+	<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	
+	<title>Guardians of the Throne</title>
+	
+<link rel="stylesheet" type="text/css" href="/forum/Themes/shadowfury/style.css" />
+	<style type="text/css">
+	<!--
+
+		a:link, a:visited { color: #999999; background-color: transparent; text-decoration: none; }
+		a:hover { color: #FFF389; background-color: transparent; text-decoration: none; }
+		
+		.nodec { text-decoration: none; }
+		
+		TD { font-family: sans-serif; }
+		
+		.titlet { font-style: italic; font-weight: bold; font-family: sans-serif; font-size: 16pt; color: #FFF389; }
+		.titles { font-style: italic; font-weight: bold; font-family: sans-serif; font-size: 11pt; color: #000000; }
+		
+		.menut { font-weight: bold; font-family: sans-serif; font-size: 10pt; color: white; }
+		.menu2 { font-weight: bold; font-family: sans-serif; font-size: 10pt; }
+		
+		.sitetext { font-family: sans-serif; font-size: 10pt; color: black; }
+		.copyright { font-style: italic; font-size: 8pt; color: black; }
+	-->
+	</style>
+
+	</head>
+
+	<body bgcolor="#6C4193" topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>
+
+	<!--  Title Area Table  -->
+		<table style="width: 100%; height: 130px;" border="0" cellspacing="0" summary="Title Area Table.  This table is for layout formatting only.">
+			<tr>
+				<td colspan="3" rowspan="2" style="background: #3EA03E;">
+					<table border="0" cellpadding="0">
+					<tr>
+					<td><img src="/images/themes/default/GotEQ.gif" alt="GoTT EverQuest?" /></td>
+					<td>
+					<font class="titlet">Guardians of the Throne</font><br />
+					<font class="titles">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<b><i>A Maelin Starpyre Guild</i></b></font>
+					</td>
+					</tr>
+					</table>
+				</td>
+				<td style="width: 40px; height: 40px; background-color: #3EA03E; background-image: url('/images/themes/default/greendiag.gif'); background-repeat: no-repeat; background-position: top right;"></td>
+				<td colspan="3" style="height: 40px; background-color: #3EA03E; background-image: url('/images/themes/default/greentop.gif'); background-repeat: repeat-x; background-position: top;"></td>
+			</tr>
+			
+			<tr>
+				<td style="height: 70px; background: #3EA03E;"></td>
+				<td colspan="3" style="height: 70px; background: #3EA03E;"></td>
+			</tr>
+			
+			<tr>
+				<td style="height: 40px; width: 200px; background-color: #3EA03E; background-image: url('/images/themes/default/greenpurple.gif'); background-repeat: repeat-x; background-position: bottom;"></td>
+				<td style="height: 40px; width: 18px; background-color: #3EA03E; background-image: url('/images/themes/default/purpletriangle.gif'); background-repeat: no-repeat; background-position: bottom;"></td>
+				<td style="height: 40px; background-color: #3EA03E; background-image: url('/images/themes/default/purplemid.gif'); background-repeat: repeat-x; background-position: bottom;" valign="middle"><center>
+					Welcome, <b>Guest</b>. Please <a href="http://www.gotteverquest.net/forum/index.php?action=login">login</a> or <a href="http://www.gotteverquest.net/forum/index.php?action=register">register</a>. 				</center></td>
+				<td style="height: 40px; background-color: #3EA03E; background-image: url('/images/themes/default/purplemid.gif'); background-repeat: repeat-x; background-position: bottom;"></td>
+				<td style="height: 40px; width: 50px;background-color: #3EA03E; background-image: url('/images/themes/default/purplemid.gif'); background-repeat: repeat-x; background-position: bottom;"></td>
+				<td style="height: 40px; width: 18px; background-color: #3EA03E; background-image: url('/images/themes/default/greendiag2.gif'); background-repeat: no-repeat; background-position: bottom;"></td>
+				<td style="height: 40px; width: 200px; background-color: #3EA03E; background-image: url('/images/themes/default/greenpurple2.gif'); background-repeat: repeat-x; background-position: bottom;"></td>
+			</tr>
+		</table>
+
+	<!--  End Title Area Table  -->
+
+	<!--  Content Area Table  -->
+		<table style="width: 97%;" border="0" cellspacing="0" summary="Content Area Table.  This table is for layout formatting only.">
+		
+		<tr style="height: 900px;">
+			
+	<!--  Left Frame  -->
+		<td width="160" valign="top" align="center">
+		
+		<!-- <br /><br /> -->
+		<center>
+<table width="150" cellpadding="0" cellspacing="1" class="tborder" summary="Links Area Table.  This table is for layout formatting only.">
+	
+	<tr><td class="titlebg" align="left">
+	&nbsp;&nbsp;<font class="menut"><b>About the Guild</b></font>
+	</td></tr>
+	
+				
+			<tr><td class="windowbg" align="left">
+			<center>
+			<a href="/index.php" >
+			<font class="menu2">Guild News</font>
+			</a></center>
+			</td></tr>
+			
+						
+			<tr><td class="windowbg" align="left">
+			<center>
+			<a href="/roster.php" >
+			<font class="menu2">GoTT Roster</font>
+			</a></center>
+			</td></tr>
+			
+						
+			<tr><td class="windowbg" align="left">
+			<center>
+			<a href="/rott_roster.php" >
+			<font class="menu2">RoTT Roster</font>
+			</a></center>
+			</td></tr>
+			
+						
+			<tr><td class="windowbg" align="left">
+			<center>
+			<a href="/photos/" >
+			<font class="menu2">Photo Gallery</font>
+			</a></center>
+			</td></tr>
+			
+						
+			<tr><td class="windowbg" align="left">
+			<center>
+			<a href="/application.php" >
+			<font class="menu2">Join GoTT/RoTT</font>
+			</a></center>
+			</td></tr>
+			
+				
+		
+	<tr><td class="titlebg" align="left">
+	&nbsp;&nbsp;<font class="menut"><b>EverQuest Info</b></font>
+	</td></tr>
+	
+				
+			<tr><td class="windowbg" align="left">
+			<center>
+			<a href="/links.php" >
+			<font class="menu2">Links</font>
+			</a></center>
+			</td></tr>
+			
+						
+			<tr><td class="windowbg" align="left">
+			<center>
+			<a href="/lore.php" >
+			<font class="menu2">Game Lore</font>
+			</a></center>
+			</td></tr>
+			
+				
+		
+	<tr><td class="titlebg" align="left">
+	&nbsp;&nbsp;<font class="menut"><b>The Forum</b></font>
+	</td></tr>
+	
+				
+			<tr><td class="windowbg" align="left">
+			<center>
+			<a href="http://www.gotteverquest.net/forum/index.php" >
+			<font class="menu2">Home</font>
+			</a></center>
+			</td></tr>
+			
+						
+			<tr><td class="windowbg" align="left">
+			<center>
+			<a href="http://www.gotteverquest.net/forum/index.php?action=search" >
+			<font class="menu2">Search</font>
+			</a></center>
+			</td></tr>
+			
+				
+		
+	<tr><td class="titlebg" align="left">
+	&nbsp;&nbsp;<font class="menut"><b>Login</b></font>
+	</td></tr>
+	
+				
+			<tr><td class="windowbg" align="left">
+			<center>
+			<a href="http://www.gotteverquest.net/forum/index.php?action=login" >
+			<font class="menu2">Login</font>
+			</a></center>
+			</td></tr>
+			
+						
+			<tr><td class="windowbg" align="left">
+			<center>
+			<a href="http://www.gotteverquest.net/forum/index.php?action=register" >
+			<font class="menu2">Register</font>
+			</a></center>
+			</td></tr>
+			
+				
+				
+</table>
+</center>
+                                                                                                                                                                                                                                                                 		</td>
+		
+	<!-- Spacer Frame -->
+		<td width="15"></td>
+		
+	<!--  Main Frame  -->
+		<td width="*" valign="top">
+		<br />
+		<br />
+	
+				<table class="tborder" width="99%" cellspacing="1" cellpadding="4" border="0">
+			<tr><td class="titlebg">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+				<tr><td>
+					<font face="arial"><b>
+					Kael Drakkel					</b></font>
+				</td><td align="right">
+					<font face="arial"><b>
+					Mon, Jan 31, 2005					</b></font>
+				</td></tr>
+				</table>
+			</td></tr>
+			<tr><td class="windowbg2"> 
+				Hey everyone, check out the post in Event Suggestions about Kael Drakkel. We need you to post times you are available so we can schedule. We will be going in for faction and quest armor drops. If all goes well, this won't be our last trip to Kael. For a list of the Velium Quest Armor chest pieces, see the post in Event Suggestions.<br />
+<br />
+This should be alot of fun, so try to make time for it if you can!					<p>-- Kalect</p>
+			</td></tr>
+			</table><br />	
+					<table class="tborder" width="99%" cellspacing="1" cellpadding="4" border="0">
+			<tr><td class="titlebg">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+				<tr><td>
+					<font face="arial"><b>
+					Ch...ch...ch...changes are afoot.					</b></font>
+				</td><td align="right">
+					<font face="arial"><b>
+					Sun, Dec 05, 2004					</b></font>
+				</td></tr>
+				</table>
+			</td></tr>
+			<tr><td class="windowbg2"> 
+				Recent events have spawned something in me. A renewal, you might call it. (If you want to call it insanity, that's fine, but I won't, I'm too busy deluding myself.)<br />
+<br />
+Anyway, I've started keeping up better on guild events, happenings, and status.  The roster is as up to date as i can get it with out either people claiming their characters or signing up. Over the next few weeks, I will also be updating the Game Lore section of the site with info from screenshots.<br />
+<br />
+Today's main project, however, was updating the guild bank. It's there, folks, don't be afraid to ask for a loan.  The primary purpose of the guild bank is to allow people to get all their spells when they level, a supplement to their own wallets and bank accounts, NOT a run-the-bank-dry without using your own money.  Loans will also be given to supplement in the purchase of equipment, but be reasonable about it folks. If you are level 10 and dont have 100pp, please don't ask for 1.5kpp for a weapon. Kotah is currently the only person that has taken out a loan, hers was for 250pp. I will be keeping track of loans, though, and while they do not have to be paid back at any specific time, I ask that you pay it back when you can. Payments do not have to be in full, partial payments when you can afford it are ok.<br />
+<br />
+There are also several items in the guild bank for loan or purchase. Spells there are on a first come first served basis, and do not have to be purchased or returned. I will be working with Nexus to update the acutal manager for the guild bank so that it will also display a "buy it now" purchase price.  Until then, the price is listed as a comment.<br />
+<br />
+If you want to make a donation of either money or items to the guild bank, send me or Lakotah a PM either on these boards or the SOE ones so that we can arrange a time to meet in game to receive your donation.					<p>-- Coar</p>
+			</td></tr>
+			</table><br />	
+					<table class="tborder" width="99%" cellspacing="1" cellpadding="4" border="0">
+			<tr><td class="titlebg">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+				<tr><td>
+					<font face="arial"><b>
+					Fall of the Rivals of the Throne					</b></font>
+				</td><td align="right">
+					<font face="arial"><b>
+					Tue, Nov 30, 2004					</b></font>
+				</td></tr>
+				</table>
+			</td></tr>
+			<tr><td class="windowbg2"> 
+				Sadly, it is my duty to announce the (possible temporary) fall of RoTT as a guild. With the introduction of EverQuest II and World of Warcraft, RoTT will not be a real tag. If you still want to be a pirate, and a Rival of the Throne, measures ARE being put in place to accomodate you.<br />
+<br />
+The elaborate pirate spy network has infiltrated GoTT and unbeknownst (I always liked that word) to the Guardians, they have been hiding their TRUE identities. Enlisting the help of several of the most powerful wizards, enchanters, and magicians, they have hidden their true forms and devised a mystical means of secret and secure communications within their ranks.<br />
+<br />
+Here they lie in wait, anticipating their chance to strike out at those who profess their loyalty to the throne.					<p>-- Coar</p>
+			</td></tr>
+			</table><br />	
+					<table class="tborder" width="99%" cellspacing="1" cellpadding="4" border="0">
+			<tr><td class="titlebg">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+				<tr><td>
+					<font face="arial"><b>
+					RoTT Invasion					</b></font>
+				</td><td align="right">
+					<font face="arial"><b>
+					Thu, Sep 16, 2004					</b></font>
+				</td></tr>
+				</table>
+			</td></tr>
+			<tr><td class="windowbg2"> 
+				RoTT is moving in! Nex is in the process of adding RoTT forums, which some of you have seen. You will also notice RoTT's roster is now available on the left. Finally, you may now choose to use those RoTTen pirates' smile set.					<p>-- Kalect</p>
+			</td></tr>
+			</table><br />	
+		<b><a href="newsarchive.php?id=11">More News</a>			<br /><br />
+		</td></tr>
+		</table>
+	<!--  End Content Area Table  -->
+		
+		<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; table-layout: fixed;">
+		<tr>
+		<td style="height: 20px; width: 70%; background-color: #3EA03E; background-image: url('/images/themes/default/black.gif'); background-repeat: repeat-x; background-position: top;"></td>
+		<td style="height: 20px; width: 20px; background-color: #3EA03E; background-image: url('/images/themes/default/bottomdiag.gif'); background-repeat: no-repeat; background-position: top;"></td>
+		<td style="height: 20px; background-color: #6C4193; background-image: url('/images/themes/default/black.gif'); background-repeat: repeat-x; background-position: bottom;"></td>
+		</tr>
+		
+		<tr><td colspan="3" style="background: #3EA03E;">
+	
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="copyright">&copy; 2004 Guardians of the Throne<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use of this site is subject to the <a href="/terms.php"><font color="#523173">Terms of Use</font></a>.</font>
+		<br /><br />
+
+		</td></tr>
+		</table>
+	
+	</body>
+	</html>
+	
