@@ -1,0 +1,147 @@
+
+<style type="text/css">
+<!--
+select 
+	{
+	font-color:#000000; 
+	}
+body 
+	{ 
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	font-size:24px; 
+	color:#FFFFFF; 
+	background-color:#102C6B; 
+	font-color:#FFFFFF; 
+	}
+
+a:visited 
+	{ 
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	color:#D8E86E; 
+	}
+
+:active, :link 
+	{ 
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	color:#D8E86E; 
+	}
+
+table 
+	{ 
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	font-size:13px; 
+	font-color:#FFFFFF; 
+	}
+
+i.smallblue 
+	{ 
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	font-size:10px; 
+	color:#90aCeB; 
+	}
+
+font.example 
+	{
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	font-size:10px; 
+	font-style:italic;
+	color:#90aCeB; 
+	}
+
+.examplewarning 
+	{ 
+	font-size:12px; 
+	font-style:italic;
+	color:#FF1111; 
+	}
+
+.s5 
+	{
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	font-size:24px; 
+	color:#FFFFFF; 
+	}
+
+.s4 
+	{ 
+	font-size:18px; 
+	color:#FFFFFF; 
+	}
+
+.s3 
+	{
+	font-size:16px; 
+	color:#FFFFFF; 
+	}
+.s2 
+	{
+	font-size:13px; 
+	color:#FFFFFF; 
+	}
+.s1 	
+	{
+	font-size:10px; 
+	color:#FFFFFF; 
+	}
+.link2 
+	{
+	font-size:13px; 
+	color:#D8E86E; 
+	}
+.link1
+	{ 
+	font-size:10px; 
+	color:#D8E86E; 
+	}
+.chat 
+	{ 
+	font-size:13px; 
+	color:#FFFFFF; 
+	}
+.chattell 
+	{ 
+	font-size:13px; 
+	color:#61F961; 
+	}
+.chatsystem 
+	{ 
+	font-size:13px; 
+	color:#D8E86E; 
+	font-style:italic;
+	}
+.chatname 
+	{ 
+	font-size:13px; 
+	color:#90aCeB; 
+	}
+.chatbroadcast 
+	{ 
+	font-size:13px; 
+	color:#FF6111; 
+	}
+.error
+	{
+	font-size:13px; 
+	color:#FF1111; 
+	font-weight:bold;
+	}
+-->
+</style>
+
+<script LANGUAGE="JavaScript">
+<!--
+function dummy()
+	{
+	}
+-->
+</script>
+
+<body><p align=center><table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tr><td><img src="img/bg/hr2_left.gif"></td>
+				<td width="100%" background="img/bg/hr2.gif"></td>
+				<td><img src="img/bg/hr2_right.gif"></td>
+			</tr></table><img src="img/bg/calendar.gif"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tr><td><img src="img/bg/hr2_left.gif"></td>
+				<td width="100%" background="img/bg/hr2.gif"></td>
+				<td><img src="img/bg/hr2_right.gif"></td>
+			</tr></table><br><table width="100%" border="0" cellspacing="0" cellpadding="10"><tr width="100%"><td width="30%" align=right><a href="calendar.php?g_month=1&g_year=2002" target="main"><font class=link1>[<< prev]</font></a></td><td align=center><font class=s5>February 2002</font></td><td width="30%" align=left><a href="calendar.php?g_month=3&g_year=2002" target="main"><font class=link1>[next >>]</font></a></td></tr></table><table width="95%" align=center cellpadding="0" border="1" border="0" cellspacing="0" bordercolorlight="#3765dB" bordercolordark="#0E3D9C"><td align=center bgcolor="#1E4DAC" bordercolorlight="#3765dB" bordercolordark="#0E3D9C"><font color="#FFFFFF" size="4" face="Trebuchet MS">Mon</td><td align=center bgcolor="#1E4DAC" bordercolorlight="#3765dB" bordercolordark="#0E3D9C"><font color="#FFFFFF" size="4" face="Trebuchet MS">Tue</td><td align=center bgcolor="#1E4DAC" bordercolorlight="#3765dB" bordercolordark="#0E3D9C"><font color="#FFFFFF" size="4" face="Trebuchet MS">Wed</td><td align=center bgcolor="#1E4DAC" bordercolorlight="#3765dB" bordercolordark="#0E3D9C"><font color="#FFFFFF" size="4" face="Trebuchet MS">Thu</td><td align=center bgcolor="#1E4DAC" bordercolorlight="#3765dB" bordercolordark="#0E3D9C"><font color="#FFFFFF" size="4" face="Trebuchet MS">Fri</td><td align=center bgcolor="#1E4DAC" bordercolorlight="#3765dB" bordercolordark="#0E3D9C"><font color="#FFFFFF" size="4" face="Trebuchet MS">Sat</td><td align=center bgcolor="#1E4DAC" bordercolorlight="#3765dB" bordercolordark="#0E3D9C"><font color="#FFFFFF" size="4" face="Trebuchet MS">Sun</td><tr><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>28</b></font></a><td><a href="event.php?g_eid=27&g_referer=calendar&g_month=1&g_year=2002" target="main"><font class=link1>Faydedar!</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>29</b></font></a><td><a href="event.php?g_eid=39&g_referer=calendar&g_month=1&g_year=2002" target="main"><font class=link1>Chardok - Herbalist</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>30</b></font></a><td><a href="event.php?g_eid=38&g_referer=calendar&g_month=1&g_year=2002" target="main"><font class=link1>Plane of Air</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>31</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>1</b></font></a><td><a href="event.php?g_eid=35&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>Akheva ruins</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>2</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>3</b></font></a><td><a href="event.php?g_eid=33&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>Chardok Nobles</font></a><br></tr></table></td></tr><tr><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>4</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>5</b></font></a><td><a href="event.php?g_eid=32&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>Plane of Hate</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>6</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>7</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>8</b></font></a><td><a href="event.php?g_eid=40&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>General and Ring9</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>9</b></font></a><td><a href="event.php?g_eid=36&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>PoF</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>10</b></font></a><td></tr></table></td></tr><tr><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>11</b></font></a><td><a href="event.php?g_eid=46&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>Trakanon - Seb</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>12</b></font></a><td><a href="event.php?g_eid=45&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>Chardok Herbalis</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>13</b></font></a><td><a href="event.php?g_eid=43&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>Guild meeting (Arena)</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>14</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>15</b></font></a><td><a href="event.php?g_eid=41&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>Whoopah raid</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>16</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>17</b></font></a><td><a href="event.php?g_eid=42&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>YodilooOOoo raid</font></a><br></tr></table></td></tr><tr><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>18</b></font></a><td><a href="event.php?g_eid=47&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>Ixiblat</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>19</b></font></a><td></tr></table></td><td width="10%" bgcolor="#600A5B"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>20</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>21</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>22</b></font></a><td><a href="event.php?g_eid=50&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>Yo yo raid :)</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>23</b></font></a><td><a href="event.php?g_eid=48&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>Ssidious epic</font></a><br></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>24</b></font></a><td><a href="event.php?g_eid=51&g_referer=calendar&g_month=2&g_year=2002" target="main"><font class=link1>Walking on the moon</font></a><br></tr></table></td></tr><tr><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>25</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>26</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>27</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>28</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>1</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>2</b></font></a><td></tr></table></td><td width="10%"><table width="100%"><tr><td width="20%" align=center><font class=s2><b>3</b></font></a><td></tr></table></td></tr></table>

@@ -1,0 +1,514 @@
+<html>
+<head>
+<title>Legions of valhalla</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Legions Of Valhalla an Europe based guild on Morellthule EverQuest server">
+<meta name="keywords" content="Legions,valhalla,morellthule,everquest,verant,fableman,hints,application,join,movies,movie,secrets">
+</head>
+
+<body bgcolor="#000000" link="#FFFF33" vlink="#FFFF00" ALINK="#FFFF00" topmargin=0 background="pictures/bakgrund2.gif" text="#00FF00">
+<SCRIPT LANGUAGE="JavaScript1.2">
+
+var no = 1; // snow number
+var speed = 4; // smaller number moves the snow faster
+var snowflake = "http://fableman.oxelosund.se/~llola/amochhead.gif";
+
+var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+var ie4up = (document.all) ? 1 : 0;
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i, doc_width = 800, doc_height = 600;
+if (ns4up) {
+doc_width = self.innerWidth;
+doc_height = self.innerHeight;
+} else if (ie4up) {
+doc_width = document.body.clientWidth;
+doc_height = document.body.clientHeight;
+}
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+for (i = 0; i < no; ++ i) {  
+dx[i] = 0;                        // set coordinate variables
+xp[i] = Math.random()*(doc_width-50);  // set position variables
+yp[i] = Math.random()*doc_height;
+am[i] = Math.random()*50;         // set amplitude variables
+stx[i] = 0.12 + Math.random()/20; // set step variables
+sty[i] = 2.7 + Math.random();     // set step variables
+if (ns4up) {                      // set layers
+if (i == 0) {
+document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
+document.write("top=\"15\" visibility=\"show\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></layer>");
+} else {
+document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
+document.write("top=\"15\" visibility=\"show\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></layer>");
+   }
+} else if (ie4up) {
+if (i == 0) {
+document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
+document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
+document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></div>");
+} else {
+document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
+document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
+document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></div>");
+      }
+   }
+}
+function snowNS() {  // Netscape main animation function
+for (i = 0; i < no; ++ i) {  // iterate for every dot
+yp[i] += sty[i];
+if (yp[i] > doc_height-50) {
+xp[i] = Math.random()*(doc_width-am[i]-10);
+yp[i] = 0;
+stx[i] = 0.02 + Math.random()/10;
+sty[i] = 0.07 + Math.random();
+doc_width = self.innerWidth;
+doc_height = self.innerHeight;
+}
+dx[i] += stx[i];
+document.layers["dot"+i].top = yp[i];
+document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+}
+setTimeout("snowNS()", speed);
+}
+function snowIE() {  // IE main animation function
+for (i = 0; i < no; ++ i) {  // iterate for every dot
+yp[i] += sty[i];
+if (yp[i] > doc_height-50) {
+xp[i] = Math.random()*(doc_width-am[i]-30);
+yp[i] = 0;
+stx[i] = 0.02 + Math.random()/10;
+sty[i] = 0.7 + Math.random();
+doc_width = document.body.clientWidth;
+doc_height = document.body.clientHeight;
+}
+dx[i] += stx[i];
+document.all["dot"+i].style.pixelTop = yp[i];
+document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+}
+setTimeout("snowIE()", speed);
+}
+if (ns4up) {
+snowNS();
+} else if (ie4up) {
+snowIE();
+}
+// End -->
+</script>
+
+<table width="100%" border="0">
+  <tr>
+    <td><center><img src="pictures/nylogganim.gif"><br>
+        [ <a href="index.php3?file=News">News</a> ] - <a href="index.php3?file=Members">Members</a> - <a href="index.php3?file=Msgboard">Msgboard</a> - <a href="index.php3?file=EQ-Movies">EQ-Movies</a> - <a href="index.php3?file=Tales">Tales</a> - <a href="index.php3?file=Links">Links</a> - <a href="index.php3?file=Allies_and_enemies">Allies_and_enemies</a> - <a href="index.php3?file=Tools">Tools</a> - <a href="index.php3?file=Login">Login</a>        <HR></center>
+    </td>
+  </tr>
+</table>
+  <tr>
+    <td><center>
+<font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#00FFFF">Legions 
+Of Valhalla</font></b><font color="#00FFFF"> is a mixed guild with dark evil members 
+as well as people fighting for the good things.<br>On the Raids and in Team we 
+fight side by side close as brothers.<br>One of the big things about this Guild is 
+that <b>90% of the members is from Europe</b>. Raids and Meetings are on CET. 
+</font></font><br>
+<a href="http://pub22.ezboard.com/flegionsofvalhallafrm17"><font size="2" face="Arial, Helvetica, sans-serif" color="#FFFFFF"><b>Guildrules & Application Area</b></font>
+</font> </a>
+<br>
+
+
+
+<b>Live Clock </b><font color=#0044ff> | <font color=#eeeeee>CET Time: 14:55<font color=#0044ff> | <font color=#ee00ee>EST Time: 08:55<font color=#0044ff> | <font color=#eeee00>UTC Time: 13:55</font><font color=#0044ff> | <font color=#ee3300>PST Time: 05:55<font color=#0044ff> | </font><font color=#00ee00><b>(c)FableMan</b></center>
+
+
+
+
+<table border=0 width=100%><tr bgcolor=#444444><td><b><font face=verdana size=-1>PoH raid Friday June 29th 18.00 CET <i>by Leeonal</b></td>
+	<td width=80><font face=verdana size=-1>01-06-15</td></tr><tr><td><font face=verdana size=-1>Pliz sign up for the Plane of Hate raid on raid forum.<br>
+IMPORTANT NOTE: there will be a new raid loot system that we'll post as soon as possible. </td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>CoM raid June 17 16.00 CET <i>by Leeonal</b></td>
+	<td width=80><font face=verdana size=-1>01-06-12</td></tr><tr><td><font face=verdana size=-1>Pliz sign up for the CoM raid, this time we will take as many BRs and Lords as possible.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Patch Day today... just 5hr <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-06-05</td></tr><tr><td><font face=verdana size=-1>Servers should be back up 17:00 CET </td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Homepage was down for 2hr <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-05-30</td></tr><tr><td><font face=verdana size=-1>Sorry for the downtime. All Power supply in the city was gone. And when It got back up the network card had crashed soo I hade to get a new one. Now all is working again.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Shadows Of Luclin Beta Test <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-05-28</td></tr><tr><td><font face=verdana size=-1>If you get an email with this topic &quot;Shadows Of Luclin Beta Test&quot;<br>
+<br>
+DO NOT GO THERE !!!<br>
+They will take your account information and install a backdoor.<br>
+<br>
+If you allready have then please change your password on your everquest account.<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>LOOK UNDER TALES SECTION !!!! <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-05-22</td></tr><tr><td><font face=verdana size=-1>Hot pictures from Duka and Erlis wedding.<br>
+and a new MOVIE from Tower Of Frozen Shadow</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>CHANGED PASSWORD FOR THE MESSAGEFORUM <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-05-21</td></tr><tr><td><font face=verdana size=-1>Ask in guild chat for the new password.<br>
+Remember dont give it out outside the guild.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Thank you <i>by Erlis</b></td>
+	<td width=80><font face=verdana size=-1>01-05-21</td></tr><tr><td><font face=verdana size=-1>Duka and I would like to thank everyone for the support<br>
+and friendship shown to us on this day. Each and every-<br>
+one of you made it a day we will never forget. Special<br>
+thanks to Starqui for the beautiful ceremony and delicious<br>
+wedding cake. To Wailen for all the help in getting every-<br>
+one organized and in place. Thank all for the wonderful<br>
+gifts we recieved. It was a great party afterwards with<br>
+lots of booze and a good time had by all.<br>
+<br>
+Duka &amp; Erlis Truehart</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Wedding reminder <i>by Erlis</b></td>
+	<td width=80><font face=verdana size=-1>01-05-19</td></tr><tr><td><font face=verdana size=-1>A reminder to all for mine and Duka's wedding Sunday<br>
+Time is 3pm cst or 2200 cet in GFay at the wiz spires.<br>
+Hope all can make it after the raid.<br>
+<br>
+Duka Truehart &amp; Erlis Shadowwynd</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>PATCH WARNING <i>by Katharzis</b></td>
+	<td width=80><font face=verdana size=-1>01-05-15</td></tr><tr><td><font face=verdana size=-1>PATCH WARNING<br>
+<br>
+The EverQuest team released some very important news regarding the next patch. The next patch is scheduled for may 30th, however the warning is the fact that some corpses may dissapear during the patch. They are recoverable if a corpse is lost, however it is best to have no corpses out during the time of the patch. <br>
+<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>LOOK UNDER TALES SECTION !!!! <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-05-14</td></tr><tr><td><font face=verdana size=-1>I just made a new movie !!!<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Raid question <i>by Gzal</b></td>
+	<td width=80><font face=verdana size=-1>01-05-11</td></tr><tr><td><font face=verdana size=-1>When is next raid for lower lvls in Guild?<br>
+Or what lvl you need to go with the big guys?</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Sunday May 13 raid CoM return 16.00 CET  <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-05-11</td></tr><tr><td><font face=verdana size=-1>More info on messagebords.<br>
+BTW... I have invited 1 good friend Oogman SHM55 to join us and 1 necro Sanaddar lvl 52 to come and raid with us to CoM.<br>
+<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Wedding Announcement <i>by Erlis</b></td>
+	<td width=80><font face=verdana size=-1>01-05-10</td></tr><tr><td><font face=verdana size=-1>Duka and I are happy to announce our up coming wedding.<br>
+Date is May 20th at 3pm cst (2200 cet) in GFay at the <br>
+wizard spires. We hope to see all of our dear friends <br>
+and guild members there to help us celebrate. Wedding <br>
+service will be performed by Starqui Soulchaser.<br>
+<br>
+Duka Truehart &amp; Erlis Shadowwynd </td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>About the clock <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-05-09</td></tr><tr><td><font face=verdana size=-1>The clock is correct.<br>
+Just that Verant or you have typed somethign wrong..<br>
+<br>
+But your end message is correct...<br>
+You have got something wrong there :) :)<br>
+<br>
+BTW.. Please post this kinda of stuff under messageboard and not as a Guild News message.<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Patchdaytimes? <i>by Allone</b></td>
+	<td width=80><font face=verdana size=-1>01-05-08</td></tr><tr><td><font face=verdana size=-1>Hi.<br>
+According to patchinfo the patching began 3AM PST and 10AM CET.Thats 7 hours timediff. When I check the clock on top of page its now 9.50AM PST and 18.50PM CET. Thats 9 hour timediff.<br>
+Sorry to bother you with this crap but I always try to calculate when I can begin to play and always turn up....<br>
+Try later cannot connect,and I get mad =)<br>
+Think in this case the servers will be up 21.00 PM CET!!!<br>
+In other words patchbeginning CET should be 12AM not 10AM.<br>
+Hope Im right and dont just confuse you.Im not trying to be a wisearse =)<br>
+Hope to see you all out at 21.00 and maybe group with someone..<br>
+Take care..Yours Allone &quot;longlegged&quot; &quot;buffhurling&quot; 51 shammy<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>War of the Gods? <i>by Tommartin</b></td>
+	<td width=80><font face=verdana size=-1>01-05-04</td></tr><tr><td><font face=verdana size=-1>Check out this link on everlore: http://www.everlore.com/Comments.asp?ID=423204<br>
+Seems it may be coming on all servers not sure tough, since it has something to do whit that Green fog in the Karanas.<br>
+<br>
+Tommartin 51 Vicar Legions of Valhalla</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Sunday miniminraid may 6 Cazic Thule 16 CET <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-05-04</td></tr><tr><td><font face=verdana size=-1>Levels around 30<br>
+More info on messageboard.<br>
+http://pub22.ezboard.com/flegionsofvalhallaguildevents.showMessage?topicID=118.topic</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Sunday miniraid May 6 - City of Mist 16.00 CET  <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-05-04</td></tr><tr><td><font face=verdana size=-1>Minimum level 40 to join<br>
+<br>
+sign up on the messageboard. (URL) http://pub22.ezboard.com/flegionsofvalhallaguildevents.showMessage?topicID=118.topic</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>PatchDay <i>by Katharzis</b></td>
+	<td width=80><font face=verdana size=-1>01-05-04</td></tr><tr><td><font face=verdana size=-1><br>
+On Tuesday, May 8th, at 3AM PST (10AM GMT), all servers will be brought down for a scheduled patch. The estimated downtime is 9 hours. <br>
+<br>
+- The EverPatch Team<br>
+<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>08/05  Plane of Fear. 14:00 CET <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-05-03</td></tr><tr><td><font face=verdana size=-1>Sign up here:<br>
+http://pub33.ezboard.com/fpandorefrm3.showMessage?topicID=48.topic</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Plane of Hate - 01 /05 hosted by Pandore (min level 46) <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-04-27</td></tr><tr><td><font face=verdana size=-1>INFO and Signup for raid at this URL:<br>
+<br>
+http://pub33.ezboard.com/fpandorefrm3.showMessage?topicID=43.topic</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>NOW THE TALES SECTION IS WORKING AGAIN!!!! <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-04-25</td></tr><tr><td><font face=verdana size=-1>IF YOU LOGIN NOW YOU CAN UPLOAD PICTURES TO THE HOMEPAGES TALES AGAIN... <br>
+(The Problem was in a new php version that added some unwanted tags on all uploaded pictures soo the browser couldnt view the pictures.)<br>
+<br>
+Phuu atlast I fixed the error.<br>
+<br>
+BTW Linux and Mysql and PHP rules..<br>
+//FableMan</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>LOOKS LIKE EZBOARDS GOT SOME BIG PROBLEMS <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-04-25</td></tr><tr><td><font face=verdana size=-1>Soo if you cant access the messageboard just try tomorrow..<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Messageboard <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-04-24</td></tr><tr><td><font face=verdana size=-1>On Tuesday, April 24th, from 9:00 AM PST to 6:00 PM PST, we will move all ezboards to our new, much faster bandwidth provider. During this time all ezboards will be unavailable. Following the move all ezboards will experience a dramatic increase in speed.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>News on Efreeti Lord Raid Saturday 21 <i>by Tommartin</b></td>
+	<td width=80><font face=verdana size=-1>01-04-20</td></tr><tr><td><font face=verdana size=-1>The Elord raid on saturday 21. april is canceled since the onlyone who could maybe join was Fableman, and we could have a hard time getting to the efreeti room.<br>
+<br>
+Tommartin 50 Cleric of Legions of Valhalla</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>THIS IS NOT A MESSAGE FORUM <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-04-19</td></tr><tr><td><font face=verdana size=-1>THIS PLACE IS MADE FOR NEWS ABOUT THE GUILD AND PATCHES RAIDS AND SOO.. ALL GROUP SETUP AND OTHER TALKS IS TAKEN CARE ON MSGBOARD. Please delete all your non news stuff you posted here..<br>
+<br>
+//thx FableMan<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Boezool we have a messageboard <i>by Amsterdam</b></td>
+	<td width=80><font face=verdana size=-1>01-04-18</td></tr><tr><td><font face=verdana size=-1>But Ill help u</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Patch <i>by Katharzis</b></td>
+	<td width=80><font face=verdana size=-1>01-04-17</td></tr><tr><td><font face=verdana size=-1>On Tuesday, April 17th, at 3AM PST, all servers will be down for a scheduled patch. The estimated downtime is 9 hours. <br>
+- The EverPatch Operations Team<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>!!! Guild meeting 01-04-12 / 20:00 ETC !!! <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-04-10</td></tr><tr><td><font face=verdana size=-1>Date Time: 01-04-12 time 20:00 ETC<br>
+Zone: Arena Lake Rathe<br>
+Duration: min 30 min -&gt; Until you feel you wanna leave.<br>
+Topics: Giving officer status to some members and have fun.<br>
+Bring: Beer or vine if you wanna drink.<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Raid n&deg;16 - Lady Vox 06/04  Min 45 Max level 52 <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-04-06</td></tr><tr><td><font face=verdana size=-1>http://pub33.ezboard.com/fpandorefrm3.showMessage?topicID=36.topic</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Raid n&deg;17 - The Hole - 08/04  Min level 45 <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-04-06</td></tr><tr><td><font face=verdana size=-1>http://pub33.ezboard.com/fpandorefrm3.showMessage?topicID=38.topic</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Killing Sir Lucan in Freeport <i>by Caleorn Crushbone</b></td>
+	<td width=80><font face=verdana size=-1>01-04-06</td></tr><tr><td><font face=verdana size=-1>As a part of my epic quest I am trying to gather some friends and go kill that evil bastard Sir Lucan, head of the corrupt Freeport Militia. This will probably take place on firstcoming Monday. Please check out the Guild Events on our messageboard for more information.<br>
+-Caleorn</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>hmmm...Patch!! <i>by Katharzis</b></td>
+	<td width=80><font face=verdana size=-1>01-04-02</td></tr><tr><td><font face=verdana size=-1>On Wednesday, April 4th, at 3AM PST, all servers will be down for a scheduled patch. The estimated downtime is 9 hours.<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>PatchTime <i>by Katharzis</b></td>
+	<td width=80><font face=verdana size=-1>01-03-30</td></tr><tr><td><font face=verdana size=-1>All servers will be coming down at 3AM PST Friday March 30th. The estimated downtime is 3 hours. This is to correct a number of video card related issues. <br>
+- The EverPatch Team <br>
+<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Tales section dosent work rigth now.. <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-03-30</td></tr><tr><td><font face=verdana size=-1>I updated to a new version of PHP and the old script dosent work like it should.. dunno when its fixed..<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Yet another patch <i>by Katharzis</b></td>
+	<td width=80><font face=verdana size=-1>01-03-27</td></tr><tr><td><font face=verdana size=-1>On Wednesday, March 28th, at 6AM PST, Morell Thule will be brought down for scheduled maintenance. The estimated downtime is 3 hours. <br>
+<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Mega Patch <i>by Katharzis</b></td>
+	<td width=80><font face=verdana size=-1>01-03-27</td></tr><tr><td><font face=verdana size=-1>MEGA PATCH FOR YOU!<br>
+<br>
+This just in from the EverQuest Scheduled Downtime page: <br>
+On Tuesday March 27th at 2am PST, all servers will be brought down for a scheduled patch. The estimated downtime is 10 hours.<br>
+<br>
+- The EverPatch Operations Team <br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Wedding time and place. <i>by Wailen</b></td>
+	<td width=80><font face=verdana size=-1>01-03-18</td></tr><tr><td><font face=verdana size=-1>A final date and place has been set for our wedding. It will take place on the 26th of march at 21.oo CET.<br>
+<br>
+The place will be the first island in iceclad ocean when travelling by boat from NRO.<br>
+<br>
+We hope to see all there. <br>
+<br>
+With love Wailen and Starqui <br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>New server for the Homepage <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-03-16</td></tr><tr><td><font face=verdana size=-1>Have moved the guildpage to a new server.<br>
+Please check your info and levels are OK.<br>
+<br>
+--FableServer Operation Team</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Wedding! <i>by Wailen</b></td>
+	<td width=80><font face=verdana size=-1>01-03-15</td></tr><tr><td><font face=verdana size=-1>It is with great pleasure that i hereby announce the marriage between Starqui and Wailen. <br>
+<br>
+All are invited to this event. Time and place will be published soon.<br>
+<br>
+With love Wailen and Starqui<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Patch scheduled for Wednesday, March 14th, at 3AM PST <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-03-12</td></tr><tr><td><font face=verdana size=-1>Estimated downtime is 9 hours. <br>
+<br>
+-The EverPatch Team <br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Alliance Raid: Plane of Fear 17 Mars 14:00 (CET) Min level 46 <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-03-08</td></tr><tr><td><font face=verdana size=-1>Sign up here:<br>
+http://pub33.ezboard.com/fpandorefrm3.showMessage?topicID=30.topic</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Alliance Raid: Kael Drakkal (Arena) 11 Mars 14:00 (CET) MIN LEVEL 40  <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-03-08</td></tr><tr><td><font face=verdana size=-1>Sign up here:<br>
+http://pub33.ezboard.com/fpandorefrm3.showMessage?topicID=31.topic</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Fixed broken link <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-03-07</td></tr><tr><td><font face=verdana size=-1>Fixed the broken link under Tools / - EQ-Items -<br>
+Now you can look for EQ items and see stats again.<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>ISP Problems :( <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-03-06</td></tr><tr><td><font face=verdana size=-1>One of the Swedish ISP(Internet Service Provider) have some big problems with the switches that connects this server and others. I hope Felia can fix the problems soon. Thats why you havent been able to connect to the guild page :(</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Scheduled patch Morell Thule only Mon March 5 8 am PST <i>by Leeonal</b></td>
+	<td width=80><font face=verdana size=-1>01-03-05</td></tr><tr><td><font face=verdana size=-1>Another patch , 9hrs long :(</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Scheduled patch for Tuesday March 6, 2001at 3AM PST. Estimated downtime is 8hr  <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-03-05</td></tr><tr><td><font face=verdana size=-1>All servers will be brought down for a scheduled .<br>
+<br>
+-The EverPatch Nerfing Team</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Sunday Raid to Permafrost Keep <i>by Leeonal</b></td>
+	<td width=80><font face=verdana size=-1>01-03-01</td></tr><tr><td><font face=verdana size=-1>Next miniraid will be Permafrost Keep. Please read in Guild events and sign up under Tools and Raidorganizer</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>next sunday mini raid <i>by Tandainu</b></td>
+	<td width=80><font face=verdana size=-1>01-02-26</td></tr><tr><td><font face=verdana size=-1>next sunday mini raid will take place on sunday 17h00; It will be permafrost or mistmoore. PLZ REGISTER AND VOTE in the guild events message board.<br>
+<br>
+2 important post today :<br>
+- yesterday's raid feedback by leeonal (guild event section)<br>
+- mini raid rules by me ;) (general discussion section)<br>
+<br>
+please read and comment them.<br>
+<br>
+Tandainu</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>I Made a EverQuest Song!!! <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-02-22</td></tr><tr><td><font face=verdana size=-1>Look under Tales section.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Wiskel's corpse summoning service is now open <i>by Wiskel</b></td>
+	<td width=80><font face=verdana size=-1>01-02-21</td></tr><tr><td><font face=verdana size=-1>I've finally managed to get hold of a summon corpse spell, something that will help the entire guild.<br>
+For those who don't know the spell, it allows me to summon a corpse to anywhere in the same zone so long as I am grouped with, and targeting the corpse's owner. It's not a cheap spell, the coffin component costs around 175plat but if your corpse if really out of reach it certainly beats waiting for your wurmslayer to crumble to dust.<br>
+<br>
+Wiskel</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Mini raid for 30-40ish : Avatar of Fear  Sunday feb 25th, 17h00 CET <i>by Tandainu</b></td>
+	<td width=80><font face=verdana size=-1>01-02-19</td></tr><tr><td><font face=verdana size=-1>Our next mini raid for lvl 30 40 will take place on Sunday, 17h00 and we 'll go and kill the avatar of fear and his friends (Cazic Thule dungeon). Hope you will all be there  ;)</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Mini raid on ToFS Sunday 02/18 17:00 <i>by Tandainu</b></td>
+	<td width=80><font face=verdana size=-1>01-02-15</td></tr><tr><td><font face=verdana size=-1>All Lvl 30 40 can join, sign up with the raid organizer :)</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>RAID: Plane of Hate 3 - MARCH  14:00 CET <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-02-15</td></tr><tr><td><font face=verdana size=-1>SIGN UP AT: http://pub33.ezboard.com/fpandorefrm3.showMessage?topicID=26.topic</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>RAID: Velketor's Labyrinth 18-FEB 14:00 CET <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-02-15</td></tr><tr><td><font face=verdana size=-1>SIGN UP HERE: http://pub33.ezboard.com/fpandorefrm3.showMessage?topicID=23.topic<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Scheduled Patch for Wednesday, February 21  <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-02-15</td></tr><tr><td><font face=verdana size=-1>At 3AM, on Wednesday, February 21st, all servers will be down for a scheduled patch. The estimated downtime is 8 hours. <br>
+<br>
+The EverPatch Team </td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Naggy Raid coming up.. <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-02-06</td></tr><tr><td><font face=verdana size=-1>Please read about the raid on the messageboard. You must signup!<br>
+Min lvl45 Max lvl52</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Added new function on the HomePage..... under Tools <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-02-02</td></tr><tr><td><font face=verdana size=-1>Check out Tools / Information_About_HP_On_Mobs <br>
+<br>
+There you can see how much HP some Mobs have and if they are warrior or caster and stuff like that.<br>
+<br>
+Velious not added and some zones missing. But Its still a great resource. //FableMan<br>
+<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Summary miniraid Paw <i>by Tommartin</b></td>
+	<td width=80><font face=verdana size=-1>01-01-31</td></tr><tr><td><font face=verdana size=-1>Hi sorry i didnt post a summary sooner but here it is!<br>
+<br>
+The raid went, well what can i say, so so,but the fun factor was real good, we got 2 full groups ranging from about 28 to 36. We had about 3 or 4 evacs due to some heavy trains and some deaths, sorry about that :( But people in general took it quit well, except for an outsider who died 2 times and left the raid whitout a word :)<br>
+We didnt get far enough in to get any good stuff and i agree whit Ajax, nxt time i hope some 40+ members will join to safe pull some as we go.<br>
+Well as far as i see it our main objective was reached: Great funn.<br>
+Side note, my 1st time as a raid leader, so bear whit me on the managing stuff hehe?</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>All Everquest servers will be brought down for maintenance on Jan 31th at 3:00 AM PST <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-31</td></tr><tr><td><font face=verdana size=-1>Expected downtime is 8 hours<br>
+-EverPatch Team.<br>
+<br>
+Baaa they call it &quot;Scheduled maintenance&quot; They posted it same day they wil do the patch!!!!</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Wedding <i>by Boezool</b></td>
+	<td width=80><font face=verdana size=-1>01-01-27</td></tr><tr><td><font face=verdana size=-1>I am proud to announce my wedding wth Uenasa Prinestrike.<br>
+Herewith you all inveted to be witness of the ceremony.<br>
+It will happend on thuesday 6 feb. at 7PM EST (23:00 CET).<br>
+The pace where the weddingfeats will be, is the Island of the Sisters of Erollisi in the Ocean of Tears. The first boat stop from Freeport to Butcherblock Mountains.<br>
+We hope all of you will be there.<br>
+With love Boezool and Uneasa. </td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>All Everquest servers will be brought down for maintenance on Jan 24th at 3:00 AM PST  <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-24</td></tr><tr><td><font face=verdana size=-1>Expected downtime is 8 hours. <br>
+<br>
+- The EverPatch Team</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Cesium atomic clock handling the time on the page now!!! <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-23</td></tr><tr><td><font face=verdana size=-1>Now the clock on this page is verified by a Atomic Cesium Clock..  I think we are the first EQ-page to have a clock with an atomic clock to handle the time.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Low 20`s raid in Befallen <i>by Karuun</b></td>
+	<td width=80><font face=verdana size=-1>01-01-23</td></tr><tr><td><font face=verdana size=-1>Wed 9 am to 4pm Lvl range 16 to 25 (hope 2 grps) Hope to push into lvl 3 and camp BBC etc.  If it gets boring possible move to Highpass...<br>
+Karuun is your host for the day, is she can get off Kunardk )  <br>
+Hopin to have a regular raid on a wed for lvl 20`s</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>miniraid in paw <i>by Caleorn Crushbone</b></td>
+	<td width=80><font face=verdana size=-1>01-01-21</td></tr><tr><td><font face=verdana size=-1>Me, Wailen, Bove, Ranalthor and Binem grouped today in South Karana, and since we're in the neighbourhood, we agreed to try on the Splitpaw lair for size. So anyone over lvl 25(?) is free to join in on the fun. We're planning to do it on firstcoming wednesday (24.01) at 17:00 CET. I'll also post this in the raid calendar, so ppl post there to join. Also, if anyone want to volunteer as raidleader - someone who has some knowledge of the zone, that would be great. <br>
+<br>
+Greets from Caleorn Crushbone </td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Return to kill FG in SolB at SUNDAY <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-19</td></tr><tr><td><font face=verdana size=-1>Please Join up all LoV members min lvl 45 (Amoch can join) <br>
+meeting point is Sunday Jan-21  13:30 (CET) at the Lavastorm Druid ring. <br>
+<br>
+Since we already did it once, we should now be able to kill them all <br>
+in around 3 hours. Once the FGs are completed, we will then head to <br>
+the efreeti in the hope of a few yellow nike for the casters/healers. <br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Noooooo! <i>by Amoch</b></td>
+	<td width=80><font face=verdana size=-1>01-01-17</td></tr><tr><td><font face=verdana size=-1>You evil evil little Dark Elf. Im going to kill you! Twice!</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>I think you see my new change on the homepage MOOOHAAA <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-17</td></tr><tr><td><font face=verdana size=-1>Words from Amoch &quot;And remove those #&curren;&quot;% skulls! And stop making sweet lovin to your pet.&quot;<br>
+<br>
+Fear me Amoch hehehehhehhe MooooHaaa I feel soo Good NOW!!!!<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Patch day 17th Jan. <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-16</td></tr><tr><td><font face=verdana size=-1>All Everquest servers will be coming down at 3:00 AM PST (GMT-8) Jan 17th for a scheduled patch. Estimated downtime is 10 hours. <br>
+This time we will try to fix all crashes to desktop, but we wont fix FableMans lockups Cos he level too fast and we dont like him to keep doing that. <br>
+<br>
+- EverCrap Team <br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>New GuildLeader <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-16</td></tr><tr><td><font face=verdana size=-1>15-Jan-2001 FableMan got the GL title.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Guildmeeting moved again <i>by Leeonal</b></td>
+	<td width=80><font face=verdana size=-1>01-01-14</td></tr><tr><td><font face=verdana size=-1>Due to a clash with the time for the combined raid with Pandore the Guildmeeting has been postponed to Monday jan 15 20.30 CET</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>New password on the message board <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-12</td></tr><tr><td><font face=verdana size=-1>ask for the new password in the guild chat /gu<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Added new function <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-11</td></tr><tr><td><font face=verdana size=-1>I made a Clock to show you the correct times.<br>
+Soo you know when a patch starts/end or when a raid begins. <br>
+<br>
+I added the moste common time zones people are using in EQ. Remember we do all meetings and raids after CET time.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>JOIN PANDORE ON THERE RAID lvl40+  Date:01 01 10  Time: 20:30 <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-10</td></tr><tr><td><font face=verdana size=-1>level 40+ Eveyone that can should join up!!!<br>
+<br>
+Rendez-vous point and time :<br>
+20h30 (GMT +1) Lavastorm Druid Ring<br>
+RAID in SolB for the Efreeti Boots - INT 9 WIS 9 All/All<br>
+from Efreeti Lord Djarn<br>
+<br>
+More info in the msgboard<br>
+<br>
+Like the French dudes say &quot;Le roi est mort, vive le roi!&quot;</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>!!! WARNING !!! <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-09</td></tr><tr><td><font face=verdana size=-1>SCAM ALERT, JANUARY 6, 2001 <br>
+Hello all,<br>
+<br>
+http://eqstatus.cjb.net is NOT an official Sony Online Entertainment or<br>
+EverQuest website. Entering your login name and password as requested at<br>
+that site will email the same to iui6@hotmail.com and give the owner of that<br>
+address access to your account.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Frozen Totem <i>by Allone</b></td>
+	<td width=80><font face=verdana size=-1>01-01-05</td></tr><tr><td><font face=verdana size=-1><br>
+Coeb.<br>
+I got the totem for you...Gimme a tell<br>
+-Allone your pleasant servant )</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Scheduled Downtime- Jan 9th, All Servers  <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>01-01-03</td></tr><tr><td><font face=verdana size=-1>All Everquest game servers will be coming down at 3:00 AM PST (GMT-8) on Jan. 9th for patching. Downtime is expected to be 10 hours.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>HAPPY NEW YEAR <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-12-31</td></tr><tr><td><font face=verdana size=-1>Moooohaaaaaaaaaaaa!!! Party time...<br>
+Whne I return to EQ i got 1 in INT and zero Mana..<br>
+/sit<br>
+/puke<br>
+/sit<br>
+/drink water<br>
+/puke<br>
+/puke<br>
+/sit<br>
+: Looks sick and green in the face.<br>
+/camp</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>I found a new way to use my pet <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-12-22</td></tr><tr><td><font face=verdana size=-1>Happy X-Mas to everyone !!!<br>
+<br>
+Yhee I summond his head to the page and gave him a little santa look :)<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>All EverQuest game servers will be brought down for patching on Tuesday December 19th at 3:00 AM PST(GMT-8 <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-12-18</td></tr><tr><td><font face=verdana size=-1>The Patches takes 30mins.. But We will close for 8hr as normal.<br>
+Why ?? Just to make you have time to clean your house and buy christmas presents and stuff.<br>
+<br>
+And after the patch you will probably have more errors then before, just as normal.<br>
+<br>
+-Verant the non supporting company.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>3DFX Announces Three Major Initiatives to Protect Creditors and Maximize Shareholder Value <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-12-18</td></tr><tr><td><font face=verdana size=-1>We expect that the combined technologies of 3dfx and NVIDIA will continue the legacy that 3dfx began in 1994,'' Leupp continued. ``NVIDIA is the number one supplier of graphics technology to the OEM market. With the addition of 3dfx's high-quality technology that leads the retail market, we believe the combination of the two will result in even greater PC graphics leadership.''<br>
+<br>
+For $112 Million Nvidia owns 3Dfx :)<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Scheduled Downtime - Dec. 8th 3:00 am  (GTM-8) <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-12-08</td></tr><tr><td><font face=verdana size=-1>On Friday, Dec. 8th at 3:00 am PST (GMT-8) all Everquest servers will be coming down for a patch. We still got some big problems at Verant develop department. We have been trying to make something correct this time but we still messing your life up. We dont think we ever will be able to correct the important problems, but we know one thing... we can add more problems. Its a EVER-quest game and the Quest is to find a good programmer that can work for us.<br>
+<br>
+Downtime is just 8 hours soo be happy, cos soon we have a new patch. <br>
+<br>
+- The Crappy EverQuest Team<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>No thanks to me =) <i>by Allone</b></td>
+	<td width=80><font face=verdana size=-1>00-12-07</td></tr><tr><td><font face=verdana size=-1>About thanking me for kicking some critters for you Tommartin is not needed. Thats what guildfriends is all about. Dont ask me to kick Vox though =)<br>
+<br>
+/Allone the lonely shammy </td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Scheduled Downtime Dec. 7th  <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-12-05</td></tr><tr><td><font face=verdana size=-1>Patching on Thursday December 7th at 3:00 AM PST(GMT-8). Estimated downtime is 8 hours.<br>
+<br>
+Adding SoV to EQ</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Scheduled Downtime Monday Dec 4th at 6:00 AM PST  <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-12-04</td></tr><tr><td><font face=verdana size=-1>We at Verant have noticed alot problem with the client and sound and gfx cards. All problems you have is releted to the EQ-Client , and we soon will go crazy on the programmer, cos hes not know what hes doing.<br>
+*GRIN*<br>
+<br>
+-VeraMinTant<br>
+<br>
+All servers will be brought down for patching at 6:00 AM PST(GMT-8). Estimated downtime is 6 hours. <br>
+- Verant</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Scheduled Downtime Nov. 29th <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-27</td></tr><tr><td><font face=verdana size=-1>The patch will be Wednesday, Nov. 29th 3:00 am PST (GMT-8) <br>
+The estimated downtime remains 8 hours. But dont think we going fix any gfx/sound-problems. This update will just make it look like we are tring to fix something or we will just add some big summoning monster soo the levels above 50 never feel safe running around in EC. -The EverQuest Team</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Thanks <i>by Tommartin</b></td>
+	<td width=80><font face=verdana size=-1>00-11-27</td></tr><tr><td><font face=verdana size=-1>I just want to give a hearty thank you to Allone who helped... Er, who kicked regises but and helped me get the components to the bracers of the reverent quest. THANK YOU Allone!</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Patch November 21 <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-20</td></tr><tr><td><font face=verdana size=-1>Scheduled Patch November 21, 3:00AM PST Sat Nov 18 20:42:31 PST 2000<br>
+<br>
+On Tuesday, Nov. 21st, at 3:00 am PST, the Everquest servers will be coming down for a patch. The estimated down time is 11 hours. <br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>SERVER PATCH 16th- November <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-16</td></tr><tr><td><font face=verdana size=-1>Scheduled Maintenance on all servers on 11/16/2000 @ 8:00am PST<br>
+All servers will be taken down for Scheduled Maintenance. Expected downtime is approximatley 3 hours<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>SERVER PATCH 15th - November <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-14</td></tr><tr><td><font face=verdana size=-1>November 15th at 3AM PST. The estimated down time is 11 hours</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>DirectX 8.0 is out !!! <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-13</td></tr><tr><td><font face=verdana size=-1>Download cos you will need atleast 7a after the next patch.<br>
+<br>
+http://www.microsoft.com/directx/homeuser/downloads/default.asp<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>NEW SPELLS COMMING <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-13</td></tr><tr><td><font face=verdana size=-1>http://eq.castersrealm.com/spells/velious.asp</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>I added a VOTE thing. <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-09</td></tr><tr><td><font face=verdana size=-1>Hope you like it MoooHaaaa!!!</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>alt URL to the GuildPage <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-07</td></tr><tr><td><font face=verdana size=-1>The http://travel.to/legionsofvalhalla is a bit hard to type for some and its a bit slow<br>
+<br>
+Soo I made a alt url that works the same. Its just faster<br>
+http://www.guildlov.cjb.net  or  http://guildlov.cjb.net<br>
+<br>
+Both url will work!</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Ashlanne <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-04</td></tr><tr><td><font face=verdana size=-1>She have travel to Chicago for the VoS party.<br>
+And shes gonna have a baby.<br>
+I heard they gonna get a new GM for the Server and we have to wait until then.<br>
+Yheee it sux... I think everyone shall penetion this soo they get a new GM fast :)</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Everquest Test of Tactics  <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-02</td></tr><tr><td><font face=verdana size=-1>Description: This is a mpeg of the EverQuest Test of Tactics Best of the Best Finals held over the weekend of October 30 and 31, 2000. It shows all the participants and matches between them down to the final battle and victor of the competition. <br>
+Size: 43.7 MB (45834244 bytes) <br>
+Download Time: 3 hours, 1 minute at 33.6 Kbps <br>
+http://fileplanet1.speakeasy.net/pub/fileplanet/movies/eqtot.mpeg</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Scars of Velious intro trailer for download  <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-02</td></tr><tr><td><font face=verdana size=-1>file is 39.7MB<br>
+<br>
+ftp://ftp.zdnet.com/ukgames/rpg/evqsv_uk/everqsov.zip<br>
+<br>
+just cut and paste into explorer address.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>EVERQUEST(r) SIGNS 300,000th SUBSCRIBER <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-11-01</td></tr><tr><td><font face=verdana size=-1>October 30, 2000 - Sony Online Entertainment announced today that its top-selling online PC title &quot;EverQuest(r)&quot; has expanded to reach an active subscriber base of more than 300,000 players. Since the game's launch in February 1999, &quot;EverQuest&quot; has consistently grown in both sales and subscriptions, breaking all records previously set by an online multiplayer game.</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>NO PATCHING TODAY !!! <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-10-31</td></tr><tr><td><font face=verdana size=-1>The patch slated for 3AM on October 31st has been cancelled. <br>
+<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>EQ PATCH 00-10-31 <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-10-25</td></tr><tr><td><font face=verdana size=-1>As announced, the next EverQuest patch will require that players have the most recent version of DirectX for their Operating system installed on their computer. <br>
+<br>
+[You can download DirectX from http://www.microsoft.com/directx]</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Netscape <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-10-25</td></tr><tr><td><font face=verdana size=-1>Now I have solved the problems why Netscape users could not login.<br>
+Alt chars login with netscape still a problem to fix.<br>
+<br>
+</td><td> </td></tr><tr bgcolor=#444444><td><b><font face=verdana size=-1>Design done and added some Tools too <i>by Fableman</b></td>
+	<td width=80><font face=verdana size=-1>00-10-20</td></tr><tr><td><font face=verdana size=-1>Design is the same as before just some small changes.<br>
+<br>
+Hope you will like it, cos we do Mooohaaaaaaa<br>
+Added a new section called Tools, I will try to collect good stuff to use there.<br>
+<br>
+Please remember to update your profile after DiiiiinnnnnG<br>
+<br>
+</td><td> </td></tr></table></td>
+  </tr>
+</table>
+</body>
+</html>

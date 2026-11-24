@@ -1,0 +1,144 @@
+
+<style type="text/css">
+<!--
+select 
+	{
+	font-color:#000000; 
+	}
+body 
+	{ 
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	font-size:24px; 
+	color:#FFFFFF; 
+	background-color:#102C6B; 
+	font-color:#FFFFFF; 
+	}
+
+a:visited 
+	{ 
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	color:#D8E86E; 
+	}
+
+:active, :link 
+	{ 
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	color:#D8E86E; 
+	}
+
+table 
+	{ 
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	font-size:13px; 
+	font-color:#FFFFFF; 
+	}
+
+i.smallblue 
+	{ 
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	font-size:10px; 
+	color:#90aCeB; 
+	}
+
+font.example 
+	{
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	font-size:10px; 
+	font-style:italic;
+	color:#90aCeB; 
+	}
+
+.examplewarning 
+	{ 
+	font-size:12px; 
+	font-style:italic;
+	color:#FF1111; 
+	}
+
+.s5 
+	{
+	font-family: "Trebuchet MS", lucida, helvetica, arial;
+	font-size:24px; 
+	color:#FFFFFF; 
+	}
+
+.s4 
+	{ 
+	font-size:18px; 
+	color:#FFFFFF; 
+	}
+
+.s3 
+	{
+	font-size:16px; 
+	color:#FFFFFF; 
+	}
+.s2 
+	{
+	font-size:13px; 
+	color:#FFFFFF; 
+	}
+.s1 	
+	{
+	font-size:10px; 
+	color:#FFFFFF; 
+	}
+.r1 	
+	{
+	font-size:10px; 
+	color:#FF0000; 
+	}
+.link2 
+	{
+	font-size:13px; 
+	color:#D8E86E; 
+	}
+.link1
+	{ 
+	font-size:10px; 
+	color:#D8E86E; 
+	}
+.chat 
+	{ 
+	font-size:13px; 
+	color:#FFFFFF; 
+	}
+.chattell 
+	{ 
+	font-size:13px; 
+	color:#61F961; 
+	}
+.chatsystem 
+	{ 
+	font-size:13px; 
+	color:#D8E86E; 
+	font-style:italic;
+	}
+.chatname 
+	{ 
+	font-size:13px; 
+	color:#90aCeB; 
+	}
+.chatbroadcast 
+	{ 
+	font-size:13px; 
+	color:#FF6111; 
+	}
+.error
+	{
+	font-size:13px; 
+	color:#FF1111; 
+	font-weight:bold;
+	}
+-->
+</style>
+
+<script LANGUAGE="JavaScript">
+<!--
+function dummy()
+	{
+	}
+-->
+</script>
+
+<body><META HTTP-EQUIV="refresh" content="60"; URL="top_clock.php"><table width="100%" celspacing="0" celpadding="0" border="0"><tr><td align=center><font class=s1><font color=#eeeeee>CET Time: 00:02<font color=#4269D6> | <font class=s1><font color=#81FF84>EST Time: 18:02<font color=#4269D6> | <font color=#eeee00>UTC Time: 23:02</font><font color=#4269D6> | <font color=#FF8190>PST Time: 15:02</font><font color=#4269D6> | <font color=#00aaff>Visit-Counter: 41627</td></tr></table></body>
