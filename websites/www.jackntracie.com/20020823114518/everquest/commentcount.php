@@ -1,0 +1,1 @@
+var commentID = new Array(); var commentCount = new Array();commentID[0]="comment139"; commentCount[0]="2 comments";commentID[1]="comment148"; commentCount[1]="1 comment";
