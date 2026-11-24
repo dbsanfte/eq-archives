@@ -1,0 +1,141 @@
+	//global variables
+	var browserHeight;
+	var browserWidth;
+	var rightEnd; //right edge landing position
+	var rightCenter; //center landing position
+	var hideTimer = 0; //5sec
+	var pauseTimer = 5000;
+	var firstImg;
+	var secondImg;
+	var firstWidth;
+	var secWidth;
+	//playing with these affect the animation of ad 
+	//var stepDelay = 35; //lower is faster, but might be choppy
+	//var rate = 13; //lower is faster
+	var stepDelay = 35; //lower is faster, but might be choppy
+	var rate = 5; //lower is faster
+	
+
+	//controls movement of floating layer
+	//determines when to pause and proceed
+	function moveLayer(firstStop) {
+		//if ad has yet to reach the center
+		if(parseInt(document.getElementById(firstImg).style.left) != getRightCenterX(firstImg) && !firstStop) {
+			pixelDec = getNextChange(getRightCenterX(firstImg));
+			if(parseInt(document.getElementById(firstImg).style.left) < getRightCenterX(firstImg))
+				document.getElementById(firstImg).style.left=(parseInt(document.getElementById(firstImg).style.left)+pixelDec) + "px";			
+			else
+				document.getElementById(firstImg).style.left=(parseInt(document.getElementById(firstImg).style.left)-pixelDec) + "px";			
+			this.tm = setTimeout("moveLayer(0)",stepDelay);
+		}
+	}
+
+	//calculates number of pixels to shift by for 1 step
+	function getNextChange(destination) {
+		distRemain = Math.abs(destination - document.getElementById(firstImg).offsetLeft);
+		ad = document.getElementById(firstImg);
+		if( distRemain <  rate/2 )
+			return 1;
+		else
+			return Math.round(distRemain/rate);
+	}
+
+	function disappear() {
+		document.getElementById(firstImg).style.visibility = "hidden";
+	}
+
+	function reappear() {
+		document.getElementById(firstImg).style.visibility = "visible";
+	}	
+	
+	//calculate horiz offset relative to browser window
+	function getCurrLeft(ad) {
+		x = 0;
+		while(ad) {
+			x = x + ad.offsetLeft;
+			ad = ad.offsetParent;
+		}
+		return x;
+	}
+
+	function getCurrTop(ad) {
+		y = 0;
+		while(ad) {
+			y += ad.offsetTop;
+			ad = ad.offsetParent;
+		}
+		return y;
+	}
+
+	function toggle(turn) {
+		if(turn == "off") {
+			if(parseInt(document.getElementById(firstImg).style.left) == rightEnd) 
+				disappear();	
+		}
+		else if(turn == "on")
+			reappear();
+	}
+
+	function goBack(){
+		toggle("on");
+		moveBackToCenter();
+	}
+
+//*********BEGIN left to right functions***********	
+
+	function getRightCenterX(name) {
+		if(name == firstImg)
+			theWidth = firstWidth;
+		else
+			theWidth = secWidth;
+		//browserMid = Math.round((browserWidth + document.body.scrollLeft)/2);
+		browserMid = Math.round((browserWidth)/2)+document.body.scrollLeft;
+		//browserMid = Math.round((browserWidth)/2);
+		imageMid = Math.round(theWidth/2);
+		rightCenter = browserMid-imageMid;
+		//alert("rightCENTER :"+rightCenter);
+		return rightCenter; 
+	}
+
+	function reAdjust() {
+		moveEnd();
+	}
+
+	function moveEnd() {
+		browserWidth = document.body.clientWidth;
+		document.getElementById(secondImg).style.left = (browserWidth + document.body.scrollLeft - secWidth)+"px";
+		if(document.getElementById(firstImg).style.visiblity == "hidden")
+			document.getElementById(firstImg).style.left = (browserWidth + document.body.scrollLeft - firstWidth)+"px";
+	}
+//*********END left to right functions**************
+
+
+	//hideName = minimized state of ad 
+	function start(adName) {
+		firstImg = adName;
+		firstWidth = document.getElementById(firstImg).offsetWidth;
+		ad = document.getElementById(firstImg);
+		ad.style.visibility = "visible";
+
+		browserHeight = document.body.clientHeight;
+		browserWidth = document.body.clientWidth;
+		getRightCenterX(document.getElementById(firstImg));
+		moveLayer(0);
+	}
+
+document.write('<div id="floatingad" style="position:absolute; z-index:101; left: 0; margin-left: 0px; top: 150px;">');
+document.write('<img src="http://images.revenue.net/load/225447/label.gif" width="300" height="15" border="0"><br>');
+document.write('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="300" height="250">');
+document.write('<param name="movie" value="http://images.revenue.net/load/225447/Button_iPod_300x250.swf?clickTAG=http%3A%2F%2Fads1.revenue.net%2Fc%3FO_RANK%3D3%26O_CREATIVE_ID%3D225447%26O_PPLACEMENT_ID%3D13%26O_SITE_ID%3D11580%26" />');
+document.write('<param name="quality" value="high" />');
+document.write('<param name="wmode" value="transparent" />');
+document.write('<embed src="http://images.revenue.net/load/225447/Button_iPod_300x250.swf?clickTAG=http%3A%2F%2Fads1.revenue.net%2Fc%3FO_RANK%3D3%26O_CREATIVE_ID%3D225447%26O_PPLACEMENT_ID%3D13%26O_SITE_ID%3D11580%26" wmode="transparent" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="250"></embed>');
+document.write('</object>');
+document.write('<br><a onclick="document.getElementById(\'floatingad\').style.display=\'none\'; return false;" onMouseOver="window.status=\'Close\'; return true" onMouseOut="window.status=\'\'" href="#"><img src="http://images.revenue.net/load/225447/close.gif" style="position:absolute; z-index:102; left: 0px; top: 265px;" border="0"></a>');
+document.write('</div>');
+
+	start("floatingad");
+	//window.onscroll = reAdjust;
+	//window.onresize = reAdjust;
+
+
