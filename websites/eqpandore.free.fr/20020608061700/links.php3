@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Les bons liens de Pandore</title>
+<link href="pandore.css" rel="stylesheet" type="text/css" title="style sheet">	
+</head>
+<style>
+	#spacer { position: relative; height: 50;}
+	BODY  {
+		font-family : Arial,sans-serif;
+		color : Black;
+		margin-left : 10px;
+	}
+	TD  {
+		font-family : Arial,sans-serif;
+		color : Black;
+		font-size : 10pt;
+	}
+	LI {
+		font-family : Arial,sans-serif;
+		color : Black;
+	}
+</style>
+
+<body marginwidth="0" marginheight="0" rightmargin="0" leftmargin=0 topmargin=0 bgcolor="#E3CBED" text="Black" link="Blue" vlink="Blue" alink="Yellow" background="img/bkg.jpg" bgproperties="FIXED">
+	
+
+
+<table width=600 border=0 cellspacing=0 cellpadding=0>
+<tr>
+
+<P>
+<TD>
+
+<P>
+
+<TABLE BORDER=0 cellpadding=2 cellspacing=2 width=100%>
+<TR BGCOLOR="#7E0517">
+<TH><A HREF=links.php3?sort=info>Site</A></TH>
+<TH><A HREF=links.php3?sort=url>url</A></TH>
+</TR>
+<TR>
+<TD><A HREF=http://coeurdelion.homestead.com/index~ns4.html target=_blank><B>Coeur De Lion</b></A></TD>
+<TD><font size=1>http://coeurdelion.homestead.com/index~ns4.html</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://eq.castersrealm.com target=_blank><B>Casters Realm</b></A></TD>
+<TD><font size=1>http://eq.castersrealm.com</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://eqbeastiary.allakhazam.com/ target=_blank><B>Les niveaux mobs des mobs par zones</b></A></TD>
+<TD><font size=1>http://eqbeastiary.allakhazam.com/</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://everquest.allakhazam.com/ target=_blank><B>Allakhazam</b></A></TD>
+<TD><font size=1>http://everquest.allakhazam.com/</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://pub19.ezboard.com/bchevaliersdelalicorne target=_blank><B>Forums Chevaliers de la Licorne</b></A></TD>
+<TD><font size=1>http://pub19.ezboard.com/bchevaliersdelalicorne</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://pub19.ezboard.com/bcommunautefrancophonedemorellthule target=_blank><B>Forum Francophone de Morell Thule</b></A></TD>
+<TD><font size=1>http://pub19.ezboard.com/bcommunautefrancophonedemorellthule</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://pub19.ezboard.com/bhorizon33911 target=_blank><B>Forums Horizon</b></A></TD>
+<TD><font size=1>http://pub19.ezboard.com/bhorizon33911</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://pub29.ezboard.com/baltruisticvalor target=_blank><B>Altruistic Valorian</b></A></TD>
+<TD><font size=1>http://pub29.ezboard.com/baltruisticvalor</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://pub63.ezboard.com/bmorellthulecommunityforums target=_blank><B>Forums de Morell-Thule</b></A></TD>
+<TD><font size=1>http://pub63.ezboard.com/bmorellthulecommunityforums</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://pub84.ezboard.com/bpandore27695 target=_blank><B>Olds French Pandore Forums</b></A></TD>
+<TD><font size=1>http://pub84.ezboard.com/bpandore27695</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://pub94.ezboard.com/bordotenebrae target=_blank><B>Forums des Ordo Tenebrae</b></A></TD>
+<TD><font size=1>http://pub94.ezboard.com/bordotenebrae</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://sandbox.xerox.com/stewart/tzconvert.cgi target=_blank><B>Conversion d'heure entre les différentes zones du monde</b></A></TD>
+<TD><font size=1>http://sandbox.xerox.com/stewart/tzconvert.cgi</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://www.afterlifeguild.org/ target=_blank><B>Afterlife</b></A></TD>
+<TD><font size=1>http://www.afterlifeguild.org/</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://www.dogpound.net/thunderwalkers/ target=_blank><B>ThunderWalker</b></A></TD>
+<TD><font size=1>http://www.dogpound.net/thunderwalkers/</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://www.eqatlas.com target=_blank><B>EQ Atlas - les cartes</b></A></TD>
+<TD><font size=1>http://www.eqatlas.com</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://www.everquest.com target=_blank><B>Le site de officiel d'Everquest</b></A></TD>
+<TD><font size=1>http://www.everquest.com</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://www.fohguild.org/html/index.php target=_blank><B>Guilde Fire Of Heaven</b></A></TD>
+<TD><font size=1>http://www.fohguild.org/html/index.php</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://www.furys-edge.com/ target=_blank><B>Fury Edge</b></A></TD>
+<TD><font size=1>http://www.furys-edge.com/</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://www.gameznet.com/eq target=_blank><B>EQ Lizer - Matériel, cartes, références, ...</b></A></TD>
+<TD><font size=1>http://www.gameznet.com/eq</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://www.graffe.com/ target=_blank><B>Graffe Wizard Compilation : le site des Wizzzzzzz</b></A></TD>
+<TD><font size=1>http://www.graffe.com/</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://www.lesguildes.com/everquest/guildes.php3 target=_blank><B>Le guide des Guildes</b></A></TD>
+<TD><font size=1>http://www.lesguildes.com/everquest/guildes.php3</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://www.magecompendium.com/ target=_blank><B>Le MAGE COMPENDIUM - Le site des Mages</b></A></TD>
+<TD><font size=1>http://www.magecompendium.com/</font></TD>
+</TR>
+<TR>
+<TD><A HREF=http://www.tritonguild.com/ target=_blank><B>Triton</b></A></TD>
+<TD><font size=1>http://www.tritonguild.com/</font></TD>
+</TR>
+</table>
+
+</TD>
+</TR>
+</TABLE>
+<P>
+</body>
+</html>
