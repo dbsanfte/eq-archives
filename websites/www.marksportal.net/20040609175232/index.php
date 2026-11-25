@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/1">
+	<title>Mark's Portal</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="WordPress 1.2-epsilon-RC1" /> <!-- leave this for stats -->
+
+	<style type="text/css" media="screen">
+		@import url( http://www.marksportal.net/wp/wp-layout.css );
+		@import url( http://www.marksportal.net/includes/style.css );
+		
+	</style>
+	
+	<link rel="stylesheet" type="text/css" media="print" href="http://www.marksportal.net/wp/print.css" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.marksportal.net/wp/wp-rss2.php" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://www.marksportal.net/wp/wp-rss.php" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.marksportal.net/wp/wp-atom.php" />
+	
+	<link rel="pingback" href="http://www.marksportal.net/wp/xmlrpc.php" />
+    	<link rel="archives" title="June 2004" href="http://www.marksportal.net/index.php?m=200406" />
+	<link rel="archives" title="May 2004" href="http://www.marksportal.net/index.php?m=200405" />
+		<meta name='ICBM' content="0, 0" />
+<meta name='DC.title' content="Search for the Narrow Path" />
+<meta name='geo.position' content="0;0" />
+</head>
+
+<body>
+<div id="rap">
+
+		<center>
+		<table border='0' width='700' height='400' cellspacing='0' cellpadding='0'>
+		<tr>
+			<td valign='top' height='1'>
+				<table border='0' width='100%' class='header' cellspacing='0' cellpadding='0'>
+				<tr>
+					<td width='220'><a href='/index.php'><img src='/includes/logo1.jpg' width='200' border='0'></a></td>
+					<td align='center'>
+						<a href='/about.php' class='gen'>About Me</a>
+						~ <a href='/photos.php' class='gen'>Photos</a>
+						~ <a href='/scripts.php' class='gen'>Scripts</a>
+						~ <a href='/myDirectory/myDirectory.php' class='gen'>Links</a>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr><tr><td>
+		<table border='0' width='700' height='400' cellspacing='0' cellpadding='0'>
+	
+		<tr><td height='1'>
+			<table border='0' width='100%' cellspacing='0' cellpadding='0'>
+			<tr>
+				<td align='right'>&nbsp;</td>
+			</tr>
+			</table>
+		</td></tr>
+	
+<tr><td valign=top align=left>
+<div>
+
+<h2>Monday, June 7,  2004</h2>	
+<div class="post">
+	 <h3 class="storytitle" id="post-21"><a href="http://www.marksportal.net/index.php?p=21" rel="bookmark" title="Permanent Link: The Great Mountain of God">The Great Mountain of God</a></h3>
+	<div class="meta">posted by: Mark @ 12:56 pm </div>
+	
+	<div class="storycontent">
+			<p>As I was reading the Bible today I was reminded of some inspiriational words that Paul wrote down in Hebrews.   The imagery he describes tends to lift my spirit up.</p>
+	<p><em>&#8220;<b>You have not come</b> to a mountain that can be touched and that is burning with fire; to darkness, gloom and storm; to a trumpet blast or to such a voice speaking words that those who heard it begged that no further word be spoken to them, because they could not bear what was commanded:  &#8216;If even an animal touches the mountain, it mus be stoned.&#8217;  The sight was so terrifying that Moses said, &#8216;I am trembling with fear.&#8217;"(Hebrews 12:18-21, NIV)</em></p>
+	<p>Paul is describing what the Israelites saw when God came down on Mount Sinai and spoke to them.  God had just brought the Israelites out of Egypt, using Moses as His spokesman, and Moses brought them to Mount Sinai as God had instructed him<em>(Exodus 3:12)</em>.  As they were gathering God came down onto the mountain and fear struck everyone, as was described above and in Exodus 19:16-20.  It was terrifying and they all shook with fear.   In fact, it was so frightening that they cried out to Moses, <em>&#8220;Speak to us yourself and we will listen.  But do not have God speak to us or we will die."(Exodus 20:19)</em>   That&#8217;s the mountain that the Israelites came to, but Paul goes on&#8230;</p>
+	<p><em>&#8220;<b>But you have come</b> to Mount Zion, to the heavenly Jerusalem, the city of the living God.  You have come to thousands upon thousands of angels in joyful assembly, to the church of the firstborn, whose names are written in heaven.  You have come to God, the judge of all men, to the spirits of righteous men made perfect, to Jesus the mediator of a new covenant, and to the sprinked blood that speaks a better word than the blood of Abel.&#8221; (Hebrews 12:22-24, NIV)</em></p>
+	<p>Today when we pray or worship God we do not do so at Mount Sinai, we worship God in a MUCH more frightening place&#8230;.Mount Zion, God&#8217;s holy mountain.  As soon as we start to pray or worship God, our spirit stands before God on His holy mountain.   Re-read the above verses again.  You haven&#8217;t come to just a mountain of smoke and fire.  When you pray you are standing before the very throne of the living God.  You are surrounded by &#8220;thousands upon thousands of angels".  You stand in the presence of &#8220;the spirits of righteous men made perfect".   I am reminded of the words of Solomon:</p>
+	<p><em>&#8220;Guard your steps when you go to the house of God.  Go near to listen rather than to offer the sacrifice of fools, who do not know that they do wrong.  Do not be quick with your mouth,  do not be hasty in your heart to utter anything before God.   God is in heaven and you are on earth, so let your words be few.&#8221; (Ecclesiastes 5:1-2, NIV)</em></p>
+	<p>After Paul describes the frightening scene of Mount Sinai and then the terrifying view of Mount Zion he gives a warning. </p>
+	<p><em>&#8220;See to it that you do not refuse him who speaks.&#8221; (Hebrews 12:25, NIV)</em></p>
+	<p>&#8220;Listen to God and do what He says", Paul warns.  Above, Paul describes two terrifying scenes and gives us a warning.  Yet there is also GREAT encouragement to be had in reading those scenes.   Did you see who dwells on God&#8217;s holy mountain?  Here is the list:  </p>
+	<p>God<br />
+Jesus<br />
+&#8220;thousands upon thousands of angels&#8221;<br />
+&#8220;spirits of righteous men made perfect".</p>
+	<p>When you pray and worship be comforted that you are surrounded by MANY others.   Those who have walked with God in the past and those who walk with Him in the present.  You are &#8220;surrounded by a great cloud of witnesses".   Let me end this with some of Paul&#8217;s encouraging words:</p>
+	<p><em>&#8220;Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entagles, and let us run with perseverance the race marked out for us. &#8221; (Hebrews 12:1, NIV)</em></p>
+	</div>
+	
+	<!--
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	    xmlns:dc="http://purl.org/dc/elements/1.1/"
+	    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.marksportal.net/index.php?p=21"
+    dc:identifier="http://www.marksportal.net/index.php?p=21"
+    dc:title="The Great Mountain of God"
+    trackback:ping="http://www.marksportal.net/wp/wp-trackback.php/21" />
+</rdf:RDF>	-->
+
+</div>
+
+
+<h2>Sunday, June 6,  2004</h2>	
+<div class="post">
+	 <h3 class="storytitle" id="post-20"><a href="http://www.marksportal.net/index.php?p=20" rel="bookmark" title="Permanent Link: New Computer">New Computer</a></h3>
+	<div class="meta">posted by: Mark @ 11:36 pm </div>
+	
+	<div class="storycontent">
+			<p>I spent this weekend building a new computer.   For some reason, this time it wasn&#8217;t as fun as it usually is.   Perhaps the draw to computers is finally being drained out of me.  It would sure be nice as I&#8217;ve spent entirely WAY too much time in front of them the last 5 years.   Hopefully something will come along soon that will replace the void that is being left there.   I eagerly await to find out what that thing is.</p>
+	<p>Tomorrow I hope to see &#8220;Harry Potter and the Prisoner of Azkaban".   I&#8217;ve REALLY enjoyed the &#8220;Harry Potter&#8221; books and look forward to seeing it visually.   While this movie is sure to be good, I&#8217;m really looking forward to &#8220;Harry Potter and the Goblet of Fire".   I enjoyed that book the most out of the series, thus far.   I really wish I would have gone back and re-read &#8220;the Prisoner of Azkaban&#8221; before seeing the movie.   Oh well, I guess I can always go back and re-read it after I see the movie. <img src='http://www.marksportal.net/wp/wp-images/smilies/icon_wink.gif' alt=';)' /></p>
+	<p>This weekend went by WAY too quick.</p>
+	</div>
+	
+	<!--
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	    xmlns:dc="http://purl.org/dc/elements/1.1/"
+	    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.marksportal.net/index.php?p=20"
+    dc:identifier="http://www.marksportal.net/index.php?p=20"
+    dc:title="New Computer"
+    trackback:ping="http://www.marksportal.net/wp/wp-trackback.php/20" />
+</rdf:RDF>	-->
+
+</div>
+
+
+<h2>Friday, June 4,  2004</h2>	
+<div class="post">
+	 <h3 class="storytitle" id="post-19"><a href="http://www.marksportal.net/index.php?p=19" rel="bookmark" title="Permanent Link: Spiritual Gifts">Spiritual Gifts</a></h3>
+	<div class="meta">posted by: Mark @ 12:44 pm </div>
+	
+	<div class="storycontent">
+			<p>Sometimes things just click.  I&#8217;ll have read something over and over and over again and think I&#8217;ve understood it, then one day God taps one part of my brain and *BAM* fresh water floods in giving new insights into things.    This is what happened with me during my lunchtime with God today.   It&#8217;s probably something that seems simple to everyone else, but to me it finally clicked, and that is good. <img src='http://www.marksportal.net/wp/wp-images/smilies/icon_smile.gif' alt=':)' /></p>
+	<p>So what was it?  I was reading through 1 Corinthians 13-14.  In the previous chapter Paul had been talking about Spiritual gifts and how God has gifted everyone in the Church with different gifts.   After talking about them Paul says that not everyone receives these gifts, but should &#8220;eagerly desire the greater gifts"(1 Corinth 12:31, NIV).   The greater gifts being healing, prophecy, speaking in tongues, etc.   Then he says,  <em>&#8220;And now I will show you the most excellent way"(1 Corinth 13:1, NIV).</em>   Paul goes on to say that these &#8220;greater gifts&#8221; are good and you should seek after them, however, if you do not have love, these gifts are useless.   In 1 Corinth 13:4-8 he defines love for us:</p>
+	<p><em>&#8220;Love is patient, love is kind.  It does not envy, it does not boast, it is not proud.  It is not rude, it is not self-seeking.  It is not easily angered, it keeps no record of wrongs.  Love does not delight in evil but rejoices with the truth.  It always protects, always trusts, always hopes, always perservers.  Love never fails.&#8221; (1 Corinth.  13:4-8, NIV)</em></p>
+	<p>He then starts to compare love to the &#8220;greater gifts&#8221; and basically says that one day the &#8220;greater gifts&#8221; will not be needed.  There will be a time when healing is no longer needed because we will be healthy.  Tongues will not be needed because we will all be speaking with God face to face.  etc&#8230;etc&#8230;etc.   Then Paul concludes by saying, <em>&#8220;And now these three remain:  faith, hope and love.  But the greatest is love."(1 Corinth. 13:13, NIV). </em></p>
+	<p>Now Paul has put the &#8220;greater gifts&#8221; in context.  They are good and we should desire them, but they are merely a tool to be used while we are in the world.  Once out of the world(ie. in heaven), they will no longer be needed.  However, faith, hope, and love will continue passed the death of our bodies.  </p>
+	<p>Since Paul has now put things in perspective he goes back to talking about the &#8220;greater gifts&#8221; again.  <em>&#8220;Follow the way of love and eagerly desire spiritual gifts, especially the gift of prophecy."(1 Corinth. 14:1, NIV).</em>   Paul continues on by comparing prophecy to tongues.  Tongues is good, he says, but it only edifies the speaker and are more of sign to unbelievers that God is with them, then it is to believers.   Prophecy, however, is what we are to desire most out of all the &#8220;greater gifts&#8221; because <em>&#8220;everyone who prophesies speaks to men for their strengthening, encouragement, and comfort"(1 Corinth 14:3, NIV).</em>  Prophecy edifies the Church and it seems to me that anything that edifies the Church is an act of, or done out of, love.  </p>
+	<p>I&#8217;d like to continue with this, but I need to get back to work.  Just thought I&#8217;d write this while it&#8217;s fresh in my mind. <img src='http://www.marksportal.net/wp/wp-images/smilies/icon_wink.gif' alt=';)' /></p>
+	</div>
+	
+	<!--
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	    xmlns:dc="http://purl.org/dc/elements/1.1/"
+	    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.marksportal.net/index.php?p=19"
+    dc:identifier="http://www.marksportal.net/index.php?p=19"
+    dc:title="Spiritual Gifts"
+    trackback:ping="http://www.marksportal.net/wp/wp-trackback.php/19" />
+</rdf:RDF>	-->
+
+</div>
+
+
+<h2>Wednesday, June 2,  2004</h2>	
+<div class="post">
+	 <h3 class="storytitle" id="post-18"><a href="http://www.marksportal.net/index.php?p=18" rel="bookmark" title="Permanent Link: Active Ministering">Active Ministering</a></h3>
+	<div class="meta">posted by: Mark @ 11:28 pm </div>
+	
+	<div class="storycontent">
+			<p>Today&#8217;s church seem to push active ministering.  By this I mean going to your workplace or to strangers or to friends and actively share Christ with them.  &#8220;Make friends with unbelievers so that you can share Christ with them", the church is urging.  We are asked to do this or do that so that we can &#8220;create&#8221; this opportunity.   This seems very ungenuine to me.   Maybe I&#8217;m not really hearing what is being said, which could be the case.   Don&#8217;t go and try to create a fictitious relationship with someone because you think &#8220;God would want me to do this".   Reach out to people because of your love for them.   If you do it for any other reason you will be, as Paul said, &#8220;a noisy gong".</p>
+	<p><em>&#8220;If I speak with the tongues of men and of angels, but do not have love, I have become a noisy gong or a clanging cymbal. &#8221; (1 Corinthians 13:1, NASB95) </em></p>
+	</div>
+	
+	<!--
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	    xmlns:dc="http://purl.org/dc/elements/1.1/"
+	    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.marksportal.net/index.php?p=18"
+    dc:identifier="http://www.marksportal.net/index.php?p=18"
+    dc:title="Active Ministering"
+    trackback:ping="http://www.marksportal.net/wp/wp-trackback.php/18" />
+</rdf:RDF>	-->
+
+</div>
+
+
+<h2>Tuesday, June 1,  2004</h2>	
+<div class="post">
+	 <h3 class="storytitle" id="post-17"><a href="http://www.marksportal.net/index.php?p=17" rel="bookmark" title="Permanent Link: What&#8217;s on my mind">What&#8217;s on my mind</a></h3>
+	<div class="meta">posted by: Mark @ 11:44 pm </div>
+	
+	<div class="storycontent">
+			<p>I had inital started writing something here, but since I&#8217;m a bit tired I think I started to ramble on.   So I just decided to make it into a quick outline form instead.  So&#8230;&#8230;what&#8217;s on my mind.</p>
+	<p>1.  I question why conversation plays such a vital role in a social structure.  For example&#8230;those who tell good jokes and have good stories seem to draw a lot of people around them.   Yet those who are quiet or shy seem to repel people away.  The deeper thought on this would ask why the church seems to show favortism to the well spoken person rather than treating everyone as equals.</p>
+	<p>2.  I question why I, and other Christian singles, have the desire to have a companion when Christ says: </p>
+	<p><em>&#8220;For in the resurrection they neither marry nor are given in marriage, but are like angels in heaven. &#8221; (Matthew 22:30, NASB95) </em></p>
+	<p>and Paul says:</p>
+	<p><em>&#8220;But I want you to be free from concern. One who is unmarried is concerned about the things of the Lord, how he may please the Lord; but one who is married is concerned about the things of the world, how he may please his wife, &#8221; (1 Corinthians 7:32-33, NASB95) </em></p>
+	<p>Is this desire something placed on us by Western Culture or is it a legitimate desire that God has placed on our hearts.   After all the American dream, which seems to have been adopted by the church, is to:</p>
+	<p>a) get a degree and a job<br />
+b) get married and have kids<br />
+c) buy a house and work until you can retire and die.</p>
+	<p>I don&#8217;t think this is necessarily God&#8217;s dream.</p>
+	</div>
+	
+	<!--
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	    xmlns:dc="http://purl.org/dc/elements/1.1/"
+	    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.marksportal.net/index.php?p=17"
+    dc:identifier="http://www.marksportal.net/index.php?p=17"
+    dc:title="What&#8217;s on my mind"
+    trackback:ping="http://www.marksportal.net/wp/wp-trackback.php/17" />
+</rdf:RDF>	-->
+
+</div>
+
+
+<h2>Monday, May 31,  2004</h2>	
+<div class="post">
+	 <h3 class="storytitle" id="post-15"><a href="http://www.marksportal.net/index.php?p=15" rel="bookmark" title="Permanent Link: Yosemite Weekend">Yosemite Weekend</a></h3>
+	<div class="meta">posted by: Mark @ 11:25 pm </div>
+	
+	<div class="storycontent">
+			<p>I just got back from a great weekend of hiking at Yosemite.  I wasn&#8217;t quite sure what to expect as I really haven&#8217;t been exposed much to the area nor the people that I went with.   Much to my delight, it ended up being a great time.  We spent Saturday driving around and taking leisurely hikes, which mostly seemed to be a time just to get to know each other and hang out.   It was enjoyable and by the end of the day I felt comfortable with everyone there.</p>
+	<p>On Sunday we woke up early and made the long trek to Half Dome  (or &#8220;Half Doom&#8221; as a friend calls it).   I had no idea what this hike was going to be like, but was amply warned that it was a hard hike.  For some reason &#8220;hard hike&#8221; never equaled &#8220;up hill the whole way&#8221; in my mind, which is exactly what it turned out to be.   Being someone who doesn&#8217;t play sports or do any other strenuous activity, besides typing on this keyboard, part of me thinks I did rather well.  I was huffing and puffing most the way, which is to be expected, but ended up making it to the bottom of half dome, alive.  About 2 miles before I hit that point though, I hit a wall I&#8217;ve never really hit that hard before&#8230;exhaustion.   I just crashed.  Up to this point I knew I was pushing myself beyond my limits, but I had never expected to hit the point where I literally could not go on.  The people I was with must have been &#8220;super-human", because they were going up this hill like it was nothing.  Some didn&#8217;t even seem to be breaking a sweat.   So I waved them along and told them to continue their ascent without me,  I had resigned myself to the fact that my body was physically incapable of going any further.   It took a bit of persuading but they finally continued their journey up the hill.   </p>
+	<p>Let me take a second to mention something that I had never noticed before.  During my hike up this trail I found that having people around me at certain times  actually hindered me.  When people were around me I just could not focus.  It was the weirdest thing.  When I was hanging back or was alone up ahead(yes, this really did happen <img src='http://www.marksportal.net/wp/wp-images/smilies/icon_wink.gif' alt=';)' />   )  I found that I had the strength to continue.  I would think about God or His angel that He has assigned to watch over me, and for some reason this strengthed me and I could go on.  It also got my mind off the hike, which was nice.  Yet when people were around me  I started comparing myself to them and getting down that I wasn&#8217;t in better shape or wasn&#8217;t as smart as they are, or good looking as they are, or one of the million other things you can use to compare yourself with.  At any rate, it was interesting to discover that I could push myself harder by myself than I could with other people around.  </p>
+	<p>So back to the hill&#8230;I had my friends continue up without me and I just sat there as my mind and my body waged war with each other.  My mind trying with all it&#8217;s might to force my sore body to continue past a pain it had never felt before(not to mention the blisters all over my feet).  As I sat there, up walks another member of our group that we had thought turned back with some others.  He was another one of those &#8220;Super-humans&#8221; who didn&#8217;t break a sweat climbing this monsterous mountain.   Again, I tried to persuade him to &#8220;move along", but he would have none of that.  If I had to stop every 3 feet, so be it.  &#8220;There&#8217;s no rush getting to the top", he said.  So with every ounce I could muster we continued up the mountain.  Though I didn&#8217;t stop every 3 feet, it sure seemed like it&#8230;and I felt horrible for it.  &#8220;It just gives me more time to rest", he&#8217;d tell me with a smile.   I&#8217;m sure this was all true, but I still felt bad for having to stop so often, not to mention the snails pace I was going.  </p>
+	<p>That final 2 miles seemed to be the longest in my life.  I&#8217;m not sure how long it took, but it felt like hours.   Upon reaching the bottom of Half Dome I collapsed, feeling proud that I had made it that far.   As I sat there twitching <img src='http://www.marksportal.net/wp/wp-images/smilies/icon_wink.gif' alt=';)' />,  I looked up and saw a set of stairs leading up to the final leg of the trip.   I&#8217;m not quite sure how far up it went, because, I regret to inform you, I did not continue.   After resting for a bit I started up the stairs but ended up heading back down due to my fear of heights.   You see, the stairs were nothing but stones stacked on each other on the side of this rock mountain.  One false step and there was an easy tumble down to the bottom.  So I sat down on one of the rocks considering if I should continue up or not.  Around that time this huge gust of wind thunders past me.   That was too much.  So I headed back down to the base and awaited the rest of the group.  I had hiked up hill for over 8 miles only to stop short of reaching the goal by less than a quarter of a mile.  To be honest I&#8217;m starting to regret that decision, but I&#8217;m sure it&#8217;s easier to regret when I&#8217;m sitting back at home safe and sound&#8230;and breathing normally again. <img src='http://www.marksportal.net/wp/wp-images/smilies/icon_wink.gif' alt=';)' /></p>
+	<p>Like I said, all in all, it was a great trip.   Though, as usual, I ended the trip feeling down on myself for various reasons.   The first thing, as I mentioned previously, was my physical condition.  Though I&#8217;m sure I did great for someone who isn&#8217;t active, that&#8217;s not quite good enough for me.  I was weak and my weakness affected other people.  Nothing serious of course, I just slowed them down, but I hated that weakness.  I would have had no problems waiting for someone who was physically weaker, but me being that weak person..I have a big problem with that.  </p>
+	<p>There is more to add, but it&#8217;s late and I need rest.  Maybe tomorrow I&#8217;ll get back to some of the other reasons&#8230;we&#8217;ll see. <img src='http://www.marksportal.net/wp/wp-images/smilies/icon_wink.gif' alt=';)' /></p>
+	</div>
+	
+	<!--
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	    xmlns:dc="http://purl.org/dc/elements/1.1/"
+	    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.marksportal.net/index.php?p=15"
+    dc:identifier="http://www.marksportal.net/index.php?p=15"
+    dc:title="Yosemite Weekend"
+    trackback:ping="http://www.marksportal.net/wp/wp-trackback.php/15" />
+</rdf:RDF>	-->
+
+</div>
+
+
+<h2>Thursday, May 27,  2004</h2>	
+<div class="post">
+	 <h3 class="storytitle" id="post-14"><a href="http://www.marksportal.net/index.php?p=14" rel="bookmark" title="Permanent Link: The Old Testament">The Old Testament</a></h3>
+	<div class="meta">posted by: Mark @ 1:36 pm </div>
+	
+	<div class="storycontent">
+			<p>A majority of my lunch times are spent with God.   When I first started reading the Bible during lunch I just figured it would be a nice thing to do.  Little did I know that it would ultimately become one of my most treasured times in the day.   I usually choose a table in the corner of the restaurant, open my Bible to any old place, and just start reading while I eat.  Not long afterwards, everything fades away and God joins me.  I wish I could describe what it&#8217;s like to be with God, but I suppose it&#8217;s just as difficult to tell someone what it&#8217;s like to spend time with a friend or family member.</p>
+	<p>The past several years I&#8217;ve been drawn to the Old Testament(O.T).  I find God to be a lot more revealing in the O.T. than the New Testament, which is why most of my time has been spent in the O.T.   I&#8217;ll give you some examples of from what I&#8217;ve read today(and in the past).</p>
+	<p><em>&#8220;Therefore, O house of Israel, I will judge you, each one according to his ways, declares the Sovereign LORD.   Repent!  Turn away from all your offenses; then sin will not be your downfall.  Rid yourselves of all the offenses you have commited, and get a new heart and a new spirit.  Why will you die, O house of Israel?  For I take no pleasure in the death of anyone, declares the Sovereign LORD.  Repent and live!&#8221;</em> (Ezekiel 18:30-32, NIV)</p>
+	<p>Can you hear God pleading with Israel?  Can you hear His emotion in that?  He&#8217;s crying out to the Israelites, almost begging them to turn from evil so He doesn&#8217;t have to execute judgement on them.  God&#8217;s desire is again seen in Jeremiah,</p>
+	<p><em>&#8220;&#8216;The days are coming,&#8217; declares the LORD, &#8216;when I will raise up to David a righteous Branch, a King who will reign wisely and do what is just and right in the land.&#8217;&#8221;</em> (Jeremiah 23:5, NIV)</p>
+	<p>That &#8220;righteous Branch&#8221; God speaks of is Jesus Christ, but what He expects out of &#8220;the King&#8221; is also what He expects out of all men;  To act wisely and to do what is just and right in the land.   You can hear this desire of God echo&#8217;d in Micah.</p>
+	<p><em>&#8220;He has showed you, O man, what is good.  And what does the LORD require of you?  To act justly and to love mercy and to walk humbly with your God.&#8221;</em> (Micah 6:8, NIV)</p>
+	<p>Do you hear the messanger of God pleading with the people of Israel?  &#8220;Act Justly!&#8221;  &#8220;Love Mercy!&#8221;   &#8220;Walk humbly with God!".   These are the things God desires and seeks after.  I think it&#8217;s with disappointment and sadness when God says the following, </p>
+	<p><em>&#8220;The righteous perish, and no one ponders it in his heart;&#8221;</em> (Isaiah 57:1, NIV)</p>
+	<p>God&#8217;s passions and desires seem to shout out to me in Isaiah 58.</p>
+	<p><em>&#8220;For day after day they[Israel] seek me out;  they seem eager to know my ways, as if they were a nation that does what is right and has not forsaken the commands of its God.  They ask me for just decisions and seem eager for God to come near them.  &#8216;Why have we fasted,&#8217; they say, &#8216;and you have not seen it?  Why have we humbled ourselves and you have not noticed?&#8217;   Yet on the day of your fasting, you do as you please and exploit all your workders.  Your fasting end in quarreling and strife, and in striking each other with wicked fists.  You cannot fast as you do today and expect your voice to be heard on high.  Is this the kind of fast I have chosen, only a day for a man to humble himself?  Is it only for bowing one&#8217;s head like a reed and for lying on sackcloth and ashes?  Is that what you call a fast, a day acceptable to the LORD?&#8221;</em> (Isaiah 58:2-5, NIV)</p>
+	<p>Israel accused God of not listening to them.  &#8220;Hey, we are doing what you commanded, why aren&#8217;t you answering us?!&#8221;  they shout at God.   I picture God shaking His head and sadly saying, &#8220;You just don&#8217;t get it do you?&#8221;  So God tells Israel what He sees them doing and then says what they should be doing&#8230;.</p>
+	<p><em>&#8220;Is not this the kind of fasting I have chosen:  to loose the chains of injustice and untie the cords of the yoke, to set the oppressed free and break every yoke?   Is it not to share your food with the hungry and to provide the poor wanderer with shelter&#8211;when you see the naked, to clothe him, and not to turn away from your own flesh and blood?&#8221;</em> (Isaiah 58:6-7, NIV)</p>
+	<p>Again, God&#8217;s passion comes out.   &#8220;Love one another!", He shouts.   &#8220;Be kind to others!", He begs.  &#8220;Do what is good and right!", he pleads.</p>
+	<p>The Old Testament is full with God&#8217;s emotions, desires and passions.   It&#8217;s why I love spending so much time reading it.
+</p>
+	</div>
+	
+	<!--
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	    xmlns:dc="http://purl.org/dc/elements/1.1/"
+	    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.marksportal.net/index.php?p=14"
+    dc:identifier="http://www.marksportal.net/index.php?p=14"
+    dc:title="The Old Testament"
+    trackback:ping="http://www.marksportal.net/wp/wp-trackback.php/14" />
+</rdf:RDF>	-->
+
+</div>
+
+</div>
+
+
+</td><td width="10">&nbsp;</td><td valign="top" align="left">
+<div id="menu">
+
+<ul>
+ <li id="search">
+   <label for="s">Search:</label>	
+   <form id="searchform" method="get" action="/index.php">
+	<div>
+		<input type="text" name="s" id="s" size="15" /><br />
+		<input type="submit" name="submit" value="Search" />
+	</div>
+	</form>
+ </li>
+ <li id="archives">Archives: 	<ul>
+	 	<li><a href="http://www.marksportal.net/index.php?m=200406" title="June 2004">June 2004</a></li>
+	<li><a href="http://www.marksportal.net/index.php?m=200405" title="May 2004">May 2004</a></li>
+ 	</ul>
+ </li>
+ <li id="calendar">
+	<table id="wp-calendar">
+    <caption>June 2004</caption>
+    <thead>
+    <tr>
+		<th abbr="Sunday" scope="col" title="Sunday">S</th>
+		<th abbr="Monday" scope="col" title="Monday">M</th>
+		<th abbr="Tuesday" scope="col" title="Tuesday">T</th>
+		<th abbr="Wednesday" scope="col" title="Wednesday">W</th>
+		<th abbr="Thursday" scope="col" title="Thursday">T</th>
+		<th abbr="Friday" scope="col" title="Friday">F</th>
+		<th abbr="Saturday" scope="col" title="Saturday">S</th>
+    </tr>
+    </thead>
+
+    <tfoot>
+    <tr>
+		<td abbr="May" colspan="3" id="prev"><a href="http://www.marksportal.net/index.php?m=200405" title="View posts for May 2004">&laquo; May</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+    </tr>
+    </tfoot>
+
+    <tbody>
+    <tr>
+		<td colspan="2" class="pad">&nbsp;</td><td><a href="http://www.marksportal.net/index.php?m=20040601" title="What's on my mind">1</a></td><td><a href="http://www.marksportal.net/index.php?m=20040602" title="Active Ministering">2</a></td><td>3</td><td><a href="http://www.marksportal.net/index.php?m=20040604" title="Spiritual Gifts">4</a></td><td>5</td>
+	</tr>
+	<tr>
+		<td><a href="http://www.marksportal.net/index.php?m=20040606" title="New Computer">6</a></td><td><a href="http://www.marksportal.net/index.php?m=20040607" title="The Great Mountain of God">7</a></td><td>8</td><td id="today">9</td><td>10</td><td>11</td><td>12</td>
+	</tr>
+	<tr>
+		<td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+	</tr>
+	<tr>
+		<td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+	</tr>
+	<tr>
+		<td>27</td><td>28</td><td>29</td><td>30</td>
+		<td class="pad" colspan="3">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table> </li>
+</ul>
+
+</div>
+
+</div>
+</td></tr>
+<tr><td colspan=3>
+<p class="credit"><!--21 queries. 0.409 seconds. --> <cite>Powered by <a href='http://wordpress.org' title='Powered by WordPress, state-of-the-art semantic personal publishing platform'><strong>WordPress</strong></a></cite></p>
+</td></tr>
+
+
+		</td></tr></table></table>
+		</center>
+	
