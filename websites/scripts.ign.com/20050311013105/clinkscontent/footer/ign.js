@@ -1,0 +1,24 @@
+
+document.write('<center>');
+document.write('Hot Areas: ');
+document.write('<a href="http://games.ign.com/" title="Games"><b>Games</b></a> | ');
+document.write('<a href="http://www.fileplanet.com/" title="Free Games"><b>Free Games</b></a> | ');
+document.write('<a href="http://www.gamespyarcade.com/" title="Online Games"><b>Online Games</b></a> | ');
+document.write('<a href="http://cheats.ign.com" title="Cheats"><b>Cheats</b></a> | ');
+document.write('<a href="http://music.ign.com" title="Music"><b>Music</b></a> | ');
+document.write('<a href="http://filmforce.ign.com/" title="Movies"><b>Movies</b></a>');
+document.write('<BR><BR>');
+document.write('');
+document.write('<div id="footerCenter">');
+document.write('<div id="copyrightLogo"><a href="http://corp.ign.com/"><img src="http://media.ign.com/ign/images/ignent_footer_ffffff.gif" border="0" alt="0" /></a></div>');
+document.write('<div id="copyrightLinks">');
+document.write('	<b>Copyright 2004, <a href="http://corp.ign.com/" title="Games, Video Games, Online Games, Addicting Games, Internet Games" target="_blank">IGN Entertainment, Inc.</a></b><br />');
+document.write('	<a href="http://corp.ign.com/" title="IGN games about" target="_blank">About Us</a> | ');
+document.write('	<a href="http://corp.ign.com/ad.html" title="IGN games advertise" target="_blank">Advertise</a> | ');
+document.write('	<a href="http://corp.ign.com/ignhelp.html" title="IGN games help and contact" target="_blank">Help/Contact</a> | ');
+document.write('	<a href="http://corp.ign.com/privacy.html" title="IGN games privacy" target="_blank">Privacy Policy</a> | ');
+document.write('	<a href="http://corp.ign.com/user_agreement.html" title="IGN games user agreement" target="_blank">User Agreement</a>');
+document.write('</div>');
+document.write('</div>');
+document.write('');
+document.write('</center>');

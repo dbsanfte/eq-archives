@@ -1,0 +1,33 @@
+
+document.writeln('<div class=nav>');
+document.writeln('<a href="http://ps2.ign.com" title="PS2 Games">Playstation 2</a><BR>');
+document.writeln('<a href="http://xbox.ign.com" title="Xbox Games">Xbox</a><BR>');
+document.writeln('<a href="http://cube.ign.com" title="Gamecube Games">GameCube</a><BR>');
+document.writeln('<a href="http://pc.ign.com" title="PC Games">PC Games</a><BR>');
+document.writeln('<a href="http://pocket.ign.com" title="GameBoy Games">Game Boy</a><BR>');
+document.writeln('<a href="http://wireless.ign.com" title="Wireless Games">Wireless</a><BR>');
+document.writeln('<a href="http://ngage.ign.com" title="N-Gage Games">N-Gage</a><BR>');
+document.writeln('<a href="http://psx.ign.com" title="Playstation Games">Playstation</a><BR>');
+document.writeln('<a href="http://ign64.ign.com" title="N64 Games">N64</a><BR>');
+document.writeln('<a href="http://dreamcast.ign.com" title="Dreamcast Games">Dreamcast</a><BR>');
+document.writeln('<a href="http://dreamcast.ign.com" title="Mac Games">Mac</a><BR>');
+document.writeln('<a href="http://downloads.ign.com" title="Game Downloads">PC Downloads</a><BR>');
+document.writeln('<a href="http://play.ign.com" title="Play Games">Play Games</a><BR>');
+document.writeln('<a href="http://codes.ign.com" title="Cheat Codes">Cheats & Codes</a><BR>');
+document.writeln('<a href="http://faqs.ign.com" title="Walkthroughs">FAQs</a><BR>');
+document.writeln('<a href="http://guides.ign.com" title="Game Guides">Game Guides</a><BR>');
+document.writeln('<a href="http://filmforce.ign.com" title="Movies">Movies</a><BR>');
+document.writeln('<a href="http://dvd.ign.com" title="DVD">DVD</a><BR>');
+document.writeln('<a href="http://music.ign.com" title="Music">Music</a><BR>');
+document.writeln('<a href="http://gear.ign.com" title="Gear">Gear</a><BR>');
+document.writeln('<a href="http://sports.ign.com" title="Sports">Sports</a><BR>');
+document.writeln('<a href="http://cars.ign.com" title="Cars">Cars</a><BR>');
+document.writeln('<a href="http://formen.ign.com" title="Babes">For Men</a><BR>');
+document.writeln('<a href="http://boards.ign.com/" title="Message Boards">Message Boards </a><BR>');
+document.writeln('<a href="http://users.ign.com/" title="">User Pages</a><BR>');
+document.writeln('<a href="http://vault.ign.com" title="Vault Game Sites">Vault Sites</a><BR>');
+document.writeln('<a href="http://www.teamxbox.com" title="TeamXbox">TeamXbox</a><BR>');
+document.writeln('<a href="http://www.teamxbox.com/gamertags.php" title="GamerTag DB">GamerTag DB</a><BR>');
+document.writeln('<a href="http://ve3d.ign.com/" title="VE3D">VE3D</a><BR>');
+document.writeln('</div>');
+

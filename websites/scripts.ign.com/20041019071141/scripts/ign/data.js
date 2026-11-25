@@ -1,0 +1,198 @@
+/*
+	Purpose: Cookie information for the user.
+	Last Edited:	9/21/2004 - kjaniak,bclaridge
+*/ 
+
+var cookieBeacon = "";
+var checkedBeacon = false;
+
+var cookieFrogger = "";
+var checkedFrogger = false;
+
+function getCookieData(label) { 
+	var labelLen = label.length;
+	var cookie = document.cookie;
+	if ( cookie ) {	
+		var cLen = document.cookie.length;
+		if ( cLen > 0 ) {
+			var x = cookie.indexOf(label+"=");
+			if ( x > -1 ) {
+				var y = cookie.indexOf(";",x);
+				y = (y==-1?cLen:y);							
+				return( unescape( cookie.substring( x+labelLen+1, y ) ) );
+			}
+		}
+	}
+	return( "" );
+}
+
+// prep cookies, so we don't make multiple calls
+function getBeacon() {
+	if ( cookieBeacon.length == 0 && !checkedBeacon ) {
+		cookieBeacon = getCookieData('Beacon');
+	    checkedBeacon = true;
+	}
+	return cookieBeacon;
+}
+
+function getFrogger() {
+	if ( cookieFrogger.length == 0 && !checkedFrogger ) {
+		cookieFrogger = getCookieData('Frogger');
+	    checkedFrogger = true;
+	}
+	return cookieFrogger;
+}
+
+
+//get a piece of Beacon 
+function getBeaconValue( position ) {
+	var cookie = getBeacon();
+	if ( cookie != null && cookie.length > 0 && cookie.indexOf('.') > -1 ) {
+		var cookieArray = cookie.split('.');
+		// js arrays indexes start at 0 
+		if ( cookieArray != null && cookieArray.length > position+1 ) {
+			if ( cookieArray[position] != null ) {
+				return( cookieArray[position] );
+			}
+		}
+	}
+	return( null );
+}
+
+// see if Beacon piece has a value 
+function hasBeaconValue( position, searchFor ) {
+	var cookie = getBeacon();
+	if ( cookie != null && cookie.length > 0 && cookie.indexOf('.') > -1 ) {
+		var cookieArray = cookie.split('.');
+		// js arrays indexes start at 0 
+		if ( cookieArray != null && cookieArray.length > position+1 ) {
+			if ( cookieArray[position] != null && cookieArray[position].indexOf(searchFor) > -1 ) {
+				return( true );
+			}
+		}
+	}
+	return( false );
+}
+
+// get the username from the Beacon cookie
+function getUserName() {
+   var cookie = getBeacon();
+   var cookieArray = cookie.split('.');
+   var username = cookieArray[2];
+   username = username.replace('#','.');
+   return (username);
+}
+
+// check the user status 
+function checkRegistration() {
+	return hasBeaconValue( 7, '0' );
+}
+
+function checkSubscription() {
+	return hasBeaconValue( 6, 'subscription' );
+}
+
+function checkFounder() {
+	return hasBeaconValue( 6, 'gspyFClub' );
+}
+
+function getFroggerPiece(piecename)  {  
+	var cVal = getFrogger(); 
+	var cLen = cVal.length;
+	var x = 0;
+	var y = 0;
+	if ( piecename.indexOf('collection') > -1 ) {
+		x = cVal.indexOf('*c');
+		y = cVal.indexOf('*', x+2);
+	} else if ( piecename.indexOf('wishlist') > -1 ) {
+		x = cVal.indexOf('*wr');
+		y = cVal.indexOf('*wa', x+2);		
+	} else if ( piecename.indexOf('reviewed') > -1 ) {
+		x = cVal.indexOf('*r');
+		y = cLen; // reviewed is last
+	}
+	return( unescape( cVal.substring(x,y) ) );
+}
+
+// check to see if game exists in different lists
+function checkWatch(gobid) {
+	getFrogger();
+	return (	(cookieFrogger.indexOf('='+gobid+'w') > -1) || 
+				(cookieFrogger.indexOf('_'+gobid+'w') > -1) || 
+				(cookieFrogger.indexOf('D'+gobid+'w') > -1) 	); 
+}
+
+function checkWishlist(gobid) {
+	var wishlist = getFroggerPiece('wishlist');
+	if ( wishlist.indexOf(gobid) > -1) { 
+		return( true );
+	} else {
+	return( false );
+	}
+} 
+
+function checkCollection(gobid) {
+	var collect = getFroggerPiece('collection');
+	if ( collect.indexOf(gobid) > -1) { 
+		return( true );
+	}
+	return( false );
+} 
+
+function checkReviewed(gobid) {
+	var collect = getFroggerPiece('reviewed');
+	if ( collect.indexOf(gobid) > -1) { 
+		return( true );
+	}
+	return( false );
+} 
+
+// toggle checkboxes
+function toggleWatch(cb,id) {
+	if (cb.checked) {
+		cb.checked = true;
+		windowgoto = "http://users.ign.com/my/sb?action=addToUserGameList&ownedGames=w&ui=watchCheckboxOn&gameId=";
+	} else {
+		cb.checked = false;
+		windowgoto = "http://users.ign.com/my/sb?action=stopWatching&ui=watchCheckboxOff&gameId=";
+	}
+	var newWindow = window.open(windowgoto + id,"","status,"+popWindowSizeReg(362,500,770,900)+",resizable=yes,scrollbars=yes,location=yes");
+	return false;
+}
+
+function toggleWishlist(cb,id) {
+	if (cb.checked) {
+		cb.checked = true;
+		windowgoto = "http://my.ign.com/my/sb?action=addToUserGameList&ownedGames=n&affPop=y&gameId=";
+	} else {
+		cb.checked = false;
+		windowgoto = "http://my.ign.com/my/sb?action=modifyGameProfile&ownedGames=0&actionType=deleteChecked&disp=pop&gameId=";
+	}
+	var newWindow = window.open(windowgoto + id,"","status,"+popWindowSizeReg(362,500,770,900)+",resizable=yes,scrollbars=yes,location=yes");
+	return false;
+}
+
+function toggleCollection(cb,id) {
+	if (cb.checked) {
+		cb.checked = true;
+		windowgoto = "http://my.ign.com/my/sb?action=addToUserGameList&ownedGames=y&affPop=y&move=y&gameId=";
+	} else {
+		cb.checked = false;
+		windowgoto = "http://my.ign.com/my/sb?action=modifyGameProfile&ownedGames=1&actionType=deleteChecked&disp=pop&gameId=";
+	}
+	var newWindow = window.open(windowgoto + id,"","status,"+popWindowSizeReg(362,500,770,900)+",resizable=yes,scrollbars=yes,location=yes");
+	return false;
+}
+
+// button
+function addNote(id) {
+		windowgoto = "http://users.ign.com/my/sb?action=multiEditGame&ownedGames=0&isSinglePopup=1&gameIds=";
+	var newWindow = window.open(windowgoto + id,"","addnote,"+popWindowSizeReg(570,630,770,900)+",resizable=yes,scrollbars=yes,location=yes");
+	return false;
+}
+
+// submit score popup
+function submitScorePopup(id) {
+	var windowgoto = 'http://my.ign.com/my/sb?action=rateSingleGame&game=';
+	var newWindow = window.open(windowgoto + id,"submitScore","status,"+popWindowSizeReg(650,350,600,700)+",resizable=yes,scrollbars=yes");
+} 
