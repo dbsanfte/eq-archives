@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=EUC-JP" />
+<meta http-equiv="content-language" content="ja" />
+<meta name="robots" content="index,follow" />
+<meta name="keywords" content="news, technology, headlines, xoops, xoop, nuke, myphpnuke, myphp-nuke, phpnuke, SE, geek, geeks, hacker, hackers, linux, software, download, downloads, free, community, mp3, forum, forums, bulletin, board, boards, bbs, php, survey, poll, polls, kernel, comment, comments, portal, odp, open, source, opensource, FreeSoftware, gnu, gpl, license, Unix, *nix, mysql, sql, database, databases, web site, weblog, guru, module, modules, theme, themes, cms, content management, EverQuest, エバークエスト, EverQuestII, EverQuest2, エバークエストＩＩ, エバークエスト２, EQ2, 攻略, フォーラム" />
+<meta name="description" content="EverQuestIIの町の様子やクエスト情報、冒険の数々を掲載しています。EQ2の日本リリースからはじめた初心者による、初心者らしい観点からの情報です。" />
+<meta name="rating" content="general" />
+<meta name="author" content="XOOPS" />
+<meta name="copyright" content="Copyright &copy; 2001-2003" />
+<meta name="generator" content="XOOPS" />
+<title>エバクエ２探険記 - マイアルバム</title>
+<link href="http://eq2.eggplants.info/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="http://eq2.eggplants.info/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://eq2.eggplants.info/themes/dive/style.css" />
+<!-- RMV: added module header -->
+
+<script type="text/javascript">
+<!--
+//--></script><script type="text/javascript" src="http://eq2.eggplants.info/include/xoops.js"></script><script type="text/javascript"><!--
+//-->
+</script>
+</head>
+<body>
+
+<!-- ヘッダ部分の定義 -->
+<table cellspacing="0" cellpadding=0 style="width:1000px;">
+<tr>
+<td id="headerlogo"><a href="http://eq2.eggplants.info/"><img src="http://eq2.eggplants.info/themes/dive/logo.gif"></a></td>
+<td id="headerbanner"><img src="http://eq2.eggplants.info/themes/dive/welcome.jpg"></td>
+		<form action="http://eq2.eggplants.info/user.php" method="post">
+<td id="headerbarR" rowspan=2>
+	<img src="http://eq2.eggplants.info/themes/dive/dot.gif" width=200 height=1><br>
+	<input type="text" name="uname" value="ユーザ名" size=12 onMouseOver="this.focus();" onFocus="if(this.value == 'ユーザ名') this.value = '';" style="font-size:11px; padding:0px; margin:3px;"><br>
+	<input type="password" name="pass" value="パスワード" size="12" onMouseOver="this.focus();" onFocus="if(this.value == 'パスワード') this.value = '';" style="font-size:11px; padding:0px; margin:3px;"><br>
+	<input type="hidden" name="op" value="login"> 
+	<input type="submit" value="ログイン" style="height:18px;font-size:10px;"><br><br>
+	[ <a href="http://eq2.eggplants.info/register.php">新規登録</a> ]
+	</td>
+	</form>
+	
+</tr>
+<tr>
+<td id="headerbarL">
+<form action="http://eq2.eggplants.info/search.php" method="get" style="margin:0px;">
+<input type="text" name="query" size="20"/>
+<input type="hidden" name="action" value="results" />
+<input type="submit" name="searchSubmit" value="検索" />
+</form>
+</td>
+<td id="headerbarC">
+<a href="http://eq2.eggplants.info/">ホーム</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/pukiwiki/">攻略自由帳</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/newbb/">フォーラム</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/weblog/">日記</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/mylinks/">リンク集</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/myalbum/">ギャラリー</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/contact/">お問い合せ</a></td>
+</tr>
+</table>
+<!-- ヘッダ部分終わり -->
+
+<table cellspacing="0" style="width:1000px;">
+<tr>
+<!-- 左ブロック部分の定義 -->
+<td id="leftcolumn">
+
+
+        				<div class="blockTitle">メニュー</div>
+				<div class="blockContent"><table cellspacing="0">
+  <tr>
+    <td id="mainmenu">
+      <!-- start module menu loop -->
+                                    <a class="menuTop" href="http://eq2.eggplants.info/" target="_self">トップページ</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/pukiwiki/" target="_self">エバクエ２攻略自由帳</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/pukiwiki/index.php?%A5%AD%A5%ED%A5%ED%A5%A2%A5%F3%A1%A6%A5%DE%A5%A4%A5%B9%A5%BF%A1%BC%A5%BA" target="_self">キロロアン・マイスターズ</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/newbb/" target="_self">エバクエ２フォーラム</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/wordpress/" target="_self">エバクエ２日記</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/myalbum/" target="_self">スクリーンショットギャラリー</a>
+                            <a class="menuSub" href="http://eq2.eggplants.info/modules/myalbum/submit.php">投稿</a>
+                  <a class="menuSub" href="http://eq2.eggplants.info/modules/myalbum/viewcat.php?uid=-1">自分の投稿</a>
+                  <a class="menuSub" href="http://eq2.eggplants.info/modules/myalbum/topten.php?hit=1">高人気</a>
+                  <a class="menuSub" href="http://eq2.eggplants.info/modules/myalbum/topten.php?rate=1">トップランク</a>
+                                                    <a class="menuMain" href="http://eq2.eggplants.info/modules/newbb/viewforum.php?forum=8" target="_self">訪問掲示板</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/contact/" target="_self">お問い合わせ</a>
+                                      <!-- end module menu loop -->
+    </td>
+  </tr>
+</table></div>
+                <br style="font-size:6px;">
+      </td>
+    <!-- 左ブロック終わり -->
+
+      <td id="centercolumn" style="border-right:1px solid #FFFFFF;">
+              <!-- Display center blocks if any -->
+                <!-- End display center blocks -->
+
+        <div id="content">
+          <table width="100%" cellspacing="0" class="outer"><tr><td class="even"><br /><p>
+  <div align='center'>
+    <a href='http://eq2.eggplants.info/modules/myalbum/index.php'><img src='http://eq2.eggplants.info/modules/myalbum/images/logo.gif' border='0' /></a>
+  </div>
+</p><br /><table width="100%" border='0' cellspacing='5' cellpadding='0' align="center">
+  <tr>
+      <td valign="top" align="right">
+              <a href="http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1">
+          <img src="http://eq2.eggplants.info/modules/myalbum/images/folder32.gif" width="32" height="32" border="0" alt="" />
+        </a>
+          </td>
+    <td valign="top" align="left" width="33%">
+      <a href="http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1"><span style="font:bold 150%;">EverQuest II</span></a>&nbsp;Total:32&nbsp;(32)
+      <br />
+          </td>
+        </tr>
+</table><hr /><form name='cid_select' action='http://eq2.eggplants.info/modules/myalbum/viewcat.php' method='GET' style='margin:0px;text-align:center;'><select name='cid' onchange='submit();'><option value=''>カテゴリ選択</option><option value='1' > EverQuest II (32)</option>
+</select> &nbsp; &nbsp;データベースにある画像は <b>32</b> 枚です &nbsp; &nbsp;<a href="submit.php">画像を追加<img src="http://eq2.eggplants.info/modules/myalbum/images/pictadd.gif" border="0" alt="画像を追加" title="画像を追加" /></a></form></td></tr></table><br /><table width="100%" cellspacing="0" class="outer"><tr><td class="even" align="left"><h4>最新リスト</h4><table broder='0' cellpadding='0' cellspacing='0' width='100%'><tr><td align='left'>1 番〜 10 番を表示 (全 32 枚)</td><td align='right'><b>(1)</b> <a href="/modules/myalbum/index.php?num=10&amp;pos=10">2</a> <a href="/modules/myalbum/index.php?num=10&amp;pos=20">3</a> <a href="/modules/myalbum/index.php?num=10&amp;pos=30">4</a> <a href="/modules/myalbum/index.php?num=10&amp;pos=10"><u>&raquo;</u></a> </td></tr></table><hr /><table width='100%' cellspacing='0' cellpadding='10' border='0'><tr>
+  <td width='150' align='center'><br /><div align='center'><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=32'><img src='http://eq2.eggplants.info/uploads/thumbs/32.jpg'  alt='玉座から' title='玉座から' /></a></div><br /></td><td align='left'><a name='32'></a><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=32&amp;cid=1'><b>玉座から</b></a><img src='http://eq2.eggplants.info/modules/myalbum/images/pop.gif' border='0' alt='高ヒット' title='高ヒット' /><br /><a href='http://eq2.eggplants.info/userinfo.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/submitter.gif' width='16' height='16' alt='投稿者' title='投稿者' border='0' /></a>かだる<a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/myphotos.gif' width='16' height='16' alt='かだる さんの画像をもっと!' title='かだる さんの画像をもっと!' border='0' /></a>&nbsp; &nbsp; <a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1'><img src='http://eq2.eggplants.info/modules/myalbum/images/folder16.gif' width='16' height='16' alt='カテゴリー' title='カテゴリー' border='0' />EverQuest II</a> &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/clock.gif' width='16' height='16' alt='前回更新' title='前回更新' />2006-3-26 19:00<br /><img src='http://eq2.eggplants.info/modules/myalbum/images/hits.gif' width='16' height='16' alt='ヒット数' title='ヒット数' />151 &nbsp; <img src='http://eq2.eggplants.info/modules/myalbum/images/comments.gif' width='16' height='16' alt='コメント数' title='コメント数' />0 &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/rank_none.gif' alt='0.00 (投票数 0)' title='0.00 (投票数 0)' border='0' />0.00 (投票数 0)<a href='http://eq2.eggplants.info/modules/myalbum/ratephoto.php?lid=32'><img src='http://eq2.eggplants.info/modules/myalbum/images/vote.gif' alt='投票する' title='投票する' border='0' />投票する</a><br /><table border='0' cellpadding='0' cellspacing='0' width='100%' class='outer'><tr><td class='odd'>オークの玉座から「苦しゅうないぞ」</td></tr></table></td>
+</tr><tr>
+  <td width='150' align='center'><br /><div align='center'><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=31'><img src='http://eq2.eggplants.info/uploads/thumbs/31.jpg'  alt='校庭１０周！' title='校庭１０周！' /></a></div><br /></td><td align='left'><a name='31'></a><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=31&amp;cid=1'><b>校庭１０周！</b></a><img src='http://eq2.eggplants.info/modules/myalbum/images/pop.gif' border='0' alt='高ヒット' title='高ヒット' /><br /><a href='http://eq2.eggplants.info/userinfo.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/submitter.gif' width='16' height='16' alt='投稿者' title='投稿者' border='0' /></a>かだる<a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/myphotos.gif' width='16' height='16' alt='かだる さんの画像をもっと!' title='かだる さんの画像をもっと!' border='0' /></a>&nbsp; &nbsp; <a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1'><img src='http://eq2.eggplants.info/modules/myalbum/images/folder16.gif' width='16' height='16' alt='カテゴリー' title='カテゴリー' border='0' />EverQuest II</a> &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/clock.gif' width='16' height='16' alt='前回更新' title='前回更新' />2006-3-26 18:58<br /><img src='http://eq2.eggplants.info/modules/myalbum/images/hits.gif' width='16' height='16' alt='ヒット数' title='ヒット数' />110 &nbsp; <img src='http://eq2.eggplants.info/modules/myalbum/images/comments.gif' width='16' height='16' alt='コメント数' title='コメント数' />0 &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/rank_none.gif' alt='0.00 (投票数 0)' title='0.00 (投票数 0)' border='0' />0.00 (投票数 0)<a href='http://eq2.eggplants.info/modules/myalbum/ratephoto.php?lid=31'><img src='http://eq2.eggplants.info/modules/myalbum/images/vote.gif' alt='投票する' title='投票する' border='0' />投票する</a><br /><table border='0' cellpadding='0' cellspacing='0' width='100%' class='outer'><tr><td class='odd'>ほねほね君たちは、みんなの見えないところで鍛えてるのさ　p(・∩・)q<br />ふぁいおー！　えい！　おー！　えい！</td></tr></table></td>
+</tr><tr>
+  <td width='150' align='center'><br /><div align='center'><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=30'><img src='http://eq2.eggplants.info/uploads/thumbs/30.jpg'  alt='きらきら光るおねいさん' title='きらきら光るおねいさん' /></a></div><br /></td><td align='left'><a name='30'></a><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=30&amp;cid=1'><b>きらきら光るおねいさん</b></a><img src='http://eq2.eggplants.info/modules/myalbum/images/pop.gif' border='0' alt='高ヒット' title='高ヒット' /><br /><a href='http://eq2.eggplants.info/userinfo.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/submitter.gif' width='16' height='16' alt='投稿者' title='投稿者' border='0' /></a>かだる<a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/myphotos.gif' width='16' height='16' alt='かだる さんの画像をもっと!' title='かだる さんの画像をもっと!' border='0' /></a>&nbsp; &nbsp; <a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1'><img src='http://eq2.eggplants.info/modules/myalbum/images/folder16.gif' width='16' height='16' alt='カテゴリー' title='カテゴリー' border='0' />EverQuest II</a> &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/clock.gif' width='16' height='16' alt='前回更新' title='前回更新' />2006-3-26 18:56<br /><img src='http://eq2.eggplants.info/modules/myalbum/images/hits.gif' width='16' height='16' alt='ヒット数' title='ヒット数' />137 &nbsp; <img src='http://eq2.eggplants.info/modules/myalbum/images/comments.gif' width='16' height='16' alt='コメント数' title='コメント数' />0 &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/rank_none.gif' alt='0.00 (投票数 0)' title='0.00 (投票数 0)' border='0' />0.00 (投票数 0)<a href='http://eq2.eggplants.info/modules/myalbum/ratephoto.php?lid=30'><img src='http://eq2.eggplants.info/modules/myalbum/images/vote.gif' alt='投票する' title='投票する' border='0' />投票する</a><br /><table border='0' cellpadding='0' cellspacing='0' width='100%' class='outer'><tr><td class='odd'>きらきら光って・・・それでも怖いよ・・・おねいさん</td></tr></table></td>
+</tr><tr>
+  <td width='150' align='center'><br /><div align='center'><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=29'><img src='http://eq2.eggplants.info/uploads/thumbs/29.jpg'  alt='箱の中からおねいさん' title='箱の中からおねいさん' /></a></div><br /></td><td align='left'><a name='29'></a><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=29&amp;cid=1'><b>箱の中からおねいさん</b></a><br /><a href='http://eq2.eggplants.info/userinfo.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/submitter.gif' width='16' height='16' alt='投稿者' title='投稿者' border='0' /></a>かだる<a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/myphotos.gif' width='16' height='16' alt='かだる さんの画像をもっと!' title='かだる さんの画像をもっと!' border='0' /></a>&nbsp; &nbsp; <a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1'><img src='http://eq2.eggplants.info/modules/myalbum/images/folder16.gif' width='16' height='16' alt='カテゴリー' title='カテゴリー' border='0' />EverQuest II</a> &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/clock.gif' width='16' height='16' alt='前回更新' title='前回更新' />2006-3-26 18:54<br /><img src='http://eq2.eggplants.info/modules/myalbum/images/hits.gif' width='16' height='16' alt='ヒット数' title='ヒット数' />97 &nbsp; <img src='http://eq2.eggplants.info/modules/myalbum/images/comments.gif' width='16' height='16' alt='コメント数' title='コメント数' />0 &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/rank_none.gif' alt='0.00 (投票数 0)' title='0.00 (投票数 0)' border='0' />0.00 (投票数 0)<a href='http://eq2.eggplants.info/modules/myalbum/ratephoto.php?lid=29'><img src='http://eq2.eggplants.info/modules/myalbum/images/vote.gif' alt='投票する' title='投票する' border='0' />投票する</a><br /><table border='0' cellpadding='0' cellspacing='0' width='100%' class='outer'><tr><td class='odd'>箱の中から・・・怖いですよ・・・おねいさん</td></tr></table></td>
+</tr><tr>
+  <td width='150' align='center'><br /><div align='center'><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=28'><img src='http://eq2.eggplants.info/uploads/thumbs/28.jpg'  alt='火の玉おじさん' title='火の玉おじさん' /></a></div><br /></td><td align='left'><a name='28'></a><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=28&amp;cid=1'><b>火の玉おじさん</b></a><img src='http://eq2.eggplants.info/modules/myalbum/images/pop.gif' border='0' alt='高ヒット' title='高ヒット' /><br /><a href='http://eq2.eggplants.info/userinfo.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/submitter.gif' width='16' height='16' alt='投稿者' title='投稿者' border='0' /></a>かだる<a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/myphotos.gif' width='16' height='16' alt='かだる さんの画像をもっと!' title='かだる さんの画像をもっと!' border='0' /></a>&nbsp; &nbsp; <a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1'><img src='http://eq2.eggplants.info/modules/myalbum/images/folder16.gif' width='16' height='16' alt='カテゴリー' title='カテゴリー' border='0' />EverQuest II</a> &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/clock.gif' width='16' height='16' alt='前回更新' title='前回更新' />2006-3-26 18:53<br /><img src='http://eq2.eggplants.info/modules/myalbum/images/hits.gif' width='16' height='16' alt='ヒット数' title='ヒット数' />113 &nbsp; <img src='http://eq2.eggplants.info/modules/myalbum/images/comments.gif' width='16' height='16' alt='コメント数' title='コメント数' />0 &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/rank_none.gif' alt='0.00 (投票数 0)' title='0.00 (投票数 0)' border='0' />0.00 (投票数 0)<a href='http://eq2.eggplants.info/modules/myalbum/ratephoto.php?lid=28'><img src='http://eq2.eggplants.info/modules/myalbum/images/vote.gif' alt='投票する' title='投票する' border='0' />投票する</a><br /><table border='0' cellpadding='0' cellspacing='0' width='100%' class='outer'><tr><td class='odd'>火の玉おじさん噴火中〜　ψ(￣▽￣)ψ<br />どんな攻撃も「通用しない」？！</td></tr></table></td>
+</tr><tr>
+  <td width='150' align='center'><br /><div align='center'><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=27'><img src='http://eq2.eggplants.info/uploads/thumbs/27.jpg'  alt='雪の国の宮殿' title='雪の国の宮殿' /></a></div><br /></td><td align='left'><a name='27'></a><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=27&amp;cid=1'><b>雪の国の宮殿</b></a><br /><a href='http://eq2.eggplants.info/userinfo.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/submitter.gif' width='16' height='16' alt='投稿者' title='投稿者' border='0' /></a>かだる<a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/myphotos.gif' width='16' height='16' alt='かだる さんの画像をもっと!' title='かだる さんの画像をもっと!' border='0' /></a>&nbsp; &nbsp; <a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1'><img src='http://eq2.eggplants.info/modules/myalbum/images/folder16.gif' width='16' height='16' alt='カテゴリー' title='カテゴリー' border='0' />EverQuest II</a> &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/clock.gif' width='16' height='16' alt='前回更新' title='前回更新' />2006-3-26 18:51<br /><img src='http://eq2.eggplants.info/modules/myalbum/images/hits.gif' width='16' height='16' alt='ヒット数' title='ヒット数' />47 &nbsp; <img src='http://eq2.eggplants.info/modules/myalbum/images/comments.gif' width='16' height='16' alt='コメント数' title='コメント数' />0 &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/rank_none.gif' alt='0.00 (投票数 0)' title='0.00 (投票数 0)' border='0' />0.00 (投票数 0)<a href='http://eq2.eggplants.info/modules/myalbum/ratephoto.php?lid=27'><img src='http://eq2.eggplants.info/modules/myalbum/images/vote.gif' alt='投票する' title='投票する' border='0' />投票する</a><br /><table border='0' cellpadding='0' cellspacing='0' width='100%' class='outer'><tr><td class='odd'>雪の中の、そのまた奥に、雪の宮殿があったとさＯ(≧▽≦)Ｏ</td></tr></table></td>
+</tr><tr>
+  <td width='150' align='center'><br /><div align='center'><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=26'><img src='http://eq2.eggplants.info/uploads/thumbs/26.jpg'  alt='前へ〜ならえ！' title='前へ〜ならえ！' /></a></div><br /></td><td align='left'><a name='26'></a><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=26&amp;cid=1'><b>前へ〜ならえ！</b></a><img src='http://eq2.eggplants.info/modules/myalbum/images/pop.gif' border='0' alt='高ヒット' title='高ヒット' /><br /><a href='http://eq2.eggplants.info/userinfo.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/submitter.gif' width='16' height='16' alt='投稿者' title='投稿者' border='0' /></a>かだる<a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?uid=2'><img src='http://eq2.eggplants.info/modules/myalbum/images/myphotos.gif' width='16' height='16' alt='かだる さんの画像をもっと!' title='かだる さんの画像をもっと!' border='0' /></a>&nbsp; &nbsp; <a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1'><img src='http://eq2.eggplants.info/modules/myalbum/images/folder16.gif' width='16' height='16' alt='カテゴリー' title='カテゴリー' border='0' />EverQuest II</a> &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/clock.gif' width='16' height='16' alt='前回更新' title='前回更新' />2006-2-9 1:29<br /><img src='http://eq2.eggplants.info/modules/myalbum/images/hits.gif' width='16' height='16' alt='ヒット数' title='ヒット数' />119 &nbsp; <img src='http://eq2.eggplants.info/modules/myalbum/images/comments.gif' width='16' height='16' alt='コメント数' title='コメント数' />0 &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/rank_none.gif' alt='0.00 (投票数 0)' title='0.00 (投票数 0)' border='0' />0.00 (投票数 0)<a href='http://eq2.eggplants.info/modules/myalbum/ratephoto.php?lid=26'><img src='http://eq2.eggplants.info/modules/myalbum/images/vote.gif' alt='投票する' title='投票する' border='0' />投票する</a><br /><table border='0' cellpadding='0' cellspacing='0' width='100%' class='outer'><tr><td class='odd'>小さい前へ〜ならえ！<br />ちゃんと背の順に並んでね〜 <img src="http://eq2.eggplants.info/uploads/smil3dbd4d4e4c4f2.gif" alt="" /> </td></tr></table></td>
+</tr><tr>
+  <td width='150' align='center'><br /><div align='center'><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=25'><img src='http://eq2.eggplants.info/uploads/thumbs/25.jpg'  alt='灼熱の世界' title='灼熱の世界' /></a></div><br /></td><td align='left'><a name='25'></a><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=25&amp;cid=1'><b>灼熱の世界</b></a><img src='http://eq2.eggplants.info/modules/myalbum/images/pop.gif' border='0' alt='高ヒット' title='高ヒット' /><br /><img src='http://eq2.eggplants.info/modules/myalbum/images/submitter.gif' width='16' height='16' alt='投稿者' title='投稿者' />ゲスト&nbsp; &nbsp; <a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1'><img src='http://eq2.eggplants.info/modules/myalbum/images/folder16.gif' width='16' height='16' alt='カテゴリー' title='カテゴリー' border='0' />EverQuest II</a> &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/clock.gif' width='16' height='16' alt='前回更新' title='前回更新' />2006-1-25 22:15<br /><img src='http://eq2.eggplants.info/modules/myalbum/images/hits.gif' width='16' height='16' alt='ヒット数' title='ヒット数' />121 &nbsp; <img src='http://eq2.eggplants.info/modules/myalbum/images/comments.gif' width='16' height='16' alt='コメント数' title='コメント数' />0 &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/rank_none.gif' alt='0.00 (投票数 0)' title='0.00 (投票数 0)' border='0' />0.00 (投票数 0)<a href='http://eq2.eggplants.info/modules/myalbum/ratephoto.php?lid=25'><img src='http://eq2.eggplants.info/modules/myalbum/images/vote.gif' alt='投票する' title='投票する' border='0' />投票する</a><br /><table border='0' cellpadding='0' cellspacing='0' width='100%' class='outer'><tr><td class='odd'>今まであまり足を踏み入れてなかったラヴァストーム。<br />その奥地には灼熱の世界が広がってました <img src="http://eq2.eggplants.info/uploads/smil3dbd4d4e4c4f2.gif" alt="" /> </td></tr></table></td>
+</tr><tr>
+  <td width='150' align='center'><br /><div align='center'><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=24'><img src='http://eq2.eggplants.info/uploads/thumbs/24.jpg'  alt='ほのぼの〜♪(対岸編)' title='ほのぼの〜♪(対岸編)' /></a></div><br /></td><td align='left'><a name='24'></a><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=24&amp;cid=1'><b>ほのぼの〜♪(対岸編)</b></a><img src='http://eq2.eggplants.info/modules/myalbum/images/pop.gif' border='0' alt='高ヒット' title='高ヒット' /><br /><a href='http://eq2.eggplants.info/userinfo.php?uid=4'><img src='http://eq2.eggplants.info/modules/myalbum/images/submitter.gif' width='16' height='16' alt='投稿者' title='投稿者' border='0' /></a>ファティマ<a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?uid=4'><img src='http://eq2.eggplants.info/modules/myalbum/images/myphotos.gif' width='16' height='16' alt='ファティマ さんの画像をもっと!' title='ファティマ さんの画像をもっと!' border='0' /></a>&nbsp; &nbsp; <a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1'><img src='http://eq2.eggplants.info/modules/myalbum/images/folder16.gif' width='16' height='16' alt='カテゴリー' title='カテゴリー' border='0' />EverQuest II</a> &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/clock.gif' width='16' height='16' alt='前回更新' title='前回更新' />2005-10-23 14:04<br /><img src='http://eq2.eggplants.info/modules/myalbum/images/hits.gif' width='16' height='16' alt='ヒット数' title='ヒット数' />309 &nbsp; <img src='http://eq2.eggplants.info/modules/myalbum/images/comments.gif' width='16' height='16' alt='コメント数' title='コメント数' />0 &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/rank3.gif' alt='4.0000' title='4.0000' border='0' />4.00 (投票数 1)<a href='http://eq2.eggplants.info/modules/myalbum/ratephoto.php?lid=24'><img src='http://eq2.eggplants.info/modules/myalbum/images/vote.gif' alt='投票する' title='投票する' border='0' />投票する</a><br /><table border='0' cellpadding='0' cellspacing='0' width='100%' class='outer'><tr><td class='odd'>ほのぼの〜と思っていた時、<br />私は・・・・。</td></tr></table></td>
+</tr><tr>
+  <td width='150' align='center'><br /><div align='center'><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=23'><img src='http://eq2.eggplants.info/uploads/thumbs/23.jpg'  alt='ぐえ〜＾＾；' title='ぐえ〜＾＾；' /></a></div><br /></td><td align='left'><a name='23'></a><a href='http://eq2.eggplants.info/modules/myalbum/photo.php?lid=23&amp;cid=1'><b>ぐえ〜＾＾；</b></a><img src='http://eq2.eggplants.info/modules/myalbum/images/pop.gif' border='0' alt='高ヒット' title='高ヒット' /><br /><a href='http://eq2.eggplants.info/userinfo.php?uid=4'><img src='http://eq2.eggplants.info/modules/myalbum/images/submitter.gif' width='16' height='16' alt='投稿者' title='投稿者' border='0' /></a>ファティマ<a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?uid=4'><img src='http://eq2.eggplants.info/modules/myalbum/images/myphotos.gif' width='16' height='16' alt='ファティマ さんの画像をもっと!' title='ファティマ さんの画像をもっと!' border='0' /></a>&nbsp; &nbsp; <a href='http://eq2.eggplants.info/modules/myalbum/viewcat.php?cid=1'><img src='http://eq2.eggplants.info/modules/myalbum/images/folder16.gif' width='16' height='16' alt='カテゴリー' title='カテゴリー' border='0' />EverQuest II</a> &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/clock.gif' width='16' height='16' alt='前回更新' title='前回更新' />2005-10-23 13:46<br /><img src='http://eq2.eggplants.info/modules/myalbum/images/hits.gif' width='16' height='16' alt='ヒット数' title='ヒット数' />326 &nbsp; <img src='http://eq2.eggplants.info/modules/myalbum/images/comments.gif' width='16' height='16' alt='コメント数' title='コメント数' />0 &nbsp; &nbsp;<img src='http://eq2.eggplants.info/modules/myalbum/images/rank5.gif' alt='6.0000' title='6.0000' border='0' />6.00 (投票数 1)<a href='http://eq2.eggplants.info/modules/myalbum/ratephoto.php?lid=23'><img src='http://eq2.eggplants.info/modules/myalbum/images/vote.gif' alt='投票する' title='投票する' border='0' />投票する</a><br /><table border='0' cellpadding='0' cellspacing='0' width='100%' class='outer'><tr><td class='odd'>サンダリングステップのポゥに行く途中。<br /><br />なによこれ・・・・ <img src="http://eq2.eggplants.info/uploads/smil3dbd4d8676346.gif" alt="" /> <br /><br />足元みたら骸骨だらけで。<br />この骨はフリーポートの仲間の・・・・。<br />ケイノスって怖いわぁ〜 <img src="http://eq2.eggplants.info/uploads/smil3dbd4e02c5440.gif" alt="" /> </td></tr></table></td>
+</tr></table><hr /><table broder='0' cellpadding='0' cellspacing='0' width='100%'><tr><td align='left'>1 番〜 10 番を表示 (全 32 枚)</td><td align='right'><b>(1)</b> <a href="/modules/myalbum/index.php?num=10&amp;pos=10">2</a> <a href="/modules/myalbum/index.php?num=10&amp;pos=20">3</a> <a href="/modules/myalbum/index.php?num=10&amp;pos=30">4</a> <a href="/modules/myalbum/index.php?num=10&amp;pos=10"><u>&raquo;</u></a> </td></tr></table></td></tr></table><br /><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td align="center"><br /><br /><div align='center'>
+    <a href='http://www.peak.ne.jp/xoops/'><b>myAlbum-P 2.8</b></a> &nbsp; <small>(<a href='http://bluetopia.homeip.net/'>original</a>)</small></div>
+</div></td></tr></table>
+        </div>
+      </td>
+
+      
+    </tr>
+</table>
+
+<!-- フッタ部分の定義 -->
+<table cellspacing="0">
+    <tr>
+    <td id="footerbar">
+    当ホームページに記載されている会社名・製品名・システム名などは、各社の登録商標、もしくは商標です。<br />
+    EverQuest is a registered trademark of Sony Computer Entertainment America Inc. in the United States and/or other countries. (c) 2005 Sony Computer Entertainment America Inc.All Rights Reserved.<br />
+    Produced by Eggplants Project 2001-2005<br />
+	Powered by <a href="http://www.xoops.org/" target="_blank">XOOPS</a>
+	</td>
+    </tr>
+</table>
+<!-- フッタ部分終わり -->
+
+</body>
+</html>

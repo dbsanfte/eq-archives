@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=EUC-JP" />
+<meta http-equiv="content-language" content="ja" />
+<meta name="robots" content="index,follow" />
+<meta name="keywords" content="news, technology, headlines, xoops, xoop, nuke, myphpnuke, myphp-nuke, phpnuke, SE, geek, geeks, hacker, hackers, linux, software, download, downloads, free, community, mp3, forum, forums, bulletin, board, boards, bbs, php, survey, poll, polls, kernel, comment, comments, portal, odp, open, source, opensource, FreeSoftware, gnu, gpl, license, Unix, *nix, mysql, sql, database, databases, web site, weblog, guru, module, modules, theme, themes, cms, content management, EverQuest, エバークエスト, EverQuestII, EverQuest2, エバークエストＩＩ, エバークエスト２, EQ2, 攻略, フォーラム" />
+<meta name="description" content="EverQuestIIの町の様子やクエスト情報、冒険の数々を掲載しています。EQ2の日本リリースからはじめた初心者による、初心者らしい観点からの情報です。" />
+<meta name="rating" content="general" />
+<meta name="author" content="XOOPS" />
+<meta name="copyright" content="Copyright &copy; 2001-2003" />
+<meta name="generator" content="XOOPS" />
+<title>エバクエ２探険記 - ニュース</title>
+<link href="http://eq2.eggplants.info/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="http://eq2.eggplants.info/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://eq2.eggplants.info/themes/dive/style.css" />
+<!-- RMV: added module header -->
+
+<script type="text/javascript">
+<!--
+//--></script><script type="text/javascript" src="http://eq2.eggplants.info/include/xoops.js"></script><script type="text/javascript"><!--
+//-->
+</script>
+</head>
+<body>
+
+<!-- ヘッダ部分の定義 -->
+<table cellspacing="0" cellpadding=0 style="width:1000px;">
+<tr>
+<td id="headerlogo"><a href="http://eq2.eggplants.info/"><img src="http://eq2.eggplants.info/themes/dive/logo.gif"></a></td>
+<td id="headerbanner"><img src="http://eq2.eggplants.info/themes/dive/welcome.jpg"></td>
+		<form action="http://eq2.eggplants.info/user.php" method="post">
+<td id="headerbarR" rowspan=2>
+	<img src="http://eq2.eggplants.info/themes/dive/dot.gif" width=200 height=1><br>
+	<input type="text" name="uname" value="ユーザ名" size=12 onMouseOver="this.focus();" onFocus="if(this.value == 'ユーザ名') this.value = '';" style="font-size:11px; padding:0px; margin:3px;"><br>
+	<input type="password" name="pass" value="パスワード" size="12" onMouseOver="this.focus();" onFocus="if(this.value == 'パスワード') this.value = '';" style="font-size:11px; padding:0px; margin:3px;"><br>
+	<input type="hidden" name="op" value="login"> 
+	<input type="submit" value="ログイン" style="height:18px;font-size:10px;"><br><br>
+	[ <a href="http://eq2.eggplants.info/register.php">新規登録</a> ]
+	</td>
+	</form>
+	
+</tr>
+<tr>
+<td id="headerbarL">
+<form action="http://eq2.eggplants.info/search.php" method="get" style="margin:0px;">
+<input type="text" name="query" size="20"/>
+<input type="hidden" name="action" value="results" />
+<input type="submit" name="searchSubmit" value="検索" />
+</form>
+</td>
+<td id="headerbarC">
+<a href="http://eq2.eggplants.info/">ホーム</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/pukiwiki/">攻略自由帳</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/newbb/">フォーラム</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/weblog/">日記</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/mylinks/">リンク集</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/myalbum/">ギャラリー</a>&nbsp;｜&nbsp;
+<a href="http://eq2.eggplants.info/modules/contact/">お問い合せ</a></td>
+</tr>
+</table>
+<!-- ヘッダ部分終わり -->
+
+<table cellspacing="0" style="width:1000px;">
+<tr>
+<!-- 左ブロック部分の定義 -->
+<td id="leftcolumn">
+
+
+        				<div class="blockTitle">メニュー</div>
+				<div class="blockContent"><table cellspacing="0">
+  <tr>
+    <td id="mainmenu">
+      <!-- start module menu loop -->
+                                    <a class="menuTop" href="http://eq2.eggplants.info/" target="_self">トップページ</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/pukiwiki/" target="_self">エバクエ２攻略自由帳</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/pukiwiki/index.php?%A5%AD%A5%ED%A5%ED%A5%A2%A5%F3%A1%A6%A5%DE%A5%A4%A5%B9%A5%BF%A1%BC%A5%BA" target="_self">キロロアン・マイスターズ</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/newbb/" target="_self">エバクエ２フォーラム</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/wordpress/" target="_self">エバクエ２日記</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/myalbum/" target="_self">スクリーンショットギャラリー</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/newbb/viewforum.php?forum=8" target="_self">訪問掲示板</a>
+                                                              <a class="menuMain" href="http://eq2.eggplants.info/modules/contact/" target="_self">お問い合わせ</a>
+                                      <!-- end module menu loop -->
+    </td>
+  </tr>
+</table></div>
+                <br style="font-size:6px;">
+      </td>
+    <!-- 左ブロック終わり -->
+
+      <td id="centercolumn" style="border-right:1px solid #FFFFFF;">
+              <!-- Display center blocks if any -->
+                <!-- End display center blocks -->
+
+        <div id="content">
+          <!-- Add Start - News+TrackBack =========================================== -->
+<div	class="head" align="right">
+<a	href="">
+<img	src="images/rss.gif"
+	border="0" width="36" height="14"
+	alt=""> </a><br>
+</div>
+<!--   Add End - News+TrackBack =========================================== -->
+<div	class="head">
+  <div style="text-align: center;">
+    <form name="form1" action="index.php" method="get">
+    <select name='storytopic'>
+<option value='0'>----</option>
+<option value='2'>EverQuestII</option>
+<option value='4'>--&nbsp;ギルド情報</option>
+<option value='3'>--&nbsp;更新情報</option>
+</select>
+ <select name="storynum"><option value="5" selected="selected">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option></select> <input type="submit" value="送信" /></form>
+  </div>
+</div>
+<br / >
+
+<!-- start news item loop -->
+  <div class="item">
+  <div class="itemHead"><span class="itemTitle"><a href='http://eq2.eggplants.info/modules/news/index.php?storytopic=2'>EverQuestII</a>&nbsp;:&nbsp;<a href='http://eq2.eggplants.info/modules/news/article.php?storyid=22'>LiveUpdate20&21</a></span></div>
+  <div class="itemInfo">
+    <span class="itemPoster">投稿者： <a href='http://eq2.eggplants.info/userinfo.php?uid=2'>Qadar</a></span> <span class="itemPostDate">投稿日時： 2006-4-7 1:34:25</span> (<span class="itemStats">18 ヒット</span>)
+  </div>
+  <div class="itemBody">
+    
+    <p class="itemText">ライブアップデート２０＆２１が適用されました。<br /><br />今回の目玉は・・・あんまりないなぁ。<br />ゲームバランスの調整と、小ネタが少々。<br /><br />でも、町の中にはエピックのガードやら、目から鼻から火を噴いている馬とかいたよ <img src="http://eq2.eggplants.info/uploads/smil3dbd4d4e4c4f2.gif" alt="" /> <br /><br />KoSはいつだろう・・・</p>
+  </div>
+  <div class="itemFoot">
+    <span class="itemAdminLink"></span> <span class="itemPermaLink"><a href="http://eq2.eggplants.info/modules/news/article.php?storyid=22">コメントする</a></span>
+  </div>
+</div>  <br />
+<!-- end news item loop -->
+
+<div style="text-align: right; margin: 10px;"></div>
+
+        </div>
+      </td>
+
+      
+    </tr>
+</table>
+
+<!-- フッタ部分の定義 -->
+<table cellspacing="0">
+    <tr>
+    <td id="footerbar">
+    当ホームページに記載されている会社名・製品名・システム名などは、各社の登録商標、もしくは商標です。<br />
+    EverQuest is a registered trademark of Sony Computer Entertainment America Inc. in the United States and/or other countries. (c) 2005 Sony Computer Entertainment America Inc.All Rights Reserved.<br />
+    Produced by Eggplants Project 2001-2005<br />
+	Powered by <a href="http://www.xoops.org/" target="_blank">XOOPS</a>
+	</td>
+    </tr>
+</table>
+<!-- フッタ部分終わり -->
+
+</body>
+</html>
