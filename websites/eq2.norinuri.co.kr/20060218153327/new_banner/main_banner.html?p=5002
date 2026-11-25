@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<TITLE> Banner </TITLE>
+<style type="text/css">
+<!--
+    body,td {Font-Family:GulimChe,Arial; Font-Size: 9pt; Line-Height: 140%; Padding:0;}
+    tr {Background-Color:#FFFFFF; Font-Family:GulimChe,Arial; Font-Size:9pt; Word-break:break-all}
+    img { border:none; }
+-->
+</style>
+<script language='javascript'>
+<!--
+///////////////////////////////////////////////////////////////////////////////
+/////////		배너 객체에 대한 정의
+var arr_banner  = new Array();  // 배너 객체를 저장할 배열
+var arr_idx     = new Array();  // 배너 키 정보 ( 노출수 5로 설정된 idx 가 5개 들어감)
+var time_var    = 0;            // 리로드 타임
+var readRank    = 0;            // 랭크순위 읽은거 체크 (임시로 이불배너로 씁니다)
+
+
+
+function Banner(){
+	this.no     = 0;            // 번호
+	this.id     = 0;            // 위치
+    this.rank   = 0;            // 순위 (현재 안 쓰는거 같습니다)
+
+	this.subject    = null;     // 제목
+	this.time       = 0;        // 변경 시간
+	this.kind       = null;     // 종류
+
+    this.text       = null      // 텍스트 타잎일 경우 출력 문자
+    this.img        = null      // 이미지 타잎일 경우 출력 이미지
+    this.link       = null      // 이동 URL
+    this.iframe     = null      // iframe타잎인 경우 출력할 태그
+
+
+	/// Banner Set 함수
+	this.set      = function(no, id, rank, subject, time, kind, text, img, link, iframe){
+        this.setNo(no);
+        this.setId(id);
+        this.setRank(rank);
+        this.setSubject(subject);
+        this.setTime(time);
+        this.setKind(kind);
+        this.setText(text);
+        this.setImg(img);
+        this.setlink(link);
+        this.setIframe(iframe);
+	}
+	this.setNo      = function(no){
+        this.no         = no;
+	}
+	this.setId      = function(id){
+        this.id         = id;
+	}
+	this.setRank    = function(rank){
+        this.rank       = rank;
+	}
+	this.setSubject = function(subject){
+        this.subject    = subject;
+	}
+	this.setTime    = function(time){
+        this.time       = time;
+	}
+	this.setKind    = function(kind){
+        this.kind         = kind;
+	}
+	this.setText    = function(text){
+        this.text       = text;
+	}
+	this.setImg     = function(img){
+        this.img        = img;
+	}
+	this.setlink    = function(link){
+        this.link       = link;
+	}
+	this.setIframe  = function(iframe){
+        this.iframe     = iframe;
+	}
+
+
+
+
+    this.getTime    = function()
+    {
+        return parseInt(this.time,10);
+    }
+    this.getNo    = function()
+    {
+        return this.no;
+    }
+	this.getRank	= function()
+	{
+        return this.rank;
+	}
+
+    this.getBanner  = function()
+    {
+        result ='';
+
+        switch (this.kind)
+        {
+            case 'T' :  //텍스트
+                    result  =   "<a href='"+this.link+"' target='new'>"+this.text+"</a>";
+                break;
+            case 'I' :  //이미지
+                    result  =   "<a href='"+this.link+"' target='new'><img src='"+this.img+"'></a>";
+                break;
+            case 'F' :  //IFRAME
+                    result  =   this.iframe;
+                break;
+        
+        }
+
+        return result;
+    }
+
+}
+
+function showBanner()
+{
+    banner_idx = 0;
+
+    if(arr_idx.length > 0)
+    {
+        key_info                = Math.round(Math.random()* (arr_idx.length-1) )
+
+        for(i=0; i<arr_banner.length ; i++)
+        {
+            if(arr_banner[i].getNo() == arr_idx[key_info])
+                banner_idx = i;
+        }
+
+        time_var                = arr_banner[banner_idx].getTime(); //리로딩 타임을 지정
+        banner                  = arr_banner[banner_idx];
+
+		var rank				= banner.getRank();
+
+        if(rank == 1000 && rank == readRank)
+		{
+			showBanner();
+		}
+		else
+		{
+			if(rank == 1000)	readRank	= rank;
+			dis1_obj.innerHTML      = banner.getBanner();
+		}
+    }
+}
+
+
+<!--
+function Banner100539670120091685000019604100000000000_DoFSCommand(command, args) {
+var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+{
+if(command=="clickthrough"){openNewWindow()}}
+function openNewWindow(){
+(window.open("http://www.ilikeclick.com/track/click.php?dts_code=100539670120091685000019604100000000000&DTS_UID=","_blank"))
+}}
+if (navigator.userAgent && navigator.userAgent.indexOf("MSIE")>=0 && navigator.userAgent.indexOf("Windows")>=0) {
+document.write('<SCR'+'IPT LANGUAGE=VBS'+'cript\> \n');
+document.write('on error resume next \n');
+document.write('Sub Banner100539670120091685000019604100000000000_FSCommand(ByVal command, ByVal args)\n');
+document.write(' call Banner100539670120091685000019604100000000000_DoFSCommand(command, args)\n');
+document.write('end sub\n');
+document.write('</SCRIP'+'T\> \n');
+}
+//-->
+
+
+
+
+
+// 데이터 입력
+
+
+    BNR = new Banner();     // 객체생성
+    BNR.set('1045', '5002', '2', '', 25, 'F', '', 'http://', 'http://', "<iframe src=\"http://ad.ilikeclick.com:7310/dtsflash?dts_code=100390080120091685000018740600000000000&width=133&height=72&DTS_UID=\" name=\"adver_flash\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" hspace=\"0\" vspace=\"0\" scrolling=\"no\" width=\"133\" height=\"72\"></iframe>");
+
+    arr_banner.push(BNR);
+
+    for(j=0; j< 1; j++){
+        arr_idx.push('1045');
+    }
+
+
+//-->
+</script>
+
+
+</HEAD>
+<body leftmargin=0 topmargin=0 onload="">
+
+
+
+<div id='display1'></div>    <!--실제로 보이는 레이어-->
+<div id='display2'></div>      <!--히든 레이어-->
+
+<script language='javascript'>
+<!--
+    // 기본 배너를 설정합니다. 레이어 기본 설정
+    dis1_obj        = document.getElementById('display1');
+    dis2_obj        = document.getElementById('display2');
+
+    showBanner();
+
+    setInterval('showBanner()', (time_var * 1000) );
+//-->
+</script>
+
+
+</body>
+</html>
