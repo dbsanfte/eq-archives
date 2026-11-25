@@ -1,0 +1,544 @@
+<html>
+<head>
+<title>Steve's party</title>
+<script>
+
+var vImage = new Array("images/IM002407.JPG", "images/IM002408.JPG", "images/IM002409.JPG", "images/IM002410.JPG", "images/IM002411.JPG", "images/IM002412.JPG", "images/IM002413.JPG", "images/IM002414.JPG", "images/IM002415.JPG", "images/IM002416.JPG", "images/IM002417.JPG", "images/IM002418.JPG", "images/IM002419.JPG", "images/IM002420.JPG", "images/IM002421.JPG", "images/IM002422.JPG", "images/IM002423.JPG", "images/IM002424.JPG", "images/IM002425.JPG", "images/IM002426.JPG", "images/IM002427.JPG", "images/IM002428.JPG", "images/IM002429.JPG", "images/IM002430.JPG", "images/IM002431.JPG", "images/IM002432.JPG", "images/IM002433.JPG", "images/IM002434.JPG", "images/IM002435.JPG", "images/IM002436.JPG", "images/IM002437.JPG", "images/IM002438.JPG", "images/IM002439.JPG", "images/IM002442.JPG", "images/IM002443.JPG", "images/IM002444.JPG", "images/IM002445.JPG", "images/IM002446.JPG", "images/IM002447.JPG", "images/IM002448.JPG", "images/IM002449.JPG", "images/IM002450.JPG", "images/IM002451.JPG", "images/IM002452.JPG", "images/IM002453.JPG", "images/IM002454.JPG", "images/IM002455.JPG", "images/IM002456.JPG", "images/IM002457.JPG", "images/IM002458.JPG", "images/IM002459.JPG", "images/IM002460.JPG")
+var cxImage = new Array("800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","450","800","800","800","800","450","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800","800")
+var cyImage = new Array("600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600","600")
+var vThumb = new Array("images/IM002407.thumb.JPG", "images/IM002408.thumb.JPG", "images/IM002409.thumb.JPG", "images/IM002410.thumb.JPG", "images/IM002411.thumb.JPG", "images/IM002412.thumb.JPG", "images/IM002413.thumb.JPG", "images/IM002414.thumb.JPG", "images/IM002415.thumb.JPG", "images/IM002416.thumb.JPG", "images/IM002417.thumb.JPG", "images/IM002418.thumb.JPG", "images/IM002419.thumb.JPG", "images/IM002420.thumb.JPG", "images/IM002421.thumb.JPG", "images/IM002422.thumb.JPG", "images/IM002423.thumb.JPG", "images/IM002424.thumb.JPG", "images/IM002425.thumb.JPG", "images/IM002426.thumb.JPG", "images/IM002427.thumb.JPG", "images/IM002428.thumb.JPG", "images/IM002429.thumb.JPG", "images/IM002430.thumb.JPG", "images/IM002431.thumb.JPG", "images/IM002432.thumb.JPG", "images/IM002433.thumb.JPG", "images/IM002434.thumb.JPG", "images/IM002435.thumb.JPG", "images/IM002436.thumb.JPG", "images/IM002437.thumb.JPG", "images/IM002438.thumb.JPG", "images/IM002439.thumb.JPG", "images/IM002442.thumb.JPG", "images/IM002443.thumb.JPG", "images/IM002444.thumb.JPG", "images/IM002445.thumb.JPG", "images/IM002446.thumb.JPG", "images/IM002447.thumb.JPG", "images/IM002448.thumb.JPG", "images/IM002449.thumb.JPG", "images/IM002450.thumb.JPG", "images/IM002451.thumb.JPG", "images/IM002452.thumb.JPG", "images/IM002453.thumb.JPG", "images/IM002454.thumb.JPG", "images/IM002455.thumb.JPG", "images/IM002456.thumb.JPG", "images/IM002457.thumb.JPG", "images/IM002458.thumb.JPG", "images/IM002459.thumb.JPG", "images/IM002460.thumb.JPG")
+var cImage = 52
+var controlsDisplay = "yes"
+var useTransitions = "yes"
+
+var imagePath = ""+"images"
+var prevPath = imagePath + "/prev.gif" 
+var nextPath = imagePath + "/next.gif" 
+var playPath = imagePath + "/play.gif" 
+var pausePath = imagePath + "/pause.gif" 
+var stopPath = imagePath + "/stop.gif" 
+var blankPath = imagePath + "/blank.gif" 
+var brandingPath = imagePath + "/branding.gif" 
+
+var runSlidesFlag = 0
+var iImage = 0
+var Mode = "Welcome"
+var controlsEnabled = 1
+var buttonsEnabled = 1
+var fullscreen = (window.parent != window)
+var timeoutid
+
+function loadedDoc()
+{
+    if (!(navigator.appName == "Netscape" || navigator.appName.indexOf("Microsoft") == -1))
+    {
+       var preload = new Image
+       preload.src = vImage[0]
+
+       if (controlsDisplay)
+       {
+           var contactText = "<center><table style=\"overflow-y: auto\">"
+           for (i = 0 ; i < cImage / 5; i++)
+           {
+              contactText = contactText + "<tr>"
+              for (j = 0; j < 5 ; j++)
+              {
+                 var x = (i * 5 + j)
+                 if (x < cImage)
+                 {
+                    contactText = contactText + "<td height=120 width=120><img onclick=filmJump(" + x + ") style=\"cursor:hand; padding: 20px\" src=\"" + vThumb[x] + "\"></td>"
+                 }
+              }
+              contactText = contactText + "</tr>"
+           }
+           contactText = contactText + "</table></center>"
+           contact.innerHTML = contactText
+
+           var filmThumbsText = "<table style=\"width: 6240; overflow-x: scroll\"><tr height=120>"
+           for (i = 0 ; i < vThumb.length ; i++)
+           {
+              filmThumbsText = filmThumbsText + "<td align=center width=120 id=filmThumb" + i + "><div id=filmThumbCell" + i + " style = \"padding: 5px; border: solid 0 #00b; border-width:2px\"><img onclick=filmSelect(" + i + ") class=THUMB style=\"cursor:hand; padding: 20px\" src=\"" + vThumb[i] + "\"></div></td>"
+           }
+           filmThumbsText = filmThumbsText + "</tr></table>"
+           filmthumbs.innerHTML = filmThumbsText
+       }
+
+       filmmain.style.cursor = "hand"
+       slidemain.style.cursor = "hand"
+
+       welcome.style.display = "none"
+       forwButton.src=nextPath
+       runButton.src=playPath
+       prevButton.src=prevPath
+       stopButton.src=stopPath
+
+       if (fullscreen)
+       {
+           Slideshow('launch')
+       }
+       else
+       {
+           welcome2.style.display = ""
+       }
+    }
+}
+
+function Ticker()
+{
+    if (runSlidesFlag == 1 && Mode == "Slideshow") 
+    {
+        nextImage()
+        timeoutid = setTimeout("Ticker()", 5000)
+    }
+}
+
+function ShowControls(x)
+{
+    if (controlsDisplay)
+    {
+        if (x=="Slideshow")
+        {
+           advcontrols1.style.color = "#ffffff"
+           advcontrols2.style.color = "#03a0fc"
+           advcontrols3.style.color = "#03a0fc"
+        }
+        else if (x=="Film")
+        {
+           advcontrols1.style.color = "#03a0fc"
+           advcontrols2.style.color = "#ffffff"
+           advcontrols3.style.color = "#03a0fc"
+        }
+        else if (x=="Contact")
+        {
+           advcontrols1.style.color = "#03a0fc"
+           advcontrols2.style.color = "#03a0fc"
+           advcontrols3.style.color = "#ffffff"
+        }
+    }
+    else
+    {
+        advcontrols.style.visibility = "hidden"
+    }
+}
+
+function ShowStopButton()
+{
+    if (fullscreen)
+    {
+       stopButton.width = 32;
+       stopButton.style.cursor = "hand"
+       stopButton.style.visibility = ""
+    }
+    else
+    {
+       stopButton.width = 0;
+       stopButton.style.cursor = ""
+       stopButton.style.visibility = "hidden"
+    }
+
+}
+
+function ShowButtons(f)
+{
+    ShowStopButton();
+    forwButton.filters[0].Apply();
+    runButton.filters[0].Apply();
+    prevButton.filters[0].Apply();
+    stopButton.filters[0].Apply();
+    if (f)
+    {
+        buttonsEnabled = 1
+        forwButton.filters[0].transition = 3;
+        runButton.filters[0].transition = 3;
+        prevButton.filters[0].transition = 3;
+        forwButton.src=nextPath
+        runButton.src=playPath
+        prevButton.src=prevPath
+        forwButton.style.cursor="hand"
+        runButton.style.cursor="hand"
+        prevButton.style.cursor="hand"
+    }
+    else
+    {
+        buttonsEnabled = 0
+        forwButton.filters[0].transition = 2;
+        runButton.filters[0].transition = 2;
+        prevButton.filters[0].transition = 2;
+        prevButton.src=blankPath
+        forwButton.src=blankPath
+        runButton.src=blankPath
+        forwButton.style.cursor=""
+        runButton.style.cursor=""
+        prevButton.style.cursor=""
+    }
+    forwButton.filters[0].Play();
+    runButton.filters[0].Play();
+    prevButton.filters[0].Play();
+    stopButton.filters[0].Play();
+}
+
+function Film()
+{
+    if (controlsEnabled)
+    {
+        ShowControls('Film')
+        Mode = "Film"
+        runSlidesFlag = 0
+        welcome.style.display = "none"
+        welcome2.style.display = "none"
+        controls.style.display = ""
+	if ((document.body.clientHeight - 220) > 0)
+        {
+            film.height = document.body.clientHeight - 220
+        }
+        film.style.display = ""
+        filmthumbs.style.display = ""
+        contact.style.display = "none"
+        slideshow.style.display = "none"
+        ShowButtons(0)
+        filmSelect(iImage)
+        doResize()
+    }
+}
+
+function Slideshow(x)
+{
+    if (controlsEnabled)
+    {
+        ShowControls('Slideshow')
+        Mode = "Slideshow"
+        welcome.style.display = "none"
+        welcome2.style.display = "none"
+        controls.style.display = ""
+        slideshow.style.display = ""
+        if (x == "launch")
+        {
+            ShowStopButton()
+        }
+        else
+        {
+            ShowButtons(1)
+        }
+        contact.style.display = "none"
+        film.style.display = "none"
+        filmthumbs.style.display = "none"
+        slidemain.src = vImage[iImage]
+        doResize()
+    }
+}
+
+function Contact()
+{
+    if (controlsEnabled)
+    {
+        ShowControls('Contact')
+        Mode = "Contact"
+        runSlidesFlag = 0
+        welcome.style.display = "none"
+        welcome2.style.display = "none"
+        controls.style.display = ""
+        contact.style.display = ""
+        slideshow.style.display = "none"
+        ShowButtons(0)
+        film.style.display = "none"
+        filmthumbs.style.display = "none"
+    }
+}
+
+function changeImage(x,y)
+{
+    iImage = (iImage + vImage.length + x) % vImage.length
+    if (y == "notrans" || useTransitions != "yes")
+    {
+        slidemain.src = vImage[iImage]
+    }
+    else
+    {
+        slidemain.filters[0].Apply();
+        slidemain.filters[0].transition = 17
+        slidemain.src = vImage[iImage]
+        slidemain.filters[0].Play();
+    }
+    doResize()
+}
+
+function prevImage(x)
+{
+    changeImage(-1,x)
+}
+function nextImage(x)
+{
+    changeImage(+1,x)
+}
+
+function slideClick()
+{
+   if (runSlidesFlag == 1)
+   {
+      runSlides()
+   }
+   nextImage("notrans")
+}
+
+function nextImageButton()
+{
+    if (buttonsEnabled)
+    {
+        if (runSlidesFlag == 1)
+        {
+           runSlides()
+        }
+        nextImage("notrans")
+    }
+}
+
+function runSlidesButton()
+{
+    if (buttonsEnabled)
+    {
+        if (runSlidesFlag == 0)
+        {
+	   nextImage()
+        }
+        runSlides()
+    }
+}
+
+function prevImageButton()
+{
+    if (buttonsEnabled)
+    {
+        if (runSlidesFlag == 1)
+        {
+           runSlides()
+        }
+        prevImage("notrans")
+    }
+}
+
+function exitButton()
+{
+    window.parent.close()
+}
+
+function runSlides()
+{
+    runSlidesFlag = (runSlidesFlag + 1) % 2
+    if (runSlidesFlag == 1)
+    {
+        runButton.src = pausePath
+        timeoutid = setTimeout("Ticker()", 5000)
+    }
+    else
+    {
+        clearTimeout(timeoutid)
+        runButton.src = playPath
+    }
+}
+
+function filmSelect(i)
+{
+    iImage = i;
+    filmmain.src = vImage[i];
+    for (var j = 0 ; j < cImage ; j++)
+    {
+        document.all["filmThumbCell"+j].style.border=""
+    }
+    document.all["filmThumbCell"+i].style.border="#00b 2px solid"
+    doResize()
+}
+
+function filmJump(i)
+{
+    iImage = i;
+    Film();
+}
+
+function changeFilmImage(x)
+{
+    filmSelect((iImage + vImage.length + x) % vImage.length)
+}
+
+function prevFilmImage()
+{
+    changeFilmImage(-1)
+}
+
+function nextFilmImage()
+{
+    changeFilmImage(+1)
+}
+
+function contactSelect(i)
+{
+    iImage = i
+    Film()
+    filmmain.src = vImage[i]
+    doResize()
+}
+
+document.onkeydown = keyDown
+
+function keyDown()	
+{
+   if (27 == event.keyCode)
+   {         
+     if (fullscreen == 1)
+     {
+	exiteButton()
+     }
+   }
+   else if (Mode != "Welcome")
+   {
+      if (37 == event.keyCode)
+      {
+         if (Mode == "Slideshow")
+         {
+            prevImageButton()
+         }
+         else if (Mode == "Film")
+         {
+             prevFilmImage()
+         }
+      }
+      else if (39 == event.keyCode)
+      {
+         if (Mode == "Slideshow")
+         {
+             nextImageButton()
+         }
+         else if (Mode == "Film")
+         {
+             nextFilmImage()
+         }
+      }
+      else if (32 == event.keyCode)
+      {
+         if (Mode == "Slideshow")
+         {
+            runSlidesButton()
+         }
+         else
+         {
+            Slideshow()
+         }
+      }
+   }
+}
+
+function doResize()
+{
+    var clientWidth = (document.body.clientWidth - 40)
+    var clientHeight = (document.body.clientHeight - document.all.controls.offsetHeight - 40)
+
+    if (Mode == "Film")
+    {
+        clientHeight -= document.all.filmthumbs.offsetHeight
+    }
+
+    var cx = cxImage[iImage]
+    var cy = cyImage[iImage]
+
+    if (clientWidth < cx)
+    {
+        cy = cy * clientWidth / cx;
+        cx = clientWidth
+    }
+    if (clientHeight < cy)
+    {
+        cx = cx * clientHeight / cy;
+        cy = clientHeight
+    }
+
+    if (Mode == "Film")
+    {
+        filmmain.width = cx;
+        filmmain.height = cy;
+    }
+    else
+    {
+        slidemain.width = cx;
+        slidemain.height = cy;
+    }
+}
+
+</script>
+<body onLoad="loadedDoc()" onResize="doResize()" text="#ffffff" bgcolor="#000000" link="#03a0fc" vlink="#03a0fc">
+
+<div id=welcome>
+<table style="height: 85%; width: 100%">
+<tr valign=center>
+<td align=center>
+<div style="font-family: Trebuchet MS, Arial, sans-serif">
+<h1>Steve's party</h1>
+	
+<h2>Click <a href="html/0.htm">here</a> to watch the slideshow.</h2>
+</div>
+<td/>
+</tr>
+</table>
+<table style="height: 50; width: 100%">
+<tr valign=top>
+<td align=right>
+<a href="http://go.microsoft.com/fwlink/?LinkId=4448"><img border=0 src="images/branding.gif" width="285" height="33"></a>
+</td>
+</tr>
+</table>
+</div>
+
+<div id=welcome2 style="display:none">
+<table style="height: 85%; width: 100%">
+<tr valign=center>
+<td align=center>
+<div style="font-family: Trebuchet MS, Arial, sans-serif">
+<h1>Steve's party</h1>
+	
+<h2><div style="font-family: Trebuchet MS, Arial, sans-serif; cursor: hand; color:#03a0fc" onclick="Slideshow('launch')" ;>Click here</div> to watch the slideshow.</h2>
+</div>
+</td>
+</tr>
+</table>
+<table style="height: 50; width: 100%">
+<tr valign=top>
+<td align=right>
+<a href="http://go.microsoft.com/fwlink/?LinkId=4448"><img border=0 src="images/branding.gif" width="285" height="33"></a>
+</td>
+</tr>
+</table>
+</div>
+
+<table id=controls style="height: 50; width: 100%; display:none" cellspacing=0 cellpadding=0>
+<tr>
+<td width="20">&nbsp;</td>
+<td>
+<table id=advcontrols style="cursor: hand; font-size: 12pt; color:#03a0fc; font-family: Trebuchet MS, Arial, sans-serif">
+<td width=100 id=advcontrols1 style='color:#03a0fc' onclick='Slideshow()'>Slide Show</td>
+<td width=100 id=advcontrols2 style='color:#03a0fc' onclick='Film()'>Filmstrip</td>
+<td width=100 id=advcontrols3 style='color:#03a0fc' onclick='Contact()'>Previews</td>
+</table>
+</td>
+
+<td width="32%" id=slideshowbuttons>
+<p align="center">
+<img id=stopButton type=button style="visibility:hidden; Filter:revealTrans(duration=1)" onclick="exitButton()" width="0" height="32" align="right">
+<img id=forwButton type=button style="cursor: hand; Filter:revealTrans(duration=1)" value="Forward" onclick="nextImageButton()" width="32" height="32" align="right">
+<img id=runButton type=button style="cursor: hand; Filter:revealTrans(duration=1)" value="Play" onclick="runSlidesButton()" width="32" height="32" align="right">
+<img id=prevButton type=button style="cursor: hand; Filter:revealTrans(duration=1)" value = "Back" onclick="prevImageButton()" width="32" height="32" align="right">
+</td>
+</table>
+
+<div id=contact style="width: 100%; display: none"></div>
+
+<table id=slideshow style="height:85%; width: 100%; display: none">
+<tr align=center>
+<td valign=center><img id=slidemain style="Filter:revealTrans(duration=1)" onclick=slideClick() src="">
+</table>
+
+<table id=film style="width: 100%; display: none">
+<tr align=center><td valign=center><img alt="" onclick=nextFilmImage() id=filmmain src="">
+</table>
+
+<div id=filmthumbs style="width: 100%; height: 150; display:none; overflow-y: none; overflow-x:scroll"></div>
+
+</body>
+</html>
