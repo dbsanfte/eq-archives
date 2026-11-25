@@ -1,0 +1,219 @@
+
+<html>
+<head>
+<title>Fellowship of Valor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#000000" text="#FFFFFF" background="Images/htx1.jpg" link="#CCCC33" vlink="#CCCC33" alink="#FFFF66">
+<table width="100%" height="100%" bordercolor="#666666" cellspacing="5" border="6" cellpadding="3">
+  <tr bgcolor="#000000"> 
+    <td colspan="3" height="115"> 
+      <div align="center"></div>
+      <div align="left"> 
+        <p><img src="Images/fovlogo4.jpg" width="637" height="124" align="middle"></p>
+      </div>
+    </td>
+  </tr>
+  <tr bgcolor="#000000" bordercolor="#333333" border="1"> 
+    <th width="18%" valign="top" background="Images/dgrey034.jpg" > 
+      <div align="left"> 
+        <p>&nbsp;</p>
+        <table width="89%" border="0" bordercolor="#999999" height="8" align="center">
+          <tr> 
+            <td bgcolor="#000000" bordercolor="#666666" height="7"> 
+              <div align="center"><font color="#FFFFFF" size="2">Main Menu </font></div>
+            </td>
+          </tr>
+        </table>
+        <h4 align="left"><font face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF"> 
+          </font><font size="3"><a style="text-decoration:none" href="index.asp"><font size="2">News</font></a><font size="2"><br>
+          <a href="http://www.calsnet.net/fov" style="text-decoration:none">Calendar 
+          of Events</a><br>
+          <a href="http://pub22.ezboard.com/bfellowshipofvalor" style="text-decoration:none">Discussion 
+          Groups</a><br>
+          <a href="roster.asp" style="text-decoration:none">Guild Roster</a><br>
+          <a href="screenshots.asp" style="text-decoration:none">Screen Shots</a><br>
+          <a href="art.asp" style="text-decoration:none">Submitted Art</a><br>
+          <a href="stories.asp" style="text-decoration:none">Submitted Stories</a><br>
+          <a href="charter.asp" style="text-decoration:none">Guild Charter</a><br>
+          <a href="structure.asp" style="text-decoration:none">Guild Structure</a><br>
+          <a href="rules.asp" style="text-decoration:none">Guild Rules</a><br>
+          <a href="newmembers.asp" style="text-decoration:none">Become one of 
+          us</a></font></font></h4>
+        <h4 align="left"><font size="3"><font size="2"><br>
+          </font></font> </h4>
+        <table width="89%" border="0" bordercolor="#999999" height="8" align="center">
+          <tr> 
+            <td bgcolor="#000000" bordercolor="#666666" height="7"> 
+              <div align="center"><font color="#FFFFFF" size="2">Members Menu 
+                </font></div>
+            </td>
+          </tr>
+        </table>
+        <h4 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"> </font><a href="login.asp" style="text-decoration:none"><font size="2">Sign 
+          In</font></a><font size="2"><br>
+          <a href="submitnews.asp" style="text-decoration:none">Submit News</a><br>
+          View Guild Bank<br>
+          <a href="editprofile.asp?=%7BSession.Login%7D">Edit Member Profile</a></font><br>
+        </h4>
+        <table width="89%" border="0" bordercolor="#999999" height="8" align="center">
+          <tr> 
+            <td bgcolor="#000000" bordercolor="#666666" height="7"> 
+              <div align="center"><font color="#FFFFFF" size="2">Officers Menu</font></div>
+            </td>
+          </tr>
+        </table>
+        <h4 align="left"><font size="2"><a href="submitnews.asp" style="text-decoration:none">Submit 
+          News</a><br>
+          <a href="addmember.asp" style="text-decoration:none">Add New Member 
+          </a><br>
+          <a href="manageroster.asp">Manage Roster</a></font></h4>
+        <h4 align="left">&nbsp;</h4>
+        <table width="89%" border="0" bordercolor="#999999" height="8" align="center">
+          <tr> 
+            <td bgcolor="#000000" bordercolor="#666666" height="7"> 
+              <div align="center"><font color="#FFFFFF" size="2">Allies</font></div>
+            </td>
+          </tr>
+        </table>
+        <h4>&nbsp;</h4>
+        <p>&nbsp;</p>
+        <table width="89%" border="0" bordercolor="#999999" height="8" align="center">
+          <tr> 
+            <td bgcolor="#000000" bordercolor="#666666" height="7"> 
+              <div align="center"><font color="#FFFFFF" size="2">Links</font></div>
+            </td>
+          </tr>
+        </table>
+        <h4><font size="2">Brell Serilis Boards<br>
+          Brell Serilis Site</font><br>
+        </h4>
+      </div>
+    </th>
+    <th width="63%" valign="top"> 
+      <p>&nbsp;</p>
+      <table width="95%" border="0" align="left">
+        
+        <tr> 
+          <td height="9" width="31%" bgcolor="#000000" bordercolor="#666666"><font size="3" color="#CCCC33"><b>May 24, 2002</b></font></td>
+          <td height="9" width="69%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="3"><b><font color="#CCCC33" size="2">FoV holds its First Sky Raid</font></b></font></td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="2">FoV will be taking its first trip to the Plane of Sky.  Day 1 will be a trip to take out Gwan.  Day 2 will be a full-blown invasion to the other Isles.  Good luck to all!<br>
+            <br>
+            <br>
+            </font></td>
+        </tr>
+        
+        <tr> 
+          <td height="9" width="31%" bgcolor="#000000" bordercolor="#666666"><font size="3" color="#CCCC33"><b>Monday May 13th, 2002</b></font></td>
+          <td height="9" width="69%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="3"><b><font color="#CCCC33" size="2">Upcomming events</font></b></font></td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="2">1. CoM raid on Saturday May 18th please plan to attend. More information is available in the events discussions.
+
+2. FoV first forray into Sky is Friday and Saturday, May 24th and 25th at 5:00 PM PDT. Sign up today.
+<br>
+            <br>
+            <br>
+            </font></td>
+        </tr>
+        
+        <tr> 
+          <td height="9" width="31%" bgcolor="#000000" bordercolor="#666666"><font size="3" color="#CCCC33"><b>Wedneday May 1, 2002</b></font></td>
+          <td height="9" width="69%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="3"><b><font color="#CCCC33" size="2">Officer of the Week</font></b></font></td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="2">Beginning Sunday May 5th we will be implementing an Officer of the Week program. All issues need to be directed to that officer. This includes, Minor differences, new membership petitions, and any other issue that you may need to bring to the attention of an officer. The officer of ther week will be announced in the guild motd and also scheduled on the Calendar of Events. Do not take issues to another officer or Hawkeblade/Caladon without speaking with the Officer of the Week. You will be referred to that person or their alternate first.<br>
+            <br>
+            <br>
+            </font></td>
+        </tr>
+        
+        <tr> 
+          <td height="9" width="31%" bgcolor="#000000" bordercolor="#666666"><font size="3" color="#CCCC33"><b>Thursday April 25, 2002</b></font></td>
+          <td height="9" width="69%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="3"><b><font color="#CCCC33" size="2">New Membership</font></b></font></td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="2">The Fellowship of Valor will no longer accept new applications for membership. All applicants who had already applied will still be looked at for membership. We will announce if and when we do accept new applicants.<br>
+            <br>
+            <br>
+            </font></td>
+        </tr>
+        
+        <tr> 
+          <td height="9" width="31%" bgcolor="#000000" bordercolor="#666666"><font size="3" color="#CCCC33"><b>Tuesday, April 16, 2002</b></font></td>
+          <td height="9" width="69%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="3"><b><font color="#CCCC33" size="2">Website Update</font></b></font></td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="2">Ok many changes on the website. Most are backend things. All profiles should be working now. If you see your name listed contact Kenshu, Jezeran, Cromondas, or Morguanna and they can look up or change you password. Username is your firstname. Also if you want an E-Mail address using the Fellowshipofvalor.com <a hre="mailt:kenshu@fellowshipofvalor.com">E-Mail Kenshu</a><br>
+            <br>
+            <br>
+            </font></td>
+        </tr>
+        
+        <tr> 
+          <td height="9" width="31%" bgcolor="#000000" bordercolor="#666666"><font size="3" color="#CCCC33"><b>Thursday, April 11, 2002</b></font></td>
+          <td height="9" width="69%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="3"><b><font color="#CCCC33" size="2">Website Update</font></b></font></td>
+        </tr>
+        <tr> 
+          <td colspan="2"><font size="2">Ok As you can see the website is being changed/fixed. Please be patiend with me Im working as fast as I can to get it done. You'll find most of the links either go to the old pages or dont work. Please dont bug me until I ask for people to check them.<br>
+            <br>
+            <br>
+            </font></td>
+        </tr>
+        
+      </table>
+      <p>&nbsp;</p>
+    </th>
+    <th width="19%" valign="top" background="Images/dgrey034.jpg"> 
+      <p><font color="#FFFFFF" size="3">Newest Members</font></p>
+      <table width="90%" border="0" align="left" height="8">
+        
+        <tr> 
+          <td><font size="2"><A HREF="membersinfo.asp?character=Robyn">Robyn&nbsp;Swiftfoot</A></font></td>
+        </tr>
+        
+        <tr> 
+          <td><font size="2"><A HREF="membersinfo.asp?character=Carodar">Carodar&nbsp;Depainlessone</A></font></td>
+        </tr>
+        
+        <tr> 
+          <td><font size="2"><A HREF="membersinfo.asp?character=Kuliko">Kuliko&nbsp;Wolfico</A></font></td>
+        </tr>
+        
+        <tr> 
+          <td><font size="2"><A HREF="membersinfo.asp?character=Dezzeree">Dezzeree&nbsp;</A></font></td>
+        </tr>
+        
+        <tr> 
+          <td><font size="2"><A HREF="membersinfo.asp?character=Candious">Candious&nbsp;</A></font></td>
+        </tr>
+        
+      </table>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </th>
+  </tr>
+</table>
+</body>
+</html>
