@@ -1,0 +1,1 @@
+<br><br><center><img src=images/logo.gif><br><br><b>There seems to be a problem with the MySQL server, sorry for the inconvenience.<br><br>We should be back shortly.</center></b>
