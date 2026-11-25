@@ -1,0 +1,150 @@
+
+<html>
+<head>
+	<title>Crimson Dragons - Join the Crimson Dragon's</title>
+	<link rel="STYLESHEET" type="text/css" href="cd.css">
+</head>
+
+<body bgcolor="#000000" text="#E6DCA0" vlink="#BFB379" link="#BFB379" alink="#BFB379" marginheight=3 marginwidth=3 leftmargin=3 topmargin=3 bottommargin=0 rightmargin=3>
+
+<table border=0 cellspacing="0" cellpadding="0" width=100%>
+<tr>
+<td valign="top" align="right" width="1%">
+<a href="index.asp"><img src="pics/toc_head.gif" width=200 height=100 alt="" border="0"></a></td>
+<td align="right"><img src="pics/head_left.gif" width="20" height="100" alt="" border="0"></td>
+<td background="pics/head_hg.gif" align="center" valign="bottom" width="99%"><img src="pics/headline_join.gif" border="0"></td>
+<td><img src="pics/head_end.gif" width=52 height=100 alt="" border="0"></td>
+</tr>
+<tr>
+<td background="pics/toc_hg.gif" width="1%" valign="top">
+
+<table border=0 cellpadding="0" cellspacing="0" width="200">
+<tr>
+<td><img src="pics/toc_2_1.gif" width=200 height=30 alt="" border="0"></td>
+</tr>
+<tr>
+<td align="center">
+<a href="news.asp"><img src="pics/news.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="conduct.asp"><img src="pics/conduct.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="events.asp"><img src="pics/events.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="roster.asp"><img src="pics/roster.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="officer.asp"><img src="pics/officer.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="join.asp"><img src="pics/join.gif" width=148 height=23 alt="" border="0"></a><br>
+<a href="academy.asp"><img src="pics/academy.gif" width=148 height=25 alt="" border="0"></a><br>
+<a href="http://pub11.ezboard.com/bwelcometothecrimsondragons" target="Forum"><img src="pics/forum.gif" width=148 height=24 alt="" border="0"><br>
+<a href="guides.asp"><img src="pics/guides.gif" width=148 height=23 alt="" border="0"></a><br>
+<a href="awards.asp"><img src="pics/awards.gif" width=148 height=23 alt="" border="0"></a><br>
+<!-- <img src="pics/photoalbum.gif" width=148 height=24 alt="" border="0"><br> -->
+<!-- <a href="allies.php"><img src="pics/allies.gif" width=148 height=26 alt="" border="0"></a><br> -->
+<!-- <a href="enemies.php"><img src="pics/enemies.gif" width=148 height=21 alt="" border="0"></a><br> -->
+<a href="inn.asp"><img src="pics/inn.gif" width=148 height=25 alt="" border="0"></a><br>
+<!-- <img src="pics/links.gif" width=148 height=22 alt="" border="0"><br> -->
+
+<br><br>
+
+<div align="center">  
+There are <b>7</b> people <br>online now 
+<br></div>
+
+<br>
+
+</tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td valign="top"><br>
+<!-- Editable part of the page -->
+<div class="text">
+
+
+<p align="center"><i>"Character... not wealth, power or position... is the supreme word." -- <b>John D. Rockefeller</b></i></p><br>
+
+
+<h2 align="center">Greetings Fellow Everquest Players!</h2>
+
+
+<p><img src="pics/w.gif" width=42 height=51 alt="" border="0" align="left">elcome to the Recruiting Headquarters of the Crimson Dragons.  I am VanZant BraveSword, founding member, former Guild Leader and current Guild Initiations Officer.  What is more important now, however, is my status as your personal guide to admission into our prestigious organization.  Crimson Dragons has been around since June of 1999, shortly after the release of Everquest.  Since then, we have transformed and evolved into one of the most formidable, friendliest, and most fun guilds to ever exist on the Fennin Ro server and within the game of Everquest itself.<p>
+
+<p><img src="pics/j.gif" width=42 height=51 alt="" border="0" align="left">oining our ranks is not an extremely easy thing to do.  There is a series of very important steps that you must complete satisfactorily before you will even be considered to hold the vaunted title of Crimson Dragon.  We don't let just anyone into our guild, and those who are not willing to take the application process seriously may as well turn back now.  As John D. Rockefeller once said, "Character... not wealth, power or position... is the supreme word!"  This philosophy reigns true in Crimson Dragons, and we expect all of our prospective members to be of strong character.  Your diligence in completing the tasks I am about to describe to you will prove your character, and in turn, prove that you have what it takes to apply for membership in Crimson Dragons!<p>
+
+The Steps to Becoming a Member<p>
+<ol>
+<li>Meet the pre-requisites<br>
+<li>Obtain a minimum level of 35.<br>
+<li>Obtain 3 member sponsors, one must be a Guild Officer.<br>
+<li>Complete the guild application form and submit it to the Guild Initiation Officer.<br>
+<li>Register with our forums
+<li>Watch for your application to be posted on the Recruiting Forum.<br>
+<li>Post a reply to your application, introducing yourself to our members.<br>
+<li>Follow up with your 3 sponsors to have them post a recommendation for you on the forum.<br>
+<li>Monitor our Forums and attend guild-sponsored events during a one-week Petition period.<br>
+<li>If you are accepted submit a screenshot of your character. </ol><p>
+
+
+<h3>The Pre-requisites</h3>
+<p><img src="pics/t.gif" width=42 height=51 alt="" border="0" align="left">here are a few things that we like for every potential member to complete before considering membership into Crimson Dragons.  The first of those, begin separating yourself from any guild you may currently belong to.  The phenomenon of "guild jumping," is one that is fairly common in any game like Everquest, but it is one that Crimson Dragons frowns upon.  We suggest that if you are considering joining our guild, you talk with your current guild leader first.  This prevents quick decisions that you may regret later, and serves to keep relations between you and your former guild on good grounds.  We also suggest that you spend a little bit of time unguilded, just to get used to the idea of starting something new.  This way you're re-invigorated and ready to have fun when you become a Crimson Dragon.<p>
+
+
+<h3>The Minimum Level</h3>
+<p><img src="pics/t.gif" alt="" border="0" align="left">he Crimson Dragons guild does indeed have a minimum level requirement of thirty-five.  We do not maintain this level limit in any attempt to gain an elitist status.  In fact, that is far from the truth.  The level limit of thirty-five is necessary to make sure that every one of our members remains an integral and important part of the guild.  As Crimson Dragons has grown over our years in Everquest, the majority of our members have reached the level range of forty-five and higher.  We maintain the belief that no member should feel like a second-class citizen in their own guild, thus creating a desire for us to keep our level ranges as close as possible.  We also feel that it is important to recruit members early, affording them the opportunity to grow up (gain in experience) with Crimson Dragons as their home.  The level thirty-five limit has created a fine balance that allows us to maintain the integrity of the guild, while also creating a learning environment for new members and insuring our future success in the game of Everquest.
+
+
+<h3>Obtaining 3 Sponsors</h3>
+<p><img src="pics/M.gif" alt="" border="0" align="left">any organizations in real life require sponsorships from active members to join; fraternities, sororities, alcoholics anonymous, the mafia and many more.  Crimson Dragons is similar in this (and only this) regard!  What is a guild really about?  Friendship, right?  Well, it is always easier to make friends within a group of people when you already have a few who can vouch for you, show you the ropes and introduce you to everyone.  In Crimson Dragons, we require that every potential recruit have at least three sponsors before submitting their membership application.  At least one of these three members, must be a guild officer.  If you don't know any guild officers, you can find a list of them on the Roster section of this website.  I would advise that you ask your other two sponsors to help you find a sponsoring officer as well.  Now, finding your sponsors is a very important step.  never submit an application if you don't have all three of your sponsors yet.  I'll tell you why that's so important in a later step.<p>
+
+
+<h3>Write a Characeter Biography</h3>
+<p><img src="pics/t.gif" alt="" border="0" align="left">raditionally, Crimson Dragons is a guild that supports all styles of play, including role-playing.  We require that every potential recruit write a detailed story about their character and submit it along with their application for membership.  We strongly encourage you to be creative and original in writing your character biographies.  If you aren't a good writer, you can go to the Roster section of this website and click on each member's name to see the stories they have written.  Hopefully, that will provide the needed inspiration and explanation for you to write your own great tale.  If you aren't a role-player and feel that you wouldn't enjoy writing an "in-character" story, then feel free to write about your gaming history,  the reason you created the character you did, or what you have accomplished so far in the game of Everquest.  However, we are looking for something more here than just a guide to leveling and a list of gear.  Also, we don't particularly like to see single paragraph bios that are generic in nature.  Not everyone can have dead parents, and I've seen one-to-many rangers that grew up with wolves in my day.  These stories will be displayed on your personal page of our website if you become a member, complete with your spelling errors and grammatical mistakes... so take your time. <center>Remember, be creative!</center><p>
+
+
+<h3>The Membership Application</h3>
+<p><img src="pics/t.gif" alt="" border="0" align="left">he Crimson Dragon's Membership Application is quite possibly the most important step in the entire process of joining our guild.  We strongly encourage everyone to take the application extremely seriously and answer every question with a well thought out remark.  Take your time in filling out your application, just as you would if it were for a new job.  Your application will be the first official documentation of you as a Crimson Dragon, and first impressions can make a tremendous impact on whether or not you are accepted into the guild.  You can be the greatest person in the world, but lackluster answers on your guild application can give a person who doesn't know you the wrong idea.<p>
+
+
+<h3>Register with our Forums</h3>
+<p><img src="pics/t.gif" alt="" border="0" align="left">his step is essential to your application process.  To register on our message boards, all you have to do is go to the FORUM section of this website and click where it says "Create New Account."  From there, EZ-Board will walk you through the rest of your setup.  Registering on EZ-Board will allow us to send important guild information to your E-mail address, as well as grant you access to our private discussion forums if you do become a member.  We use our message boards for fun, announcements, planning but mainly to keep communication in the guild flowing smoothly.  Once you are registered, its a good idea to check the message boards on a daily basis, and learn to use them to your advantage.  Creating your EZ-Board account will also make it easier for you to complete the next step of the application process.<p>
+
+
+<h3>Begin The One-Week Pledge Period</h3>
+<p><img src="pics/n.gif" alt="" border="0" align="left">ow, this part of the process is where everything comes together.  What you've completed so far is going to be used to allow the officers and members of the guild to decide whether or not you will be invited to become a member.  Your application from Step 4 will be received and reviewed by the Guild Initiations Officer (Me!), and posted on the RECRUITING FORUM, that you probably saw when you registered for your EZ-Board account in Step 5.  This application will remain on our recruiting forum for approximately one week (seven days) from the posting date.  As soon as your application is posted, you'll be required to post a reply, acknowledging your request to become a Crimson Dragon and introducing yourself to the guild.  Your three sponsors will also be required to post letters of recommendation for you under your application.  Within seven days, if the required posts are made, and no current guild member has a problem with your application, you will be extended a formal invitation to join the guild.  At that time, your sponsoring or the Initiations Officer will set up a time to meet with you in game and extend your invitation.<p>
+
+
+<h3>Welcome to the Crimson Dragons !!</h3>
+<p><img src="pics/i.gif" alt="" border="0" align="left">t has been a great journey for you so far.  Hopefully you have had a chance to meet some new and terrific people, and get to know our guild a little better.  Now, you have been awarded the privilege of wearing the tag of what we believe to be the most unique and exciting guild in Everquest today.  Now, it is time for you to find your place amongst our ranks.  Rest assured that you will always be cared for, always feel that you are a part of something great, and always be respected by your new family and others who see you wearing our name.  What you give in return is up to you, but always remember that you "only get out of something, what you are willing to put in."  Those are words to live by, and remember.  Congratulations to you Crimson Dragon, and welcome to your destiny!<p>
+
+
+
+<h3>Vanzant's Tips to Making the Guild Your Home</h3>
+<p><img src="pics/i.gif" alt="" border="0" align="left">was the first member of Crimson Dragons, and have been a member ever since.  Believe it or not, this guild and the things I have learned here have changed my life for the better.  If you take the time to get to know the people around you, I guarantee that you won't be disappointed.  You'll make some of the best friend's you've ever had and create memories that will last long beyond the game of Everquest.  These are a few tips that I've picked up from watching those members who have taken a simple game, and turned it into a real experience.<p>
+<p>Communicate, communicate, communicate.  Our guild is all about communication.  We have some of the most actively visited and posted on message boards and websites that I have ever seen in the game of Everquest.  Our members, allies and guests use our website as a communications hub for all their Everquest needs.  Use this valuable resource to its fullest.  Use the forums to organize events, ask questions, relay information, make jokes and anything else you can think of.  The website offers you a way to stay informed about what’s going on in Crimson Dragons when you can't actually be in the game, and believe me... there is always something going on!</p>
+
+<p>Hunt with the guild!  Spend actual time with your guildmates.  Come to guild raids (which happen frequently) and take time to talk, participate and get to know people.  When there aren't any raids happening, go group with your guildmates and have fun.  You'll always be welcome, and you can always be assured that you'll be in good company.  Remember that Crimson Dragons are held to a higher standard than anyone else, and you'll always feel safe and comfortable hunting amongst your fellow guildmates.</p>
+<p>Don’t be too shy.  When you have something to say, say it.  We respect the word of all our members, and everyone is on equal ground.  Don't be afraid to participate in discussions and conversations.  That's how we get to know one another.  Be open in guild chat and forums, and give people an opportunity to get to know you.  The more you share with the guild, the more you'll feel at home.  Just do it.</p><br>
+<p>Last, but not least... always be loyal and always have faith.  This game is all about facing challenges, and thus our guild faces many.  When times are darkest, be comforted in knowing that Crimson Dragons has always overcome adversity and we always will.  Keep that faith, because as long as our members have that, there's nothing we can't do.</p><br>
+
+
+
+<center><B><FONT SIZE="2" FACE="Verdana, Arial"><A HREF="tempapp.asp">PROCEED TO APPLICATION</A></B></FONT></center>
+
+
+</div>
+<br><br>
+<p align="center" class="footer"><img src="pics/bar.gif" alt="" border="0" width=474 height=50 hspace=5><br><br>
+Webmaster: <a href="mailto:thenetboss@hotmail.com">The Netboss</a>
+</p>
+
+<!-- End of the editable part -->
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="pics/toc_end.gif" width=200 height=59 alt="" border="0"></td>
+<td>&nbsp;</td>
+<td align="center" class="footer"><b>EverQuest is a registered trademark, and Ruins of Kunark, Scars of Velious are<br>trademarks of Sony Computer Entertainment America, Inc. &copy;2000</b></td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+
+</body>
+</html>

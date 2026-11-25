@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>Crimson Dragons - Archive News</title>
+	<link rel="STYLESHEET" type="text/css" href="/cd.css">
+</head>
+
+<body bgcolor="#000000" text="#E6DCA0" vlink="#BFB379" link="#BFB379" alink="#BFB379" marginheight=3 marginwidth=3 leftmargin=3 topmargin=3 bottommargin=0 rightmargin=3>
+<table border=0 cellspacing="0" cellpadding="0" width=100%>
+<tr>
+<td valign="top" align="right" width="1%">
+<a href="index.php"><img src="/pics/toc_head.gif" width=200 height=100 alt="" border="0"></a></td>
+<td align="right"><img src="/pics/head_left.gif" width="20" height="100" alt="" border="0"></td>
+<td background="/pics/head_hg.gif" align="center" valign="bottom" width="99%"><img src="/pics/headline_start.gif" border="0"></td>
+<td><img src="/pics/head_end.gif" width=52 height=100 alt="" border="0"></td>
+</tr>
+<tr>
+<td background="/pics/toc_hg.gif" width="1%" valign="top">
+
+<table border=0 cellpadding="0" cellspacing="0" width="200">
+<tr>
+<td><img src="/pics/toc_2_1.gif" width=200 height=30 alt="" border="0"></td>
+</tr>
+<tr>
+<td align="center">
+<a href="/news.php"><img src="/pics/news.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="/conduct.php"><img src="/pics/conduct.gif" width=148 height=24 alt="" border="0"></a><br>
+<!-- <a href="events.php"><img src="/pics/events.gif" width=148 height=24 alt="" border="0"></a><br> -->
+<a href="/roster.php"><img src="/pics/roster.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="/officer.php"><img src="/pics/officer.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="/join.php"><img src="/pics/join.gif" width=148 height=23 alt="" border="0"></a><br>
+<a href="/academy.php"><img src="/pics/academy.gif" width=148 height=25 alt="" border="0"></a><br>
+<a href="http://pub11.ezboard.com/bwelcometothecrimsondragons"><img src="/pics/forum.gif" width=148 height=24 alt="" border="0"><br>
+<!-- <a href="/guides.php"><img src="/pics/guides.gif" width=148 height=23 alt="" border="0"></a><br> -->
+<!-- <a href="/awards.php"><img src="/pics/awards.gif" width=148 height=23 alt="" border="0"></a><br> -->
+<!-- <img src="/pics/photoalbum.gif" width=148 height=24 alt="" border="0"><br> -->
+<!-- <a href="/allies.php"><img src="/pics/allies.gif" width=148 height=26 alt="" border="0"></a><br> -->
+<!-- <a href="/enemies.php"><img src="/pics/enemies.gif" width=148 height=21 alt="" border="0"></a><br> -->
+<a href="/inn.php"><img src="/pics/inn.gif" width=148 height=25 alt="" border="0"></a><br>
+<!-- <img src="/pics/links.gif" width=148 height=22 alt="" border="0"><br> -->
+
+<br><br>
+
+</tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td valign="top"><br>
+<!-- Editable part of the page -->
+<div class="text">
+
+
+
+
+
+<h1>Past Events for March 2002</h1>
+
+
+<table width=%100 cellspacing="5">
+<a name="newsitem1015303740,14452,"></a>
+<tr><td width=720 bgcolor="#470000" align="center"><font class="newsheader">Monday, March 4, 2002</font></td></tr><tr><td><font size=+1 class="newssubject"><strong>Subject: Stellar Night of Events</strong></font><br><br><font class="newstext">I just had to post this before I logged for the night.  It was a great day for the alliance and CD.  We took down VS in Karnor's Castle to start the evening off.  Then a quick detour over to Emerald Jungle for Severilous the dragon then finished off the night (my night anyway) but killing Faydedar in Timerous Deep.<br><br>Congrats to Emperior who got his final scale for the warrior epic.  WTG !!! and to Clevargus who completed his druid epic battle this evening.  A great day by any account.</font><br><br><small>Posted by <a href="mailto:Aknar@crimson-dragons.com">Aknar</a></small><br><br><br></td></tr>
+<a name="newsitem1015171928,63851,"></a>
+<tr><td width=720 bgcolor="#470000" align="center"><font class="newsheader">Sunday, March 3, 2002</font></td></tr><tr><td><font size=+1 class="newssubject"><strong>Subject: CD takes Lodizal to dinner</strong></font><br><br><font class="newstext">Saturday afternoon, Lodizal spawned in Ice Clad.  A call went out in guild chat and all those who were not in TOV made their presence known. (Well all except for Agathar, he's fat and was a lil slow.)  I gave the word and my group engaged the turtle as soon as we could.  Within minutes the battle was over and we were victorious.<br><br>Congrats to Airagon who recieved the map piece Liannah who received the shell.  Liannah did a great job of kiting the turtle until we all arrived.  Casada received a pair of the turtle shell boots for his good work as the only tank their.  The bank received the other pair of boots.  <br><br>It was a good showing timely showing by CD once again.</font><br><br><small>Posted by <a href="mailto:Aknar@crimson-dragons.com">Aknar</a></small><br><br><br></td></tr>
+
+</table>
+
+
+</div>
+<br><br>
+<p align="center" class="footer"><img src="/pics/bar.gif" alt="" border="0" width=474 height=50 hspace=5><br><br>
+Webmaster: <a href="mailto:thenetboss@hotmail.com">The Netboss</a>
+</p>
+
+<!-- End of the editable part -->
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="/pics/toc_end.gif" width=200 height=59 alt="" border="0"></td>
+<td>&nbsp;</td>
+<td align="center" class="footer"><b>EverQuest is a registered trademark, and Ruins of Kunark, Scars of Velious are<br>trademarks of Sony Computer Entertainment America, Inc. &copy;2000</b></td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+
+</body>
+</html>

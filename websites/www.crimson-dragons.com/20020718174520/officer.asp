@@ -1,0 +1,139 @@
+
+<html>
+<head>
+	<title>Crimson Dragons - The Leadership Structure of the Crimson Dragons</title>
+	<link rel="STYLESHEET" type="text/css" href="cd.css">
+</head>
+
+<body bgcolor="#000000" text="#E6DCA0" vlink="#BFB379" link="#BFB379" alink="#BFB379" marginheight=3 marginwidth=3 leftmargin=3 topmargin=3 bottommargin=0 rightmargin=3>
+
+<table border=0 cellspacing="0" cellpadding="0" width=100%>
+<tr>
+<td valign="top" align="right" width="1%">
+<a href="index.asp"><img src="pics/toc_head.gif" width=200 height=100 alt="" border="0"></a></td>
+<td align="right"><img src="pics/head_left.gif" width="20" height="100" alt="" border="0"></td>
+<td background="pics/head_hg.gif" align="center" valign="bottom" width="99%"><img src="pics/headline_officer.gif" border="0"></td>
+<td><img src="pics/head_end.gif" width=52 height=100 alt="" border="0"></td>
+</tr>
+<tr>
+<td background="pics/toc_hg.gif" width="1%" valign="top">
+
+<table border=0 cellpadding="0" cellspacing="0" width="200">
+<tr>
+<td><img src="pics/toc_2_1.gif" width=200 height=30 alt="" border="0"></td>
+</tr>
+<tr>
+<td align="center">
+<a href="news.asp"><img src="pics/news.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="conduct.asp"><img src="pics/conduct.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="events.asp"><img src="pics/events.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="roster.asp"><img src="pics/roster.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="officer.asp"><img src="pics/officer.gif" width=148 height=24 alt="" border="0"></a><br>
+<a href="join.asp"><img src="pics/join.gif" width=148 height=23 alt="" border="0"></a><br>
+<a href="academy.asp"><img src="pics/academy.gif" width=148 height=25 alt="" border="0"></a><br>
+<a href="http://pub11.ezboard.com/bwelcometothecrimsondragons" target="Forum"><img src="pics/forum.gif" width=148 height=24 alt="" border="0"><br>
+<a href="guides.asp"><img src="pics/guides.gif" width=148 height=23 alt="" border="0"></a><br>
+<a href="awards.asp"><img src="pics/awards.gif" width=148 height=23 alt="" border="0"></a><br>
+<!-- <img src="pics/photoalbum.gif" width=148 height=24 alt="" border="0"><br> -->
+<!-- <a href="allies.php"><img src="pics/allies.gif" width=148 height=26 alt="" border="0"></a><br> -->
+<!-- <a href="enemies.php"><img src="pics/enemies.gif" width=148 height=21 alt="" border="0"></a><br> -->
+<a href="inn.asp"><img src="pics/inn.gif" width=148 height=25 alt="" border="0"></a><br>
+<!-- <img src="pics/links.gif" width=148 height=22 alt="" border="0"><br> -->
+
+<br><br>
+
+<div align="center">  
+There are <b>2</b> people <br>online now 
+<br></div>
+
+<br>
+
+</tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td valign="top"><br>
+<!-- Editable part of the page -->
+<div class="text">
+
+
+<p align="center"><i>"Lead, follow or get out of the way!" -- <b>Lee Iacoca</b></i></p>
+
+<p align="center">The Officer Structure of Crimson Dragons is designed to minimize the amount of work that a single player must do to keep our guild running and maximize the amount of playing time for us all. Crimson Dragons Officers choose to sacrifice a small amount of their time to help keep our guild fun, active and constantly changing. Every Guild Officer has an important set of duties to perform and will execute them without hesitation. The Guild has nineteen officer positions The officers are grouped into four teams.  Each team has one officer designated as "team lead".<p><br>
+<br>
+<br>
+<br>
+<br>
+<h1 align="center">The Admin Team</h1>
+<p><img src="pics/t.gif" width=41 height=51 alt="" border="0" align="left">he Admin Team was created to be the ruling council for the Crimson Dragons.<p><br>
+
+<h2 align="center">Members of the Admin Team</h2>
+<div align="center">
+<BR><BR><Table Border=0 Cellpadding=0><TR><TD><b>Guild Leader</b></TD><TD>- Lauree Bravesword&nbsp;&nbsp;<small><i>team lead</i></small></TD></TR><TR><TD><b>Communications Officer</b></TD><TD>- Praelus Braveblade</TD></TR><TR><TD><b>Vault Keeper</b></TD><TD>- </TD></TR></TABLE>
+</div>
+<br>
+<br>
+<br>
+<br>
+<h1 align="center">The Resource Team</h1>
+<img src="pics/t.gif" width=41 height=51 alt="" border="0" align="left">he Member Resource Team is designed to provide a point of contact for every member in the guild.  This process starts at recruitment with the Intiation Officer who screens the applications and posts eligible candidates to the forums for review by the current membership.  Also as part of this team are the Headmasters of the various schools.  The Headmasters are here to answer any questions members may about their respective classes, strategies and also to be a mentor to young dragons as they find their way in our ranks<p><br>
+
+
+<h2 align="center">Members of the Resource Team</h2>
+<div align="center">
+
+
+<BR><BR><Table Border=0 Cellpadding=0><TR><TD><b>Initiation Officer</b></TD><TD>- Casada Mobstopper&nbsp;&nbsp;<small><i>team lead</i></small></TD></TR><TR><TD><b>Asst Initiation Officer</b></TD><TD>- </TD></TR><TR><TD><b>Academy of Melee</b></TD><TD>- Kilkin Cobblepot</TD></TR><TR><TD><b>Academy of Sorcery</b></TD><TD>- </TD></TR><TR><TD><b>Acadamy of Mysticism</b></TD><TD>- </TD></TR></TABLE>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<h1 align="center">The Events Team</h1>
+<img src="pics/t.gif" width=41 height=51 alt="" border="0" align="left">he Event Team is here to help plan and organize raids for the guild. <p><br>
+
+
+<h2 align="center">Members of the Event Team</h2>
+<div align="center">
+
+<BR><BR><Table Border=0 Cellpadding=0><TR><TD><b>Events Officer</b></TD><TD>- Aalarye&nbsp;&nbsp;<small><i>team lead</i></small></TD></TR><TR><TD><b>Tatical Officer</b></TD><TD>- Shazzbot Hoyblade</TD></TR><TR><TD><b>Raid Coodinator</b></TD><TD>- </TD></TR><TR><TD><b>Raid Coordinator</b></TD><TD>- Airagon Arathorn</TD></TR></TABLE>
+
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<h1 align="center">The Web Team</h1>
+<img src="pics/t.gif" width=41 height=51 alt="" border="0" align="left">he Web Team is a group of artisans put together to provide accurate and updated information about the Crimson Dragons.  Our chater decrees that we work with all the "teams" to facilitate their jobs either through standard communication methods like the forums or the chat room, or through information dissimination from a particular area of the site dedicated to that team.  All of this in support of our membership to ensure the unity of the Crimson Dragons and the fellowship of our friends and allies.<p><br>
+
+
+<h2 align="center">Members of the Event Team</h2>
+<div align="center">
+<BR><BR><Table Border=0 Cellpadding=0><TR><TD><b>Page Keeper</b></TD><TD>- Aknar McKrull&nbsp;&nbsp;<small><i>team lead</i></small></TD></TR><TR><TD><b>Assistant Pagekeeper & Forum Admin</b></TD><TD>- Casada Mobstopper</TD></TR><TR><TD><b>Assistant Pagekeeper & Historian</b></TD><TD>- </TD></TR><TR><TD><b>Awards Officer</b></TD><TD>- </TD></TR></TABLE>
+</div>
+
+</div>
+<br><br>
+<p align="center" class="footer"><img src="pics/bar.gif" alt="" border="0" width=474 height=50 hspace=5><br><br>
+Webmaster: <a href="mailto:thenetboss@hotmail.com">The Netboss</a>
+</p>
+
+<!-- End of the editable part -->
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="pics/toc_end.gif" width=200 height=59 alt="" border="0"></td>
+<td>&nbsp;</td>
+<td align="center" class="footer"><b>EverQuest is a registered trademark, and Ruins of Kunark, Scars of Velious are<br>trademarks of Sony Computer Entertainment America, Inc. &copy;2000</b></td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+
+</body>
+</html>
