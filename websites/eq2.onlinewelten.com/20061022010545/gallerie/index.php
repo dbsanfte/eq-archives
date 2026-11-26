@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<title>Die Everquest 2 Galerie - Home</title>
+
+<link rel="stylesheet" href="themes/classic/style.css" type="text/css" />
+<script type="text/javascript" src="scripts.js"></script>
+<!-- $Id: template.html 2688 2005-12-04 03:22:35Z donnoman $ -->
+</head>
+<body>
+  
+  <table width="100%" border="0" cellpadding="20" cellspacing="20">
+    <tr>
+      <td valign="top" style="border: 1px solid #666666;background-color:#FFFFFF;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              <a href="index.php"><img src="themes/classic/images/site_logo.png" border="0" alt="" /></a><br />
+            </td>
+            <td width="100%" align="center">
+              <h1>Die Everquest 2 Galerie</h1>
+              <h3>www.eq-2.com</h3><br />
+                          <!-- BEGIN home -->
+        <a href="index.php" title="Go to the home page">Home</a> ::
+  <!-- END home -->                  <!-- BEGIN login -->
+        <a href="login.php?referer=index.php" title="Log me in">Login</a> 
+  <!-- END login -->   <br />               <!-- BEGIN album_list -->
+        <a href="index.php?cat=0" title="Go to the album list">Album list</a> ::
+  <!-- END album_list -->  <!-- BEGIN lastup -->
+        <a href="thumbnails.php?album=lastup&amp;cat=0" title="Show most recent uploads">Last uploads</a> ::
+  <!-- END lastup -->  <!-- BEGIN lastcom -->
+        <a href="thumbnails.php?album=lastcom&amp;cat=0" title="Show most recent comments">Last comments</a> ::
+  <!-- END lastcom -->  <!-- BEGIN topn -->
+        <a href="thumbnails.php?album=topn&amp;cat=0" title="Show most viewed items">Most viewed</a> ::
+  <!-- END topn -->  <!-- BEGIN toprated -->
+        <a href="thumbnails.php?album=toprated&amp;cat=0" title="Show top rated items">Top rated</a> ::
+  <!-- END toprated -->  <!-- BEGIN favpics -->
+        <a href="thumbnails.php?album=favpics" title="Go to my favorites">My Favorites</a> ::
+  <!-- END favpics -->  <!-- BEGIN search -->
+        <a href="search.php" title="Search the gallery">Search</a> 
+  <!-- END search -->
+            </td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="center" valign="top">
+              
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="top">
+              
+              
+            </td>
+          </tr>
+        </table>
+        <img src="images/spacer.gif" width="1" height="15" alt="" />
+        <br />
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td align="left" valign="top">
+              
+              
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+
+        <tr>
+                <td class="tableh1" width="80%" align="left"><b>Category</b></td>
+                <td class="tableh1" width="10%" align="center"><b>Albums</b></td>
+                <td class="tableh1" width="10%" align="center"><b>Files</b></td>
+        </tr>
+
+        <tr>
+                <td class="catrow" align="left"><table border="0"><tr><td></td><td><span class="catlink"><b><a href="index.php?cat=2">Everquest 2</a></b></span></td></tr></table></td>
+                <td class="catrow" align="center">4</td>
+                <td class="catrow" align="center">195</td>
+        </tr>
+        <tr>
+            <td class="tableb" colspan="3">
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+
+        <tr class="tableb_compact">
+
+        <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <span class="alblink"><a href="thumbnails.php?album=1"><b>Echoes of Faydwer</b></a></span>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1" border="0" alt="" /><br />
+                </td>
+        </tr>
+        <tr>
+                <td align="center" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="102" height="1" class="image" style="margin-top: 0px; margin-bottom: 0px; border: none;" alt="" /><br />
+                        <a href="thumbnails.php?album=1" class="albums"><img src="albums/userpics/10001/thumb_fae_in_kelethin_2.jpg" class="image" width="100" height="68" border="0" alt="fae_in_kelethin_2.jpg" /><br /></a>
+                </td>
+                <td>
+                        <img src="images/spacer.gif" width="1" height="1" border="0" alt="" />
+                </td>
+                <td width="100%" valign="top" class="tableb_compact">
+                        
+                        <p>Bilder aus dem Everquest 2 Add On Echoes of Faydwer</p>
+                        <p class="album_stat">69 files, last one added on Sep 27, 2006</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <span class="alblink"><a href="thumbnails.php?album=2"><b>Kingdom of Sky</b></a></span>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1" border="0" alt="" /><br />
+                </td>
+        </tr>
+        <tr>
+                <td align="center" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="102" height="1" class="image" style="margin-top: 0px; margin-bottom: 0px; border: none;" alt="" /><br />
+                        <a href="thumbnails.php?album=2" class="albums"><img src="albums/userpics/10002/thumb_EQ2_000154.jpg" class="image" width="100" height="76" border="0" alt="EQ2_000154.jpg" /><br /></a>
+                </td>
+                <td>
+                        <img src="images/spacer.gif" width="1" height="1" border="0" alt="" />
+                </td>
+                <td width="100%" valign="top" class="tableb_compact">
+                        
+                        <p>Bilder aus der Erweiterung &quot;Kingdom of Sky&quot;</p>
+                        <p class="album_stat">42 files, last one added on Sep 15, 2006</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr class="tableb_compact">
+
+        <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <span class="alblink"><a href="thumbnails.php?album=3"><b>Desert of Flames</b></a></span>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1" border="0" alt="" /><br />
+                </td>
+        </tr>
+        <tr>
+                <td align="center" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="102" height="1" class="image" style="margin-top: 0px; margin-bottom: 0px; border: none;" alt="" /><br />
+                        <a href="thumbnails.php?album=3" class="albums"><img src="albums/userpics/10002/thumb_EQ2_000258.jpg" class="image" width="100" height="70" border="0" alt="EQ2_000258.jpg" /><br /></a>
+                </td>
+                <td>
+                        <img src="images/spacer.gif" width="1" height="1" border="0" alt="" />
+                </td>
+                <td width="100%" valign="top" class="tableb_compact">
+                        
+                        <p>Bilder die mit der Erweiterung &quot;Desert of Flames&quot; zu tun haben.</p>
+                        <p class="album_stat">25 files, last one added on Sep 15, 2006</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <span class="alblink"><a href="thumbnails.php?album=4"><b>Classic</b></a></span>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1" border="0" alt="" /><br />
+                </td>
+        </tr>
+        <tr>
+                <td align="center" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="102" height="1" class="image" style="margin-top: 0px; margin-bottom: 0px; border: none;" alt="" /><br />
+                        <a href="thumbnails.php?album=4" class="albums"><img src="albums/userpics/10002/thumb_EQ2_000204.jpg" class="image" width="100" height="70" border="0" alt="EQ2_000204.jpg" /><br /></a>
+                </td>
+                <td>
+                        <img src="images/spacer.gif" width="1" height="1" border="0" alt="" />
+                </td>
+                <td width="100%" valign="top" class="tableb_compact">
+                        
+                        <p>Bilder von Begebenheiten, die man mit dem Basisspiel erleben kann</p>
+                        <p class="album_stat">59 files, last one added on Sep 15, 2006</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+
+        <tr>
+                <td colspan="2" style="padding: 0px;">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                       
+                                </tr>
+                        </table>
+                </td>
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="7" border="" alt="" /><br />
+</td>
+        </tr>
+
+        <tr>
+                <td colspan="3" class="tableh1" align="center"><span class="statlink"><b>195</b> files in <b>4</b> albums and <b>1</b> categories with <b>0</b> comments viewed <b>4377</b> times</span></td>
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="7" border="" alt="" /><br />
+
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+        <tr>
+                <td class="tableh1" colspan="4">Random files</td>
+        </tr>
+
+        <tr>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&amp;cat=0&amp;pos=-63"><img src="albums/userpics/10001/thumb_crushbone_caves.jpg" class="image" width="100" height="75" border="0" alt="crushbone_caves.jpg" title="Filename=crushbone_caves.jpg
+Filesize=1520KB
+Dimensions=1600x1200
+Date added=Sep 12, 2006"/><br /></a>
+                                        <span class="thumb_title">Crushbone Caves</span><span class="thumb_title">57 views</span><span class="thumb_caption">Monster in der Zone Crushbone Caves</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&amp;cat=0&amp;pos=-11"><img src="albums/userpics/10001/thumb_bugbear_warrior_mesh.jpg" class="image" width="100" height="96" border="0" alt="bugbear_warrior_mesh.jpg" title="Filename=bugbear_warrior_mesh.jpg
+Filesize=182KB
+Dimensions=623x593
+Date added=Sep 10, 2006"/><br /></a>
+                                        <span class="thumb_title">47 views</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&amp;cat=0&amp;pos=-123"><img src="albums/userpics/10002/thumb_EQ2_000061%7E1.jpg" class="image" width="100" height="70" border="0" alt="EQ2_000061~1.jpg" title="Filename=EQ2_000061~1.jpg
+Filesize=84KB
+Dimensions=1024x712
+Date added=Sep 15, 2006"/><br /></a>
+                                        <span class="thumb_title">12 views</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&amp;cat=0&amp;pos=-155"><img src="albums/userpics/10002/thumb_EQ2_000158.jpg" class="image" width="100" height="70" border="0" alt="EQ2_000158.jpg" title="Filename=EQ2_000158.jpg
+Filesize=63KB
+Dimensions=1024x712
+Date added=Sep 15, 2006"/><br /></a>
+                                        <span class="thumb_title">8 views</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&amp;cat=0&amp;pos=-189"><img src="albums/userpics/10001/thumb_fae_in_crushbone_6.jpg" class="image" width="100" height="75" border="0" alt="fae_in_crushbone_6.jpg" title="Filename=fae_in_crushbone_6.jpg
+Filesize=792KB
+Dimensions=1600x1200
+Date added=Sep 27, 2006"/><br /></a>
+                                        <span class="thumb_title">49 views</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&amp;cat=0&amp;pos=-85"><img src="albums/userpics/10002/thumb_EQ2_000075.jpg" class="image" width="100" height="80" border="0" alt="EQ2_000075.jpg" title="Filename=EQ2_000075.jpg
+Filesize=139KB
+Dimensions=1280x1024
+Date added=Sep 15, 2006"/><br /></a>
+                                        <span class="thumb_title">17 views</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&amp;cat=0&amp;pos=-178"><img src="albums/userpics/10002/thumb_EQ2_000211.jpg" class="image" width="100" height="75" border="0" alt="EQ2_000211.jpg" title="Filename=EQ2_000211.jpg
+Filesize=64KB
+Dimensions=1024x768
+Date added=Sep 15, 2006"/><br /></a>
+                                        <span class="thumb_title">22 views</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&amp;cat=0&amp;pos=-43"><img src="albums/userpics/10001/thumb_steamfont_000006.jpg" class="image" width="100" height="75" border="0" alt="steamfont_000006.jpg" title="Filename=steamfont_000006.jpg
+Filesize=230KB
+Dimensions=1600x1200
+Date added=Sep 10, 2006"/><br /></a>
+                                        <span class="thumb_title">Steamfont 4</span><span class="thumb_title">23 views</span><span class="thumb_caption">Screen der Zone Steamfont<br />
+ </span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="7" border="" alt="" /><br />
+
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+        <tr>
+                <td class="tableh1" colspan="4">Last additions</td>
+        </tr>
+
+        <tr>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&amp;cat=0&amp;pos=0"><img src="albums/userpics/10001/thumb_fae_in_kelethin_2.jpg" class="image" width="100" height="68" border="0" alt="fae_in_kelethin_2.jpg" title="Filename=fae_in_kelethin_2.jpg
+Filesize=532KB
+Dimensions=1530x1035
+Date added=Sep 27, 2006"/><br /></a>
+                                        <span class="thumb_title">38 views</span><span class="thumb_caption">Sep 27, 2006</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&amp;cat=0&amp;pos=1"><img src="albums/userpics/10001/thumb_klak_anon.jpg" class="image" width="100" height="75" border="0" alt="klak_anon.jpg" title="Filename=klak_anon.jpg
+Filesize=1272KB
+Dimensions=1600x1200
+Date added=Sep 27, 2006"/><br /></a>
+                                        <span class="thumb_title">46 views</span><span class="thumb_caption">Sep 27, 2006</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&amp;cat=0&amp;pos=2"><img src="albums/userpics/10001/thumb_kobolds_in_seamfont.jpg" class="image" width="100" height="75" border="0" alt="kobolds_in_seamfont.jpg" title="Filename=kobolds_in_seamfont.jpg
+Filesize=1420KB
+Dimensions=1600x1200
+Date added=Sep 27, 2006"/><br /></a>
+                                        <span class="thumb_title">Kobolde in Seamfont</span><span class="thumb_title">52 views</span><span class="thumb_caption">Sep 27, 2006</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&amp;cat=0&amp;pos=3"><img src="albums/userpics/10001/thumb_fae_in_crushbone_3.jpg" class="image" width="100" height="68" border="0" alt="fae_in_crushbone_3.jpg" title="Filename=fae_in_crushbone_3.jpg
+Filesize=617KB
+Dimensions=1530x1035
+Date added=Sep 27, 2006"/><br /></a>
+                                        <span class="thumb_title">50 views</span><span class="thumb_caption">Sep 27, 2006</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&amp;cat=0&amp;pos=4"><img src="albums/userpics/10001/thumb_fae_in_crushbone_4.jpg" class="image" width="100" height="68" border="0" alt="fae_in_crushbone_4.jpg" title="Filename=fae_in_crushbone_4.jpg
+Filesize=652KB
+Dimensions=1530x1035
+Date added=Sep 27, 2006"/><br /></a>
+                                        <span class="thumb_title">37 views</span><span class="thumb_caption">Sep 27, 2006</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&amp;cat=0&amp;pos=5"><img src="albums/userpics/10001/thumb_fae_in_crushbone_5.jpg" class="image" width="100" height="68" border="0" alt="fae_in_crushbone_5.jpg" title="Filename=fae_in_crushbone_5.jpg
+Filesize=588KB
+Dimensions=1530x1035
+Date added=Sep 27, 2006"/><br /></a>
+                                        <span class="thumb_title">44 views</span><span class="thumb_caption">Sep 27, 2006</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&amp;cat=0&amp;pos=6"><img src="albums/userpics/10001/thumb_fae_in_crushbone_6.jpg" class="image" width="100" height="75" border="0" alt="fae_in_crushbone_6.jpg" title="Filename=fae_in_crushbone_6.jpg
+Filesize=792KB
+Dimensions=1600x1200
+Date added=Sep 27, 2006"/><br /></a>
+                                        <span class="thumb_title">49 views</span><span class="thumb_caption">Sep 27, 2006</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&amp;cat=0&amp;pos=7"><img src="albums/userpics/10001/thumb_fae_in_kelethin_1.jpg" class="image" width="100" height="68" border="0" alt="fae_in_kelethin_1.jpg" title="Filename=fae_in_kelethin_1.jpg
+Filesize=403KB
+Dimensions=1530x1035
+Date added=Sep 27, 2006"/><br /></a>
+                                        <span class="thumb_title">Fee in Kelethin</span><span class="thumb_title">45 views</span><span class="thumb_caption">Eine Fee und einige andere Bewohner in Kelethin</span><span class="thumb_caption">Sep 27, 2006</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="7" border="" alt="" /><br />
+<div class="footer" align="center" style="padding-top: 10px;">Powered by <a href="http://coppermine.sourceforge.net/" title="Coppermine Photo Gallery" rel="external">Coppermine Photo Gallery</a></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <div id="vanity">
+      <a id="v_php" href="http://www.php.net/" target="_blank"></a>
+      <a id="v_mysql" href="http://www.mysql.com/" target="_blank"></a>
+      <a id="v_xhtml" href="http://validator.w3.org/check/referer" target="_blank"></a>
+      <a id="v_css" href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"></a>
+</div>
+<!--Coppermine Photo Gallery 1.4.9 (stable)-->
+</body>
+</html>

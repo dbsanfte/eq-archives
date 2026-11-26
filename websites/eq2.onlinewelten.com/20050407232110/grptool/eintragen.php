@@ -1,0 +1,688 @@
+<html>
+	<head><title>EQ2 - Gruppensuche</title></head>
+	<LINK href="styles/eq2.css" rel="stylesheet" type="text/css">
+	<body bgcolor="black"><style type="text/css"> <!--
+
+body
+{
+margin: 0px 0px 0px 0px;
+}
+
+.navbarthead
+{
+z-index:100;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+background: #B6B6B6 repeat-x top left;
+color: #000000;
+font: bold 9px tahoma, verdana;
+border-width: 1px;
+border-color: #E4E4E4;
+border-collapse:block;
+position:relative;
+}
+
+.navbar_control
+{
+z-index:100;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+color: #000000;
+font: bold 10px tahoma, verdana;
+vertical-align:top;
+border-width: 1px;
+border-color: #E4E4E4;
+border-collapse:block;
+position:relative;
+}
+
+.navbar_control a:link
+{
+z-index:100;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+color: #000000;
+font: bold 9px tahoma, verdana;
+text-decoration: none;
+vertical-align:top;
+position:relative;
+}
+.navbar_control a:visited
+{
+z-index:100;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+color: #000000;
+font: bold 9px tahoma, verdana;
+text-decoration: none;
+vertical-align:top;
+}
+.navbar_control a:hover, .navbar_control a:active
+{
+z-index:100;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+color: #000000;
+font: bold 9px tahoma, verdana;
+text-decoration: none;
+vertical-align:top;
+}
+
+.navbar_popup
+{
+z-index:100;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+background-color: #E4E4E4;
+color: #E4E4E4;
+font: bold 9px verdana, geneva;
+white-space: nowrap;
+cursor: pointer;
+border-width: 1px;
+border-color: #E4E4E4;
+border-collapse:block;
+position:relative;
+}
+.navbar_popup a:link
+{
+z-index:100;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+color: #000000;
+font: bold 9px tahoma, verdana;
+text-decoration: none;
+}
+.navbar_popup a:visited
+{
+z-index:100;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+color: #000000;
+font: bold 9px tahoma, verdana;
+text-decoration: none;
+}
+.navbar_popup a:hover, .navbar_popup a:active
+{
+z-index:100;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+color: #000000;
+font: bold 9px tahoma, verdana;
+text-decoration: none;
+}
+
+.navbar_option
+{
+font: bold 9px tahoma, verdana;
+z-index:100;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+background-color: #B6B6B6;
+color: #B6B6B6;
+border-width: 1px;
+border-color: #E4E4E4;
+border-collapse:block;
+position:relative;
+}
+
+
+--> </style> <!-- / CSS Stylesheet -->
+
+<script type="text/javascript">
+	<!--
+	var SESSIONURL = "";
+	var IMGDIR_MISC = "images/navbar";
+	// -->
+</script>
+
+<script type="text/javascript" src="http://www.onlinewelten.com/clientscript/vbulletin_global.js"></script>
+<script type="text/javascript" src="http://www.onlinewelten.com/clientscript/vbulletin_menu.js"></script><!-- nav buttons bar -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" height="26" align="center" background="http://onlinewelten.com/images/navbar/navbar-bgcntr.png">
+	<tr>
+	<td id="owportal" class="navbar_control" background="http://onlinewelten.com/images/navbar/navbar-bgcntr.png" width="150" align="center">
+		<img src="http://onlinewelten.com/images/navbar/navbar-left.png" style="vertical-align:top;" />
+		<script type="text/javascript">
+			vbmenu_register("owportal");
+		</script>
+	</td>
+
+	<td class="navbar_control" background="http://onlinewelten.com/images/navbar/navbar-bgcntr.png" width="10">
+		<img src="http://onlinewelten.com/images/navbar/navbar-point.gif" height="18" width="10" style="vertical-align:top;" />
+	</td>
+
+	<td class="navbar_control" id="netsites" background="http://onlinewelten.com/images/navbar/navbar-bgcntr.png" width="100" align="center">
+		<img src="http://onlinewelten.com/images/navbar/navbar-netsites.gif" style="vertical-align:top;" />
+		<script type="text/javascript">
+			vbmenu_register("netsites");
+		</script>
+	</td>
+
+	<td class="navbar_control" background="http://onlinewelten.com/images/navbar/navbar-bgcntr.png" width="35">
+		<img src="http://onlinewelten.com/images/navbar/navbar-point.gif" height="18" width="35" style="vertical-align:top;" />
+	</td>
+
+	<td class="navbar_control" id="forum" background="http://onlinewelten.com/images/navbar/navbar-bgcntr.png" width="100" align="center">
+		<img src="http://onlinewelten.com/images/navbar/navbar-forum.gif" style="vertical-align:top;" />
+		<script type="text/javascript">
+			vbmenu_register("forum");
+		</script>
+	</td>
+
+	<td class="navbar_control" background="http://onlinewelten.com/images/navbar/navbar-bgcntr.png" width="*" align="left">
+		<img src="http://onlinewelten.com/images/navbar/navbar-usronline.gif" style="vertical-align:top;" />
+		<img src="http://count.onlinewelten.com/countvisitor.php?&h=18&w=50&text=1&t=1" border="0" />
+	</td>
+
+	<td class="navbar_control" background="http://onlinewelten.com/images/navbar/navbar-right.png" width="20">
+		<img src="http://onlinewelten.com/images/navbar/navbar-right.png" style="vertical-align:top;" />
+	</td>
+	</tr>
+</table>
+<!-- / nav buttons bar -->
+
+
+<!-- NAVBAR POPUP MENUS -->
+<div class="navbar_popup" id="owportal_menu" style="display:none">
+<table cellpadding="4" cellspacing="1">
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://www.onlinewelten.com/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/ow.jpg" border="0" />
+				Zum Portal
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://www.onlinewelten.com/include.php?path=team.php">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/ow.jpg" border="0" />
+				Impressum
+			</a>
+		</td>
+	</tr>
+</table>
+</div>
+
+
+<div class="navbar_popup" id="netsites_menu" style="display:none">
+<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="navbarthead">
+			Wo möchten Sie hin?
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://www.onlinewelten.com/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/ow.jpg" border="0" />
+				Onlinewelten
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://www.eq-2.com/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/eq2.jpg" border="0" />
+				Everquest 2
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://www.worldof-warcraft.de/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/wow.jpg" border="0" />
+				World of WarCraft
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://www.lineageii.de/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/l2.jpg" border="0" />
+				Lineage 2
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://neocron2.onlinewelten.com/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/neocron2.jpg" border="0" />
+				Neocron 2
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://www.guild-wars.info/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/gw.jpg" border="0" />
+				Guild Wars
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://coh.onlinewelten.com/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/CoH.jpg" border="0" />
+				City of Heroes
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://www.mxon.de/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/matrix.jpg" border="0" />
+				Matrix Online
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://www.vanguard-soh.com/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/vanguard.jpg" border="0" />
+				Vanguard
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://ff-xi.net/">
+				<img src="http://onlinewelten.com/images/catimages_tiny/ffxi.gif" border="0" />
+				Final Fantasy XI
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://rose.onlinewelten.com">
+				<img src="http://onlinewelten.com/images/catimages_tiny/rose.jpg" border="0" />
+				R.O.S.E Online
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://www.saga-ryzom.de/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/saga.jpg" border="0" />
+				Saga of Ryzom
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://www.darknlight.de/">
+				<img src="http://www.onlinewelten.com/images/catimages_tiny/dnl.jpg" border="0" />
+				Dark and Light
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<a href="http://massivegames.onlinewelten.com/">
+				<img src="http://onlinewelten.com/images/catimages_tiny/massivebrowser.jpg" border="0" />
+				Massive Browser Games
+			</a>
+		</td>
+	</tr>
+</table>
+</div>
+
+
+<div class="navbar_popup" id="forum_menu" style="display:none">
+<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="navbarthead">
+			Welches Forum ?
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://www.onlinewelten.com/images/catimages_tiny/ow.jpg" />
+			<a href="http://forum.onlinewelten.com/">Portal</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://www.onlinewelten.com/images/catimages_tiny/l2.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=483">Lineage 2</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://www.onlinewelten.com/images/catimages_tiny/eq2.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=642">Everquest 2</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://www.onlinewelten.com/images/catimages_tiny/gw.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=718">Guild Wars</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://www.onlinewelten.com/images/catimages_tiny/wow.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=482">World of Warcraft</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://onlinewelten.com/images/catimages_tiny/ffxi.gif" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=496">Final Fantasy XI</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://onlinewelten.com/images/catimages_tiny/rose.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=1171">R.O.S.E Online</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://onlinewelten.com/images/catimages_tiny/CoH.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=979">City of Heroes</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://onlinewelten.com/images/catimages_tiny/neocron2.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=1008">Neocron 2</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://onlinewelten.com/images/catimages_tiny/matrix.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=1027">Matrix Online</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://www.onlinewelten.com/images/catimages_tiny/vanguard.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=725">Vanguard:SoH</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://www.onlinewelten.com/images/catimages_tiny/saga.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=548">The Saga of Ryzom</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://www.onlinewelten.com/images/catimages_tiny/ow.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=452">Horizons</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="navbar_option" style="margin:0px;padding:0px;">
+			<img src="http://onlinewelten.com/images/catimages_tiny/massivebrowser.jpg" />
+			<a href="http://forum.onlinewelten.com/forumdisplay.php?f=772">Massive Browser Games</a>
+		</td>
+	</tr>
+</table>
+</div>
+
+<script type="text/javascript"> <!--
+// Main vBulletin Javascript Initialization
+vBulletin_init();
+// Initialize 'Active' Table Cells
+//activecells_init();
+//--> </script><p align="center">
+<table border="0" cellspacing="7" cellpadding="0" width="1000">
+  <tr>
+    <td align="center"><a href="http://www.eq-2.com"><img  border="0" src="http://eq2.onlinewelten.com/images/dataheader.jpg"></a></td>
+  <tr>
+  <td>
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="18" height="18"><img border="0" alt="" height="18" width="18" src="http://eq2.onlinewelten.com/linksoben.jpg"></td>
+      <td class="centertop" width="100%" height="18" background="http://eq2.onlinewelten.com/oben.jpg"></td>
+      <td width="18" height="18"><img border="0" alt="" height="18" width="18" src="http://eq2.onlinewelten.com/rechtsoben.jpg"></td>
+    </tr>
+  </table>
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td class="centerleftb" width="18" background="http://eq2.onlinewelten.com/links.jpg"></td>
+      <td align="center" class="center" valign="top" background="http://eq2.onlinewelten.com/bgtext.jpg">
+      <strong><a href='./'>Gruppen Anzeigen</a></strong> - <strong><a href='eintragen.php'>Gruppe Eintragen</a></strong></td>
+      <td class="centerrightb" width="18" background="http://eq2.onlinewelten.com/rechts.jpg" ></td>
+    </tr>
+  </table>
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="18" height="18"><img border="0" alt="" height="18" width="18" src="http://eq2.onlinewelten.com/linksunten.jpg" /></td>
+      <td class="centerbot" width="100%" height="18" background="http://eq2.onlinewelten.com/unten.jpg"></td>
+      <td width="18" height="18"><img border="0" alt="" height="18" width="18" src="http://eq2.onlinewelten.com/rechtsunten.jpg"></td>
+    </tr>
+  </table>
+  </td>
+  </tr>
+  <tr>
+  <td>
+
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="18" height="18"><img border="0" alt="" height="18" width="18" src="http://eq2.onlinewelten.com/linksoben.jpg"></td>
+      <td class="centertop" width="100%" height="18" background="http://eq2.onlinewelten.com/oben.jpg"></td>
+      <td width="18" height="18"><img border="0" alt="" height="18" width="18" src="http://eq2.onlinewelten.com/rechtsoben.jpg"></td>
+    </tr>
+  </table>
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td class="centerleft" width="18" background="http://eq2.onlinewelten.com/links.jpg"></td>
+      <td class="center" valign="top" background="http://eq2.onlinewelten.com/bgtext.jpg">
+		<form name="form1" method="post" action="eintragen.php">
+		  <table style="BORDER-COLLAPSE: collapse" width="100%" border="1" cellspacing="1" cellpadding="5" bordercolor="#000000" align="center">
+		    <tr>
+		      <td width="16%"> <b>Kurzbeschreibung: </b></td>
+		      <td colspan="4"><b>
+		        <input type="text" name="k_beschreibung" size="30" maxlength="30">
+		        </b><font size="2">(max. 30 Zeichen)</font> </td>
+		    </tr>
+		    <tr>
+		      <td width="16%"><b>Gruppenf&uuml;hrer:</b></td>
+		      <td width="40%">
+		        <input type="text" name="g_name">
+						<select name="c_1">
+							<option value="egal">egal</option>
+							<option value="Priester">Priester</option>
+							<option value="Kämpfer">Kämpfer</option>
+							<option value="Kundschafter">Kundschafter</option>
+							<option value="Magier">Magier</option>
+						</select>
+		      </td>
+		      <td width="20%"><b>Gruppengr&ouml;&szlig;e:</b></td>
+		      <td width="24%" colspan="2">
+		        <div align="left">
+		          <input type="text" name="g_anzahl" size="1" maxlength="1">
+		          <font size="2">(1-6)</font></div>
+		      </td>
+		    </tr>
+		    <tr>
+		      <td width="16%"><b>Treffpunkt:</b></td>
+		      <td width="40%">
+		        <input type="text" name="treffpunkt">
+		      </td>
+		
+		      <td width="20%"><b>Gruppenlevel:</b></td>
+		      <td width="24%" colspan="2">
+		        <div align="left">
+		          <input type="text" name="lvl" size="2" maxlength="2">
+		          <font size="2">(1-50)</font></div>
+		      </td>
+		
+		    </tr>
+		    <tr>
+		      <td width="16%"><b>Datum:</b></td>
+		      <td width="40%">
+		        <input type="text" name="datum" size="10" maxlength="10" value="2005-04-08">
+		        <font size="2">(JJJJ-MM-TT)</font></td>
+		      <td width="20%"><b>1.)</b> <img src="images/e_besetzt.gif"></td>
+		      <td width="24%" colspan="2"><b>durch Gruppenf&uuml;hrer</b></td>
+		    </tr>
+		    <tr>
+		      <td width="16%"><b>Uhrzeit:</b></td>
+		      <td width="40%">
+		        <input type="text" name="zeit" size="5" maxlength="5" value="20:15">
+		        <font size="2">( SS:MM)</font> </td>
+		      <td width="20%">
+		        <b>2.)</b> <select name="s_2">
+		          <option value="1">Besetzt</option>
+		          <option value="2">Gesucht</option>
+		          <option value="0" selected>N/A</option>
+		        </select>
+		      </td>
+		      <td width="24%">
+		        <input type="text" name="n_2">
+		      </td>
+					<td>
+						<select name="c_2">
+							<option value="egal">egal</option>
+							<option value="Priester">Priester</option>
+							<option value="Kämpfer">Kämpfer</option>
+							<option value="Kundschafter">Kundschafter</option>
+							<option value="Magier">Magier</option>
+						</select>
+					</td>
+		    </tr>
+		    <tr>
+		      <td width="16%"><b>Server:</b></td>
+		      <td width="40%">
+		        <input type="text" name="server">
+		      </td>
+		      <td width="20%">
+		       <b>3.)</b> <select name="s_3" >
+		           <option value="1">Besetzt</option>
+		          <option value="2">Gesucht</option>
+		          <option value="0" selected>N/A</option>
+		        </select>
+		      </td>
+		      <td width="24%">
+		        <input type="text" name="n_3">
+					</td>
+					<td>
+						<select name="c_3">
+							<option value="egal">egal</option>
+							<option value="Priester">Priester</option>
+							<option value="Kämpfer">Kämpfer</option>
+							<option value="Kundschafter">Kundschafter</option>
+							<option value="Magier">Magier</option>
+						</select>
+		      </td>
+		    </tr>
+		
+		    <tr>
+		      <td width="16%"><b>E-Mail**:</b></td>
+		      <td width="40%">
+		        <input type="text" name="mail">
+		      </td>
+		      <td width="20%">
+		       <b>4.)</b> <select name="s_4">
+		           <option value="1">Besetzt</option>
+		          <option value="2">Gesucht</option>
+		          <option value="0" selected>N/A</option>
+		        </select>
+		      </td>
+		      <td width="24%">
+		        <input type="text" name="n_4">
+		      </td>
+					<td>
+						<select name="c_4">
+							<option value="egal">egal</option>
+							<option value="Priester">Priester</option>
+							<option value="Kämpfer">Kämpfer</option>
+							<option value="Kundschafter">Kundschafter</option>
+							<option value="Magier">Magier</option>
+						</select>
+					</td>
+		    </tr>
+		
+		    <tr>
+		    <td rowspan="2" valign="top" align="left" width="23%"><b>Beschreibung:</b></td>
+		      <td rowspan="2" valign="top" align="left" width="37%">
+		        <textarea name="beschreibung" wrap="VIRTUAL" cols="37" rows="14"></textarea>
+		      </td>
+		
+		      <td width="20%" valign="top">
+		       <b>5.)</b> <select name="s_5">
+		           <option value="1">Besetzt</option>
+		          <option value="2">Gesucht</option>
+		          <option value="0" selected>N/A</option>
+		        </select>
+		      </td>
+		      <td width="24%" valign="top">
+		        <input type="text" name="n_5">
+		      </td>
+					<td valign="top">
+						<select name="c_5">
+							<option value="egal">egal</option>
+							<option value="Priester">Priester</option>
+							<option value="Kämpfer">Kämpfer</option>
+							<option value="Kundschafter">Kundschafter</option>
+							<option value="Magier">Magier</option>
+						</select>
+					</td>
+		    </tr>
+		    <tr>
+		      <td width="20%" valign="top">
+		        <b>6.)</b> <select name="s_6">
+		           <option value="1">Besetzt</option>
+		          <option value="2">Gesucht</option>
+		          <option value="0" selected>N/A</option>
+		        </select>
+		      </td>
+		      <td width="24%" valign="top">
+		        <input type="text" name="n_6">
+		      </td>
+					<td valign="top">
+						<select name="c_6">
+							<option value="egal">egal</option>
+							<option value="Priester">Priester</option>
+							<option value="Kämpfer">Kämpfer</option>
+							<option value="Kundschafter">Kundschafter</option>
+							<option value="Magier">Magier</option>
+						</select>
+					</td>
+		    </tr>
+		    <tr>
+		      <td width="23%" valign="top" align="left"><b>Passwort*:</b></td>
+		      <td width="37%" valign="top" align="left">
+		        <input type="password" name="passwort">
+		      </td>
+		      <td colspan="3">
+		        <div align="center">
+		          <input type="submit" name="Abschicken" value="Abschicken">
+		        </div>
+		      </td>
+		    </tr>
+		  </table>
+		</form><b>*</b> Das Passwort wird f&uuml;r das editieren der Gruppe ben&ouml;tigt.<br><b>**</b> Dieses E-Mail wird ben&ouml;tigt um Ihnen eine Nachricht zu schicken, sobald ein neuer Beitrag gepostet wird.<br>Diese E-Mail ist nicht f&uuml;r andere User sichtbar.     </td>
+      <td class="centerrightb" width="18" background="http://eq2.onlinewelten.com/rechts.jpg" ></td>
+    </tr>
+  </table>
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="18" height="18"><img border="0" alt="" height="18" width="18" src="http://eq2.onlinewelten.com/linksunten.jpg" /></td>
+      <td class="centerbot" width="100%" height="18" background="http://eq2.onlinewelten.com/unten.jpg"></td>
+      <td width="18" height="18"><img border="0" alt="" height="18" width="18" src="http://eq2.onlinewelten.com/rechtsunten.jpg"></td>
+    </tr>
+  </table>
+  </td>
+  </tr>
+</table>
+</p></td></tr></table><p><center>&copy; SfG 1.4 (Search for Group) by Frettchen, adjusted for EQ-2.com by Legedric</p>
+	<script language='JavaScript' type='text/javascript'>
+		<!--
+		   if (!document.phpAds_used) document.phpAds_used = ',';
+		   phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+		   
+		   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+		   document.write ("http://media.onlinewelten.com/AdServe/adjs.php?n=" + phpAds_random);
+		   document.write ("&amp;what=zone:14");
+		   document.write ("&amp;exclude=" + document.phpAds_used);
+		   if (document.referer)
+		      document.write ("&amp;referer=" + escape(document.referer));
+		   document.write ("'><" + "/script>");
+		//-->
+		</script><noscript><a href='http://media.onlinewelten.com/AdServe/adclick.php?n=ab19f3e8' target='_blank'><img src='http://media.onlinewelten.com/AdServe/adview.php?what=zone:1&amp;n=ab19f3e8' border='0' alt=''></a></noscript>
+	</center>
+			</body></html>

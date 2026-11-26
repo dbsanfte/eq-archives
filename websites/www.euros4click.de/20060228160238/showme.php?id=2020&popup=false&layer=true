@@ -1,0 +1,318 @@
+var e4_url1 = 'http://www.euros4click.de/popup.php?maxflag=false&sessioncode=515F0D021E400A52091412590D051558420E505F4157065001460B16090758114455575110564B120A125E5C5F1A600B04510D510A58111A5D420902545E11104A00146B005E07594544024B0A00500D170A546F554757090F4204471B0B4A0B0E0B440D530F501402555546027C09410E5509124100555C0A5B470D1509590F1451565258084702094458165F0C5F1A4641085503470E560F064852045103465E03091147035242150F5409520E4C080804025403575E1F4B5B570E11130D5C1B094A0A0402430B550744091F5A5F030F535E065B49115F570F13405A5D430A170E0B0F46500C170A4A5E090359505801594C410B010843415F05120910580B58130700071309454E435906091B430D521B5D4259550B43015704415F4A0B550E43415D165B435256160A405C570F1706015709145F1B-6EAF576F&nomax=true&c=1&login=yes&rn=e726cae92';
+var e4_url2 = 'http://www.euros4click.de/popup.php?maxflag=false&sessioncode=515F0D021E400A52091412590D051558420E505F4157065001460B16090758114455575110564B120A125E5C5F1A600B04510D510A58111A5D420902545E11104A00146B005E07594544024B0A00500D170A546F554757090F4204471B0B4A0B0E0B440D530F501402555546027C09410E5509124100555C0A5B470D1509590F1451565258084702094458165F0C5F1A4641085503470E560F064852045103465E03091147035242150F5409520E4C080804025403575E1F4B5B570E11130D5C1B094A0A0402430B550744091F5A5F030F535E065B49115F570F13405A5D430A170E0B0F46500C170A4A5E090359505801594C410B010843415F05120910580B58130700071309454E435906091B430D521B5D4259550B43015704415F4A0B550E43415D165B435256160A405C570F1706015709145F1B-6EAF576F&nomax=false&c=0&login=yes&rn=e726cae92';
+var e4_layertitle = 'Jetzt in DSL einsteigen und sparen!';
+var e4_layerheight= screen.width <= 1024 ? screen.height - 405 : screen.height - 605;
+var e4_layerwidth = screen.width <= 1024 ? screen.width  - 250 : screen.width  - 450;
+var e4_showpopup  = false;
+var e4_showlayer  = true;
+var e4_fav_desc   = "Jetzt in DSL einsteigen und sparen!";
+var e4_werbetexte = new Array();
+e4_werbetexte[0]  = "Denken Sie über einen DSL Anschluß nach? 1&1 macht es Ihnen einfach: Jetzt wechseln und sparen...";
+e4_werbetexte[1]  = "Arcor hat das Paket des Monats: Surfen und Telefonieren für nur 14,90 / Monat!"
+e4_werbetexte[2]  = "Brandneu: 3 Monate Genion-Flatrate gratis ! Online-Vorteil: Bis zu 3600 Frei-SMS !"
+var e4_titel      = new Array();
+e4_titel[0]       = "Jetzt in DSL einsteigen und sparen!";
+e4_titel[1]       = "2 Jahre endlos telefonieren und surfen !";
+e4_titel[2]       = "Neu: Die Handy-FLATRATE !";
+var e4_lasttab    = 0;
+
+var e4_x = (screen.width / 2);
+var e4_pos = "left";
+var e4_flg = true;
+var e4_load = false;
+var e4_floatw = true;
+e4_isIE=document.all;
+e4_isNN=!document.all&&document.getElementById;
+e4_isN4=document.layers;
+
+function e4_go(id)
+{
+   y = document.getElementById ('euros4clickadframe');
+   y.width = "100%";
+   y.height= e4_layerheight;
+   y.src = e4_url1 + "&tab=" + id;
+   e4_lasttab = id;
+}
+
+function e4_hover(id)
+{
+   var e4_wtc = document.getElementById ("e4_werbetextcell");
+   if (id == "out")
+   {
+      e4_wtc.style.backgroundColor = '#CCFFCC';
+   }
+   else
+   {
+      e4_wtc.style.backgroundColor = '#F0C8C9';
+      document.getElementById ('e4_werbetext').firstChild.data = e4_werbetexte[id];
+   }
+}
+
+function e4_ddinit(e)
+{
+  e4_floatw = false;
+  topDog=e4_isIE ? "BODY" : "HTML";
+  whichDog=e4_isIE ? document.all.euros4click_layer : document.getElementById("euros4click_layer");
+  hotDog=e4_isIE ? event.srcElement : e.target;
+  while (hotDog.id!="titlebar"&&hotDog.tagName!=topDog)
+  {
+    hotDog=e4_isIE ? hotDog.parentElement : hotDog.parentNode;
+  }
+  if (hotDog.id=="titlebar")
+  {
+    offsetx=e4_isIE ? event.clientX : e.clientX;
+    offsety=e4_isIE ? event.clientY : e.clientY;
+    nowX=parseInt(whichDog.style.left);
+    nowY=parseInt(whichDog.style.top);
+    ddEnabled=true;
+    document.onmousemove=e4_dd;
+  }
+}
+
+function e4_dd(e)
+{
+  if (!ddEnabled) return;
+  whichDog.style.left=e4_isIE ? nowX+event.clientX-offsetx : nowX+e.clientX-offsetx;
+  whichDog.style.top=e4_isIE ? nowY+event.clientY-offsety : nowY+e.clientY-offsety;
+  return false;
+}
+
+function e4_maxme()
+{
+   e4_hideme();
+   max = window.open (e4_url1 + "&tab=" + e4_lasttab, "euros4clickpopup");
+}
+
+function e4_saveme()
+{
+   try
+   {
+      var e4_temp = e4_fav_url + "&tab=" + e4_lasttab;
+      window.external.AddFavorite (e4_temp, e4_werbetexte[e4_lasttab]);
+   }
+   catch (e)
+   {
+      alert (unescape('Leider unterst%FCtzt Ihr Browser das automatische Setzen eines Favoriten-Links nicht. Stattdessen öffnen wir Ihnen jetzt das Angebot in einem neuen Fenster damit Sie die Adresse manuell abspeichern können.'));
+      e4_maxme();
+   }
+}
+
+function e4_hideme()
+{
+  if (e4_isIE||e4_isNN) whichDog.style.visibility="hidden";
+  else if (e4_isN4) document.euros4click_layer.visibility="hidden";
+  document.getElementById ('euros4clickadframe').src = "";
+  flg = true;
+}
+
+function e4_swapclose(y)
+{
+   x = document.getElementById ('e4_close');
+   if (y == "1") { x.src = "http://www.euros4click.de/img/close2.gif" };
+   if (y == "2") { x.src = "http://www.euros4click.de/img/close1.gif" };
+}
+
+function e4_swapmax(y)
+{
+   x = document.getElementById ('e4_max');
+   if (y == "1") { x.src = "http://www.euros4click.de/img/max2.gif" };
+   if (y == "2") { x.src = "http://www.euros4click.de/img/max1.gif" };
+}
+
+function e4_checkpopup()
+{
+   if (e4_showlayer == false) { return; };
+   if ((e4_ow==undefined) || (e4_ow==null) || (e4_ow.name==undefined))
+   {
+      var d = document.getElementById('euros4clickpopup');
+      if (d == null)
+      {
+         setTimeout ("e4_move()", 100);
+      }
+   }
+}
+
+function e4_scroll()
+{
+   if (e4_floatw == false) { return; };
+   document.getElementById ('euros4click_layer').style.top = document.body.scrollTop;
+   setTimeout ("e4_scroll()", 500);
+}
+
+
+function e4_move()
+{
+  if (e4_load == false)
+  {
+      var y = document.getElementById ('euros4click_layer');
+      y.visibility="visible";
+      y.style.width= e4_layerwidth;
+      y.style.left = 100;
+      document.getElementById ('euros4clicklayertitletext').firstChild.data = e4_layertitle;
+      document.getElementById ('e4_werbetext').firstChild.data = e4_werbetexte[0];
+      var e4_i = 0;
+      while (e4_titel[e4_i] != undefined)
+      {
+         document.getElementById ('e4_tab' + e4_i).firstChild.data = e4_titel[e4_i];
+         e4_i = e4_i + 1;
+      }
+      y = document.getElementById ('euros4clickadframe');
+      y.width = "100%";
+      y.height= e4_layerheight;
+      y.src = e4_url1;
+      e4_load = true;
+  }
+  e4_x = e4_x - 10;
+  document.getElementById ('euros4click_layer').style.top = e4_x + "px";
+  if ((e4_x >= (screen.availWidth / 5)) && (e4_pos == "left")) { e4_pos = "top"; e4_x = 60; }
+  if ((e4_x <= 0) && (e4_pos == "top")) { e4_scroll(); return; }
+  setTimeout ("e4_move();", 50);
+}
+
+function e4_cnt()
+{
+   if (e4_flg == true) { return; };
+   c = document.getElementById ('euros4_cn');
+   c.src = 'http://www.euros4click.de/popup.php?action=log&sessioncode=515F0D021E400A52091412590D051558420E505F4157065001460B16090758114455575110564B120A125E5C5F1A600B04510D510A58111A5D420902545E11104A00146B005E07594544024B0A00500D170A546F554757090F4204471B0B4A0B0E0B440D530F501402555546027C09410E5509124100555C0A5B470D1509590F1451565258084702094458165F0C5F1A4641085503470E560F064852045103465E03091147035242150F5409520E4C080804025403575E1F4B5B570E11130D5C1B094A0A0402430B550744091F5A5F030F535E065B49115F570F13405A5D430A170E0B0F46500C170A4A5E090359505801594C410B010843415F05120910580B58130700071309454E435906091B430D521B5D4259550B43015704415F4A0B550E43415D165B435256160A405C570F1706015709145F1B-6EAF576F';
+   e4_flg = true;
+}
+
+function e4_cnt2()
+{
+   e4_flg = false;
+}
+
+var e4_i = 0;
+var e4_lines = "";
+var e4_colors = Array();
+e4_colors[0] = '#CCFFCC';
+e4_colors[1] = '#95FF95';
+e4_colors[2] = '#46FF46';
+while (e4_titel[e4_i] != undefined)
+{
+   e4_lines = e4_lines + escape ('<a id="e4_tab' + e4_i + '" href="javascript:e4_go(' + e4_i + ');" class="e4_tab" onmousemove="javascript:e4_hover(' + e4_i + ');" onmouseout="javscript:e4_hover(\'out\');">x</a><span class="e4_t0"> </span>');
+   e4_i = e4_i + 1;
+}
+
+var e4_t = '%3Cstyle%20type%3D%22text/css%22%3E%0D%0A.e4_tr%20%7Bfont-style%3Anormal%20%21important%3B%20font-we'
+ + 'ight%3Anormal%20%21important%3Bborder-width%3A%200px%20%21important%3B%20padding%3A%200px%20%21impor'
+ + 'tant%3B%20margin%3A0px%20%21important%3Bline-height%3A%2015px%20%21important%3Btext-align%3A%20left%'
+ + '20%21important%3B%20font-weight%3Anormal%20%21important%3Bfont-size%3A12px%20%21important%3Bcolor%3A'
+ + '%23000000%20%21important%3Btext-decoration%3Anone%20%21important%3Bbackground-color%3A%23FFFFFF%20%2'
+ + '1important%3Bvertical-align%3Amiddle%20%21important%3Bfont-family%3Averdana%2Carial%2Csans-serif%20%'
+ + '21important%3B%7D%0D%0A.e4_td%20%7Bfont-style%3Anormal%20%21important%3B%20font-weight%3Anormal%20%2'
+ + '1important%3Bborder-width%3A%200px%20%21important%3B%20padding%3A%200px%20%21important%3B%20margin%3'
+ + 'A0px%20%21important%3Bline-height%3A%2015px%20%21important%3Bvertical-align%3A%20middle%20%21importa'
+ + 'nt%3B%20font-weight%3Anormal%20%21important%3Bfont-size%3A12px%20%21important%3Bcolor%3A%23000000%20'
+ + '%21important%3Btext-decoration%3Anone%20%21important%3Bheight%3A16px%20%21important%3Bvertical-align'
+ + '%3Amiddle%20%21important%3Bfont-family%3Averdana%2Carial%2Csans-serif%20%21important%3B%7D%0D%0A.e4_'
+ + 't0%20%7Btext-decoration%3Anone%20%21important%3Bmargin%3A%200px%20%21important%3B%20padding%3A%200px'
+ + '%20%21important%3Bbackground-color%3A%20transparent%20%21important%3Bline-height%3A%2015px%20%21impo'
+ + 'rtant%3Bfont-weight%3Anormal%20%21important%3Bfont-size%3A10px%20%21important%3B%7D%0D%0A.e4_t1%20%7'
+ + 'Btext-decoration%3Anone%20%21important%3Bmargin%3A%200px%20%21important%3B%20padding%3A%200px%20%21i'
+ + 'mportant%3Bbackground-color%3A%20transparent%20%21important%3Bline-height%3A%2015px%20%21important%3'
+ + 'Bfont-weight%3Anormal%20%21important%3Bfont-size%3A16px%20%21important%3Bcolor%3A%23FFFFFF%20%21impo'
+ + 'rtant%3Bvertical-align%3Amiddle%20%21important%3B%7D%0D%0A.e4_t2%20%7Btext-decoration%3Anone%20%21im'
+ + 'portant%3Bmargin%3A%200px%20%21important%3B%20padding%3A%200px%20%21important%3Bbackground-color%3A%'
+ + '20transparent%20%21important%3Bline-height%3A%2015px%20%21important%3Bfont-weight%3Anormal%20%21impo'
+ + 'rtant%3Bfont-size%3A13px%20%21important%3Bcolor%3A%23000000%20%21important%3B%7D%0D%0A.e4_t3%20%7Bte'
+ + 'xt-decoration%3Anone%20%21important%3Bmargin%3A%200px%20%21important%3B%20padding%3A%200px%20%21impo'
+ + 'rtant%3Bbackground-color%3A%20transparent%20%21important%3Bline-height%3A%2015px%20%21important%3Bfo'
+ + 'nt-weight%3Anormal%20%21important%3Bfont-size%3A13px%20%21important%3Bcolor%3A%230000CC%20%21importa'
+ + 'nt%3B%7D%0D%0A.e4_t4%20%7Btext-decoration%3Anone%20%21important%3Bmargin%3A%200px%20%21important%3B%'
+ + '20padding%3A%200px%20%21important%3Bbackground-color%3A%20transparent%20%21important%3Bline-height%3'
+ + 'A%2015px%20%21important%3Bfont-weight%3Anormal%20%21important%3Bfont-size%3A10px%20%21important%3Bco'
+ + 'lor%3A%230000CC%20%21important%3B%7D%0D%0A.e4_t5%20%7Btext-decoration%3Anone%20%21important%3Bmargin'
+ + '%3A%200px%20%21important%3B%20padding%3A%200px%20%21important%3Bbackground-color%3A%20transparent%20'
+ + '%21important%3Bline-height%3A%2015px%20%21important%3Btop%3A-3px%20%21important%3B%20font-weight%3An'
+ + 'ormal%20%21important%3Bfont-size%3A9.5px%20%21important%3Bcolor%3A%23FFFFFF%20%21important%3B%7D%0D%'
+ + '0A.e4_t3%3Alink%20%20%20%20%7Bcolor%3A%230000CC%20%21important%3B%7D%0D%0A.e4_t3%3Avisited%20%7Bcolo'
+ + 'r%3A%230000CC%20%21important%3B%7D%0D%0A.e4_t3%3Ahover%20%20%20%7Bcolor%3A%23CC0000%20%21important%3'
+ + 'B%7D%0D%0A.e4_t4%3Alink%20%20%20%20%7Bcolor%3A%230000CC%20%21important%3B%7D%0D%0A.e4_t4%3Avisited%2'
+ + '0%7Bcolor%3A%230000CC%20%21important%3B%7D%0D%0A.e4_t4%3Ahover%20%20%20%7Bcolor%3A%23CC0000%20%21imp'
+ + 'ortant%3B%7D%0D%0A.e4_t5%3Alink%20%20%20%20%7Bcolor%3A%23FFFFFF%20%21important%3B%7D%0D%0A.e4_t5%3Av'
+ + 'isited%20%7Bcolor%3A%23FFFFFF%20%21important%3B%7D%0D%0A.e4_t5%3Ahover%20%20%20%7Bcolor%3A%23000000%'
+ + '20%21important%3B%7D%0D%0A.e4_tab%3Ahover%7Bfont-weight%3Anormal%20%21important%3Btext-decoration%3A'
+ + 'none%20%21important%3Bfont-size%3A12px%20%21important%3B%20color%3A%230000CC%20%21important%3B%20bor'
+ + 'der-color%3A%20%23CC0066%20%21important%3B%20border%3A%201px%20solid%20%23347%20%21important%3Bpaddi'
+ + 'ng%3A%203px%209px%204px%209px%20%21important%3Bbackground-color%3A%20%23F0C8C9%20%21important%3Bz-in'
+ + 'dex%3A%20100%20%21important%3Bborder-bottom-width%3A%200%20%21important%3Bborder-top-width%3A3px%20%'
+ + '21important%3B%20border-color%3A%20CC0066%20%21important%3B%7D%0D%0A.e4_tab%20%7Bbackground-color%3A'
+ + '%20%23CCFFCC%20%21important%3Bfont-weight%3Anormal%20%21important%3Btext-decoration%3Anone%20%21impo'
+ + 'rtant%3Bfont-size%3A12px%20%21important%3B%20color%3A%230000CC%20%21important%3B%20border%3A%201px%2'
+ + '0solid%20%23347%20%21important%3Bpadding%3A%203px%209px%204px%209px%20%21important%3Bz-index%3A%2010'
+ + '0%20%21important%3Bborder-bottom-width%3A%200%20%21important%3Bborder-top-width%3A3px%20%21important'
+ + '%3Bline-height%3A%2018px%20%21important%3B%7D%0D%0A%3C/style%3E%0D%0A%0D%0A%3Cimg%20src%3D%22%22%20i'
+ + 'd%3D%22euros4_cn%22%20height%3D1%20width%3D1%3E%0D%0A%3Cdiv%20id%20%3D%20%22euros4click_layer%22%20s'
+ + 'tyle%3D%22position%3Aabsolute%20%21important%3Bwidth%3A640px%3Bleft%3A-2242px%3Btop%3A136px%3Bvisibi'
+ + 'lity%3Avisible%3Bheight%3A84px%3B%22%20onmousemove%3D%22javascript%3Ae4_cnt%28%29%3B%22%3E%0D%0A%20%'
+ + '20%3Ctable%20width%3D%22100%25%22%20cellpadding%3D%220%22%20cellspacing%3D%220%22%20style%3D%22borde'
+ + 'r-style%3Asolid%20%21important%3B%20border-width%3A2px%20%21important%3B%20border-color%3A%23CCCCCC%'
+ + '20%21important%3B%22%3E%0D%0A%20%20%20%20%3Ctr%20class%3D%22e4_tr%22%3E%0D%0A%20%20%20%20%20%20%3Ctd'
+ + '%20class%3D%22e4_td%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%3Ctable%20width%3D%22100%25%22%20cellpadd'
+ + 'ing%3D%220%22%20cellspacing%3D%220%22%20border%3D%220%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%3Ctr%20'
+ + 'class%3D%22e4_tr%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Ctd%20class%3D%22e4_td%22%20colspan%3D2%'
+ + '20valign%3D%22bottom%22%20nowrap%20style%3D%22background-color%3A%230058F0%20%21important%3B%22%20ba'
+ + 'ckground%3D%22http%3A//www.euros4click.de/img/back.jpg%22%20id%3D%22titlebar%22%3E%0D%0A%3Cfont%20id'
+ + '%3D%22euros4clicklayertitletext%22%20class%3D%22e4_t1%22%20style%3D%22padding-left%3A5px%20%21import'
+ + 'ant%3B%22%3Ex%3C/font%3E%3C/td%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Ctd%20class%3D%22e4_td%22%20w'
+ + 'idth%3D%2290%25%22%20align%3D%22right%22%20nowrap%20style%3D%22background-color%3A%230058F0%20%21imp'
+ + 'ortant%3B%22%20background%3D%22http%3A//www.euros4click.de/img/back.jpg%22%20id%3D%22titlebar%22%3E%'
+ + '3Ca%20href%3D%22http%3A//www.euros4click.de%22%20target%3D%22_blank%22%20class%3D%22e4_t5%22%20style'
+ + '%3D%22padding-right%3A10px%20%21important%3Bposition%3Arelative%3Btop%3A-4%3B%22%3EEUROS4CLICK.de%3C'
+ + '/a%3E%3Ca%20href%3D%22javascript%3Ae4_maxme%28%29%3B%22%20class%3D%22e4_t5%22%3E%3Cimg%20id%3D%22e4_'
+ + 'max%22%20border%3D%220%22%20src%3D%22http%3A//www.euros4click.de/img/max1.gif%22%20width%3D%2221%22%'
+ + '20height%3D%2221%22%20alt%3D%22Fenster%20schlie%26szlig%3Ben%22%20onMouseOver%3D%22javascript%3Ae4_s'
+ + 'wapmax%281%29%3B%22%20onMouseOut%3D%22javascript%3Ae4_swapmax%282%29%3B%22%20style%3D%22padding%3A0p'
+ + 'x%20%21important%3B%20margin%3A0px%20%21important%3B%20position%3Arelative%20%21important%3B%20top%3'
+ + 'A1px%20%21important%3B%22%3E%3C/a%3E%3Cimg%20height%3D2%20width%3D2%20border%3D0%3E%3Ca%20href%3D%22'
+ + 'javascript%3Ae4_hideme%28%29%3B%22%20class%3D%22e4_t5%22%3E%3Cimg%20id%3D%22e4_close%22%20border%3D%'
+ + '220%22%20src%3D%22http%3A//www.euros4click.de/img/close1.gif%22%20width%3D%2221%22%20height%3D%2221%'
+ + '22%20alt%3D%22Fenster%20schlie%26szlig%3Ben%22%20style%3D%22position%3Arelative%3Btop%3A1px%3B%22%20'
+ + 'onMouseOver%3D%22javascript%3Ae4_swapclose%281%29%3B%22%20onMouseOut%3D%22javascript%3Ae4_swapclose%'
+ + '282%29%3B%22%3E%3C/a%3E%3Cimg%20height%3D2%20width%3D2%20border%3D0%3E%3C/td%3E%0D%0A%20%20%20%20%20'
+ + '%20%20%20%3C/tr%3E%0D%0A%20%20%20%20%20%20%20%20%3Ctr%20bgcolor%3D%22%23FFFFFF%22%20class%3D%22e4_tr'
+ + '%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Ctd%20class%3D%22e4_td%22%20colspan%3D3%20valign%3D%22bo'
+ + 'ttom%22%20bgcolor%3D%22%23FFFFFF%22%20style%3D%22position%3Arelative%20%21important%3B%20top%3A1px%3'
+ + 'B%20background-color%3Asolid%20%21important%3B%20padding-left%3A6px%20%21important%3B%20padding-top%'
+ + '3A8px%20%21important%3B%20padding-bottom%3A%200px%20%21important%3B%20z-index%3A%20100%20%21importan'
+ + 't%3B%22%3E%0D%0A'
+
+ + e4_lines
+
+ + '%20%20%20%20%20%20%20%20%3C/table%3E%0D%0A%20%20%20%20%20%20%20%20%3Ctr%20class%3D%22e4_tr%22%3E%0D%'
+ + '0A%20%20%20%20%20%20%20%20%20%20%3Ctd%20class%3D%22e4_td%22%20colspan%3D%223%22%20valign%3D%22top%22'
+ + '%20style%3D%22background-color%3A%23CCFFCC%3B%22%20id%3D%22e4_werbetextcell%22%3E%0D%0A%20%20%20%20%'
+ + '20%20%20%20%20%20%3Cfont%20class%3D%22e4_t2%22%20id%3D%22e4_werbetext%22%20style%3D%22padding-left%3'
+ + 'A6px%20%21important%3B%22%3Ex%3C/font%3E%3C/td%3E%0D%0A%20%20%20%20%20%20%20%20%3C/tr%3E%0D%0A%20%20'
+ + '%20%20%20%20%20%20%3Ctr%20class%3D%22e4_tr%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Ctd%20class%3D'
+ + '%22e4_td%22%20colspan%3D%223%22%20bgcolor%3D%22%23FFFFFF%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%2'
+ + '0%20%20%3Ciframe%20style%3D%22border-width%3A1px%20%21important%3Bborder-style%3Asolid%20%21importan'
+ + 't%3Bborder-color%3A%23CCCCCC%20%21important%3B%22%20id%3D%22euros4clickadframe%22%20src%3D%22%22%20f'
+ + 'rameborder%3D%220%22%20width%3D%22100%25%22%3E%3C/iframe%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3C/t'
+ + 'd%3E%0D%0A%20%20%20%20%20%20%20%20%3C/tr%3E%0D%0A%20%20%20%20%20%20%20%20%3Ctr%20style%3D%22backgrou'
+ + 'nd-color%3A%23CCFFCC%20%21important%3B%22%20class%3D%22e4_tr%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%'
+ + '20%3Ctd%20class%3D%22e4_td%22%20colspan%3D%223%22%20align%3D%22center%22%20style%3D%22border-style%3'
+ + 'Asolid%20%21important%3Bpadding-top%3A2px%20%21important%3Bpadding-bottom%3A2px%20%21important%3Bbor'
+ + 'der-style%3Asolid%20%21important%3Bborder-width%3A0px%20%21important%3Bborder-top-width%3A1px%20%21i'
+ + 'mportant%3B%20border-color%23CCCCCC%20%21important%3B%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%2'
+ + '0%20%3Ca%20class%3D%22e4_t3%22%20href%3D%22javascript%3Ae4_maxme%28%29%3B%22neu%21%22%29%3B%22%3EAng'
+ + 'ebot%20im%20neuen%20Fenster%20%26ouml%3Bffnen%3C/a%3E%3Cfont%20class%3D%22e4_t2%22%3E%20oder%20%3C/f'
+ + 'ont%3E%3Ca%20class%3D%22e4_t3%22%20href%3D%22javascript%3Ae4_saveme%28%29%3B%22merken%21%22%29%3B%22'
+ + '%3Ediese%20Seite%20merken%21%3C/a%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3C/td%3E%0D%0A%20%20%20%20%'
+ + '20%20%20%20%3C/tr%3E%0D%0A%20%20%3C/table%3E%0D%0A%3C/div%3E';
+
+document.onmousedown = e4_ddinit;
+document.onmouseup = Function ("ddEnabled=false");
+document.open();
+document.write (unescape (e4_t));
+document.close();
+
+setTimeout ("e4_cnt2();", 3500);
+setTimeout ("e4_checkpopup()", 250);
+
+var e4_ow;
+if (e4_showpopup == true)
+{
+   e4_ow = window.open (e4_url2,"euros4clickpopup",'width=1,height=1,toolbar=yes,location=yes,menubar=no,scrollbars=yes,status=no');
+}
