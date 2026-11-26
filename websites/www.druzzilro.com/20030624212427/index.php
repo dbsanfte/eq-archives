@@ -1,0 +1,501 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<!-- no cache headers -->
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<!-- end no cache headers -->
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft">
+	<meta name="description" content="Druzzil Ro Forums is a discussion forum powered by vBulletin. To visit the forum, go to http://www.druzzilro.com/board/ . To find out about vBulletin, go to http://www.vbulletin.com/ .">
+	<title>Druzzil Ro Forums - powered by vBulletin</title>
+	<meta name="MSSmartTagsPreventParsing" content="TRUE">
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<style type="text/css">
+BODY {
+	SCROLLBAR-BASE-COLOR: #606096;
+	SCROLLBAR-ARROW-COLOR: #FFF788;
+}
+SELECT {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+TEXTAREA, .bginput {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+A:link, A:visited, A:active {
+	COLOR: #000020;
+}
+A:hover {
+	COLOR: #FF4400;
+}
+#cat A:link, #cat A:visited, #cat A:active {
+	COLOR: #FFF788;
+	TEXT-DECORATION: none;
+}
+#cat A:hover {
+	COLOR: #FFF788;
+	TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+	COLOR: #000020;
+	TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+	COLOR: #FF4400;
+	TEXT-DECORATION: underline;
+}
+.thtcolor {
+	COLOR: #EEEEFF;
+}
+
+.lf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 14px;
+
+.nf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 12px;
+}
+
+.sf {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 10px;
+}
+
+</style>
+
+<script language="JavaScript" type="text/javascript">
+
+function launch(URL, newName, newFeatures, orgName) {
+  var remote = open(URL, newName, newFeatures);
+  if (remote.opener == null)
+    remote.opener = window;
+  remote.opener.name = orgName;
+  return remote;
+}
+
+function openWindow(URL) {
+  Popup = launch(URL, 'popup', 'dependent=0,height=600,width=900,screenX=200,left=50,screenY=200,top=50,channelmode=0,dependent=0,directories=0,fullscreen=0,location=0,menubar=0,resizable=1,scrollbars=1,status=0,toolbar=0', 'launcher');
+}
+
+</script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+<!--
+function openwindow(){
+	window.open ("","Help","toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=600,height=400");
+}
+//-->
+</script>
+</head>
+<body bgcolor="#666696" text="#000000" id="all" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" link="#000020" vlink="#000020" alink="#000020">
+
+<font face="verdana,arial,helvetica" size="1" ><a href="http://www.druzzilro.com/" target="_blank" onmouseover="window.status='Druzzil Ro Community Website';return true;" onmouseout="window.status=' ';return true;">Druzzil Ro Community Website</a>
+|<a href="http://www.druzzilro.com/chat" target="_blank" onmouseover="window.status='Druzzil Ro Chat Room';return true;" onmouseout="window.status=' ';return true;">Druzzil Ro Chat</a>
+</font>
+<!-- logo and buttons -->
+<center>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+  <td valign="top" align="left" background="images/menu_background.gif"><a href="index.php?s="><img src="http://www.druzzilro.com/board/images/vBulletin_logo.gif" border="0" alt="Druzzil Ro Forums"></a></td>
+  <td valign="bottom" align="right" nowrap background="images/menu_background.gif">
+<center><font face="verdana,arial,helvetica" size="1" >  </font></center>
+   <!-- toplinks -->
+<a href="http://www.druzzilro.com/vbportal/index.php?s="><img src="images/top_home.gif" alt="Home" border="0" ></a>
+<a href="http://www.druzzilro.com/board/index.php?s="><img src="images/top_forums.gif" alt="Forum" border="0" ></a>
+<a href="http://www.druzzilro.com/board/usercp.php?s="><img src="images/top_profile.gif" alt="Here you can view your subscribed threads, work with private messages and edit your profile and preferences" border="0" ></a>
+<a href="http://www.druzzilro.com/board/register.php?s=&action=signup"><img src="images/top_register.gif" alt="Registration is free!" border="0" ></a>
+<a href="http://www.druzzilro.com/board/calendar.php?s="><img src="images/top_calendar.gif" alt="Calendar" border="0"  ></a>
+<a href="http://www.druzzilro.com/board/memberlist.php?s="><img src="images/top_members.gif" alt="Find other members" border="0" ></a>
+<a href="http://www.druzzilro.com/vbportal/modules.php?op=modload&name=FAQ&file=index&s="><img src="images/top_faq.gif" alt="Frequently Asked Questions" border="0" ></a>
+<a href="http://www.druzzilro.com/board/search.php?s="><img src="images/top_search.gif" alt="Search" border="0" ></a>
+</td>
+</tr>
+</table>
+<!-- /logo and buttons -->
+<!-- Template for Unique Menus -->
+
+<!-- content table -->
+<table bgcolor="#FFFFFF" width="100%" cellpadding="10" cellspacing="0" border="0">
+<tr><td align='center' width = '150' valign='top'>
+
+<table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#555576" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#606096">&nbsp;<font color="#FFF788"><b>Main Menu</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><font face="verdana,arial,helvetica" size="1" ><strong><big>ž</big></strong> <a href="/index.php">Home</a><br>
+<strong><big>ž</big></strong> <a href="/board/index.php">Forums</a><br>
+<strong><big>ž</big></strong> <a href="/chat/index.html">Chat</a><br>
+<strong><big>ž</big></strong> <a href="/friend.php">Recommend Us</a><br>
+<strong><big>ž</big></strong> <a href="/reviews.php">Reviews</a><br>
+<strong><big>ž</big></strong> <a href="/links.php">Guilds and Other Links</a><br>
+<strong><big>ž</big></strong> <a href="/stats.php">Stats</a><br>
+<strong><big>ž</big></strong> <a href="/top.php">Top 10</a><br>
+<strong><big>ž</big></strong> <a href="/download.php">Downloads</a><br><br><b>More...</b><br><strong><big>&middot;</big></strong>&nbsp;<a href="http://www.druzzilro.com/vbportal/modules.php?op=modload&amp;name=FAQ&amp;file=index">FAQ</a><br></font></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#555576" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#606096">&nbsp;<font color="#FFF788"><b>Todays Events</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><li><font face="verdana,arial,helvetica" size="1"  color="#008800">None Found</font></a></li>
+</font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#555576" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#606096">&nbsp;<font color="#FFF788"><b>Today's Birthdays</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><li><a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=889"><font face="verdana,arial,helvetica" size="1"  color="#008800">Wildiina </font></a><font face="verdana,arial,helvetica" size="1"  color="#008800"> (38)</font>&nbsp; </li>
+<li><a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=869"><font face="verdana,arial,helvetica" size="1"  color="#008800">Kaprial </font></a><font face="verdana,arial,helvetica" size="1"  color="#008800"> (23)</font>&nbsp; </li>
+<li><a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=959"><font face="verdana,arial,helvetica" size="1"  color="#008800">Deneini-Rezzanator </font></a><font face="verdana,arial,helvetica" size="1"  color="#008800"> (20)</font>&nbsp; </li>
+<li><a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=1132"><font face="verdana,arial,helvetica" size="1"  color="#008800">Kaneis </font></a><font face="verdana,arial,helvetica" size="1"  color="#008800"> (28)</font>&nbsp; </li>
+<li><a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=1289"><font face="verdana,arial,helvetica" size="1"  color="#008800">Zagtor </font></a><font face="verdana,arial,helvetica" size="1"  color="#008800"> (19)</font>&nbsp; </li>
+<li><a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=1425"><font face="verdana,arial,helvetica" size="1"  color="#008800">Shaquandaa </font></a><font face="verdana,arial,helvetica" size="1"  color="#008800"> (24)</font>&nbsp; </li>
+</font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#555576" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#606096">&nbsp;<font color="#FFF788"><b>Who's Online</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><table><tr id="cat">
+	<td bgcolor="#606096" colspan="6"><a href='http://www.druzzilro.com/board/online.php?s='><font face="verdana, arial, helvetica" size="2"  color="#FFF788"><b>Currently Active: 27</b></font></a></td>
+	</tr>
+	<tr>
+	<td bgcolor="#F1F1F1" colspan="6"><font face="verdana,arial,helvetica" size="1" >
+	There are currently 25 members and 2 guests on-line. Most users ever online was 113 on 02-24-2003 at 09:44 PM.<br>
+	<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=1270">Aelysian</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=233">ariachne</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=1167">brottor</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=1054">Chakota DarkKnight</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=190">Daviticus</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=1245">Dhaktil</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=68">Furre</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=621">Horsemen</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=1418">Iginla</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=1889">kaediil</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=446">Kalayna</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=488">Mickas Lance</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=370">Mykiel Forestwalker</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=209">Painina</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=129">Tanzen</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=180">Tinena of The Glades</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=646">Tryss</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=73">Tsabrae</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=395">Xellium</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=924">Xx_Weasle_xX</a>
+<a href="http://www.druzzilro.com/board/member.php?s=&action=getinfo&userid=89">Zankorel</a>
+
+	</font></td>
+	</tr></table>
+</font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#555576" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#606096">&nbsp;<font color="#FFF788"><b>Private Messages</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#555576" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#606096">&nbsp;<font color="#FFF788"><b>Ephemerids</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><b>One Day like Today...</b><br></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#555576" >
+<table width="150" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#606096">&nbsp;<font color="#FFF788"><b>June 24</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><table bgcolor="#8080A6" border="0" cellpadding="4" cellspacing="1" width="100%" height="130" align="center">
+<tr bgcolor="#8080A6">
+<td width="*" ><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF">S</font></td><td width="*" ><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF">M</font></td><td width="*" ><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF">T</font></td><td width="*" ><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF">W</font></td><td width="*" ><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF">T</font></td><td width="*" ><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF">F</font></td><td width="*" ><font face="verdana,arial,helvetica" size="1"  color="#EEEEFF">S</font></td></tr>
+<tr bgcolor="#DFDFDF">
+<td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">1</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">2</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">3</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">4</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">5</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">6</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">7</font></td>
+		</tr><tr><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">8</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">9</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">10</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">11</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">12</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">13</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">14</font></td>
+		</tr><tr><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">15</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">16</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">17</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">18</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">19</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">20</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">21</font></td>
+		</tr><tr><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">22</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">23</font></td><td bgcolor="#F1F1F1"><font face="Arial Narrow" size ="1" color="#000088">24</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">25</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">26</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">27</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">28</font></td>
+		</tr><tr><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">29</font></td><td bgcolor="#DFDFDF"><font face="Arial Narrow" size ="1" color="#000088">30</font></td><td bgcolor="#FFFFFF">&nbsp;</td><td bgcolor="#FFFFFF">&nbsp;</td><td bgcolor="#FFFFFF">&nbsp;</td><td bgcolor="#FFFFFF">&nbsp;</td><td bgcolor="#FFFFFF">&nbsp;</td></tr></table></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br></td><td valign="top" align="center" width="100%"><table cellpadding="0" cellspacing="0" border="0" bgcolor="#555576" align="center" width="100%">
+<tr><td vAlign="top" bgColor="#8080A6" width="100%"> 
+    </td></tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+	<td bgcolor="#8080A6" >
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td bgcolor="#8080A6">&nbsp;<font color="#EEEEFF"><b>The News</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><table border='0' cellspacing='0' cellpadding='0' width='100%'>
+	<tr>
+	<td bgcolor='#555576' width='100%' >
+	<table width='100%' border='0' cellspacing='1' cellpadding='3'>
+	<tr>
+	<td bgcolor='#606096' width='100%'><img src='images/icons/icon1.gif'><font size ='2' color = '#FFF788'><b> Hug A Newbie Day</b></font><font face="verdana,arial,helvetica" size="1" ><b> Posted by: [<a href='http://www.druzzilro.com/board/member.php?action=mailform&userid=42'>Alihja Zanzibar</a>] on 06-19-2003 @ 11:32 PM</b></font>
+	</td>	</tr>
+	<tr>
+	<th bgcolor='#FFFFFF' width='100%' align='right'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='0' bordercolor='#FFFFFF'>
+	<tr><td bgcolor='#FFFFFF' valign='top' align='justify' bordercolor='#FFFFFF'>
+	<font face="verdana,arial,helvetica" size="1" >As a kid in my life...  whenever I fell down off my bike, or ran into the garage door (which I did a lot) I'd always feel better after I got a hug from my mom, or some advice on how to do something a little better...  like how to use the breaks on my bike, instead of the garage door.<br />
+<br />
+As a newbie in this game, you'll fall down into pits and run into things a lot too.  When I was a newb, I always had a knack for running into places that were way overpowered for me, and attracting the attention of the local wildlife.  <br />
+<br />
+Announcing... Hug A Newbie Day!<br />
+<br />
+Annual Hug A Newbie Day begins at midnight CST, and runs all through Friday, June 20th..   Find yourself a newbie, and give them a hug! <br />
+<br />
+Or, if you're not a hugging type of person because - I dunno', maybe you play a very macho barbarian warrior who isn't in touch with his friendly side - so like, maybe instead, you could give a little advice.    <br />
+<br />
+Or, if you can't find a newbie, maybe just be nice to someone.  Like, not train...</font>
+	</td> <th bgcolor='#FFFFFF' valign='top' align='center' width='54' height='54' nowrap>
+	 
+	</th></tr>
+    </table><font face="verdana,arial,helvetica" size="1" > <a href='http://www.druzzilro.com/board/showthread.php?threadid=8289'><b>Read More</b></a><b> <font size ='1'> (3 Comments)</font> </b></font> 
+	<a href='http://www.druzzilro.com/board/printthread.php?threadid=8289'><img src='images/print.gif' border='0'></a> <a href='http://www.druzzilro.com/board/sendtofriend.php?threadid=8289'><img src='images/friend.gif' border='0'></a> <img src='images/clear.gif' border='0' alt='0 votes -  average'> 
+	</th>
+	</tr>
+	</table>
+	</td>
+	</tr>
+	</table>
+	<br>
+<!-- End --> <table border='0' cellspacing='0' cellpadding='0' width='100%'>
+	<tr>
+	<td bgcolor='#555576' width='100%' >
+	<table width='100%' border='0' cellspacing='1' cellpadding='3'>
+	<tr>
+	<td bgcolor='#606096' width='100%'><img src='images/icons/icon1.gif'><font size ='2' color = '#FFF788'><b> Fan Faire Registration Site Now Live.</b></font><font face="verdana,arial,helvetica" size="1" ><b> Posted by: [<a href='http://www.druzzilro.com/board/member.php?action=mailform&userid=42'>Alihja Zanzibar</a>] on 05-31-2003 @ 09:35 PM</b></font>
+	</td>	</tr>
+	<tr>
+	<th bgcolor='#FFFFFF' width='100%' align='right'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='0' bordercolor='#FFFFFF'>
+	<tr><td bgcolor='#FFFFFF' valign='top' align='justify' bordercolor='#FFFFFF'>
+	<font face="verdana,arial,helvetica" size="1" >The EverQuest Chicago Fan Faire website is now live for your pre-registration pleasure!  <br />
+<br />
+If you pre-register, you will save $11, and the hassle of probably standing in another line.  You can pre-register up until September 8th.  Tickets are $89 and will be $100 at the door.  This is standard for most Fan Faires.  <br />
+<br />
+Here's the website with all the information you'll ever need to know about Fan Faire.  <br />
+<br />
+<a href="http://everquest.station.sony.com/fanfaire/index.jsp" target="_blank">The Official EverQuest Fan Faire Site</a></font>
+	</td> <th bgcolor='#FFFFFF' valign='top' align='center' width='54' height='54' nowrap>
+	 
+	</th></tr>
+    </table><font face="verdana,arial,helvetica" size="1" > <a href='http://www.druzzilro.com/board/showthread.php?threadid=7967'><b>Read More</b></a><b>  </b></font> 
+	<a href='http://www.druzzilro.com/board/printthread.php?threadid=7967'><img src='images/print.gif' border='0'></a> <a href='http://www.druzzilro.com/board/sendtofriend.php?threadid=7967'><img src='images/friend.gif' border='0'></a> <img src='images/clear.gif' border='0' alt='0 votes -  average'> 
+	</th>
+	</tr>
+	</table>
+	</td>
+	</tr>
+	</table>
+	<br>
+<!-- End --> </font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><br></td><td style="padding-right: 10;" align="center" width = "150" valign="top">
+<table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#555576" >
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#606096">&nbsp;<font color="#FFF788"><b>Search Box</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><table border="0"><tr><td><font face="verdana,arial,helvetica" size="1" >
+	<form style="margin-bottom:-2;" action="http://www.druzzilro.com/board/search.php" method="post">
+	<input type="hidden" name="s" value="">
+	<input type="hidden" name="forumchoice" value="- 1">
+	<input type="hidden" name="searchin" value="subject">
+	<input type="hidden" name="searchdate" value="-1">
+	<input type="hidden" name="action" value="simplesearch">
+	<input type="hidden" name="booleanand" value="yes">
+	<input class="search" onFocus="this.value='';" type="text" name="query" value="For..." size="10" maxlength="150" >
+	<input type="hidden" name="action" value="simplesearch">
+	<input type="image" src="images/go.gif" name="Submit" border="0" align="absbottom">
+    </form><b><a href="http://www.druzzilro.com/board/search.php?s=">Advanced Search</a></b>
+    </font></td></tr></table></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#555576" >
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#606096">&nbsp;<font color="#FFF788"><b>User's Login</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" ><form action="http://www.druzzilro.com/board/member.php" method="post">
+<input type="hidden" name="action" value="login"><input type="hidden" name="s" value="">
+<input type="hidden" name="url" value="/index.php">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td nowrap>
+<br>
+</td></tr>
+<tr><td>
+<p align="center"><font face="verdana,arial,helvetica" size="1" ><b>Username</b>&nbsp;</font><INPUT TYPE="TEXT" NAME="username" SIZE=7>
+<br><font face="verdana,arial,helvetica" size="1" ><b>Password</b>&nbsp;&nbsp;</font><INPUT TYPE="PASSWORD" NAME="password" SIZE=7><br>
+<center>
+<input type="submit" value="Login!"></center>
+</p>
+</td></tr>
+<tr><td nowrap>
+<p align="center"><font face="verdana,arial,helvetica" size="1" ><br>
+Don't have an account? <br>
+<a href="http://www.druzzilro.com/board/register.php?action=signup">Register</a> for one now!<br><br>
+<a href="http://www.druzzilro.com/board/member.php">Lost Password</a>
+</font>
+</td></tr>
+</table>
+</form></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#555576" >
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#606096">&nbsp;<font color="#FFF788"><b>Survey</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" >No Polls Available</font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="150">
+<tr>
+	<td bgcolor="#555576" >
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr>
+	<td valign="top" bgcolor="#606096">&nbsp;<font color="#FFF788"><b>Date / Time</b></font>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#F1F1F1"><font face="verdana,arial,helvetica" size="1" >Tuesday, June 24, 2003 05:24 PM EDT</font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<br></td></tr></table>
+
+    <center><font size=1>
+
+    <br><a href="http://www.phpportals.com" target="blank"><img src="/images/vbp.gif" border="0" Alt="Web site powered by vbPortal" hspace="10"></a><br><br>
+
+    <a href="http://phpportals.com" target="blank">This Web site is powered by vbPortal© 3.0b</a><br><br>
+
+    All logos and trademarks in this site are property of their respective owner. The comments are property of their posters, all the rest © 2000 by phpPortals<br>
+
+    <a href="http://phpportals.com">vbPortal©</a> is Free Software, portions are released under the <a href="http://www.gnu.org">GNU/GPL license</a>.<br><br>
+
+    </font></center>
+
+    
+</body>
+
+</html>
