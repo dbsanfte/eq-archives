@@ -1,0 +1,1 @@
+document.write('<img border="0" src="http://vlmediaone.com/dauctions/status/images/busy.gif" alt="">');
