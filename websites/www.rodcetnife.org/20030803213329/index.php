@@ -1,0 +1,960 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Everquest - Rodcet Nife Server Message Boards - Index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<style type="text/css">
+
+/* General layout */
+a:link { 
+	font-weight: normal; 
+	text-decoration: none; 
+	color: #0000ff; 
+}
+a:visited {
+	text-decoration: none; 
+	color: #005177;
+	font-weight: normal;
+}
+a:hover {
+	font-weight: normal; 
+	text-decoration: underline overline; 
+	color: #003300;
+}
+body {
+	background: #ffffe1;
+	color: #003300;
+	scrollbar-face-color: #006752;
+	scrollbar-arrow-color: #ffffe1;
+	scrollbar-track-color: #ffffe1;
+	scrollbar-shadow-color:#000033;
+	scrollbar-highlight-color:#66cc99;
+	scrollbar-3dlight-color:#ffffff;
+	scrollbar-darkshadow-Color:#003300;
+	font-family: Arial, sans-serif; font-size:12px; 
+	margin-top: 0; margin-left: 0; margin-right: 0; 
+	padding-top: 0; padding-left: 0; padding-right: 0;
+}
+text {
+	font-family: Arial, sans-serif;
+	font-size: 80%;
+}
+td { 
+	font-family: Arial, sans-serif;
+	color: #003300;
+	font-size: 80%;
+}
+input {
+	background-color: #ffffe1;
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	color: #003300;
+}
+textarea {
+	color: #003300;
+	background-color: #ffffe1;
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+}
+select {
+	background-color: #ffffe1;
+	font-family: Arial, sans-serif;
+	font-size: 7pt;
+	color: #003300;
+}
+.copyright {
+	font-family: Arial, sans-serif;
+	font-size: 10px;
+}
+.bold {
+	font-weight: bold;
+}
+hr {
+	color: #006752;
+}
+
+/* YaBB navigation links */
+.nav {
+	font-size: 90%;
+	text-decoration: none; 
+	color: #003300;
+}
+.nav:link {
+	font-size: 90%; 
+	text-decoration: none;
+	color: #0000ff;
+}
+.nav:visited {
+	font-size: 90%; 
+	text-decoration: none;
+	color: #005177;
+}
+.nav:hover {
+	font-size: 90%; 
+	color: #0000ff;
+	text-decoration: underline overline;
+}
+
+/* YaBB alternating bgcolors */
+.windowbg {
+	background-color: #cce6cc;
+	font-size: 11px;
+	font-family: Arial, sans-serif;
+	color: #003300;
+}
+.windowbg2 { 
+	background-color: #ffffe1;
+	font-size: 11px;
+	font-family: Arial, sans-serif; 
+	color: #003300;
+}
+.windowbg3 {
+	background-color: #cce6cc;
+	font-size: 11px;
+	font-family: Verdana;
+	color: #003300;
+}
+/* Misc./title/category colors */
+.hr { 
+	color: #006752;
+	background: #ffffe1;
+}
+/*table border style */
+.bord {
+	border: solid 1 #006752;
+	}
+
+/* cells top & bottom of news bar */
+.titlebg {
+	background-color: #006752;
+	color: #ffffe1;
+}
+/* headings in news bar & elsewhere */
+.text1 {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	color: #ffffff;
+}
+.catbg {
+	background-color: #cce6cc;
+	color: #003300;
+	font-weight: bold;
+	font-size: 13px;
+}
+/* color of cell borders */
+.bordercolor {
+	background-color: #006752;
+	color: #ffffe1;
+}
+
+/* Image fonts */
+.imgbg {
+	font-style: normal;
+	font-size: 10px;
+	color: #005177;
+}
+.imgcatbg {
+	font-style: normal;
+	font-size: 10px;
+	color: #005177;
+	font-weight: bold;
+}
+.imgtitlebg {
+	font-style: normal;
+	font-size: 10px;
+	color: #ffffff;
+	font-weight: bold;
+}
+.imgwindowbg {
+	font-style: normal;
+	font-size: 9px;
+	color: #005177;
+}
+.imgmenu {
+	color: #003300;
+	font-style: normal;
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+}
+
+/* Post quote/code colors */
+.quote {
+	font-size: 10px;
+	font-family: Arial, sans-serif;
+	color: #000000;
+	background-color: #cce6cc;
+}
+.code {
+	font-size: 12px;
+	font-family: Courier New;
+	color: #000000;
+	background-color: #cccccc;
+}
+
+</style>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+if ((navigator.appVersion.substring(0,1) == "5" && navigator.userAgent.indexOf('Gecko') != -1) || navigator.userAgent.search(/Opera/) != -1) {
+   document.write('<META HTTP-EQUIV="pragma" CONTENT="no-cache">');
+}
+// -->
+</script>
+</head>
+
+<body>
+<br>
+<table width="92%" cellspacing="1" cellpadding="0" border="0" align="center" class="bordercolor">
+  <tr> 
+    <td class="bordercolor" width="100%"> 
+      <table bgcolor="#ffffe1" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr> 
+          <td> 
+            <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffe1">
+              <tr> 
+                <td bgcolor="#ffffe1" height="50"><img src="http://www.rodcetnife.org/YaBBImages/rodcet.gif" alt="Rodcet Nife Community Message Baords"></td>
+                <td bgcolor="#ffffe1"> 
+                <p><font size="2"><span class="bold">
+                Welcome, <b>Guest</b>. Please <a href="http://www.rodcetnife.org/index.php?board=;action=login">Login</a> or <a href="http://www.rodcetnife.org/index.php?board=;action=register">Register</a>.</span> <br>
+                August 03, 2003, 06:03:19 PM
+                </font><br></p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr><tr> 
+    <td class="bordercolor" align="center"> 
+      <table class="windowbg" width="100%" cellspacing="0" cellpadding="0" align="center" border="0">
+        <tr> 
+          <td width="100%" align="center"> 
+            <table border="0" width="100%" cellpadding="3" cellspacing="0" class="windowbg" align="center">
+              <tr> 
+                <td valign="middle" class="windowbg" align="center"><font size="1"><a href="http://www.rodcetnife.org/index.php"><img src="http://www.rodcetnife.org/YaBBImages/home.gif" alt="Home" title="Home" border="0" /></a> <a href="http://www.rodcetnife.org/YaBBHelp/index.html" target="_blank"><img src="http://www.rodcetnife.org/YaBBImages/help.gif" alt="Help" title="Help" border="0" /></a> <a href="http://www.rodcetnife.org/index.php?board=;action=search"><img src="http://www.rodcetnife.org/YaBBImages/search.gif" alt="Search" title="Search" border="0" /></a> <a href="http://www.rodcetnife.org/index.php?board=;action=login"><img src="http://www.rodcetnife.org/YaBBImages/login.gif" alt="Login" title="Login" border="0" /></a> <a href="http://www.rodcetnife.org/index.php?board=;action=register"><img src="http://www.rodcetnife.org/YaBBImages/register.gif" alt="Register" title="Register" border="0" /></a></font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr><tr> 
+    <td class="bordercolor" align="center"> 
+      <table class="bordercolor" width="100%" cellspacing="0" cellpadding="0" align="center" border="0">
+        <tr> 
+          <td width="100%" align="center"> 
+            <table border="0" width="100%" cellpadding="5" cellspacing="0" class="bordercolor" align="center">
+              <tr> 
+                <td valign="middle" class="bordercolor" align="center">
+                <font size="2" class="titlebg"><span class="bold">Everquest - Rodcet Nife Server Message Boards</span>  «  »</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+<center>
+<!--#echo banner=""-->
+<br>
+<table width="92%" align="center" class="bord">
+  <tr>
+    <td>
+    <b>News:</b> Nerf Necros! (Wait.... they've been nerfed to hell) NERF PALADIN DPS!!!<br /><br />
+
+		<table width="100%" align="center">
+			<tr>
+				<td valign="bottom"><font class="nav"><img src="http://www.rodcetnife.org/YaBBImages/open.gif" border="0" alt="" /> <b><a href="http://www.rodcetnife.org/index.php" class="nav">Everquest - Rodcet Nife Server Message Boards</a></b></font></td>
+				<td align="right">
+				</td>
+			</tr>
+		</table>
+			<table border="0" width="100%" cellspacing="0" cellpadding="0" class="bordercolor"><tr><td>
+				<table border="0" width="100%" cellspacing="1" cellpadding="5" class="bordercolor">
+					<tr>
+						<td class="titlebg" align="center">
+						<b>News</b></td>
+					</tr><tr>
+						<td class="windowbg2" valign="middle" align="center" height="60">
+							<script language="javascript1.2" type="text/javascript">
+							<!--
+								var delay = 5000
+								var bcolor = "#F8F8F8"
+								var tcolor = "#000000"
+								var fcontent = new Array()
+								begintag = '<font size="2"><b>'
+fcontent[0] = "Welcome to Rodcetnife.org"
+fcontent[1] = "Nerf Necros! (Wait.... they\'ve been nerfed to hell) NERF PALADIN DPS!!!"
+fcontent[2] = "Thank you to all that have visited!"
+fcontent[3] = "\/Auction Flame Throwers 2pp \/Auction Fire Extingishers 2k"
+
+								closetag = '<\/b><\/font>'
+							// -->
+							</script>
+							<script language="javascript1.2" src="http://www.rodcetnife.org/fader.js" type="text/javascript"></script>
+							<script language="JavaScript1.2" type="text/javascript">
+							<!--
+								if (navigator.appVersion.substring(0, 1) < 5 && navigator.appName == "Netscape")
+								{
+									var fwidth = screen.availWidth / 2;
+									var bwidth = screen.availWidth / 4;
+									document.write('<ilayer id="fscrollerns" width='+fwidth+' height=35 left='+bwidth+' top=0><layer id="fscrollerns_sub" width='+fwidth+' height=35 left=0 top=0><\/layer><\/ilayer>');
+								}
+								else if (navigator.userAgent.search(/Opera/) != -1 || (navigator.platform != "Win32" && navigator.userAgent.indexOf('Gecko') == -1))
+								{
+									document.open();
+									for (i=0;i<fcontent.length;++i)
+									{
+										document.write(begintag+fcontent[i]+closetag+"<br />");
+									}
+									document.close();
+								}
+								else
+								{
+									document.write('<span id="fscroller" style="width:90% height:15px; padding:2px"><\/span>');
+								}
+								window.onload = fade;
+							// -->
+							</script>
+						</td>
+					</tr>
+				</table>
+			</td></tr></table>
+			<table border="0" width="100%" cellspacing="0" cellpadding="0" class="bordercolor"><tr><td>
+				<table border="0" width="100%" cellspacing="1" cellpadding="5" class="bordercolor">
+					<tr>
+						<td class="titlebg" colspan="2"><b>Forum name</b></td>
+						<td class="titlebg" width="6%" align="center"><b>Topics</b></td>
+						<td class="titlebg" width="6%" align="center"><b>Posts</b></td>
+						<td class="titlebg" width="22%" align="center"><b>Last post</b></td>
+					</tr><tr> <td colspan="5" class="catbg" height="18">
+<a name="1"><b>General Category</b></a></td>
+</tr>
+
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b1"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=1">General Discussion</a></b><br />
+							General Chats</font><br /><font size="1"><i>Moderator: <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Kinladar"><acronym title="Board Moderator">Kinladar</acronym></a></i></font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							103
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							615
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								August 02, 2003, 07:10:49 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=1;action=display;threadid=298;start=0;boardseen=1">Re:Anaroch</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=EQSysquella">EQSysquella</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b2"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=2">Non-EQ (Hey Real Life!)</a></b><br />
+							Real Life discussions, yeah some of us have a life</font><br /><font size="1"><i>Moderator: <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Kinladar"><acronym title="Board Moderator">Kinladar</acronym></a></i></font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							10
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							64
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								July 30, 2003, 08:10:13 AM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=2;action=display;threadid=300;start=0;boardseen=1">Re:SOE don't like la...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Killy">Killy</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b3"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=3">Trading Post</a></b><br />
+							Got Something you want to sell?</font><br /><font size="1"><i>Moderator: <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Kinladar"><acronym title="Board Moderator">Kinladar</acronym></a></i></font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							37
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							63
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								July 16, 2003, 09:00:28 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=3;action=display;threadid=292;start=0;boardseen=1">Re:Ornate Boot Mold,...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Desert+Rat">Desert Rat</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b6"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=6">Blacklist</a></b><br />
+							Just got KS'd? Trained 50 Times? Let's hear about the lowlife that did it.</font><br /><font size="1"><i>Moderator: <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Kinladar"><acronym title="Board Moderator">Kinladar</acronym></a></i></font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							5
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							54
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								June 19, 2003, 12:50:08 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=6;action=display;threadid=237;start=30;boardseen=1">Re:7 from Century of...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=EQSysquella">EQSysquella</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b7"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=7">A Kind Word</a></b><br />
+							Just a place to recognize people who still do nice things... (God I hope some are left!)</font><br /><font size="1"><i>Moderator: <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Kinladar"><acronym title="Board Moderator">Kinladar</acronym></a></i></font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							11
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							35
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								July 06, 2003, 09:34:34 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=7;action=display;threadid=279;start=0;boardseen=1">Re:Big Furry Kitty H...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=lonewylfe">lonewylfe</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b8"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=8">Rodcet Nife Guilds</a></b><br />
+							Have a Guild and want to spread the word? post about it here.</font><br /><font size="1"><i>Moderator: <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Kinladar"><acronym title="Board Moderator">Kinladar</acronym></a></i></font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							34
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							66
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								July 18, 2003, 02:18:17 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=8;action=display;threadid=296;start=0;boardseen=1">Re:Fires of Time</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Kinladar">Kinladar</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b10"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=10">Rants and Raves</a></b><br />
+							Bah Moderation! Let loose the dogs of war! (And flames!)</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							11
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							124
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								August 02, 2003, 08:51:50 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=10;action=display;threadid=290;start=30;boardseen=1">Re:When guild names ...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Gnos">Gnos</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b11"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=11">Quests</a></b><br />
+							Found a really cool quest, or looking for some help in completing one? </font><br /><font size="1"><i>Moderator: <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Kinladar"><acronym title="Board Moderator">Kinladar</acronym></a></i></font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							4
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							22
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								June 13, 2003, 11:18:53 AM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=11;action=display;threadid=252;start=0;boardseen=1">Re:For those that Ho...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Meleane">Meleane</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b37"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=37">EQ Artwork and Stories</a></b><br />
+							For those with artistic Talent </font><br /><font size="1"><i>Moderator: <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Kinladar"><acronym title="Board Moderator">Kinladar</acronym></a></i></font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							10
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							11
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								May 15, 2003, 08:31:50 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=37;action=display;threadid=224;start=0;boardseen=1">My Story...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Grogle+Dragonaxe">Grogle Dragonaxe</a>
+							</font>
+						</td>
+					</tr><tr> <td colspan="5" class="catbg" height="18">
+<a name="2"><b>Trade Skills</b></a></td>
+</tr>
+
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b24"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=24">General Trade Skill Discussion</a></b><br />
+							General Tradeskill Chat</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							4
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							16
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								May 13, 2003, 04:43:22 AM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=24;action=display;threadid=61;start=0;boardseen=1">Re:STAT FOOD!!!!</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=EQSysquella">EQSysquella</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b29"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=29">Trade Skill Requests</a></b><br />
+							Look for someone to make your gear</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							8
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							18
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								May 24, 2003, 02:10:27 AM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=29;action=display;threadid=235;start=0;boardseen=1">Various Trade Skills</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=maestro5050">Tedyen</a>
+							</font>
+						</td>
+					</tr><tr> <td colspan="5" class="catbg" height="18">
+<a name="3"><b>Class Discussions</b></a></td>
+</tr>
+
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b33"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=33">Bards</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							2
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							24
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								July 05, 2003, 05:26:25 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=33;action=display;threadid=273;start=0;boardseen=1">Re:Any fellow bards ...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Pepa">Pepa</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b15"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=15">Beastlord</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							3
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							8
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								July 16, 2003, 05:58:33 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=15;action=display;threadid=293;start=0;boardseen=1">It's all gone??</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=lonewylfe">lonewylfe</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b12"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=12">Cleric</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							3
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							25
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								July 20, 2003, 03:10:14 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=12;action=display;threadid=251;start=0;boardseen=1">Re:Radiant Cure</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Pepa">Pepa</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b19"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=19">Druid</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							4
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							18
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								July 11, 2003, 11:12:45 AM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=19;action=display;threadid=246;start=0;boardseen=1">Re:Corrupted Seahors...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=lonewylfe">lonewylfe</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b21"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=21">Enchanter</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							2
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							3
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								April 09, 2003, 09:03:35 AM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=21;action=display;threadid=98;start=0;boardseen=1">ok WTF</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=EQSysquella">EQSysquella</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b18"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=18">Magician</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							1
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							14
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								April 30, 2003, 05:45:40 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=18;action=display;threadid=56;start=0;boardseen=1">Re:LOL wow no mages ...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Mordread">Mordread</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b22"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=22">Monks</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							1
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							2
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								April 22, 2003, 06:47:46 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=22;action=display;threadid=126;start=0;boardseen=1">Re:well shit</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Runfassa">Runfassa</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b16"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=16">Necromancer</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							2
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							4
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								August 02, 2003, 06:40:21 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=16;action=display;threadid=169;start=0;boardseen=1">Re:Why is it?</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Noirr+Travail+au">Noirr Travail au</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b31"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=31">Paladin</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							6
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							47
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								July 02, 2003, 02:46:03 AM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=31;action=display;threadid=108;start=15;boardseen=1">Re:Post your pally m...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Lesia">Lesia</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b13"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=13">Ranger</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							7
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							43
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								July 29, 2003, 04:30:53 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=13;action=display;threadid=299;start=0;boardseen=1">Re:Stonewood vs. Fea...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Kinladar">Kinladar</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b20"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=20">Rogue</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							1
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							1
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								April 11, 2003, 04:31:33 AM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=20;action=display;threadid=127;start=0;boardseen=1">well shit (again)</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=EQSysquella">EQSysquella</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b32"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=32">Shaman/Shawomen</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							2
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							9
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								April 17, 2003, 04:16:14 AM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=32;action=display;threadid=109;start=0;boardseen=1">Re:Post your magelo ...</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Geddar">Geddar</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b30"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=30">Shadowknight</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							1
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							2
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								April 04, 2003, 05:28:29 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=30;action=display;threadid=32;start=0;boardseen=1">Re:First!!!</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Kkhaarn">Kkhaarn</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b14"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=14">Warrior</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							2
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							29
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								June 23, 2003, 09:44:31 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=14;action=display;threadid=48;start=15;boardseen=1">Re:Kick / Taunt</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Bonbons">Bonbons</a>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/YaBBImages/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+						<td class="windowbg2" align="left" width="60%">
+							<a name="b17"></a>
+							<font size="2"><b><a href="http://www.rodcetnife.org/index.php?board=17">Wizard</a></b><br />
+							</font>
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							3
+						</td>
+						<td class="windowbg" valign="middle" align="center" width="6%">
+							5
+						</td>
+						<td class="windowbg2" valign="middle" width="22%">
+							<font size="1">
+								June 28, 2003, 02:03:03 PM<br />
+								in  <a href="http://www.rodcetnife.org/index.php?board=17;action=display;threadid=276;start=0;boardseen=1">Graffe's Relocates</a><br />
+								by <a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Givins">Givins</a>
+							</font>
+						</td>
+					</tr>
+				</table>
+			</td></tr></table><br /><br />
+			<form action="http://www.rodcetnife.org/index.php?board=;action=login2" method="post"><input type="hidden" name="PHPSESSID" value="46ffd7c1284abc36f8990a1239ef98c5" />
+				<table border="0" width="100%" cellspacing="0" cellpadding="0" class="bordercolor"><tr><td>
+					<table border="0" width="100%" cellspacing="1" cellpadding="4" class="bordercolor">
+						<tr>
+							<td class="titlebg" align="center" colspan="2">
+								<b>Everquest - Rodcet Nife Server Message Boards - Info Center</b>
+							</td>
+						</tr>
+						<tr>
+							<td class="catbg" colspan="2"><b>Members</b></td>
+						</tr><tr>
+							<td class="windowbg" width="20" valign="middle" align="center">
+								<img src="http://www.rodcetnife.org/YaBBImages/guest.gif" border="0" width="20" alt="" />
+							</td>
+							<td class="windowbg2" width="100%">
+								<b><a href="http://www.rodcetnife.org/index.php?action=mlall">Members List</a></b><br />
+								<font size="1">List of registered Members and Top 15 Posters.</font>
+							</td>
+						</tr>
+						<tr>
+							<td class="catbg" colspan="2"><b>YaBB SE Stats</b></td>
+						</tr><tr>
+							<td class="windowbg" width="20" valign="middle" align="center">
+								<img src="http://www.rodcetnife.org/YaBBImages/info.gif" border="0" alt="" />
+							</td>
+							<td class="windowbg2" width="100%">
+								<table border="0" width="90%">
+									<tr>
+										<td>
+											<font size="1">
+												Total Topics: <b>283</b> &nbsp;&nbsp;&nbsp;&nbsp; Total Posts: <b>1359</b><br />
+												Latest Post:"<a href="http://www.rodcetnife.org/index.php?board=10;action=display;threadid=290;start=43">When guild names go bad</a>" (August 02, 2003, 08:51:50 PM)
+
+												<br />
+												<a href="http://www.rodcetnife.org/index.php?action=recent">View the 10 most recent posts on the board.</a><br /><a href="http://www.rodcetnife.org/index.php?board=;action=stats">[More Stats]</a>
+											</font>
+										</td>
+										<td>
+											<font size="1">
+												Total Members: <b><a href="http://www.rodcetnife.org/index.php?action=mlall">210</a></b><br />
+												Latest Member: <b><a href="http://www.rodcetnife.org/index.php?action=viewprofile;user=Noirr+Travail+au">Noirr Travail au</a></b><br />
+											</font>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td class="catbg" colspan="2"><b>Users online</b></td>
+						</tr><tr>
+							<td class="windowbg" width="20" valign="middle" align="center">
+								<img src="http://www.rodcetnife.org/YaBBImages/online.gif" border="0" alt="" />
+							</td>
+							<td class="windowbg2" width="100%">
+								1 Guests,  0 Users<br />
+								<font size="1"></font> 
+							</td>
+						</tr>
+					</table>
+				</td></tr></table>
+			</form>    </td>
+  </tr>
+</table>
+<br>
+<font class="copyright"><font face="Verdana, Arial" size="1"> Everquest - Rodcet Nife Server Message Boards | Powered by <a href="http://www.yabbse.org/index.php?affiliate=Everquest - Rodcet Nife Server Message Boards;l=http://www.rodcetnife.org;v=YaBB SE 1.5.1RC1" target="_blank">YaBB SE</a><br />
+&copy; 2001-2003, YaBB SE Dev Team. All Rights Reserved.</font></font>
+</center>
+</body>
+</html>

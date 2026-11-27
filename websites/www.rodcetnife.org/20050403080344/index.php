@@ -1,0 +1,1231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<script language="JavaScript" type="text/javascript" src="http://www.rodcetnife.org/Themes/default/script.js"></script>
+	<script language="JavaScript" type="text/javascript"><!--
+		var smf_theme_url = "http://www.rodcetnife.org/Themes/converted";
+		var smf_images_url = "http://www.rodcetnife.org/Themes/classic/images";
+	// --></script>
+	
+<title>Rodcetnife.org Forums - Index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<style type="text/css">
+
+<!--
+/* General layout */
+A:link        { font-weight: normal; text-decoration: none; color: #0000; }
+A:visited     { text-decoration: none; color: #000000; font-weight: normal; }
+A:hover       { text-decoration: underline; color: #000000; }
+BODY          { scrollbar-face-color: #91a6a0; scrollbar-shadow-color: #000000; scrollbar-highlight-color: 
+
+#DEE7EF;
+                scrollbar-3dlight-color: #FFFFFF; scrollbar-darkshadow-color: #91a6a0;
+                scrollbar-track-color: #F5F5F5; scrollbar-arrow-color: ##DEE7EF; font-family: Verdana, 
+
+Helvetica, Arial; 
+                font-size:12px; margin-top: 0; margin-left: 0; margin-right: 0; padding-top: 0; padding-left: 0; 
+                padding-right: 0; }
+text          { font-family: Verdana, Helvetica, Arial; font-size: 11px; }
+TD            { font-family: Verdana, Helvetica, Arial; color: #000000; 
+font-size: 13px; }
+input         { background-color: #91a6a0; font-family: Verdana, Helvetica, Arial; font-size: 11pt; color: 
+
+#000000; }
+textarea      { background-color: #DEE7EF; font-family: Verdana, Helvetica, Arial; font-size: 11pt; color: 
+
+#000000; }
+select        { background-color: #91a6a0; font-family: Verdana, Helvetica, Arial; font-size: 7pt; color: 
+
+#000000; }
+.copyright    { font-family: Verdana, Helvetica, Arial; font-size: 10px; }
+
+/* YaBB navigation links */
+.nav          { font-size: 10px; text-decoration: none; color: #000000; }
+.nav:link     { font-size: 10px; text-decoration: none; color: #000000; }
+.nav:visited  { font-size: 10px; text-decoration: none; color: #000000; }
+.nav:hover    { font-size: 10px; text-decoration: none; color: #6394BD; font-weight: bold; text-decoration: 
+
+underline; }
+
+/* YaBB alternating bgcolors */
+.windowbg     { background-color: #91a6a0; font-size: 13px; font-family: Verdana; color: #000000; }
+.menuwindowbg     { background-color: #617872; font-size: 11px; font-family: Verdana; color: #000000; }
+
+
+
+
+.windowbg2    { background-color: #dee7ef; font-size: 12px; font-family: 
+Verdana; color: #000000; }
+.windowbg3    { background-color: #6394BD; font-size: 11px; font-family: Verdana; color: #000000; }
+.windowbg4    { background-color: #DEE7EF; font-size: 11px; font-family: Verdana; color: #000000; }
+
+/* Misc./title/category colors */
+.hr           { background-color: #6394BD; color: #6394BD; }
+.titlebg      { background-color: #6394BD; color: #FFFFFF; }
+.linktitlebg      { background-color: #dee7ef; color: #FFFFFF; }
+.boardtitlebg      { background-color: #6394BD; color: #FFFFFF; }
+.text1        { font-style: normal; font-weight: bold; font-size: 13px; 
+color: #000000; }
+.catbg        { background-color: #91a6a0; color: #000000; font-weight: bold; font-size: 13px; }
+.bordercolor  { background-color: #000000; }
+
+/* Image fonts */
+.imgbg        { font-style: normal; font-size: 10px; color: #000000; }
+.imgcatbg     { font-style: normal; font-size: 10px; color: #000000; font-weight: bold; }
+.imgtitlebg   { font-style: normal; font-size: 10px; color: #000000;  font-weight: bold; }
+.imgwindowbg  { font-style: normal; font-size: 9px; color: #000000; }
+.imgmenu      { font-style: normal; font-size: 11px; color: #000000; font-weight: bold; letter-spacing: 0.1em; }
+
+/* Post quote/code colors */
+.quote        { font-size: 10px; font-family: Verdana, Helvetica, Arial; color: #ffffff; background-color: 
+
+#617872; }
+.code         { font-size: 10px; font-family: Courier New; color: #000000; background-color: #CCCCCC; }
+-->
+</style>
+<!-- PHPstat code -->
+<script language="JavaScript">
+var ref=""+escape(top.document.referrer); var colord = window.screen.colorDepth; 
+var res = window.screen.width + "x" + window.screen.height;
+document.write("<img src='http://www.rodcetnife.org/phpstats/stat.php?referer=" + ref + "&js=yes&color=" + 
+
+colord + "&res=" + res + "' border=0>");
+</script><noscript><img src="http://www.rodcetnife.org/phpstats/stat.php" border="0"></noscript>
+<!-- PHPstat code -->
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+if ((navigator.appVersion.substring(0,1) == "5" && navigator.userAgent.indexOf('Gecko') != -1) || 
+
+navigator.userAgent.search(/Opera/) != -1) {
+   document.write('<META HTTP-EQUIV="pragma" CONTENT="no-cache">');
+}
+// -->
+</script>
+</head>
+<body text="#000000" bgcolor="#617872" class="bg" link="#0033FF" topmargin="0" leftmargin="0">
+<a name="top"></a>
+<br>
+<div align="center">
+  <center>
+<table width="92%" cellspacing="1" cellpadding="0" border="0" align="center" class="bordercolor">
+  <tr> 
+    <td class="bordercolor" width="100%"> 
+      <table bgcolor="#ffffe1" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr> 
+          <td> 
+            <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffe1">
+              <tr> 
+                <td bgcolor="#91a6a0" height="50"><img 
+
+src="http://www.rodcetnife.org/test-board2/yabbse/YaBBImages/rodcet2.gif" alt="Rodcet Nife Community Message 
+
+Baords"></td>
+                <td bgcolor="#91a6a0"> 
+                <p><font size="2"><span class="bold">
+                
+				Welcome, <b>Guest</b>. Please <a href="http://www.rodcetnife.org/index.php?action=login">login</a> or <a href="http://www.rodcetnife.org/index.php?action=register">register</a>.<br />Did you miss your <a href="http://www.rodcetnife.org/index.php?action=activate">activation email?</a></span> <br>
+                April 03, 2005, 04:03:53 am
+                <br> <a 
+href="http://www.rodcetnife.org/index.php?action=recent"> Click here to 
+view all recent posts </a>
+                </font><br></p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr><tr> 
+    <td class="bordercolor" align="center"> 
+      <table class="windowbg" width="100%" cellspacing="0" cellpadding="0" align="center" border="0">
+        <tr> 
+          <td width="100%" align="center"> 
+            <table border="0" width="100%" cellpadding="3" cellspacing="0" class="windowbg4" align="center">
+              <tr> 
+                <td valign="middle" class="windowbg" align="center"><font size="2">
+				<a href="http://www.rodcetnife.org/index.php"><img src="http://www.rodcetnife.org/Themes/classic/images/english/home.gif" alt="Home" border="0" /></a> 
+				<a href="http://www.rodcetnife.org/index.php?action=help" target="_blank"><img src="http://www.rodcetnife.org/Themes/classic/images/english/help.gif" alt="Help" border="0" /></a> 
+				<a href="http://www.rodcetnife.org/index.php?action=search"><img src="http://www.rodcetnife.org/Themes/classic/images/english/search.gif" alt="Search" border="0" /></a> 
+				<a href="http://www.rodcetnife.org/index.php?action=calendar"><img src="http://www.rodcetnife.org/Themes/classic/images/english/calendar.gif" alt="Calendar" border="0" /></a> 
+				<a href="http://www.rodcetnife.org/index.php?action=login"><img src="http://www.rodcetnife.org/Themes/classic/images/english/login.gif" alt="Login" border="0" /></a> 
+				<a href="http://www.rodcetnife.org/index.php?action=register"><img src="http://www.rodcetnife.org/Themes/classic/images/english/register.gif" alt="Register" border="0" /></a></font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr><tr> 
+    <td class="bordercolor" align="center"> 
+      <table class="bordercolor" width="100%" cellspacing="0" cellpadding="0" align="center" border="0">
+        <tr> 
+          <td width="100%" align="center"> 
+            <table border="0" width="100%" cellpadding="5" cellspacing="0" class="bordercolor" align="center">
+              <tr> 
+                <td valign="middle" class="boardtitlebg" align="center">
+                <font size="2" class="boardtitlebg"><span class="bold">Rodcetnife.org Forums</span>  « Rodcetnife.org Forums - Index 
+
+»</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+<div align="center">
+  <center>
+            <table border="0" width="98%" cellspacing="0">
+              <tr>
+                <td width="100%"> 
+        <p align="right"><a href="#footer"></a>
+                </td>
+              </tr>
+            </table>
+            <table border="0" width="98%" cellspacing="0">
+              <tr>
+                <td width="100%"> 
+
+                </td>
+              </tr>
+            </table>
+  </center>
+</div>
+            <table width="98%" cellspacing="0" align="center">
+              <tr> 
+                <td valign="TOP" width="16%">
+ 
+<table border="0" width="100%" cellspacing="0">
+  <tr>
+    <td width="100%">
+<table border="0" width="100%" cellspacing="0" class="bordercolor" align="center" height="0">
+  <tr>
+    <td class="bordercolor" width="100%">
+      <table width="100%" cellspacing="0" cellpadding="2">
+        <tr>
+          <td class="titlebg" width="558"><font size="2" class="text2"><b>EQ Sites</b></font></td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://eqlive.station.sony.com
+" target="_blank"><font 
+
+size="1">Sony EQ Live</font></a></td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://everquest.allakhazam.com" target="_blank"><font 
+
+size="1">Allakhazam</font></a></td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.planeteq.com" target="_blank"><font 
+
+size="1">Planet EQ</font></a></td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://eq.crgaming.com" target="_blank"><font 
+
+size="1">Caster's 
+
+Realm</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.mobhunter.com" target="_blank"><font 
+
+size="1">Mobhunter 
+
+</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eqinterface.com" target="_blank"><font 
+
+size="1">EQ 
+
+Interface</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://lucy.allakhazam.com" target="_blank"><font 
+
+size="1">Lucy 
+
+Spell Database</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eqrankings.com" target="_blank"><font 
+
+size="1">EQ 
+
+Rankings</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.magelo.com" target="_blank"><font 
+
+size="1">Magelo 
+
+Profile System</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eqtraders.com" target="_blank"><font size="1">EQ 
+
+Traders</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eqatlas.com" target="_blank"><font size="1">EQ 
+
+Atlas</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eqmaps.com" target="_blank"><font size="1">EQ 
+
+Maps</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eqloft.com" target="_blank"><font size="1">EQ 
+
+Loft (UK Community Site)</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eqspoilers.com" target="_blank"><font size="1">EQ Spoilers (For those who need)</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.gameznet.com/eq/" target="_blank"><font size="1">EQ'Lizer</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.cardplace.com/eq/ldon/list.cgi
+" target="_blank"><font size="1">LDoN Gear Lookup</a> </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+ 
+    </td>
+  </tr>
+</table>
+<hr size="0" class="hr" width="95%">
+<table border="0" width="100%" cellspacing="0">
+  <tr>
+    <td width="100%">
+<table border="0" width="100%" cellspacing="0" class="bordercolor" align="center" height="0">
+  <tr>
+    <td class="bordercolor" width="100%">
+      <table width="100%" cellspacing="0" cellpadding="2">
+        <tr>
+          <td class="titlebg" width="558"><font size="2" class="text2"><b>EQ Humor</b></font></td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.gucomics.com" target="_blank"><font size="1">GU 
+
+Comics</a></td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> <a href="http://www.wtfcomics.com" target="_blank"><font 
+
+size="1">WTF 
+
+Comics</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> <a href="http://www.norrathian.net" target="_blank"><font 
+
+size="1">Norrathian</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+ 
+    </td>
+  </tr>
+</table>
+<hr size="0" class="hr" width="95%">
+<table border="0" width="100%" cellspacing="0">
+  <tr>
+    <td width="100%">
+<table border="0" width="100%" cellspacing="0" class="bordercolor" align="center" height="0">
+  <tr>
+    <td class="bordercolor" width="100%">
+      <table width="100%" cellspacing="0" cellpadding="2">
+        <tr>
+          <td class="titlebg" width="558"><font size="2" class="text2"><b>EQ Class Links</b></font></td>
+        </tr>
+	<tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eqhunter.com" 
+target="_blank">EQ Hunter (Rangers)</a></td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://forums.interealms.com/ranger" 
+target="_blank">The Ranger's (Sellout)</a></td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.thesafehouse.org" 
+target="_blank">The Safehouse (Rogues)</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://pub142.ezboard.com/beqdivabardsofeverquest" 
+target="_blank">EQ Diva (Bards)</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://forums.thedruidsgrove.org/" 
+target="_blank">The Druid's Grove</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://forums.crgaming.com/eqbb/index.php?h=2&pf=321" 
+target="_blank">Enchanter Forums</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eqbeastlord.com" 
+target="_blank">EQ Beastlord</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://eqcleric.gameglow.com/index.shtml" 
+target="_blank">EQ Clerics</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.kyrah.com/" 
+target="_blank">Kyrah's Cleric Guide</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://necro.eqclasses.com" 
+target="_blank">EQ Necros</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.graffe.com" 
+target="_blank">Graffe's Wizards</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://forum.magecompendium.com/tower/" 
+target="_blank">The Magician's Tower</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eqmages.com/" 
+target="_blank">EQ Mages</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.monkly-business.com/" 
+target="_blank">Monkly Business</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://pub148.ezboard.com/bpaladinsofnorrath" 
+target="_blank">Paladins of Norrath</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.shadowknight.org/" 
+target="_blank">EQ Shadowknights</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://forums.interealms.com/shaman/" 
+target="_blank">Shaman's Crucible</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.thesteelwarrior.org/" 
+target="_blank">The Steel Warrior</a> </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+ 
+    </td>
+  </tr>
+</table>
+<hr size="0" class="hr" width="95%">
+<table border="0" width="100%" cellspacing="0">
+  <tr>
+    <td width="100%">
+<table border="0" width="100%" cellspacing="0" class="bordercolor" align="center" height="0">
+  <tr>
+    <td class="bordercolor" width="100%">
+      <table width="100%" cellspacing="0" cellpadding="2">
+        <tr>
+          <td class="titlebg" width="558"><font size="2" class="text2"><b>EQ Utilities</b></font></td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://home.inreach.com/kai/EQCompanion" 
+target="_blank">EQ Companion</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.yalp.org" 
+target="_blank">YALP Log Parser</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eq-toolbox.com" 
+target="_blank">EQ Toolbox</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.eqmule.com" 
+target="_blank">EQ Mule (Trader Monitor)</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+ 
+    </td>
+  </tr>
+</table>
+<hr size="0" class="hr" width="95%">
+<table border="0" width="100%" cellspacing="0">
+  <tr>
+    <td width="100%">
+<table border="0" width="100%" cellspacing="0" class="bordercolor" align="center" height="0">
+  <tr>
+    <td class="bordercolor" width="100%">
+      <table width="100%" cellspacing="0" cellpadding="2">
+        <tr>
+          <td class="titlebg" width="558"><font size="2" class="text2"><b>Other Good Links</b></font></td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"><a href="http://www.ventrilo.com" 
+target="_blank">Ventrilo (Voice Chat)</a> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+        <tr>
+          <td class="windowbg4" width="259" onMouseOver="this.style.backgroundColor='ffffff'; 
+
+this.style.cursor='hand';" 
+
+onMouseOut="this.style.backgroundColor='';"> </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+ 
+    </td>
+  </tr>
+</table>
+<hr size="0" class="hr" width="95%">
+<table border="0" width="100%" cellspacing="0">
+  <tr>
+    <td width="100%">
+
+ 
+    </td>
+  </tr>
+</table>
+                </td>
+                <td valign="TOP" width="1%">
+                </td>
+                <td valign="TOP" width="74%">
+                  <!--#echo banner=""-->
+                  <BR>
+<table width="100%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td valign="bottom"><span class="nav"><img src="http://www.rodcetnife.org/Themes/classic/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="http://www.rodcetnife.org/index.php" class="nav">Rodcetnife.org Forums</a></b></span></td>
+		<td align="right">
+		</td>
+	</tr>
+</table>
+<table border="0" width="100%" cellspacing="1" cellpadding="5" class="bordercolor">
+	<tr class="titlebg">
+		<td colspan="2">Board name</td>
+		<td width="6%" align="center">Topics</td>
+		<td width="6%" align="center">Posts</td>
+		<td width="22%" align="center">Last post</td>
+	</tr>
+	<tr>
+		<td colspan="5" class="catbg" height="18">
+			<a name="1" href="http://www.rodcetnife.org/index.php#1">General Category</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b1"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=1.0">General Discussion</a></b><br />
+			General Chats<i class="smalltext"><br />
+			Moderators: <a href="http://www.rodcetnife.org/index.php?action=profile;u=1" title="Board Moderator">Kinladar</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=15" title="Board Moderator">Killy</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=49" title="Board Moderator">Kweil</a></i>
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">483</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">8707</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				<b>Today</b> at 03:54:39am<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=320.new#new" title="Re: And yet again a Top Ten guilds List">Re: And yet again a ...</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=813">Justyse</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b2"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=2.0">Non-EQ (Hey Real Life!)</a></b><br />
+			Real Life discussions, yeah some of us have a life<i class="smalltext"><br />
+			Moderators: <a href="http://www.rodcetnife.org/index.php?action=profile;u=1" title="Board Moderator">Kinladar</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=15" title="Board Moderator">Killy</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=49" title="Board Moderator">Kweil</a></i>
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">88</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">740</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				March 28, 2005, 10:58:13 pm<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=1488.new#new" title="Re: Mark McGwire">Re: Mark McGwire</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=356">Shado</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b3"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=3.0">Trading Post</a></b><br />
+			Got Something you want to sell?<i class="smalltext"><br />
+			Moderators: <a href="http://www.rodcetnife.org/index.php?action=profile;u=1" title="Board Moderator">Kinladar</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=15" title="Board Moderator">Killy</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=49" title="Board Moderator">Kweil</a></i>
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">142</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">350</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				April 01, 2005, 09:05:57 am<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=1502.new#new" title="Re: plats on quellious">Re: plats on quellio...</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=765">Moraganna</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b6"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=6.0">Blacklist</a></b><br />
+			Just got KS'd? Trained 50 Times? Let's hear about the lowlife that did it.<i class="smalltext"><br />
+			Moderators: <a href="http://www.rodcetnife.org/index.php?action=profile;u=1" title="Board Moderator">Kinladar</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=15" title="Board Moderator">Killy</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=49" title="Board Moderator">Kweil</a></i>
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">55</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">1088</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				<b>Today</b> at 03:27:11am<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=1492.new#new" title="Re: Dang Fabled and being KSed">Re: Dang Fabled and ...</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=519">Darcc</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b7"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=7.0">A Kind Word</a></b><br />
+			Just a place to recognize people who still do nice things... (God I hope some are left!)<i class="smalltext"><br />
+			Moderators: <a href="http://www.rodcetnife.org/index.php?action=profile;u=1" title="Board Moderator">Kinladar</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=15" title="Board Moderator">Killy</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=49" title="Board Moderator">Kweil</a></i>
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">50</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">297</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				April 01, 2005, 11:08:03 pm<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=172.new#new" title="Re: Baroness Prettyshort Supergnome!">Re: Baroness Prettys...</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=1109">Hunnibun Sammich</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b8"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=8.0">Rodcet Nife Guilds</a></b><br />
+			Have a Guild and want to spread the word? post about it here.<i class="smalltext"><br />
+			Moderators: <a href="http://www.rodcetnife.org/index.php?action=profile;u=1" title="Board Moderator">Kinladar</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=15" title="Board Moderator">Killy</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=49" title="Board Moderator">Kweil</a></i>
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">91</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">351</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				April 01, 2005, 10:51:08 pm<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=1192.new#new" title="Re: Dawning Nemesis *New Focus*">Re: Dawning Nemesis ...</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=1108">Talbone</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b10"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=10.0">Rants and Raves</a></b><br />
+			Bah Moderation! Let loose the dogs of war! (And flames!)
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">127</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">2944</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				April 02, 2005, 11:23:53 pm<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=1150.new#new" title="Re: Stupid People">Re: Stupid People</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=839">a_Incybus_002</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b11"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=11.0">Quests</a></b><br />
+			Found a really cool quest, or looking for some help in completing one? <i class="smalltext"><br />
+			Moderators: <a href="http://www.rodcetnife.org/index.php?action=profile;u=1" title="Board Moderator">Kinladar</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=15" title="Board Moderator">Killy</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=49" title="Board Moderator">Kweil</a></i>
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">17</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">73</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				March 28, 2005, 02:17:00 pm<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=254.new#new" title="Re: Loyalist Shield of Honor">Re: Loyalist Shield ...</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=665">Naithein</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b37"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=37.0">EQ Artwork and Stories</a></b><br />
+			For those with artistic Talent <i class="smalltext"><br />
+			Moderators: <a href="http://www.rodcetnife.org/index.php?action=profile;u=1" title="Board Moderator">Kinladar</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=15" title="Board Moderator">Killy</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=49" title="Board Moderator">Kweil</a></i>
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">15</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">58</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				March 30, 2005, 10:06:58 pm<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=826.new#new" title="Re: test sig">Re: test sig</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=1106">Taurn</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b39"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=39.0">Class Discussions</a></b><br />
+			Just an area to start threads regarding Clsss issues, balancing, (Oh wait, classes are balanced!) and all that good stuff.<i class="smalltext"><br />
+			Moderators: <a href="http://www.rodcetnife.org/index.php?action=profile;u=1" title="Board Moderator">Kinladar</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=15" title="Board Moderator">Killy</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=49" title="Board Moderator">Kweil</a></i>
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">25</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">170</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				March 10, 2005, 07:36:49 pm<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=1472.new#new" title="Re: Nerf me!">Re: Nerf me!</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=3">EQSysquella</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b41"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=41.0">Cross Server Discussion</a></b><br />
+			A place for cross server guild to talk to Rodcet Nife!
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">25</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">60</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				March 30, 2005, 04:18:56 pm<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=1511.new#new" title="Divine Chronicles on Stromm - EP Guild">Divine Chronicles on...</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=1102">Litish</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b42"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=42.0">The Otherquests</a></b><br />
+			Place to discuss games other than Everquest - IE: EQ2, WoW, etc...
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">16</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">168</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				February 28, 2005, 05:46:46 pm<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=1316.new#new" title="Re: Kinladar (and others...)">Re: Kinladar (and ot...</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=339">Jeet</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="5" class="catbg" height="18">
+			<a name="2" href="http://www.rodcetnife.org/index.php#2">Trade Skills</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b24"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=24.0">General Trade Skill Discussion</a></b><br />
+			General Tradeskill Chat<i class="smalltext"><br />
+			Moderators: <a href="http://www.rodcetnife.org/index.php?action=profile;u=1" title="Board Moderator">Kinladar</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=15" title="Board Moderator">Killy</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=49" title="Board Moderator">Kweil</a></i>
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">6</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">23</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				February 21, 2005, 01:24:27 pm<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=1435.new#new" title="WTB Tradeskill Items">WTB Tradeskill Items</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=1028">Rylden</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="6%" align="center" valign="top"><img src="http://www.rodcetnife.org/Themes/classic/images/off.gif" alt="No New Posts" title="No New Posts" border="0" /></td>
+		<td class="windowbg2" align="left" width="60%">
+			<a name="b29"></a>
+			<b><a href="http://www.rodcetnife.org/index.php?board=29.0">Trade Skill Requests</a></b><br />
+			Look for someone to make your gear<i class="smalltext"><br />
+			Moderators: <a href="http://www.rodcetnife.org/index.php?action=profile;u=1" title="Board Moderator">Kinladar</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=15" title="Board Moderator">Killy</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=49" title="Board Moderator">Kweil</a></i>
+		</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">13</td>
+		<td class="windowbg" valign="middle" align="center" width="6%">37</td>
+		<td class="windowbg2" valign="middle" width="22%">
+			<span class="smalltext">
+				May 18, 2004, 06:00:28 pm<br />
+				in <a href="http://www.rodcetnife.org/index.php?topic=824.new#new" title="Re: Tradeskill Junkie /raise ">Re: Tradeskill Junki...</a><br />
+				by <a href="http://www.rodcetnife.org/index.php?action=profile;u=616">Fletchera</a>
+			</span>
+		</td>
+	</tr>
+</table>
+<br />
+<br />
+<table border="0" width="100%" cellspacing="1" cellpadding="4" class="bordercolor">
+	<tr class="titlebg">
+		<td align="center" colspan="2">Rodcetnife.org Forums - Info Center</td>
+	</tr>
+	<tr>
+		<td class="catbg" colspan="2">Recent Posts</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="20" valign="middle" align="center">
+			<a href="http://www.rodcetnife.org/index.php?action=recent">
+				<img src="http://www.rodcetnife.org/Themes/classic/images/post/xx.gif" alt="Recent Posts" border="0" /></a>
+		</td>
+		<td class="windowbg2">
+			<table width="100%" border="0">
+				<tr>
+					<td align="right" valign="top" nowrap="nowrap">[<a href="http://www.rodcetnife.org/index.php?board=1.0">General Discussion</a>]</td>
+					<td valign="top"><a href="http://www.rodcetnife.org/index.php?topic=320.from1112514879;topicseen#msg16179">Re: And yet again a Top Ten guilds List</a> by <a href="http://www.rodcetnife.org/index.php?action=profile;u=813">Justyse</a></td>
+					<td align="right" valign="top" nowrap="nowrap"><b>Today</b> at 03:54:39am</td>
+				</tr>
+				<tr>
+					<td align="right" valign="top" nowrap="nowrap">[<a href="http://www.rodcetnife.org/index.php?board=6.0">Blacklist</a>]</td>
+					<td valign="top"><a href="http://www.rodcetnife.org/index.php?topic=1492.from1112513231;topicseen#msg16178">Re: Dang Fabled and being KSed</a> by <a href="http://www.rodcetnife.org/index.php?action=profile;u=519">Darcc</a></td>
+					<td align="right" valign="top" nowrap="nowrap"><b>Today</b> at 03:27:11am</td>
+				</tr>
+				<tr>
+					<td align="right" valign="top" nowrap="nowrap">[<a href="http://www.rodcetnife.org/index.php?board=1.0">General Discussion</a>]</td>
+					<td valign="top"><a href="http://www.rodcetnife.org/index.php?topic=1506.from1112509471;topicseen#msg16176">Re: Top Ten Quellious/Rodcet Nife Guilds</a> by <a href="http://www.rodcetnife.org/index.php?action=profile;u=310">Plinko</a></td>
+					<td align="right" valign="top" nowrap="nowrap"><b>Today</b> at 01:24:31am</td>
+				</tr>
+				<tr>
+					<td align="right" valign="top" nowrap="nowrap">[<a href="http://www.rodcetnife.org/index.php?board=1.0">General Discussion</a>]</td>
+					<td valign="top"><a href="http://www.rodcetnife.org/index.php?topic=1506.from1112509226;topicseen#msg16175">Re: Top Ten Quellious/Rodcet Nife Guilds</a> by <a href="http://www.rodcetnife.org/index.php?action=profile;u=961">AverseThule</a></td>
+					<td align="right" valign="top" nowrap="nowrap"><b>Today</b> at 01:20:26am</td>
+				</tr>
+				<tr>
+					<td align="right" valign="top" nowrap="nowrap">[<a href="http://www.rodcetnife.org/index.php?board=1.0">General Discussion</a>]</td>
+					<td valign="top"><a href="http://www.rodcetnife.org/index.php?topic=1496.from1112508616;topicseen#msg16174">Re: Quellious: A Brief History</a> by <a href="http://www.rodcetnife.org/index.php?action=profile;u=1121">Takeed</a></td>
+					<td align="right" valign="top" nowrap="nowrap"><b>Today</b> at 01:10:16am</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="catbg" colspan="2">Upcoming Calendar</td>
+	</tr><tr>
+		<td class="windowbg" width="20" valign="middle" align="center">
+			<a href="http://www.rodcetnife.org/index.php?action=calendar">
+				<img src="http://www.rodcetnife.org/Themes/classic/images/calindex.gif" border="0" width="20" alt="Calendar" /></a>
+		</td>
+		<td class="windowbg2" width="100%">
+			<span class="smalltext">
+				<span style="color: #920AC4;">Upcoming Birthdays:</span> 
+				<a href="http://www.rodcetnife.org/index.php?action=profile;u=788">Tumagan (33)</a>, 
+				<a href="http://www.rodcetnife.org/index.php?action=profile;u=991">Brandeewine (28)</a>, 
+				<a href="http://www.rodcetnife.org/index.php?action=profile;u=883">Daniel (23)</a>, 
+				<a href="http://www.rodcetnife.org/index.php?action=profile;u=397">Nitnatsnoc (26)</a>, 
+				<a href="http://www.rodcetnife.org/index.php?action=profile;u=233">Delfino Soulreaver (22)</a>, 
+				<a href="http://www.rodcetnife.org/index.php?action=profile;u=472">Kriyn (22)</a>, 
+				<a href="http://www.rodcetnife.org/index.php?action=profile;u=1108">Talbone (26)</a><br />
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="catbg" colspan="2">Forum Stats</td>
+	</tr>
+	<tr>
+		<td class="windowbg" width="20" valign="middle" align="center">
+			<a href="http://www.rodcetnife.org/index.php?action=stats">
+				<img src="http://www.rodcetnife.org/Themes/classic/images/info.gif" alt="Forum Stats" border="0" /></a>
+		</td>
+		<td class="windowbg2" width="100%">
+			<table border="0" width="90%"><tr>
+				<td class="smalltext">
+					Total Topics: <b>1322</b> &nbsp;&nbsp;&nbsp;&nbsp; Total Posts: <b>15545</b><br />
+					Latest Post:
+					&quot;<a href="http://www.rodcetnife.org/index.php?topic=320.new#new" title="Re: And yet again a Top Ten guilds List">Re: And yet again a ...</a>&quot;  (<b>Today</b> at 03:54:39am)<br />
+					<a href="http://www.rodcetnife.org/index.php?action=recent">View the 10 most recent posts on the forum.</a><br />
+					<a href="http://www.rodcetnife.org/index.php?action=stats">[More Stats]</a>
+				</td>
+				<td class="smalltext">
+					Total Members: <b>1105</b><br />
+					Latest Member: <b><a href="http://www.rodcetnife.org/index.php?action=profile;u=1121">Takeed</a></b><br />
+				</td>
+			</tr></table>
+		</td>
+	</tr>
+	<tr>
+		<td class="catbg" colspan="2">Users Online</td>
+	</tr><tr>
+		<td class="windowbg" width="20" valign="middle" align="center">
+			<img src="http://www.rodcetnife.org/Themes/classic/images/online.gif" alt="Users Online" border="0" />
+		</td>
+		<td class="windowbg2" width="100%">
+			6 Guests, 2 Users<br />
+			<span class="smalltext">
+				Users active in past 15 minutes:<br /><a href="http://www.rodcetnife.org/index.php?action=profile;u=813">Justyse</a>, <a href="http://www.rodcetnife.org/index.php?action=profile;u=932">Icculusx</a>
+				<br />
+			</span>
+		</td>
+	</tr>
+</table> <BR>
+                </td>
+              </tr>
+            </table>
+<div align="center">
+  <center>
+            <table border="0" width="98%" cellspacing="0">
+              <tr>
+                <td width="100%"> 
+  <table border="0" width="100%" cellspacing="0">
+    <tr>
+      <td width="100%" class="bordercolor"> 
+            <table border="0" width="100%" cellpadding="2" cellspacing="0" align="center">
+              <tr> 
+                <td valign="middle" align="center" class="titlebg"><font size="1">
+				<a href="http://www.rodcetnife.org/index.php"><img src="http://www.rodcetnife.org/Themes/classic/images/english/home.gif" alt="Home" border="0" /></a> 
+				<a href="http://www.rodcetnife.org/index.php?action=help" target="_blank"><img src="http://www.rodcetnife.org/Themes/classic/images/english/help.gif" alt="Help" border="0" /></a> 
+				<a href="http://www.rodcetnife.org/index.php?action=search"><img src="http://www.rodcetnife.org/Themes/classic/images/english/search.gif" alt="Search" border="0" /></a> 
+				<a href="http://www.rodcetnife.org/index.php?action=calendar"><img src="http://www.rodcetnife.org/Themes/classic/images/english/calendar.gif" alt="Calendar" border="0" /></a> 
+				<a href="http://www.rodcetnife.org/index.php?action=login"><img src="http://www.rodcetnife.org/Themes/classic/images/english/login.gif" alt="Login" border="0" /></a> 
+				<a href="http://www.rodcetnife.org/index.php?action=register"><img src="http://www.rodcetnife.org/Themes/classic/images/english/register.gif" alt="Register" border="0" /></a></font></td>
+              </tr>
+            </table>
+            <table border="0" width="100%" cellpadding="3" cellspacing="0" align="center">
+              <tr> 
+                <td valign="middle" align="center" class="windowbg2"><font size="1">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;">Rodcetnife.org Forums | Powered by <a href="http://www.simplemachines.org/" target="_blank">SMF 1.0 Beta 6</a>.<br />
+&copy; 2001-2004, <a href="http://www.lewismedia.com/">Lewis Media</a>. All Rights Reserved.
+		</span></font></td>
+              </tr>
+            </table>
+      </td>
+    </tr>
+  </table>
+                </td>
+              </tr>
+            </table>
+  </center>
+            <table border="0" width="98%" cellspacing="0">
+              <tr>
+                <td width="100%"> 
+                <p align="center">
+                </td>
+              </tr>
+            </table>
+  <table border="0" width="100%" cellspacing="0">
+    <tr>
+      <td width="100%">
+        <p>
+<!--webbot bot="HTMLMarkup" endspan -->
+      </td>
+    </tr>
+  </table>
+</div>
+<SCRIPT TYPE="text/javascript">
+<!--
+loading_page=false;
+// -->
+</SCRIPT>
+<p align="right"><a name="footer"></a></p>
+</body>
